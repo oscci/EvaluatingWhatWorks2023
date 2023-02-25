@@ -1,6 +1,6 @@
 # Pre-registration and Registered Reports {#prereg}  
 
-`r include_image("images/logo_alone_new.png")`
+`r knitr::include_graphics("images/logo_alone_new.png")`
 
 ## Study registration  
 The basic idea of study registration is that the researcher declares in advance key details of the study - effectively a full protocol that explains the research question and the methods that will be used to address it. Crucially, this should specify the primary outcome and the method of analysis, without leaving the researcher any wiggle room to tweak results to make them look more favourable. A study record in a trial registry should be public and time-stamped, and completed before any results have been collected. Since the Food and Drug Administration Modernization Act of 1997 first required FDA-regulated trials to be deposited in a registry, other areas of medicine have followed, with a general registry, https://clinicaltrials.gov/ being established in 2000. Registration of clinical trials has become widely adopted, and is now required if one wants to publish clinical trial results in a reputable journal [@deangelis2004].

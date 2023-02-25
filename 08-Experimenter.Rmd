@@ -1,6 +1,6 @@
 # The experimenter as a source of bias {#experimenter}
 
-`r include_image("images/logo_alone_new.png")`
+`r knitr::include_graphics("images/logo_alone_new.png")`
 
 We have discussed numerous sources of bias that can occur in a study: systematic changes over time, use of inadequate measures, and inappropriate intervention groups. We now come to consider one further important factor: the experimenter.
 

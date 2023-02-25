@@ -12,7 +12,7 @@ library(cowplot)
 
 
 ```
-`r include_image("images/logo_alone_new.png")`
+`r knitr::include_graphics("images/logo_alone_new.png")`
 
 Suppose you want to evaluate the effectiveness of a parent-based intervention for improving communication in three-year-olds with poor language skills. You plan to assess their skills before the intervention, immediately after the intervention, and again six months later. The initial measurement period is known as the baseline – because it acts against as a reference point against which improvement can be measured.
 

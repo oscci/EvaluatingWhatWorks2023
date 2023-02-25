@@ -18,12 +18,12 @@ require(bookdownplus)
 ```
 
 # Preface {-}
-<!---- for include_image you need bookdownplus package-->
+<!---- for include_image you need bookdownplus package. This was problematic so I now have the include_graphics version-->
 \markboth{Preface}{} <!---- from stack overflow - attempt to fix problem with bookdown missing chapter headings, not sure if it works -->
 \vspace{0.1in}
 <!---- Useful information on bibtext formatting from Zotero is here: https://retorque.re/zotero-better-bibtex/citing/ -->
 <center>
-`r include_image("images/logo_title_new.png")` <!--include_image function is in bookdownplus-->
+`r knitr::include_graphics("images/logo_alone_new.png")`
 </center>
 
 \vspace{0.1in}

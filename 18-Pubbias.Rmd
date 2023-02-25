@@ -1,6 +1,6 @@
 #	Can you trust the published literature? {#pubbias}  
  
-`r include_image("images/logo_alone_new.png")`
+`r knitr::include_graphics("images/logo_alone_new.png")`
 
 ## Publication bias  
 Imagine the situation of a researcher who conducts a study of the effectiveness of an intervention that she has developed to improve children's vocabulary. She has attended to all the sources of bias that feature in earlier chapters, and run a well-powered randomised controlled trial. But at the end of the day, the results are disappointing. Mean vocabulary scores of intervention and control groups are closely similar, with no evidence that the intervention was effective. So what happens next?  

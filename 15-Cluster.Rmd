@@ -19,7 +19,7 @@ library(kableExtra)
 library(knitr)
 
 ```
-`r include_image("images/logo_alone_new.png")`
+`r knitr::include_graphics("images/logo_alone_new.png")`
 
 
 ## What is a cluster RCT? 

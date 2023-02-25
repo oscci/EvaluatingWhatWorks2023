@@ -14,7 +14,8 @@ devtools::install_github("crsh/citr")#see https://github.com/crsh/citr
 #nb to preview this chapter, preview_chapter("01-intro.Rmd")
 ```
 
-`r include_image("images/logo_alone_new.png")`
+
+`r knitr::include_graphics("images/logo_alone_new.png")`
 
 ## How can we know if we've made a difference?
 

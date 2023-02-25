@@ -1,6 +1,6 @@
 # Improvement due to nonspecific effects of intervention {#nonspecific}
   
-`r include_image("images/logo_alone_new.png")`
+`r knitr::include_graphics("images/logo_alone_new.png")`
 
 ## Placebo effects 
 

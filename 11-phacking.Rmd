@@ -3,7 +3,7 @@
 <!---Paul - I think this chapter was too complicated - particularly the material after the Bonferroni. Need to discuss how to handle it. It might be possible to simplify it further and just refer on to other sources. 
 I have substituted an alternative for the FDR/permutations material - see what you think.
 But I think the main thing is to get them to understand why p-hacking is a problem, and when you need to correct for multiple comparisons, without getting too bogged down in difficult stuff-->
-`r include_image("images/logo_alone_new.png")`
+`r knitr::include_graphics("images/logo_alone_new.png")`
 
 
 ```{r, echo=F,warning=F,message=F}

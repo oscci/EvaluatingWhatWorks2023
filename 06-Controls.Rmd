@@ -12,7 +12,7 @@ library(ggpubr)
 
 ```
 
-`r include_image("images/logo_alone_new.png")`
+`r knitr::include_graphics("images/logo_alone_new.png")`
 
 The idea of a control group has already come up in Chapter \@ref(observations) and Chapter \@ref(nonspecific), where it has been noted that this provides one way of estimating how far an improvement from baseline to post-treatment is really due to the intervention. The logic is straightforward: if you have two groups – group A who has the intervention, and group B who does everything that group A does except for the intervention, then it should be possible to isolate the specific effect of the intervention. In this chapter we will discuss the different kinds of control group that can be used. But first, it is important to address a question of ethics.
 

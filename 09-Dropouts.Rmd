@@ -1,6 +1,6 @@
 # Further potential for bias: who drops out and who volunteers? {#dropouts}
 
-`r include_image("images/logo_alone_new.png")`
+`r knitr::include_graphics("images/logo_alone_new.png")`
 
 <p id="vignette">_Marie is evaluating a phonological awareness training package with a group of "at risk" five-year-olds. She has adopted a randomised controlled design, with an active control group who get extra help with maths. She recruits 30 children to each group and runs the intervention for six weeks. However, two weeks in to the study, three children in the phonological awareness group and one from the control group drop out, and she learns that another child from the control group has been taken by his mother for intensive private speech and language therapy which includes phonological awareness training. Marie is left unsure what to do? Should she exclude these children from her study?_</p>
 

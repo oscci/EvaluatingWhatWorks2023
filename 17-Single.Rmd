@@ -6,7 +6,7 @@ Tried modifying yml file to include full list of chapters - doesn't work
 Tried copying all code into word and then repasting back in - doesn't work
 Used kableextra for singlecasechart - didn't affect anything-->
 
-`r include_image("images/logo_alone_new.png")`
+`r knitr::include_graphics("images/logo_alone_new.png")`
 
 ```{r message=F,warning=F,echo=FALSE}
 library(tidyverse)

@@ -19,7 +19,7 @@ library(kableExtra)
 library(knitr)
 library(citr)
 ```
-`r include_image("images/logo_alone_new.png")`
+`r knitr::include_graphics("images/logo_alone_new.png")`
 
 <!-- possibly relevant: 
 https://pubs.asha.org/doi/full/10.1044/2018_JSLHR-L-RSAUT-18-0029?url_ver=Z39.88-2003&rfr_id=ori%3Arid%3Acrossref.org&rfr_dat=cr_pub++0pubmed

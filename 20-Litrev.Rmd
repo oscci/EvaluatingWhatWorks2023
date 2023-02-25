@@ -1,6 +1,6 @@
 # Reviewing the literature before you start {#litrev}
 
-`r include_image("images/logo_alone_new.png")`
+`r knitr::include_graphics("images/logo_alone_new.png")`
 
 A research report typically starts with an Introduction that reviews relevant literature to provide context for the current study. It should establish what work has been done before on this topic, how much we already know, and what gaps there are in our knowledge. The primary focus of any literature review is to survey the research landscape and use this bigger picture outlook to better frame the research question of interest. The literature review may also identify methodological limitations of previous studies that can be addressed in a new study.
 
