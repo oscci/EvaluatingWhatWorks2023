@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 12 The randomised controlled trial as a method for controlling biases | Evaluating what works</title>
+  <meta name="description" content="Introduction to methods for evaluating effectiveness of non-medical interventions" />
+  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 12 The randomised controlled trial as a method for controlling biases | Evaluating what works" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Introduction to methods for evaluating effectiveness of non-medical interventions" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 12 The randomised controlled trial as a method for controlling biases | Evaluating what works" />
+  
+  <meta name="twitter:description" content="Introduction to methods for evaluating effectiveness of non-medical interventions" />
+  
+
+<meta name="author" content="Dorothy V M Bishop and Paul A Thompson" />
+
+
+<meta name="date" content="2023-02-25" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="phacking.html"/>
+<link rel="next" href="drawbacks.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
+<link href="libs/tabwid-1.0.0/tabwid.css" rel="stylesheet" />
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#why-did-we-write-this-book"><i class="fa fa-check"></i>Why did we write this book?</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#who-is-this-book-for"><i class="fa fa-check"></i>Who is this book for?</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#what-is-covered"><i class="fa fa-check"></i>What is covered?</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#feedback-and-contributions"><i class="fa fa-check"></i>Feedback and contributions</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#how-can-we-know-if-weve-made-a-difference"><i class="fa fa-check"></i><b>1.1</b> How can we know if we’ve made a difference?</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#the-randomness-of-everything"><i class="fa fa-check"></i><b>1.2</b> The randomness of everything</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#systematic-bias"><i class="fa fa-check"></i><b>1.3</b> Systematic bias</a></li>
+<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#class-exercise"><i class="fa fa-check"></i><b>1.4</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="observations.html"><a href="observations.html"><i class="fa fa-check"></i><b>2</b> Why clinical observations can be misleading</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="observations.html"><a href="observations.html#class-exercise-1"><i class="fa fa-check"></i><b>2.1</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="reliability.html"><a href="reliability.html"><i class="fa fa-check"></i><b>3</b> How to select an outcome measure</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="reliability.html"><a href="reliability.html#reliability-1"><i class="fa fa-check"></i><b>3.1</b> Reliability</a></li>
+<li class="chapter" data-level="3.2" data-path="reliability.html"><a href="reliability.html#validity"><i class="fa fa-check"></i><b>3.2</b> Validity</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="reliability.html"><a href="reliability.html#cultural-factors"><i class="fa fa-check"></i><b>3.2.1</b> Cultural factors</a></li>
+<li class="chapter" data-level="3.2.2" data-path="reliability.html"><a href="reliability.html#generalisability-of-results-to-other-outcomes-the-concepts-of-far-and-near-transfer"><i class="fa fa-check"></i><b>3.2.2</b> Generalisability of results to other outcomes: the concepts of far and near transfer</a></li>
+<li class="chapter" data-level="3.2.3" data-path="reliability.html"><a href="reliability.html#functional-outcomes-vs-test-scores"><i class="fa fa-check"></i><b>3.2.3</b> Functional outcomes vs test scores</a></li>
+<li class="chapter" data-level="3.2.4" data-path="reliability.html"><a href="reliability.html#subjectivity-as-a-threat-to-validity"><i class="fa fa-check"></i><b>3.2.4</b> Subjectivity as a threat to validity</a></li>
+<li class="chapter" data-level="3.2.5" data-path="reliability.html"><a href="reliability.html#correlations-with-other-measures"><i class="fa fa-check"></i><b>3.2.5</b> Correlations with other measures</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="reliability.html"><a href="reliability.html#normative-data"><i class="fa fa-check"></i><b>3.3</b> Normative data</a></li>
+<li class="chapter" data-level="3.4" data-path="reliability.html"><a href="reliability.html#sensitivity"><i class="fa fa-check"></i><b>3.4</b> Sensitivity</a></li>
+<li class="chapter" data-level="3.5" data-path="reliability.html"><a href="reliability.html#is-it-practical"><i class="fa fa-check"></i><b>3.5</b> Is it practical?</a></li>
+<li class="chapter" data-level="3.6" data-path="reliability.html"><a href="reliability.html#class-exercise-2"><i class="fa fa-check"></i><b>3.6</b> Class exercise</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="reliability.html"><a href="reliability.html#mean-length-of-utterance"><i class="fa fa-check"></i><b>3.6.1</b> Mean Length of Utterance</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="nonspecific.html"><a href="nonspecific.html"><i class="fa fa-check"></i><b>4</b> Improvement due to nonspecific effects of intervention</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="nonspecific.html"><a href="nonspecific.html#placebo-effects"><i class="fa fa-check"></i><b>4.1</b> Placebo effects</a></li>
+<li class="chapter" data-level="4.2" data-path="nonspecific.html"><a href="nonspecific.html#identifying-specific-intervention-effects-by-measures-of-mechanism"><i class="fa fa-check"></i><b>4.2</b> Identifying specific intervention effects by measures of mechanism</a></li>
+<li class="chapter" data-level="4.3" data-path="nonspecific.html"><a href="nonspecific.html#classroom-exercise"><i class="fa fa-check"></i><b>4.3</b> Classroom exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="prepost.html"><a href="prepost.html"><i class="fa fa-check"></i><b>5</b> Limitations of the pre-post design: biases related to systematic change</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="prepost.html"><a href="prepost.html#spontaneous-improvement"><i class="fa fa-check"></i><b>5.1</b> Spontaneous improvement</a></li>
+<li class="chapter" data-level="5.2" data-path="prepost.html"><a href="prepost.html#practice-effects"><i class="fa fa-check"></i><b>5.2</b> Practice effects</a></li>
+<li class="chapter" data-level="5.3" data-path="prepost.html"><a href="prepost.html#regression-to-the-mean"><i class="fa fa-check"></i><b>5.3</b> Regression to the mean</a></li>
+<li class="chapter" data-level="5.4" data-path="prepost.html"><a href="prepost.html#class-exercise-3"><i class="fa fa-check"></i><b>5.4</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="controls.html"><a href="controls.html"><i class="fa fa-check"></i><b>6</b> Controlling unwanted effects with a control group</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="controls.html"><a href="controls.html#is-it-ethical-to-include-a-control-group"><i class="fa fa-check"></i><b>6.1</b> Is it ethical to include a control group?</a></li>
+<li class="chapter" data-level="6.2" data-path="controls.html"><a href="controls.html#possible-adverse-effects-of-intervention"><i class="fa fa-check"></i><b>6.2</b> Possible adverse effects of intervention</a></li>
+<li class="chapter" data-level="6.3" data-path="controls.html"><a href="controls.html#uncontrolled-studies-are-unethical"><i class="fa fa-check"></i><b>6.3</b> Uncontrolled studies are unethical</a></li>
+<li class="chapter" data-level="6.4" data-path="controls.html"><a href="controls.html#treated-vs-untreated-controls"><i class="fa fa-check"></i><b>6.4</b> Treated vs untreated controls</a></li>
+<li class="chapter" data-level="6.5" data-path="controls.html"><a href="controls.html#classroom-exercise-1"><i class="fa fa-check"></i><b>6.5</b> Classroom exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="randomise.html"><a href="randomise.html"><i class="fa fa-check"></i><b>7</b> Controlling for selection bias: randomised assignment to intervention</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="randomise.html"><a href="randomise.html#randomization-methods"><i class="fa fa-check"></i><b>7.1</b> Randomization methods</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="randomise.html"><a href="randomise.html#simple-randomization"><i class="fa fa-check"></i><b>7.1.1</b> Simple randomization</a></li>
+<li class="chapter" data-level="7.1.2" data-path="randomise.html"><a href="randomise.html#random-permuted-blocks"><i class="fa fa-check"></i><b>7.1.2</b> Random permuted blocks</a></li>
+<li class="chapter" data-level="7.1.3" data-path="randomise.html"><a href="randomise.html#unequal-randomization"><i class="fa fa-check"></i><b>7.1.3</b> Unequal randomization</a></li>
+<li class="chapter" data-level="7.1.4" data-path="randomise.html"><a href="randomise.html#stratification"><i class="fa fa-check"></i><b>7.1.4</b> Stratification</a></li>
+<li class="chapter" data-level="7.1.5" data-path="randomise.html"><a href="randomise.html#adaptive-randomisation"><i class="fa fa-check"></i><b>7.1.5</b> Adaptive randomisation</a></li>
+<li class="chapter" data-level="7.1.6" data-path="randomise.html"><a href="randomise.html#minimization"><i class="fa fa-check"></i><b>7.1.6</b> Minimization</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="randomise.html"><a href="randomise.html#units-of-analysis-individuals-vs-clusters"><i class="fa fa-check"></i><b>7.2</b> Units of analysis: Individuals vs clusters</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="randomise.html"><a href="randomise.html#class-exercise-4"><i class="fa fa-check"></i><b>7.2.1</b> Class exercise</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="experimenter.html"><a href="experimenter.html"><i class="fa fa-check"></i><b>8</b> The experimenter as a source of bias</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="experimenter.html"><a href="experimenter.html#allocation-concealment"><i class="fa fa-check"></i><b>8.1</b> Allocation concealment</a></li>
+<li class="chapter" data-level="8.2" data-path="experimenter.html"><a href="experimenter.html#the-importance-of-masking-for-assessments"><i class="fa fa-check"></i><b>8.2</b> The importance of masking for assessments</a></li>
+<li class="chapter" data-level="8.3" data-path="experimenter.html"><a href="experimenter.html#conflict-of-interest"><i class="fa fa-check"></i><b>8.3</b> Conflict of interest</a></li>
+<li class="chapter" data-level="8.4" data-path="experimenter.html"><a href="experimenter.html#class-exercise-5"><i class="fa fa-check"></i><b>8.4</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="dropouts.html"><a href="dropouts.html"><i class="fa fa-check"></i><b>9</b> Further potential for bias: who drops out and who volunteers?</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="dropouts.html"><a href="dropouts.html#dealing-with-dropouts-intention-to-treat-analysis"><i class="fa fa-check"></i><b>9.1</b> Dealing with dropouts: Intention to treat analysis</a></li>
+<li class="chapter" data-level="9.2" data-path="dropouts.html"><a href="dropouts.html#who-volunteers-for-research"><i class="fa fa-check"></i><b>9.2</b> Who volunteers for research?</a></li>
+<li class="chapter" data-level="9.3" data-path="dropouts.html"><a href="dropouts.html#class-exercise-6"><i class="fa fa-check"></i><b>9.3</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="power.html"><a href="power.html"><i class="fa fa-check"></i><b>10</b> How big a sample do I need? Sampling, statistical power and type II errors</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="power.html"><a href="power.html#sampling"><i class="fa fa-check"></i><b>10.1</b> Sampling</a></li>
+<li class="chapter" data-level="10.2" data-path="power.html"><a href="power.html#effect-size"><i class="fa fa-check"></i><b>10.2</b> Effect size</a></li>
+<li class="chapter" data-level="10.3" data-path="power.html"><a href="power.html#sample-size-affects-accuracy-of-estimates"><i class="fa fa-check"></i><b>10.3</b> Sample size affects accuracy of estimates</a></li>
+<li class="chapter" data-level="10.4" data-path="power.html"><a href="power.html#understanding-p-values"><i class="fa fa-check"></i><b>10.4</b> Understanding p-values</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="power.html"><a href="power.html#type-ii-error"><i class="fa fa-check"></i><b>10.4.1</b> Type II error</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="power.html"><a href="power.html#statistical-power-and-beta"><i class="fa fa-check"></i><b>10.5</b> Statistical power and <span class="math inline">\(\beta\)</span></a></li>
+<li class="chapter" data-level="10.6" data-path="power.html"><a href="power.html#ways-to-improve-statistical-power"><i class="fa fa-check"></i><b>10.6</b> Ways to improve statistical power</a></li>
+<li class="chapter" data-level="10.7" data-path="power.html"><a href="power.html#class-exercises"><i class="fa fa-check"></i><b>10.7</b> Class Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="phacking.html"><a href="phacking.html"><i class="fa fa-check"></i><b>11</b> False positives, p-hacking and multiple comparisons</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="phacking.html"><a href="phacking.html#type-i-error"><i class="fa fa-check"></i><b>11.1</b> Type I error</a></li>
+<li class="chapter" data-level="11.2" data-path="phacking.html"><a href="phacking.html#reasons-for-false-positives"><i class="fa fa-check"></i><b>11.2</b> Reasons for false positives</a></li>
+<li class="chapter" data-level="11.3" data-path="phacking.html"><a href="phacking.html#adjusting-statistics-for-multiple-testing"><i class="fa fa-check"></i><b>11.3</b> Adjusting statistics for multiple testing</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="phacking.html"><a href="phacking.html#bonferroni-correction"><i class="fa fa-check"></i><b>11.3.1</b> Bonferroni Correction</a></li>
+<li class="chapter" data-level="11.3.2" data-path="phacking.html"><a href="phacking.html#meff"><i class="fa fa-check"></i><b>11.3.2</b> MEff</a></li>
+<li class="chapter" data-level="11.3.3" data-path="phacking.html"><a href="phacking.html#extracting-a-principal-component-from-a-set-of-measures"><i class="fa fa-check"></i><b>11.3.3</b> Extracting a principal component from a set of measures</a></li>
+<li class="chapter" data-level="11.3.4" data-path="phacking.html"><a href="phacking.html#improving-power-by-use-of-multiple-outcomes"><i class="fa fa-check"></i><b>11.3.4</b> Improving power by use of multiple outcomes</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="phacking.html"><a href="phacking.html#class-exercise-7"><i class="fa fa-check"></i><b>11.4</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="RCT.html"><a href="RCT.html"><i class="fa fa-check"></i><b>12</b> The randomised controlled trial as a method for controlling biases</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="RCT.html"><a href="RCT.html#statistical-analysis-of-a-rct"><i class="fa fa-check"></i><b>12.1</b> Statistical analysis of a RCT</a></li>
+<li class="chapter" data-level="12.2" data-path="RCT.html"><a href="RCT.html#steps-to-take-before-data-analysis"><i class="fa fa-check"></i><b>12.2</b> Steps to take before data analysis</a>
+<ul>
+<li class="chapter" data-level="12.2.1" data-path="RCT.html"><a href="RCT.html#sample-dataset-with-illustrative-analysis"><i class="fa fa-check"></i><b>12.2.1</b> Sample dataset with illustrative analysis</a></li>
+<li class="chapter" data-level="12.2.2" data-path="RCT.html"><a href="RCT.html#simple-t-test-on-outcome-data"><i class="fa fa-check"></i><b>12.2.2</b> Simple t-test on outcome data</a></li>
+<li class="chapter" data-level="12.2.3" data-path="RCT.html"><a href="RCT.html#t-test-on-difference-scores"><i class="fa fa-check"></i><b>12.2.3</b> T-test on difference scores</a></li>
+<li class="chapter" data-level="12.2.4" data-path="RCT.html"><a href="RCT.html#analysis-of-covariance-on-outcome-scores"><i class="fa fa-check"></i><b>12.2.4</b> Analysis of covariance on outcome scores</a></li>
+<li class="chapter" data-level="12.2.5" data-path="RCT.html"><a href="RCT.html#linear-mixed-models-lmm-approach"><i class="fa fa-check"></i><b>12.2.5</b> Linear mixed models (LMM) approach</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="RCT.html"><a href="RCT.html#class-exercise-8"><i class="fa fa-check"></i><b>12.3</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="drawbacks.html"><a href="drawbacks.html"><i class="fa fa-check"></i><b>13</b> Drawbacks of the two-arm RCT</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="drawbacks.html"><a href="drawbacks.html#inefficiency-need-for-unfeasibly-large-samples"><i class="fa fa-check"></i><b>13.1</b> Inefficiency: need for unfeasibly large samples</a></li>
+<li class="chapter" data-level="13.2" data-path="drawbacks.html"><a href="drawbacks.html#transfer-to-real-life-efficacy-and-effectiveness"><i class="fa fa-check"></i><b>13.2</b> Transfer to real life: efficacy and effectiveness</a></li>
+<li class="chapter" data-level="13.3" data-path="drawbacks.html"><a href="drawbacks.html#heterogeneity-and-personalised-intervention"><i class="fa fa-check"></i><b>13.3</b> Heterogeneity and personalised intervention</a></li>
+<li class="chapter" data-level="13.4" data-path="drawbacks.html"><a href="drawbacks.html#class-exercise-9"><i class="fa fa-check"></i><b>13.4</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="adaptive.html"><a href="adaptive.html"><i class="fa fa-check"></i><b>14</b> Adaptive Interventions</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="adaptive.html"><a href="adaptive.html#class-exercise-10"><i class="fa fa-check"></i><b>14.1</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="cluster.html"><a href="cluster.html"><i class="fa fa-check"></i><b>15</b> Cluster Randomised Control Trials</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="cluster.html"><a href="cluster.html#what-is-a-cluster-rct"><i class="fa fa-check"></i><b>15.1</b> What is a cluster RCT?</a></li>
+<li class="chapter" data-level="15.2" data-path="cluster.html"><a href="cluster.html#advantages-of-a-cluster-design"><i class="fa fa-check"></i><b>15.2</b> Advantages of a cluster design</a></li>
+<li class="chapter" data-level="15.3" data-path="cluster.html"><a href="cluster.html#disadvantages-of-a-cluster-design"><i class="fa fa-check"></i><b>15.3</b> Disadvantages of a cluster design</a></li>
+<li class="chapter" data-level="15.4" data-path="cluster.html"><a href="cluster.html#class-exercise-11"><i class="fa fa-check"></i><b>15.4</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="crossover.html"><a href="crossover.html"><i class="fa fa-check"></i><b>16</b> Cross-over designs</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="crossover.html"><a href="crossover.html#a-within-subjects-approach-to-the-rct"><i class="fa fa-check"></i><b>16.1</b> A within-subjects approach to the RCT</a>
+<ul>
+<li class="chapter" data-level="16.1.1" data-path="crossover.html"><a href="crossover.html#delayed-crossover-design-wait-list-controls"><i class="fa fa-check"></i><b>16.1.1</b> Delayed crossover design (Wait list controls)</a></li>
+</ul></li>
+<li class="chapter" data-level="16.2" data-path="crossover.html"><a href="crossover.html#class-exercise-12"><i class="fa fa-check"></i><b>16.2</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="Single.html"><a href="Single.html"><i class="fa fa-check"></i><b>17</b> Single case designs</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="Single.html"><a href="Single.html#logic-of-single-case-designs"><i class="fa fa-check"></i><b>17.1</b> Logic of single case designs</a>
+<ul>
+<li class="chapter" data-level="17.1.1" data-path="Single.html"><a href="Single.html#minimising-unwanted-variance"><i class="fa fa-check"></i><b>17.1.1</b> Minimising unwanted variance</a></li>
+<li class="chapter" data-level="17.1.2" data-path="Single.html"><a href="Single.html#minimising-systematic-bias"><i class="fa fa-check"></i><b>17.1.2</b> Minimising systematic bias</a></li>
+<li class="chapter" data-level="17.1.3" data-path="Single.html"><a href="Single.html#the-need-for-sufficient-data"><i class="fa fa-check"></i><b>17.1.3</b> The need for sufficient data</a></li>
+</ul></li>
+<li class="chapter" data-level="17.2" data-path="Single.html"><a href="Single.html#examples-of-studies-using-different-types-of-single-case-design"><i class="fa fa-check"></i><b>17.2</b> Examples of studies using different types of single case design</a>
+<ul>
+<li class="chapter" data-level="17.2.1" data-path="Single.html"><a href="Single.html#a-multiple-baseline-design-speech-and-language-therapy-for-adolescents-in-youth-justice."><i class="fa fa-check"></i><b>17.2.1</b> A multiple baseline design: Speech and language therapy for adolescents in youth justice.</a></li>
+<li class="chapter" data-level="17.2.2" data-path="Single.html"><a href="Single.html#a-study-using-multiple-baseline-across-behaviours-effectiveness-of-electropalatography"><i class="fa fa-check"></i><b>17.2.2</b> A study using multiple baseline across behaviours: Effectiveness of electropalatography</a></li>
+<li class="chapter" data-level="17.2.3" data-path="Single.html"><a href="Single.html#example-of-an-analysis-of-case-series-data"><i class="fa fa-check"></i><b>17.2.3</b> Example of an analysis of case series data</a></li>
+<li class="chapter" data-level="17.2.4" data-path="Single.html"><a href="Single.html#combining-approaches-to-strengthen-study-design"><i class="fa fa-check"></i><b>17.2.4</b> Combining approaches to strengthen study design</a></li>
+</ul></li>
+<li class="chapter" data-level="17.3" data-path="Single.html"><a href="Single.html#statistical-approaches-to-single-case-designs"><i class="fa fa-check"></i><b>17.3</b> Statistical approaches to single case designs</a></li>
+<li class="chapter" data-level="17.4" data-path="Single.html"><a href="Single.html#overview-of-considerations-for-single-case-designs"><i class="fa fa-check"></i><b>17.4</b> Overview of considerations for single case designs</a></li>
+<li class="chapter" data-level="17.5" data-path="Single.html"><a href="Single.html#class-exercise-13"><i class="fa fa-check"></i><b>17.5</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="pubbias.html"><a href="pubbias.html"><i class="fa fa-check"></i><b>18</b> Can you trust the published literature?</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="pubbias.html"><a href="pubbias.html#publication-bias"><i class="fa fa-check"></i><b>18.1</b> Publication bias</a>
+<ul>
+<li class="chapter" data-level="18.1.1" data-path="pubbias.html"><a href="pubbias.html#citation-bias"><i class="fa fa-check"></i><b>18.1.1</b> Citation bias</a></li>
+<li class="chapter" data-level="18.1.2" data-path="pubbias.html"><a href="pubbias.html#counteracting-publication-and-citation-biases"><i class="fa fa-check"></i><b>18.1.2</b> Counteracting publication and citation biases</a></li>
+<li class="chapter" data-level="18.1.3" data-path="pubbias.html"><a href="pubbias.html#class-exercise-14"><i class="fa fa-check"></i><b>18.1.3</b> Class exercise</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="prereg.html"><a href="prereg.html"><i class="fa fa-check"></i><b>19</b> Pre-registration and Registered Reports</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="prereg.html"><a href="prereg.html#study-registration"><i class="fa fa-check"></i><b>19.1</b> Study registration</a></li>
+<li class="chapter" data-level="19.2" data-path="prereg.html"><a href="prereg.html#registered-reports"><i class="fa fa-check"></i><b>19.2</b> Registered Reports</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="litrev.html"><a href="litrev.html"><i class="fa fa-check"></i><b>20</b> Reviewing the literature before you start</a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="litrev.html"><a href="litrev.html#what-is-a-systematic-review"><i class="fa fa-check"></i><b>20.1</b> What is a systematic review?</a></li>
+<li class="chapter" data-level="20.2" data-path="litrev.html"><a href="litrev.html#steps-in-the-literature-review"><i class="fa fa-check"></i><b>20.2</b> Steps in the literature review</a>
+<ul>
+<li class="chapter" data-level="20.2.1" data-path="litrev.html"><a href="litrev.html#define-an-appropriate-question"><i class="fa fa-check"></i><b>20.2.1</b> Define an appropriate question</a></li>
+<li class="chapter" data-level="20.2.2" data-path="litrev.html"><a href="litrev.html#specify-criteria-for-a-literature-search"><i class="fa fa-check"></i><b>20.2.2</b> Specify criteria for a literature search</a></li>
+<li class="chapter" data-level="20.2.3" data-path="litrev.html"><a href="litrev.html#select-eligible-studies-following-protocols-inclusion-criteria"><i class="fa fa-check"></i><b>20.2.3</b> Select eligible studies following protocol’s inclusion criteria</a></li>
+<li class="chapter" data-level="20.2.4" data-path="litrev.html"><a href="litrev.html#assess-the-quality-of-each-study-included"><i class="fa fa-check"></i><b>20.2.4</b> Assess the quality of each study included</a></li>
+<li class="chapter" data-level="20.2.5" data-path="litrev.html"><a href="litrev.html#organise-summarise-and-unbiasedly-present-the-findings-from-all-included-studies"><i class="fa fa-check"></i><b>20.2.5</b> Organise, summarise, and unbiasedly present the findings from all included studies</a></li>
+</ul></li>
+<li class="chapter" data-level="20.3" data-path="litrev.html"><a href="litrev.html#systematic-review-or-literature-review"><i class="fa fa-check"></i><b>20.3</b> Systematic review or literature review?</a></li>
+<li class="chapter" data-level="20.4" data-path="litrev.html"><a href="litrev.html#class-exercise-15"><i class="fa fa-check"></i><b>20.4</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="protocol.html"><a href="protocol.html"><i class="fa fa-check"></i><b>21</b> A template for a research protocol</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Evaluating what works</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="RCT" class="section level1 hasAnchor" number="12">
+<h1><span class="header-section-number">Chapter 12</span> The randomised controlled trial as a method for controlling biases<a href="RCT.html#RCT" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><img src="images/logo_alone_new.png" width="143" /></p>
+<p>The randomised controlled trial (RCT) is regarded by many as the gold standard method for evaluating interventions. In the next chapter we will discuss some of the limitations of this approach that can make it less than ideal for evaluating certain kinds of non-medical interventions. But in this chapter we’ll look at the ingredients of a RCT that make it such a well-regarded method, and introduce the basic methods that can be used to analyse the results.</p>
+<p>A RCT is effective simply because it is designed to counteract all of the systematic biases that were covered in previous Chapters.</p>
+<pre><code>## Loading required package: flextable</code></pre>
+<pre><code>## Warning: package &#39;flextable&#39; was built under R version 4.0.5</code></pre>
+<pre><code>## 
+## Attaching package: &#39;flextable&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:ggpubr&#39;:
+## 
+##     border, font, rotate</code></pre>
+<pre><code>## The following object is masked from &#39;package:circlize&#39;:
+## 
+##     fontsize</code></pre>
+<template id="381b5353-8c1c-4a84-b6f8-75ec09304adc"><style>
+.tabwid table{
+  border-spacing:0px !important;
+  border-collapse:collapse;
+  line-height:1;
+  margin-left:auto;
+  margin-right:auto;
+  border-width: 0;
+  display: table;
+  margin-top: 1.275em;
+  margin-bottom: 1.275em;
+  border-color: transparent;
+}
+.tabwid_left table{
+  margin-left:0;
+}
+.tabwid_right table{
+  margin-right:0;
+}
+.tabwid td {
+    padding: 0;
+}
+.tabwid a {
+  text-decoration: none;
+}
+.tabwid thead {
+    background-color: transparent;
+}
+.tabwid tfoot {
+    background-color: transparent;
+}
+.tabwid table tr {
+background-color: transparent;
+}
+</style><div class="tabwid"><style>.cl-8b380cfc{}.cl-8b2d41d2{font-family:'Helvetica';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-8b2da316{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-8b2e25b6{width:255.3pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8b2e25ca{width:177.7pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8b2e25de{width:255.3pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8b2e25e8{width:177.7pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8b2e25f2{width:177.7pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8b2e25f3{width:255.3pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8b2e25fc{width:177.7pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8b2e2606{width:255.3pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8b2e2610{width:255.3pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8b2e2611{width:177.7pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8b2e261a{width:255.3pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8b2e2624{width:177.7pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8b2e262e{width:255.3pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8b2e262f{width:177.7pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8b2e2638{width:255.3pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8b2e2642{width:177.7pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8b2e2643{width:177.7pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8b2e264c{width:255.3pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table class='cl-8b380cfc'>
+<caption class="Table Caption">
+<p><span id="tab:rctchart">Table 12.1: </span>How the RCT design deals with threats to study validity</p>
+</caption>
+<thead><tr style="overflow-wrap:break-word;"><td class="cl-8b2e2643"><p class="cl-8b2da316"><span class="cl-8b2d41d2">Biases</span></p></td><td class="cl-8b2e264c"><p class="cl-8b2da316"><span class="cl-8b2d41d2">Remedies</span></p></td></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-8b2e25ca"><p class="cl-8b2da316"><span class="cl-8b2d41d2">Spontaneous improvement</span></p></td><td class="cl-8b2e25b6"><p class="cl-8b2da316"><span class="cl-8b2d41d2">Control group</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-8b2e25ca"><p class="cl-8b2da316"><span class="cl-8b2d41d2">Practice effects</span></p></td><td class="cl-8b2e25b6"><p class="cl-8b2da316"><span class="cl-8b2d41d2">Control group</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-8b2e25ca"><p class="cl-8b2da316"><span class="cl-8b2d41d2">Regression to the mean</span></p></td><td class="cl-8b2e25b6"><p class="cl-8b2da316"><span class="cl-8b2d41d2">Control group</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-8b2e25fc"><p class="cl-8b2da316"><span class="cl-8b2d41d2">Noisy data (1)</span></p></td><td class="cl-8b2e2606"><p class="cl-8b2da316"><span class="cl-8b2d41d2">Strict selection criteria for participants</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-8b2e2611"><p class="cl-8b2da316"><span class="cl-8b2d41d2">Noisy data (2)</span></p></td><td class="cl-8b2e2610"><p class="cl-8b2da316"><span class="cl-8b2d41d2">Outcome measures with low measurement error</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-8b2e2624"><p class="cl-8b2da316"><span class="cl-8b2d41d2">Selection bias</span></p></td><td class="cl-8b2e261a"><p class="cl-8b2da316"><span class="cl-8b2d41d2">Random assignment to intervention</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-8b2e262f"><p class="cl-8b2da316"><span class="cl-8b2d41d2">Placebo effects</span></p></td><td class="cl-8b2e262e"><p class="cl-8b2da316"><span class="cl-8b2d41d2">Participant unaware of assignment</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-8b2e262f"><p class="cl-8b2da316"><span class="cl-8b2d41d2">Experimenter bias (1)</span></p></td><td class="cl-8b2e262e"><p class="cl-8b2da316"><span class="cl-8b2d41d2">Experimenter unaware of assignment</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-8b2e2642"><p class="cl-8b2da316"><span class="cl-8b2d41d2">Experimenter bias (2)</span></p></td><td class="cl-8b2e2638"><p class="cl-8b2da316"><span class="cl-8b2d41d2">Strictly specified protocol</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-8b2e25e8"><p class="cl-8b2da316"><span class="cl-8b2d41d2">Biased drop-outs</span></p></td><td class="cl-8b2e25de"><p class="cl-8b2da316"><span class="cl-8b2d41d2">Intention-to-treat analysis</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-8b2e25e8"><p class="cl-8b2da316"><span class="cl-8b2d41d2">Low power</span></p></td><td class="cl-8b2e25de"><p class="cl-8b2da316"><span class="cl-8b2d41d2">A priori power analysis</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-8b2e25f2"><p class="cl-8b2da316"><span class="cl-8b2d41d2">False positives due to p-hacking</span></p></td><td class="cl-8b2e25f3"><p class="cl-8b2da316"><span class="cl-8b2d41d2">Registration of trial protocol</span></p></td></tr></tbody></table></div></template>
+<div class="flextable-shadow-host" id="63d92f78-e5ae-47cf-95af-f96c41c9464c"></div>
+<script>
+var dest = document.getElementById("63d92f78-e5ae-47cf-95af-f96c41c9464c");
+var template = document.getElementById("381b5353-8c1c-4a84-b6f8-75ec09304adc");
+var caption = template.content.querySelector("caption");
+if(caption) {
+  caption.style.cssText = "display:block;text-align:center;";
+  var newcapt = document.createElement("p");
+  newcapt.appendChild(caption)
+  dest.parentNode.insertBefore(newcapt, dest.previousSibling);
+}
+var fantome = dest.attachShadow({mode: 'open'});
+var templateContent = template.content;
+fantome.appendChild(templateContent);
+</script>
+
+<p>We cannot prevent changes in outcomes over time that arise for reasons other than intervention (Chapter <a href="nonspecific.html#nonspecific">4</a>), but if we include a control group we can estimate and correct for their influence. Noisy data in general arises either because of heterogenous participants, or because of unreliable measures: in a good RCT there will be strict selection criteria for participants, and careful choice of outcome measures to be psychometrically sound (see Chapter <a href="reliability.html#reliability">3</a>). Randomisation of participants to intervention and control groups avoids bias caused either by participants’ self-selection of intervention group, or experimenters’ determining who gets what treatment. In addition, as noted in Chapter <a href="nonspecific.html#nonspecific">4</a> and Chapter <a href="experimenter.html#experimenter">8</a>, where feasible, both participants and experimenters are kept unaware of who is in which treatment group, giving a double-blind RCT.</p>
+<p>In Chapter <a href="phacking.html#phacking">11</a>, we noted that the rate of false positive results in a study can be increased by p-hacking, where many outcome measures are included but only the “significant” ones are reported. This problem has been recognised in the context of clinical trials for many years, which is why clinical trial protocols are usually registered specifying a primary outcome measure of interest: indeed, as is discussed further in Chapter <a href="prereg.html#prereg">19</a>, many journals will not accept a trial for publication unless it has been registered on a site such as <a href="https://clinicaltrials.gov/" class="uri">https://clinicaltrials.gov/</a>. Note, however, that, as discussed in Chapter <a href="phacking.html#phacking">11</a>, multiple outcomes may increase the statistical power of a study, and are not a problem if the statistical analysis handles the multiplicity correctly. Secondary outcome measures can also be specified, but reporting of analyses relating to these outcomes should make it clear that they are much more exploratory. In principle, this should limit the amount of data dredging for an effect that is loosely related to the hypothesis of interest (typically, “is the intervention effective?”).</p>
+<p>RCTs have become such a bedrock of medical research that standards for reporting them have been developed. In Chapter <a href="dropouts.html#dropouts">9</a> we saw the CONSORT flowchart, which is a useful way of documenting the flow of participants through a trial. CONSORT stands for Consolidated Standards of Reporting Trials, which are endorsed by many medical journals. Indeed, if you plan to publish an intervention study in one of those journals, you are likely to be required to show you have followed the guidelines. The relevant information is available on the ‘Enhancing the QUAlity and Transparency Of health Research’ <a href="http://www.equator-network.org">EQUATOR</a> network website. The EQUATOR network site covers not only RCTs but also the full spectrum guidelines of many types of clinical research designs.</p>
+<p>For someone starting out planning a trial, it is worth reading the CONSORT Explanation and Elaboration document <span class="citation">(<a href="#ref-moher2010">Moher et al. 2010</a>)</span>, which gives the rationale behind different aspects of the CONSORT guidelines. This may seem rather daunting to beginners, as it mentions more complex trial designs as well as a standard RCT comparing intervention and control groups, and it assumes a degree of statistical expertise (see below). It is nevertheless worth studying, as adherence to CONSORT guidelines is seen as a marker of study quality, and it is much easier to conform to their recommendations if a study is planned with the guidelines in mind, rather than if the guidelines are only consulted after the study is done.</p>
+<div id="statistical-analysis-of-a-rct" class="section level2 hasAnchor" number="12.1">
+<h2><span class="header-section-number">12.1</span> Statistical analysis of a RCT<a href="RCT.html#statistical-analysis-of-a-rct" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Statisticians often complain that researchers will come along with a collection of data and ask for advice as to how to analyse it. Sir Ronald Fisher (one of the most famous statisticians of all time) commented:</p>
+<blockquote>
+<p>“To consult the statistician after an experiment is finished is often merely to ask him to conduct a post mortem examination. He can perhaps say what the experiment died of.”</p>
+</blockquote>
+<p>-Sir Ronald Fisher, Presidential Address to the First Indian Statistical Congress, 1938.</p>
+<p>His point was that very often the statistician would have advised doing something different in the first place, had they been consulted at the outset. Once the data are collected, it may be too late to rescue the study from a fatal flaw.</p>
+<p>Many of those who train as allied health professionals get rather limited statistical training. We suspect it is not common for them to have ready access to expert advice from a statistician. We have, therefore, a dilemma: many of those who have to administer interventions have not been given the statistical training that is needed to evaluate their effectiveness.</p>
+<p>We do not propose to try to turn readers of this book into expert statisticians, but we hope to instill a basic understanding of some key principles that will make it easier to read and interpret the research literature, and to have fruitful discussions with a statistician if you are planning a study.</p>
+<p>The answer to the question “How should I analyse my data?” depends crucially on what hypothesis is being tested. In the case of an intervention trial, the hypothesis will usually be “did intervention X make a difference to outcome Y in people with condition Z?” There is, in this case, a clear null hypothesis – that the intervention was ineffective, and the outcome of the intervention group would have been just the same if it had not been done. The null hypothesis significance testing approach answers just that question: it tells you how likely your data are if the the null hypothesis was true. To do that, you compare the distribution of outcome scores in the intervention group and the control group, as explained in Chapter <a href="power.html#power">10</a>. And as emphasised earlier, we don’t just look at the difference in means between two groups, we consider whether that difference is greater than you’d expect given the variation <em>within</em> the two groups. (This is what the term “analysis of variance” refers to).</p>
+</div>
+<div id="steps-to-take-before-data-analysis" class="section level2 hasAnchor" number="12.2">
+<h2><span class="header-section-number">12.2</span> Steps to take before data analysis<a href="RCT.html#steps-to-take-before-data-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>General sanity check on dataset - are values within expected range?</li>
+<li>Check assumptions<br />
+</li>
+<li>Plot data to get sense of likely range of results</li>
+</ul>
+<div id="sample-dataset-with-illustrative-analysis" class="section level3 hasAnchor" number="12.2.1">
+<h3><span class="header-section-number">12.2.1</span> Sample dataset with illustrative analysis<a href="RCT.html#sample-dataset-with-illustrative-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To illustrate data analysis, we will use a real dataset that can be retrieved from the <a href="https://reshare.ukdataservice.ac.uk/852291/">ESRC data archive</a> <span class="citation">(<a href="#ref-burgoyne2016">Burgoyne et al. 2016</a>)</span>. We will focus only on a small subset of the data, which comes from an intervention study in which teaching assistants administered an individual reading and language intervention to children with Down syndrome. A wait-list RCT design was used (see Chapter <a href="crossover.html#crossover">16</a>), but we will focus here on just the first two phases, in which half the children were randomly assigned to intervention, and the remainder formed a control group. Several language and reading measures were included in the study, giving a total of 11 outcomes. Here we will illustrate the analysis with just one of the outcomes - letter-sound coding - which was administered at baseline (t1) and immediately after the intervention (t2). Results from the full study have been reported by <span class="citation">Burgoyne et al. (<a href="#ref-burgoyne2012">2012</a>)</span> and are discussed in the demonstration of MEff by <span class="citation">(<a href="#ref-bishop2023"><strong>bishop2023?</strong></a>)</span>.
+<!---this is the measure with the strongest effect - I considered using others but they are not great for illustrative purposes, as they aren't very normal! Script below written so that we could easily substitute one of the other measures if we wished (but then text would also need redoing in places)--></p>
+<div class="figure"><span style="display:block;" id="fig:piratefigRCT"></span>
+<img src="12-RCT_files/figure-html/piratefigRCT-1.png" alt="Data from RCT on language/reading intervention for Down syndrome by @burgoyne2012" width="672" />
+<p class="caption">
+Figure 12.1: Data from RCT on language/reading intervention for Down syndrome by <span class="citation">Burgoyne et al. (<a href="#ref-burgoyne2012">2012</a>)</span>
+</p>
+</div>
+<p>Figure <a href="RCT.html#fig:piratefigRCT">12.1</a> shows results on letter-sound coding after one group had received the intervention. This test had also been administered at baseline, but we will focus first just on the outcome results.</p>
+<p>Raw data should always be inspected prior to any data analysis, in order to just check that the distribution of scores looks sensible. One hears of horror stories where, for instance, an error code of 999 got included in an analysis, distorting all the statistics. Or where an outcome score was entered as 10 rather than 100. Visualising the data is useful when checking whether the results are in the right numerical range for the particular outcome measure. The <a href="https://www.psychologicalscience.org/observer/yarrr-the-pirates-guide-to-r">pirate plot</a> is a useful way of showing means and distributions as well as individual data points.</p>
+<p>A related step is to check whether the distribution of the data meets the assumptions of the proposed statistical analysis. Many common statistical procedures assume that data are normally distributed on an interval scale (see Chapter <a href="reliability.html#reliability">3</a>). Statistical approaches to checking of assumptions are beyond the scope of this book, but there are good sources of information on the web, such as <a href="http://www.sthda.com/english/articles/39-regression-model-diagnostics/161-linear-regression-assumptions-and-diagnostics-in-r-essentials/">this website</a> for linear regression. But just eyeballing the data is useful, and can detect obvious cases of non-normality, cases of ceiling or floor effects, or “clumpy” data, where only certain values are possible. Data with these features may need special treatment and it is worth consulting a statistician if they apply to your data. For the data in Figure <a href="RCT.html#fig:piratefigRCT">12.1</a>, although neither distribution has an classically normal distribution, we do not see major problems with ceiling or floor effects, and there is a reasonable spread of scores in both groups.<br />
+<!-- maybe add a figure showing egs of nonnormal distribution, ceiling effect, clumpy data--></p>
+<template id="d56d12b8-f695-4c82-87de-18a08490f1aa"><style>
+.tabwid table{
+  border-spacing:0px !important;
+  border-collapse:collapse;
+  line-height:1;
+  margin-left:auto;
+  margin-right:auto;
+  border-width: 0;
+  display: table;
+  margin-top: 1.275em;
+  margin-bottom: 1.275em;
+  border-color: transparent;
+}
+.tabwid_left table{
+  margin-left:0;
+}
+.tabwid_right table{
+  margin-right:0;
+}
+.tabwid td {
+    padding: 0;
+}
+.tabwid a {
+  text-decoration: none;
+}
+.tabwid thead {
+    background-color: transparent;
+}
+.tabwid tfoot {
+    background-color: transparent;
+}
+.tabwid table tr {
+background-color: transparent;
+}
+</style><div class="tabwid"><style>.cl-8b9bdba6{}.cl-8b971bca{font-family:'Helvetica';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-8b972afc{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-8b972b06{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-8b975a22{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8b975a36{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8b975a37{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8b975a40{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8b975a41{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8b975a4a{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table class='cl-8b9bdba6'>
+<caption class>
+<p><span id="tab:table2gp">Table 12.2: </span>Summary statistics on letter-sound coding at posttest</p>
+</caption>
+<thead><tr style="overflow-wrap:break-word;"><td class="cl-8b975a41"><p class="cl-8b972afc"><span class="cl-8b971bca">Group</span></p></td><td class="cl-8b975a4a"><p class="cl-8b972b06"><span class="cl-8b971bca">N</span></p></td><td class="cl-8b975a4a"><p class="cl-8b972b06"><span class="cl-8b971bca">Mean</span></p></td><td class="cl-8b975a4a"><p class="cl-8b972b06"><span class="cl-8b971bca">SD</span></p></td></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-8b975a36"><p class="cl-8b972afc"><span class="cl-8b971bca">Intervention</span></p></td><td class="cl-8b975a22"><p class="cl-8b972b06"><span class="cl-8b971bca">28</span></p></td><td class="cl-8b975a22"><p class="cl-8b972b06"><span class="cl-8b971bca">22.286</span></p></td><td class="cl-8b975a22"><p class="cl-8b972b06"><span class="cl-8b971bca">7.282</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-8b975a40"><p class="cl-8b972afc"><span class="cl-8b971bca">Control</span></p></td><td class="cl-8b975a37"><p class="cl-8b972b06"><span class="cl-8b971bca">26</span></p></td><td class="cl-8b975a37"><p class="cl-8b972b06"><span class="cl-8b971bca">16.346</span></p></td><td class="cl-8b975a37"><p class="cl-8b972b06"><span class="cl-8b971bca">9.423</span></p></td></tr></tbody></table></div></template>
+<div class="flextable-shadow-host" id="efdb7319-75a5-4b9f-bb2a-3023df8644f6"></div>
+<script>
+var dest = document.getElementById("efdb7319-75a5-4b9f-bb2a-3023df8644f6");
+var template = document.getElementById("d56d12b8-f695-4c82-87de-18a08490f1aa");
+var caption = template.content.querySelector("caption");
+if(caption) {
+  caption.style.cssText = "display:block;text-align:center;";
+  var newcapt = document.createElement("p");
+  newcapt.appendChild(caption)
+  dest.parentNode.insertBefore(newcapt, dest.previousSibling);
+}
+var fantome = dest.attachShadow({mode: 'open'});
+var templateContent = template.content;
+fantome.appendChild(templateContent);
+</script>
+
+<p>The next step is just to compute some basic statistics to get a feel for the effect size. Table <a href="RCT.html#tab:table2gp">12.2</a> shows the mean and standard deviation on the outcome measure for each group. The mean is the average of the individual datapoints shown in Figure <a href="RCT.html#fig:piratefigRCT">12.1</a>, obtained by just summing all scores and dividing by the number of cases. The standard deviation gives an indication of the spread of scores around the mean. As discussed in Chapter <a href="power.html#power">10</a>, the SD is a key statistic for measuring an intervention effect. In these results, one mean is higher than the other, but there is overlap between the groups. Statistical analysis gives us a way of quantifying how much confidence we can place in the group difference: in particular, how likely is it that there is no real impact of intervention and the observed results just reflect the play of chance. In this case we can see that the difference between means is around 6 points and the average SD is around 8, so the effect size (Cohen’s <em>d</em>) is about .75 - a large effect size for a language intervention.</p>
+</div>
+<div id="simple-t-test-on-outcome-data" class="section level3 hasAnchor" number="12.2.2">
+<h3><span class="header-section-number">12.2.2</span> Simple t-test on outcome data<a href="RCT.html#simple-t-test-on-outcome-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The simplest way of measuring the intervention effect is to just compare outcome (posttest) measures on a t-test. We can use a one-tailed test with confidence, given that we anticipate outcomes will be better after intervention. One-tailed tests are often treated with suspicion, because they can be used by researchers engaged in p-hacking (see Chapter <a href="phacking.html#phacking">11</a>), but where we predict a directional effect, they are entirely appropriate and give greater power than a two-tailed test: see <a href="http://daniellakens.blogspot.com/2016/03/one-sided-tests-efficient-and-underused.html">this blogpost by Daniël Lakens</a>.<br />
+When reporting the result of a t-test, researchers should always report all the statistics: the value of t, the degrees of freedom, the means and SDs, and the confidence interval around the mean difference, as well as the p-value. This not only helps readers understand the magnitude and reliability of the effect of interest: it also allows for the study to readily be incorporated in a meta-analysis. Results from a t-test for the data in Table <a href="RCT.html#tab:table2gp">12.2</a> are shown in Table <a href="RCT.html#tab:ttestoutcomes">12.3</a>. Note that with a one-tailed test, the confidence interval on one side will extend to infinity: this is because a one-tailed test assumes that the true result is greater than a specified mean value, and disregards results that go in the opposite direction. <!-- not sure that is at all clear--></p>
+<template id="e9910a8f-181d-4c6d-91ce-28541b598f4c"><style>
+.tabwid table{
+  border-spacing:0px !important;
+  border-collapse:collapse;
+  line-height:1;
+  margin-left:auto;
+  margin-right:auto;
+  border-width: 0;
+  display: table;
+  margin-top: 1.275em;
+  margin-bottom: 1.275em;
+  border-color: transparent;
+}
+.tabwid_left table{
+  margin-left:0;
+}
+.tabwid_right table{
+  margin-right:0;
+}
+.tabwid td {
+    padding: 0;
+}
+.tabwid a {
+  text-decoration: none;
+}
+.tabwid thead {
+    background-color: transparent;
+}
+.tabwid tfoot {
+    background-color: transparent;
+}
+.tabwid table tr {
+background-color: transparent;
+}
+</style><div class="tabwid"><style>.cl-8bbf7782{}.cl-8bbac340{font-family:'Helvetica';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-8bbad0d8{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-8bbaf6e4{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8bbaf6ee{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table class='cl-8bbf7782'>
+<caption class>
+<p><span id="tab:ttestoutcomes">Table 12.3: </span>T-test on outcomes</p>
+</caption>
+<thead><tr style="overflow-wrap:break-word;"><td class="cl-8bbaf6ee"><p class="cl-8bbad0d8"><span class="cl-8bbac340">t</span></p></td><td class="cl-8bbaf6ee"><p class="cl-8bbad0d8"><span class="cl-8bbac340">df</span></p></td><td class="cl-8bbaf6ee"><p class="cl-8bbad0d8"><span class="cl-8bbac340">p</span></p></td><td class="cl-8bbaf6ee"><p class="cl-8bbad0d8"><span class="cl-8bbac340">mean diff.</span></p></td><td class="cl-8bbaf6ee"><p class="cl-8bbad0d8"><span class="cl-8bbac340">lowerCI</span></p></td><td class="cl-8bbaf6ee"><p class="cl-8bbad0d8"><span class="cl-8bbac340">upperCI</span></p></td></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-8bbaf6e4"><p class="cl-8bbad0d8"><span class="cl-8bbac340">2.602</span></p></td><td class="cl-8bbaf6e4"><p class="cl-8bbad0d8"><span class="cl-8bbac340">52</span></p></td><td class="cl-8bbaf6e4"><p class="cl-8bbad0d8"><span class="cl-8bbac340">0.006</span></p></td><td class="cl-8bbaf6e4"><p class="cl-8bbad0d8"><span class="cl-8bbac340">5.94</span></p></td><td class="cl-8bbaf6e4"><p class="cl-8bbad0d8"><span class="cl-8bbac340">2.117</span></p></td><td class="cl-8bbaf6e4"><p class="cl-8bbad0d8"><span class="cl-8bbac340">Inf</span></p></td></tr></tbody></table></div></template>
+<div class="flextable-shadow-host" id="37cbe172-0515-4699-b183-f4170b7eca2f"></div>
+<script>
+var dest = document.getElementById("37cbe172-0515-4699-b183-f4170b7eca2f");
+var template = document.getElementById("e9910a8f-181d-4c6d-91ce-28541b598f4c");
+var caption = template.content.querySelector("caption");
+if(caption) {
+  caption.style.cssText = "display:block;text-align:center;";
+  var newcapt = document.createElement("p");
+  newcapt.appendChild(caption)
+  dest.parentNode.insertBefore(newcapt, dest.previousSibling);
+}
+var fantome = dest.attachShadow({mode: 'open'});
+var templateContent = template.content;
+fantome.appendChild(templateContent);
+</script>
+
+</div>
+<div id="t-test-on-difference-scores" class="section level3 hasAnchor" number="12.2.3">
+<h3><span class="header-section-number">12.2.3</span> T-test on difference scores<a href="RCT.html#t-test-on-difference-scores" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The t-test on outcomes is easy to do, but it misses an opportunity to control for one unwanted source of variation, namely individual differences in the initial level of the language measure. For this reason, researchers often prefer to take difference scores: the difference between outcome and baseline measures, and apply a t-test to these. While this had some advantages over reliance on raw outcome measures, it also has disadvantages, because the amount of change that is possible from baseline to outcome is not the same for everyone. A child with a very low score at baseline has more “room for improvement” than one who has an average score. For this reason, analysis of difference scores is not generally recommended.</p>
+</div>
+<div id="analysis-of-covariance-on-outcome-scores" class="section level3 hasAnchor" number="12.2.4">
+<h3><span class="header-section-number">12.2.4</span> Analysis of covariance on outcome scores<a href="RCT.html#analysis-of-covariance-on-outcome-scores" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+Rather than taking difference scores, it is preferable to analyse differences in outcome measures after making a statistical adjustment that takes into account the initial baseline scores, using a method known as analysis of covariance or ANCOVA. In practice, this method usually gives results that are very similar to those you would obtain from an analysis of difference scores, but the precision, and hence the statistical power is greater. However, the data do need to meet certain assumptions of the method. This <a href="#https://www.datanovia.com/en/lessons/ancova-in-r/">website</a> walks through the steps for performing an ANCOVA in R, starting with a plot of to check that there is a linear relationship between pretest vs posttest scores in both groups - i.e. the points cluster around a straight line, as shown in Figure <a href="RCT.html#fig:ds-prepost">12.2</a>.
+<div class="figure"><span style="display:block;" id="fig:ds-prepost"></span>
+<img src="12-RCT_files/figure-html/ds-prepost-1.png" alt="Pretest vs posttest scores in the Down syndrome data" width="672" />
+<p class="caption">
+Figure 12.2: Pretest vs posttest scores in the Down syndrome data
+</p>
+</div>
+<p>Inspection of the plot confirms that the relationship between pretest and posttest looks reasonably linear in both groups. Note that it also shows that there are rather more children with very low scores at pretest in the control group. This is just a chance finding - the kind of thing that can easily happen when you have relatively small numbers of children randomly assigned to groups.</p>
+<template id="69c27c6b-bff3-410c-bafe-8dbe85c1b284"><style>
+.tabwid table{
+  border-spacing:0px !important;
+  border-collapse:collapse;
+  line-height:1;
+  margin-left:auto;
+  margin-right:auto;
+  border-width: 0;
+  display: table;
+  margin-top: 1.275em;
+  margin-bottom: 1.275em;
+  border-color: transparent;
+}
+.tabwid_left table{
+  margin-left:0;
+}
+.tabwid_right table{
+  margin-right:0;
+}
+.tabwid td {
+    padding: 0;
+}
+.tabwid a {
+  text-decoration: none;
+}
+.tabwid thead {
+    background-color: transparent;
+}
+.tabwid tfoot {
+    background-color: transparent;
+}
+.tabwid table tr {
+background-color: transparent;
+}
+</style><div class="tabwid"><style>.cl-8ca1d2c6{}.cl-8c9cc556{font-family:'Helvetica';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-8c9cd2bc{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-8c9cd2c6{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-8c9cfb2a{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8c9cfb34{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8c9cfb35{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8c9cfb36{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table class='cl-8ca1d2c6'>
+<caption class="Table Caption">
+<p><span id="tab:ancova-compare">Table 12.4: </span>Analysis of posttest only (ANOVA)</p>
+</caption>
+<thead><tr style="overflow-wrap:break-word;"><td class="cl-8c9cfb35"><p class="cl-8c9cd2bc"><span class="cl-8c9cc556">Effect</span></p></td><td class="cl-8c9cfb36"><p class="cl-8c9cd2c6"><span class="cl-8c9cc556">DFn</span></p></td><td class="cl-8c9cfb36"><p class="cl-8c9cd2c6"><span class="cl-8c9cc556">DFd</span></p></td><td class="cl-8c9cfb36"><p class="cl-8c9cd2c6"><span class="cl-8c9cc556">F</span></p></td><td class="cl-8c9cfb36"><p class="cl-8c9cd2c6"><span class="cl-8c9cc556">p</span></p></td><td class="cl-8c9cfb36"><p class="cl-8c9cd2c6"><span class="cl-8c9cc556">ges</span></p></td></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-8c9cfb34"><p class="cl-8c9cd2bc"><span class="cl-8c9cc556">group</span></p></td><td class="cl-8c9cfb2a"><p class="cl-8c9cd2c6"><span class="cl-8c9cc556">1</span></p></td><td class="cl-8c9cfb2a"><p class="cl-8c9cd2c6"><span class="cl-8c9cc556">52</span></p></td><td class="cl-8c9cfb2a"><p class="cl-8c9cd2c6"><span class="cl-8c9cc556">6.773</span></p></td><td class="cl-8c9cfb2a"><p class="cl-8c9cd2c6"><span class="cl-8c9cc556">0.012</span></p></td><td class="cl-8c9cfb2a"><p class="cl-8c9cd2c6"><span class="cl-8c9cc556">0.115</span></p></td></tr></tbody></table></div></template>
+<div class="flextable-shadow-host" id="47c47e3d-4856-42c2-a43c-288591cdc20b"></div>
+<script>
+var dest = document.getElementById("47c47e3d-4856-42c2-a43c-288591cdc20b");
+var template = document.getElementById("69c27c6b-bff3-410c-bafe-8dbe85c1b284");
+var caption = template.content.querySelector("caption");
+if(caption) {
+  caption.style.cssText = "display:block;text-align:center;";
+  var newcapt = document.createElement("p");
+  newcapt.appendChild(caption)
+  dest.parentNode.insertBefore(newcapt, dest.previousSibling);
+}
+var fantome = dest.attachShadow({mode: 'open'});
+var templateContent = template.content;
+fantome.appendChild(templateContent);
+</script>
+
+<template id="ebc63fd2-c64c-49e7-9399-fe88d1b437d9"><style>
+.tabwid table{
+  border-spacing:0px !important;
+  border-collapse:collapse;
+  line-height:1;
+  margin-left:auto;
+  margin-right:auto;
+  border-width: 0;
+  display: table;
+  margin-top: 1.275em;
+  margin-bottom: 1.275em;
+  border-color: transparent;
+}
+.tabwid_left table{
+  margin-left:0;
+}
+.tabwid_right table{
+  margin-right:0;
+}
+.tabwid td {
+    padding: 0;
+}
+.tabwid a {
+  text-decoration: none;
+}
+.tabwid thead {
+    background-color: transparent;
+}
+.tabwid tfoot {
+    background-color: transparent;
+}
+.tabwid table tr {
+background-color: transparent;
+}
+</style><div class="tabwid"><style>.cl-8cb98e34{}.cl-8caf44ec{font-family:'Helvetica';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-8caf5266{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-8caf5270{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-8caf7e76{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8caf7e80{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8caf7e81{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8caf7e8a{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8caf7e94{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8caf7e95{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table class='cl-8cb98e34'>
+<caption class="Table Caption">
+<p><span id="tab:ancova-compare">Table 12.4: </span>Analysis adjusted for pretest scores (ANCOVA)</p>
+</caption>
+<thead><tr style="overflow-wrap:break-word;"><td class="cl-8caf7e95"><p class="cl-8caf5266"><span class="cl-8caf44ec">Effect</span></p></td><td class="cl-8caf7e94"><p class="cl-8caf5270"><span class="cl-8caf44ec">DFn</span></p></td><td class="cl-8caf7e94"><p class="cl-8caf5270"><span class="cl-8caf44ec">DFd</span></p></td><td class="cl-8caf7e94"><p class="cl-8caf5270"><span class="cl-8caf44ec">F</span></p></td><td class="cl-8caf7e94"><p class="cl-8caf5270"><span class="cl-8caf44ec">p</span></p></td><td class="cl-8caf7e94"><p class="cl-8caf5270"><span class="cl-8caf44ec">ges</span></p></td></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-8caf7e80"><p class="cl-8caf5266"><span class="cl-8caf44ec">pretest</span></p></td><td class="cl-8caf7e76"><p class="cl-8caf5270"><span class="cl-8caf44ec">1</span></p></td><td class="cl-8caf7e76"><p class="cl-8caf5270"><span class="cl-8caf44ec">51</span></p></td><td class="cl-8caf7e76"><p class="cl-8caf5270"><span class="cl-8caf44ec">94.313</span></p></td><td class="cl-8caf7e76"><p class="cl-8caf5270"><span class="cl-8caf44ec">0.000</span></p></td><td class="cl-8caf7e76"><p class="cl-8caf5270"><span class="cl-8caf44ec">0.649</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-8caf7e8a"><p class="cl-8caf5266"><span class="cl-8caf44ec">group</span></p></td><td class="cl-8caf7e81"><p class="cl-8caf5270"><span class="cl-8caf44ec">1</span></p></td><td class="cl-8caf7e81"><p class="cl-8caf5270"><span class="cl-8caf44ec">51</span></p></td><td class="cl-8caf7e81"><p class="cl-8caf5270"><span class="cl-8caf44ec">9.301</span></p></td><td class="cl-8caf7e81"><p class="cl-8caf5270"><span class="cl-8caf44ec">0.004</span></p></td><td class="cl-8caf7e81"><p class="cl-8caf5270"><span class="cl-8caf44ec">0.154</span></p></td></tr></tbody></table></div></template>
+<div class="flextable-shadow-host" id="15a94a86-5562-43d3-a4c8-7abf2881c585"></div>
+<script>
+var dest = document.getElementById("15a94a86-5562-43d3-a4c8-7abf2881c585");
+var template = document.getElementById("ebc63fd2-c64c-49e7-9399-fe88d1b437d9");
+var caption = template.content.querySelector("caption");
+if(caption) {
+  caption.style.cssText = "display:block;text-align:center;";
+  var newcapt = document.createElement("p");
+  newcapt.appendChild(caption)
+  dest.parentNode.insertBefore(newcapt, dest.previousSibling);
+}
+var fantome = dest.attachShadow({mode: 'open'});
+var templateContent = template.content;
+fantome.appendChild(templateContent);
+</script>
+
+<p>Table <a href="RCT.html#tab:ancova-compare">12.4</a> shows the same data analysed by first of all by using ANOVA to compare only the post-test scores (upper chart) and then using ANCOVA to adjust scores for the baseline (pretest) values. The effect size is shown as ges, which stands for “generalised eta squared”. You can see there is a large ges value, and correspondingly low p-value for the pretest term, reflecting the strong correlation between pretest and posttest shown in Figure <a href="RCT.html#fig:ds-prepost">12.2</a>. In effect, with ANCOVA, we adjust scores to remove the effect of the pretest on the posttest scores; in this case, we can then see a slightly stronger effect of the intervention: the effect size for the group term is higher and the p-value is lower than with the previous ANOVA.</p>
+<div id="t-tests-analysis-of-variance-and-linear-regression" class="section level4 unnumbered hasAnchor">
+<h4>T-tests, analysis of variance, and linear regression<a href="RCT.html#t-tests-analysis-of-variance-and-linear-regression" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="custom">
+Mathematically, the t-test is equivalent to two other methods: analysis of variance and linear regression. When we have just two groups, all of these methods achieve the same thing: they divide up the variance in the data into variance associated with group identity, and other (residual) variance, and provide a statistic that reflects the ratio between these two sources of variance. This is illustrated with the real data analysed in Table <a href="RCT.html#tab:ancova-compare">12.4</a>. The upper analysis gives results that are equivalent to the t-test in Table <a href="RCT.html#tab:ttestoutcomes">12.3</a>: if you square the t-value it is the same as the F-test. In this case, the p-value from the t-test is half the value of that in the ANOVA: this is because we specified a one-tailed test for the t-test. The p-value would be identical to that from ANOVA if a two-tailed t-test had been used.<br />
+See <a href="http://deevybee.blogspot.com/2017/11/anova-t-tests-and-regression-different.html">this blogpost</a> for more details.
+<!-- reminder to self: blogposts referenced in the book should be uploaded to figshare or another place with DOI-->
+</div>
+</div>
+</div>
+<div id="linear-mixed-models-lmm-approach" class="section level3 hasAnchor" number="12.2.5">
+<h3><span class="header-section-number">12.2.5</span> Linear mixed models (LMM) approach<a href="RCT.html#linear-mixed-models-lmm-approach" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Increasingly, reports of RCTs are using more sophisticated and flexible methods of analysis that can, for instance, cope with datasets that have missing data, or where distributions of scores are non-normal.
+<!---With a linear mixed model (LMM), we can also take into account individual differences in response to intervention. These are very evident when we plot the baseline and posttest scores for individual participants (Figure \@fig(indsubs-plot)).--></p>
+<p>An advantage of the LMM approach is that it can be extended in many ways to give appropriate estimates of intervention effects in more complex trial designs - some of which are covered in Chapter <a href="adaptive.html#adaptive">14</a> to Chapter <a href="Single.html#Single">17</a>). Disadvantages of this approach are that it is easy to make mistakes in specifying the model for analysis if you lack statistical expertise, and the output is harder for non-specialists to understand. If you have a simple design, such as that illustrated in this chapter, with normally distributed data, a basic analysis of covariance is perfectly adequate <span class="citation">(<a href="#ref-oconnell2017">O’Connell et al. 2017</a>)</span>.</p>
+<!--- Paul's help needed here?  I had assumed LMM would give more precise estimates, but the OConnell paper suggests ANCOVA is optimal-->
+<p>Table <a href="RCT.html#tab:table-procon">12.5</a> summarises the pros and cons of different analytic approaches.</p>
+<template id="3a555d52-a45e-4174-ae14-fdf9ff459be5"><style>
+.tabwid table{
+  border-spacing:0px !important;
+  border-collapse:collapse;
+  line-height:1;
+  margin-left:auto;
+  margin-right:auto;
+  border-width: 0;
+  display: table;
+  margin-top: 1.275em;
+  margin-bottom: 1.275em;
+  border-color: transparent;
+}
+.tabwid_left table{
+  margin-left:0;
+}
+.tabwid_right table{
+  margin-right:0;
+}
+.tabwid td {
+    padding: 0;
+}
+.tabwid a {
+  text-decoration: none;
+}
+.tabwid thead {
+    background-color: transparent;
+}
+.tabwid tfoot {
+    background-color: transparent;
+}
+.tabwid table tr {
+background-color: transparent;
+}
+</style><div class="tabwid"><style>.cl-8d4b5328{}.cl-8d4672a4{font-family:'Helvetica';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-8d468244{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-8d46ae54{width:158.1pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8d46ae5e{width:130.6pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8d46ae68{width:484pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8d46ae69{width:65.8pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8d46ae6a{width:65.8pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8d46ae72{width:158.1pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8d46ae73{width:130.6pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8d46ae7c{width:484pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8d46ae86{width:130.6pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8d46ae87{width:484pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8d46ae88{width:65.8pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8d46ae90{width:158.1pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8d46ae91{width:130.6pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8d46ae9a{width:484pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8d46aea4{width:65.8pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8d46aea5{width:158.1pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table class='cl-8d4b5328'>
+<caption class>
+<p><span id="tab:table-procon">Table 12.5: </span>Analytic methods for comparing outcomes in intervention vs control groups</p>
+</caption>
+<thead><tr style="overflow-wrap:break-word;"><td class="cl-8d46aea5"><p class="cl-8d468244"><span class="cl-8d4672a4">Method</span></p></td><td class="cl-8d46ae9a"><p class="cl-8d468244"><span class="cl-8d4672a4">Features</span></p></td><td class="cl-8d46ae91"><p class="cl-8d468244"><span class="cl-8d4672a4">Ease of understanding</span></p></td><td class="cl-8d46aea4"><p class="cl-8d468244"><span class="cl-8d4672a4">Flexibility</span></p></td></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-8d46ae54"><p class="cl-8d468244"><span class="cl-8d4672a4">t-test</span></p></td><td class="cl-8d46ae68"><p class="cl-8d468244"><span class="cl-8d4672a4">Good power with 1-tailed test. <br>Suboptimal control for baseline. <br>Assumes normality.</span></p></td><td class="cl-8d46ae5e"><p class="cl-8d468244"><span class="cl-8d4672a4">High</span></p></td><td class="cl-8d46ae69"><p class="cl-8d468244"><span class="cl-8d4672a4">Low</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-8d46ae72"><p class="cl-8d468244"><span class="cl-8d4672a4">ANOVA</span></p></td><td class="cl-8d46ae7c"><p class="cl-8d468244"><span class="cl-8d4672a4">With two-groups, equivalent to t-test, <br>but two-tailed only. <br>Can extend to more than two groups.</span></p></td><td class="cl-8d46ae73"><p class="cl-8d468244"><span class="cl-8d4672a4">...</span></p></td><td class="cl-8d46ae6a"><p class="cl-8d468244"><span class="cl-8d4672a4">...</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-8d46ae72"><p class="cl-8d468244"><span class="cl-8d4672a4">Linear regression/ ANCOVA</span></p></td><td class="cl-8d46ae7c"><p class="cl-8d468244"><span class="cl-8d4672a4">Similar to ANOVA, but can adjust <br>outcomes for covariates, <br>including baseline.</span></p></td><td class="cl-8d46ae73"><p class="cl-8d468244"><span class="cl-8d4672a4">...</span></p></td><td class="cl-8d46ae6a"><p class="cl-8d468244"><span class="cl-8d4672a4">...</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-8d46ae90"><p class="cl-8d468244"><span class="cl-8d4672a4">LMM</span></p></td><td class="cl-8d46ae87"><p class="cl-8d468244"><span class="cl-8d4672a4">Flexible in cases with missing data, <br>non-normal distributions.</span></p></td><td class="cl-8d46ae86"><p class="cl-8d468244"><span class="cl-8d4672a4">Low</span></p></td><td class="cl-8d46ae88"><p class="cl-8d468244"><span class="cl-8d4672a4">High</span></p></td></tr></tbody></table></div></template>
+<div class="flextable-shadow-host" id="df1b6a3f-cd4c-4c48-a7f5-93d7990cd576"></div>
+<script>
+var dest = document.getElementById("df1b6a3f-cd4c-4c48-a7f5-93d7990cd576");
+var template = document.getElementById("3a555d52-a45e-4174-ae14-fdf9ff459be5");
+var caption = template.content.querySelector("caption");
+if(caption) {
+  caption.style.cssText = "display:block;text-align:center;";
+  var newcapt = document.createElement("p");
+  newcapt.appendChild(caption)
+  dest.parentNode.insertBefore(newcapt, dest.previousSibling);
+}
+var fantome = dest.attachShadow({mode: 'open'});
+var templateContent = template.content;
+fantome.appendChild(templateContent);
+</script>
+
+</div>
+</div>
+<div id="class-exercise-8" class="section level2 hasAnchor" number="12.3">
+<h2><span class="header-section-number">12.3</span> Class exercise<a href="RCT.html#class-exercise-8" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li><p>Find an intervention study of interest and check whether the protocol was deposited in a repository before the study began. If so, check the analysis against the preregistration, cf. <span class="citation">Goldacre et al. (<a href="#ref-goldacre2019">2019</a>)</span>.
+Note which analysis method was used to estimate the intervention effect.<br />
+Did the researchers provide enough information to give an idea of the effect size, or merely report p-values? Did the analysis method take into account baseline scores in an appropriate way?</p></li>
+<li><p>In Chapter <a href="drawbacks.html#drawbacks">13</a> we consider drawbacks of the RCT design. Before you read that chapter, see if you can anticipate the issues that we consider in our evaluation.</p></li>
+</ol>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-burgoyne2016" class="csl-entry">
+Burgoyne, Kelly, Fiona J. Duff, Paula J. Clarke, Sue Buckley, Margaret J. Snowling, and Charles Hulme. 2016. <span>“Reading and Language Intervention for Children with <span>Down</span> Syndrome: <span>Experimental</span> Data [Data Collection].”</span>
+</div>
+<div id="ref-burgoyne2012" class="csl-entry">
+Burgoyne, Kelly, Fiona J Duff, Paula J Clarke, Sue Buckley, Margaret J Snowling, and Charles Hulme. 2012. <span>“Efficacy of a Reading and Language Intervention for Children with <span>Down</span> Syndrome: A Randomized Controlled Trial.”</span> <em>Journal of Child Psychology and Psychiatry, and Allied Disciplines</em> 53 (10): 1044–53. <a href="https://doi.org/10.1111/j.1469-7610.2012.02557.x">https://doi.org/10.1111/j.1469-7610.2012.02557.x</a>.
+</div>
+<div id="ref-goldacre2019" class="csl-entry">
+Goldacre, Ben, Henry Drysdale, Aaron Dale, Ioan Milosevic, Eirion Slade, Philip Hartley, Cicely Marston, Anna Powell-Smith, Carl Heneghan, and Kamal R. Mahtani. 2019. <span>“<span>COMPare</span>: A Prospective Cohort Study Correcting and Monitoring 58 Misreported Trials in Real Time.”</span> <em>Trials</em> 20 (1): 118. <a href="https://doi.org/10.1186/s13063-019-3173-2">https://doi.org/10.1186/s13063-019-3173-2</a>.
+</div>
+<div id="ref-moher2010" class="csl-entry">
+Moher, David, Sally Hopewell, Kenneth F. Schulz, Victor Montori, Peter C. Gøtzsche, P. J. Devereaux, Diana Elbourne, Matthias Egger, and Douglas G. Altman. 2010. <span>“<span>CONSORT</span> 2010 Explanation and Elaboration: Updated Guidelines for Reporting Parallel Group Randomised Trials.”</span> <em>BMJ (Clinical Research Ed.)</em> 340 (March): c869. <a href="https://doi.org/10.1136/bmj.c869">https://doi.org/10.1136/bmj.c869</a>.
+</div>
+<div id="ref-oconnell2017" class="csl-entry">
+O’Connell, Nathaniel S., Lin Dai, Yunyun Jiang, Jaime L. Speiser, Ralph Ward, Wei Wei, Rachel Carroll, and Mulugeta Gebregziabher. 2017. <span>“Methods for <span>Analysis</span> of <span>Pre-Post Data</span> in <span>Clinical Research</span>: <span>A Comparison</span> of <span>Five Common Methods</span>.”</span> <em>Journal of Biometrics &amp; Biostatistics</em> 8 (1): 1–8. <a href="https://doi.org/10.4172/2155-6180.1000334">https://doi.org/10.4172/2155-6180.1000334</a>.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="phacking.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="drawbacks.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Intervention_bookdown2.pdf", "Intervention_bookdown2.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

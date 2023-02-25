@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 14 Adaptive Interventions | Evaluating what works</title>
+  <meta name="description" content="Introduction to methods for evaluating effectiveness of non-medical interventions" />
+  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 14 Adaptive Interventions | Evaluating what works" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Introduction to methods for evaluating effectiveness of non-medical interventions" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 14 Adaptive Interventions | Evaluating what works" />
+  
+  <meta name="twitter:description" content="Introduction to methods for evaluating effectiveness of non-medical interventions" />
+  
+
+<meta name="author" content="Dorothy V M Bishop and Paul A Thompson" />
+
+
+<meta name="date" content="2023-02-25" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="drawbacks.html"/>
+<link rel="next" href="cluster.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
+<link href="libs/tabwid-1.0.0/tabwid.css" rel="stylesheet" />
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#why-did-we-write-this-book"><i class="fa fa-check"></i>Why did we write this book?</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#who-is-this-book-for"><i class="fa fa-check"></i>Who is this book for?</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#what-is-covered"><i class="fa fa-check"></i>What is covered?</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#feedback-and-contributions"><i class="fa fa-check"></i>Feedback and contributions</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#how-can-we-know-if-weve-made-a-difference"><i class="fa fa-check"></i><b>1.1</b> How can we know if we’ve made a difference?</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#the-randomness-of-everything"><i class="fa fa-check"></i><b>1.2</b> The randomness of everything</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#systematic-bias"><i class="fa fa-check"></i><b>1.3</b> Systematic bias</a></li>
+<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#class-exercise"><i class="fa fa-check"></i><b>1.4</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="observations.html"><a href="observations.html"><i class="fa fa-check"></i><b>2</b> Why clinical observations can be misleading</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="observations.html"><a href="observations.html#class-exercise-1"><i class="fa fa-check"></i><b>2.1</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="reliability.html"><a href="reliability.html"><i class="fa fa-check"></i><b>3</b> How to select an outcome measure</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="reliability.html"><a href="reliability.html#reliability-1"><i class="fa fa-check"></i><b>3.1</b> Reliability</a></li>
+<li class="chapter" data-level="3.2" data-path="reliability.html"><a href="reliability.html#validity"><i class="fa fa-check"></i><b>3.2</b> Validity</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="reliability.html"><a href="reliability.html#cultural-factors"><i class="fa fa-check"></i><b>3.2.1</b> Cultural factors</a></li>
+<li class="chapter" data-level="3.2.2" data-path="reliability.html"><a href="reliability.html#generalisability-of-results-to-other-outcomes-the-concepts-of-far-and-near-transfer"><i class="fa fa-check"></i><b>3.2.2</b> Generalisability of results to other outcomes: the concepts of far and near transfer</a></li>
+<li class="chapter" data-level="3.2.3" data-path="reliability.html"><a href="reliability.html#functional-outcomes-vs-test-scores"><i class="fa fa-check"></i><b>3.2.3</b> Functional outcomes vs test scores</a></li>
+<li class="chapter" data-level="3.2.4" data-path="reliability.html"><a href="reliability.html#subjectivity-as-a-threat-to-validity"><i class="fa fa-check"></i><b>3.2.4</b> Subjectivity as a threat to validity</a></li>
+<li class="chapter" data-level="3.2.5" data-path="reliability.html"><a href="reliability.html#correlations-with-other-measures"><i class="fa fa-check"></i><b>3.2.5</b> Correlations with other measures</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="reliability.html"><a href="reliability.html#normative-data"><i class="fa fa-check"></i><b>3.3</b> Normative data</a></li>
+<li class="chapter" data-level="3.4" data-path="reliability.html"><a href="reliability.html#sensitivity"><i class="fa fa-check"></i><b>3.4</b> Sensitivity</a></li>
+<li class="chapter" data-level="3.5" data-path="reliability.html"><a href="reliability.html#is-it-practical"><i class="fa fa-check"></i><b>3.5</b> Is it practical?</a></li>
+<li class="chapter" data-level="3.6" data-path="reliability.html"><a href="reliability.html#class-exercise-2"><i class="fa fa-check"></i><b>3.6</b> Class exercise</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="reliability.html"><a href="reliability.html#mean-length-of-utterance"><i class="fa fa-check"></i><b>3.6.1</b> Mean Length of Utterance</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="nonspecific.html"><a href="nonspecific.html"><i class="fa fa-check"></i><b>4</b> Improvement due to nonspecific effects of intervention</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="nonspecific.html"><a href="nonspecific.html#placebo-effects"><i class="fa fa-check"></i><b>4.1</b> Placebo effects</a></li>
+<li class="chapter" data-level="4.2" data-path="nonspecific.html"><a href="nonspecific.html#identifying-specific-intervention-effects-by-measures-of-mechanism"><i class="fa fa-check"></i><b>4.2</b> Identifying specific intervention effects by measures of mechanism</a></li>
+<li class="chapter" data-level="4.3" data-path="nonspecific.html"><a href="nonspecific.html#classroom-exercise"><i class="fa fa-check"></i><b>4.3</b> Classroom exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="prepost.html"><a href="prepost.html"><i class="fa fa-check"></i><b>5</b> Limitations of the pre-post design: biases related to systematic change</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="prepost.html"><a href="prepost.html#spontaneous-improvement"><i class="fa fa-check"></i><b>5.1</b> Spontaneous improvement</a></li>
+<li class="chapter" data-level="5.2" data-path="prepost.html"><a href="prepost.html#practice-effects"><i class="fa fa-check"></i><b>5.2</b> Practice effects</a></li>
+<li class="chapter" data-level="5.3" data-path="prepost.html"><a href="prepost.html#regression-to-the-mean"><i class="fa fa-check"></i><b>5.3</b> Regression to the mean</a></li>
+<li class="chapter" data-level="5.4" data-path="prepost.html"><a href="prepost.html#class-exercise-3"><i class="fa fa-check"></i><b>5.4</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="controls.html"><a href="controls.html"><i class="fa fa-check"></i><b>6</b> Controlling unwanted effects with a control group</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="controls.html"><a href="controls.html#is-it-ethical-to-include-a-control-group"><i class="fa fa-check"></i><b>6.1</b> Is it ethical to include a control group?</a></li>
+<li class="chapter" data-level="6.2" data-path="controls.html"><a href="controls.html#possible-adverse-effects-of-intervention"><i class="fa fa-check"></i><b>6.2</b> Possible adverse effects of intervention</a></li>
+<li class="chapter" data-level="6.3" data-path="controls.html"><a href="controls.html#uncontrolled-studies-are-unethical"><i class="fa fa-check"></i><b>6.3</b> Uncontrolled studies are unethical</a></li>
+<li class="chapter" data-level="6.4" data-path="controls.html"><a href="controls.html#treated-vs-untreated-controls"><i class="fa fa-check"></i><b>6.4</b> Treated vs untreated controls</a></li>
+<li class="chapter" data-level="6.5" data-path="controls.html"><a href="controls.html#classroom-exercise-1"><i class="fa fa-check"></i><b>6.5</b> Classroom exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="randomise.html"><a href="randomise.html"><i class="fa fa-check"></i><b>7</b> Controlling for selection bias: randomised assignment to intervention</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="randomise.html"><a href="randomise.html#randomization-methods"><i class="fa fa-check"></i><b>7.1</b> Randomization methods</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="randomise.html"><a href="randomise.html#simple-randomization"><i class="fa fa-check"></i><b>7.1.1</b> Simple randomization</a></li>
+<li class="chapter" data-level="7.1.2" data-path="randomise.html"><a href="randomise.html#random-permuted-blocks"><i class="fa fa-check"></i><b>7.1.2</b> Random permuted blocks</a></li>
+<li class="chapter" data-level="7.1.3" data-path="randomise.html"><a href="randomise.html#unequal-randomization"><i class="fa fa-check"></i><b>7.1.3</b> Unequal randomization</a></li>
+<li class="chapter" data-level="7.1.4" data-path="randomise.html"><a href="randomise.html#stratification"><i class="fa fa-check"></i><b>7.1.4</b> Stratification</a></li>
+<li class="chapter" data-level="7.1.5" data-path="randomise.html"><a href="randomise.html#adaptive-randomisation"><i class="fa fa-check"></i><b>7.1.5</b> Adaptive randomisation</a></li>
+<li class="chapter" data-level="7.1.6" data-path="randomise.html"><a href="randomise.html#minimization"><i class="fa fa-check"></i><b>7.1.6</b> Minimization</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="randomise.html"><a href="randomise.html#units-of-analysis-individuals-vs-clusters"><i class="fa fa-check"></i><b>7.2</b> Units of analysis: Individuals vs clusters</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="randomise.html"><a href="randomise.html#class-exercise-4"><i class="fa fa-check"></i><b>7.2.1</b> Class exercise</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="experimenter.html"><a href="experimenter.html"><i class="fa fa-check"></i><b>8</b> The experimenter as a source of bias</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="experimenter.html"><a href="experimenter.html#allocation-concealment"><i class="fa fa-check"></i><b>8.1</b> Allocation concealment</a></li>
+<li class="chapter" data-level="8.2" data-path="experimenter.html"><a href="experimenter.html#the-importance-of-masking-for-assessments"><i class="fa fa-check"></i><b>8.2</b> The importance of masking for assessments</a></li>
+<li class="chapter" data-level="8.3" data-path="experimenter.html"><a href="experimenter.html#conflict-of-interest"><i class="fa fa-check"></i><b>8.3</b> Conflict of interest</a></li>
+<li class="chapter" data-level="8.4" data-path="experimenter.html"><a href="experimenter.html#class-exercise-5"><i class="fa fa-check"></i><b>8.4</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="dropouts.html"><a href="dropouts.html"><i class="fa fa-check"></i><b>9</b> Further potential for bias: who drops out and who volunteers?</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="dropouts.html"><a href="dropouts.html#dealing-with-dropouts-intention-to-treat-analysis"><i class="fa fa-check"></i><b>9.1</b> Dealing with dropouts: Intention to treat analysis</a></li>
+<li class="chapter" data-level="9.2" data-path="dropouts.html"><a href="dropouts.html#who-volunteers-for-research"><i class="fa fa-check"></i><b>9.2</b> Who volunteers for research?</a></li>
+<li class="chapter" data-level="9.3" data-path="dropouts.html"><a href="dropouts.html#class-exercise-6"><i class="fa fa-check"></i><b>9.3</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="power.html"><a href="power.html"><i class="fa fa-check"></i><b>10</b> How big a sample do I need? Sampling, statistical power and type II errors</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="power.html"><a href="power.html#sampling"><i class="fa fa-check"></i><b>10.1</b> Sampling</a></li>
+<li class="chapter" data-level="10.2" data-path="power.html"><a href="power.html#effect-size"><i class="fa fa-check"></i><b>10.2</b> Effect size</a></li>
+<li class="chapter" data-level="10.3" data-path="power.html"><a href="power.html#sample-size-affects-accuracy-of-estimates"><i class="fa fa-check"></i><b>10.3</b> Sample size affects accuracy of estimates</a></li>
+<li class="chapter" data-level="10.4" data-path="power.html"><a href="power.html#understanding-p-values"><i class="fa fa-check"></i><b>10.4</b> Understanding p-values</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="power.html"><a href="power.html#type-ii-error"><i class="fa fa-check"></i><b>10.4.1</b> Type II error</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="power.html"><a href="power.html#statistical-power-and-beta"><i class="fa fa-check"></i><b>10.5</b> Statistical power and <span class="math inline">\(\beta\)</span></a></li>
+<li class="chapter" data-level="10.6" data-path="power.html"><a href="power.html#ways-to-improve-statistical-power"><i class="fa fa-check"></i><b>10.6</b> Ways to improve statistical power</a></li>
+<li class="chapter" data-level="10.7" data-path="power.html"><a href="power.html#class-exercises"><i class="fa fa-check"></i><b>10.7</b> Class Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="phacking.html"><a href="phacking.html"><i class="fa fa-check"></i><b>11</b> False positives, p-hacking and multiple comparisons</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="phacking.html"><a href="phacking.html#type-i-error"><i class="fa fa-check"></i><b>11.1</b> Type I error</a></li>
+<li class="chapter" data-level="11.2" data-path="phacking.html"><a href="phacking.html#reasons-for-false-positives"><i class="fa fa-check"></i><b>11.2</b> Reasons for false positives</a></li>
+<li class="chapter" data-level="11.3" data-path="phacking.html"><a href="phacking.html#adjusting-statistics-for-multiple-testing"><i class="fa fa-check"></i><b>11.3</b> Adjusting statistics for multiple testing</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="phacking.html"><a href="phacking.html#bonferroni-correction"><i class="fa fa-check"></i><b>11.3.1</b> Bonferroni Correction</a></li>
+<li class="chapter" data-level="11.3.2" data-path="phacking.html"><a href="phacking.html#meff"><i class="fa fa-check"></i><b>11.3.2</b> MEff</a></li>
+<li class="chapter" data-level="11.3.3" data-path="phacking.html"><a href="phacking.html#extracting-a-principal-component-from-a-set-of-measures"><i class="fa fa-check"></i><b>11.3.3</b> Extracting a principal component from a set of measures</a></li>
+<li class="chapter" data-level="11.3.4" data-path="phacking.html"><a href="phacking.html#improving-power-by-use-of-multiple-outcomes"><i class="fa fa-check"></i><b>11.3.4</b> Improving power by use of multiple outcomes</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="phacking.html"><a href="phacking.html#class-exercise-7"><i class="fa fa-check"></i><b>11.4</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="RCT.html"><a href="RCT.html"><i class="fa fa-check"></i><b>12</b> The randomised controlled trial as a method for controlling biases</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="RCT.html"><a href="RCT.html#statistical-analysis-of-a-rct"><i class="fa fa-check"></i><b>12.1</b> Statistical analysis of a RCT</a></li>
+<li class="chapter" data-level="12.2" data-path="RCT.html"><a href="RCT.html#steps-to-take-before-data-analysis"><i class="fa fa-check"></i><b>12.2</b> Steps to take before data analysis</a>
+<ul>
+<li class="chapter" data-level="12.2.1" data-path="RCT.html"><a href="RCT.html#sample-dataset-with-illustrative-analysis"><i class="fa fa-check"></i><b>12.2.1</b> Sample dataset with illustrative analysis</a></li>
+<li class="chapter" data-level="12.2.2" data-path="RCT.html"><a href="RCT.html#simple-t-test-on-outcome-data"><i class="fa fa-check"></i><b>12.2.2</b> Simple t-test on outcome data</a></li>
+<li class="chapter" data-level="12.2.3" data-path="RCT.html"><a href="RCT.html#t-test-on-difference-scores"><i class="fa fa-check"></i><b>12.2.3</b> T-test on difference scores</a></li>
+<li class="chapter" data-level="12.2.4" data-path="RCT.html"><a href="RCT.html#analysis-of-covariance-on-outcome-scores"><i class="fa fa-check"></i><b>12.2.4</b> Analysis of covariance on outcome scores</a></li>
+<li class="chapter" data-level="12.2.5" data-path="RCT.html"><a href="RCT.html#linear-mixed-models-lmm-approach"><i class="fa fa-check"></i><b>12.2.5</b> Linear mixed models (LMM) approach</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="RCT.html"><a href="RCT.html#class-exercise-8"><i class="fa fa-check"></i><b>12.3</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="drawbacks.html"><a href="drawbacks.html"><i class="fa fa-check"></i><b>13</b> Drawbacks of the two-arm RCT</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="drawbacks.html"><a href="drawbacks.html#inefficiency-need-for-unfeasibly-large-samples"><i class="fa fa-check"></i><b>13.1</b> Inefficiency: need for unfeasibly large samples</a></li>
+<li class="chapter" data-level="13.2" data-path="drawbacks.html"><a href="drawbacks.html#transfer-to-real-life-efficacy-and-effectiveness"><i class="fa fa-check"></i><b>13.2</b> Transfer to real life: efficacy and effectiveness</a></li>
+<li class="chapter" data-level="13.3" data-path="drawbacks.html"><a href="drawbacks.html#heterogeneity-and-personalised-intervention"><i class="fa fa-check"></i><b>13.3</b> Heterogeneity and personalised intervention</a></li>
+<li class="chapter" data-level="13.4" data-path="drawbacks.html"><a href="drawbacks.html#class-exercise-9"><i class="fa fa-check"></i><b>13.4</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="adaptive.html"><a href="adaptive.html"><i class="fa fa-check"></i><b>14</b> Adaptive Interventions</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="adaptive.html"><a href="adaptive.html#class-exercise-10"><i class="fa fa-check"></i><b>14.1</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="cluster.html"><a href="cluster.html"><i class="fa fa-check"></i><b>15</b> Cluster Randomised Control Trials</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="cluster.html"><a href="cluster.html#what-is-a-cluster-rct"><i class="fa fa-check"></i><b>15.1</b> What is a cluster RCT?</a></li>
+<li class="chapter" data-level="15.2" data-path="cluster.html"><a href="cluster.html#advantages-of-a-cluster-design"><i class="fa fa-check"></i><b>15.2</b> Advantages of a cluster design</a></li>
+<li class="chapter" data-level="15.3" data-path="cluster.html"><a href="cluster.html#disadvantages-of-a-cluster-design"><i class="fa fa-check"></i><b>15.3</b> Disadvantages of a cluster design</a></li>
+<li class="chapter" data-level="15.4" data-path="cluster.html"><a href="cluster.html#class-exercise-11"><i class="fa fa-check"></i><b>15.4</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="crossover.html"><a href="crossover.html"><i class="fa fa-check"></i><b>16</b> Cross-over designs</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="crossover.html"><a href="crossover.html#a-within-subjects-approach-to-the-rct"><i class="fa fa-check"></i><b>16.1</b> A within-subjects approach to the RCT</a>
+<ul>
+<li class="chapter" data-level="16.1.1" data-path="crossover.html"><a href="crossover.html#delayed-crossover-design-wait-list-controls"><i class="fa fa-check"></i><b>16.1.1</b> Delayed crossover design (Wait list controls)</a></li>
+</ul></li>
+<li class="chapter" data-level="16.2" data-path="crossover.html"><a href="crossover.html#class-exercise-12"><i class="fa fa-check"></i><b>16.2</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="Single.html"><a href="Single.html"><i class="fa fa-check"></i><b>17</b> Single case designs</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="Single.html"><a href="Single.html#logic-of-single-case-designs"><i class="fa fa-check"></i><b>17.1</b> Logic of single case designs</a>
+<ul>
+<li class="chapter" data-level="17.1.1" data-path="Single.html"><a href="Single.html#minimising-unwanted-variance"><i class="fa fa-check"></i><b>17.1.1</b> Minimising unwanted variance</a></li>
+<li class="chapter" data-level="17.1.2" data-path="Single.html"><a href="Single.html#minimising-systematic-bias"><i class="fa fa-check"></i><b>17.1.2</b> Minimising systematic bias</a></li>
+<li class="chapter" data-level="17.1.3" data-path="Single.html"><a href="Single.html#the-need-for-sufficient-data"><i class="fa fa-check"></i><b>17.1.3</b> The need for sufficient data</a></li>
+</ul></li>
+<li class="chapter" data-level="17.2" data-path="Single.html"><a href="Single.html#examples-of-studies-using-different-types-of-single-case-design"><i class="fa fa-check"></i><b>17.2</b> Examples of studies using different types of single case design</a>
+<ul>
+<li class="chapter" data-level="17.2.1" data-path="Single.html"><a href="Single.html#a-multiple-baseline-design-speech-and-language-therapy-for-adolescents-in-youth-justice."><i class="fa fa-check"></i><b>17.2.1</b> A multiple baseline design: Speech and language therapy for adolescents in youth justice.</a></li>
+<li class="chapter" data-level="17.2.2" data-path="Single.html"><a href="Single.html#a-study-using-multiple-baseline-across-behaviours-effectiveness-of-electropalatography"><i class="fa fa-check"></i><b>17.2.2</b> A study using multiple baseline across behaviours: Effectiveness of electropalatography</a></li>
+<li class="chapter" data-level="17.2.3" data-path="Single.html"><a href="Single.html#example-of-an-analysis-of-case-series-data"><i class="fa fa-check"></i><b>17.2.3</b> Example of an analysis of case series data</a></li>
+<li class="chapter" data-level="17.2.4" data-path="Single.html"><a href="Single.html#combining-approaches-to-strengthen-study-design"><i class="fa fa-check"></i><b>17.2.4</b> Combining approaches to strengthen study design</a></li>
+</ul></li>
+<li class="chapter" data-level="17.3" data-path="Single.html"><a href="Single.html#statistical-approaches-to-single-case-designs"><i class="fa fa-check"></i><b>17.3</b> Statistical approaches to single case designs</a></li>
+<li class="chapter" data-level="17.4" data-path="Single.html"><a href="Single.html#overview-of-considerations-for-single-case-designs"><i class="fa fa-check"></i><b>17.4</b> Overview of considerations for single case designs</a></li>
+<li class="chapter" data-level="17.5" data-path="Single.html"><a href="Single.html#class-exercise-13"><i class="fa fa-check"></i><b>17.5</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="pubbias.html"><a href="pubbias.html"><i class="fa fa-check"></i><b>18</b> Can you trust the published literature?</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="pubbias.html"><a href="pubbias.html#publication-bias"><i class="fa fa-check"></i><b>18.1</b> Publication bias</a>
+<ul>
+<li class="chapter" data-level="18.1.1" data-path="pubbias.html"><a href="pubbias.html#citation-bias"><i class="fa fa-check"></i><b>18.1.1</b> Citation bias</a></li>
+<li class="chapter" data-level="18.1.2" data-path="pubbias.html"><a href="pubbias.html#counteracting-publication-and-citation-biases"><i class="fa fa-check"></i><b>18.1.2</b> Counteracting publication and citation biases</a></li>
+<li class="chapter" data-level="18.1.3" data-path="pubbias.html"><a href="pubbias.html#class-exercise-14"><i class="fa fa-check"></i><b>18.1.3</b> Class exercise</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="prereg.html"><a href="prereg.html"><i class="fa fa-check"></i><b>19</b> Pre-registration and Registered Reports</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="prereg.html"><a href="prereg.html#study-registration"><i class="fa fa-check"></i><b>19.1</b> Study registration</a></li>
+<li class="chapter" data-level="19.2" data-path="prereg.html"><a href="prereg.html#registered-reports"><i class="fa fa-check"></i><b>19.2</b> Registered Reports</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="litrev.html"><a href="litrev.html"><i class="fa fa-check"></i><b>20</b> Reviewing the literature before you start</a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="litrev.html"><a href="litrev.html#what-is-a-systematic-review"><i class="fa fa-check"></i><b>20.1</b> What is a systematic review?</a></li>
+<li class="chapter" data-level="20.2" data-path="litrev.html"><a href="litrev.html#steps-in-the-literature-review"><i class="fa fa-check"></i><b>20.2</b> Steps in the literature review</a>
+<ul>
+<li class="chapter" data-level="20.2.1" data-path="litrev.html"><a href="litrev.html#define-an-appropriate-question"><i class="fa fa-check"></i><b>20.2.1</b> Define an appropriate question</a></li>
+<li class="chapter" data-level="20.2.2" data-path="litrev.html"><a href="litrev.html#specify-criteria-for-a-literature-search"><i class="fa fa-check"></i><b>20.2.2</b> Specify criteria for a literature search</a></li>
+<li class="chapter" data-level="20.2.3" data-path="litrev.html"><a href="litrev.html#select-eligible-studies-following-protocols-inclusion-criteria"><i class="fa fa-check"></i><b>20.2.3</b> Select eligible studies following protocol’s inclusion criteria</a></li>
+<li class="chapter" data-level="20.2.4" data-path="litrev.html"><a href="litrev.html#assess-the-quality-of-each-study-included"><i class="fa fa-check"></i><b>20.2.4</b> Assess the quality of each study included</a></li>
+<li class="chapter" data-level="20.2.5" data-path="litrev.html"><a href="litrev.html#organise-summarise-and-unbiasedly-present-the-findings-from-all-included-studies"><i class="fa fa-check"></i><b>20.2.5</b> Organise, summarise, and unbiasedly present the findings from all included studies</a></li>
+</ul></li>
+<li class="chapter" data-level="20.3" data-path="litrev.html"><a href="litrev.html#systematic-review-or-literature-review"><i class="fa fa-check"></i><b>20.3</b> Systematic review or literature review?</a></li>
+<li class="chapter" data-level="20.4" data-path="litrev.html"><a href="litrev.html#class-exercise-15"><i class="fa fa-check"></i><b>20.4</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="protocol.html"><a href="protocol.html"><i class="fa fa-check"></i><b>21</b> A template for a research protocol</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Evaluating what works</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="adaptive" class="section level1 hasAnchor" number="14">
+<h1><span class="header-section-number">Chapter 14</span> Adaptive Interventions<a href="adaptive.html#adaptive" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><img src="images/logo_alone_new.png" width="143" /></p>
+<!-- possibly relevant: 
+https://pubs.asha.org/doi/full/10.1044/2018_JSLHR-L-RSAUT-18-0029?url_ver=Z39.88-2003&rfr_id=ori%3Arid%3Acrossref.org&rfr_dat=cr_pub++0pubmed
+https://ies.ed.gov/ncser/pubs/2020001/pdf/2020001.pdf
+https://academy.pubs.asha.org/2013/11/need-for-adaptive-research-designs-in-speech-language-pathology/
+https://www.youtube.com/watch?v=ythfdGd63hU
+
+-->
+<p>Suppose we have two potential school-based reading interventions for dyslexic children, one computer game that trains sight word recognition and one phonics-based. The lead researcher wishes to test both interventions but has limitations on funding, so can only run one trial rather than two independent trials. The researcher also has some idea that the phonics-based intervention is more likely to be effective than the other. There is a substantial body of literature highlighting significant effect of the phonics intervention but in younger typically developing children, whereas the computer game intervention is novel and relatively untested.</p>
+<p>A trial design is proposed that allows both interventions to be run in parallel with the addition of a control group for reference (who receive usual planned teaching); this is known as a three-arm trial (two interventions and a control). The researcher now has a further design decision to make, whether to use a traditional fixed design or an adaptive trial.</p>
+<p>A traditional randomised control trial (without adaption) requires that data are not analysed or “looked at” before data collection is completed. Sample size is calculated to ensure a well powered study given certain assumptions about effect size of interest, type I error rate and power required. The analysis is performed after data collection is complete and results reported. In contrast, the adaptive trial method has the benefit that the intervention can be assessed at multiple points during the recruitment phase of the trial without biasing the results; hence we can make certain adjustments in light of this information.</p>
+<p>If we return to our three-arm trial for reading interventions. The researcher has started data collection and has gathered some initial teacher feedback that the novel computer game intervention seems to be hampering progress in those individuals. In a traditional trial there would be no other course of action but to let the trial run its course and evaluate as planned. This might lead to the computer intervention showing poor results or even having a negative impact on those children, confirming the teacher’s concerns. Alternatively, if the researcher had chosen an adaptive design the teacher’s observations could have been assessed part way through the trial and the computer based intervention dropped from the study if interim analyses showed a negative impact of the intervention. As a consequence, the remaining individuals could change onto the phonics based intervention if the interim analyses showed positive results.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:adaptiveflow"></span>
+<img src="images/flow_16_1.png" alt="Flow diagram of adaptive trial" width="50%" />
+<p class="caption">
+Figure 14.1: Flow diagram of adaptive trial
+</p>
+</div>
+<p>The adaptive design, as the name suggests, allows for modifications to certain aspects of the design as the trial progresses (see Figure <a href="adaptive.html#fig:adaptiveflow">14.1</a>, taken from <span class="citation">Pallmann et al. (<a href="#ref-pallmann2018">2018</a>)</span>). Interim analyses are used to assess whether modifications are required. These pre-planned assessments can be used to make several pre-specified changes, if required. Figure <a href="adaptive.html#fig:adaptivegif">14.2</a> <span class="citation">(from <a href="#ref-thorlund2018">Thorlund et al. 2018</a>)</span> shows some of the commonly used adaptive trial designs, others include: changing the amount or frequency of intervention received, and stopping intervention early if not effective or adverse effects observed.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:adaptivegif"></span>
+<img src="images/adaptive_designs.gif" alt="Commonly used adaptive designs" width="90%" />
+<p class="caption">
+Figure 14.2: Commonly used adaptive designs
+</p>
+</div>
+<div id="class-exercise-10" class="section level2 hasAnchor" number="14.1">
+<h2><span class="header-section-number">14.1</span> Class exercise<a href="adaptive.html#class-exercise-10" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A presentation by <span class="citation">Ludlow (<a href="#ref-ludlow2013">2013</a>)</span> noted the potential of adaptive designs in speech and language therapy. She noted that most trials of swallowing therapies used a similar schedule, regardless of the type of therapy: in hospital, the patient was seen 1 hour a day for 10 days, giving a total exposure of 10 hours. Alternatively, some outpatient clinics would have patients coming in for one hour per week, for 2-4 weeks. Ludlow suggested that before embarking on a large and costly RCT it would make sense to do adaptive trials to find out what was the optimal schedule.<br />
+Suppose you had access to 30 patients who were willing to participate in a clinical trial of swallowing therapy. You decide it’s worth using an adaptive design to find out optimal conditions for treatment before embarking on a larger trial. You have the potential to vary the intensity of intervention (how many sessions per day or week), and the total number of sessions. Assuming you had the resources to try any combination of these, consider how you might proceed to home in on the optimal combination.</p>
+<!--
+## More niche trial designs
+
+### Just-in-Time adaptive interventions (JITAI)
+
+### Micro-Randomized Trials (MRT)
+
+### Sequential, Multiple Assignment, Randomized Trial (SMART)
+- A review of this approach in the field of autism is provided by @
+Kasari, C., Sturm, A., & Shih, W. (2018). SMARTer Approach to Personalizing Intervention for Children With Autism Spectrum Disorder. Journal of Speech, Language, and Hearing Research, 61(11), 2629–2640. https://doi.org/10.1044/2018_JSLHR-L-RSAUT-18-0029
+
+- more general review for education:
+Nahum-Shani, I., Almirall, D., & Buckley, J. (2019). An Introduction to Adaptive Interventions and SMART Designs in Education (p. 45). US Department of Education: Institute of Education Sciences.
+
+The Nahum-Shani is a v useful introduction, but I do worry that this approach does just divide people into 'responders' and 'nonresponders' in exactly the way we argued against in chapter 1! - ie assuming measures are perfectly reliable and so can be validly used to subdivide cases.
+
+DB - I think we can either just have a custom block listing these, explaining in one sentence what they are good for, and adding links to places where they are explained, or omit - but I don't know about them so if they could be useful for SLTs we could expan
+-->
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-ludlow2013" class="csl-entry">
+Ludlow, C. 2013. <span>“Need for <span>Adaptive Research Designs</span> in <span>Speech-Language Pathology</span>.”</span> <em>ASHA Journals Academy</em>. https://academy.pubs.asha.org/2013/11/need-for-adaptive-research-designs-in-speech-language-pathology/.
+</div>
+<div id="ref-pallmann2018" class="csl-entry">
+Pallmann, Philip, Alun W. Bedding, Babak Choodari-Oskooei, Munyaradzi Dimairo, Laura Flight, Lisa V. Hampson, Jane Holmes, et al. 2018. <span>“Adaptive Designs in Clinical Trials: Why Use Them, and How to Run and Report Them.”</span> <em>BMC Medicine</em> 16 (1): 29. <a href="https://doi.org/10.1186/s12916-018-1017-7">https://doi.org/10.1186/s12916-018-1017-7</a>.
+</div>
+<div id="ref-thorlund2018" class="csl-entry">
+Thorlund, Kristian, Jonas Haggstrom, Jay JH Park, and Edward J. Mills. 2018. <span>“Key Design Considerations for Adaptive Clinical Trials: A Primer for Clinicians.”</span> <em>BMJ</em> 360 (March): k698. <a href="https://doi.org/10.1136/bmj.k698">https://doi.org/10.1136/bmj.k698</a>.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="drawbacks.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="cluster.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Intervention_bookdown2.pdf", "Intervention_bookdown2.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

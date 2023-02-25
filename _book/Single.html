@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 17 Single case designs | Evaluating what works</title>
+  <meta name="description" content="Introduction to methods for evaluating effectiveness of non-medical interventions" />
+  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 17 Single case designs | Evaluating what works" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Introduction to methods for evaluating effectiveness of non-medical interventions" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 17 Single case designs | Evaluating what works" />
+  
+  <meta name="twitter:description" content="Introduction to methods for evaluating effectiveness of non-medical interventions" />
+  
+
+<meta name="author" content="Dorothy V M Bishop and Paul A Thompson" />
+
+
+<meta name="date" content="2023-02-25" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="crossover.html"/>
+<link rel="next" href="pubbias.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
+<link href="libs/tabwid-1.0.0/tabwid.css" rel="stylesheet" />
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#why-did-we-write-this-book"><i class="fa fa-check"></i>Why did we write this book?</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#who-is-this-book-for"><i class="fa fa-check"></i>Who is this book for?</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#what-is-covered"><i class="fa fa-check"></i>What is covered?</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#feedback-and-contributions"><i class="fa fa-check"></i>Feedback and contributions</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#how-can-we-know-if-weve-made-a-difference"><i class="fa fa-check"></i><b>1.1</b> How can we know if we’ve made a difference?</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#the-randomness-of-everything"><i class="fa fa-check"></i><b>1.2</b> The randomness of everything</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#systematic-bias"><i class="fa fa-check"></i><b>1.3</b> Systematic bias</a></li>
+<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#class-exercise"><i class="fa fa-check"></i><b>1.4</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="observations.html"><a href="observations.html"><i class="fa fa-check"></i><b>2</b> Why clinical observations can be misleading</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="observations.html"><a href="observations.html#class-exercise-1"><i class="fa fa-check"></i><b>2.1</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="reliability.html"><a href="reliability.html"><i class="fa fa-check"></i><b>3</b> How to select an outcome measure</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="reliability.html"><a href="reliability.html#reliability-1"><i class="fa fa-check"></i><b>3.1</b> Reliability</a></li>
+<li class="chapter" data-level="3.2" data-path="reliability.html"><a href="reliability.html#validity"><i class="fa fa-check"></i><b>3.2</b> Validity</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="reliability.html"><a href="reliability.html#cultural-factors"><i class="fa fa-check"></i><b>3.2.1</b> Cultural factors</a></li>
+<li class="chapter" data-level="3.2.2" data-path="reliability.html"><a href="reliability.html#generalisability-of-results-to-other-outcomes-the-concepts-of-far-and-near-transfer"><i class="fa fa-check"></i><b>3.2.2</b> Generalisability of results to other outcomes: the concepts of far and near transfer</a></li>
+<li class="chapter" data-level="3.2.3" data-path="reliability.html"><a href="reliability.html#functional-outcomes-vs-test-scores"><i class="fa fa-check"></i><b>3.2.3</b> Functional outcomes vs test scores</a></li>
+<li class="chapter" data-level="3.2.4" data-path="reliability.html"><a href="reliability.html#subjectivity-as-a-threat-to-validity"><i class="fa fa-check"></i><b>3.2.4</b> Subjectivity as a threat to validity</a></li>
+<li class="chapter" data-level="3.2.5" data-path="reliability.html"><a href="reliability.html#correlations-with-other-measures"><i class="fa fa-check"></i><b>3.2.5</b> Correlations with other measures</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="reliability.html"><a href="reliability.html#normative-data"><i class="fa fa-check"></i><b>3.3</b> Normative data</a></li>
+<li class="chapter" data-level="3.4" data-path="reliability.html"><a href="reliability.html#sensitivity"><i class="fa fa-check"></i><b>3.4</b> Sensitivity</a></li>
+<li class="chapter" data-level="3.5" data-path="reliability.html"><a href="reliability.html#is-it-practical"><i class="fa fa-check"></i><b>3.5</b> Is it practical?</a></li>
+<li class="chapter" data-level="3.6" data-path="reliability.html"><a href="reliability.html#class-exercise-2"><i class="fa fa-check"></i><b>3.6</b> Class exercise</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="reliability.html"><a href="reliability.html#mean-length-of-utterance"><i class="fa fa-check"></i><b>3.6.1</b> Mean Length of Utterance</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="nonspecific.html"><a href="nonspecific.html"><i class="fa fa-check"></i><b>4</b> Improvement due to nonspecific effects of intervention</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="nonspecific.html"><a href="nonspecific.html#placebo-effects"><i class="fa fa-check"></i><b>4.1</b> Placebo effects</a></li>
+<li class="chapter" data-level="4.2" data-path="nonspecific.html"><a href="nonspecific.html#identifying-specific-intervention-effects-by-measures-of-mechanism"><i class="fa fa-check"></i><b>4.2</b> Identifying specific intervention effects by measures of mechanism</a></li>
+<li class="chapter" data-level="4.3" data-path="nonspecific.html"><a href="nonspecific.html#classroom-exercise"><i class="fa fa-check"></i><b>4.3</b> Classroom exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="prepost.html"><a href="prepost.html"><i class="fa fa-check"></i><b>5</b> Limitations of the pre-post design: biases related to systematic change</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="prepost.html"><a href="prepost.html#spontaneous-improvement"><i class="fa fa-check"></i><b>5.1</b> Spontaneous improvement</a></li>
+<li class="chapter" data-level="5.2" data-path="prepost.html"><a href="prepost.html#practice-effects"><i class="fa fa-check"></i><b>5.2</b> Practice effects</a></li>
+<li class="chapter" data-level="5.3" data-path="prepost.html"><a href="prepost.html#regression-to-the-mean"><i class="fa fa-check"></i><b>5.3</b> Regression to the mean</a></li>
+<li class="chapter" data-level="5.4" data-path="prepost.html"><a href="prepost.html#class-exercise-3"><i class="fa fa-check"></i><b>5.4</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="controls.html"><a href="controls.html"><i class="fa fa-check"></i><b>6</b> Controlling unwanted effects with a control group</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="controls.html"><a href="controls.html#is-it-ethical-to-include-a-control-group"><i class="fa fa-check"></i><b>6.1</b> Is it ethical to include a control group?</a></li>
+<li class="chapter" data-level="6.2" data-path="controls.html"><a href="controls.html#possible-adverse-effects-of-intervention"><i class="fa fa-check"></i><b>6.2</b> Possible adverse effects of intervention</a></li>
+<li class="chapter" data-level="6.3" data-path="controls.html"><a href="controls.html#uncontrolled-studies-are-unethical"><i class="fa fa-check"></i><b>6.3</b> Uncontrolled studies are unethical</a></li>
+<li class="chapter" data-level="6.4" data-path="controls.html"><a href="controls.html#treated-vs-untreated-controls"><i class="fa fa-check"></i><b>6.4</b> Treated vs untreated controls</a></li>
+<li class="chapter" data-level="6.5" data-path="controls.html"><a href="controls.html#classroom-exercise-1"><i class="fa fa-check"></i><b>6.5</b> Classroom exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="randomise.html"><a href="randomise.html"><i class="fa fa-check"></i><b>7</b> Controlling for selection bias: randomised assignment to intervention</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="randomise.html"><a href="randomise.html#randomization-methods"><i class="fa fa-check"></i><b>7.1</b> Randomization methods</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="randomise.html"><a href="randomise.html#simple-randomization"><i class="fa fa-check"></i><b>7.1.1</b> Simple randomization</a></li>
+<li class="chapter" data-level="7.1.2" data-path="randomise.html"><a href="randomise.html#random-permuted-blocks"><i class="fa fa-check"></i><b>7.1.2</b> Random permuted blocks</a></li>
+<li class="chapter" data-level="7.1.3" data-path="randomise.html"><a href="randomise.html#unequal-randomization"><i class="fa fa-check"></i><b>7.1.3</b> Unequal randomization</a></li>
+<li class="chapter" data-level="7.1.4" data-path="randomise.html"><a href="randomise.html#stratification"><i class="fa fa-check"></i><b>7.1.4</b> Stratification</a></li>
+<li class="chapter" data-level="7.1.5" data-path="randomise.html"><a href="randomise.html#adaptive-randomisation"><i class="fa fa-check"></i><b>7.1.5</b> Adaptive randomisation</a></li>
+<li class="chapter" data-level="7.1.6" data-path="randomise.html"><a href="randomise.html#minimization"><i class="fa fa-check"></i><b>7.1.6</b> Minimization</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="randomise.html"><a href="randomise.html#units-of-analysis-individuals-vs-clusters"><i class="fa fa-check"></i><b>7.2</b> Units of analysis: Individuals vs clusters</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="randomise.html"><a href="randomise.html#class-exercise-4"><i class="fa fa-check"></i><b>7.2.1</b> Class exercise</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="experimenter.html"><a href="experimenter.html"><i class="fa fa-check"></i><b>8</b> The experimenter as a source of bias</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="experimenter.html"><a href="experimenter.html#allocation-concealment"><i class="fa fa-check"></i><b>8.1</b> Allocation concealment</a></li>
+<li class="chapter" data-level="8.2" data-path="experimenter.html"><a href="experimenter.html#the-importance-of-masking-for-assessments"><i class="fa fa-check"></i><b>8.2</b> The importance of masking for assessments</a></li>
+<li class="chapter" data-level="8.3" data-path="experimenter.html"><a href="experimenter.html#conflict-of-interest"><i class="fa fa-check"></i><b>8.3</b> Conflict of interest</a></li>
+<li class="chapter" data-level="8.4" data-path="experimenter.html"><a href="experimenter.html#class-exercise-5"><i class="fa fa-check"></i><b>8.4</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="dropouts.html"><a href="dropouts.html"><i class="fa fa-check"></i><b>9</b> Further potential for bias: who drops out and who volunteers?</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="dropouts.html"><a href="dropouts.html#dealing-with-dropouts-intention-to-treat-analysis"><i class="fa fa-check"></i><b>9.1</b> Dealing with dropouts: Intention to treat analysis</a></li>
+<li class="chapter" data-level="9.2" data-path="dropouts.html"><a href="dropouts.html#who-volunteers-for-research"><i class="fa fa-check"></i><b>9.2</b> Who volunteers for research?</a></li>
+<li class="chapter" data-level="9.3" data-path="dropouts.html"><a href="dropouts.html#class-exercise-6"><i class="fa fa-check"></i><b>9.3</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="power.html"><a href="power.html"><i class="fa fa-check"></i><b>10</b> How big a sample do I need? Sampling, statistical power and type II errors</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="power.html"><a href="power.html#sampling"><i class="fa fa-check"></i><b>10.1</b> Sampling</a></li>
+<li class="chapter" data-level="10.2" data-path="power.html"><a href="power.html#effect-size"><i class="fa fa-check"></i><b>10.2</b> Effect size</a></li>
+<li class="chapter" data-level="10.3" data-path="power.html"><a href="power.html#sample-size-affects-accuracy-of-estimates"><i class="fa fa-check"></i><b>10.3</b> Sample size affects accuracy of estimates</a></li>
+<li class="chapter" data-level="10.4" data-path="power.html"><a href="power.html#understanding-p-values"><i class="fa fa-check"></i><b>10.4</b> Understanding p-values</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="power.html"><a href="power.html#type-ii-error"><i class="fa fa-check"></i><b>10.4.1</b> Type II error</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="power.html"><a href="power.html#statistical-power-and-beta"><i class="fa fa-check"></i><b>10.5</b> Statistical power and <span class="math inline">\(\beta\)</span></a></li>
+<li class="chapter" data-level="10.6" data-path="power.html"><a href="power.html#ways-to-improve-statistical-power"><i class="fa fa-check"></i><b>10.6</b> Ways to improve statistical power</a></li>
+<li class="chapter" data-level="10.7" data-path="power.html"><a href="power.html#class-exercises"><i class="fa fa-check"></i><b>10.7</b> Class Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="phacking.html"><a href="phacking.html"><i class="fa fa-check"></i><b>11</b> False positives, p-hacking and multiple comparisons</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="phacking.html"><a href="phacking.html#type-i-error"><i class="fa fa-check"></i><b>11.1</b> Type I error</a></li>
+<li class="chapter" data-level="11.2" data-path="phacking.html"><a href="phacking.html#reasons-for-false-positives"><i class="fa fa-check"></i><b>11.2</b> Reasons for false positives</a></li>
+<li class="chapter" data-level="11.3" data-path="phacking.html"><a href="phacking.html#adjusting-statistics-for-multiple-testing"><i class="fa fa-check"></i><b>11.3</b> Adjusting statistics for multiple testing</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="phacking.html"><a href="phacking.html#bonferroni-correction"><i class="fa fa-check"></i><b>11.3.1</b> Bonferroni Correction</a></li>
+<li class="chapter" data-level="11.3.2" data-path="phacking.html"><a href="phacking.html#meff"><i class="fa fa-check"></i><b>11.3.2</b> MEff</a></li>
+<li class="chapter" data-level="11.3.3" data-path="phacking.html"><a href="phacking.html#extracting-a-principal-component-from-a-set-of-measures"><i class="fa fa-check"></i><b>11.3.3</b> Extracting a principal component from a set of measures</a></li>
+<li class="chapter" data-level="11.3.4" data-path="phacking.html"><a href="phacking.html#improving-power-by-use-of-multiple-outcomes"><i class="fa fa-check"></i><b>11.3.4</b> Improving power by use of multiple outcomes</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="phacking.html"><a href="phacking.html#class-exercise-7"><i class="fa fa-check"></i><b>11.4</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="RCT.html"><a href="RCT.html"><i class="fa fa-check"></i><b>12</b> The randomised controlled trial as a method for controlling biases</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="RCT.html"><a href="RCT.html#statistical-analysis-of-a-rct"><i class="fa fa-check"></i><b>12.1</b> Statistical analysis of a RCT</a></li>
+<li class="chapter" data-level="12.2" data-path="RCT.html"><a href="RCT.html#steps-to-take-before-data-analysis"><i class="fa fa-check"></i><b>12.2</b> Steps to take before data analysis</a>
+<ul>
+<li class="chapter" data-level="12.2.1" data-path="RCT.html"><a href="RCT.html#sample-dataset-with-illustrative-analysis"><i class="fa fa-check"></i><b>12.2.1</b> Sample dataset with illustrative analysis</a></li>
+<li class="chapter" data-level="12.2.2" data-path="RCT.html"><a href="RCT.html#simple-t-test-on-outcome-data"><i class="fa fa-check"></i><b>12.2.2</b> Simple t-test on outcome data</a></li>
+<li class="chapter" data-level="12.2.3" data-path="RCT.html"><a href="RCT.html#t-test-on-difference-scores"><i class="fa fa-check"></i><b>12.2.3</b> T-test on difference scores</a></li>
+<li class="chapter" data-level="12.2.4" data-path="RCT.html"><a href="RCT.html#analysis-of-covariance-on-outcome-scores"><i class="fa fa-check"></i><b>12.2.4</b> Analysis of covariance on outcome scores</a></li>
+<li class="chapter" data-level="12.2.5" data-path="RCT.html"><a href="RCT.html#linear-mixed-models-lmm-approach"><i class="fa fa-check"></i><b>12.2.5</b> Linear mixed models (LMM) approach</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="RCT.html"><a href="RCT.html#class-exercise-8"><i class="fa fa-check"></i><b>12.3</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="drawbacks.html"><a href="drawbacks.html"><i class="fa fa-check"></i><b>13</b> Drawbacks of the two-arm RCT</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="drawbacks.html"><a href="drawbacks.html#inefficiency-need-for-unfeasibly-large-samples"><i class="fa fa-check"></i><b>13.1</b> Inefficiency: need for unfeasibly large samples</a></li>
+<li class="chapter" data-level="13.2" data-path="drawbacks.html"><a href="drawbacks.html#transfer-to-real-life-efficacy-and-effectiveness"><i class="fa fa-check"></i><b>13.2</b> Transfer to real life: efficacy and effectiveness</a></li>
+<li class="chapter" data-level="13.3" data-path="drawbacks.html"><a href="drawbacks.html#heterogeneity-and-personalised-intervention"><i class="fa fa-check"></i><b>13.3</b> Heterogeneity and personalised intervention</a></li>
+<li class="chapter" data-level="13.4" data-path="drawbacks.html"><a href="drawbacks.html#class-exercise-9"><i class="fa fa-check"></i><b>13.4</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="adaptive.html"><a href="adaptive.html"><i class="fa fa-check"></i><b>14</b> Adaptive Interventions</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="adaptive.html"><a href="adaptive.html#class-exercise-10"><i class="fa fa-check"></i><b>14.1</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="cluster.html"><a href="cluster.html"><i class="fa fa-check"></i><b>15</b> Cluster Randomised Control Trials</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="cluster.html"><a href="cluster.html#what-is-a-cluster-rct"><i class="fa fa-check"></i><b>15.1</b> What is a cluster RCT?</a></li>
+<li class="chapter" data-level="15.2" data-path="cluster.html"><a href="cluster.html#advantages-of-a-cluster-design"><i class="fa fa-check"></i><b>15.2</b> Advantages of a cluster design</a></li>
+<li class="chapter" data-level="15.3" data-path="cluster.html"><a href="cluster.html#disadvantages-of-a-cluster-design"><i class="fa fa-check"></i><b>15.3</b> Disadvantages of a cluster design</a></li>
+<li class="chapter" data-level="15.4" data-path="cluster.html"><a href="cluster.html#class-exercise-11"><i class="fa fa-check"></i><b>15.4</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="crossover.html"><a href="crossover.html"><i class="fa fa-check"></i><b>16</b> Cross-over designs</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="crossover.html"><a href="crossover.html#a-within-subjects-approach-to-the-rct"><i class="fa fa-check"></i><b>16.1</b> A within-subjects approach to the RCT</a>
+<ul>
+<li class="chapter" data-level="16.1.1" data-path="crossover.html"><a href="crossover.html#delayed-crossover-design-wait-list-controls"><i class="fa fa-check"></i><b>16.1.1</b> Delayed crossover design (Wait list controls)</a></li>
+</ul></li>
+<li class="chapter" data-level="16.2" data-path="crossover.html"><a href="crossover.html#class-exercise-12"><i class="fa fa-check"></i><b>16.2</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="Single.html"><a href="Single.html"><i class="fa fa-check"></i><b>17</b> Single case designs</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="Single.html"><a href="Single.html#logic-of-single-case-designs"><i class="fa fa-check"></i><b>17.1</b> Logic of single case designs</a>
+<ul>
+<li class="chapter" data-level="17.1.1" data-path="Single.html"><a href="Single.html#minimising-unwanted-variance"><i class="fa fa-check"></i><b>17.1.1</b> Minimising unwanted variance</a></li>
+<li class="chapter" data-level="17.1.2" data-path="Single.html"><a href="Single.html#minimising-systematic-bias"><i class="fa fa-check"></i><b>17.1.2</b> Minimising systematic bias</a></li>
+<li class="chapter" data-level="17.1.3" data-path="Single.html"><a href="Single.html#the-need-for-sufficient-data"><i class="fa fa-check"></i><b>17.1.3</b> The need for sufficient data</a></li>
+</ul></li>
+<li class="chapter" data-level="17.2" data-path="Single.html"><a href="Single.html#examples-of-studies-using-different-types-of-single-case-design"><i class="fa fa-check"></i><b>17.2</b> Examples of studies using different types of single case design</a>
+<ul>
+<li class="chapter" data-level="17.2.1" data-path="Single.html"><a href="Single.html#a-multiple-baseline-design-speech-and-language-therapy-for-adolescents-in-youth-justice."><i class="fa fa-check"></i><b>17.2.1</b> A multiple baseline design: Speech and language therapy for adolescents in youth justice.</a></li>
+<li class="chapter" data-level="17.2.2" data-path="Single.html"><a href="Single.html#a-study-using-multiple-baseline-across-behaviours-effectiveness-of-electropalatography"><i class="fa fa-check"></i><b>17.2.2</b> A study using multiple baseline across behaviours: Effectiveness of electropalatography</a></li>
+<li class="chapter" data-level="17.2.3" data-path="Single.html"><a href="Single.html#example-of-an-analysis-of-case-series-data"><i class="fa fa-check"></i><b>17.2.3</b> Example of an analysis of case series data</a></li>
+<li class="chapter" data-level="17.2.4" data-path="Single.html"><a href="Single.html#combining-approaches-to-strengthen-study-design"><i class="fa fa-check"></i><b>17.2.4</b> Combining approaches to strengthen study design</a></li>
+</ul></li>
+<li class="chapter" data-level="17.3" data-path="Single.html"><a href="Single.html#statistical-approaches-to-single-case-designs"><i class="fa fa-check"></i><b>17.3</b> Statistical approaches to single case designs</a></li>
+<li class="chapter" data-level="17.4" data-path="Single.html"><a href="Single.html#overview-of-considerations-for-single-case-designs"><i class="fa fa-check"></i><b>17.4</b> Overview of considerations for single case designs</a></li>
+<li class="chapter" data-level="17.5" data-path="Single.html"><a href="Single.html#class-exercise-13"><i class="fa fa-check"></i><b>17.5</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="pubbias.html"><a href="pubbias.html"><i class="fa fa-check"></i><b>18</b> Can you trust the published literature?</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="pubbias.html"><a href="pubbias.html#publication-bias"><i class="fa fa-check"></i><b>18.1</b> Publication bias</a>
+<ul>
+<li class="chapter" data-level="18.1.1" data-path="pubbias.html"><a href="pubbias.html#citation-bias"><i class="fa fa-check"></i><b>18.1.1</b> Citation bias</a></li>
+<li class="chapter" data-level="18.1.2" data-path="pubbias.html"><a href="pubbias.html#counteracting-publication-and-citation-biases"><i class="fa fa-check"></i><b>18.1.2</b> Counteracting publication and citation biases</a></li>
+<li class="chapter" data-level="18.1.3" data-path="pubbias.html"><a href="pubbias.html#class-exercise-14"><i class="fa fa-check"></i><b>18.1.3</b> Class exercise</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="prereg.html"><a href="prereg.html"><i class="fa fa-check"></i><b>19</b> Pre-registration and Registered Reports</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="prereg.html"><a href="prereg.html#study-registration"><i class="fa fa-check"></i><b>19.1</b> Study registration</a></li>
+<li class="chapter" data-level="19.2" data-path="prereg.html"><a href="prereg.html#registered-reports"><i class="fa fa-check"></i><b>19.2</b> Registered Reports</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="litrev.html"><a href="litrev.html"><i class="fa fa-check"></i><b>20</b> Reviewing the literature before you start</a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="litrev.html"><a href="litrev.html#what-is-a-systematic-review"><i class="fa fa-check"></i><b>20.1</b> What is a systematic review?</a></li>
+<li class="chapter" data-level="20.2" data-path="litrev.html"><a href="litrev.html#steps-in-the-literature-review"><i class="fa fa-check"></i><b>20.2</b> Steps in the literature review</a>
+<ul>
+<li class="chapter" data-level="20.2.1" data-path="litrev.html"><a href="litrev.html#define-an-appropriate-question"><i class="fa fa-check"></i><b>20.2.1</b> Define an appropriate question</a></li>
+<li class="chapter" data-level="20.2.2" data-path="litrev.html"><a href="litrev.html#specify-criteria-for-a-literature-search"><i class="fa fa-check"></i><b>20.2.2</b> Specify criteria for a literature search</a></li>
+<li class="chapter" data-level="20.2.3" data-path="litrev.html"><a href="litrev.html#select-eligible-studies-following-protocols-inclusion-criteria"><i class="fa fa-check"></i><b>20.2.3</b> Select eligible studies following protocol’s inclusion criteria</a></li>
+<li class="chapter" data-level="20.2.4" data-path="litrev.html"><a href="litrev.html#assess-the-quality-of-each-study-included"><i class="fa fa-check"></i><b>20.2.4</b> Assess the quality of each study included</a></li>
+<li class="chapter" data-level="20.2.5" data-path="litrev.html"><a href="litrev.html#organise-summarise-and-unbiasedly-present-the-findings-from-all-included-studies"><i class="fa fa-check"></i><b>20.2.5</b> Organise, summarise, and unbiasedly present the findings from all included studies</a></li>
+</ul></li>
+<li class="chapter" data-level="20.3" data-path="litrev.html"><a href="litrev.html#systematic-review-or-literature-review"><i class="fa fa-check"></i><b>20.3</b> Systematic review or literature review?</a></li>
+<li class="chapter" data-level="20.4" data-path="litrev.html"><a href="litrev.html#class-exercise-15"><i class="fa fa-check"></i><b>20.4</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="protocol.html"><a href="protocol.html"><i class="fa fa-check"></i><b>21</b> A template for a research protocol</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Evaluating what works</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="Single" class="section level1 hasAnchor" number="17">
+<h1><span class="header-section-number">Chapter 17</span> Single case designs<a href="Single.html#Single" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<!--- This level 1 heading is NOT RECOGNISED by Bookdown. I have tried cutting out sections of the chapter to identify what causes it to baulk but it is an inconsistent error. We may have to wait and fix this manually at a later stage if we can't get it to work. I can get the level 1 heading to be identified and compile if I just have the first 2 chunks of the chapter, but if I add more it throws inconsistent errors, and the index just misses this chapter. I have tried changing the chapter name. 
+Trying adding an extra white space before title - doesn't work.
+Tried modifying yml file to include full list of chapters - doesn't work
+Tried copying all code into word and then repasting back in - doesn't work
+Used kableextra for singlecasechart - didn't affect anything-->
+<p><img src="images/logo_alone_new.png" width="143" /></p>
+<p>The single case design, also known as N-of-1 trial, or small N design, is a commonly used intervention design in speech and language therapy, clinical psychology, education, and neuropsychology, including aphasia therapy <span class="citation">(<a href="#ref-perdices2009">Perdices and Tate 2009</a>)</span>. The single case design may be regarded as an extreme version of a <em>within-subjects</em> design, where two more more conditions are compared within a single person. This type of trial is sometimes dismissed as providing poor quality evidence, but a well-designed single case trial can be an efficient way to obtain an estimate of treatment efficacy in an individual. Very often, a set of single case trials is combined into a <em>case series</em> (see below). It is important to note that a single case trial is not a simple case report, but rather a study that is designed and analysed in a way that controls as far as possible for the kind of unwanted influences on results described in chapters 2-5.</p>
+<div id="logic-of-single-case-designs" class="section level2 hasAnchor" number="17.1">
+<h2><span class="header-section-number">17.1</span> Logic of single case designs<a href="Single.html#logic-of-single-case-designs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Table <a href="Single.html#tab:scdlogic">17.1</a> compares the logic of the standard RCT and single case designs.</p>
+<table class="table table-striped table-bordered" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:scdlogic">Table 17.1: </span>How intervention vs control is allocated in different study designs
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Design
+</th>
+<th style="text-align:center;">
+Participants
+</th>
+<th style="text-align:center;">
+Time
+</th>
+<th style="text-align:center;">
+Outcome
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+RCT: Multiple participants
+</td>
+<td style="text-align:center;">
+Yes
+</td>
+<td style="text-align:center;">
+<ul>
+<li></td>
+<td style="text-align:center;">
+<ul>
+<li></td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Single case: Multiple time-points
+</td>
+<td style="text-align:center;">
+<ul>
+<li></td>
+<td style="text-align:center;">
+Yes
+</td>
+<td style="text-align:center;">
+<ul>
+<li></td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Single case: Multiple outcomes
+</td>
+<td style="text-align:center;">
+<ul>
+<li></td>
+<td style="text-align:center;">
+<ul>
+<li></td>
+<td style="text-align:center;">
+Yes
+</td>
+</tr>
+</tbody>
+</table></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<p>The first row of Table <a href="Single.html#tab:scdlogic">17.1</a> shows the design for a simple 2-arm RCT, where intervention is varied between participants who are assessed on the same occasion and on the same outcome. The second row shows a version of the single case design where the invention is varied in a single subject at different time points. The third row shows the case where intervention is assessed by comparing treated vs untreated outcomes in the same subject on the same occasion - this is referred to by <span class="citation">Krasny-Pacini and Evans (<a href="#ref-krasny-pacini2018">2018</a>)</span> as a multiple baseline design across behaviours and by <span class="citation">Ledford et al. (<a href="#ref-ledford2019">2019</a>)</span> as an Adapted Alternating Treatment Design.</p>
+<p>Whatever design is used, the key requirements are analogous to those of the RCT:</p>
+<ul>
+<li>To minimise unwanted variance (noise) that may mask effects of interest.<br />
+</li>
+<li>To ensure that the effect we observe is as unbiased as possible.</li>
+<li>To have sufficient data to reliably detect effects of interest</li>
+</ul>
+<div id="minimising-unwanted-variance" class="section level3 hasAnchor" number="17.1.1">
+<h3><span class="header-section-number">17.1.1</span> Minimising unwanted variance<a href="Single.html#minimising-unwanted-variance" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In the RCT, this is achieved by having a large enough sample of participants to distinguish variation associated with intervention from idiosyncratic differences between individuals, and by keeping other aspects of the trial, such as timing and outcomes, as constant as possible.</p>
+<p>With single case trials, we do not control for variation associated with individual participant characteristics - indeed we are interested in how different people respond to intervention - but we do need to control as far as possible for other sources of variation. The <strong>ABA</strong> design is a popular single-case design that involves contrasting an outcome during periods of intervention (B) versus periods of no intervention (A). For example, <span class="citation">Armson and Stuart (<a href="#ref-armson1998">1998</a>)</span> studied the impact of frequency-altered auditory feedback on 12 people who stuttered. They contrasted a baseline period (A), a period with auditory feedback (B), and a post-intervention period (A), taking several measures of stuttering during each period. Figure <a href="Single.html#fig:SingleCaseDplot">17.1</a> shows data from two participants during a reading condition. Although the initial amount of stuttering differs for the two individuals, in both cases there is a precipitate drop in stuttering at the 5 minute point corresponding to the onset of the masking, which is sustained for some minutes before gradually rising back towards baseline levels. The baseline period is useful for providing a set of estimates of stuttering prior to intervention, so we can see that the drop in stuttering, at least initially, is outside the range of variation that occurs spontaneously.</p>
+<div class="figure"><span style="display:block;" id="fig:SingleCaseDplot"></span>
+<img src="17-Single_files/figure-html/SingleCaseDplot-1.png" alt="Outcome over time in a single case ABA design. Redrawn from digitised data from two participants from Figure 2 of Armson et al (1998)" width="768" />
+<p class="caption">
+Figure 17.1: Outcome over time in a single case ABA design. Redrawn from digitised data from two participants from Figure 2 of Armson et al (1998)
+</p>
+</div>
+<p>In the context of neurorehabilitation and speech-and-language therapy, there would appear to be a major drawback of the ABA design. In the course of a historical review of this approach, <span class="citation">Mirza et al. (<a href="#ref-mirza2017">2017</a>)</span> described the “N-of-1 niche” as follows:</p>
+<p><em>“The design is most suited to assessing interventions that act and cease to act quickly. It is particularly useful in clinical contexts in which variability in patient responses is large, when the evidence is limited, and/or when the patient differs in important ways from the people who have participated in conventional randomised controlled trials.”</em></p>
+<p>While the characteristics in the second sentence fit well with speech-and-language therapy interventions, the first requirement - that the intervention should “act and cease to act quickly” is clearly inapplicable. As described in the previous chapter, with few exceptions, interventions offered by those working in education as well as speech and language therapists and those working in other allied health professions are intended to produce long-term change that persists long after the therapy has ended. Indeed, a therapy that worked only during the period of administration would not be regarded as a success. This means that ABA designs, which compare an outcomes for periods with (B) and without (A) intervention, anticipating that scores will go up transiently during the intervention block, will be unsuitable. In this regard, behavioural interventions are quite different from many pharmaceutical interventions, where ABA designs are increasingly being used to compare a series of active and washout periods for a drug.</p>
+<p>Despite this limitation, it is feasible to use an approach where we compare different time periods with and without intervention in some situations, most notably when there is good evidence that the targeted behaviour is unlikely to improve spontaneously. Inclusion of a baseline period, where behaviour is repeatedly sampled before intervention has begun, may give confidence that this is the case. An example of this <strong>multiple baseline</strong> approach from a study by <span class="citation">Swain, Eadie, and Snow (<a href="#ref-swain2020">2020</a>)</span> is discussed below. Where the same intervention can be applied to a group of participants, then a hybrid method known as the <strong>multiple baseline across participants</strong> design can be used, which combines both between and within-subjects comparisons. A study of this kind by <span class="citation">Koutsoftas, Harmon, and Gray (<a href="#ref-koutsoftas2009">2009</a>)</span> is discussed in the Class Exercise for this chapter.</p>
+<p>In another kind of single case approach, the <strong>multiple baseline across behaviours</strong> design, it is the <em>outcome</em> measure that is varied. This approach is applicable where a single intervention has potential to target several specific behaviours or skills. This gives fields such as speech and language therapy an edge that drug trials often lack: we can change the specific outcome that is targeted by the intervention and compare it with another outcome that acts as a within-person control measure. To demonstrate effectiveness, we need to show that it is the targeted behaviour that improves, while the comparison behaviour remains unaffected.</p>
+<p>For instance, <span class="citation">Best et al. (<a href="#ref-best2013">2013</a>)</span> evaluated a cueing therapy for anomia in acquired aphasia in a case series of 16 patients, with the aim of comparing naming ability for 100 words that had been trained versus 100 untrained words. By using a large number of words, carefully selected to be of similar initial difficulty, they had sufficient data to show whether or not there was selective improvement for the trained words in individual participants.</p>
+<p>Figure <a href="Single.html#fig:bestplot">17.2</a> is redrawn from data of <span class="citation">Best et al. (<a href="#ref-best2013">2013</a>)</span>. The black points show N items correct on the two sets of items prior to intervention. They were selected to be of similar difficulty and hence they cluster around the dotted line, which shows the point where scores on both item sets are equivalent. The red points show scores after intervention. Points that fall above the dotted line correspond to cases who did better with trained than untrained words; those below the line did better with untrained than trained words. The red points tend to be placed vertically above the pre-test scores for each individual, indicating that there is improvement after intervention in the trained items (y-axis), but not on control items (x-axis).</p>
+<div class="figure"><span style="display:block;" id="fig:bestplot"></span>
+<img src="17-Single_files/figure-html/bestplot-1.png" alt="Outcome over time in multiple outcomes design. Reconstructed data from 16 participants, Best et al (2013)" width="768" />
+<p class="caption">
+Figure 17.2: Outcome over time in multiple outcomes design. Reconstructed data from 16 participants, Best et al (2013)
+</p>
+</div>
+<p>Given the large number of items in each set, it is possible to do a simple comparison of proportions to see whether each person’s post-intervention score is reliably higher than their pre-intervention score for each item set. For 14 of the 16 cases, there is a statistically significant increase in scores from pre-intervention to post-intervention for target items (corresponding to those with lines that extend vertically above the dotted line), whereas this is the case for only two of the cases when control items are considered (corresponding to cases which show change in the horizontal direction from pre-intervention to post-intervention).</p>
+</div>
+<div id="minimising-systematic-bias" class="section level3 hasAnchor" number="17.1.2">
+<h3><span class="header-section-number">17.1.2</span> Minimising systematic bias<a href="Single.html#minimising-systematic-bias" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We have seen in previous chapters how the RCT has evolved to minimise numerous sources of unwanted systematic bias. We need to be alert to similar biases affecting results of single case trials. This is a particular concern for trial designs where we compare different time periods that do or do not include intervention. On the one hand, we may have the kinds of time-linked effects of maturation, practice or spontaneous recovery that lead to a general improvement over time, regardless of the intervention (see Chapter <a href="nonspecific.html#nonspecific">4</a>), and on the other hand there may be specific events that affect a person’s performance, such as life events or illness, which may have a prolonged beneficial or detrimental effect on performance.</p>
+<p>The general assumption of this method is that if we use a sufficient number of time intervals, time-linked biases will average out, but while this may be true for transient environmental effects, such as noise or other distractions, it is not the case for systematic influences that continue over time. It is important to be aware of such limitations, and it may be worth considering combining this kind of design with other elements that control for time-related biases more effectively (see below).</p>
+</div>
+<div id="the-need-for-sufficient-data" class="section level3 hasAnchor" number="17.1.3">
+<h3><span class="header-section-number">17.1.3</span> The need for sufficient data<a href="Single.html#the-need-for-sufficient-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Some early single case studies in neuropsychology may have drawn over-optimistic conclusions because they had insufficient replications of outcome measures, assuming that the observed result was a valid indication of outcome without taking into account error of measurement. For instance, if someone’s score improved from 2/10 items correct prior to intervention to 5/10 correct after intervention, it can be hard to draw firm conclusions on the basis of this data alone: the change could just be part of random variability in the measure. The more measurements we have in this type of study, the more confidence we can place in results: whereas in RCTs we need sufficient participants to get a sense of how much variation there is in outcomes, in single case studies we need sufficient observations, and should never rely just a few instances.</p>
+<p>In effect, we need to use the same kind of logic that we saw in Chapter <a href="power.html#power">10</a>, where we estimated statistical power of a study by checking how likely we would be to get a statistically significant result from a given sample size. Table <a href="Single.html#tab:Nitems-power">17.2</a> shows power to detect a true effect of a given size in a <strong>multiple baseline across behaviours</strong> design of the kind used by <span class="citation">Best et al. (<a href="#ref-best2013">2013</a>)</span>, where we have a set of trained vs untrained items, each of which is scored either right or wrong. The entries in this table show power, which is the probability that a study would detect a true effect of a given size on a one-tailed test. These entries were obtained by simulating 1000 datasets with each of the different combinations of sample size and effect size.</p>
+<p>The columns show the effect size as the raw difference in proportion items correct for trained vs untrained words. It is assumed that these two sets were equated for difficulty prior to intervention, and the table shows the difference in proportion correct between the two sets after intervention. So if the initial proportion correct was .3 for both trained and untrained items, but after intervention, we expect accuracy on trained items to increase to .6 and the untrained to stay at .3, then the difference between the two sets after treatment is .3, shown in the 4th column of the table. We can then read down this column to see the point at which power reaches 80% or more. This occurs at the 4th row of the table, when there are 40 items in each set. If we anticipated a smaller increase in proportion correct for trained items of .2, then we would need 80 items per set to achieve 80% power.</p>
+<table class="table table-striped table-bordered" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:Nitems-power">Table 17.2: </span>N items per set needed to detect target-control item difference of a given size
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+N_per_Set
+</th>
+<th style="text-align:center;">
+.1
+</th>
+<th style="text-align:center;">
+.2
+</th>
+<th style="text-align:center;">
+.3
+</th>
+<th style="text-align:center;">
+.4
+</th>
+<th style="text-align:center;">
+.5
+</th>
+<th style="text-align:center;">
+.6
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;font-weight: bold;">
+10
+</td>
+<td style="text-align:center;">
+6
+</td>
+<td style="text-align:center;">
+13
+</td>
+<td style="text-align:center;">
+24
+</td>
+<td style="text-align:center;">
+43
+</td>
+<td style="text-align:center;">
+64
+</td>
+<td style="text-align:center;">
+81
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;">
+20
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+25
+</td>
+<td style="text-align:center;">
+49
+</td>
+<td style="text-align:center;">
+76
+</td>
+<td style="text-align:center;">
+92
+</td>
+<td style="text-align:center;">
+99
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;">
+30
+</td>
+<td style="text-align:center;">
+14
+</td>
+<td style="text-align:center;">
+37
+</td>
+<td style="text-align:center;">
+70
+</td>
+<td style="text-align:center;">
+92
+</td>
+<td style="text-align:center;">
+99
+</td>
+<td style="text-align:center;">
+100
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;">
+40
+</td>
+<td style="text-align:center;">
+17
+</td>
+<td style="text-align:center;">
+49
+</td>
+<td style="text-align:center;">
+81
+</td>
+<td style="text-align:center;">
+97
+</td>
+<td style="text-align:center;">
+100
+</td>
+<td style="text-align:center;">
+100
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;">
+50
+</td>
+<td style="text-align:center;">
+20
+</td>
+<td style="text-align:center;">
+58
+</td>
+<td style="text-align:center;">
+89
+</td>
+<td style="text-align:center;">
+100
+</td>
+<td style="text-align:center;">
+100
+</td>
+<td style="text-align:center;">
+100
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;">
+60
+</td>
+<td style="text-align:center;">
+25
+</td>
+<td style="text-align:center;">
+68
+</td>
+<td style="text-align:center;">
+95
+</td>
+<td style="text-align:center;">
+100
+</td>
+<td style="text-align:center;">
+100
+</td>
+<td style="text-align:center;">
+100
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;">
+70
+</td>
+<td style="text-align:center;">
+30
+</td>
+<td style="text-align:center;">
+73
+</td>
+<td style="text-align:center;">
+97
+</td>
+<td style="text-align:center;">
+100
+</td>
+<td style="text-align:center;">
+100
+</td>
+<td style="text-align:center;">
+100
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;">
+80
+</td>
+<td style="text-align:center;">
+32
+</td>
+<td style="text-align:center;">
+80
+</td>
+<td style="text-align:center;">
+98
+</td>
+<td style="text-align:center;">
+100
+</td>
+<td style="text-align:center;">
+100
+</td>
+<td style="text-align:center;">
+100
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;">
+90
+</td>
+<td style="text-align:center;">
+35
+</td>
+<td style="text-align:center;">
+85
+</td>
+<td style="text-align:center;">
+100
+</td>
+<td style="text-align:center;">
+100
+</td>
+<td style="text-align:center;">
+100
+</td>
+<td style="text-align:center;">
+100
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;">
+100
+</td>
+<td style="text-align:center;">
+38
+</td>
+<td style="text-align:center;">
+88
+</td>
+<td style="text-align:center;">
+100
+</td>
+<td style="text-align:center;">
+100
+</td>
+<td style="text-align:center;">
+100
+</td>
+<td style="text-align:center;">
+100
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;">
+110
+</td>
+<td style="text-align:center;">
+39
+</td>
+<td style="text-align:center;">
+90
+</td>
+<td style="text-align:center;">
+100
+</td>
+<td style="text-align:center;">
+100
+</td>
+<td style="text-align:center;">
+100
+</td>
+<td style="text-align:center;">
+100
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;">
+120
+</td>
+<td style="text-align:center;">
+44
+</td>
+<td style="text-align:center;">
+93
+</td>
+<td style="text-align:center;">
+100
+</td>
+<td style="text-align:center;">
+100
+</td>
+<td style="text-align:center;">
+100
+</td>
+<td style="text-align:center;">
+100
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;">
+130
+</td>
+<td style="text-align:center;">
+47
+</td>
+<td style="text-align:center;">
+94
+</td>
+<td style="text-align:center;">
+100
+</td>
+<td style="text-align:center;">
+100
+</td>
+<td style="text-align:center;">
+100
+</td>
+<td style="text-align:center;">
+100
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;">
+140
+</td>
+<td style="text-align:center;">
+49
+</td>
+<td style="text-align:center;">
+96
+</td>
+<td style="text-align:center;">
+100
+</td>
+<td style="text-align:center;">
+100
+</td>
+<td style="text-align:center;">
+100
+</td>
+<td style="text-align:center;">
+100
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;">
+150
+</td>
+<td style="text-align:center;">
+52
+</td>
+<td style="text-align:center;">
+97
+</td>
+<td style="text-align:center;">
+100
+</td>
+<td style="text-align:center;">
+100
+</td>
+<td style="text-align:center;">
+100
+</td>
+<td style="text-align:center;">
+100
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;">
+160
+</td>
+<td style="text-align:center;">
+56
+</td>
+<td style="text-align:center;">
+98
+</td>
+<td style="text-align:center;">
+100
+</td>
+<td style="text-align:center;">
+100
+</td>
+<td style="text-align:center;">
+100
+</td>
+<td style="text-align:center;">
+100
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;">
+170
+</td>
+<td style="text-align:center;">
+57
+</td>
+<td style="text-align:center;">
+98
+</td>
+<td style="text-align:center;">
+100
+</td>
+<td style="text-align:center;">
+100
+</td>
+<td style="text-align:center;">
+100
+</td>
+<td style="text-align:center;">
+100
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;">
+180
+</td>
+<td style="text-align:center;">
+60
+</td>
+<td style="text-align:center;">
+98
+</td>
+<td style="text-align:center;">
+100
+</td>
+<td style="text-align:center;">
+100
+</td>
+<td style="text-align:center;">
+100
+</td>
+<td style="text-align:center;">
+100
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;">
+190
+</td>
+<td style="text-align:center;">
+61
+</td>
+<td style="text-align:center;">
+99
+</td>
+<td style="text-align:center;">
+100
+</td>
+<td style="text-align:center;">
+100
+</td>
+<td style="text-align:center;">
+100
+</td>
+<td style="text-align:center;">
+100
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;">
+200
+</td>
+<td style="text-align:center;">
+66
+</td>
+<td style="text-align:center;">
+99
+</td>
+<td style="text-align:center;">
+100
+</td>
+<td style="text-align:center;">
+100
+</td>
+<td style="text-align:center;">
+100
+</td>
+<td style="text-align:center;">
+100
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="examples-of-studies-using-different-types-of-single-case-design" class="section level2 hasAnchor" number="17.2">
+<h2><span class="header-section-number">17.2</span> Examples of studies using different types of single case design<a href="Single.html#examples-of-studies-using-different-types-of-single-case-design" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>As noted above, single case designs cover a wide range of options, and can vary the periods of observation or the classes of observations made for each individual.</p>
+<div id="a-multiple-baseline-design-speech-and-language-therapy-for-adolescents-in-youth-justice." class="section level3 hasAnchor" number="17.2.1">
+<h3><span class="header-section-number">17.2.1</span> A multiple baseline design: Speech and language therapy for adolescents in youth justice.<a href="Single.html#a-multiple-baseline-design-speech-and-language-therapy-for-adolescents-in-youth-justice." class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Figure <a href="Single.html#fig:swainfig">17.3</a> from <span class="citation">Swain, Eadie, and Snow (<a href="#ref-swain2020">2020</a>)</span> provides an illustration of the multiple baseline design approach.</p>
+<div class="figure"><span style="display:block;" id="fig:swainfig"></span>
+<img src="images/swain_eg.png" alt="Data from one case in the @swain2020 study" width="60%" />
+<p class="caption">
+Figure 17.3: Data from one case in the <span class="citation">Swain, Eadie, and Snow (<a href="#ref-swain2020">2020</a>)</span> study
+</p>
+</div>
+<p>The three panels show percentages correct on outcome probes for three skills: spelling-phonics, spelling-morphology and vocabulary. These were targeted sequentially in different sessions, and evidence for intervention effectiveness is obtained when a selective increase in performance is shown for the period during and after intervention. The open squares give a rating of the adolescent’s engagement with the intervention, and the open triangles are scores on a nonword repetition task, that was administered intermittently as a control probe, where no improvement was expected. Note that for all three tasks, there is little or no overlap for scores during baseline and those obtained during and after intervention. The baseline data establish that although targetted behaviours vary from day to day, there is no systematic upward trend in performance until the intervention is administered. Furthermore, the fact that improvement is specific to the behaviour that is targeted in that session gives confidence that this is not just down to some general placebo effect.</p>
+<p>In the other case studies reported by <span class="citation">Swain, Eadie, and Snow (<a href="#ref-swain2020">2020</a>)</span>, different behaviours were targeted, according to the specific needs of the adolescents who were studied.</p>
+</div>
+<div id="a-study-using-multiple-baseline-across-behaviours-effectiveness-of-electropalatography" class="section level3 hasAnchor" number="17.2.2">
+<h3><span class="header-section-number">17.2.2</span> A study using multiple baseline across behaviours: Effectiveness of electropalatography<a href="Single.html#a-study-using-multiple-baseline-across-behaviours-effectiveness-of-electropalatography" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We noted in the previous chapter how, electropalatography, a biofeedback intervention that provides information about the position of articulators to help clients improve production of speech sounds, is ill-suited to evaluation in a RCT. It is potentially applicable to people with a wide variety of aetiologies, so the treated population is likely to be highly heterogenous, it requires expensive equipment including an individualised artificial palate, and the intervention is delivered over many one-to-one sessions. The goal of the intervention is to develop and consolidate new patterns of articulation that will persist after the intervention ends. It would not, therefore, make much sense to do a single case trial of electropalatography using an ABA design that involved comparing blocks of intervention vs no intervention. One can, however, run a trial that tests whether there is more improvement on targeted speech sounds than on other speech sounds that are not explicitly treated.</p>
+<p><span class="citation">Leniston and Ebbels (<a href="#ref-leniston2021">2021</a>)</span> applied this approach to seven adolescents with severe speech disorders, all of whom were already familiar with electropalatography. Diagnoses included verbal dyspraxia, structural abnormalities of articulators (velopharyngeal insufficiency), mosaic Turner syndrome, and right-sided hemiplegia. At the start of each school term, two sounds were identified for each case: a target sound, which would be trained, and a control sound, which was also produced incorrectly, but which was not trained. Electropalatography training was administered twice a week in 30 minute sessions. The number of terms where intervention was given ranged from 1 to 3.</p>
+<div class="figure"><span style="display:block;" id="fig:ebbelsfig"></span>
+<img src="images/Ebbels.png" alt="Individual results for targets and controls at each term (Redrawn Fig 3 from Leniston &amp; Ebbels, data kindly provided by Susan Ebbels)" width="750" />
+<p class="caption">
+Figure 17.4: Individual results for targets and controls at each term (Redrawn Fig 3 from Leniston &amp; Ebbels, data kindly provided by Susan Ebbels)
+</p>
+</div>
+<p>An analysis of group data found no main effect of target or time, but a large interaction between these, indicating greater improvement on trained speech sounds. The design of the study made it possible to look at individual cases, which gave greater insights into variation of the impact of intervention. As shown in Figure <a href="Single.html#fig:ebbelsfig">17.4</a>, in the first term of intervention, there was a main effect of time for three of the participants (IDs 1, 3, and 4), but no interaction with sound type. In other words, these children improved over the course of the term, but this was seen for the untrained as well as the trained sound. By term 2, one of four children showed an interaction between time and sound type (ID4), and both children who continued training into term 3 (ID 1 and 2) showed such an interaction. Three children did not show any convincing evidence of benefit - all of these stopped intervention after one term.</p>
+<p>As the authors noted, there is a key limitation of the study: when a significant interaction is found between time and sound type, this provides evidence that the intervention was effective. But when <em>both</em> trained and untrained sounds improve, this is ambiguous. It could mean that the intervention was effective, and its impact generalised beyond the trained sounds. But it could also mean that the intervention was ineffective, with improvement being due to other factors, such as maturation or practice on the outcome measure. Inclusion of a series of baseline measures might have helped establish how plausible these two possibilities were.</p>
+<p>In sum, this method can handle the (typical) situation where intervention effects are sustained, but it is most effective if we do not expect any generalisation of learning beyond the targeted behaviour or skill. Unfortunately, this is often at odds with speech and language therapy methods. For instance, in phonological therapy, the therapist may focus on helping a child distinguish and/or produce a specific sound pair, such as [d] vs [g], but there are good theoretical reasons to expect that if therapy is successful, it might generalise to other sound pairs, such as [t] vs [k], which depend on the same articulatory contrast between alveolar vs velar place. Indeed, if we think of the child’s phonology as part of a general system of contrasts, it might be expected that training on one sound pair could lead the whole system to reorganise. This is exactly what we would like to see in intervention, but it can make single case studies extremely difficult to interpret. Before designing such a study, it is worthwhile anticipating different outcomes and considering how they might be interpreted.</p>
+</div>
+<div id="example-of-an-analysis-of-case-series-data" class="section level3 hasAnchor" number="17.2.3">
+<h3><span class="header-section-number">17.2.3</span> Example of an analysis of case series data<a href="Single.html#example-of-an-analysis-of-case-series-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The terms ‘single case’ and ‘N-of-1’ are misleading in implying that only one participant is trained. More commonly, studies assemble a series of N-of-1 cases. Where the same intervention is used for all cases, regular group statistics may be applied. But unlike in RCTs, heterogeneity of response is expected and needs to be documented. In fact, in a single case case series, the interest is less in whether an overall intervention effect is statistically significant, as in whether the data provide evidence of individual variation in response to intervention, as this is what would justify analysis of individual cases. Formally, it is possible to test whether treatment effects vary significantly across participants by comparing a model that does or does not contain a term representing this effect, using <a href="https://stackoverflow.com/questions/24019807/how-to-compare-a-model-with-no-random-effects-to-a-model-with-a-random-effect-us">linear mixed models</a>, but we would recommend that researchers consult a statistician, as those methods are complex and require specific types of data. In practice, it is usually possible to judge how heterogeneous responses to intervention are by inspecting plots for individual participants.</p>
+<p>Typically the small sample sizes in N-of-1 case series preclude any strong conclusions about the characteristics of those who do and do not show intervention effects, but results may subsequently be combined across groups, and specific hypotheses formulated about the characteristics of those who show a positive response.</p>
+<p>An example comes from the study by <span class="citation">Best et al. (<a href="#ref-best2013">2013</a>)</span> evaluating rehabilitation for anomia in acquired aphasia. As described above, researchers contrasted naming ability for words that had been trained, using a cueing approach, versus a set of untrained control words, a multiple baseline across behaviours design. In general, results were consistent with prior work in showing that improvement was largely confined to trained words. As noted above, this result allows us to draw a clear conclusion that the intervention was responsible for the improvement, but from a therapeutic perspective it was disappointing, as one might hope to see generalisation to novel words.</p>
+<p>The authors subdivided the participants according to their language profiles, and suggested that improvement on untrained words was seen in a subset of cases with a specific profile of semantic and phonological strengths. This result, however, was not striking and would need to be replicated.</p>
+<!--- the literature seems pretty murky here. There was an early paper by Howard that talked about analysing homogeneity in case series, which seems an interesting idea, but I'm not sure how valid his approach is: Howard, D. (2003). Chapter 16: Single Cases, Group Studies and Case Series in Aphasia Therapy. In The Sciences of Aphasia: From Theory to Therapy. Ilias Papathanasiou and Ria De Bleser (Eds). (pp. 245–258). Elsevier. https://doi.org/10.1016/B978-008044073-6/50017-1
+https://reader.elsevier.com/reader/sd/pii/B9780080440736500171?token=402044775314B107D8FAC186B5A72020B85191FCEE862FCF95B2C037B17634D20F97DB7AFB2A1723513D3FCC21D586D4&originRegion=eu-west-1&originCreation=20210801103239.-->
+</div>
+<div id="combining-approaches-to-strengthen-study-design" class="section level3 hasAnchor" number="17.2.4">
+<h3><span class="header-section-number">17.2.4</span> Combining approaches to strengthen study design<a href="Single.html#combining-approaches-to-strengthen-study-design" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In practice, aspects of different single-case designs can be combined - e.g. the cross-over design by <span class="citation">Varley et al. (<a href="#ref-varley2016">2016</a>)</span> that we described in Chapter <a href="crossover.html#crossover">16</a> compared an intervention across two time points and two groups of participants, and also compared naming performance on three sets of items: trained words, untrained words that were phonemically similar to the trained words, and untrained words that were dissimilar to the trained words. Furthermore, baseline measures were taken in both groups to check the stability of naming responses. That study was not, however, analysed as a single case design: rather the focus was on average outcomes without analysing individual differences. However, the inclusion of multiple outcomes and multiple time points meant that responses of individuals could also have been investigated.</p>
+</div>
+</div>
+<div id="statistical-approaches-to-single-case-designs" class="section level2 hasAnchor" number="17.3">
+<h2><span class="header-section-number">17.3</span> Statistical approaches to single case designs<a href="Single.html#statistical-approaches-to-single-case-designs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Early reports of single case studies often focused on simple visualisation of results to determine intervention effects, and this is still a common practice <span class="citation">(<a href="#ref-perdices2009">Perdices and Tate 2009</a>)</span>. This is perfectly acceptable provided that differences are very obvious, as in Figure <a href="Single.html#fig:SingleCaseDplot">17.1</a> above. We can think back to our discussion of analysis methods for RCTs: the aim is always to ask whether the variation associated with differences in intervention is greater than the variation within the intervention condition. In Figure <a href="Single.html#fig:SingleCaseDplot">17.1</a> there is very little overlap in the values for the intervention vs non-intervention periods, and statistics are unnecessary. However, results can be less clearcut than this. Figure <a href="Single.html#fig:SingleCaseDplot2">17.5</a> shows data from two other participants in the study by <span class="citation">Armson and Stuart (<a href="#ref-armson1998">1998</a>)</span>, where the evidence of an intervention effect is much less clearcut.</p>
+<div class="figure"><span style="display:block;" id="fig:SingleCaseDplot2"></span>
+<img src="17-Single_files/figure-html/SingleCaseDplot2-1.png" alt="Outcome over time in a single case ABA design. Digitised data from two participants from Figure 2 of Armson et al (1998)" width="768" />
+<p class="caption">
+Figure 17.5: Outcome over time in a single case ABA design. Digitised data from two participants from Figure 2 of Armson et al (1998)
+</p>
+</div>
+<p>Unfortunately, rather than a well-worked-out set of recommendations for statistical analysis of single case trials, there is a plethora of methods in use, which can be challenging, or even overwhelming, for anyone starting out in this field to navigate. Furthermore, most of the focus has been on ABA and related designs, with limited advice on how to deal with designs that use comparisons between treated and untreated outcomes.</p>
+</div>
+<div id="overview-of-considerations-for-single-case-designs" class="section level2 hasAnchor" number="17.4">
+<h2><span class="header-section-number">17.4</span> Overview of considerations for single case designs<a href="Single.html#overview-of-considerations-for-single-case-designs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In most of the examples used here, the single case design could be embedded in natural therapy sessions, include heterogeneous participants, and be adapted to fit into regular clinical practice. This makes the method attractive to clinicians, but it should be noted that while incorporating evaluation into clinical activities is highly desirable, it often creates difficulties for controlling aspects of internal validity. For instance, in the study by <span class="citation">Swain, Eadie, and Snow (<a href="#ref-swain2020">2020</a>)</span>, the researchers noted an element of unpredictability about data collection, because the young offenders that they worked with might either be unavailable, or unwilling to take part in intervention sessions on a given day. In the <span class="citation">Leniston and Ebbels (<a href="#ref-leniston2021">2021</a>)</span> study the target and control probes were not always well-matched at baseline, and for some children, the amount of available data was too small to give a powerful test of the intervention effect. Our view is that it is far better to aim to evaluate interventions than not to do so, provided limitations of particular designs are understood and discussed. Table <a href="Single.html#tab:singlecasechart">17.3</a> can be used as a checklist against which to assess characteristics of a given study, to evaluate how far internal validity has been controlled.</p>
+<table class="table table-striped table-bordered" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:singlecasechart">Table 17.3: </span>How single case designs deal with threats to study validity
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Biases
+</th>
+<th style="text-align:center;">
+Remedies
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+Spontaneous improvement
+</td>
+<td style="text-align:center;">
+Control outcome and/or baseline time period
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Practice effects
+</td>
+<td style="text-align:center;">
+Control outcome and/or baseline time period
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Regression to the mean
+</td>
+<td style="text-align:center;">
+Control outcome and/or baseline time period
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Noisy data (1)
+</td>
+<td style="text-align:center;">
+Baseline period to establish variability
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Noisy data (2)
+</td>
+<td style="text-align:center;">
+Outcomes with low measurement error
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Selection bias
+</td>
+<td style="text-align:center;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Placebo effects
+</td>
+<td style="text-align:center;">
+<ul>
+<li></td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Experimenter bias (1)
+</td>
+<td style="text-align:center;">
+Record sessions
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Experimenter bias (2)
+</td>
+<td style="text-align:center;">
+Strictly specified protocol
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Biased drop-outs
+</td>
+<td style="text-align:center;">
+Report on the number and characteristics of drop-outs
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Low power
+</td>
+<td style="text-align:center;">
+A priori power analysis; need for many observations
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+False positives due to p-hacking
+</td>
+<td style="text-align:center;">
+Registration of trial protocol
+</td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+<p>We are not aware of specific evidence on this point, but it seems likely that the field of single case studies, just like other fields, is likely to suffer from problems of publication bias (Chapter <a href="pubbias.html#pubbias">18</a>), whereby results are reported when an intervention is successful, but not when it fails. If studies are adequately powered - and they should be designed so that they are - then all results should be reported, including those which may be ambiguous or unwanted, so that we can learn from what doesn’t work, as well as from what does.</p>
+<p>A final point, which cannot be stressed enough, is that when evaluating a given intervention, a single study is never enough. Practical constraints usually make it impossible to devise the perfect study that gives entirely unambiguous results: rather we should aim for our studies to reduce the uncertainty in our understanding of the effectiveness of intervention, with each study building on those that have gone before. With single case studies, it is common to report the raw data in the paper, in either numeric or graphical form, and this is particularly useful in allowing other researchers to combine results across studies to form stronger conclusions (see Chapter <a href="litrev.html#litrev">20</a>).</p>
+</div>
+<div id="class-exercise-13" class="section level2 hasAnchor" number="17.5">
+<h2><span class="header-section-number">17.5</span> Class exercise<a href="Single.html#class-exercise-13" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li><span class="citation">Koutsoftas, Harmon, and Gray (<a href="#ref-koutsoftas2009">2009</a>)</span> conducted a study of effectiveness of phonemic awareness intervention with a group of children who showed poor sound awareness after receiving high quality whole-classroom teaching focused on this skill. Intervention sessions were administered by speech-language pathologists or experienced teachers to 13 groups of 2-4 children twice per week for a baseline and post-intervention period, and once per week during the 6 week intervention. Active intervention was preceded by a baseline period - one week (with two outcome measurement points) for seven groups of children, and two weeks (4 measurement points) for the other six groups. Outcome probes involved identifying the initial sound from a set of three words in each session. The researchers reported effect sizes for individual children that were calculated by comparing score on the probes in the post-intervention period with those in the baseline period, showing that most children showed significant gains on the outcome measure. Group results on the outcome measure (redrawn from Table 2 of the paper) are shown in Figure <a href="Single.html#fig:kdataplot">17.6</a>.</li>
+</ol>
+<div class="figure"><span style="display:block;" id="fig:kdataplot"></span>
+<img src="17-Single_files/figure-html/kdataplot-1.png" alt="Group means from Koutsoftas et al, 2009. Filled points show intervention phase, unfilled show baseline or post-intervention" width="672" />
+<p class="caption">
+Figure 17.6: Group means from Koutsoftas et al, 2009. Filled points show intervention phase, unfilled show baseline or post-intervention
+</p>
+</div>
+<p>Consider the following questions about this study.<br />
+a. What kind of design is this?<br />
+b. How well does this design guard against the biases shown in Table <a href="Single.html#tab:singlecasechart">17.3</a>?<br />
+c. Could the fact that intervention was delivered in small groups affect study validity? (Clue: see Chapter <a href="cluster.html#cluster">15</a>).<br />
+d. If you were designing a study to follow up on this result, what changes might you make to the study design?<br />
+e. What would be the logistic challenges in implementing these changes?</p>
+<ol start="2" style="list-style-type: decimal">
+<li><p>The SCRIBE guidelines have been developed to improve reporting of single case studies in the literature. An article by <span class="citation">Tate et al. (<a href="#ref-tate2016">2016</a>)</span> describing the guidelines with explanation and elaboration is available <a href="https://psycnet.apa.org/fulltext/2016-17382-001.html">here</a>, with a shorter article summarising the guidelines <a href="https://academic.oup.com/ptj/article/96/7/e1/2864911">here</a>.<br />
+Identify a single case study in the published literature in your area and check it against the guidelines to see how much of the necessary information is provided.<br />
+This kind of exercise can be more useful than just reading the guidelines, as it forces the reader to read an article carefully and consider what the guidelines mean.</p></li>
+<li><p>In the previous chapter, we described a study by <span class="citation">Calder et al. (<a href="#ref-calder2021">2021</a>)</span>, which used a cross-over design to evaluate the effect of an intervention designed to improve grammatical morphology. This study also included probes to test mastery of untrained morphological endings. The trained structure was past tense -ed; a ‘generalisation’ probe was another verb ending, 3rd person singular -s, and a control probe was possessive -s. Before studying Figure <a href="Single.html#fig:Calderplus">17.7</a> make a note of your predictions about what you might expect to see with these additional probes.</p></li>
+</ol>
+<div class="figure"><span style="display:block;" id="fig:Calderplus"></span>
+<img src="17-Single_files/figure-html/Calderplus-1.png" alt="Mean % correct for all 3 probes in delayed cross-over study by Calder et al, 2021 (data plotted from Calder et al's Table 2)." width="672" />
+<p class="caption">
+Figure 17.7: Mean % correct for all 3 probes in delayed cross-over study by Calder et al, 2021 (data plotted from Calder et al’s Table 2).
+</p>
+</div>
+<p>Once you have studied the Figure, consider whether you think the inclusion of the probes has strengthened your confidence in the conclusion that the intervention is effective.</p>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-armson1998" class="csl-entry">
+Armson, Joy, and Andrew Stuart. 1998. <span>“Effect of <span>Extended Exposure</span> to <span>Frequency-Altered Feedback</span> on <span>Stuttering During Reading</span> and <span>Monologue</span>.”</span> <em>Journal of Speech, Language, and Hearing Research</em> 41 (3): 479–90. <a href="https://doi.org/10.1044/jslhr.4103.479">https://doi.org/10.1044/jslhr.4103.479</a>.
+</div>
+<div id="ref-best2013" class="csl-entry">
+Best, Wendy, Alison Greenwood, Jennie Grassly, Ruth Herbert, Julie Hickin, and David Howard. 2013. <span>“Aphasia Rehabilitation: <span>Does</span> Generalisation from Anomia Therapy Occur and Is It Predictable? <span>A</span> Case Series Study.”</span> <em>Cortex</em> 49 (9): 2345–57. <a href="https://doi.org/10.1016/j.cortex.2013.01.005">https://doi.org/10.1016/j.cortex.2013.01.005</a>.
+</div>
+<div id="ref-calder2021" class="csl-entry">
+Calder, Samuel D., Mary Claessen, Susan Ebbels, and ão Suze Leit. 2021. <span>“The <span>Efficacy</span> of an <span>Explicit Intervention Approach</span> to <span>Improve Past Tense Marking</span> for <span>Early School-Age Children With Developmental Language Disorder</span>.”</span> <em>Journal of Speech, Language, and Hearing Research</em> 64 (1): 91–104. <a href="https://doi.org/10.1044/2020_JSLHR-20-00132">https://doi.org/10.1044/2020_JSLHR-20-00132</a>.
+</div>
+<div id="ref-koutsoftas2009" class="csl-entry">
+Koutsoftas, Anthony D., Mary Towle Harmon, and Shelley Gray. 2009. <span>“The Effect of <span>Tier</span> 2 Intervention for Phonemic Awareness in a Response-to-Intervention Model in Low-Income Preschool Classrooms.”</span> <em>Language, Speech, and Hearing Services in Schools</em> 40 (2): 116–30. <a href="https://doi.org/10.1044/0161-1461(2008/07-0101)">https://doi.org/10.1044/0161-1461(2008/07-0101)</a>.
+</div>
+<div id="ref-krasny-pacini2018" class="csl-entry">
+Krasny-Pacini, Agata, and Jonathan Evans. 2018. <span>“Single-Case Experimental Designs to Assess Intervention Effectiveness in Rehabilitation: <span>A</span> Practical Guide.”</span> <em>Annals of Physical and Rehabilitation Medicine</em> 61 (3): 164–79. <a href="https://doi.org/10.1016/j.rehab.2017.12.002">https://doi.org/10.1016/j.rehab.2017.12.002</a>.
+</div>
+<div id="ref-ledford2019" class="csl-entry">
+Ledford, Jennifer R., Erin E. Barton, Katherine E. Severini, and Kathleen N. Zimmerman. 2019. <span>“A <span>Primer</span> on <span>Single-Case Research Designs</span>: <span>Contemporary Use</span> and <span>Analysis</span>.”</span> <em>American Journal on Intellectual and Developmental Disabilities</em> 124 (1): 35. https://doi.org/<a href="http://dx.doi.org/10.1352/1944-7558-124.1.35">http://dx.doi.org/10.1352/1944-7558-124.1.35</a>.
+</div>
+<div id="ref-leniston2021" class="csl-entry">
+Leniston, Hannah, and Susan Ebbels. 2021. <span>“Investigation into the Effectiveness of Electropalatography in Treating Persisting Speech Sound Disorders in Adolescents with Co-Occurring Developmental Language Disorder.”</span> <em>Clinical Linguistics &amp; Phonetics</em>, July, 1–16. <a href="https://doi.org/10.1080/02699206.2021.1957022">https://doi.org/10.1080/02699206.2021.1957022</a>.
+</div>
+<div id="ref-mirza2017" class="csl-entry">
+Mirza, RD, S Punja, S Vohra, and G Guyatt. 2017. <span>“The History and Development of <span class="nocase">N-of-1</span> Trials.”</span> <em>Journal of the Royal Society of Medicine</em> 110 (8): 330–40. <a href="https://doi.org/10.1177/0141076817721131">https://doi.org/10.1177/0141076817721131</a>.
+</div>
+<div id="ref-perdices2009" class="csl-entry">
+Perdices, Michael, and Robyn L. Tate. 2009. <span>“Single-Subject Designs as a Tool for Evidence-Based Clinical Practice: <span>Are</span> They Unrecognised and Undervalued?”</span> <em>Neuropsychological Rehabilitation</em> 19 (6): 904–27. <a href="https://doi.org/10.1080/09602010903040691">https://doi.org/10.1080/09602010903040691</a>.
+</div>
+<div id="ref-swain2020" class="csl-entry">
+Swain, Nathaniel R., Patricia A. Eadie, and Pamela C. Snow. 2020. <span>“Speech and Language Therapy for Adolescents in Youth Justice: <span>A</span> Series of Empirical Single-Case Studies.”</span> <em>International Journal of Language &amp; Communication Disorders</em> 55 (4): 458–79. <a href="https://doi.org/10.1111/1460-6984.12529">https://doi.org/10.1111/1460-6984.12529</a>.
+</div>
+<div id="ref-tate2016" class="csl-entry">
+Tate, Robyn L., Michael Perdices, Ulrike Rosenkoetter, William Shadish, Sunita Vohra, David H. Barlow, Robert Horner, et al. 2016. <span>“The <span>Single-Case Reporting Guideline In Behavioural Interventions</span> (<span>SCRIBE</span>) 2016 <span>Statement</span>.”</span> <em>Physical Therapy</em> 96 (7): e1–10. <a href="https://doi.org/10.2522/ptj.2016.96.7.e1">https://doi.org/10.2522/ptj.2016.96.7.e1</a>.
+</div>
+<div id="ref-varley2016" class="csl-entry">
+Varley, R, P Cowell, L Dyson, L Inglis, A Roper, and S. P. Whiteside. 2016. <span>“Self-<span>Administered Computer Therapy</span> for <span>Apraxia</span> of <span>Speech</span>.”</span> <em>Stroke</em> 47 (3): 822–28. <a href="https://doi.org/10.1161/STROKEAHA.115.011939">https://doi.org/10.1161/STROKEAHA.115.011939</a>.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="crossover.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="pubbias.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Intervention_bookdown2.pdf", "Intervention_bookdown2.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

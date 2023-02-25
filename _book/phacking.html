@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 11 False positives, p-hacking and multiple comparisons | Evaluating what works</title>
+  <meta name="description" content="Introduction to methods for evaluating effectiveness of non-medical interventions" />
+  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 11 False positives, p-hacking and multiple comparisons | Evaluating what works" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Introduction to methods for evaluating effectiveness of non-medical interventions" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 11 False positives, p-hacking and multiple comparisons | Evaluating what works" />
+  
+  <meta name="twitter:description" content="Introduction to methods for evaluating effectiveness of non-medical interventions" />
+  
+
+<meta name="author" content="Dorothy V M Bishop and Paul A Thompson" />
+
+
+<meta name="date" content="2023-02-25" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="power.html"/>
+<link rel="next" href="RCT.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
+<link href="libs/tabwid-1.0.0/tabwid.css" rel="stylesheet" />
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#why-did-we-write-this-book"><i class="fa fa-check"></i>Why did we write this book?</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#who-is-this-book-for"><i class="fa fa-check"></i>Who is this book for?</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#what-is-covered"><i class="fa fa-check"></i>What is covered?</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#feedback-and-contributions"><i class="fa fa-check"></i>Feedback and contributions</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#how-can-we-know-if-weve-made-a-difference"><i class="fa fa-check"></i><b>1.1</b> How can we know if we’ve made a difference?</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#the-randomness-of-everything"><i class="fa fa-check"></i><b>1.2</b> The randomness of everything</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#systematic-bias"><i class="fa fa-check"></i><b>1.3</b> Systematic bias</a></li>
+<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#class-exercise"><i class="fa fa-check"></i><b>1.4</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="observations.html"><a href="observations.html"><i class="fa fa-check"></i><b>2</b> Why clinical observations can be misleading</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="observations.html"><a href="observations.html#class-exercise-1"><i class="fa fa-check"></i><b>2.1</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="reliability.html"><a href="reliability.html"><i class="fa fa-check"></i><b>3</b> How to select an outcome measure</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="reliability.html"><a href="reliability.html#reliability-1"><i class="fa fa-check"></i><b>3.1</b> Reliability</a></li>
+<li class="chapter" data-level="3.2" data-path="reliability.html"><a href="reliability.html#validity"><i class="fa fa-check"></i><b>3.2</b> Validity</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="reliability.html"><a href="reliability.html#cultural-factors"><i class="fa fa-check"></i><b>3.2.1</b> Cultural factors</a></li>
+<li class="chapter" data-level="3.2.2" data-path="reliability.html"><a href="reliability.html#generalisability-of-results-to-other-outcomes-the-concepts-of-far-and-near-transfer"><i class="fa fa-check"></i><b>3.2.2</b> Generalisability of results to other outcomes: the concepts of far and near transfer</a></li>
+<li class="chapter" data-level="3.2.3" data-path="reliability.html"><a href="reliability.html#functional-outcomes-vs-test-scores"><i class="fa fa-check"></i><b>3.2.3</b> Functional outcomes vs test scores</a></li>
+<li class="chapter" data-level="3.2.4" data-path="reliability.html"><a href="reliability.html#subjectivity-as-a-threat-to-validity"><i class="fa fa-check"></i><b>3.2.4</b> Subjectivity as a threat to validity</a></li>
+<li class="chapter" data-level="3.2.5" data-path="reliability.html"><a href="reliability.html#correlations-with-other-measures"><i class="fa fa-check"></i><b>3.2.5</b> Correlations with other measures</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="reliability.html"><a href="reliability.html#normative-data"><i class="fa fa-check"></i><b>3.3</b> Normative data</a></li>
+<li class="chapter" data-level="3.4" data-path="reliability.html"><a href="reliability.html#sensitivity"><i class="fa fa-check"></i><b>3.4</b> Sensitivity</a></li>
+<li class="chapter" data-level="3.5" data-path="reliability.html"><a href="reliability.html#is-it-practical"><i class="fa fa-check"></i><b>3.5</b> Is it practical?</a></li>
+<li class="chapter" data-level="3.6" data-path="reliability.html"><a href="reliability.html#class-exercise-2"><i class="fa fa-check"></i><b>3.6</b> Class exercise</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="reliability.html"><a href="reliability.html#mean-length-of-utterance"><i class="fa fa-check"></i><b>3.6.1</b> Mean Length of Utterance</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="nonspecific.html"><a href="nonspecific.html"><i class="fa fa-check"></i><b>4</b> Improvement due to nonspecific effects of intervention</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="nonspecific.html"><a href="nonspecific.html#placebo-effects"><i class="fa fa-check"></i><b>4.1</b> Placebo effects</a></li>
+<li class="chapter" data-level="4.2" data-path="nonspecific.html"><a href="nonspecific.html#identifying-specific-intervention-effects-by-measures-of-mechanism"><i class="fa fa-check"></i><b>4.2</b> Identifying specific intervention effects by measures of mechanism</a></li>
+<li class="chapter" data-level="4.3" data-path="nonspecific.html"><a href="nonspecific.html#classroom-exercise"><i class="fa fa-check"></i><b>4.3</b> Classroom exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="prepost.html"><a href="prepost.html"><i class="fa fa-check"></i><b>5</b> Limitations of the pre-post design: biases related to systematic change</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="prepost.html"><a href="prepost.html#spontaneous-improvement"><i class="fa fa-check"></i><b>5.1</b> Spontaneous improvement</a></li>
+<li class="chapter" data-level="5.2" data-path="prepost.html"><a href="prepost.html#practice-effects"><i class="fa fa-check"></i><b>5.2</b> Practice effects</a></li>
+<li class="chapter" data-level="5.3" data-path="prepost.html"><a href="prepost.html#regression-to-the-mean"><i class="fa fa-check"></i><b>5.3</b> Regression to the mean</a></li>
+<li class="chapter" data-level="5.4" data-path="prepost.html"><a href="prepost.html#class-exercise-3"><i class="fa fa-check"></i><b>5.4</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="controls.html"><a href="controls.html"><i class="fa fa-check"></i><b>6</b> Controlling unwanted effects with a control group</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="controls.html"><a href="controls.html#is-it-ethical-to-include-a-control-group"><i class="fa fa-check"></i><b>6.1</b> Is it ethical to include a control group?</a></li>
+<li class="chapter" data-level="6.2" data-path="controls.html"><a href="controls.html#possible-adverse-effects-of-intervention"><i class="fa fa-check"></i><b>6.2</b> Possible adverse effects of intervention</a></li>
+<li class="chapter" data-level="6.3" data-path="controls.html"><a href="controls.html#uncontrolled-studies-are-unethical"><i class="fa fa-check"></i><b>6.3</b> Uncontrolled studies are unethical</a></li>
+<li class="chapter" data-level="6.4" data-path="controls.html"><a href="controls.html#treated-vs-untreated-controls"><i class="fa fa-check"></i><b>6.4</b> Treated vs untreated controls</a></li>
+<li class="chapter" data-level="6.5" data-path="controls.html"><a href="controls.html#classroom-exercise-1"><i class="fa fa-check"></i><b>6.5</b> Classroom exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="randomise.html"><a href="randomise.html"><i class="fa fa-check"></i><b>7</b> Controlling for selection bias: randomised assignment to intervention</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="randomise.html"><a href="randomise.html#randomization-methods"><i class="fa fa-check"></i><b>7.1</b> Randomization methods</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="randomise.html"><a href="randomise.html#simple-randomization"><i class="fa fa-check"></i><b>7.1.1</b> Simple randomization</a></li>
+<li class="chapter" data-level="7.1.2" data-path="randomise.html"><a href="randomise.html#random-permuted-blocks"><i class="fa fa-check"></i><b>7.1.2</b> Random permuted blocks</a></li>
+<li class="chapter" data-level="7.1.3" data-path="randomise.html"><a href="randomise.html#unequal-randomization"><i class="fa fa-check"></i><b>7.1.3</b> Unequal randomization</a></li>
+<li class="chapter" data-level="7.1.4" data-path="randomise.html"><a href="randomise.html#stratification"><i class="fa fa-check"></i><b>7.1.4</b> Stratification</a></li>
+<li class="chapter" data-level="7.1.5" data-path="randomise.html"><a href="randomise.html#adaptive-randomisation"><i class="fa fa-check"></i><b>7.1.5</b> Adaptive randomisation</a></li>
+<li class="chapter" data-level="7.1.6" data-path="randomise.html"><a href="randomise.html#minimization"><i class="fa fa-check"></i><b>7.1.6</b> Minimization</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="randomise.html"><a href="randomise.html#units-of-analysis-individuals-vs-clusters"><i class="fa fa-check"></i><b>7.2</b> Units of analysis: Individuals vs clusters</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="randomise.html"><a href="randomise.html#class-exercise-4"><i class="fa fa-check"></i><b>7.2.1</b> Class exercise</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="experimenter.html"><a href="experimenter.html"><i class="fa fa-check"></i><b>8</b> The experimenter as a source of bias</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="experimenter.html"><a href="experimenter.html#allocation-concealment"><i class="fa fa-check"></i><b>8.1</b> Allocation concealment</a></li>
+<li class="chapter" data-level="8.2" data-path="experimenter.html"><a href="experimenter.html#the-importance-of-masking-for-assessments"><i class="fa fa-check"></i><b>8.2</b> The importance of masking for assessments</a></li>
+<li class="chapter" data-level="8.3" data-path="experimenter.html"><a href="experimenter.html#conflict-of-interest"><i class="fa fa-check"></i><b>8.3</b> Conflict of interest</a></li>
+<li class="chapter" data-level="8.4" data-path="experimenter.html"><a href="experimenter.html#class-exercise-5"><i class="fa fa-check"></i><b>8.4</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="dropouts.html"><a href="dropouts.html"><i class="fa fa-check"></i><b>9</b> Further potential for bias: who drops out and who volunteers?</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="dropouts.html"><a href="dropouts.html#dealing-with-dropouts-intention-to-treat-analysis"><i class="fa fa-check"></i><b>9.1</b> Dealing with dropouts: Intention to treat analysis</a></li>
+<li class="chapter" data-level="9.2" data-path="dropouts.html"><a href="dropouts.html#who-volunteers-for-research"><i class="fa fa-check"></i><b>9.2</b> Who volunteers for research?</a></li>
+<li class="chapter" data-level="9.3" data-path="dropouts.html"><a href="dropouts.html#class-exercise-6"><i class="fa fa-check"></i><b>9.3</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="power.html"><a href="power.html"><i class="fa fa-check"></i><b>10</b> How big a sample do I need? Sampling, statistical power and type II errors</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="power.html"><a href="power.html#sampling"><i class="fa fa-check"></i><b>10.1</b> Sampling</a></li>
+<li class="chapter" data-level="10.2" data-path="power.html"><a href="power.html#effect-size"><i class="fa fa-check"></i><b>10.2</b> Effect size</a></li>
+<li class="chapter" data-level="10.3" data-path="power.html"><a href="power.html#sample-size-affects-accuracy-of-estimates"><i class="fa fa-check"></i><b>10.3</b> Sample size affects accuracy of estimates</a></li>
+<li class="chapter" data-level="10.4" data-path="power.html"><a href="power.html#understanding-p-values"><i class="fa fa-check"></i><b>10.4</b> Understanding p-values</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="power.html"><a href="power.html#type-ii-error"><i class="fa fa-check"></i><b>10.4.1</b> Type II error</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="power.html"><a href="power.html#statistical-power-and-beta"><i class="fa fa-check"></i><b>10.5</b> Statistical power and <span class="math inline">\(\beta\)</span></a></li>
+<li class="chapter" data-level="10.6" data-path="power.html"><a href="power.html#ways-to-improve-statistical-power"><i class="fa fa-check"></i><b>10.6</b> Ways to improve statistical power</a></li>
+<li class="chapter" data-level="10.7" data-path="power.html"><a href="power.html#class-exercises"><i class="fa fa-check"></i><b>10.7</b> Class Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="phacking.html"><a href="phacking.html"><i class="fa fa-check"></i><b>11</b> False positives, p-hacking and multiple comparisons</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="phacking.html"><a href="phacking.html#type-i-error"><i class="fa fa-check"></i><b>11.1</b> Type I error</a></li>
+<li class="chapter" data-level="11.2" data-path="phacking.html"><a href="phacking.html#reasons-for-false-positives"><i class="fa fa-check"></i><b>11.2</b> Reasons for false positives</a></li>
+<li class="chapter" data-level="11.3" data-path="phacking.html"><a href="phacking.html#adjusting-statistics-for-multiple-testing"><i class="fa fa-check"></i><b>11.3</b> Adjusting statistics for multiple testing</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="phacking.html"><a href="phacking.html#bonferroni-correction"><i class="fa fa-check"></i><b>11.3.1</b> Bonferroni Correction</a></li>
+<li class="chapter" data-level="11.3.2" data-path="phacking.html"><a href="phacking.html#meff"><i class="fa fa-check"></i><b>11.3.2</b> MEff</a></li>
+<li class="chapter" data-level="11.3.3" data-path="phacking.html"><a href="phacking.html#extracting-a-principal-component-from-a-set-of-measures"><i class="fa fa-check"></i><b>11.3.3</b> Extracting a principal component from a set of measures</a></li>
+<li class="chapter" data-level="11.3.4" data-path="phacking.html"><a href="phacking.html#improving-power-by-use-of-multiple-outcomes"><i class="fa fa-check"></i><b>11.3.4</b> Improving power by use of multiple outcomes</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="phacking.html"><a href="phacking.html#class-exercise-7"><i class="fa fa-check"></i><b>11.4</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="RCT.html"><a href="RCT.html"><i class="fa fa-check"></i><b>12</b> The randomised controlled trial as a method for controlling biases</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="RCT.html"><a href="RCT.html#statistical-analysis-of-a-rct"><i class="fa fa-check"></i><b>12.1</b> Statistical analysis of a RCT</a></li>
+<li class="chapter" data-level="12.2" data-path="RCT.html"><a href="RCT.html#steps-to-take-before-data-analysis"><i class="fa fa-check"></i><b>12.2</b> Steps to take before data analysis</a>
+<ul>
+<li class="chapter" data-level="12.2.1" data-path="RCT.html"><a href="RCT.html#sample-dataset-with-illustrative-analysis"><i class="fa fa-check"></i><b>12.2.1</b> Sample dataset with illustrative analysis</a></li>
+<li class="chapter" data-level="12.2.2" data-path="RCT.html"><a href="RCT.html#simple-t-test-on-outcome-data"><i class="fa fa-check"></i><b>12.2.2</b> Simple t-test on outcome data</a></li>
+<li class="chapter" data-level="12.2.3" data-path="RCT.html"><a href="RCT.html#t-test-on-difference-scores"><i class="fa fa-check"></i><b>12.2.3</b> T-test on difference scores</a></li>
+<li class="chapter" data-level="12.2.4" data-path="RCT.html"><a href="RCT.html#analysis-of-covariance-on-outcome-scores"><i class="fa fa-check"></i><b>12.2.4</b> Analysis of covariance on outcome scores</a></li>
+<li class="chapter" data-level="12.2.5" data-path="RCT.html"><a href="RCT.html#linear-mixed-models-lmm-approach"><i class="fa fa-check"></i><b>12.2.5</b> Linear mixed models (LMM) approach</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="RCT.html"><a href="RCT.html#class-exercise-8"><i class="fa fa-check"></i><b>12.3</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="drawbacks.html"><a href="drawbacks.html"><i class="fa fa-check"></i><b>13</b> Drawbacks of the two-arm RCT</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="drawbacks.html"><a href="drawbacks.html#inefficiency-need-for-unfeasibly-large-samples"><i class="fa fa-check"></i><b>13.1</b> Inefficiency: need for unfeasibly large samples</a></li>
+<li class="chapter" data-level="13.2" data-path="drawbacks.html"><a href="drawbacks.html#transfer-to-real-life-efficacy-and-effectiveness"><i class="fa fa-check"></i><b>13.2</b> Transfer to real life: efficacy and effectiveness</a></li>
+<li class="chapter" data-level="13.3" data-path="drawbacks.html"><a href="drawbacks.html#heterogeneity-and-personalised-intervention"><i class="fa fa-check"></i><b>13.3</b> Heterogeneity and personalised intervention</a></li>
+<li class="chapter" data-level="13.4" data-path="drawbacks.html"><a href="drawbacks.html#class-exercise-9"><i class="fa fa-check"></i><b>13.4</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="adaptive.html"><a href="adaptive.html"><i class="fa fa-check"></i><b>14</b> Adaptive Interventions</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="adaptive.html"><a href="adaptive.html#class-exercise-10"><i class="fa fa-check"></i><b>14.1</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="cluster.html"><a href="cluster.html"><i class="fa fa-check"></i><b>15</b> Cluster Randomised Control Trials</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="cluster.html"><a href="cluster.html#what-is-a-cluster-rct"><i class="fa fa-check"></i><b>15.1</b> What is a cluster RCT?</a></li>
+<li class="chapter" data-level="15.2" data-path="cluster.html"><a href="cluster.html#advantages-of-a-cluster-design"><i class="fa fa-check"></i><b>15.2</b> Advantages of a cluster design</a></li>
+<li class="chapter" data-level="15.3" data-path="cluster.html"><a href="cluster.html#disadvantages-of-a-cluster-design"><i class="fa fa-check"></i><b>15.3</b> Disadvantages of a cluster design</a></li>
+<li class="chapter" data-level="15.4" data-path="cluster.html"><a href="cluster.html#class-exercise-11"><i class="fa fa-check"></i><b>15.4</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="crossover.html"><a href="crossover.html"><i class="fa fa-check"></i><b>16</b> Cross-over designs</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="crossover.html"><a href="crossover.html#a-within-subjects-approach-to-the-rct"><i class="fa fa-check"></i><b>16.1</b> A within-subjects approach to the RCT</a>
+<ul>
+<li class="chapter" data-level="16.1.1" data-path="crossover.html"><a href="crossover.html#delayed-crossover-design-wait-list-controls"><i class="fa fa-check"></i><b>16.1.1</b> Delayed crossover design (Wait list controls)</a></li>
+</ul></li>
+<li class="chapter" data-level="16.2" data-path="crossover.html"><a href="crossover.html#class-exercise-12"><i class="fa fa-check"></i><b>16.2</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="Single.html"><a href="Single.html"><i class="fa fa-check"></i><b>17</b> Single case designs</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="Single.html"><a href="Single.html#logic-of-single-case-designs"><i class="fa fa-check"></i><b>17.1</b> Logic of single case designs</a>
+<ul>
+<li class="chapter" data-level="17.1.1" data-path="Single.html"><a href="Single.html#minimising-unwanted-variance"><i class="fa fa-check"></i><b>17.1.1</b> Minimising unwanted variance</a></li>
+<li class="chapter" data-level="17.1.2" data-path="Single.html"><a href="Single.html#minimising-systematic-bias"><i class="fa fa-check"></i><b>17.1.2</b> Minimising systematic bias</a></li>
+<li class="chapter" data-level="17.1.3" data-path="Single.html"><a href="Single.html#the-need-for-sufficient-data"><i class="fa fa-check"></i><b>17.1.3</b> The need for sufficient data</a></li>
+</ul></li>
+<li class="chapter" data-level="17.2" data-path="Single.html"><a href="Single.html#examples-of-studies-using-different-types-of-single-case-design"><i class="fa fa-check"></i><b>17.2</b> Examples of studies using different types of single case design</a>
+<ul>
+<li class="chapter" data-level="17.2.1" data-path="Single.html"><a href="Single.html#a-multiple-baseline-design-speech-and-language-therapy-for-adolescents-in-youth-justice."><i class="fa fa-check"></i><b>17.2.1</b> A multiple baseline design: Speech and language therapy for adolescents in youth justice.</a></li>
+<li class="chapter" data-level="17.2.2" data-path="Single.html"><a href="Single.html#a-study-using-multiple-baseline-across-behaviours-effectiveness-of-electropalatography"><i class="fa fa-check"></i><b>17.2.2</b> A study using multiple baseline across behaviours: Effectiveness of electropalatography</a></li>
+<li class="chapter" data-level="17.2.3" data-path="Single.html"><a href="Single.html#example-of-an-analysis-of-case-series-data"><i class="fa fa-check"></i><b>17.2.3</b> Example of an analysis of case series data</a></li>
+<li class="chapter" data-level="17.2.4" data-path="Single.html"><a href="Single.html#combining-approaches-to-strengthen-study-design"><i class="fa fa-check"></i><b>17.2.4</b> Combining approaches to strengthen study design</a></li>
+</ul></li>
+<li class="chapter" data-level="17.3" data-path="Single.html"><a href="Single.html#statistical-approaches-to-single-case-designs"><i class="fa fa-check"></i><b>17.3</b> Statistical approaches to single case designs</a></li>
+<li class="chapter" data-level="17.4" data-path="Single.html"><a href="Single.html#overview-of-considerations-for-single-case-designs"><i class="fa fa-check"></i><b>17.4</b> Overview of considerations for single case designs</a></li>
+<li class="chapter" data-level="17.5" data-path="Single.html"><a href="Single.html#class-exercise-13"><i class="fa fa-check"></i><b>17.5</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="pubbias.html"><a href="pubbias.html"><i class="fa fa-check"></i><b>18</b> Can you trust the published literature?</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="pubbias.html"><a href="pubbias.html#publication-bias"><i class="fa fa-check"></i><b>18.1</b> Publication bias</a>
+<ul>
+<li class="chapter" data-level="18.1.1" data-path="pubbias.html"><a href="pubbias.html#citation-bias"><i class="fa fa-check"></i><b>18.1.1</b> Citation bias</a></li>
+<li class="chapter" data-level="18.1.2" data-path="pubbias.html"><a href="pubbias.html#counteracting-publication-and-citation-biases"><i class="fa fa-check"></i><b>18.1.2</b> Counteracting publication and citation biases</a></li>
+<li class="chapter" data-level="18.1.3" data-path="pubbias.html"><a href="pubbias.html#class-exercise-14"><i class="fa fa-check"></i><b>18.1.3</b> Class exercise</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="prereg.html"><a href="prereg.html"><i class="fa fa-check"></i><b>19</b> Pre-registration and Registered Reports</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="prereg.html"><a href="prereg.html#study-registration"><i class="fa fa-check"></i><b>19.1</b> Study registration</a></li>
+<li class="chapter" data-level="19.2" data-path="prereg.html"><a href="prereg.html#registered-reports"><i class="fa fa-check"></i><b>19.2</b> Registered Reports</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="litrev.html"><a href="litrev.html"><i class="fa fa-check"></i><b>20</b> Reviewing the literature before you start</a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="litrev.html"><a href="litrev.html#what-is-a-systematic-review"><i class="fa fa-check"></i><b>20.1</b> What is a systematic review?</a></li>
+<li class="chapter" data-level="20.2" data-path="litrev.html"><a href="litrev.html#steps-in-the-literature-review"><i class="fa fa-check"></i><b>20.2</b> Steps in the literature review</a>
+<ul>
+<li class="chapter" data-level="20.2.1" data-path="litrev.html"><a href="litrev.html#define-an-appropriate-question"><i class="fa fa-check"></i><b>20.2.1</b> Define an appropriate question</a></li>
+<li class="chapter" data-level="20.2.2" data-path="litrev.html"><a href="litrev.html#specify-criteria-for-a-literature-search"><i class="fa fa-check"></i><b>20.2.2</b> Specify criteria for a literature search</a></li>
+<li class="chapter" data-level="20.2.3" data-path="litrev.html"><a href="litrev.html#select-eligible-studies-following-protocols-inclusion-criteria"><i class="fa fa-check"></i><b>20.2.3</b> Select eligible studies following protocol’s inclusion criteria</a></li>
+<li class="chapter" data-level="20.2.4" data-path="litrev.html"><a href="litrev.html#assess-the-quality-of-each-study-included"><i class="fa fa-check"></i><b>20.2.4</b> Assess the quality of each study included</a></li>
+<li class="chapter" data-level="20.2.5" data-path="litrev.html"><a href="litrev.html#organise-summarise-and-unbiasedly-present-the-findings-from-all-included-studies"><i class="fa fa-check"></i><b>20.2.5</b> Organise, summarise, and unbiasedly present the findings from all included studies</a></li>
+</ul></li>
+<li class="chapter" data-level="20.3" data-path="litrev.html"><a href="litrev.html#systematic-review-or-literature-review"><i class="fa fa-check"></i><b>20.3</b> Systematic review or literature review?</a></li>
+<li class="chapter" data-level="20.4" data-path="litrev.html"><a href="litrev.html#class-exercise-15"><i class="fa fa-check"></i><b>20.4</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="protocol.html"><a href="protocol.html"><i class="fa fa-check"></i><b>21</b> A template for a research protocol</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Evaluating what works</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="phacking" class="section level1 hasAnchor" number="11">
+<h1><span class="header-section-number">Chapter 11</span> False positives, p-hacking and multiple comparisons<a href="phacking.html#phacking" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<!---Paul - I think this chapter was too complicated - particularly the material after the Bonferroni. Need to discuss how to handle it. It might be possible to simplify it further and just refer on to other sources. 
+I have substituted an alternative for the FDR/permutations material - see what you think.
+But I think the main thing is to get them to understand why p-hacking is a problem, and when you need to correct for multiple comparisons, without getting too bogged down in difficult stuff-->
+<p><img src="images/logo_alone_new.png" width="143" /></p>
+<div id="type-i-error" class="section level2 hasAnchor" number="11.1">
+<h2><span class="header-section-number">11.1</span> Type I error<a href="phacking.html#type-i-error" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A <strong>Type I error</strong> is a <strong>false positive</strong>, which occurs when the null hypothesis is rejected but a true effect is not actually present. This would correspond to the situation where the evidence seems to indicate an intervention is effective, but in reality it is not. One useful mnemonic for distinguishing Type I and Type II errors is to think of the sequence of events in the fable of the boy who cried wolf. This boy lived in a remote village and he used to have fun running out to the farmers in the fields and shouting “Wolf! Wolf!” and watching them all get alarmed. The farmers were making an (understandable) Type I error, of concluding there was a wolf when in fact there was none. One day, however, a wolf turned up. The boy ran into the village shouting “Wolf! Wolf!” but nobody took any notice of him, because they were used to his tricks. Sadly, all the sheep got eaten because the villagers had made a Type II error, assuming there was no wolf when there really was one. This figure is really the same as Table 10.1 from the previous chapter, but redrawn in terms of wolves and sheep.</p>
+<p><img src="images/wolf_sheep.png" /></p>
+<p>The type I error rate is controlled by setting the significance criterion, <span class="math inline">\(\alpha=0.05\)</span>, at 5%, or sometimes more conservatively 1% (<span class="math inline">\(\alpha=0.01\)</span>). With <span class="math inline">\(\alpha=0.05\)</span>, on average 1 in 20 statistically significant results will be false positives; when it is .01, then 1 in 100 will be false positives. The .05 cutoff is essentially arbitrary, but very widely adopted in the medical and social sciences literature, though debate continues as to whether a different convention should be adopted <span class="citation">Lakens et al. (<a href="#ref-lakens2018">2018</a>)</span>.</p>
+</div>
+<div id="reasons-for-false-positives" class="section level2 hasAnchor" number="11.2">
+<h2><span class="header-section-number">11.2</span> Reasons for false positives<a href="phacking.html#reasons-for-false-positives" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>There is one obvious reason why researchers get false positive results: chance. It follows from the definition given above that if you adopt an alpha level of .05, and if the treatment really has no effect, you will wrongly conclude that your intervention is effective in 1 in 20 studies. This is why we should never put strong confidence in, or introduce major policy changes on the basis of, a single study. The probability of getting a false positive once is .05, but if you replicate your finding, then it is far more likely that it is reliable - the probability of two false positives in a row is .05 * .05 = .0025, or 1 in 400.</p>
+<p>Unfortunately, though, false positives and non-replicable results are far more common in the literature than they should be if our scientific method was working properly. One reason, which will be covered in Chapter <a href="pubbias.html#pubbias">18</a>, is publication bias. Quite simply, there is a huge bias in favour of publishing papers reporting statistically significant results, with null results getting quietly forgotten.</p>
+<p>A related reason is a selective focus on positive findings <em>within</em> a study. Consider a study where the researcher measures children’s skills on five different measures, comprehension, expression, mathematics, reading, and motor skills, but only one of them, comprehension, shows a statistically significant improvement (p &lt; .05) after intervention that involves general “learning stimulation”. It may seem reasonable to delete the other measures from the write-up, because they are uninteresting. Alternatively, the researcher may report all the results, but argue that there is a good reason why the intervention worked for this specific measure. Unfortunately, this would be badly misleading, because the statistical test needed for a study with five outcome measures is different from the one needed for a single measure. Failure to understand this point is widespread - insofar as it is recognised as a problem, it is thought of as a relatively minor issue. Let’s look at this example in more detail to illustrate why it can be serious.</p>
+<p>We assume in the example above that the researcher would have been equally likely to single out any one of the five measures, provided it gave p &lt; .05, regardless of which one it was; with hindsight, it’s usually possible to tell a good story about why the intervention was specifically effective with that task. If that is so, then interpreting a p-value for each individual measure is inappropriate, because the implicit hypothesis that is being tested is “do <em>any</em> of these measures improve after intervention?”. The probability of a false positive for any specific measure is 1 in 20, but the probability that <em>at least</em> one measure gives a false positive result is higher. We can work it out as follows. Let’s start by assuming that in reality the intervention has no effect:</p>
+<ul>
+<li>With <span class="math inline">\(\alpha\)</span> set to. 05, the probability that any one measure gives a <em>nonsignificant</em> result = .95.</li>
+<li>The probability that <em>all five measures</em> give a <em>nonsignificant</em> result is found by multiplying the probabilities for the five tasks: .95 * .95 * .95 * .95 * .95 = .77.</li>
+<li>So it follows that the probability that <em>at least one</em> measure gives a significant result (p-value &lt; .05) is 1-.77 = .23.</li>
+</ul>
+<p>In other words, with five measures to consider, the probability that <em>at least one of them</em> will give us p &lt; .05 is not 1 in 20 but 1 in 4. The more measures there are, the worse it gets. We will discuss solutions to this issue below (see Multiple testing).</p>
+<p>Psychologists have developed a term to talk about the increase in false positives that arises when people pick out results on the basis that they have a p-value of .05, regardless of the context - <em>p-hacking</em> <span class="citation">(<a href="#ref-simonsohn2014a">Simonsohn, Nelson, and Simmons 2014</a>)</span>. <span class="citation">Bishop and Thompson (<a href="#ref-bishop2016">2016</a>)</span> coined the term <em>ghost variable</em> to refer to a variable that was measured but was then not reported because it did not give significant results - making it impossible to tell that p-hacking had occurred. Another term, <em>HARKing</em>, or “hypothesising after the results are known” <span class="citation">(<a href="#ref-kerr1998">Kerr 1998</a>)</span> is used to describe the tendency to rewrite not just the Discussion but also the Introduction of a paper to fit the result that has been obtained. Sadly, many researchers don’t realise that these behaviours can dramatically increase the rate of false positives in the literature. Furthermore, they may be encouraged by senior figures to adopt exactly these practices: a notorious example is that of <span class="citation">Bem (<a href="#ref-bem2004">2004</a>)</span>. Perhaps the most common error is to regard a p-value as a kind of inherent property of a result that reflects its importance regardless of context. In fact, context is absolutely key: a single p-value below .05 has a very different meaning in a study where you only had one outcome measure than in a study where you tested several measures in case <em>any</em> of them gave an interesting result.</p>
+<p>A related point is that you should <em>never generate and test a hypothesis using the same data</em>. After you have run your study, you may be enthusiastic about doing further research with a specific focus on the comprehension outcome measure. That’s fine, and in a new study with specific predictions about comprehension you could adopt <span class="math inline">\(\alpha\)</span> of .05 without any corrections for multiple testing. Problems arise when you subtly change your hypothesis <em>after seeing the data</em> from “Do <em>any</em> of these N measures show interesting results?” to “Does comprehension improve after intervention?”, and apply statistics as if the other measures had not been considered.</p>
+<p>In clinical trials research, potential for p-hacking is in theory limited by a requirement for registration of trial protocols, which usually entails that a primary outcome measure is identified before the study is started (see Chapter <a href="prereg.html#prereg">19</a>). This has not yet become standard for behavioural interventions, and in practice, clinical trial researchers often deviate from the protocol after seeing the results <span class="citation">(<a href="#ref-goldacre2019">Goldacre et al. 2019</a>)</span>. It is important to be aware of the potential for a high rate of false positives when multiple outcomes are included.</p>
+<p>Does this mean that only a single outcome can be included? The answer is no: It might be the case that the researcher requires multiple outcomes to determine the effectiveness of an intervention, for example, a quantity of interest might not be able to be measured directly, so several proxy measures are recorded to provide a composite outcome measure. But in this case, it is important to plan in advance how to conduct the analysis to avoid an increased rate of false positives.</p>
+<p>Selection of one measure from among many is just one form of p-hacking. Another common practice has been referred to as the “garden of forking paths”: the practice of trying many different analyses, including making subgroups, changing how variables are categorised, excluding certain participants post hoc, or applying different statistical tests, in the quest for something significant. This has all the problems noted above in the case of selecting from multiple measures, except it is even harder to make adjustments to the analysis to take it into account because it is often unclear exactly how many different analyses could potentially have been run. With enough analyses it is almost always possible to find something that achieves the magic cutoff of p &lt; .05.</p>
+<p>This <a href="https://figshare.com/articles/figure/The_Garden_of_Forking_Paths/2100379">animation</a> tracks how the probability of a “significant” p-value below .05 increases as one does increasingly refined analyses of hypothetical data investigating a link between handedness and ADHD - with data split according to age, type of handedness test, gender, and whether the child’s home is rural or urban. The probability of finding at least one significant result is tracked at the bottom of the display. For each binary split, the number of potential contrasts doubles, so at the end of the path there are 16 potential tests that could have been run, and the probability of at <em>at least one</em> “significant” result in one combination of conditions is .56. The researcher may see that a p-value is below .05 and gleefully report that they have discovered an exciting association, but if they were looking for <em>any</em> combination of values out of numerous possibilities, then the p-value is highly misleading - in particular, it is <em>not</em> the case that there is only a 1 in 20 chance of obtaining a result this extreme.</p>
+<p>There are several ways we can defend ourselves against a proliferation of false positives that results if we are too flexible in data analysis:</p>
+<ul>
+<li><p>Pre-registration of the study protocol, giving sufficient detail of measures and planned analyses to prevent flexible analysis - or at least make it clear when researchers have departed from the protocol. We cover pre-registration in more detail in Chapter <a href="prereg.html#prereg">19</a>.</p></li>
+<li><p>Using statistical methods to correct for multiple testing. Specific methods are discussed below. Note, however, that this is only effective if we correct for all the possible analyses that were considered.</p></li>
+<li><p>“Multiverse analysis”: explicitly conducting all possible analyses to test how particular analytic decisions affected results. This is beyond the scope of this book, as it is more commonly adopted in non-intervention research contexts <span class="citation">(<a href="#ref-steegen2016">Steegen et al. 2016</a>)</span> when analysis of associations between variables is done with pre-existing data sets.</p></li>
+</ul>
+</div>
+<div id="adjusting-statistics-for-multiple-testing" class="section level2 hasAnchor" number="11.3">
+<h2><span class="header-section-number">11.3</span> Adjusting statistics for multiple testing<a href="phacking.html#adjusting-statistics-for-multiple-testing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>As noted above, even when we have a well-designed and adequately powered study, if we collect multiple outcome variables, or if we are applying multiple tests to the same data, then we increase our chance of finding a false positive. Remember that if we set <span class="math inline">\(\alpha\)</span> to .05 and apply <span class="math inline">\(k\)</span> tests to our data, then the probability of finding at least one false positive is given by <span class="math inline">\(1-(1-\alpha)^{k}\)</span>. This is officially known as the family-wise error rate (FWER).</p>
+<div class="figure"><span style="display:block;" id="fig:familywise"></span>
+<img src="11-phacking_files/figure-html/familywise-1.png" alt="Plot of relationship between familywse error rate and number of statistical tests" width="50%" />
+<p class="caption">
+Figure 11.1: Plot of relationship between familywse error rate and number of statistical tests
+</p>
+</div>
+<p>Figure <a href="phacking.html#fig:familywise">11.1</a> shows the relationship between the familywise error rate and the number of tests conducted on the data. Note that the left-most point of the blue line corresponds to the case when we have just one statistical test, and the probability of a false positive is .05, exactly where we would expect. The dotted line shows the case where we performed 10 tests (k = 10), increasing our chance of obtaining a false positive to approximately 40%. Clearly, the more tests applied, the greater the increase in the chance of at least one false positive result. Although it may seem implausible that anyone would conduct 100 tests, the number of implicit tests can rapidly increase if sequential analytic decisions multiply, as shown in the Garden of Forking Paths example, where we subdivided the analysis 4 times, to give 2^4 = 16 possible ways of dividing up the data.</p>
+<p>There are many different ways to adjust for the multiple testing in practice. We shall discuss some relatively simple approaches that are useful in the context of intervention research, two of which can be used when evaluating published studies, as well as when planning a new study.</p>
+<div id="bonferroni-correction" class="section level3 hasAnchor" number="11.3.1">
+<h3><span class="header-section-number">11.3.1</span> Bonferroni Correction<a href="phacking.html#bonferroni-correction" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The Bonferroni correction is both the simplest and most popular adjustment for multiple testing. The test is described as “protecting the type I error rate”, i.e. if you want to make a false positive error only 1 in 20 studies, the Bonferroni correction specifies a new <span class="math inline">\(\alpha\)</span> level that is adjusted for the number of tests. The Bonferroni correction is very easy to apply: you just divide your desired false positive rate by the number of tests conducted.</p>
+<p>For example, say we had some data and wanted to run multiple t-tests between two groups on 10 outcomes, and keep the false positive rate at 1 in 20. The Bonferroni correction would adjust the <span class="math inline">\(\alpha\)</span> level to be 0.05/10 = 0.005, which would indicate that the true false positive rate would be <span class="math inline">\(1-(1-\alpha_{adjusted})^{n} = 1-(1-0.005)^{10} = 0.049\)</span> which approximates our desired false positive rate. So we now treat any p-values greater than .005 as non-significant. This successfully controls our type I error rate at approximately 5%.</p>
+<p>It is not uncommon for researchers to report results both with and without Bonferroni correction - using phrases such as “the difference was significant but did not survive Bonferroni correction”. This indicates misunderstanding of the statistics. The Bonferroni correction is not some kind of optional extra in an analysis that is just there to satisfy pernickety statisticians. If it is needed - as will be the case when multiple tests are conducted in the absence of clear a priori predictions - then the raw uncorrected p-values are not meaningful, and should not be reported.</p>
+<p>The Bonferroni correction is widely used due to its simplicity but it can be over-conservative when our outcome measures are correlated. We next consider another approach, MEff, that takes correlation between measures into account.</p>
+</div>
+<div id="meff" class="section level3 hasAnchor" number="11.3.2">
+<h3><span class="header-section-number">11.3.2</span> MEff<a href="phacking.html#meff" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The MEff statistic was developed in the field of genetics by <span class="citation">Cheverud (<a href="#ref-cheverud2001">2001</a>)</span>. It is similar to the Bonferroni correction, except that instead of dividing the alpha level by the number of measures, it is divided by the <em>effective</em> number of measures, after taking into account the correlation between them. To understand how this works, consider the (unrealistic) situation when you have 5 measures but they are incredibly similar, with an average intercorrelation of .9. In that situation, they would act more like a single measure, and the effective number of variables would be close to 1. If the measures were totally uncorrelated (with average intercorrelation of 0), then the effective number of measures would be the same as the actual number of measures, 5, and so we would use the regular Bonferroni correction. In practice, the number of effective measures, Meff, can be calculated using a statistic called the eigenvalue that reflects the strength of correlation between measures. A useful tutorial for computing MEff is provided by <span class="citation">Derringer (<a href="#ref-derringer2018a">2018</a>)</span>.</p>
+<p><span class="citation">Bishop (<a href="#ref-bishop2023a">2023</a>)</span> provided a lookup table of modified alpha levels based on MEff according to the average correlation between sets of outcome measures. Part of this table is reproduced here as Table <a href="phacking.html#tab:MEff-alphas">11.1</a>.</p>
+<table class="table table-striped table-bordered" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:MEff-alphas">Table 11.1: </span>Adjusted alphas for multiple (N) correlated variables to achieve false positive rate of 1 in 20
+</caption>
+<thead>
+<tr>
+<th style="empty-cells: hide;border-bottom:hidden;" colspan="1">
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="6">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+N outcomes
+</div>
+</th>
+</tr>
+<tr>
+<th style="text-align:center;">
+Average.r
+</th>
+<th style="text-align:center;">
+N2
+</th>
+<th style="text-align:center;">
+N4
+</th>
+<th style="text-align:center;">
+N6
+</th>
+<th style="text-align:center;">
+N8
+</th>
+<th style="text-align:center;">
+N10
+</th>
+<th style="text-align:center;">
+N12
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;font-weight: bold;width: 9em; ">
+0.0
+</td>
+<td style="text-align:center;width: 9em; ">
+0.025
+</td>
+<td style="text-align:center;width: 9em; ">
+0.013
+</td>
+<td style="text-align:center;width: 9em; ">
+0.008
+</td>
+<td style="text-align:center;width: 9em; ">
+0.006
+</td>
+<td style="text-align:center;width: 9em; ">
+0.005
+</td>
+<td style="text-align:center;width: 9em; ">
+0.004
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;width: 9em; ">
+0.1
+</td>
+<td style="text-align:center;width: 9em; ">
+0.025
+</td>
+<td style="text-align:center;width: 9em; ">
+0.013
+</td>
+<td style="text-align:center;width: 9em; ">
+0.008
+</td>
+<td style="text-align:center;width: 9em; ">
+0.006
+</td>
+<td style="text-align:center;width: 9em; ">
+0.005
+</td>
+<td style="text-align:center;width: 9em; ">
+0.004
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;width: 9em; ">
+0.2
+</td>
+<td style="text-align:center;width: 9em; ">
+0.026
+</td>
+<td style="text-align:center;width: 9em; ">
+0.013
+</td>
+<td style="text-align:center;width: 9em; ">
+0.009
+</td>
+<td style="text-align:center;width: 9em; ">
+0.006
+</td>
+<td style="text-align:center;width: 9em; ">
+0.005
+</td>
+<td style="text-align:center;width: 9em; ">
+0.004
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;width: 9em; ">
+0.3
+</td>
+<td style="text-align:center;width: 9em; ">
+0.026
+</td>
+<td style="text-align:center;width: 9em; ">
+0.013
+</td>
+<td style="text-align:center;width: 9em; ">
+0.009
+</td>
+<td style="text-align:center;width: 9em; ">
+0.007
+</td>
+<td style="text-align:center;width: 9em; ">
+0.005
+</td>
+<td style="text-align:center;width: 9em; ">
+0.005
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;width: 9em; ">
+0.4
+</td>
+<td style="text-align:center;width: 9em; ">
+0.027
+</td>
+<td style="text-align:center;width: 9em; ">
+0.014
+</td>
+<td style="text-align:center;width: 9em; ">
+0.010
+</td>
+<td style="text-align:center;width: 9em; ">
+0.007
+</td>
+<td style="text-align:center;width: 9em; ">
+0.006
+</td>
+<td style="text-align:center;width: 9em; ">
+0.005
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;width: 9em; ">
+0.5
+</td>
+<td style="text-align:center;width: 9em; ">
+0.029
+</td>
+<td style="text-align:center;width: 9em; ">
+0.015
+</td>
+<td style="text-align:center;width: 9em; ">
+0.011
+</td>
+<td style="text-align:center;width: 9em; ">
+0.008
+</td>
+<td style="text-align:center;width: 9em; ">
+0.006
+</td>
+<td style="text-align:center;width: 9em; ">
+0.005
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;width: 9em; ">
+0.6
+</td>
+<td style="text-align:center;width: 9em; ">
+0.030
+</td>
+<td style="text-align:center;width: 9em; ">
+0.017
+</td>
+<td style="text-align:center;width: 9em; ">
+0.012
+</td>
+<td style="text-align:center;width: 9em; ">
+0.009
+</td>
+<td style="text-align:center;width: 9em; ">
+0.007
+</td>
+<td style="text-align:center;width: 9em; ">
+0.006
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;width: 9em; ">
+0.7
+</td>
+<td style="text-align:center;width: 9em; ">
+0.033
+</td>
+<td style="text-align:center;width: 9em; ">
+0.020
+</td>
+<td style="text-align:center;width: 9em; ">
+0.014
+</td>
+<td style="text-align:center;width: 9em; ">
+0.011
+</td>
+<td style="text-align:center;width: 9em; ">
+0.009
+</td>
+<td style="text-align:center;width: 9em; ">
+0.008
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;width: 9em; ">
+0.8
+</td>
+<td style="text-align:center;width: 9em; ">
+0.037
+</td>
+<td style="text-align:center;width: 9em; ">
+0.024
+</td>
+<td style="text-align:center;width: 9em; ">
+0.018
+</td>
+<td style="text-align:center;width: 9em; ">
+0.014
+</td>
+<td style="text-align:center;width: 9em; ">
+0.012
+</td>
+<td style="text-align:center;width: 9em; ">
+0.010
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;width: 9em; ">
+0.9
+</td>
+<td style="text-align:center;width: 9em; ">
+0.042
+</td>
+<td style="text-align:center;width: 9em; ">
+0.032
+</td>
+<td style="text-align:center;width: 9em; ">
+0.026
+</td>
+<td style="text-align:center;width: 9em; ">
+0.021
+</td>
+<td style="text-align:center;width: 9em; ">
+0.018
+</td>
+<td style="text-align:center;width: 9em; ">
+0.016
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;width: 9em; ">
+1.0
+</td>
+<td style="text-align:center;width: 9em; ">
+0.050
+</td>
+<td style="text-align:center;width: 9em; ">
+0.050
+</td>
+<td style="text-align:center;width: 9em; ">
+0.050
+</td>
+<td style="text-align:center;width: 9em; ">
+0.050
+</td>
+<td style="text-align:center;width: 9em; ">
+0.050
+</td>
+<td style="text-align:center;width: 9em; ">
+0.050
+</td>
+</tr>
+</tbody>
+</table>
+<p>This table might be useful when evaluating published studies that have not adequately corrected for multiple outcomes, provided one can estimate the degree of intercorrelation between measures.</p>
+</div>
+<div id="extracting-a-principal-component-from-a-set-of-measures" class="section level3 hasAnchor" number="11.3.3">
+<h3><span class="header-section-number">11.3.3</span> Extracting a principal component from a set of measures<a href="phacking.html#extracting-a-principal-component-from-a-set-of-measures" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Where different outcome measures are regarded as indicators of a single underlying factor, the most effective way of balancing the risks of false positive and false negatives may be to extract a single factor from the measures, using a method such as principal component analysis. As there is just one outcome in the analysis, the alpha level does not need to be modified. Bishop (2023) used simulations to consider how statistical power was affected for a range of different effect sizes and correlations between outcomes. In most situations, power increased as more outcomes were entered into a principal component analysis (PCA), even when the correlation between outcomes was low. This makes sense, because when a single component is extracted, the resulting measure will be more reliable than the individual measures that contribute to it, and so the “noise” is reduced, making it easier to see the effect. However, unless one has the original raw data, it is not possible to apply PCA to published results. Also, the increased power of PCA is only found if the set of outcome measures can be regarded as having an underlying process in common. If there are multiple outcome measures from different domains, then MEff is preferable.</p>
+</div>
+<div id="improving-power-by-use-of-multiple-outcomes" class="section level3 hasAnchor" number="11.3.4">
+<h3><span class="header-section-number">11.3.4</span> Improving power by use of multiple outcomes<a href="phacking.html#improving-power-by-use-of-multiple-outcomes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="citation">Bishop (<a href="#ref-bishop2023a">2023</a>)</span> noted that use of multiple outcome measures can be one way of improving statistical power of an intervention study. It is, however, crucial to apply appropriate statistical corrections such as Bonferroni, Principal Component Analysis or MEff to avoid inflating the false positive rate, and it is also important to think carefully about the choice of measures: are they regarded as different indices of the same construct, or measures of different constructs that might be impacted by the intervention (see <span class="citation">Bishop (<a href="#ref-bishop2023a">2023</a>)</span> for further discussion).</p>
+</div>
+</div>
+<div id="class-exercise-7" class="section level2 hasAnchor" number="11.4">
+<h2><span class="header-section-number">11.4</span> Class exercise<a href="phacking.html#class-exercise-7" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This <a href="https://www.shinyapps.org/apps/p-hacker/">web-based app</a> by <span class="citation">Schönbrodt (<a href="#ref-schonbrodt2016">2016</a>)</span> allows you to see how easy it can be to get a “significant” result by using flexible analyses. The term DV refers to “dependent variable”, i.e. an outcome measure.<br />
+- Set the True Effect slider to its default position of zero, which means that the Null Hypothesis is true - there is no true effect.<br />
+- Set the Number of DVs set to 2.<br />
+- Press “Run new experiment”.<br />
+- The display of results selects the variable with the lowest p-value and highlights it in green. It also shows results for the average of the variables, as DV_all.</p>
+<ul>
+<li>Try hitting Run new experiment 20 times, and keep a tally of how often you get a p-value less than .05. With only two DVs, things are not so bad - on average you’ll get two such values in 20 runs (though you may get more or less than this - if you are really keen, you could keep going for 100 runs to get a more stable estimate of the false positives).<br />
+</li>
+<li>Now set the number of DVs to 10 and repeat the exercise. You will probably run out of fingers on one hand to count the number of significant p-values.</li>
+</ul>
+<p>Felix Schönbrodt, who devised this website, allows you to go even further with p-hacking, showing how easy it is to nudge results into significance by using covariates (e.g. adjusting for age, SES, etc) or by excluding outliers.</p>
+<p>Note that if you enjoy playing with p-hacker, you can also use the app to improve your statistical intuitions about sample size and power. The app doesn’t allow you to specify the case where there is only one outcome measure, which is what we really need in this case, so you have to just ignore all but one of the DVs. We suggest you just look at results for DV1. This time we’ll assume you have a real effect. You can use the slider on True Effect to pick a value of Cohen’s d, and you can also select the number of participants in each group. When you Run new experiment, you will find that it is difficult to get a p-value below .05 if the true effect is small and/or the sample size is small, whereas with a large sample and a big effect, a significant result is highly likely.</p>
+<!-- possibly further exercise involving Bonferroni correction here-->
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-bem2004" class="csl-entry">
+Bem, Daryl J. 2004. <span>“Writing the Empirical Journal Article.”</span> In <em>The Compleat Academic: <span>A</span> Career Guide, 2nd Ed</em>, 185–219. <span>Washington, DC, US</span>: <span>American Psychological Association</span>.
+</div>
+<div id="ref-bishop2023a" class="csl-entry">
+———. 2023. <span>“Using Multiple Outcomes in Intervention Studies: Improving Power While Controlling Type <span>I</span> Errors.”</span> <span>F1000Research</span>. <a href="https://doi.org/10.12688/f1000research.73520.2">https://doi.org/10.12688/f1000research.73520.2</a>.
+</div>
+<div id="ref-bishop2016" class="csl-entry">
+Bishop, D. V. M., and Paul A. Thompson. 2016. <span>“Problems in Using p-Curve Analysis and Text-Mining to Detect Rate of p-Hacking and Evidential Value.”</span> <em>PeerJ</em> 4 (February): e1715. <a href="https://doi.org/10.7717/peerj.1715">https://doi.org/10.7717/peerj.1715</a>.
+</div>
+<div id="ref-cheverud2001" class="csl-entry">
+Cheverud, James M. 2001. <span>“A Simple Correction for Multiple Comparisons in Interval Mapping Genome Scans.”</span> <em>Heredity</em> 87 (1): 52–58. <a href="https://doi.org/10.1046/j.1365-2540.2001.00901.x">https://doi.org/10.1046/j.1365-2540.2001.00901.x</a>.
+</div>
+<div id="ref-derringer2018a" class="csl-entry">
+Derringer, Jaime. 2018. <span>“A Simple Correction for Non-Independent Tests.”</span> <span>PsyArXiv</span>. <a href="https://doi.org/10.31234/osf.io/f2tyw">https://doi.org/10.31234/osf.io/f2tyw</a>.
+</div>
+<div id="ref-goldacre2019" class="csl-entry">
+Goldacre, Ben, Henry Drysdale, Aaron Dale, Ioan Milosevic, Eirion Slade, Philip Hartley, Cicely Marston, Anna Powell-Smith, Carl Heneghan, and Kamal R. Mahtani. 2019. <span>“<span>COMPare</span>: A Prospective Cohort Study Correcting and Monitoring 58 Misreported Trials in Real Time.”</span> <em>Trials</em> 20 (1): 118. <a href="https://doi.org/10.1186/s13063-019-3173-2">https://doi.org/10.1186/s13063-019-3173-2</a>.
+</div>
+<div id="ref-kerr1998" class="csl-entry">
+Kerr, N. L. 1998. <span>“<span>HARKing</span>: Hypothesizing After the Results Are Known.”</span> <em>Personality and Social Psychology Review: An Official Journal of the Society for Personality and Social Psychology, Inc</em> 2 (3): 196–217. <a href="https://doi.org/10.1207/s15327957pspr0203_4">https://doi.org/10.1207/s15327957pspr0203_4</a>.
+</div>
+<div id="ref-lakens2018" class="csl-entry">
+Lakens, Daniel, Federico G. Adolfi, Casper J. Albers, Farid Anvari, Matthew A. J. Apps, Shlomo E. Argamon, Thom Baguley, et al. 2018. <span>“Justify Your Alpha.”</span> <em>Nature Human Behaviour</em> 2 (3): 168–71. <a href="https://doi.org/10.1038/s41562-018-0311-x">https://doi.org/10.1038/s41562-018-0311-x</a>.
+</div>
+<div id="ref-schonbrodt2016" class="csl-entry">
+Schönbrodt, F D. 2016. <span>“P-Hacker: <span>Train</span> Your p-Hacking Skills!”</span>
+</div>
+<div id="ref-simonsohn2014a" class="csl-entry">
+Simonsohn, Uri, Leif D. Nelson, and Joseph P. Simmons. 2014. <span>“P-Curve: A Key to the File-Drawer.”</span> <em>Journal of Experimental Psychology. General</em> 143 (2): 534–47. <a href="https://doi.org/10.1037/a0033242">https://doi.org/10.1037/a0033242</a>.
+</div>
+<div id="ref-steegen2016" class="csl-entry">
+Steegen, Sara, Francis Tuerlinckx, Andrew Gelman, and Wolf Vanpaemel. 2016. <span>“Increasing <span>Transparency Through</span> a <span>Multiverse Analysis</span>.”</span> <em>Perspectives on Psychological Science: A Journal of the Association for Psychological Science</em> 11 (5): 702–12. <a href="https://doi.org/10.1177/1745691616658637">https://doi.org/10.1177/1745691616658637</a>.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="power.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="RCT.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Intervention_bookdown2.pdf", "Intervention_bookdown2.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

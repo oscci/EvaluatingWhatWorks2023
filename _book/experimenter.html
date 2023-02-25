@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 8 The experimenter as a source of bias | Evaluating what works</title>
+  <meta name="description" content="Introduction to methods for evaluating effectiveness of non-medical interventions" />
+  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 8 The experimenter as a source of bias | Evaluating what works" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Introduction to methods for evaluating effectiveness of non-medical interventions" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 8 The experimenter as a source of bias | Evaluating what works" />
+  
+  <meta name="twitter:description" content="Introduction to methods for evaluating effectiveness of non-medical interventions" />
+  
+
+<meta name="author" content="Dorothy V M Bishop and Paul A Thompson" />
+
+
+<meta name="date" content="2023-02-25" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="randomise.html"/>
+<link rel="next" href="dropouts.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
+<link href="libs/tabwid-1.0.0/tabwid.css" rel="stylesheet" />
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#why-did-we-write-this-book"><i class="fa fa-check"></i>Why did we write this book?</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#who-is-this-book-for"><i class="fa fa-check"></i>Who is this book for?</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#what-is-covered"><i class="fa fa-check"></i>What is covered?</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#feedback-and-contributions"><i class="fa fa-check"></i>Feedback and contributions</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#how-can-we-know-if-weve-made-a-difference"><i class="fa fa-check"></i><b>1.1</b> How can we know if we’ve made a difference?</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#the-randomness-of-everything"><i class="fa fa-check"></i><b>1.2</b> The randomness of everything</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#systematic-bias"><i class="fa fa-check"></i><b>1.3</b> Systematic bias</a></li>
+<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#class-exercise"><i class="fa fa-check"></i><b>1.4</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="observations.html"><a href="observations.html"><i class="fa fa-check"></i><b>2</b> Why clinical observations can be misleading</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="observations.html"><a href="observations.html#class-exercise-1"><i class="fa fa-check"></i><b>2.1</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="reliability.html"><a href="reliability.html"><i class="fa fa-check"></i><b>3</b> How to select an outcome measure</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="reliability.html"><a href="reliability.html#reliability-1"><i class="fa fa-check"></i><b>3.1</b> Reliability</a></li>
+<li class="chapter" data-level="3.2" data-path="reliability.html"><a href="reliability.html#validity"><i class="fa fa-check"></i><b>3.2</b> Validity</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="reliability.html"><a href="reliability.html#cultural-factors"><i class="fa fa-check"></i><b>3.2.1</b> Cultural factors</a></li>
+<li class="chapter" data-level="3.2.2" data-path="reliability.html"><a href="reliability.html#generalisability-of-results-to-other-outcomes-the-concepts-of-far-and-near-transfer"><i class="fa fa-check"></i><b>3.2.2</b> Generalisability of results to other outcomes: the concepts of far and near transfer</a></li>
+<li class="chapter" data-level="3.2.3" data-path="reliability.html"><a href="reliability.html#functional-outcomes-vs-test-scores"><i class="fa fa-check"></i><b>3.2.3</b> Functional outcomes vs test scores</a></li>
+<li class="chapter" data-level="3.2.4" data-path="reliability.html"><a href="reliability.html#subjectivity-as-a-threat-to-validity"><i class="fa fa-check"></i><b>3.2.4</b> Subjectivity as a threat to validity</a></li>
+<li class="chapter" data-level="3.2.5" data-path="reliability.html"><a href="reliability.html#correlations-with-other-measures"><i class="fa fa-check"></i><b>3.2.5</b> Correlations with other measures</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="reliability.html"><a href="reliability.html#normative-data"><i class="fa fa-check"></i><b>3.3</b> Normative data</a></li>
+<li class="chapter" data-level="3.4" data-path="reliability.html"><a href="reliability.html#sensitivity"><i class="fa fa-check"></i><b>3.4</b> Sensitivity</a></li>
+<li class="chapter" data-level="3.5" data-path="reliability.html"><a href="reliability.html#is-it-practical"><i class="fa fa-check"></i><b>3.5</b> Is it practical?</a></li>
+<li class="chapter" data-level="3.6" data-path="reliability.html"><a href="reliability.html#class-exercise-2"><i class="fa fa-check"></i><b>3.6</b> Class exercise</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="reliability.html"><a href="reliability.html#mean-length-of-utterance"><i class="fa fa-check"></i><b>3.6.1</b> Mean Length of Utterance</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="nonspecific.html"><a href="nonspecific.html"><i class="fa fa-check"></i><b>4</b> Improvement due to nonspecific effects of intervention</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="nonspecific.html"><a href="nonspecific.html#placebo-effects"><i class="fa fa-check"></i><b>4.1</b> Placebo effects</a></li>
+<li class="chapter" data-level="4.2" data-path="nonspecific.html"><a href="nonspecific.html#identifying-specific-intervention-effects-by-measures-of-mechanism"><i class="fa fa-check"></i><b>4.2</b> Identifying specific intervention effects by measures of mechanism</a></li>
+<li class="chapter" data-level="4.3" data-path="nonspecific.html"><a href="nonspecific.html#classroom-exercise"><i class="fa fa-check"></i><b>4.3</b> Classroom exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="prepost.html"><a href="prepost.html"><i class="fa fa-check"></i><b>5</b> Limitations of the pre-post design: biases related to systematic change</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="prepost.html"><a href="prepost.html#spontaneous-improvement"><i class="fa fa-check"></i><b>5.1</b> Spontaneous improvement</a></li>
+<li class="chapter" data-level="5.2" data-path="prepost.html"><a href="prepost.html#practice-effects"><i class="fa fa-check"></i><b>5.2</b> Practice effects</a></li>
+<li class="chapter" data-level="5.3" data-path="prepost.html"><a href="prepost.html#regression-to-the-mean"><i class="fa fa-check"></i><b>5.3</b> Regression to the mean</a></li>
+<li class="chapter" data-level="5.4" data-path="prepost.html"><a href="prepost.html#class-exercise-3"><i class="fa fa-check"></i><b>5.4</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="controls.html"><a href="controls.html"><i class="fa fa-check"></i><b>6</b> Controlling unwanted effects with a control group</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="controls.html"><a href="controls.html#is-it-ethical-to-include-a-control-group"><i class="fa fa-check"></i><b>6.1</b> Is it ethical to include a control group?</a></li>
+<li class="chapter" data-level="6.2" data-path="controls.html"><a href="controls.html#possible-adverse-effects-of-intervention"><i class="fa fa-check"></i><b>6.2</b> Possible adverse effects of intervention</a></li>
+<li class="chapter" data-level="6.3" data-path="controls.html"><a href="controls.html#uncontrolled-studies-are-unethical"><i class="fa fa-check"></i><b>6.3</b> Uncontrolled studies are unethical</a></li>
+<li class="chapter" data-level="6.4" data-path="controls.html"><a href="controls.html#treated-vs-untreated-controls"><i class="fa fa-check"></i><b>6.4</b> Treated vs untreated controls</a></li>
+<li class="chapter" data-level="6.5" data-path="controls.html"><a href="controls.html#classroom-exercise-1"><i class="fa fa-check"></i><b>6.5</b> Classroom exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="randomise.html"><a href="randomise.html"><i class="fa fa-check"></i><b>7</b> Controlling for selection bias: randomised assignment to intervention</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="randomise.html"><a href="randomise.html#randomization-methods"><i class="fa fa-check"></i><b>7.1</b> Randomization methods</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="randomise.html"><a href="randomise.html#simple-randomization"><i class="fa fa-check"></i><b>7.1.1</b> Simple randomization</a></li>
+<li class="chapter" data-level="7.1.2" data-path="randomise.html"><a href="randomise.html#random-permuted-blocks"><i class="fa fa-check"></i><b>7.1.2</b> Random permuted blocks</a></li>
+<li class="chapter" data-level="7.1.3" data-path="randomise.html"><a href="randomise.html#unequal-randomization"><i class="fa fa-check"></i><b>7.1.3</b> Unequal randomization</a></li>
+<li class="chapter" data-level="7.1.4" data-path="randomise.html"><a href="randomise.html#stratification"><i class="fa fa-check"></i><b>7.1.4</b> Stratification</a></li>
+<li class="chapter" data-level="7.1.5" data-path="randomise.html"><a href="randomise.html#adaptive-randomisation"><i class="fa fa-check"></i><b>7.1.5</b> Adaptive randomisation</a></li>
+<li class="chapter" data-level="7.1.6" data-path="randomise.html"><a href="randomise.html#minimization"><i class="fa fa-check"></i><b>7.1.6</b> Minimization</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="randomise.html"><a href="randomise.html#units-of-analysis-individuals-vs-clusters"><i class="fa fa-check"></i><b>7.2</b> Units of analysis: Individuals vs clusters</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="randomise.html"><a href="randomise.html#class-exercise-4"><i class="fa fa-check"></i><b>7.2.1</b> Class exercise</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="experimenter.html"><a href="experimenter.html"><i class="fa fa-check"></i><b>8</b> The experimenter as a source of bias</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="experimenter.html"><a href="experimenter.html#allocation-concealment"><i class="fa fa-check"></i><b>8.1</b> Allocation concealment</a></li>
+<li class="chapter" data-level="8.2" data-path="experimenter.html"><a href="experimenter.html#the-importance-of-masking-for-assessments"><i class="fa fa-check"></i><b>8.2</b> The importance of masking for assessments</a></li>
+<li class="chapter" data-level="8.3" data-path="experimenter.html"><a href="experimenter.html#conflict-of-interest"><i class="fa fa-check"></i><b>8.3</b> Conflict of interest</a></li>
+<li class="chapter" data-level="8.4" data-path="experimenter.html"><a href="experimenter.html#class-exercise-5"><i class="fa fa-check"></i><b>8.4</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="dropouts.html"><a href="dropouts.html"><i class="fa fa-check"></i><b>9</b> Further potential for bias: who drops out and who volunteers?</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="dropouts.html"><a href="dropouts.html#dealing-with-dropouts-intention-to-treat-analysis"><i class="fa fa-check"></i><b>9.1</b> Dealing with dropouts: Intention to treat analysis</a></li>
+<li class="chapter" data-level="9.2" data-path="dropouts.html"><a href="dropouts.html#who-volunteers-for-research"><i class="fa fa-check"></i><b>9.2</b> Who volunteers for research?</a></li>
+<li class="chapter" data-level="9.3" data-path="dropouts.html"><a href="dropouts.html#class-exercise-6"><i class="fa fa-check"></i><b>9.3</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="power.html"><a href="power.html"><i class="fa fa-check"></i><b>10</b> How big a sample do I need? Sampling, statistical power and type II errors</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="power.html"><a href="power.html#sampling"><i class="fa fa-check"></i><b>10.1</b> Sampling</a></li>
+<li class="chapter" data-level="10.2" data-path="power.html"><a href="power.html#effect-size"><i class="fa fa-check"></i><b>10.2</b> Effect size</a></li>
+<li class="chapter" data-level="10.3" data-path="power.html"><a href="power.html#sample-size-affects-accuracy-of-estimates"><i class="fa fa-check"></i><b>10.3</b> Sample size affects accuracy of estimates</a></li>
+<li class="chapter" data-level="10.4" data-path="power.html"><a href="power.html#understanding-p-values"><i class="fa fa-check"></i><b>10.4</b> Understanding p-values</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="power.html"><a href="power.html#type-ii-error"><i class="fa fa-check"></i><b>10.4.1</b> Type II error</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="power.html"><a href="power.html#statistical-power-and-beta"><i class="fa fa-check"></i><b>10.5</b> Statistical power and <span class="math inline">\(\beta\)</span></a></li>
+<li class="chapter" data-level="10.6" data-path="power.html"><a href="power.html#ways-to-improve-statistical-power"><i class="fa fa-check"></i><b>10.6</b> Ways to improve statistical power</a></li>
+<li class="chapter" data-level="10.7" data-path="power.html"><a href="power.html#class-exercises"><i class="fa fa-check"></i><b>10.7</b> Class Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="phacking.html"><a href="phacking.html"><i class="fa fa-check"></i><b>11</b> False positives, p-hacking and multiple comparisons</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="phacking.html"><a href="phacking.html#type-i-error"><i class="fa fa-check"></i><b>11.1</b> Type I error</a></li>
+<li class="chapter" data-level="11.2" data-path="phacking.html"><a href="phacking.html#reasons-for-false-positives"><i class="fa fa-check"></i><b>11.2</b> Reasons for false positives</a></li>
+<li class="chapter" data-level="11.3" data-path="phacking.html"><a href="phacking.html#adjusting-statistics-for-multiple-testing"><i class="fa fa-check"></i><b>11.3</b> Adjusting statistics for multiple testing</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="phacking.html"><a href="phacking.html#bonferroni-correction"><i class="fa fa-check"></i><b>11.3.1</b> Bonferroni Correction</a></li>
+<li class="chapter" data-level="11.3.2" data-path="phacking.html"><a href="phacking.html#meff"><i class="fa fa-check"></i><b>11.3.2</b> MEff</a></li>
+<li class="chapter" data-level="11.3.3" data-path="phacking.html"><a href="phacking.html#extracting-a-principal-component-from-a-set-of-measures"><i class="fa fa-check"></i><b>11.3.3</b> Extracting a principal component from a set of measures</a></li>
+<li class="chapter" data-level="11.3.4" data-path="phacking.html"><a href="phacking.html#improving-power-by-use-of-multiple-outcomes"><i class="fa fa-check"></i><b>11.3.4</b> Improving power by use of multiple outcomes</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="phacking.html"><a href="phacking.html#class-exercise-7"><i class="fa fa-check"></i><b>11.4</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="RCT.html"><a href="RCT.html"><i class="fa fa-check"></i><b>12</b> The randomised controlled trial as a method for controlling biases</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="RCT.html"><a href="RCT.html#statistical-analysis-of-a-rct"><i class="fa fa-check"></i><b>12.1</b> Statistical analysis of a RCT</a></li>
+<li class="chapter" data-level="12.2" data-path="RCT.html"><a href="RCT.html#steps-to-take-before-data-analysis"><i class="fa fa-check"></i><b>12.2</b> Steps to take before data analysis</a>
+<ul>
+<li class="chapter" data-level="12.2.1" data-path="RCT.html"><a href="RCT.html#sample-dataset-with-illustrative-analysis"><i class="fa fa-check"></i><b>12.2.1</b> Sample dataset with illustrative analysis</a></li>
+<li class="chapter" data-level="12.2.2" data-path="RCT.html"><a href="RCT.html#simple-t-test-on-outcome-data"><i class="fa fa-check"></i><b>12.2.2</b> Simple t-test on outcome data</a></li>
+<li class="chapter" data-level="12.2.3" data-path="RCT.html"><a href="RCT.html#t-test-on-difference-scores"><i class="fa fa-check"></i><b>12.2.3</b> T-test on difference scores</a></li>
+<li class="chapter" data-level="12.2.4" data-path="RCT.html"><a href="RCT.html#analysis-of-covariance-on-outcome-scores"><i class="fa fa-check"></i><b>12.2.4</b> Analysis of covariance on outcome scores</a></li>
+<li class="chapter" data-level="12.2.5" data-path="RCT.html"><a href="RCT.html#linear-mixed-models-lmm-approach"><i class="fa fa-check"></i><b>12.2.5</b> Linear mixed models (LMM) approach</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="RCT.html"><a href="RCT.html#class-exercise-8"><i class="fa fa-check"></i><b>12.3</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="drawbacks.html"><a href="drawbacks.html"><i class="fa fa-check"></i><b>13</b> Drawbacks of the two-arm RCT</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="drawbacks.html"><a href="drawbacks.html#inefficiency-need-for-unfeasibly-large-samples"><i class="fa fa-check"></i><b>13.1</b> Inefficiency: need for unfeasibly large samples</a></li>
+<li class="chapter" data-level="13.2" data-path="drawbacks.html"><a href="drawbacks.html#transfer-to-real-life-efficacy-and-effectiveness"><i class="fa fa-check"></i><b>13.2</b> Transfer to real life: efficacy and effectiveness</a></li>
+<li class="chapter" data-level="13.3" data-path="drawbacks.html"><a href="drawbacks.html#heterogeneity-and-personalised-intervention"><i class="fa fa-check"></i><b>13.3</b> Heterogeneity and personalised intervention</a></li>
+<li class="chapter" data-level="13.4" data-path="drawbacks.html"><a href="drawbacks.html#class-exercise-9"><i class="fa fa-check"></i><b>13.4</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="adaptive.html"><a href="adaptive.html"><i class="fa fa-check"></i><b>14</b> Adaptive Interventions</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="adaptive.html"><a href="adaptive.html#class-exercise-10"><i class="fa fa-check"></i><b>14.1</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="cluster.html"><a href="cluster.html"><i class="fa fa-check"></i><b>15</b> Cluster Randomised Control Trials</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="cluster.html"><a href="cluster.html#what-is-a-cluster-rct"><i class="fa fa-check"></i><b>15.1</b> What is a cluster RCT?</a></li>
+<li class="chapter" data-level="15.2" data-path="cluster.html"><a href="cluster.html#advantages-of-a-cluster-design"><i class="fa fa-check"></i><b>15.2</b> Advantages of a cluster design</a></li>
+<li class="chapter" data-level="15.3" data-path="cluster.html"><a href="cluster.html#disadvantages-of-a-cluster-design"><i class="fa fa-check"></i><b>15.3</b> Disadvantages of a cluster design</a></li>
+<li class="chapter" data-level="15.4" data-path="cluster.html"><a href="cluster.html#class-exercise-11"><i class="fa fa-check"></i><b>15.4</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="crossover.html"><a href="crossover.html"><i class="fa fa-check"></i><b>16</b> Cross-over designs</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="crossover.html"><a href="crossover.html#a-within-subjects-approach-to-the-rct"><i class="fa fa-check"></i><b>16.1</b> A within-subjects approach to the RCT</a>
+<ul>
+<li class="chapter" data-level="16.1.1" data-path="crossover.html"><a href="crossover.html#delayed-crossover-design-wait-list-controls"><i class="fa fa-check"></i><b>16.1.1</b> Delayed crossover design (Wait list controls)</a></li>
+</ul></li>
+<li class="chapter" data-level="16.2" data-path="crossover.html"><a href="crossover.html#class-exercise-12"><i class="fa fa-check"></i><b>16.2</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="Single.html"><a href="Single.html"><i class="fa fa-check"></i><b>17</b> Single case designs</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="Single.html"><a href="Single.html#logic-of-single-case-designs"><i class="fa fa-check"></i><b>17.1</b> Logic of single case designs</a>
+<ul>
+<li class="chapter" data-level="17.1.1" data-path="Single.html"><a href="Single.html#minimising-unwanted-variance"><i class="fa fa-check"></i><b>17.1.1</b> Minimising unwanted variance</a></li>
+<li class="chapter" data-level="17.1.2" data-path="Single.html"><a href="Single.html#minimising-systematic-bias"><i class="fa fa-check"></i><b>17.1.2</b> Minimising systematic bias</a></li>
+<li class="chapter" data-level="17.1.3" data-path="Single.html"><a href="Single.html#the-need-for-sufficient-data"><i class="fa fa-check"></i><b>17.1.3</b> The need for sufficient data</a></li>
+</ul></li>
+<li class="chapter" data-level="17.2" data-path="Single.html"><a href="Single.html#examples-of-studies-using-different-types-of-single-case-design"><i class="fa fa-check"></i><b>17.2</b> Examples of studies using different types of single case design</a>
+<ul>
+<li class="chapter" data-level="17.2.1" data-path="Single.html"><a href="Single.html#a-multiple-baseline-design-speech-and-language-therapy-for-adolescents-in-youth-justice."><i class="fa fa-check"></i><b>17.2.1</b> A multiple baseline design: Speech and language therapy for adolescents in youth justice.</a></li>
+<li class="chapter" data-level="17.2.2" data-path="Single.html"><a href="Single.html#a-study-using-multiple-baseline-across-behaviours-effectiveness-of-electropalatography"><i class="fa fa-check"></i><b>17.2.2</b> A study using multiple baseline across behaviours: Effectiveness of electropalatography</a></li>
+<li class="chapter" data-level="17.2.3" data-path="Single.html"><a href="Single.html#example-of-an-analysis-of-case-series-data"><i class="fa fa-check"></i><b>17.2.3</b> Example of an analysis of case series data</a></li>
+<li class="chapter" data-level="17.2.4" data-path="Single.html"><a href="Single.html#combining-approaches-to-strengthen-study-design"><i class="fa fa-check"></i><b>17.2.4</b> Combining approaches to strengthen study design</a></li>
+</ul></li>
+<li class="chapter" data-level="17.3" data-path="Single.html"><a href="Single.html#statistical-approaches-to-single-case-designs"><i class="fa fa-check"></i><b>17.3</b> Statistical approaches to single case designs</a></li>
+<li class="chapter" data-level="17.4" data-path="Single.html"><a href="Single.html#overview-of-considerations-for-single-case-designs"><i class="fa fa-check"></i><b>17.4</b> Overview of considerations for single case designs</a></li>
+<li class="chapter" data-level="17.5" data-path="Single.html"><a href="Single.html#class-exercise-13"><i class="fa fa-check"></i><b>17.5</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="pubbias.html"><a href="pubbias.html"><i class="fa fa-check"></i><b>18</b> Can you trust the published literature?</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="pubbias.html"><a href="pubbias.html#publication-bias"><i class="fa fa-check"></i><b>18.1</b> Publication bias</a>
+<ul>
+<li class="chapter" data-level="18.1.1" data-path="pubbias.html"><a href="pubbias.html#citation-bias"><i class="fa fa-check"></i><b>18.1.1</b> Citation bias</a></li>
+<li class="chapter" data-level="18.1.2" data-path="pubbias.html"><a href="pubbias.html#counteracting-publication-and-citation-biases"><i class="fa fa-check"></i><b>18.1.2</b> Counteracting publication and citation biases</a></li>
+<li class="chapter" data-level="18.1.3" data-path="pubbias.html"><a href="pubbias.html#class-exercise-14"><i class="fa fa-check"></i><b>18.1.3</b> Class exercise</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="prereg.html"><a href="prereg.html"><i class="fa fa-check"></i><b>19</b> Pre-registration and Registered Reports</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="prereg.html"><a href="prereg.html#study-registration"><i class="fa fa-check"></i><b>19.1</b> Study registration</a></li>
+<li class="chapter" data-level="19.2" data-path="prereg.html"><a href="prereg.html#registered-reports"><i class="fa fa-check"></i><b>19.2</b> Registered Reports</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="litrev.html"><a href="litrev.html"><i class="fa fa-check"></i><b>20</b> Reviewing the literature before you start</a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="litrev.html"><a href="litrev.html#what-is-a-systematic-review"><i class="fa fa-check"></i><b>20.1</b> What is a systematic review?</a></li>
+<li class="chapter" data-level="20.2" data-path="litrev.html"><a href="litrev.html#steps-in-the-literature-review"><i class="fa fa-check"></i><b>20.2</b> Steps in the literature review</a>
+<ul>
+<li class="chapter" data-level="20.2.1" data-path="litrev.html"><a href="litrev.html#define-an-appropriate-question"><i class="fa fa-check"></i><b>20.2.1</b> Define an appropriate question</a></li>
+<li class="chapter" data-level="20.2.2" data-path="litrev.html"><a href="litrev.html#specify-criteria-for-a-literature-search"><i class="fa fa-check"></i><b>20.2.2</b> Specify criteria for a literature search</a></li>
+<li class="chapter" data-level="20.2.3" data-path="litrev.html"><a href="litrev.html#select-eligible-studies-following-protocols-inclusion-criteria"><i class="fa fa-check"></i><b>20.2.3</b> Select eligible studies following protocol’s inclusion criteria</a></li>
+<li class="chapter" data-level="20.2.4" data-path="litrev.html"><a href="litrev.html#assess-the-quality-of-each-study-included"><i class="fa fa-check"></i><b>20.2.4</b> Assess the quality of each study included</a></li>
+<li class="chapter" data-level="20.2.5" data-path="litrev.html"><a href="litrev.html#organise-summarise-and-unbiasedly-present-the-findings-from-all-included-studies"><i class="fa fa-check"></i><b>20.2.5</b> Organise, summarise, and unbiasedly present the findings from all included studies</a></li>
+</ul></li>
+<li class="chapter" data-level="20.3" data-path="litrev.html"><a href="litrev.html#systematic-review-or-literature-review"><i class="fa fa-check"></i><b>20.3</b> Systematic review or literature review?</a></li>
+<li class="chapter" data-level="20.4" data-path="litrev.html"><a href="litrev.html#class-exercise-15"><i class="fa fa-check"></i><b>20.4</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="protocol.html"><a href="protocol.html"><i class="fa fa-check"></i><b>21</b> A template for a research protocol</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Evaluating what works</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="experimenter" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">Chapter 8</span> The experimenter as a source of bias<a href="experimenter.html#experimenter" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><img src="images/logo_alone_new.png" width="143" /></p>
+<p>We have discussed numerous sources of bias that can occur in a study: systematic changes over time, use of inadequate measures, and inappropriate intervention groups. We now come to consider one further important factor: the experimenter.</p>
+<p>The role of the experimenter was already alluded to in Chapter <a href="randomise.html#randomise">7</a>, where it was noted that some kinds of randomisation are problematic because they give the experimenter wiggle room to omit or include participants. You might imagine that no honest person would distort their study this way, but it is all too easy to provide a post hoc rationalisation for such decisions, or to be influenced by unconscious biases. Imagine you have planned a study of your favourite comprehension intervention, and you visit a school which is helping recruit children for the study. As you chat to the children in their classroom, you see that one little boy who met criteria for the study is highly overactive and seems unable to concentrate for more than a minute or two on anything. If you had control over intervention assignment, there might be a strong temptation to allocate him to the control group! Or you might rethink the study criteria and decide that you should exclude highly inattentive children. These kinds of reactions are understandable but they create bias in the results.</p>
+<div id="allocation-concealment" class="section level2 hasAnchor" number="8.1">
+<h2><span class="header-section-number">8.1</span> Allocation concealment<a href="experimenter.html#allocation-concealment" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This brings us to the topic of masking, or allocation concealment. Traditionally, the term “blinding” has been used, but it has been noted that this can be problematic when working with visually impaired people <span class="citation">(<a href="#ref-morris2007">Morris, Fraser, and Wormald 2007</a>)</span>, so we will avoid it here. Nevertheless, you will hear the term in the context of the “double blind trial”. This refers to the situation when the neither the experimenter nor the participants are aware of who is in the active or the control group. As noted in Chapter <a href="nonspecific.html#nonspecific">4</a>, it is not always feasible to keep people unaware of whether they are in an active intervention or control group, though use of active controls, as described in Chapter <a href="controls.html#controls">6</a>, may allow for this.</p>
+<!---terminology: masking or blinding? Use of 'blinding' is defended here  !
+Not a hill I want to die on, but so far I have persisted with masking!  https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1865441/ -->
+<p>In speech and language therapy practice, where resources are limited and the same person may be conducting the study and administering the intervention, particular care needs to be given to masking. Where feasible, we need to take steps to avoid experimenter bias in administration of baseline and outcome assessments.</p>
+</div>
+<div id="the-importance-of-masking-for-assessments" class="section level2 hasAnchor" number="8.2">
+<h2><span class="header-section-number">8.2</span> The importance of masking for assessments<a href="experimenter.html#the-importance-of-masking-for-assessments" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>As discussed in Chapter <a href="reliability.html#reliability">3</a>, some assessments are more objective than others: it is relatively easy to be swayed by one’s own desires and expectation when making a global rating of a person’s communicative competence on a 4-point scale, much less so when administering a multiple choice comprehension test, where the task is to select a pictures to match a spoken word. Nevertheless, there is evidence that, even with relatively objective tasks, experimenter bias can creep in. Perhaps the clearest evidence comes from reviews that compare similar experiments that are administered either with or without masking: where experimenters are unaware of which group a subject is in, effects are typically smaller than when they are aware (and hence potentially able to bias the observations) <span class="citation">(<a href="#ref-holman2015">Holman et al. 2015</a>)</span>.</p>
+<p>Perhaps the most sobering example comes, not from an intervention study, but from data on a phonics screening test administered by teachers in UK schools in 2012. The score is supposed to just indicate the number of items on a standard list of words and nonwords that a child reads accurately. Although there is some judgement required to tell whether a nonword is correctly pronounced, this should not be expected to exert a big effect on final scores, given that teachers were provided with a list of acceptable pronunciations. The results, however, which are published annually on a government website, showed clear evidence of scores being nudged up for some cases. We would expect a normal distribution of scores, but instead there was a sudden dip just below the pass mark and a corresponding excess of cases just about the pass mark. Since teachers were aware of the pass mark, they would have been able to nudge up the scores of children who were just one or two points below, and the distribution of scores is clear evidence that this happened. [A similar picture was observed in 2013] (<a href="http://deevybee.blogspot.com/2013/10/good-and-bad-news-on-phonics-screen.html" class="uri">http://deevybee.blogspot.com/2013/10/good-and-bad-news-on-phonics-screen.html</a>), but the spike disappeared in 2014, when teachers were not told the pass mark in advance <span class="citation">(<a href="#ref-duff2015">Duff et al. 2015</a>)</span>.</p>
+<div class="figure"><span style="display:block;" id="fig:phonicsfig"></span>
+<img src="images/phonics%20png.png" alt="Figure from http://deevybee.blogspot.com/2012/10/data-from-phonics-screen-worryingly.html. (Original data from Department for Education website has been deleted)" width="450" />
+<p class="caption">
+Figure 8.1: Figure from <a href="http://deevybee.blogspot.com/2012/10/data-from-phonics-screen-worryingly.html" class="uri">http://deevybee.blogspot.com/2012/10/data-from-phonics-screen-worryingly.html</a>. (Original data from Department for Education website has been deleted)
+</p>
+</div>
+<p>We don’t usually think of teachers as dishonest or fraudulent. Some were opposed in principle to the phonics check and may have felt justified in not taking it seriously, but we suspect that most were doing their sincere best, but just did not think a slight tweak of a child’s results would matter. There are anecdotal reports of teachers being unwilling to categorise children as “failing” at such a young age. And some may have been concerned that their personal reputation or that of their school might be damaged if too many children “failed”. The possible reasons for nudging are many, and cannot be established post hoc, but the point we want to stress is that this kind of behaviour is very common, often not done in a deliberately dishonest fashion, but is something that will happen if people are motivated to get one result or another.</p>
+<p>In medical trials, the large amount of evidence for experimenter bias on measures has led to a general consensus that outcome assessments should be done by someone who is unaware of who was in the intervention or control group. This is likely to add to the cost of conducting a trial, but it gives security that no nudging has taken place.</p>
+<div id="another-questionable-classic-study" class="section level4 unnumbered hasAnchor">
+<h4>Another questionable classic study<a href="experimenter.html#another-questionable-classic-study" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="custom">
+<p>When experimenter bias is discussed, we usually see citation to the work of Robert Rosenthal, who conducted a series of experiments in the 1960s, some of which have become classics in psychology. One of the most famous, which features in many undergraduate texts, is a study by <span class="citation">Rosenthal and Fode (<a href="#ref-rosenthal1963">1963</a>)</span>, which describes how student experimenters could be made to give biased evaluation of performance of rats in maze-learning task. All the rats were from the same batch, but students were told they were either “maze bright” or “maze dull”. Since there was no real difference between rats, they should have performed the same, but those designated as “maze bright” were faster in solving the maze than the “maze dull”.<br />
+Unfortunately, this classic study does not stand up to scrutiny. The numbers of students were small, and the results were not statistically robust when analysed according to contemporary standards. Indeed, even at the time, Rosenthal’s work on experimenter bias came under strong criticism for methodological flaws <span class="citation">(<a href="#ref-barber1968">Barber and Silver 1968</a>)</span>. Nevertheless, Rosenthal’s account of experimenter bias has been highly influential, forming part of the canon of “zombie psychological effects” that refuse to die, while Barber and Silver’s critique has been largely forgotten. As with the Hawthorne effect, we see that few people return to look at the original data, and even if the research is debunked, it lives on because the story is just too perfect.</p>
+<p><img src="images/rat1.PNG" width="33%" /><img src="images/rat2.PNG" width="33%" /></p>
+<p>Does this mean we do not need to worry about experimenter effects? We recommend that it is good practice to take them into account when designing studies, but this story is further evidence of the need to look carefully at supposedly well-established findings.</p>
+</div>
+</div>
+</div>
+<div id="conflict-of-interest" class="section level2 hasAnchor" number="8.3">
+<h2><span class="header-section-number">8.3</span> Conflict of interest<a href="experimenter.html#conflict-of-interest" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Many medical journals, and increasingly journals in other fields, require authors to declare conflicts of interest, and a statement to this effect will be included with the published paper. <span class="citation">Lo and Field (<a href="#ref-lo2009">2009</a>)</span> define conflict of interest (COI) as:<br />
+<em>“a set of circumstances that creates a risk that professional judgement or actions regarding a primary interest will be unduly influenced by a secondary interest”.</em><br />
+Typically, people think of COI as involving money. Someone who is marketing a computerised intervention, for instance, will be motivated to show it is effective – their business and livelihood would collapse if it was widely known to be useless. But COI – also sometimes referred to as ‘competing interests’ – extend beyond the realms of finance.<br />
+- A researcher’s reputation may depend heavily on their invention of an intervention approach.<br />
+- There may be threats to cut government-funded services unless intervention is shown to be effective.</p>
+<p>For those in vocational professions such as therapy or teaching, relatively poor working conditions may be endured in return for a sense of doing good. An intervention study with null results can be hard to accept if it means that the value of one’s daily work is challenged.</p>
+<p>In effect, most people involved in intervention studies want to show a positive effect for one reason or another. It’s not generally possible to avoid all conflict of interest, but the important thing is to recognise experimenter bias as the rule rather than the exception, identify possible threats this poses to study validity, take stringent steps to counteract these, and report openly any conflict of interest. We discussed above the ways in which results on outcome measures may be nudged up or down, often without any conscious attempt to mislead. But the impact of experimenter bias can occur at all stages of an intervention study:</p>
+<ul>
+<li>At the stage of study design, the researcher may argue against including a control group – claiming ethical objections – because they are aware that it is much easier to show apparent intervention effects when there are no controls (see Chapter <a href="prepost.html#prepost">5</a>).<br />
+</li>
+<li>In a controlled study, when allocating participants to intervention or control groups, the researcher may change inclusion criteria as the study progresses.<br />
+</li>
+<li>Allocation to intervention or control groups may be under the control of a researcher who does not adopt truly random methods, and so can determine who is in which group. Chapter <a href="randomise.html#randomise">7</a> explains how randomisation can overcome this.<br />
+</li>
+<li>As noted above, if the person doing baseline and outcome assessments knows which intervention group a participant is in, then scores may be nudged. This can be avoided by having assessments done by someone who is unaware of who got the intervention.<br />
+</li>
+<li>When it comes to analysing the data, the researcher may decide on which variables to report, depending on the results. We discuss this problem and how to counteract it in Chapter <a href="phacking.html#phacking">11</a>.<br />
+</li>
+<li>If the pattern of results does not show that the intervention is effective, then further checks and alternative analyses are conducted, whereas positive results are accepted without additional scrutiny.<br />
+</li>
+<li>If the trial gives disappointing results, then the decision may be made not to report them. See Chapter <a href="pubbias.html#pubbias">18</a> and Chapter <a href="prereg.html#prereg">19</a> for discussion of this problem and suggestions for avoiding it.</li>
+</ul>
+<p>The important point to recognise is that being a good scientist often conflicts with our natural human tendencies <span class="citation">(<a href="#ref-bishop2020">Bishop 2020</a>)</span>. Scientists should be objective, and interpretation of results should not be swayed by personal likes and dislikes. On getting a positive intervention result, a good scientist will immediately ask: “Were there biases in my study that could have contributed to this finding?” – and indeed will not take offence if other scientists identify such factors. We need, of course, arguments in the opposite direction: a failure to see an intervention effect doesn’t necessarily mean the intervention did not work – there could be aspects of study design that hide true effects, including too small a sample (see Chapter <a href="power.html#power">10</a>). At conferences in involving allied health or education where people discuss intervention studies the question session is often dominated by people presenting arguments about why a null result may have missed a genuine effect, but it is much rarer to hear people questioning the validity of a positive result. It is a human tendency to accept information that fits with our desires and prejudices (in this case, that intervention is effective) and to reject contrary evidence. It also goes against our human nature to be critical of an intervention study conducted by a well-intentioned person who has put in a great deal of time and effort. But at the end of the day it is the quality of the evidence, rather than the feelings of researchers, that must take priority. Currently, we still know rather little about how best to help children and adults who struggle with speech, language and communication. We will only change that if we take a rigorous and evidence-based approach to evaluating evidence.</p>
+</div>
+<div id="class-exercise-5" class="section level2 hasAnchor" number="8.4">
+<h2><span class="header-section-number">8.4</span> Class exercise<a href="experimenter.html#class-exercise-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Once again, you need to find a published intervention study – this could be one you selected for a previous exercise, or a new one.<br />
+- Does the published paper include a “conflict of interest” or “competing interests” statement?<br />
+- List the possible factors that might lead the experimenter to be biased in favour of finding a positive result.<br />
+- Consider the list of stages in the research process where experimenter bias could affect results: How have the researchers counteracted these?</p>
+<p><!---possibly include something on COI in reports of FFW intervention - or another example--></p>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-barber1968" class="csl-entry">
+Barber, Theodore X., and Maurice J. Silver. 1968. <span>“Fact, Fiction, and the Experimenter Bias Effect.”</span> <em>Psychological Bulletin</em> 70 (6, Pt.2): 1–29. <a href="https://doi.org/10.1037/h0026724">https://doi.org/10.1037/h0026724</a>.
+</div>
+<div id="ref-bishop2020" class="csl-entry">
+———. 2020. <span>“The Psychology of Experimental Psychologists: <span>Overcoming</span> Cognitive Constraints to Improve Research: <span>The</span> 47th <span>Sir Frederic Bartlett Lecture</span>.”</span> <em>Quarterly Journal of Experimental Psychology (2006)</em> 73 (1): 1–19. <a href="https://doi.org/10.1177/1747021819886519">https://doi.org/10.1177/1747021819886519</a>.
+</div>
+<div id="ref-duff2015" class="csl-entry">
+Duff, Fiona J., Silvana E. Mengoni, Alison M. Bailey, and Margaret J. Snowling. 2015. <span>“Validity and Sensitivity of the Phonics Screening Check: Implications for Practice.”</span> <em>Journal of Research in Reading</em> 38 (2): 109–23. <a href="https://doi.org/10.1111/1467-9817.12029">https://doi.org/10.1111/1467-9817.12029</a>.
+</div>
+<div id="ref-holman2015" class="csl-entry">
+Holman, Luke, Megan L. Head, Robert Lanfear, and Michael D. Jennions. 2015. <span>“Evidence of <span>Experimental Bias</span> in the <span>Life Sciences</span>: <span>Why We Need Blind Data Recording</span>.”</span> <em>PLOS Biology</em> 13 (7): e1002190. <a href="https://doi.org/10.1371/journal.pbio.1002190">https://doi.org/10.1371/journal.pbio.1002190</a>.
+</div>
+<div id="ref-lo2009" class="csl-entry">
+Lo, B, and M. J Field. 2009. <em>Conflict of <span>Interest</span> in <span>Medical Research</span>, <span>Education</span>, and <span>Practice</span></em>. <span>Washington, DC</span>: <span>National Academies Press</span>.
+</div>
+<div id="ref-morris2007" class="csl-entry">
+Morris, Daniel, Scott Fraser, and Richard Wormald. 2007. <span>“Masking Is Better Than Blinding.”</span> <em>BMJ</em> 334 (7597): 799–99. <a href="https://doi.org/10.1136/bmj.39175.503299.94">https://doi.org/10.1136/bmj.39175.503299.94</a>.
+</div>
+<div id="ref-rosenthal1963" class="csl-entry">
+Rosenthal, Robert, and Kermit L. Fode. 1963. <span>“The Effect of Experimenter Bias on the Performance of the Albino Rat.”</span> <em>Behavioral Science</em> 8 (3): 183–89. <a href="https://doi.org/10.1002/bs.3830080302">https://doi.org/10.1002/bs.3830080302</a>.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="randomise.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="dropouts.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Intervention_bookdown2.pdf", "Intervention_bookdown2.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

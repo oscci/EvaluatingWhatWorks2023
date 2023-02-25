@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 21 A template for a research protocol | Evaluating what works</title>
+  <meta name="description" content="Introduction to methods for evaluating effectiveness of non-medical interventions" />
+  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 21 A template for a research protocol | Evaluating what works" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Introduction to methods for evaluating effectiveness of non-medical interventions" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 21 A template for a research protocol | Evaluating what works" />
+  
+  <meta name="twitter:description" content="Introduction to methods for evaluating effectiveness of non-medical interventions" />
+  
+
+<meta name="author" content="Dorothy V M Bishop and Paul A Thompson" />
+
+
+<meta name="date" content="2023-02-25" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="litrev.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
+<link href="libs/tabwid-1.0.0/tabwid.css" rel="stylesheet" />
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#why-did-we-write-this-book"><i class="fa fa-check"></i>Why did we write this book?</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#who-is-this-book-for"><i class="fa fa-check"></i>Who is this book for?</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#what-is-covered"><i class="fa fa-check"></i>What is covered?</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#feedback-and-contributions"><i class="fa fa-check"></i>Feedback and contributions</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#how-can-we-know-if-weve-made-a-difference"><i class="fa fa-check"></i><b>1.1</b> How can we know if we’ve made a difference?</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#the-randomness-of-everything"><i class="fa fa-check"></i><b>1.2</b> The randomness of everything</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#systematic-bias"><i class="fa fa-check"></i><b>1.3</b> Systematic bias</a></li>
+<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#class-exercise"><i class="fa fa-check"></i><b>1.4</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="observations.html"><a href="observations.html"><i class="fa fa-check"></i><b>2</b> Why clinical observations can be misleading</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="observations.html"><a href="observations.html#class-exercise-1"><i class="fa fa-check"></i><b>2.1</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="reliability.html"><a href="reliability.html"><i class="fa fa-check"></i><b>3</b> How to select an outcome measure</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="reliability.html"><a href="reliability.html#reliability-1"><i class="fa fa-check"></i><b>3.1</b> Reliability</a></li>
+<li class="chapter" data-level="3.2" data-path="reliability.html"><a href="reliability.html#validity"><i class="fa fa-check"></i><b>3.2</b> Validity</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="reliability.html"><a href="reliability.html#cultural-factors"><i class="fa fa-check"></i><b>3.2.1</b> Cultural factors</a></li>
+<li class="chapter" data-level="3.2.2" data-path="reliability.html"><a href="reliability.html#generalisability-of-results-to-other-outcomes-the-concepts-of-far-and-near-transfer"><i class="fa fa-check"></i><b>3.2.2</b> Generalisability of results to other outcomes: the concepts of far and near transfer</a></li>
+<li class="chapter" data-level="3.2.3" data-path="reliability.html"><a href="reliability.html#functional-outcomes-vs-test-scores"><i class="fa fa-check"></i><b>3.2.3</b> Functional outcomes vs test scores</a></li>
+<li class="chapter" data-level="3.2.4" data-path="reliability.html"><a href="reliability.html#subjectivity-as-a-threat-to-validity"><i class="fa fa-check"></i><b>3.2.4</b> Subjectivity as a threat to validity</a></li>
+<li class="chapter" data-level="3.2.5" data-path="reliability.html"><a href="reliability.html#correlations-with-other-measures"><i class="fa fa-check"></i><b>3.2.5</b> Correlations with other measures</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="reliability.html"><a href="reliability.html#normative-data"><i class="fa fa-check"></i><b>3.3</b> Normative data</a></li>
+<li class="chapter" data-level="3.4" data-path="reliability.html"><a href="reliability.html#sensitivity"><i class="fa fa-check"></i><b>3.4</b> Sensitivity</a></li>
+<li class="chapter" data-level="3.5" data-path="reliability.html"><a href="reliability.html#is-it-practical"><i class="fa fa-check"></i><b>3.5</b> Is it practical?</a></li>
+<li class="chapter" data-level="3.6" data-path="reliability.html"><a href="reliability.html#class-exercise-2"><i class="fa fa-check"></i><b>3.6</b> Class exercise</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="reliability.html"><a href="reliability.html#mean-length-of-utterance"><i class="fa fa-check"></i><b>3.6.1</b> Mean Length of Utterance</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="nonspecific.html"><a href="nonspecific.html"><i class="fa fa-check"></i><b>4</b> Improvement due to nonspecific effects of intervention</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="nonspecific.html"><a href="nonspecific.html#placebo-effects"><i class="fa fa-check"></i><b>4.1</b> Placebo effects</a></li>
+<li class="chapter" data-level="4.2" data-path="nonspecific.html"><a href="nonspecific.html#identifying-specific-intervention-effects-by-measures-of-mechanism"><i class="fa fa-check"></i><b>4.2</b> Identifying specific intervention effects by measures of mechanism</a></li>
+<li class="chapter" data-level="4.3" data-path="nonspecific.html"><a href="nonspecific.html#classroom-exercise"><i class="fa fa-check"></i><b>4.3</b> Classroom exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="prepost.html"><a href="prepost.html"><i class="fa fa-check"></i><b>5</b> Limitations of the pre-post design: biases related to systematic change</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="prepost.html"><a href="prepost.html#spontaneous-improvement"><i class="fa fa-check"></i><b>5.1</b> Spontaneous improvement</a></li>
+<li class="chapter" data-level="5.2" data-path="prepost.html"><a href="prepost.html#practice-effects"><i class="fa fa-check"></i><b>5.2</b> Practice effects</a></li>
+<li class="chapter" data-level="5.3" data-path="prepost.html"><a href="prepost.html#regression-to-the-mean"><i class="fa fa-check"></i><b>5.3</b> Regression to the mean</a></li>
+<li class="chapter" data-level="5.4" data-path="prepost.html"><a href="prepost.html#class-exercise-3"><i class="fa fa-check"></i><b>5.4</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="controls.html"><a href="controls.html"><i class="fa fa-check"></i><b>6</b> Controlling unwanted effects with a control group</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="controls.html"><a href="controls.html#is-it-ethical-to-include-a-control-group"><i class="fa fa-check"></i><b>6.1</b> Is it ethical to include a control group?</a></li>
+<li class="chapter" data-level="6.2" data-path="controls.html"><a href="controls.html#possible-adverse-effects-of-intervention"><i class="fa fa-check"></i><b>6.2</b> Possible adverse effects of intervention</a></li>
+<li class="chapter" data-level="6.3" data-path="controls.html"><a href="controls.html#uncontrolled-studies-are-unethical"><i class="fa fa-check"></i><b>6.3</b> Uncontrolled studies are unethical</a></li>
+<li class="chapter" data-level="6.4" data-path="controls.html"><a href="controls.html#treated-vs-untreated-controls"><i class="fa fa-check"></i><b>6.4</b> Treated vs untreated controls</a></li>
+<li class="chapter" data-level="6.5" data-path="controls.html"><a href="controls.html#classroom-exercise-1"><i class="fa fa-check"></i><b>6.5</b> Classroom exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="randomise.html"><a href="randomise.html"><i class="fa fa-check"></i><b>7</b> Controlling for selection bias: randomised assignment to intervention</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="randomise.html"><a href="randomise.html#randomization-methods"><i class="fa fa-check"></i><b>7.1</b> Randomization methods</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="randomise.html"><a href="randomise.html#simple-randomization"><i class="fa fa-check"></i><b>7.1.1</b> Simple randomization</a></li>
+<li class="chapter" data-level="7.1.2" data-path="randomise.html"><a href="randomise.html#random-permuted-blocks"><i class="fa fa-check"></i><b>7.1.2</b> Random permuted blocks</a></li>
+<li class="chapter" data-level="7.1.3" data-path="randomise.html"><a href="randomise.html#unequal-randomization"><i class="fa fa-check"></i><b>7.1.3</b> Unequal randomization</a></li>
+<li class="chapter" data-level="7.1.4" data-path="randomise.html"><a href="randomise.html#stratification"><i class="fa fa-check"></i><b>7.1.4</b> Stratification</a></li>
+<li class="chapter" data-level="7.1.5" data-path="randomise.html"><a href="randomise.html#adaptive-randomisation"><i class="fa fa-check"></i><b>7.1.5</b> Adaptive randomisation</a></li>
+<li class="chapter" data-level="7.1.6" data-path="randomise.html"><a href="randomise.html#minimization"><i class="fa fa-check"></i><b>7.1.6</b> Minimization</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="randomise.html"><a href="randomise.html#units-of-analysis-individuals-vs-clusters"><i class="fa fa-check"></i><b>7.2</b> Units of analysis: Individuals vs clusters</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="randomise.html"><a href="randomise.html#class-exercise-4"><i class="fa fa-check"></i><b>7.2.1</b> Class exercise</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="experimenter.html"><a href="experimenter.html"><i class="fa fa-check"></i><b>8</b> The experimenter as a source of bias</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="experimenter.html"><a href="experimenter.html#allocation-concealment"><i class="fa fa-check"></i><b>8.1</b> Allocation concealment</a></li>
+<li class="chapter" data-level="8.2" data-path="experimenter.html"><a href="experimenter.html#the-importance-of-masking-for-assessments"><i class="fa fa-check"></i><b>8.2</b> The importance of masking for assessments</a></li>
+<li class="chapter" data-level="8.3" data-path="experimenter.html"><a href="experimenter.html#conflict-of-interest"><i class="fa fa-check"></i><b>8.3</b> Conflict of interest</a></li>
+<li class="chapter" data-level="8.4" data-path="experimenter.html"><a href="experimenter.html#class-exercise-5"><i class="fa fa-check"></i><b>8.4</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="dropouts.html"><a href="dropouts.html"><i class="fa fa-check"></i><b>9</b> Further potential for bias: who drops out and who volunteers?</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="dropouts.html"><a href="dropouts.html#dealing-with-dropouts-intention-to-treat-analysis"><i class="fa fa-check"></i><b>9.1</b> Dealing with dropouts: Intention to treat analysis</a></li>
+<li class="chapter" data-level="9.2" data-path="dropouts.html"><a href="dropouts.html#who-volunteers-for-research"><i class="fa fa-check"></i><b>9.2</b> Who volunteers for research?</a></li>
+<li class="chapter" data-level="9.3" data-path="dropouts.html"><a href="dropouts.html#class-exercise-6"><i class="fa fa-check"></i><b>9.3</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="power.html"><a href="power.html"><i class="fa fa-check"></i><b>10</b> How big a sample do I need? Sampling, statistical power and type II errors</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="power.html"><a href="power.html#sampling"><i class="fa fa-check"></i><b>10.1</b> Sampling</a></li>
+<li class="chapter" data-level="10.2" data-path="power.html"><a href="power.html#effect-size"><i class="fa fa-check"></i><b>10.2</b> Effect size</a></li>
+<li class="chapter" data-level="10.3" data-path="power.html"><a href="power.html#sample-size-affects-accuracy-of-estimates"><i class="fa fa-check"></i><b>10.3</b> Sample size affects accuracy of estimates</a></li>
+<li class="chapter" data-level="10.4" data-path="power.html"><a href="power.html#understanding-p-values"><i class="fa fa-check"></i><b>10.4</b> Understanding p-values</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="power.html"><a href="power.html#type-ii-error"><i class="fa fa-check"></i><b>10.4.1</b> Type II error</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="power.html"><a href="power.html#statistical-power-and-beta"><i class="fa fa-check"></i><b>10.5</b> Statistical power and <span class="math inline">\(\beta\)</span></a></li>
+<li class="chapter" data-level="10.6" data-path="power.html"><a href="power.html#ways-to-improve-statistical-power"><i class="fa fa-check"></i><b>10.6</b> Ways to improve statistical power</a></li>
+<li class="chapter" data-level="10.7" data-path="power.html"><a href="power.html#class-exercises"><i class="fa fa-check"></i><b>10.7</b> Class Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="phacking.html"><a href="phacking.html"><i class="fa fa-check"></i><b>11</b> False positives, p-hacking and multiple comparisons</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="phacking.html"><a href="phacking.html#type-i-error"><i class="fa fa-check"></i><b>11.1</b> Type I error</a></li>
+<li class="chapter" data-level="11.2" data-path="phacking.html"><a href="phacking.html#reasons-for-false-positives"><i class="fa fa-check"></i><b>11.2</b> Reasons for false positives</a></li>
+<li class="chapter" data-level="11.3" data-path="phacking.html"><a href="phacking.html#adjusting-statistics-for-multiple-testing"><i class="fa fa-check"></i><b>11.3</b> Adjusting statistics for multiple testing</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="phacking.html"><a href="phacking.html#bonferroni-correction"><i class="fa fa-check"></i><b>11.3.1</b> Bonferroni Correction</a></li>
+<li class="chapter" data-level="11.3.2" data-path="phacking.html"><a href="phacking.html#meff"><i class="fa fa-check"></i><b>11.3.2</b> MEff</a></li>
+<li class="chapter" data-level="11.3.3" data-path="phacking.html"><a href="phacking.html#extracting-a-principal-component-from-a-set-of-measures"><i class="fa fa-check"></i><b>11.3.3</b> Extracting a principal component from a set of measures</a></li>
+<li class="chapter" data-level="11.3.4" data-path="phacking.html"><a href="phacking.html#improving-power-by-use-of-multiple-outcomes"><i class="fa fa-check"></i><b>11.3.4</b> Improving power by use of multiple outcomes</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="phacking.html"><a href="phacking.html#class-exercise-7"><i class="fa fa-check"></i><b>11.4</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="RCT.html"><a href="RCT.html"><i class="fa fa-check"></i><b>12</b> The randomised controlled trial as a method for controlling biases</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="RCT.html"><a href="RCT.html#statistical-analysis-of-a-rct"><i class="fa fa-check"></i><b>12.1</b> Statistical analysis of a RCT</a></li>
+<li class="chapter" data-level="12.2" data-path="RCT.html"><a href="RCT.html#steps-to-take-before-data-analysis"><i class="fa fa-check"></i><b>12.2</b> Steps to take before data analysis</a>
+<ul>
+<li class="chapter" data-level="12.2.1" data-path="RCT.html"><a href="RCT.html#sample-dataset-with-illustrative-analysis"><i class="fa fa-check"></i><b>12.2.1</b> Sample dataset with illustrative analysis</a></li>
+<li class="chapter" data-level="12.2.2" data-path="RCT.html"><a href="RCT.html#simple-t-test-on-outcome-data"><i class="fa fa-check"></i><b>12.2.2</b> Simple t-test on outcome data</a></li>
+<li class="chapter" data-level="12.2.3" data-path="RCT.html"><a href="RCT.html#t-test-on-difference-scores"><i class="fa fa-check"></i><b>12.2.3</b> T-test on difference scores</a></li>
+<li class="chapter" data-level="12.2.4" data-path="RCT.html"><a href="RCT.html#analysis-of-covariance-on-outcome-scores"><i class="fa fa-check"></i><b>12.2.4</b> Analysis of covariance on outcome scores</a></li>
+<li class="chapter" data-level="12.2.5" data-path="RCT.html"><a href="RCT.html#linear-mixed-models-lmm-approach"><i class="fa fa-check"></i><b>12.2.5</b> Linear mixed models (LMM) approach</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="RCT.html"><a href="RCT.html#class-exercise-8"><i class="fa fa-check"></i><b>12.3</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="drawbacks.html"><a href="drawbacks.html"><i class="fa fa-check"></i><b>13</b> Drawbacks of the two-arm RCT</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="drawbacks.html"><a href="drawbacks.html#inefficiency-need-for-unfeasibly-large-samples"><i class="fa fa-check"></i><b>13.1</b> Inefficiency: need for unfeasibly large samples</a></li>
+<li class="chapter" data-level="13.2" data-path="drawbacks.html"><a href="drawbacks.html#transfer-to-real-life-efficacy-and-effectiveness"><i class="fa fa-check"></i><b>13.2</b> Transfer to real life: efficacy and effectiveness</a></li>
+<li class="chapter" data-level="13.3" data-path="drawbacks.html"><a href="drawbacks.html#heterogeneity-and-personalised-intervention"><i class="fa fa-check"></i><b>13.3</b> Heterogeneity and personalised intervention</a></li>
+<li class="chapter" data-level="13.4" data-path="drawbacks.html"><a href="drawbacks.html#class-exercise-9"><i class="fa fa-check"></i><b>13.4</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="adaptive.html"><a href="adaptive.html"><i class="fa fa-check"></i><b>14</b> Adaptive Interventions</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="adaptive.html"><a href="adaptive.html#class-exercise-10"><i class="fa fa-check"></i><b>14.1</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="cluster.html"><a href="cluster.html"><i class="fa fa-check"></i><b>15</b> Cluster Randomised Control Trials</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="cluster.html"><a href="cluster.html#what-is-a-cluster-rct"><i class="fa fa-check"></i><b>15.1</b> What is a cluster RCT?</a></li>
+<li class="chapter" data-level="15.2" data-path="cluster.html"><a href="cluster.html#advantages-of-a-cluster-design"><i class="fa fa-check"></i><b>15.2</b> Advantages of a cluster design</a></li>
+<li class="chapter" data-level="15.3" data-path="cluster.html"><a href="cluster.html#disadvantages-of-a-cluster-design"><i class="fa fa-check"></i><b>15.3</b> Disadvantages of a cluster design</a></li>
+<li class="chapter" data-level="15.4" data-path="cluster.html"><a href="cluster.html#class-exercise-11"><i class="fa fa-check"></i><b>15.4</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="crossover.html"><a href="crossover.html"><i class="fa fa-check"></i><b>16</b> Cross-over designs</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="crossover.html"><a href="crossover.html#a-within-subjects-approach-to-the-rct"><i class="fa fa-check"></i><b>16.1</b> A within-subjects approach to the RCT</a>
+<ul>
+<li class="chapter" data-level="16.1.1" data-path="crossover.html"><a href="crossover.html#delayed-crossover-design-wait-list-controls"><i class="fa fa-check"></i><b>16.1.1</b> Delayed crossover design (Wait list controls)</a></li>
+</ul></li>
+<li class="chapter" data-level="16.2" data-path="crossover.html"><a href="crossover.html#class-exercise-12"><i class="fa fa-check"></i><b>16.2</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="Single.html"><a href="Single.html"><i class="fa fa-check"></i><b>17</b> Single case designs</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="Single.html"><a href="Single.html#logic-of-single-case-designs"><i class="fa fa-check"></i><b>17.1</b> Logic of single case designs</a>
+<ul>
+<li class="chapter" data-level="17.1.1" data-path="Single.html"><a href="Single.html#minimising-unwanted-variance"><i class="fa fa-check"></i><b>17.1.1</b> Minimising unwanted variance</a></li>
+<li class="chapter" data-level="17.1.2" data-path="Single.html"><a href="Single.html#minimising-systematic-bias"><i class="fa fa-check"></i><b>17.1.2</b> Minimising systematic bias</a></li>
+<li class="chapter" data-level="17.1.3" data-path="Single.html"><a href="Single.html#the-need-for-sufficient-data"><i class="fa fa-check"></i><b>17.1.3</b> The need for sufficient data</a></li>
+</ul></li>
+<li class="chapter" data-level="17.2" data-path="Single.html"><a href="Single.html#examples-of-studies-using-different-types-of-single-case-design"><i class="fa fa-check"></i><b>17.2</b> Examples of studies using different types of single case design</a>
+<ul>
+<li class="chapter" data-level="17.2.1" data-path="Single.html"><a href="Single.html#a-multiple-baseline-design-speech-and-language-therapy-for-adolescents-in-youth-justice."><i class="fa fa-check"></i><b>17.2.1</b> A multiple baseline design: Speech and language therapy for adolescents in youth justice.</a></li>
+<li class="chapter" data-level="17.2.2" data-path="Single.html"><a href="Single.html#a-study-using-multiple-baseline-across-behaviours-effectiveness-of-electropalatography"><i class="fa fa-check"></i><b>17.2.2</b> A study using multiple baseline across behaviours: Effectiveness of electropalatography</a></li>
+<li class="chapter" data-level="17.2.3" data-path="Single.html"><a href="Single.html#example-of-an-analysis-of-case-series-data"><i class="fa fa-check"></i><b>17.2.3</b> Example of an analysis of case series data</a></li>
+<li class="chapter" data-level="17.2.4" data-path="Single.html"><a href="Single.html#combining-approaches-to-strengthen-study-design"><i class="fa fa-check"></i><b>17.2.4</b> Combining approaches to strengthen study design</a></li>
+</ul></li>
+<li class="chapter" data-level="17.3" data-path="Single.html"><a href="Single.html#statistical-approaches-to-single-case-designs"><i class="fa fa-check"></i><b>17.3</b> Statistical approaches to single case designs</a></li>
+<li class="chapter" data-level="17.4" data-path="Single.html"><a href="Single.html#overview-of-considerations-for-single-case-designs"><i class="fa fa-check"></i><b>17.4</b> Overview of considerations for single case designs</a></li>
+<li class="chapter" data-level="17.5" data-path="Single.html"><a href="Single.html#class-exercise-13"><i class="fa fa-check"></i><b>17.5</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="pubbias.html"><a href="pubbias.html"><i class="fa fa-check"></i><b>18</b> Can you trust the published literature?</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="pubbias.html"><a href="pubbias.html#publication-bias"><i class="fa fa-check"></i><b>18.1</b> Publication bias</a>
+<ul>
+<li class="chapter" data-level="18.1.1" data-path="pubbias.html"><a href="pubbias.html#citation-bias"><i class="fa fa-check"></i><b>18.1.1</b> Citation bias</a></li>
+<li class="chapter" data-level="18.1.2" data-path="pubbias.html"><a href="pubbias.html#counteracting-publication-and-citation-biases"><i class="fa fa-check"></i><b>18.1.2</b> Counteracting publication and citation biases</a></li>
+<li class="chapter" data-level="18.1.3" data-path="pubbias.html"><a href="pubbias.html#class-exercise-14"><i class="fa fa-check"></i><b>18.1.3</b> Class exercise</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="prereg.html"><a href="prereg.html"><i class="fa fa-check"></i><b>19</b> Pre-registration and Registered Reports</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="prereg.html"><a href="prereg.html#study-registration"><i class="fa fa-check"></i><b>19.1</b> Study registration</a></li>
+<li class="chapter" data-level="19.2" data-path="prereg.html"><a href="prereg.html#registered-reports"><i class="fa fa-check"></i><b>19.2</b> Registered Reports</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="litrev.html"><a href="litrev.html"><i class="fa fa-check"></i><b>20</b> Reviewing the literature before you start</a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="litrev.html"><a href="litrev.html#what-is-a-systematic-review"><i class="fa fa-check"></i><b>20.1</b> What is a systematic review?</a></li>
+<li class="chapter" data-level="20.2" data-path="litrev.html"><a href="litrev.html#steps-in-the-literature-review"><i class="fa fa-check"></i><b>20.2</b> Steps in the literature review</a>
+<ul>
+<li class="chapter" data-level="20.2.1" data-path="litrev.html"><a href="litrev.html#define-an-appropriate-question"><i class="fa fa-check"></i><b>20.2.1</b> Define an appropriate question</a></li>
+<li class="chapter" data-level="20.2.2" data-path="litrev.html"><a href="litrev.html#specify-criteria-for-a-literature-search"><i class="fa fa-check"></i><b>20.2.2</b> Specify criteria for a literature search</a></li>
+<li class="chapter" data-level="20.2.3" data-path="litrev.html"><a href="litrev.html#select-eligible-studies-following-protocols-inclusion-criteria"><i class="fa fa-check"></i><b>20.2.3</b> Select eligible studies following protocol’s inclusion criteria</a></li>
+<li class="chapter" data-level="20.2.4" data-path="litrev.html"><a href="litrev.html#assess-the-quality-of-each-study-included"><i class="fa fa-check"></i><b>20.2.4</b> Assess the quality of each study included</a></li>
+<li class="chapter" data-level="20.2.5" data-path="litrev.html"><a href="litrev.html#organise-summarise-and-unbiasedly-present-the-findings-from-all-included-studies"><i class="fa fa-check"></i><b>20.2.5</b> Organise, summarise, and unbiasedly present the findings from all included studies</a></li>
+</ul></li>
+<li class="chapter" data-level="20.3" data-path="litrev.html"><a href="litrev.html#systematic-review-or-literature-review"><i class="fa fa-check"></i><b>20.3</b> Systematic review or literature review?</a></li>
+<li class="chapter" data-level="20.4" data-path="litrev.html"><a href="litrev.html#class-exercise-15"><i class="fa fa-check"></i><b>20.4</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="protocol.html"><a href="protocol.html"><i class="fa fa-check"></i><b>21</b> A template for a research protocol</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Evaluating what works</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="protocol" class="section level1 hasAnchor" number="21">
+<h1><span class="header-section-number">Chapter 21</span> A template for a research protocol<a href="protocol.html#protocol" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><img src="images/logo_alone_new.png" width="143" /></p>
+<p>blahblahblah</p>
+
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div class="csl-entry">
+Aksayli, N. Deniz, Giovanni Sala, and Fernand Gobet. 2019. <span>“The Cognitive and Academic Benefits of <span>Cogmed</span>: <span>A</span> Meta-Analysis.”</span> <em>Educational Research Review</em> 27 (June): 229–43. <a href="https://doi.org/10.1016/j.edurev.2019.04.003">https://doi.org/10.1016/j.edurev.2019.04.003</a>.
+</div>
+<div class="csl-entry">
+Armson, Joy, and Andrew Stuart. 1998. <span>“Effect of <span>Extended Exposure</span> to <span>Frequency-Altered Feedback</span> on <span>Stuttering During Reading</span> and <span>Monologue</span>.”</span> <em>Journal of Speech, Language, and Hearing Research</em> 41 (3): 479–90. <a href="https://doi.org/10.1044/jslhr.4103.479">https://doi.org/10.1044/jslhr.4103.479</a>.
+</div>
+<div class="csl-entry">
+Barber, Theodore X., and Maurice J. Silver. 1968. <span>“Fact, Fiction, and the Experimenter Bias Effect.”</span> <em>Psychological Bulletin</em> 70 (6, Pt.2): 1–29. <a href="https://doi.org/10.1037/h0026724">https://doi.org/10.1037/h0026724</a>.
+</div>
+<div class="csl-entry">
+Bem, Daryl J. 2004. <span>“Writing the Empirical Journal Article.”</span> In <em>The Compleat Academic: <span>A</span> Career Guide, 2nd Ed</em>, 185–219. <span>Washington, DC, US</span>: <span>American Psychological Association</span>.
+</div>
+<div class="csl-entry">
+Benjamin, Daniel J., James O. Berger, Magnus Johannesson, Brian A. Nosek, E.-J. Wagenmakers, Richard Berk, Kenneth A. Bollen, et al. 2018. <span>“Redefine Statistical Significance.”</span> <em>Nature Human Behaviour</em> 2 (1): 6–10. <a href="https://doi.org/10.1038/s41562-017-0189-z">https://doi.org/10.1038/s41562-017-0189-z</a>.
+</div>
+<div class="csl-entry">
+Best, Wendy, Alison Greenwood, Jennie Grassly, Ruth Herbert, Julie Hickin, and David Howard. 2013. <span>“Aphasia Rehabilitation: <span>Does</span> Generalisation from Anomia Therapy Occur and Is It Predictable? <span>A</span> Case Series Study.”</span> <em>Cortex</em> 49 (9): 2345–57. <a href="https://doi.org/10.1016/j.cortex.2013.01.005">https://doi.org/10.1016/j.cortex.2013.01.005</a>.
+</div>
+<div class="csl-entry">
+Bishop, D. V. M. 2013. <span>“Research <span>Review</span>: <span>Emanuel Miller Memorial Lecture</span> 2012 <span>Neuroscientific</span> Studies of Intervention for Language Impairment in Children: Interpretive and Methodological Problems.”</span> <em>Journal of Child Psychology and Psychiatry, and Allied Disciplines</em> 54 (3): 247–59. <a href="https://doi.org/10.1111/jcpp.12034">https://doi.org/10.1111/jcpp.12034</a>.
+</div>
+<div class="csl-entry">
+———. 2019. <span>“Rein in the Four Horsemen of Irreproducibility.”</span> <em>Nature</em> 568 (7753): 435–35. <a href="https://doi.org/10.1038/d41586-019-01307-2">https://doi.org/10.1038/d41586-019-01307-2</a>.
+</div>
+<div class="csl-entry">
+———. 2020. <span>“The Psychology of Experimental Psychologists: <span>Overcoming</span> Cognitive Constraints to Improve Research: <span>The</span> 47th <span>Sir Frederic Bartlett Lecture</span>.”</span> <em>Quarterly Journal of Experimental Psychology (2006)</em> 73 (1): 1–19. <a href="https://doi.org/10.1177/1747021819886519">https://doi.org/10.1177/1747021819886519</a>.
+</div>
+<div class="csl-entry">
+———. 2023. <span>“Using Multiple Outcomes in Intervention Studies: Improving Power While Controlling Type <span>I</span> Errors.”</span> <span>F1000Research</span>. <a href="https://doi.org/10.12688/f1000research.73520.2">https://doi.org/10.12688/f1000research.73520.2</a>.
+</div>
+<div class="csl-entry">
+Bishop, D. V. M., C. V. Adams, and S. Rosen. 2006. <span>“Resistance of Grammatical Impairment to Computerized Comprehension Training in Children with Specific and Non-Specific Language Impairments.”</span> <em>International Journal of Language &amp; Communication Disorders</em> 41 (1): 19–40. <a href="https://doi.org/10.1080/13682820500144000">https://doi.org/10.1080/13682820500144000</a>.
+</div>
+<div class="csl-entry">
+BIshop, D. V. M., and A Edmundson. 1987. <span>“Language-<span>Impaired</span> 4-<span>Year-Olds</span>.”</span> <em>Journal of Speech and Hearing Disorders</em> 52 (2): 156–73. <a href="https://doi.org/10.1044/jshd.5202.156">https://doi.org/10.1044/jshd.5202.156</a>.
+</div>
+<div class="csl-entry">
+Bishop, D. V. M., Margaret J. Snowling, Paul A. Thompson, and Trisha Greenhalgh. 2017. <span>“Phase 2 of <span>CATALISE</span>: A Multinational and Multidisciplinary <span>Delphi</span> Consensus Study of Problems with Language Development: <span>Terminology</span>.”</span> <em>Journal of Child Psychology and Psychiatry</em> 58 (10): 1068–80. <a href="https://doi.org/10.1111/jcpp.12721">https://doi.org/10.1111/jcpp.12721</a>.
+</div>
+<div class="csl-entry">
+Bishop, D. V. M., Jackie Thompson, and Adam J. Parker. 2022. <span>“Can We Shift Belief in the <span>‘<span>Law</span> of <span>Small Numbers</span>’</span>?”</span> <em>Royal Society Open Science</em> 9 (3): 211028. <a href="https://doi.org/10.1098/rsos.211028">https://doi.org/10.1098/rsos.211028</a>.
+</div>
+<div class="csl-entry">
+Bishop, D. V. M., and Paul A. Thompson. 2016. <span>“Problems in Using p-Curve Analysis and Text-Mining to Detect Rate of p-Hacking and Evidential Value.”</span> <em>PeerJ</em> 4 (February): e1715. <a href="https://doi.org/10.7717/peerj.1715">https://doi.org/10.7717/peerj.1715</a>.
+</div>
+<div class="csl-entry">
+Block, Susan, Roger J. Ingham, and R. John Bench. 1996. <span>“The <span>Effects</span> of the <span>Edinburgh Masker</span> on <span>Stuttering</span>.”</span> <em>Australian Journal of Human Communication Disorders</em> 24 (1): 11–18. <a href="https://doi.org/10.3109/asl2.1996.24.issue-1.02">https://doi.org/10.3109/asl2.1996.24.issue-1.02</a>.
+</div>
+<div class="csl-entry">
+Borenstein, M, L Hedges, J P T Higgins, and H Rothstein. 2009. <em>Introduction to Meta-Analysis</em>. <span>John Wiley &amp; Sons, Ltd</span>. <a href="https://doi.org/10.1002/9780470743386.fmatter">https://doi.org/10.1002/9780470743386.fmatter</a>.
+</div>
+<div class="csl-entry">
+Bowen, Caroline. 2020. <span>“Independent Research and the <span>Arrowsmith Program</span>.”</span> <em>Perspectives on Language and Literacy</em> 46 (1): 47–54.
+</div>
+<div class="csl-entry">
+Bricker, D, and J Squires. 1999. <em>Ages and <span>Stages Questionnaires</span>: <span>A</span> Parent-Completed, Child-Monitoring System, 2nd Ed.</em> <span>Baltimore</span>: <span>Paul H. Brookes</span>.
+</div>
+<div class="csl-entry">
+Brown, Roger. 1973. <em>A <span>First Language</span> <span>Roger Brown</span></em>. <span>Cambridge, MA</span>: <span>Harvard University Press</span>.
+</div>
+<div class="csl-entry">
+Bull, Leona. 2007. <span>“Sunflower Therapy for Children with Specific Learning Difficulties (Dyslexia): A Randomised, Controlled Trial.”</span> <em>Complementary Therapies in Clinical Practice</em> 13 (1): 15–24. <a href="https://doi.org/10.1016/j.ctcp.2006.07.003">https://doi.org/10.1016/j.ctcp.2006.07.003</a>.
+</div>
+<div class="csl-entry">
+Burgoyne, Kelly, Fiona J. Duff, Paula J. Clarke, Sue Buckley, Margaret J. Snowling, and Charles Hulme. 2016. <span>“Reading and Language Intervention for Children with <span>Down</span> Syndrome: <span>Experimental</span> Data [Data Collection].”</span>
+</div>
+<div class="csl-entry">
+Burgoyne, Kelly, Fiona J Duff, Paula J Clarke, Sue Buckley, Margaret J Snowling, and Charles Hulme. 2012. <span>“Efficacy of a Reading and Language Intervention for Children with <span>Down</span> Syndrome: A Randomized Controlled Trial.”</span> <em>Journal of Child Psychology and Psychiatry, and Allied Disciplines</em> 53 (10): 1044–53. <a href="https://doi.org/10.1111/j.1469-7610.2012.02557.x">https://doi.org/10.1111/j.1469-7610.2012.02557.x</a>.
+</div>
+<div class="csl-entry">
+Burgoyne, Kelly, Rachel Gardner, Helen Whiteley, Margaret J. Snowling, and Charles Hulme. 2018. <span>“Evaluation of a Parent-Delivered Early Language Enrichment Programme: Evidence from a Randomised Controlled Trial.”</span> <em>Journal of Child Psychology and Psychiatry, and Allied Disciplines</em> 59 (5): 545–55. <a href="https://doi.org/10.1111/jcpp.12819">https://doi.org/10.1111/jcpp.12819</a>.
+</div>
+<div class="csl-entry">
+Button, K. 2018. <span>“Reboot Undergraduate Courses for Reproducibility.”</span> <em>Nature</em> 561 (7723): 287–87. <a href="https://doi.org/10.1038/d41586-018-06692-8">https://doi.org/10.1038/d41586-018-06692-8</a>.
+</div>
+<div class="csl-entry">
+———. 2020. <span>“Supporting <span>‘Team Science’</span>.”</span> <em>The Psychologist</em> 33: 30–33.
+</div>
+<div class="csl-entry">
+Calder, Samuel D., Mary Claessen, Susan Ebbels, and ão Suze Leit. 2021. <span>“The <span>Efficacy</span> of an <span>Explicit Intervention Approach</span> to <span>Improve Past Tense Marking</span> for <span>Early School-Age Children With Developmental Language Disorder</span>.”</span> <em>Journal of Speech, Language, and Hearing Research</em> 64 (1): 91–104. <a href="https://doi.org/10.1044/2020_JSLHR-20-00132">https://doi.org/10.1044/2020_JSLHR-20-00132</a>.
+</div>
+<div class="csl-entry">
+Campbell, MJ, and SJ Walters. 2014. <em>How to Design, Analyse and Report Cluster Randomised Trials in Medicine and Health Related Research.</em> <span>Chichester</span>: <span>Wiley</span>.
+</div>
+<div class="csl-entry">
+Chalmers, Iain, Michael B. Bracken, Ben Djulbegovic, Silvio Garattini, Jonathan Grant, A. Metin Gülmezoglu, David W. Howells, John P. A. Ioannidis, and Sandy Oliver. 2014. <span>“How to Increase Value and Reduce Waste When Research Priorities Are Set.”</span> <em>The Lancet</em> 383 (9912): 156–65. <a href="https://doi.org/10.1016/S0140-6736(13)62229-1">https://doi.org/10.1016/S0140-6736(13)62229-1</a>.
+</div>
+<div class="csl-entry">
+Cheverud, James M. 2001. <span>“A Simple Correction for Multiple Comparisons in Interval Mapping Genome Scans.”</span> <em>Heredity</em> 87 (1): 52–58. <a href="https://doi.org/10.1046/j.1365-2540.2001.00901.x">https://doi.org/10.1046/j.1365-2540.2001.00901.x</a>.
+</div>
+<div class="csl-entry">
+Crystal, David, Paul Fletcher, and Michael Garman. 1977. <em>The <span>Grammatical Analysis</span> of <span>Language Disability</span>: <span>A Procedure</span> for <span>Assessment</span> and <span>Remediation</span></em>. <span>London</span>: <span>Edward Arnold</span>.
+</div>
+<div class="csl-entry">
+Cunningham, John A., Kypros Kypri, and Jim McCambridge. 2013. <span>“Exploratory Randomized Controlled Trial Evaluating the Impact of a Waiting List Control Design.”</span> <em>BMC Medical Research Methodology</em> 13 (1): 150. <a href="https://doi.org/10.1186/1471-2288-13-150">https://doi.org/10.1186/1471-2288-13-150</a>.
+</div>
+<div class="csl-entry">
+De Angelis, Catherine, Jeffrey M. Drazen, Frank A. Frizelle, Charlotte Haug, John Hoey, Richard Horton, Sheldon Kotzin, et al. 2004. <span>“Clinical Trial Registration: A Statement from the <span>International Committee</span> of <span>Medical Journal Editors</span>.”</span> <em>Lancet (London, England)</em> 364 (9438): 911–12. <a href="https://doi.org/10.1016/S0140-6736(04)17034-7">https://doi.org/10.1016/S0140-6736(04)17034-7</a>.
+</div>
+<div class="csl-entry">
+Denman, Deborah, Renée Speyer, Natalie Munro, Wendy M. Pearce, Yu-Wei Chen, and Reinie Cordier. 2017. <span>“Psychometric <span>Properties</span> of <span>Language Assessments</span> for <span>Children Aged</span> 4 <span>Years</span>: <span>A Systematic Review</span>.”</span> <em>Frontiers in Psychology</em> 8. <a href="https://doi.org/10.3389/fpsyg.2017.01515">https://doi.org/10.3389/fpsyg.2017.01515</a>.
+</div>
+<div class="csl-entry">
+Derringer, Jaime. 2018. <span>“A Simple Correction for Non-Independent Tests.”</span> <span>PsyArXiv</span>. <a href="https://doi.org/10.31234/osf.io/f2tyw">https://doi.org/10.31234/osf.io/f2tyw</a>.
+</div>
+<div class="csl-entry">
+Dipper, L., J. Marshall, M. Boyle, N. Botting, D. Hersh, M. Pritchard, and M. Cruice. 2020. <span>“Treatment for Improving Discourse in Aphasia: A Systematic Review and Synthesis of the Evidence Base.”</span> <em>Aphasiology</em>, June. <a href="https://doi.org/10.1080/02687038.2020.1765305">https://doi.org/10.1080/02687038.2020.1765305</a>.
+</div>
+<div class="csl-entry">
+Duff, Fiona J., Silvana E. Mengoni, Alison M. Bailey, and Margaret J. Snowling. 2015. <span>“Validity and Sensitivity of the Phonics Screening Check: Implications for Practice.”</span> <em>Journal of Research in Reading</em> 38 (2): 109–23. <a href="https://doi.org/10.1111/1467-9817.12029">https://doi.org/10.1111/1467-9817.12029</a>.
+</div>
+<div class="csl-entry">
+Ebbels, Susan H., Elspeth McCartney, Vicky Slonims, Julie E. Dockrell, and Courtenay Frazier Norbury. 2019. <span>“Evidence-Based Pathways to Intervention for Children with Language Disorders.”</span> <em>International Journal of Language &amp; Communication Disorders</em> 54 (1): 3–19. <a href="https://doi.org/10.1111/1460-6984.12387">https://doi.org/10.1111/1460-6984.12387</a>.
+</div>
+<div class="csl-entry">
+Elliott, S. A., and J. S. L. Brown. 2002. <span>“What Are We Doing to Waiting List Controls?”</span> <em>Behaviour Research and Therapy</em> 40 (9): 1047–52. <a href="https://doi.org/10.1016/s0005-7967(01)00082-1">https://doi.org/10.1016/s0005-7967(01)00082-1</a>.
+</div>
+<div class="csl-entry">
+Ferguson, Christopher J., and Moritz Heene. 2012. <span>“A <span>Vast Graveyard</span> of <span>Undead Theories</span>: <span>Publication Bias</span> and <span>Psychological Science</span>’s <span>Aversion</span> to the <span>Null</span>.”</span> <em>Perspectives on Psychological Science</em> 7 (6): 555–61. <a href="https://doi.org/10.1177/1745691612459059">https://doi.org/10.1177/1745691612459059</a>.
+</div>
+<div class="csl-entry">
+Fielding, Helen. 1996. <em>Bridget <span>Jones</span>’ <span>Diary</span></em>. <span>London</span>: <span>Picador</span>.
+</div>
+<div class="csl-entry">
+Forsythe, Laura P., Kristin L. Carman, Victoria Szydlowski, Lauren Fayish, Laurie Davidson, David H. Hickam, Courtney Hall, et al. 2019. <span>“Patient <span>Engagement In Research</span>: <span>Early Findings From The Patient-Centered Outcomes Research Institute</span>.”</span> <em>Health Affairs</em> 38 (3): 359–67. <a href="https://doi.org/10.1377/hlthaff.2018.05067">https://doi.org/10.1377/hlthaff.2018.05067</a>.
+</div>
+<div class="csl-entry">
+Freedman, Benjamin. 1987. <span>“Equipoise and the <span>Ethics</span> of <span>Clinical Research</span>.”</span> <em>New England Journal of Medicine</em> 317 (3): 141–45. <a href="https://doi.org/10.1056/NEJM198707163170304">https://doi.org/10.1056/NEJM198707163170304</a>.
+</div>
+<div class="csl-entry">
+Friedman, Lee S, and Elihu D Richter. 2004. <span>“Relationship <span>Between Conflicts</span> of <span>Interest</span> and <span>Research Results</span>.”</span> <em>Journal of General Internal Medicine</em> 19 (1): 51–56. <a href="https://doi.org/10.1111/j.1525-1497.2004.30617.x">https://doi.org/10.1111/j.1525-1497.2004.30617.x</a>.
+</div>
+<div class="csl-entry">
+Furukawa, T. A., H. Noma, D. M. Caldwell, M. Honyashiki, K. Shinohara, H. Imai, P. Chen, V. Hunot, and R. Churchill. 2014. <span>“Waiting List May Be a Nocebo Condition in Psychotherapy Trials: A Contribution from Network Meta-Analysis.”</span> <em>Acta Psychiatrica Scandinavica</em> 130 (3): 181–92. <a href="https://doi.org/10.1111/acps.12275">https://doi.org/10.1111/acps.12275</a>.
+</div>
+<div class="csl-entry">
+Garralda, Elena, Rodrigo Dienstmann, Alejandro Piris-Giménez, Irene Braña, Jordi Rodon, and Josep Tabernero. 2019. <span>“New Clinical Trial Designs in the Era of Precision Medicine.”</span> <em>Molecular Oncology</em> 13 (3): 549–57. <a href="https://doi.org/10.1002/1878-0261.12465">https://doi.org/10.1002/1878-0261.12465</a>.
+</div>
+<div class="csl-entry">
+Gillam, Ronald B., Diane Frome Loeb, LaVae M. Hoffman, Thomas Bohman, Craig A. Champlin, Linda Thibodeau, Judith Widen, Jayne Brandel, and Sandy Friel-Patti. 2008. <span>“The <span>Efficacy</span> of <span>Fast ForWord-Language Intervention</span> in <span>School-Age Children</span> with <span>Language Impairment</span>: <span>A Randomized Controlled Trial</span>.”</span> <em>Journal of Speech, Language, and Hearing Research : JSLHR</em> 51 (1): 97–119. <a href="https://doi.org/10.1044/1092-4388(2008/007)">https://doi.org/10.1044/1092-4388(2008/007)</a>.
+</div>
+<div class="csl-entry">
+Goldacre, Ben, Henry Drysdale, Aaron Dale, Ioan Milosevic, Eirion Slade, Philip Hartley, Cicely Marston, Anna Powell-Smith, Carl Heneghan, and Kamal R. Mahtani. 2019. <span>“<span>COMPare</span>: A Prospective Cohort Study Correcting and Monitoring 58 Misreported Trials in Real Time.”</span> <em>Trials</em> 20 (1): 118. <a href="https://doi.org/10.1186/s13063-019-3173-2">https://doi.org/10.1186/s13063-019-3173-2</a>.
+</div>
+<div class="csl-entry">
+Greenwald, Anthony G. 1975. <span>“Consequences of Prejudice Against the Null Hypothesis.”</span> <em>Psychological Bulletin</em> 82 (1): 1–20. <a href="https://doi.org/10.1037/h0076157">https://doi.org/10.1037/h0076157</a>.
+</div>
+<div class="csl-entry">
+Hardwicke, Tom E., and Eric-Jan Wagenmakers. 2021. <span>“Preregistration: <span>A</span> Pragmatic Tool to Reduce Bias and Calibrate Confidence in Scientific Research.”</span> <span>MetaArXiv</span>. <a href="https://doi.org/10.31222/osf.io/d7bcu">https://doi.org/10.31222/osf.io/d7bcu</a>.
+</div>
+<div class="csl-entry">
+Hemingway, P, and N. J. Brereton. 2009. <span>“What Is a Systematic Review? 2nd Edition.”</span>
+</div>
+<div class="csl-entry">
+Henrich, Joseph, Steven J. Heine, and Ara Norenzayan. 2010. <span>“Most People Are Not <span>WEIRD</span>.”</span> <em>Nature</em> 466 (7302): 29–29. <a href="https://doi.org/10.1038/466029a">https://doi.org/10.1038/466029a</a>.
+</div>
+<div class="csl-entry">
+Hernan, Miguel. 2018. <span>“Causal <span>Inference</span> from <span>Observational Data</span>.”</span> <em>Miguel Hernan’s Faculty Website</em>. https://www.hsph.harvard.edu/miguel-hernan/research/causal-inference-from-observational-data/.
+</div>
+<div class="csl-entry">
+Hey, Spencer Phillips, and Jonathan Kimmelman. 2014. <span>“The Questionable Use of Unequal Allocation in Confirmatory Trials.”</span> <em>Neurology</em> 82 (1): 77–79. <a href="https://doi.org/10.1212/01.wnl.0000438226.10353.1c">https://doi.org/10.1212/01.wnl.0000438226.10353.1c</a>.
+</div>
+<div class="csl-entry">
+Higgins, J P T, J Thomas, J Chandler, M Cumpston, T Li, M J Page, and V A Welch. 2021. <span>“Cochrane <span>Handbook</span> for <span>Systematic Reviews</span> of <span>Interventions</span>, Version 6.2 (Updated <span>February</span> 2021).”</span> https://training.cochrane.org/handbook/current.
+</div>
+<div class="csl-entry">
+Hoare, Zoë SJ, Christopher J. Whitaker, and Rhiannon Whitaker. 2013. <span>“Introduction to a Generalized Method for Adaptive Randomization in Trials.”</span> <em>Trials</em> 14 (1): 19. <a href="https://doi.org/10.1186/1745-6215-14-19">https://doi.org/10.1186/1745-6215-14-19</a>.
+</div>
+<div class="csl-entry">
+Holman, Luke, Megan L. Head, Robert Lanfear, and Michael D. Jennions. 2015. <span>“Evidence of <span>Experimental Bias</span> in the <span>Life Sciences</span>: <span>Why We Need Blind Data Recording</span>.”</span> <em>PLOS Biology</em> 13 (7): e1002190. <a href="https://doi.org/10.1371/journal.pbio.1002190">https://doi.org/10.1371/journal.pbio.1002190</a>.
+</div>
+<div class="csl-entry">
+Kerr, N. L. 1998. <span>“<span>HARKing</span>: Hypothesizing After the Results Are Known.”</span> <em>Personality and Social Psychology Review: An Official Journal of the Society for Personality and Social Psychology, Inc</em> 2 (3): 196–217. <a href="https://doi.org/10.1207/s15327957pspr0203_4">https://doi.org/10.1207/s15327957pspr0203_4</a>.
+</div>
+<div class="csl-entry">
+Koutsoftas, Anthony D., Mary Towle Harmon, and Shelley Gray. 2009. <span>“The Effect of <span>Tier</span> 2 Intervention for Phonemic Awareness in a Response-to-Intervention Model in Low-Income Preschool Classrooms.”</span> <em>Language, Speech, and Hearing Services in Schools</em> 40 (2): 116–30. <a href="https://doi.org/10.1044/0161-1461(2008/07-0101)">https://doi.org/10.1044/0161-1461(2008/07-0101)</a>.
+</div>
+<div class="csl-entry">
+Krasny-Pacini, Agata, and Jonathan Evans. 2018. <span>“Single-Case Experimental Designs to Assess Intervention Effectiveness in Rehabilitation: <span>A</span> Practical Guide.”</span> <em>Annals of Physical and Rehabilitation Medicine</em> 61 (3): 164–79. <a href="https://doi.org/10.1016/j.rehab.2017.12.002">https://doi.org/10.1016/j.rehab.2017.12.002</a>.
+</div>
+<div class="csl-entry">
+Lakens, Daniel. 2021. <span>“Sample <span>Size Justification</span>.”</span> <span>PsyArXiv</span>. <a href="https://doi.org/10.31234/osf.io/9d3yf">https://doi.org/10.31234/osf.io/9d3yf</a>.
+</div>
+<div class="csl-entry">
+Lakens, Daniel, Federico G. Adolfi, Casper J. Albers, Farid Anvari, Matthew A. J. Apps, Shlomo E. Argamon, Thom Baguley, et al. 2018. <span>“Justify Your Alpha.”</span> <em>Nature Human Behaviour</em> 2 (3): 168–71. <a href="https://doi.org/10.1038/s41562-018-0311-x">https://doi.org/10.1038/s41562-018-0311-x</a>.
+</div>
+<div class="csl-entry">
+Law, James, Zoe Garrett, and Chad Nye. 2003. <span>“Speech and Language Therapy Interventions for Children with Primary Speech and Language Delay or Disorder.”</span> <em>Cochrane Database of Systematic Reviews</em>, no. 3. <a href="https://doi.org/10.1002/14651858.CD004110">https://doi.org/10.1002/14651858.CD004110</a>.
+</div>
+<div class="csl-entry">
+Ledford, Jennifer R., Erin E. Barton, Katherine E. Severini, and Kathleen N. Zimmerman. 2019. <span>“A <span>Primer</span> on <span>Single-Case Research Designs</span>: <span>Contemporary Use</span> and <span>Analysis</span>.”</span> <em>American Journal on Intellectual and Developmental Disabilities</em> 124 (1): 35. https://doi.org/<a href="http://dx.doi.org/10.1352/1944-7558-124.1.35">http://dx.doi.org/10.1352/1944-7558-124.1.35</a>.
+</div>
+<div class="csl-entry">
+Leng, G, and R. I Leng. 2020. <em>The <span>Matter</span> of <span>Facts</span>: <span>Skepticism</span>, <span>Persuasion</span>, and <span>Evidence</span> in <span>Science</span></em>. <span>Cambridge, MA</span>: <span>MIT Press</span>.
+</div>
+<div class="csl-entry">
+Leniston, Hannah, and Susan Ebbels. 2021. <span>“Investigation into the Effectiveness of Electropalatography in Treating Persisting Speech Sound Disorders in Adolescents with Co-Occurring Developmental Language Disorder.”</span> <em>Clinical Linguistics &amp; Phonetics</em>, July, 1–16. <a href="https://doi.org/10.1080/02699206.2021.1957022">https://doi.org/10.1080/02699206.2021.1957022</a>.
+</div>
+<div class="csl-entry">
+Levitt, Steven D., and John A. List. 2011. <span>“Was <span>There Really</span> a <span>Hawthorne Effect</span> at the <span>Hawthorne Plant</span>? <span>An Analysis</span> of the <span>Original Illumination Experiments</span>.”</span> <em>American Economic Journal: Applied Economics</em> 3 (1): 224–38. <a href="https://doi.org/10.1257/app.3.1.224">https://doi.org/10.1257/app.3.1.224</a>.
+</div>
+<div class="csl-entry">
+Lo, B, and M. J Field. 2009. <em>Conflict of <span>Interest</span> in <span>Medical Research</span>, <span>Education</span>, and <span>Practice</span></em>. <span>Washington, DC</span>: <span>National Academies Press</span>.
+</div>
+<div class="csl-entry">
+Loeb, Diane Frome, Christene Stoke, and Marc E. Fey. 2001. <span>“Language Changes Associated with <span class="nocase">Fast ForWord-language</span>: <span>Evidence</span> from Case Studies.”</span> <em>American Journal of Speech-Language Pathology</em> 10 (3): 216–30. <a href="https://doi.org/10.1044/1058-0360(2001/020)">https://doi.org/10.1044/1058-0360(2001/020)</a>.
+</div>
+<div class="csl-entry">
+Lord, F. M., M. R. Novick, and Allan Birnbaum. 1968. <em>Stastistical Theories of Mental Test Scores</em>. <span>Addison-Wesley</span>.
+</div>
+<div class="csl-entry">
+Ludlow, C. 2013. <span>“Need for <span>Adaptive Research Designs</span> in <span>Speech-Language Pathology</span>.”</span> <em>ASHA Journals Academy</em>. https://academy.pubs.asha.org/2013/11/need-for-adaptive-research-designs-in-speech-language-pathology/.
+</div>
+<div class="csl-entry">
+Mahoney, Michael J. 1976. <em>Scientist as <span>Subject</span>: <span>The Psychological Imperative</span></em>. <span>Cambridge, MA</span>: <span>Ballinger Publishing Company</span>.
+</div>
+<div class="csl-entry">
+McGillion, Michelle, Julian M. Pine, Jane S. Herbert, and Danielle Matthews. 2017. <span>“A Randomised Controlled Trial to Test the Effect of Promoting Caregiver Contingent Talk on Language Development in Infants from Diverse Socioeconomic Status Backgrounds.”</span> <em>Journal of Child Psychology and Psychiatry</em> 58 (10): 1122–31. <a href="https://doi.org/10.1111/jcpp.12725">https://doi.org/10.1111/jcpp.12725</a>.
+</div>
+<div class="csl-entry">
+Mirza, RD, S Punja, S Vohra, and G Guyatt. 2017. <span>“The History and Development of <span class="nocase">N-of-1</span> Trials.”</span> <em>Journal of the Royal Society of Medicine</em> 110 (8): 330–40. <a href="https://doi.org/10.1177/0141076817721131">https://doi.org/10.1177/0141076817721131</a>.
+</div>
+<div class="csl-entry">
+Moher, David, Sally Hopewell, Kenneth F. Schulz, Victor Montori, Peter C. Gøtzsche, P. J. Devereaux, Diana Elbourne, Matthias Egger, and Douglas G. Altman. 2010. <span>“<span>CONSORT</span> 2010 Explanation and Elaboration: Updated Guidelines for Reporting Parallel Group Randomised Trials.”</span> <em>BMJ (Clinical Research Ed.)</em> 340 (March): c869. <a href="https://doi.org/10.1136/bmj.c869">https://doi.org/10.1136/bmj.c869</a>.
+</div>
+<div class="csl-entry">
+Morris, Daniel, Scott Fraser, and Richard Wormald. 2007. <span>“Masking Is Better Than Blinding.”</span> <em>BMJ</em> 334 (7597): 799–99. <a href="https://doi.org/10.1136/bmj.39175.503299.94">https://doi.org/10.1136/bmj.39175.503299.94</a>.
+</div>
+<div class="csl-entry">
+O’Connell, Nathaniel S., Lin Dai, Yunyun Jiang, Jaime L. Speiser, Ralph Ward, Wei Wei, Rachel Carroll, and Mulugeta Gebregziabher. 2017. <span>“Methods for <span>Analysis</span> of <span>Pre-Post Data</span> in <span>Clinical Research</span>: <span>A Comparison</span> of <span>Five Common Methods</span>.”</span> <em>Journal of Biometrics &amp; Biostatistics</em> 8 (1): 1–8. <a href="https://doi.org/10.4172/2155-6180.1000334">https://doi.org/10.4172/2155-6180.1000334</a>.
+</div>
+<div class="csl-entry">
+Pallmann, Philip, Alun W. Bedding, Babak Choodari-Oskooei, Munyaradzi Dimairo, Laura Flight, Lisa V. Hampson, Jane Holmes, et al. 2018. <span>“Adaptive Designs in Clinical Trials: Why Use Them, and How to Run and Report Them.”</span> <em>BMC Medicine</em> 16 (1): 29. <a href="https://doi.org/10.1186/s12916-018-1017-7">https://doi.org/10.1186/s12916-018-1017-7</a>.
+</div>
+<div class="csl-entry">
+Patsopoulos, Nikolaos A. 2011. <span>“<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3181997">A Pragmatic View on Pragmatic Trials</a>.”</span> <em>Dialogues in Clinical Neuroscience</em> 13 (2): 217–24.
+</div>
+<div class="csl-entry">
+Perdices, Michael, and Robyn L. Tate. 2009. <span>“Single-Subject Designs as a Tool for Evidence-Based Clinical Practice: <span>Are</span> They Unrecognised and Undervalued?”</span> <em>Neuropsychological Rehabilitation</em> 19 (6): 904–27. <a href="https://doi.org/10.1080/09602010903040691">https://doi.org/10.1080/09602010903040691</a>.
+</div>
+<div class="csl-entry">
+Pocock, S. J., and R. Simon. 1975. <span>“<a href="https://www.ncbi.nlm.nih.gov/pubmed/1100130">Sequential Treatment Assignment with Balancing for Prognostic Factors in the Controlled Clinical Trial</a>.”</span> <em>Biometrics</em> 31 (1): 103–15.
+</div>
+<div class="csl-entry">
+Porzsolt, Franz, Natália Galito Rocha, Alessandra C Toledo-Arruda, Tania G Thomaz, Cristiane Moraes, Thais R Bessa-Guerra, Mauricio Leão, Arn Migowski, André R Araujo da Silva, and Christel Weiss. 2015. <span>“Efficacy and Effectiveness Trials Have Different Goals, Use Different Tools, and Generate Different Messages.”</span> <em>Pragmatic and Observational Research</em> 6 (November): 47–54. <a href="https://doi.org/10.2147/POR.S89946">https://doi.org/10.2147/POR.S89946</a>.
+</div>
+<div class="csl-entry">
+Quintana, Daniel S., and Donald R. Williams. 2018. <span>“Bayesian Alternatives for Common Null-Hypothesis Significance Tests in Psychiatry: A Non-Technical Guide Using <span>JASP</span>.”</span> <em>BMC Psychiatry</em> 18 (1): 178. <a href="https://doi.org/10.1186/s12888-018-1761-4">https://doi.org/10.1186/s12888-018-1761-4</a>.
+</div>
+<div class="csl-entry">
+Rabbitt, Patrick, Peter Diggle, Fiona Holland, and Lynn McInnes. 2004. <span>“Practice and Drop-Out Effects During a 17-Year Longitudinal Study of Cognitive Aging.”</span> <em>The Journals of Gerontology. Series B, Psychological Sciences and Social Sciences</em> 59 (2): P84–97. <a href="https://doi.org/10.1093/geronb/59.2.p84">https://doi.org/10.1093/geronb/59.2.p84</a>.
+</div>
+<div class="csl-entry">
+Ratner, Nan Bernstein, and Brian MacWhinney. 2016. <span>“Your <span>Laptop</span> to the <span>Rescue</span>: <span>Using</span> the <span>Child Language Data Exchange System Archive</span> and <span>CLAN Utilities</span> to <span>Improve Child Language Sample Analysis</span>.”</span> <em>Seminars in Speech and Language</em> 37 (2): 74–84. <a href="https://doi.org/10.1055/s-0036-1580742">https://doi.org/10.1055/s-0036-1580742</a>.
+</div>
+<div class="csl-entry">
+Reise, Steven P., Andrew T. Ainsworth, and Mark G. Haviland. 2005. <span>“Item <span>Response Theory</span>: <span>Fundamentals</span>, <span>Applications</span>, and <span>Promise</span> in <span>Psychological Research</span>.”</span> <em>Current Directions in Psychological Science</em> 14 (2): 95–101. <a href="https://doi.org/10.1111/j.0963-7214.2005.00342.x">https://doi.org/10.1111/j.0963-7214.2005.00342.x</a>.
+</div>
+<div class="csl-entry">
+Renfrew, Catherine. 1967. <em>Action <span>Picture Test</span></em>. <span>Oxford</span>: <span>Catherine Renfrew</span>.
+</div>
+<div class="csl-entry">
+———. 2010. <em>Bus <span>Story Test</span>: <span>Revised Edition</span></em>. <span>Routledge</span>.
+</div>
+<div class="csl-entry">
+Robinson, Karen A., and Steven N. Goodman. 2011. <span>“A <span>Systematic Examination</span> of the <span>Citation</span> of <span>Prior Research</span> in <span>Reports</span> of <span>Randomized</span>, <span>Controlled Trials</span>.”</span> <em>Annals of Internal Medicine</em> 154 (1): 50–55. <a href="https://doi.org/10.7326/0003-4819-154-1-201101040-00007">https://doi.org/10.7326/0003-4819-154-1-201101040-00007</a>.
+</div>
+<div class="csl-entry">
+Rosenthal, Robert. 1979. <span>“The File Drawer Problem and Tolerance for Null Results.”</span> <em>Psychological Bulletin</em> 86 (3): 638–41. <a href="https://doi.org/10.1037/0033-2909.86.3.638">https://doi.org/10.1037/0033-2909.86.3.638</a>.
+</div>
+<div class="csl-entry">
+Rosenthal, Robert, and Kermit L. Fode. 1963. <span>“The Effect of Experimenter Bias on the Performance of the Albino Rat.”</span> <em>Behavioral Science</em> 8 (3): 183–89. <a href="https://doi.org/10.1002/bs.3830080302">https://doi.org/10.1002/bs.3830080302</a>.
+</div>
+<div class="csl-entry">
+Rothwell, Peter M. 2005. <span>“External Validity of Randomised Controlled Trials: <span>‘<span>To</span> Whom Do the Results of This Trial Apply?’</span>”</span> <em>The Lancet</em> 365 (9453): 82–93. <a href="https://doi.org/10.1016/S0140-6736(04)17670-8">https://doi.org/10.1016/S0140-6736(04)17670-8</a>.
+</div>
+<div class="csl-entry">
+Schönbrodt, F D. 2016. <span>“P-Hacker: <span>Train</span> Your p-Hacking Skills!”</span>
+</div>
+<div class="csl-entry">
+Scott, Neil W., Gladys C. McPherson, Craig R. Ramsay, and Marion K. Campbell. 2002. <span>“The Method of Minimization for Allocation to Clinical Trials. A Review.”</span> <em>Controlled Clinical Trials</em> 23 (6): 662–74. <a href="https://doi.org/10.1016/s0197-2456(02)00242-8">https://doi.org/10.1016/s0197-2456(02)00242-8</a>.
+</div>
+<div class="csl-entry">
+Senn, Stephen. 2018. <span>“Statistical Pitfalls of Personalized Medicine.”</span> <em>Nature</em> 563 (7733): 619–21. <a href="https://doi.org/10.1038/d41586-018-07535-2">https://doi.org/10.1038/d41586-018-07535-2</a>.
+</div>
+<div class="csl-entry">
+Sibbald, Bonnie, and Chris Roberts. 1998. <span>“<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1113275">Understanding Controlled Trials <span>Crossover</span> Trials</a>.”</span> <em>BMJ : British Medical Journal</em> 316 (7146): 1719–20.
+</div>
+<div class="csl-entry">
+Simmons, Joseph P., Leif D. Nelson, and Uri Simonsohn. 2011. <span>“False-<span>Positive Psychology</span>: <span>Undisclosed Flexibility</span> in <span>Data Collection</span> and <span>Analysis Allows Presenting Anything</span> as <span>Significant</span>.”</span> <em>Psychological Science</em> 22 (11): 1359–66. <a href="https://doi.org/10.1177/0956797611417632">https://doi.org/10.1177/0956797611417632</a>.
+</div>
+<div class="csl-entry">
+Simonsohn, Uri, Leif D. Nelson, and Joseph P. Simmons. 2014. <span>“P-Curve: A Key to the File-Drawer.”</span> <em>Journal of Experimental Psychology. General</em> 143 (2): 534–47. <a href="https://doi.org/10.1037/a0033242">https://doi.org/10.1037/a0033242</a>.
+</div>
+<div class="csl-entry">
+Singal, Amit G, Peter D R Higgins, and Akbar K Waljee. 2014. <span>“A <span>Primer</span> on <span>Effectiveness</span> and <span>Efficacy Trials</span>.”</span> <em>Clinical and Translational Gastroenterology</em> 5 (1): e45. <a href="https://doi.org/10.1038/ctg.2013.13">https://doi.org/10.1038/ctg.2013.13</a>.
+</div>
+<div class="csl-entry">
+Steegen, Sara, Francis Tuerlinckx, Andrew Gelman, and Wolf Vanpaemel. 2016. <span>“Increasing <span>Transparency Through</span> a <span>Multiverse Analysis</span>.”</span> <em>Perspectives on Psychological Science: A Journal of the Association for Psychological Science</em> 11 (5): 702–12. <a href="https://doi.org/10.1177/1745691616658637">https://doi.org/10.1177/1745691616658637</a>.
+</div>
+<div class="csl-entry">
+Swain, Nathaniel R., Patricia A. Eadie, and Pamela C. Snow. 2020. <span>“Speech and Language Therapy for Adolescents in Youth Justice: <span>A</span> Series of Empirical Single-Case Studies.”</span> <em>International Journal of Language &amp; Communication Disorders</em> 55 (4): 458–79. <a href="https://doi.org/10.1111/1460-6984.12529">https://doi.org/10.1111/1460-6984.12529</a>.
+</div>
+<div class="csl-entry">
+Tate, Robyn L., Michael Perdices, Ulrike Rosenkoetter, William Shadish, Sunita Vohra, David H. Barlow, Robert Horner, et al. 2016. <span>“The <span>Single-Case Reporting Guideline In Behavioural Interventions</span> (<span>SCRIBE</span>) 2016 <span>Statement</span>.”</span> <em>Physical Therapy</em> 96 (7): e1–10. <a href="https://doi.org/10.2522/ptj.2016.96.7.e1">https://doi.org/10.2522/ptj.2016.96.7.e1</a>.
+</div>
+<div class="csl-entry">
+Thorlund, Kristian, Jonas Haggstrom, Jay JH Park, and Edward J. Mills. 2018. <span>“Key Design Considerations for Adaptive Clinical Trials: A Primer for Clinicians.”</span> <em>BMJ</em> 360 (March): k698. <a href="https://doi.org/10.1136/bmj.k698">https://doi.org/10.1136/bmj.k698</a>.
+</div>
+<div class="csl-entry">
+Torgesen, Joseph K, Richard K Wagner, and Carole A. Rashotte. 1999. <em>Test of <span>Word Reading Efficiency</span></em>. <span>Austin, TX</span>: <span>Pro-Ed</span>.
+</div>
+<div class="csl-entry">
+Treweek, Shaun, and Merrick Zwarenstein. 2009. <span>“Making Trials Matter: Pragmatic and Explanatory Trials and the Problem of Applicability.”</span> <em>Trials</em> 10 (1): 37. <a href="https://doi.org/10.1186/1745-6215-10-37">https://doi.org/10.1186/1745-6215-10-37</a>.
+</div>
+<div class="csl-entry">
+Varley, R, P Cowell, L Dyson, L Inglis, A Roper, and S. P. Whiteside. 2016. <span>“Self-<span>Administered Computer Therapy</span> for <span>Apraxia</span> of <span>Speech</span>.”</span> <em>Stroke</em> 47 (3): 822–28. <a href="https://doi.org/10.1161/STROKEAHA.115.011939">https://doi.org/10.1161/STROKEAHA.115.011939</a>.
+</div>
+<div class="csl-entry">
+Vries, Y. A. de, A. M. Roest, P. de Jonge, P. Cuijpers, M. R. Munafò, and J. A. Bastiaansen. 2018. <span>“The Cumulative Effect of Reporting and Citation Biases on the Apparent Efficacy of Treatments: The Case of Depression.”</span> <em>Psychological Medicine</em> 48 (15): 2453–55. <a href="https://doi.org/10.1017/S0033291718001873">https://doi.org/10.1017/S0033291718001873</a>.
+</div>
+<div class="csl-entry">
+Weiss, S. 1991. <span>“Stressors Experienced by Family Caregivers of Children with Pervasive Developmental Disorders | <span>SpringerLink</span>.”</span> <em>Child Psychiatry and Human Development</em> 21: 203–16.
+</div>
+<div class="csl-entry">
+Wiig, Elisabeth H, Wayne Secord, and Eleanor Semel. 2006. <em><span>CELF-Preschool</span> 2 <span>UK</span></em>. <span>London</span>: <span>Pearson Assessment</span>.
+</div>
+<div class="csl-entry">
+Zhang, Xuyang, and J. Bruce Tomblin. 2003. <span>“Explaining and Controlling Regression to the Mean in Longitudinal Research Designs.”</span> <em>Journal of Speech, Language, and Hearing Research: JSLHR</em> 46 (6): 1340–51. <a href="https://doi.org/10.1044/1092-4388(2003/104)">https://doi.org/10.1044/1092-4388(2003/104)</a>.
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="litrev.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Intervention_bookdown2.pdf", "Intervention_bookdown2.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

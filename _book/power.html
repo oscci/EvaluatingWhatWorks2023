@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 10 How big a sample do I need? Sampling, statistical power and type II errors | Evaluating what works</title>
+  <meta name="description" content="Introduction to methods for evaluating effectiveness of non-medical interventions" />
+  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 10 How big a sample do I need? Sampling, statistical power and type II errors | Evaluating what works" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Introduction to methods for evaluating effectiveness of non-medical interventions" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 10 How big a sample do I need? Sampling, statistical power and type II errors | Evaluating what works" />
+  
+  <meta name="twitter:description" content="Introduction to methods for evaluating effectiveness of non-medical interventions" />
+  
+
+<meta name="author" content="Dorothy V M Bishop and Paul A Thompson" />
+
+
+<meta name="date" content="2023-02-25" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="dropouts.html"/>
+<link rel="next" href="phacking.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
+<link href="libs/tabwid-1.0.0/tabwid.css" rel="stylesheet" />
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#why-did-we-write-this-book"><i class="fa fa-check"></i>Why did we write this book?</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#who-is-this-book-for"><i class="fa fa-check"></i>Who is this book for?</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#what-is-covered"><i class="fa fa-check"></i>What is covered?</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#feedback-and-contributions"><i class="fa fa-check"></i>Feedback and contributions</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#how-can-we-know-if-weve-made-a-difference"><i class="fa fa-check"></i><b>1.1</b> How can we know if we’ve made a difference?</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#the-randomness-of-everything"><i class="fa fa-check"></i><b>1.2</b> The randomness of everything</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#systematic-bias"><i class="fa fa-check"></i><b>1.3</b> Systematic bias</a></li>
+<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#class-exercise"><i class="fa fa-check"></i><b>1.4</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="observations.html"><a href="observations.html"><i class="fa fa-check"></i><b>2</b> Why clinical observations can be misleading</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="observations.html"><a href="observations.html#class-exercise-1"><i class="fa fa-check"></i><b>2.1</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="reliability.html"><a href="reliability.html"><i class="fa fa-check"></i><b>3</b> How to select an outcome measure</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="reliability.html"><a href="reliability.html#reliability-1"><i class="fa fa-check"></i><b>3.1</b> Reliability</a></li>
+<li class="chapter" data-level="3.2" data-path="reliability.html"><a href="reliability.html#validity"><i class="fa fa-check"></i><b>3.2</b> Validity</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="reliability.html"><a href="reliability.html#cultural-factors"><i class="fa fa-check"></i><b>3.2.1</b> Cultural factors</a></li>
+<li class="chapter" data-level="3.2.2" data-path="reliability.html"><a href="reliability.html#generalisability-of-results-to-other-outcomes-the-concepts-of-far-and-near-transfer"><i class="fa fa-check"></i><b>3.2.2</b> Generalisability of results to other outcomes: the concepts of far and near transfer</a></li>
+<li class="chapter" data-level="3.2.3" data-path="reliability.html"><a href="reliability.html#functional-outcomes-vs-test-scores"><i class="fa fa-check"></i><b>3.2.3</b> Functional outcomes vs test scores</a></li>
+<li class="chapter" data-level="3.2.4" data-path="reliability.html"><a href="reliability.html#subjectivity-as-a-threat-to-validity"><i class="fa fa-check"></i><b>3.2.4</b> Subjectivity as a threat to validity</a></li>
+<li class="chapter" data-level="3.2.5" data-path="reliability.html"><a href="reliability.html#correlations-with-other-measures"><i class="fa fa-check"></i><b>3.2.5</b> Correlations with other measures</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="reliability.html"><a href="reliability.html#normative-data"><i class="fa fa-check"></i><b>3.3</b> Normative data</a></li>
+<li class="chapter" data-level="3.4" data-path="reliability.html"><a href="reliability.html#sensitivity"><i class="fa fa-check"></i><b>3.4</b> Sensitivity</a></li>
+<li class="chapter" data-level="3.5" data-path="reliability.html"><a href="reliability.html#is-it-practical"><i class="fa fa-check"></i><b>3.5</b> Is it practical?</a></li>
+<li class="chapter" data-level="3.6" data-path="reliability.html"><a href="reliability.html#class-exercise-2"><i class="fa fa-check"></i><b>3.6</b> Class exercise</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="reliability.html"><a href="reliability.html#mean-length-of-utterance"><i class="fa fa-check"></i><b>3.6.1</b> Mean Length of Utterance</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="nonspecific.html"><a href="nonspecific.html"><i class="fa fa-check"></i><b>4</b> Improvement due to nonspecific effects of intervention</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="nonspecific.html"><a href="nonspecific.html#placebo-effects"><i class="fa fa-check"></i><b>4.1</b> Placebo effects</a></li>
+<li class="chapter" data-level="4.2" data-path="nonspecific.html"><a href="nonspecific.html#identifying-specific-intervention-effects-by-measures-of-mechanism"><i class="fa fa-check"></i><b>4.2</b> Identifying specific intervention effects by measures of mechanism</a></li>
+<li class="chapter" data-level="4.3" data-path="nonspecific.html"><a href="nonspecific.html#classroom-exercise"><i class="fa fa-check"></i><b>4.3</b> Classroom exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="prepost.html"><a href="prepost.html"><i class="fa fa-check"></i><b>5</b> Limitations of the pre-post design: biases related to systematic change</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="prepost.html"><a href="prepost.html#spontaneous-improvement"><i class="fa fa-check"></i><b>5.1</b> Spontaneous improvement</a></li>
+<li class="chapter" data-level="5.2" data-path="prepost.html"><a href="prepost.html#practice-effects"><i class="fa fa-check"></i><b>5.2</b> Practice effects</a></li>
+<li class="chapter" data-level="5.3" data-path="prepost.html"><a href="prepost.html#regression-to-the-mean"><i class="fa fa-check"></i><b>5.3</b> Regression to the mean</a></li>
+<li class="chapter" data-level="5.4" data-path="prepost.html"><a href="prepost.html#class-exercise-3"><i class="fa fa-check"></i><b>5.4</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="controls.html"><a href="controls.html"><i class="fa fa-check"></i><b>6</b> Controlling unwanted effects with a control group</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="controls.html"><a href="controls.html#is-it-ethical-to-include-a-control-group"><i class="fa fa-check"></i><b>6.1</b> Is it ethical to include a control group?</a></li>
+<li class="chapter" data-level="6.2" data-path="controls.html"><a href="controls.html#possible-adverse-effects-of-intervention"><i class="fa fa-check"></i><b>6.2</b> Possible adverse effects of intervention</a></li>
+<li class="chapter" data-level="6.3" data-path="controls.html"><a href="controls.html#uncontrolled-studies-are-unethical"><i class="fa fa-check"></i><b>6.3</b> Uncontrolled studies are unethical</a></li>
+<li class="chapter" data-level="6.4" data-path="controls.html"><a href="controls.html#treated-vs-untreated-controls"><i class="fa fa-check"></i><b>6.4</b> Treated vs untreated controls</a></li>
+<li class="chapter" data-level="6.5" data-path="controls.html"><a href="controls.html#classroom-exercise-1"><i class="fa fa-check"></i><b>6.5</b> Classroom exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="randomise.html"><a href="randomise.html"><i class="fa fa-check"></i><b>7</b> Controlling for selection bias: randomised assignment to intervention</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="randomise.html"><a href="randomise.html#randomization-methods"><i class="fa fa-check"></i><b>7.1</b> Randomization methods</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="randomise.html"><a href="randomise.html#simple-randomization"><i class="fa fa-check"></i><b>7.1.1</b> Simple randomization</a></li>
+<li class="chapter" data-level="7.1.2" data-path="randomise.html"><a href="randomise.html#random-permuted-blocks"><i class="fa fa-check"></i><b>7.1.2</b> Random permuted blocks</a></li>
+<li class="chapter" data-level="7.1.3" data-path="randomise.html"><a href="randomise.html#unequal-randomization"><i class="fa fa-check"></i><b>7.1.3</b> Unequal randomization</a></li>
+<li class="chapter" data-level="7.1.4" data-path="randomise.html"><a href="randomise.html#stratification"><i class="fa fa-check"></i><b>7.1.4</b> Stratification</a></li>
+<li class="chapter" data-level="7.1.5" data-path="randomise.html"><a href="randomise.html#adaptive-randomisation"><i class="fa fa-check"></i><b>7.1.5</b> Adaptive randomisation</a></li>
+<li class="chapter" data-level="7.1.6" data-path="randomise.html"><a href="randomise.html#minimization"><i class="fa fa-check"></i><b>7.1.6</b> Minimization</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="randomise.html"><a href="randomise.html#units-of-analysis-individuals-vs-clusters"><i class="fa fa-check"></i><b>7.2</b> Units of analysis: Individuals vs clusters</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="randomise.html"><a href="randomise.html#class-exercise-4"><i class="fa fa-check"></i><b>7.2.1</b> Class exercise</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="experimenter.html"><a href="experimenter.html"><i class="fa fa-check"></i><b>8</b> The experimenter as a source of bias</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="experimenter.html"><a href="experimenter.html#allocation-concealment"><i class="fa fa-check"></i><b>8.1</b> Allocation concealment</a></li>
+<li class="chapter" data-level="8.2" data-path="experimenter.html"><a href="experimenter.html#the-importance-of-masking-for-assessments"><i class="fa fa-check"></i><b>8.2</b> The importance of masking for assessments</a></li>
+<li class="chapter" data-level="8.3" data-path="experimenter.html"><a href="experimenter.html#conflict-of-interest"><i class="fa fa-check"></i><b>8.3</b> Conflict of interest</a></li>
+<li class="chapter" data-level="8.4" data-path="experimenter.html"><a href="experimenter.html#class-exercise-5"><i class="fa fa-check"></i><b>8.4</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="dropouts.html"><a href="dropouts.html"><i class="fa fa-check"></i><b>9</b> Further potential for bias: who drops out and who volunteers?</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="dropouts.html"><a href="dropouts.html#dealing-with-dropouts-intention-to-treat-analysis"><i class="fa fa-check"></i><b>9.1</b> Dealing with dropouts: Intention to treat analysis</a></li>
+<li class="chapter" data-level="9.2" data-path="dropouts.html"><a href="dropouts.html#who-volunteers-for-research"><i class="fa fa-check"></i><b>9.2</b> Who volunteers for research?</a></li>
+<li class="chapter" data-level="9.3" data-path="dropouts.html"><a href="dropouts.html#class-exercise-6"><i class="fa fa-check"></i><b>9.3</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="power.html"><a href="power.html"><i class="fa fa-check"></i><b>10</b> How big a sample do I need? Sampling, statistical power and type II errors</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="power.html"><a href="power.html#sampling"><i class="fa fa-check"></i><b>10.1</b> Sampling</a></li>
+<li class="chapter" data-level="10.2" data-path="power.html"><a href="power.html#effect-size"><i class="fa fa-check"></i><b>10.2</b> Effect size</a></li>
+<li class="chapter" data-level="10.3" data-path="power.html"><a href="power.html#sample-size-affects-accuracy-of-estimates"><i class="fa fa-check"></i><b>10.3</b> Sample size affects accuracy of estimates</a></li>
+<li class="chapter" data-level="10.4" data-path="power.html"><a href="power.html#understanding-p-values"><i class="fa fa-check"></i><b>10.4</b> Understanding p-values</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="power.html"><a href="power.html#type-ii-error"><i class="fa fa-check"></i><b>10.4.1</b> Type II error</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="power.html"><a href="power.html#statistical-power-and-beta"><i class="fa fa-check"></i><b>10.5</b> Statistical power and <span class="math inline">\(\beta\)</span></a></li>
+<li class="chapter" data-level="10.6" data-path="power.html"><a href="power.html#ways-to-improve-statistical-power"><i class="fa fa-check"></i><b>10.6</b> Ways to improve statistical power</a></li>
+<li class="chapter" data-level="10.7" data-path="power.html"><a href="power.html#class-exercises"><i class="fa fa-check"></i><b>10.7</b> Class Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="phacking.html"><a href="phacking.html"><i class="fa fa-check"></i><b>11</b> False positives, p-hacking and multiple comparisons</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="phacking.html"><a href="phacking.html#type-i-error"><i class="fa fa-check"></i><b>11.1</b> Type I error</a></li>
+<li class="chapter" data-level="11.2" data-path="phacking.html"><a href="phacking.html#reasons-for-false-positives"><i class="fa fa-check"></i><b>11.2</b> Reasons for false positives</a></li>
+<li class="chapter" data-level="11.3" data-path="phacking.html"><a href="phacking.html#adjusting-statistics-for-multiple-testing"><i class="fa fa-check"></i><b>11.3</b> Adjusting statistics for multiple testing</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="phacking.html"><a href="phacking.html#bonferroni-correction"><i class="fa fa-check"></i><b>11.3.1</b> Bonferroni Correction</a></li>
+<li class="chapter" data-level="11.3.2" data-path="phacking.html"><a href="phacking.html#meff"><i class="fa fa-check"></i><b>11.3.2</b> MEff</a></li>
+<li class="chapter" data-level="11.3.3" data-path="phacking.html"><a href="phacking.html#extracting-a-principal-component-from-a-set-of-measures"><i class="fa fa-check"></i><b>11.3.3</b> Extracting a principal component from a set of measures</a></li>
+<li class="chapter" data-level="11.3.4" data-path="phacking.html"><a href="phacking.html#improving-power-by-use-of-multiple-outcomes"><i class="fa fa-check"></i><b>11.3.4</b> Improving power by use of multiple outcomes</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="phacking.html"><a href="phacking.html#class-exercise-7"><i class="fa fa-check"></i><b>11.4</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="RCT.html"><a href="RCT.html"><i class="fa fa-check"></i><b>12</b> The randomised controlled trial as a method for controlling biases</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="RCT.html"><a href="RCT.html#statistical-analysis-of-a-rct"><i class="fa fa-check"></i><b>12.1</b> Statistical analysis of a RCT</a></li>
+<li class="chapter" data-level="12.2" data-path="RCT.html"><a href="RCT.html#steps-to-take-before-data-analysis"><i class="fa fa-check"></i><b>12.2</b> Steps to take before data analysis</a>
+<ul>
+<li class="chapter" data-level="12.2.1" data-path="RCT.html"><a href="RCT.html#sample-dataset-with-illustrative-analysis"><i class="fa fa-check"></i><b>12.2.1</b> Sample dataset with illustrative analysis</a></li>
+<li class="chapter" data-level="12.2.2" data-path="RCT.html"><a href="RCT.html#simple-t-test-on-outcome-data"><i class="fa fa-check"></i><b>12.2.2</b> Simple t-test on outcome data</a></li>
+<li class="chapter" data-level="12.2.3" data-path="RCT.html"><a href="RCT.html#t-test-on-difference-scores"><i class="fa fa-check"></i><b>12.2.3</b> T-test on difference scores</a></li>
+<li class="chapter" data-level="12.2.4" data-path="RCT.html"><a href="RCT.html#analysis-of-covariance-on-outcome-scores"><i class="fa fa-check"></i><b>12.2.4</b> Analysis of covariance on outcome scores</a></li>
+<li class="chapter" data-level="12.2.5" data-path="RCT.html"><a href="RCT.html#linear-mixed-models-lmm-approach"><i class="fa fa-check"></i><b>12.2.5</b> Linear mixed models (LMM) approach</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="RCT.html"><a href="RCT.html#class-exercise-8"><i class="fa fa-check"></i><b>12.3</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="drawbacks.html"><a href="drawbacks.html"><i class="fa fa-check"></i><b>13</b> Drawbacks of the two-arm RCT</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="drawbacks.html"><a href="drawbacks.html#inefficiency-need-for-unfeasibly-large-samples"><i class="fa fa-check"></i><b>13.1</b> Inefficiency: need for unfeasibly large samples</a></li>
+<li class="chapter" data-level="13.2" data-path="drawbacks.html"><a href="drawbacks.html#transfer-to-real-life-efficacy-and-effectiveness"><i class="fa fa-check"></i><b>13.2</b> Transfer to real life: efficacy and effectiveness</a></li>
+<li class="chapter" data-level="13.3" data-path="drawbacks.html"><a href="drawbacks.html#heterogeneity-and-personalised-intervention"><i class="fa fa-check"></i><b>13.3</b> Heterogeneity and personalised intervention</a></li>
+<li class="chapter" data-level="13.4" data-path="drawbacks.html"><a href="drawbacks.html#class-exercise-9"><i class="fa fa-check"></i><b>13.4</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="adaptive.html"><a href="adaptive.html"><i class="fa fa-check"></i><b>14</b> Adaptive Interventions</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="adaptive.html"><a href="adaptive.html#class-exercise-10"><i class="fa fa-check"></i><b>14.1</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="cluster.html"><a href="cluster.html"><i class="fa fa-check"></i><b>15</b> Cluster Randomised Control Trials</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="cluster.html"><a href="cluster.html#what-is-a-cluster-rct"><i class="fa fa-check"></i><b>15.1</b> What is a cluster RCT?</a></li>
+<li class="chapter" data-level="15.2" data-path="cluster.html"><a href="cluster.html#advantages-of-a-cluster-design"><i class="fa fa-check"></i><b>15.2</b> Advantages of a cluster design</a></li>
+<li class="chapter" data-level="15.3" data-path="cluster.html"><a href="cluster.html#disadvantages-of-a-cluster-design"><i class="fa fa-check"></i><b>15.3</b> Disadvantages of a cluster design</a></li>
+<li class="chapter" data-level="15.4" data-path="cluster.html"><a href="cluster.html#class-exercise-11"><i class="fa fa-check"></i><b>15.4</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="crossover.html"><a href="crossover.html"><i class="fa fa-check"></i><b>16</b> Cross-over designs</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="crossover.html"><a href="crossover.html#a-within-subjects-approach-to-the-rct"><i class="fa fa-check"></i><b>16.1</b> A within-subjects approach to the RCT</a>
+<ul>
+<li class="chapter" data-level="16.1.1" data-path="crossover.html"><a href="crossover.html#delayed-crossover-design-wait-list-controls"><i class="fa fa-check"></i><b>16.1.1</b> Delayed crossover design (Wait list controls)</a></li>
+</ul></li>
+<li class="chapter" data-level="16.2" data-path="crossover.html"><a href="crossover.html#class-exercise-12"><i class="fa fa-check"></i><b>16.2</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="Single.html"><a href="Single.html"><i class="fa fa-check"></i><b>17</b> Single case designs</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="Single.html"><a href="Single.html#logic-of-single-case-designs"><i class="fa fa-check"></i><b>17.1</b> Logic of single case designs</a>
+<ul>
+<li class="chapter" data-level="17.1.1" data-path="Single.html"><a href="Single.html#minimising-unwanted-variance"><i class="fa fa-check"></i><b>17.1.1</b> Minimising unwanted variance</a></li>
+<li class="chapter" data-level="17.1.2" data-path="Single.html"><a href="Single.html#minimising-systematic-bias"><i class="fa fa-check"></i><b>17.1.2</b> Minimising systematic bias</a></li>
+<li class="chapter" data-level="17.1.3" data-path="Single.html"><a href="Single.html#the-need-for-sufficient-data"><i class="fa fa-check"></i><b>17.1.3</b> The need for sufficient data</a></li>
+</ul></li>
+<li class="chapter" data-level="17.2" data-path="Single.html"><a href="Single.html#examples-of-studies-using-different-types-of-single-case-design"><i class="fa fa-check"></i><b>17.2</b> Examples of studies using different types of single case design</a>
+<ul>
+<li class="chapter" data-level="17.2.1" data-path="Single.html"><a href="Single.html#a-multiple-baseline-design-speech-and-language-therapy-for-adolescents-in-youth-justice."><i class="fa fa-check"></i><b>17.2.1</b> A multiple baseline design: Speech and language therapy for adolescents in youth justice.</a></li>
+<li class="chapter" data-level="17.2.2" data-path="Single.html"><a href="Single.html#a-study-using-multiple-baseline-across-behaviours-effectiveness-of-electropalatography"><i class="fa fa-check"></i><b>17.2.2</b> A study using multiple baseline across behaviours: Effectiveness of electropalatography</a></li>
+<li class="chapter" data-level="17.2.3" data-path="Single.html"><a href="Single.html#example-of-an-analysis-of-case-series-data"><i class="fa fa-check"></i><b>17.2.3</b> Example of an analysis of case series data</a></li>
+<li class="chapter" data-level="17.2.4" data-path="Single.html"><a href="Single.html#combining-approaches-to-strengthen-study-design"><i class="fa fa-check"></i><b>17.2.4</b> Combining approaches to strengthen study design</a></li>
+</ul></li>
+<li class="chapter" data-level="17.3" data-path="Single.html"><a href="Single.html#statistical-approaches-to-single-case-designs"><i class="fa fa-check"></i><b>17.3</b> Statistical approaches to single case designs</a></li>
+<li class="chapter" data-level="17.4" data-path="Single.html"><a href="Single.html#overview-of-considerations-for-single-case-designs"><i class="fa fa-check"></i><b>17.4</b> Overview of considerations for single case designs</a></li>
+<li class="chapter" data-level="17.5" data-path="Single.html"><a href="Single.html#class-exercise-13"><i class="fa fa-check"></i><b>17.5</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="pubbias.html"><a href="pubbias.html"><i class="fa fa-check"></i><b>18</b> Can you trust the published literature?</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="pubbias.html"><a href="pubbias.html#publication-bias"><i class="fa fa-check"></i><b>18.1</b> Publication bias</a>
+<ul>
+<li class="chapter" data-level="18.1.1" data-path="pubbias.html"><a href="pubbias.html#citation-bias"><i class="fa fa-check"></i><b>18.1.1</b> Citation bias</a></li>
+<li class="chapter" data-level="18.1.2" data-path="pubbias.html"><a href="pubbias.html#counteracting-publication-and-citation-biases"><i class="fa fa-check"></i><b>18.1.2</b> Counteracting publication and citation biases</a></li>
+<li class="chapter" data-level="18.1.3" data-path="pubbias.html"><a href="pubbias.html#class-exercise-14"><i class="fa fa-check"></i><b>18.1.3</b> Class exercise</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="prereg.html"><a href="prereg.html"><i class="fa fa-check"></i><b>19</b> Pre-registration and Registered Reports</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="prereg.html"><a href="prereg.html#study-registration"><i class="fa fa-check"></i><b>19.1</b> Study registration</a></li>
+<li class="chapter" data-level="19.2" data-path="prereg.html"><a href="prereg.html#registered-reports"><i class="fa fa-check"></i><b>19.2</b> Registered Reports</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="litrev.html"><a href="litrev.html"><i class="fa fa-check"></i><b>20</b> Reviewing the literature before you start</a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="litrev.html"><a href="litrev.html#what-is-a-systematic-review"><i class="fa fa-check"></i><b>20.1</b> What is a systematic review?</a></li>
+<li class="chapter" data-level="20.2" data-path="litrev.html"><a href="litrev.html#steps-in-the-literature-review"><i class="fa fa-check"></i><b>20.2</b> Steps in the literature review</a>
+<ul>
+<li class="chapter" data-level="20.2.1" data-path="litrev.html"><a href="litrev.html#define-an-appropriate-question"><i class="fa fa-check"></i><b>20.2.1</b> Define an appropriate question</a></li>
+<li class="chapter" data-level="20.2.2" data-path="litrev.html"><a href="litrev.html#specify-criteria-for-a-literature-search"><i class="fa fa-check"></i><b>20.2.2</b> Specify criteria for a literature search</a></li>
+<li class="chapter" data-level="20.2.3" data-path="litrev.html"><a href="litrev.html#select-eligible-studies-following-protocols-inclusion-criteria"><i class="fa fa-check"></i><b>20.2.3</b> Select eligible studies following protocol’s inclusion criteria</a></li>
+<li class="chapter" data-level="20.2.4" data-path="litrev.html"><a href="litrev.html#assess-the-quality-of-each-study-included"><i class="fa fa-check"></i><b>20.2.4</b> Assess the quality of each study included</a></li>
+<li class="chapter" data-level="20.2.5" data-path="litrev.html"><a href="litrev.html#organise-summarise-and-unbiasedly-present-the-findings-from-all-included-studies"><i class="fa fa-check"></i><b>20.2.5</b> Organise, summarise, and unbiasedly present the findings from all included studies</a></li>
+</ul></li>
+<li class="chapter" data-level="20.3" data-path="litrev.html"><a href="litrev.html#systematic-review-or-literature-review"><i class="fa fa-check"></i><b>20.3</b> Systematic review or literature review?</a></li>
+<li class="chapter" data-level="20.4" data-path="litrev.html"><a href="litrev.html#class-exercise-15"><i class="fa fa-check"></i><b>20.4</b> Class exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="protocol.html"><a href="protocol.html"><i class="fa fa-check"></i><b>21</b> A template for a research protocol</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Evaluating what works</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="power" class="section level1 hasAnchor" number="10">
+<h1><span class="header-section-number">Chapter 10</span> How big a sample do I need? Sampling, statistical power and type II errors<a href="power.html#power" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><img src="images/logo_alone_new.png" width="143" /></p>
+<div id="sampling" class="section level2 hasAnchor" number="10.1">
+<h2><span class="header-section-number">10.1</span> Sampling<a href="power.html#sampling" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Consider the following scenario: You have two people who tried a weight loss program, Carbocut, which restricted carbohydrates, and who lost an average of 4 lb over 2 weeks. Another two people just tried sticking to three meals a day (Program 3M). They lost an average of 1 lb over 2 weeks. Would that convince you that carbohydrate restriction is superior? What if we tell you that one person in the Carbocut group lost 6 lb and the other gained 2 lb; in the Program 3M group, one person lost 5 lb and one gained 3 lb. Few people would find this convincing evidence that Carbocut is superior. With only two people per group, the average is quite unstable and highly dependent on the specific people in the group. Things would look more promising if you had 1000 people in each group, and still saw a 4 lb loss vs a 2 lb loss. Individual weights would fluctuate, but the average is a much better indication of what is typical when we have a larger sample, because individual people with extreme scores will have less impact.</p>
+<p>How could we know the real truth of just how much weight loss is associated with each diet? In theory, there is a way we could find out - we could recruit every single person in the world who meets some selection criterion for inclusion in the study, and randomly assign them to one or the other diet, and then measure weight loss. Of course, in practice, that is neither possible nor ethical. Rather, the aim of research is to test a group of people whose results can be generalised to the broader population. So we recruit a sample which is intended to represent that much larger population. As the example above demonstrates, we need to think about sample size, as this will affect how much confidence we can place in the estimates from the sample. We know that two people is too small a sample. 1000 seems much better but, outside medical trials, is often too expensive and difficult to achieve. So how do we decide the optimal sample? To answer that question, we first need to introduce the concept of <strong>effect size</strong>.</p>
+</div>
+<div id="effect-size" class="section level2 hasAnchor" number="10.2">
+<h2><span class="header-section-number">10.2</span> Effect size<a href="power.html#effect-size" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Another way of thinking about our first example is that it illustrates that we can’t interpret an average difference between two groups unless we know something about the variation within each group. In the example where we have only two people per group, the variation <em>within</em> each group (8 lb difference between highest and lowest) is far greater than the variation <em>between</em> groups (2 lb).</p>
+<div class="figure"><span style="display:block;" id="fig:demo-variation"></span>
+<img src="10-Power_files/figure-html/demo-variation-2.png" alt="Simulated data comparing two diets with different variances" width="768" />
+<p class="caption">
+Figure 10.1: Simulated data comparing two diets with different variances
+</p>
+</div>
+<p>To give an understanding of effects size, let us first focus on the case where we have three studies each with the same sample size, 20, but where the variability within the sample is different from one study to the next. This is shown in Figure <a href="power.html#fig:demo-variation">10.1</a>, where the mean difference in lbs of weight loss between the two diets (represented by the difference in the black horizontal lines) is similar in each case, but the variation within each group (the spread of dots around the line) is greatest in scenario A, and least in scenario C. <em>Relative to the variation within each group</em>, the difference in means is smallest in A, intermediate in B and largest in C. Another way of saying this is that the <em>effect size</em> is different in the three scenarios.</p>
+<p>There are various ways of measuring effect size: a simple measure is Cohen’s <em>d</em>, which is the difference between groups measured in standard deviation units. It is computed by dividing the mean difference between groups by the pooled standard deviation. For conditions A, B and C, Cohen’s <em>d</em> is .4, .8 and 1, respectively. Note that in all three scenarios, the distributions of weight loss in the two groups overlap. In every case, there are people in the 3M group with weight loss greater than the mean of the Carbocut group, as well as people in the Carbocut group with less weight loss than the mean of the 3M group. As shown in Figure <a href="power.html#fig:effsizefig">10.2</a>, the overlap is related to effect size: the larger the effect size, the less the overlap. It can be sobering to note that for most effective educational and therapeutic interventions, effect sizes are typically no more than .3 or .4. Thus we have to pick out a meaningful signal - an intervention effect - from a very noisy background.</p>
+<div class="figure"><span style="display:block;" id="fig:effsizefig"></span>
+<img src="images/Effectsizes_fig.jpg" alt="Overlap in distributions of scores of two groups for different effect sizes (Cohen's *d*)" width="80%" />
+<p class="caption">
+Figure 10.2: Overlap in distributions of scores of two groups for different effect sizes (Cohen’s <em>d</em>)
+</p>
+</div>
+</div>
+<div id="sample-size-affects-accuracy-of-estimates" class="section level2 hasAnchor" number="10.3">
+<h2><span class="header-section-number">10.3</span> Sample size affects accuracy of estimates<a href="power.html#sample-size-affects-accuracy-of-estimates" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Once we have an idea of the likely effect size in our study, we can estimate how big a sample we need. If we have a small effect size, then we need many observations to get a reliable estimate of the true effect of intervention. Figure <a href="power.html#fig:varES">10.3</a> resembles Figure <a href="power.html#fig:effsizefig">10.2</a>, but there is an important difference: in Figure <a href="power.html#fig:varES">10.3</a>, each blob represents the <em>observed mean</em> from a sample of a given size, taken from a population where the true effect size, shown as a dotted horizontal line, is 0.3.</p>
+<div class="figure"><span style="display:block;" id="fig:varES"></span>
+<img src="images/beeswarms_ch10.png" alt="Simulated mean scores from samples of varying size, drawn from populations with either a null effect (pink) or a true effect size, Cohen's *d*, of .3 (blue). Power (discussed below) is the probability of obtaining p &lt; .05 on a one-tailed t-test comparing group means for each sample size (From Bishop et al, 2022)" width="70%" />
+<p class="caption">
+Figure 10.3: Simulated mean scores from samples of varying size, drawn from populations with either a null effect (pink) or a true effect size, Cohen’s <em>d</em>, of .3 (blue). Power (discussed below) is the probability of obtaining p &lt; .05 on a one-tailed t-test comparing group means for each sample size (From Bishop et al, 2022)
+</p>
+</div>
+<p>Notice how the observed means jump around from sample to sample when sample size is small, but become more stable once we have 80 or more participants per group. When there are 320 participants per group, the means are estimated pretty accurately and the dots bunch around the mean line for the group, but with 10 per group, it is very unreliable, and in some of our studies the mean of the blue group is lower than the mean of the pink group, which is opposite to what is true in the population.</p>
+</div>
+<div id="understanding-p-values" class="section level2 hasAnchor" number="10.4">
+<h2><span class="header-section-number">10.4</span> Understanding p-values<a href="power.html#understanding-p-values" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>When we do an intervention study we want to find out whether a given intervention works. The examples above show that it is not enough just to show that the mean outcome for an intervention group is better than for a control group. We need to take the variation around the means into account.</p>
+<p>Most studies use an approach known as Null Hypothesis Significance Testing, which gives us a rather roundabout answer to the question. Typically, findings are evaluated in terms of p-values, which tell us <em>what is the probability (p) that our result, or a more extreme one, could have arisen by chance</em>. The lower the p-value, the less likely it is that our result would have occurred if there is no real intervention effect. The way the p-values is calculated assumes certain things hold true about the nature of the data (“model assumptions”): we will say more about this later on, and show how it is important to test assumptions when applying statistical tests, to avoid getting misleading results.</p>
+<p>P-values are very often misunderstood, and there are plenty of instances of wrong definitions being given even in textbooks. The p-value is <em>the probability of the observed data or more extreme data, if the null hypothesis is true</em>. It does <em>not</em> tell us the probability of the null hypothesis being true. And it tells us nothing about the alternative hypothesis, i.e., that the intervention works.</p>
+<p>An analogy might help here. Suppose you are a jet-setting traveller and you wake up one morning confused about where you are. You wonder if you are in Rio de Janiero - think of that as the null hypothesis. You look out of the window and it is snowing. You decide that it is very unlikely that you are in Rio. You reject the null hypothesis. But it’s not clear where you are. Of course, if you knew for sure that you were either in Reykjavík or Rio, then you could be pretty sure you were in Reykjavík. But suppose it was <em>not</em> snowing. This would not leave you much the wiser.</p>
+<p>A mistake often made when interpreting p-values is that people think it tells us something about the probability of a hypothesis being true. That is not the case. There are alternative Bayesian methods that can be used to judge the relatively likelihood of one hypothesis versus another, given some data, but they do not involve p-values.</p>
+<p>A low p-value allows us to reject the null hypothesis with a certain degree of confidence, but this does no more than indicate “something is probably going on here - it’s not just random” - or, in the analogy above, “I’m probably not in Rio”.</p>
+<div id="criticisms-of-the-use-of-p-values" class="section level4 unnumbered hasAnchor">
+<h4>Criticisms of the use of p-values<a href="power.html#criticisms-of-the-use-of-p-values" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="custom">
+<p>There are many criticisms of the use of p-values in science, and a good case can be made for using alternative approaches, notably methods based on Bayes theorem. Our focus here is on Null Hypothesis Significance Testing in part because such a high proportion of studies in the literature use this approach, and it is important to understand p-values in order to evaluate the literature. It has also been argued that p-values are useful provided people understand what they really mean <span class="citation">(<a href="#ref-lakens2021">Lakens 2021</a>)</span>.</p>
+<p>One reason why many people object to the use of p-values is that they are typically used to make a binary decision: we either accept or reject the null hypothesis, depending on whether the p-value is less than a certain value. In practice, evidence is graded, and it can be more meaningful to express results in terms of the amount of confidence in alternative interpretations, rather than as a single accept/reject cutoff <span class="citation">(<a href="#ref-quintana2018">Quintana and Williams 2018</a>)</span>.
+<!---links to good intros to Bayes?--></p>
+</div>
+<p>In practice, p-values are typically used to divide results into “statistically significant” or “non-significant”, depending on whether the p-value is low enough to reject the null hypothesis. We do not defend this practice, which can lead to an all-consuming focus on whether p-values are above or below a cutoff, rather than considering effect sizes and strength of evidence. However, it is important to appreciate how the cutoff approach leads to experimental results falling into 4 possible categories, as shown in Table <a href="power.html#tab:confusionMat">10.1</a>.</p>
+<table class="table table-striped table-bordered" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:confusionMat">Table 10.1: </span>Outcomes of hypothesis test
+</caption>
+<thead>
+<tr>
+<th style="empty-cells: hide;border-bottom:hidden;" colspan="1">
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+Ground truth
+</div>
+</th>
+</tr>
+<tr>
+<th style="text-align:center;">
+</th>
+<th style="text-align:center;">
+Intervention effective
+</th>
+<th style="text-align:center;">
+Intervention ineffective
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;font-weight: bold;width: 9em; ">
+Reject Null hypothesis
+</td>
+<td style="text-align:center;width: 9em; ">
+True Positive
+</td>
+<td style="text-align:center;width: 9em; ">
+False Positive
+(Type I error)
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;width: 9em; ">
+Do Not Reject Null Hypothesis
+</td>
+<td style="text-align:center;width: 9em; ">
+False Negative
+(Type II error)
+</td>
+<td style="text-align:center;width: 9em; ">
+True Negative
+</td>
+</tr>
+</tbody>
+</table>
+<p>The Ground truth is the result that we would obtain if we were able to administer the intervention to the whole population - this is of course impossible, but we assume that there is some general truth that we are aiming to discover by running our study on a sample from the population. We can see that if the intervention really is effective, and the evidence leads us to reject the null hypothesis, we have a True Positive, and if the intervention is ineffective and we accept the null hypothesis, we have a True Negative. Our goal is to design our study so as to maximise the chances that our conclusion will be correct, but there two types of outcome that we can never avoid, but which we try to minimise, known as Type I and Type II errors. We will cover Type II errors in this chapter, as these depend crucially on sample size and effect size. Type I errors are covered in Chapter <a href="phacking.html#phacking">11</a>.</p>
+</div>
+<div id="type-ii-error" class="section level3 hasAnchor" number="10.4.1">
+<h3><span class="header-section-number">10.4.1</span> Type II error<a href="power.html#type-ii-error" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A Type II error is the same as a <strong>false negative</strong>. It is the error that occurs when the null hypothesis is not rejected but a true effect is actually present. In other words, the data lead us to conclude an intervention doesn’t work when it really does have an effect.</p>
+<p>Suppose a researcher wants to test a well-established and frequently-replicated result: children whose parents read to them more frequently obtain better results when they are tested on vocabulary. 20 families are split into two groups; in the first group, parents are encouraged to read with their child each night for 3 months, whereas in the other group no such encouragement is given. The study is run, but when children’s vocabulary results are compared, the statistical test results in a p-value of .233, much greater than the <span class="math inline">\(\alpha\)</span> level of .05.</p>
+<p>The researcher is confused as she knows there is research evidence to indicate that an effect should be present. There are, of course, a number of reasons why the experiment might have turned up a null result, but anyone familiar with statistics will think of the most likely explanation: unfortunately, she has failed to take into account the fact that the effect is fairly small, and to show it convincingly she would need a much larger sample size then 10 families per group.</p>
+<!---I took out binary classifier as not so relevant for intervention research-->
+</div>
+</div>
+<div id="statistical-power-and-beta" class="section level2 hasAnchor" number="10.5">
+<h2><span class="header-section-number">10.5</span> Statistical power and <span class="math inline">\(\beta\)</span><a href="power.html#statistical-power-and-beta" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Statistical power is the probability that a study will show a significant difference on a statistical test when there is a true effect. Statisticians use the term <span class="math inline">\(\beta\)</span> to refer to the proportion of nonsignificant results that are false negatives (type II error); power is 1-<span class="math inline">\(\beta\)</span>, expressed either as a proportion or a percentage.</p>
+<p>In practice, it can get confusing to think about Greek symbols (especially since <span class="math inline">\(\beta\)</span> has a completely different statistical meaning in the context of regression!) but the main point to grasp is that if I say my study has 40% power, that means that, if there were a true effect of intervention, and I were to run the study 10 times, on only four occasions would I obtain a statistically significant difference.</p>
+<p>Power depends on:</p>
+<ul>
+<li>Sample size<br />
+</li>
+<li>True effect size in the population<br />
+</li>
+<li>Criterion for statistical significance, also known as the Type 1 error rate (<span class="math inline">\(\alpha\)</span>)</li>
+</ul>
+<p>As can be seen from Table <a href="power.html#tab:powertable">10.2</a>, in general, the larger the sample size, the higher the power, and the greater the effect size, the higher the power. This is a sobering table for fields where it is not uncommon to have sample sizes of 20 or less per group, especially as we know that few effective interventions have effect sizes greater than .4.</p>
+<table class="table table-striped table-bordered" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:powertable">Table 10.2: </span>Power for 2-tailed t-test, alpha = .05
+</caption>
+<thead>
+<tr>
+<th style="empty-cells: hide;border-bottom:hidden;" colspan="1">
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="8">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+Effect size (d)
+</div>
+</th>
+</tr>
+<tr>
+<th style="text-align:center;">
+N per group
+</th>
+<th style="text-align:center;">
+0.1
+</th>
+<th style="text-align:center;">
+0.2
+</th>
+<th style="text-align:center;">
+0.3
+</th>
+<th style="text-align:center;">
+0.4
+</th>
+<th style="text-align:center;">
+0.5
+</th>
+<th style="text-align:center;">
+0.6
+</th>
+<th style="text-align:center;">
+0.8
+</th>
+<th style="text-align:center;">
+1
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+0.055
+</td>
+<td style="text-align:center;">
+0.071
+</td>
+<td style="text-align:center;">
+0.097
+</td>
+<td style="text-align:center;">
+0.135
+</td>
+<td style="text-align:center;">
+0.185
+</td>
+<td style="text-align:center;">
+0.246
+</td>
+<td style="text-align:center;">
+0.395
+</td>
+<td style="text-align:center;">
+0.562
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+20
+</td>
+<td style="text-align:center;">
+0.061
+</td>
+<td style="text-align:center;">
+0.095
+</td>
+<td style="text-align:center;">
+0.152
+</td>
+<td style="text-align:center;">
+0.234
+</td>
+<td style="text-align:center;">
+0.338
+</td>
+<td style="text-align:center;">
+0.456
+</td>
+<td style="text-align:center;">
+0.693
+</td>
+<td style="text-align:center;">
+0.869
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+30
+</td>
+<td style="text-align:center;">
+0.067
+</td>
+<td style="text-align:center;">
+0.119
+</td>
+<td style="text-align:center;">
+0.208
+</td>
+<td style="text-align:center;">
+0.332
+</td>
+<td style="text-align:center;">
+0.478
+</td>
+<td style="text-align:center;">
+0.628
+</td>
+<td style="text-align:center;">
+0.861
+</td>
+<td style="text-align:center;">
+0.968
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+40
+</td>
+<td style="text-align:center;">
+0.073
+</td>
+<td style="text-align:center;">
+0.143
+</td>
+<td style="text-align:center;">
+0.263
+</td>
+<td style="text-align:center;">
+0.424
+</td>
+<td style="text-align:center;">
+0.598
+</td>
+<td style="text-align:center;">
+0.755
+</td>
+<td style="text-align:center;">
+0.942
+</td>
+<td style="text-align:center;">
+0.993
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+50
+</td>
+<td style="text-align:center;">
+0.079
+</td>
+<td style="text-align:center;">
+0.168
+</td>
+<td style="text-align:center;">
+0.318
+</td>
+<td style="text-align:center;">
+0.508
+</td>
+<td style="text-align:center;">
+0.697
+</td>
+<td style="text-align:center;">
+0.844
+</td>
+<td style="text-align:center;">
+0.977
+</td>
+<td style="text-align:center;">
+0.999
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+80
+</td>
+<td style="text-align:center;">
+0.096
+</td>
+<td style="text-align:center;">
+0.242
+</td>
+<td style="text-align:center;">
+0.471
+</td>
+<td style="text-align:center;">
+0.710
+</td>
+<td style="text-align:center;">
+0.882
+</td>
+<td style="text-align:center;">
+0.965
+</td>
+<td style="text-align:center;">
+0.999
+</td>
+<td style="text-align:center;">
+1.000
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+100
+</td>
+<td style="text-align:center;">
+0.108
+</td>
+<td style="text-align:center;">
+0.291
+</td>
+<td style="text-align:center;">
+0.560
+</td>
+<td style="text-align:center;">
+0.804
+</td>
+<td style="text-align:center;">
+0.940
+</td>
+<td style="text-align:center;">
+0.988
+</td>
+<td style="text-align:center;">
+1.000
+</td>
+<td style="text-align:center;">
+1.000
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+150
+</td>
+<td style="text-align:center;">
+0.139
+</td>
+<td style="text-align:center;">
+0.408
+</td>
+<td style="text-align:center;">
+0.736
+</td>
+<td style="text-align:center;">
+0.932
+</td>
+<td style="text-align:center;">
+0.991
+</td>
+<td style="text-align:center;">
+0.999
+</td>
+<td style="text-align:center;">
+1.000
+</td>
+<td style="text-align:center;">
+1.000
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+200
+</td>
+<td style="text-align:center;">
+0.169
+</td>
+<td style="text-align:center;">
+0.514
+</td>
+<td style="text-align:center;">
+0.849
+</td>
+<td style="text-align:center;">
+0.979
+</td>
+<td style="text-align:center;">
+0.999
+</td>
+<td style="text-align:center;">
+1.000
+</td>
+<td style="text-align:center;">
+1.000
+</td>
+<td style="text-align:center;">
+1.000
+</td>
+</tr>
+</tbody>
+</table>
+<p>We can also show how power is affected by changing the <span class="math inline">\(\alpha\)</span> level - this affects how large a difference we need to see between groups before we reject the null hypothesis. When <span class="math inline">\(\alpha\)</span> is more extreme, we will make fewer false positive errors (see Chapter <a href="phacking.html#phacking">11</a>), but we will make more false negatives.</p>
+<p>Figure <a href="power.html#fig:densplot">10.4</a> illustrates this in a simple example using a z-test, which simply assesses how likely it is that a sample came from a population with a given mean. This is not a realistic example, but it is used to give more insight into power. Suppose we have some background information with sets of reading scores from children who did and did not have the intervention. We now have a single child’s score on a reading test, and we want to know whether they had the reading intervention. Figure <a href="power.html#fig:densplot">10.4</a> below shows the distribution of scores for children who had no intervention in the top: this is a density plot, showing how common different scores are (proportion of the population is on the y-axis), for each specific score on the x-axis. The shape follows a normal distribution: most scores are in the middle, with higher or lower scores being less common, and the mean is zero and standard deviation is one. The null hypothesis is that the child’s score comes from this distribution.</p>
+<div class="figure"><span style="display:block;" id="fig:densplot"></span>
+<img src="10-Power_files/figure-html/densplot-1.png" alt="Z test: statistical power, N=1" width="672" />
+<p class="caption">
+Figure 10.4: Z test: statistical power, N=1
+</p>
+</div>
+<p>The lower figure shows the distribution for children who had the reading intervention. The intervention had a large effect (Cohen’s <em>d</em> of one), and so the whole distribution is shifted over to the right. We’re going to use a one-sided z-test, because we know that the child’s score will either come from the null distribution, or from one with a higher mean. We decide to use the conventional level of <span class="math inline">\(\alpha\)</span> of .05. The vertical dotted line is therefore placed at a point where 5% of the upper distribution (the red area) is to the right of the line, and 95% (the white area) to the left. This point can be worked out from knowledge of the normal distribution and corresponds to a score on the x-axis of 1.65. Our rule is that if the child’s score is greater than 1.65, we reject the null hypothesis. If it is less than 1.65, we can’t reject the null hypothesis. This does not mean that the child definitely came from the non-intervention group - just that the evidence is not sufficient to rule that out. Regardless of the effect size or the sample size, if <span class="math inline">\(\alpha\)</span> level is set to .05, we wrongly reject the null hypothesis on only 1 in 20 experiments.</p>
+<p>But now look down to the lower distribution. False negatives are represented by the blue area to the left of the dotted line: cases where we fail to reject the null hypothesis, but the score really came from the group with intervention. The power of the study corresponds to the yellow region, where we have a score greater than 1.65 and the data really come from the intervention condition. But notice that power is extremely low: the blue area is much bigger than the yellow area. We are much more likely to wrongly retain the null hypothesis than to correctly reject it - even though we have a pretty large effect size. Note that while the false positive rate is kept constant by selection of <span class="math inline">\(\alpha\)</span> of .05, the false negative result is not.</p>
+<p>If we wanted to make the false negative (type II error) rate much lower, we could adopt a less stringent <span class="math inline">\(\alpha\)</span> level, e.g. we could move the vertical dotted line to the point where the x-axis was zero, so the yellow area becomes much bigger than the blue area. But if we do that, we then would increase the type I (false positive) error rate to 50%!</p>
+<p>Our next figure <a href="power.html#fig:densplot2">10.5</a> presents the same one-sided z test but here the sample size has increased to 10. A key point is that the density plot here does <em>not</em> show the distribution of scores from individual children in any one sample; it is the distribution of <em>means</em> that we would see if we repeatedly took samples of a given size. So if we had a population of 10,000 children, and just kept taking samples of 10 children, each of those samples would have a mean, and it is these that are plotted here. We should notice that two things have appeared to change. First, we see a greater distinction between the two distributions. Second, we see that the critical <span class="math inline">\(z\)</span> value (vertical dashed line) has changed location. The distributions have not changed their location (the peak of each bell shaped curve is the same), but the spread of each distribution has shrunk as a result of the increased sample size, because the precision of the estimate of the mean improves with a larger sample.</p>
+<div class="figure"><span style="display:block;" id="fig:densplot2"></span>
+<img src="10-Power_files/figure-html/densplot2-1.png" alt="Z test: statistical power, N=10" width="672" />
+<p class="caption">
+Figure 10.5: Z test: statistical power, N=10
+</p>
+</div>
+<p>The shaded areas on the density plots directly relate to the concepts outlined above: power, type I, and type II errors. When the sample size increases, the standard error (SE) reduces. We notice that the type I error rate (area in red) is proportionally the same at 5%, but we see a change in the two remaining quantities, power and type II error rate. This is because these quantities are linked. The area under the density curve must always remain at 1, so proportionally, we can calculate the power as 1-<span class="math inline">\(\beta\)</span>. We can visually see this in both figures by looking at the specified areas for the alternative distribution.</p>
+<p>If you are finding this all quite confusing, don’t worry. This is complicated and even those who have statistical training can find it challenging <span class="citation">(<a href="#ref-bishop2022a">Bishop, Thompson, and Parker 2022</a>)</span>. The most important points to take away from these examples are that:<br />
+- Statistical power depends on the sample size and the effect size, as well as the level of <span class="math inline">\(\alpha\)</span><br />
+- With small samples, studies often have low power, meaning that even if there is a real effect, there may be little chance of detecting it.<br />
+- A p-value greater than .05 does not mean the null hypothesis is true.</p>
+<p>It is therefore important to think about power when designing a study, or you may end up concluding an intervention is ineffective, when in fact it has a small effect that your study is underpowered to detect.</p>
+<div id="standard-error-of-the-mean" class="section level4 unnumbered hasAnchor">
+<h4>Standard error of the mean<a href="power.html#standard-error-of-the-mean" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="custom">
+<p>It can be challenging to get an intuitive understanding of power, because the computations needed to calculate it are not straightforward. A key statistic is the standard error of the mean, also known as the SEM, usually shortened to standard error (SE). This can be thought of as an index of the variability of an estimate of the mean from a sample. If you imagine taking numerous samples from a population, and estimating the mean from each one, you will end up with a distribution of means, similar to those shown in Figure <a href="power.html#fig:varES">10.3</a>. As shown in that Figure, these estimates of the mean are much more variable for small than for large samples. The SE is the standard deviation of the estimates of the mean, and it is crucially dependent on the sample size.
+This follows from the formula for the SE, which is computed as the SD divided by the square root of N.</p>
+<p>The test statistic, <em>z</em> in this instance, which is used to derive a p-value, uses the SE as a denominator, and so will also be influenced by sample size. The <em>z</em> score is defined as:</p>
+<p>z = (M - <span class="math inline">\(\mu\)</span>)/SE</p>
+The bigger the N, the smaller the SE, the more precise the measurement, and the higher the power of the statistical test. Note that the value entered into these equations is the <em>square root</em> of N. It follows that improvement in precision from adding extra participants to a study is greatest at small sample sizes: as shown in the figure below, the SE is approximately halved in increasing the sample size from 10 to 40, whereas changes are much smaller in going from 110 to 140 participants.
+</div>
+<p><img src="10-Power_files/figure-html/demoSE-1.png" width="50%" /></p>
+<p>Typically, clinical trials in medicine are designed to achieve 80% statistical power and, depending on the statistical analysis strategy, will employ some method to control type I error rate (traditionally <span class="math inline">\(\alpha=0.05\)</span>). With <span class="math inline">\(\alpha\)</span> fixed, power depends on effect size and sample size.</p>
+<p>So the first question is how do we select an effect size? This is quite a thorny issue. In the past, it was common just to base anticipated effect sizes on those obtained in previous studies, but these can be overestimates because of publication bias (see Chapter <a href="pubbias.html#pubbias">18</a>). A more logical approach is to consider what is the smallest effect size that would be of interest: for instance, if you have a vocabulary intervention on which children start with a mean score of 20 words (SD of 10) would you be interested in an average improvement on an outcome test of half a word, or would you think the intervention would only be worthwhile if children improved on average by 4 or more words? <span class="citation">Lakens (<a href="#ref-lakens2021">2021</a>)</span> has a useful primer on how to justify a sample size.</p>
+<p>Once a suitable effect size is established, then it is possible to compute power for different effect sizes, to work out how big a sample would be needed to attain the desired statistical power, typically set to 80% or more.</p>
+</div>
+</div>
+<div id="ways-to-improve-statistical-power" class="section level2 hasAnchor" number="10.6">
+<h2><span class="header-section-number">10.6</span> Ways to improve statistical power<a href="power.html#ways-to-improve-statistical-power" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Researchers are often shocked when they first do a power analysis, to find that sample sizes that are conventionally used in their field are not adequately powered. Even more depressing, a power analysis may tell you that you would need an unfeasibly large sample in order to show an effect of interest. Researchers who start out planning a study with 20 individuals per group may be discouraged to find that they need 80 per group to do a meaningful study. This is a common predicament, but there are some ways forward:</p>
+<ul>
+<li>If the necessary sample size is too large for you to achieve, it may be worth considering forming a consortium by joining forces with other researchers. Kate Button has advocated for the adoption of “team science” in psychology, recognising that many questions require larger samples than are typically available in any one centre <span class="citation">(<a href="#ref-button2020">Button 2020</a>)</span>. A particularly innovative step has been to encourage consortia for undergraduate research projects, which, she argues, not only allows for meaningful research to be done, but also provides much better training in research methods than the conventional set-up, where each student is supposed to do an original piece of research with limited resources <span class="citation">(<a href="#ref-button2018">Button 2018</a>)</span>.<br />
+</li>
+<li>People tend to think that the only way to increase power is by getting a larger sample size, but there are other options. You may be able to improve the effect size of your outcomes by careful consideration of reliability and sensitivity of the outcome measure. Remember, effect size is the difference in means divided by the standard deviation: if you can reduce the standard deviation by minimising random noise in your outcome measure, you will increase the effect size.<br />
+</li>
+<li>In Chapter <a href="phacking.html#phacking">11</a>, we will consider how use of multiple outcome measures can be used to improve statistical power, provided measures are taken to avoid increasing false positives.</li>
+<li>It is worth consulting with a statistician about the optimal research design. A RCT with comparison of intervention and controls groups is not the only possible approach. Some designs are more efficient than others for showing effects of interest: see especially Chapter <a href="crossover.html#crossover">16</a> and Chapter <a href="Single.html#Single">17</a>.</li>
+</ul>
+</div>
+<div id="class-exercises" class="section level2 hasAnchor" number="10.7">
+<h2><span class="header-section-number">10.7</span> Class Exercises<a href="power.html#class-exercises" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The teaching of statistics is being transformed by the internet. There are some excellent interactive websites to help you gain a more intuitive sense of some of the statistical concepts in this chapter. For starters, we’d recommend <a href="https://www.zoology.ubc.ca/~whitlock/Kingfisher/SamplingNormal.htm">this website</a> which focuses on sampling from a normally distributed population. You can vary the mean and standard deviation, as well as the sample size. The examples are from zoology, but the ideas apply much more broadly. This is just one of <a href="https://whitlockschluter.zoology.ubc.ca/stats-visualizations">several apps in a set</a> that is designed to help understand statistics.</p>
+<p>There are several interactive websites for calculating power for simple experimental designs. They vary in the level of statistical background that they require, but you should be able to use them to work out the required sample size for different scenarios. Have a look at these sites:<br />
+<a href="https://egap.shinyapps.io/Power_Calculator/">Power Calculator</a><br />
+<a href="https://shiny.ieis.tue.nl/d_p_power/">Cohen’s d</a></p>
+<p>See whether for each site you can understand the graphics, and whether you can work out the answer for the following problems, each of which is just comparing an intervention group and a control group in a two-sided t-test:<br />
+- You have an expected effect size of 0.3 and you want to work out the sample size to get power of .8 with <span class="math inline">\(\alpha\)</span> set to .05.<br />
+- You can recruit 50 participants per group; you expect an effect size of 0.3. What is the power to detect this effect, with <span class="math inline">\(\alpha\)</span> set to .05?<br />
+- What effect size would you be able to detect with 80% power and a sample size of 30 per group, with <span class="math inline">\(\alpha\)</span> set to .05?</p>
+<p>More generally, it’s well worth Googling for information if there are statistical terms or concepts you are struggling with. Sometimes the information you find is just confusing and too technical, but, as illustrated above, there are also excellent teaching resources out there.</p>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-bishop2022a" class="csl-entry">
+Bishop, D. V. M., Jackie Thompson, and Adam J. Parker. 2022. <span>“Can We Shift Belief in the <span>‘<span>Law</span> of <span>Small Numbers</span>’</span>?”</span> <em>Royal Society Open Science</em> 9 (3): 211028. <a href="https://doi.org/10.1098/rsos.211028">https://doi.org/10.1098/rsos.211028</a>.
+</div>
+<div id="ref-button2018" class="csl-entry">
+Button, K. 2018. <span>“Reboot Undergraduate Courses for Reproducibility.”</span> <em>Nature</em> 561 (7723): 287–87. <a href="https://doi.org/10.1038/d41586-018-06692-8">https://doi.org/10.1038/d41586-018-06692-8</a>.
+</div>
+<div id="ref-button2020" class="csl-entry">
+———. 2020. <span>“Supporting <span>‘Team Science’</span>.”</span> <em>The Psychologist</em> 33: 30–33.
+</div>
+<div id="ref-lakens2021" class="csl-entry">
+Lakens, Daniel. 2021. <span>“Sample <span>Size Justification</span>.”</span> <span>PsyArXiv</span>. <a href="https://doi.org/10.31234/osf.io/9d3yf">https://doi.org/10.31234/osf.io/9d3yf</a>.
+</div>
+<div id="ref-quintana2018" class="csl-entry">
+Quintana, Daniel S., and Donald R. Williams. 2018. <span>“Bayesian Alternatives for Common Null-Hypothesis Significance Tests in Psychiatry: A Non-Technical Guide Using <span>JASP</span>.”</span> <em>BMC Psychiatry</em> 18 (1): 178. <a href="https://doi.org/10.1186/s12888-018-1761-4">https://doi.org/10.1186/s12888-018-1761-4</a>.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="dropouts.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="phacking.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Intervention_bookdown2.pdf", "Intervention_bookdown2.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
