@@ -14,7 +14,7 @@ The randomised controlled trial (RCT) is regarded by many as the gold standard m
 
 A RCT is effective simply because it is designed to counteract all of the systematic biases that were covered in previous Chapters.
 
-```{r rctchart, echo=F, include=T,tab.cap="How the RCT design deals with threats to study validity"}
+```{r rctchart, echo=F,warning=F,message=F, include=T,tab.cap="How the RCT design deals with threats to study validity"}
 require(flextable)
 Biases <- c('Spontaneous improvement','Practice effects','Regression to the mean','Noisy data (1)','Noisy data (2)','Selection bias', 'Placebo effects', 'Experimenter bias (1)','Experimenter bias (2)','Biased drop-outs','Low power','False positives due to p-hacking')
 Remedies <- c('Control group','Control group','Control group','Strict selection criteria for participants','Outcome measures with low measurement error','Random assignment to intervention','Participant unaware of assignment','Experimenter unaware of assignment','Strictly specified protocol','Intention-to-treat analysis','A priori power analysis','Registration of trial protocol')
