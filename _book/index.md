@@ -1,7 +1,7 @@
 --- 
-title: "Evaluating what works"
+title: "Evaluating What Works"
 author: "Dorothy V M Bishop and Paul A Thompson"
-date: "February 25, 2023"
+date: "March 04, 2023"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography:
@@ -19,6 +19,10 @@ description: Introduction to methods for evaluating effectiveness of non-medical
 
 ```
 ## Loading required package: bookdownplus
+```
+
+```
+## Warning: package 'knitr' was built under R version 4.0.5
 ```
 
 # Preface {-}
@@ -41,7 +45,7 @@ In medicine, practitioners who wish to evaluate treatments typically have access
 
 In this book, the focus will be on interventions designed to improve speech, language and literacy, reflecting our own area of research interest.  
 
-As we shall see, demonstrating that an intervention has an impact is much harder than it appears at first sight. There are all kinds of issues that can arise to mislead us into thinking that we have an effective treatment when this is not the case. Much of the attention of methodologists has focused on how to recognise and control for unwanted factors that can affect outcomes of interest. But psychology is also important: it tells us that own human biases can be just as important in leading us astray. Good, objective intervention research is vital if we are to improve the outcomes of those we work with, but it is really difficult to do it well, and to do so we have to overcome our natural impulses to interpret evidence in biased ways.
+As we shall see, demonstrating that an intervention has an impact is much harder than it appears at first sight. There are all kinds of issues that can arise to mislead us into thinking that we have an effective treatment when this is not the case. Much of the attention of methodologists has focused on how to recognize and control for unwanted factors that can affect outcomes of interest. But psychology is also important: it tells us that own human biases can be just as important in leading us astray. Good, objective intervention research is vital if we are to improve the outcomes of those we work with, but it is really difficult to do it well, and to do so we have to overcome our natural impulses to interpret evidence in biased ways.
 
 ## Who is this book for? {-}
 
@@ -51,7 +55,9 @@ The inspiration for the book came from interactions with speech and language the
 
 This book is not a how-to-do-it manual, so much as a why-to-do-it. Our main goal is to instill in the reader awareness of the numerous sources of bias that can lead to mistaken conclusions when evaluating interventions. Real-life examples are provided with the aim of providing an intuitive understanding of these issues. Of course, it is not much use telling people what _not_ to do if you don't also give guidance on approaches that are effective. We will illustrate ways in which different research designs can overcome problems, but it is beyond the scope of this book to give detailed instructions on how to implement different methods: instead, we will point readers to other sources that give more in-depth information. 
 
-We expect that some readers will have little or no background in statistics. Lack of statistical training is a massive obstacle to practitioners who want to do intervention research: it not only makes design and analysis of a study daunting, but it also limits what a potential researcher can take from the existing literature. This book should be seen as complementing rather than substituting for a technical introduction to statistics. Many readers may be reluctant to study statistics in more depth, but it is hoped that the account given here will give them confidence to approach statistics in the published literature with a more critical eye, to recognise when the advice of a professional statistician is needed, and to communicate more effectively with statisticians. We recommend the open source text [Statistical Thinking for the 21st Century](https://github.com/statsthinking21/statsthinking21) as a complement to this book for those who wish to learn more about statistics.  
+Our focus is on quantitative research methods. Qualitative research methods are increasingly recognized as providing an important complementary perspective on intervention research, by throwing light on the reasons why people - both those receiving intervention and those implementing it - behave as they do. Sometimes, it makes more sense to do a qualitative study to refine a research question before diving in using methods that require that everything is converted into numbers [@greenhalgh1997]. If you feel that a quantitative study is missing out on something essential and important about how and why intervention works, this may be an indication that a qualitative study is needed to scope out the problem more fully. Our expertise, however, is with quantitative methods, and our aim is to write a basic explainer of how such studies are designed, and what biases and pitfalls they can involve. 
+
+We expect that some readers will have little or no background in statistics. Lack of statistical training is a massive obstacle to practitioners who want to do intervention research: it not only makes design and analysis of a study daunting, but it also limits what a potential researcher can take from the existing literature. This book should be seen as complementing rather than substituting for a technical introduction to statistics. Many readers may be reluctant to study statistics in more depth, but it is hoped that the account given here will give them confidence to approach statistics in the published literature with a more critical eye, to recognize when the advice of a professional statistician is needed, and to communicate more effectively with statisticians. We recommend the open source text [Statistical Thinking for the 21st Century](https://github.com/statsthinking21/statsthinking21) as a complement to this book for those who wish to learn more about statistics.  
 
 Intervention research is a branch of science, and you can't do good science without adopting a critical perspective – to the research of yourself as well as others. We hope this book will make it easier to do that and so to improve intervention research in a wide range of non-medical fields. 
 
