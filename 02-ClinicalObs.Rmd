@@ -64,7 +64,7 @@ Consider possible confounders in the following examples: Does long-term use of h
 
 Many reports in the media about things that are good or bad for you are based on observational rather than experimental data. In some cases, it is hard to see how other types of data could be collected: are we really going to succeed in allocating adolescents to a regime of non-stop computer games, or to force people to start eating cabbage? Indeed, some associations that are now well-established, such as the link between cigarette smoking and cancer, were discovered from observational data, and could not be studied any other way. But where the interest is in interventions administered by a therapist, then it should not be necessary to rely on observational studies, and, as we have shown, to do so can lead to flawed conclusions.
 
-There is a great deal of work on methods for analysing and interpreting observational data (see, e.g., @hernan2018), but, given the difficulty of identifying causal influences from such evidence, we will not say any more about this topic, but rather focus on experimental approaches that allow us to minimise the role of confounders.
+There is a great deal of work on methods for analysing and interpreting observational data (see, e.g., @hernan2018), but, given the difficulty of identifying causal influences from such evidence, we will not say any more about this topic, but rather focus on experimental approaches that allow us to minimize the role of confounders.
 
 
 
