@@ -70,11 +70,11 @@ There are several ways we can defend ourselves against a proliferation of false 
 
 As noted above, even when we have a well-designed and adequately powered study, if we collect multiple outcome variables, or if we are applying multiple tests to the same data, then we increase our chance of finding a false positive. Remember that if we set $\alpha$ to .05 and apply $k$ tests to our data, then the probability of finding at least one false positive is given by $1-(1-\alpha)^{k}$. This is officially known as the family-wise error rate (FWER).  
 
-```{r familywise,echo=F, out.width = "50%",fig.cap="Plot of relationship between familywse error rate and number of statistical tests"}
+```{r familywise,echo=F, out.width = "80%",fig.cap="Plot of relationship between familywse error rate and number of statistical tests"}
 k <- seq(1:100)
 FWE <- (1-(1-0.05)^k)
 fwe_dat<-data.frame(FWE=FWE,k=k)
-ggplot(data=fwe_dat,aes(k,FWE,type="l"))+geom_line(size=1.2,colour="blue")+theme_bw()+geom_segment(aes(x=10,y=0,xend=10,yend=0.4),linetype="dashed",size=1.2)+geom_segment(aes(x=0,y=0.4,xend=10,yend=0.4),linetype="dashed",size=1.2)+xlab("Number of tests, k")+ylab("Familywise Error (FWE)")
+ggplot(data=fwe_dat,aes(k,FWE,type="l"))+geom_line(size=1.2,colour="blue")+theme_bw()+geom_segment(aes(x=10,y=0,xend=10,yend=0.4),linetype="dashed",size=1.2)+geom_segment(aes(x=0,y=0.4,xend=10,yend=0.4),linetype="dashed",size=1.2)+xlab("Number of tests, k")+ylab("Familywise Error (FWE)")+ theme(text = element_text(size = 14))    
 
 ```
 

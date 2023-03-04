@@ -26,7 +26,7 @@ If the aim is to evaluate intervention targeted at disadvantaged groups, then it
 
 ## Class exercise
 <!-- It is possible to make fig a sensible size by fiddling with the html file - it seems current size is embedded in the png-->
-```{r consortfig, echo=F,fig.height=12,fig.width=8 }
+```{r consortfig, echo=F,out.width="80%"}
 knitr::include_graphics("images/consort-flow-diagram.png")
 ``` 
 

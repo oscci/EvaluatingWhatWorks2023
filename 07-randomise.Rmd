@@ -42,7 +42,7 @@ Approach E would seem like the logical solution: it avoids unequal sample sizes,
 
 ## Randomization methods
 
-We have seen the drawbacks of some of the approaches that might at first glance seem appropriate to avoid bias. Here we will briefly describe randomization methods that are used in contemporary medical trials, to give an idea of the range of possible approaches. Randomization is a fairly technical subject, and anyone designing a randomized controlled trial is advised to seek expert advice to ensure that the most effective method is used. 
+We have seen the drawbacks of some of the approaches that might at first glance seem appropriate to avoid bias. Here we will briefly describe randomization methods that are used in contemporary medical trials, to give an idea of the range of possible approaches. Randomization is a fairly technical subject, and anyone designing a randomised controlled trial is advised to seek expert advice to ensure that the most effective method is used. 
 
 ### Simple randomization
 
@@ -50,7 +50,7 @@ In our earlier examples from the start of this chapter, we saw various examples 
 
 In theory this might seem sufficient, but it ignores one aspect of real life: people will sign up for a trial but then drop out before assignment of intervention. This means that we potentially can have unbalanced groups despite following the list. 
 
-Furthermore as we saw earlier, simple randomization does not control key variables which may exert an effect on the outcome. For example, suppose we randomize children with a language difficulty into two groups, but we find that there are more boys than girls in one group. If we find an intervention effect as predicted, we can't be sure whether this is just because boys and girls respond differently.  
+Furthermore as we saw earlier, simple randomization does not control key variables which may exert an effect on the outcome. For example, suppose we randomise children with a language difficulty into two groups, but we find that there are more boys than girls in one group. If we find an intervention effect as predicted, we can't be sure whether this is just because boys and girls respond differently.  
 
 Simple randomization is rarely (if at all) used in contemporary medical trials, but other approaches have been developed to counter the drawbacks encountered.  
 
@@ -71,7 +71,7 @@ Financial and practical constraints may limit the number of participants in a tr
 We discussed above the possibility that randomised groups might differ in the proportion of males and females, making it difficult to disentangle the effect of the intervention from an effect of sex. There are usually other factors that could influence response to intervention: social and family background, presence of specific medical conditions, or educational attainment. If these are likely to be important, we can try to measure them in advance, but we cannot rule out the possibility that there may be other, unknown, variables that influence the treatment effect.  
 
 <!--I changed schools to cities, because it could be argued cluster approach better for schools, given interactions between children etc-->
-For characteristics that we can measure, stratification is one method that gives us some control, by splitting the allocation according to those variables. For example, suppose we have an intervention for school-aged children aged between 5 and 11 years. We recruit from three different cities: one with a high rate of deprivation, one with a good mix of social backgrounds, and one where most citizens are affluent home-owners. We would anticipate that there might be significant outcome differences in age and potentially differences between cities, so we use stratification to allow for this when we randomize children to intervention and control groups. The scheme would be as shown in Table \@ref(tab:strattable).
+For characteristics that we can measure, stratification is one method that gives us some control, by splitting the allocation according to those variables. For example, suppose we have an intervention for school-aged children aged between 5 and 11 years. We recruit from three different cities: one with a high rate of deprivation, one with a good mix of social backgrounds, and one where most citizens are affluent home-owners. We would anticipate that there might be significant outcome differences in age and potentially differences between cities, so we use stratification to allow for this when we randomise children to intervention and control groups. The scheme would be as shown in Table \@ref(tab:strattable).
 
 
 ```{r strattable,echo=F,message=F,warning=F, tab.cap = "Randomised sample by strata"}
@@ -116,7 +116,7 @@ options(kableExtra.html.bsTable = T)
 mini.mat<-as.data.frame(matrix(c("Male","Female","21-30","31-40","41-50","High Risk","Low Risk",3,5,4,2,2,4,4,5,3,4,3,1,5,3),7,3, byrow=F))
 colnames(mini.mat)<-c("Prognostic factor", "Intervention", "Control")
 
-knitr::kable(mini.mat,escape = F, align = "c", booktabs = T,caption = 'Randomized allocation by minimization') %>%
+knitr::kable(mini.mat,escape = F, align = "c", booktabs = T,caption = 'Randomised allocation by minimization') %>%
   kable_styling(c("striped", "bordered"), latex_options = "striped", full_width = F) %>%
   column_spec(1, bold = T)%>%
   group_rows("Sex",1,2)%>%

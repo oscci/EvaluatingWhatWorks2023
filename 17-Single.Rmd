@@ -1,4 +1,4 @@
-#	 Single case designs {#Single}
+#	Single case designs {#Single}
 
 <!--- This level 1 heading is NOT RECOGNISED by Bookdown. I have tried cutting out sections of the chapter to identify what causes it to baulk but it is an inconsistent error. We may have to wait and fix this manually at a later stage if we can't get it to work. I can get the level 1 heading to be identified and compile if I just have the first 2 chunks of the chapter, but if I add more it throws inconsistent errors, and the index just misses this chapter. I have tried changing the chapter name. 
 Trying adding an extra white space before title - doesn't work.
