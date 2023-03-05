@@ -58,7 +58,7 @@ We owe a huge debt of gratitude to Yihue Xie, whose work developing the [_bookdo
 Our thanks also to James Pustejovsky whose recommendations were helpful in relation to single case designs. 
 
 ## Feedback and contributions {-}
-One of the good things about an online book is that it can remain a work in progress for some time, giving readers the opportunity to provide suggestions and corrections. We can't guarantee to respond promptly (DVB is retired and PT has a demanding job!), but we encourage readers familiar with github to send pull requests with suggestions for changes, 
+One of the good things about an online book is that it can remain a work in progress for some time, giving readers the opportunity to provide suggestions and corrections. We can't guarantee to respond promptly (DVB is retired and PT has a demanding job!), but we would be extremely grateful to anyone who lets us know of any errors in the book. We encourage readers familiar with github to send pull requests with suggestions for changes, and others to contact us by email. 
 
 
 
