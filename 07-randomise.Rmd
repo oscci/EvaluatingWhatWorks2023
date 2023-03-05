@@ -74,10 +74,9 @@ We discussed above the possibility that randomized groups might differ in the pr
 For characteristics that we can measure, stratification is one method that gives us some control, by splitting the allocation according to those variables. For example, suppose we have an intervention for school-aged children aged between 5 and 11 years. We recruit from three different cities: one with a high rate of deprivation, one with a good mix of social backgrounds, and one where most citizens are affluent home-owners. We would anticipate that there might be significant outcome differences in age and potentially differences between cities, so we use stratification to allow for this when we randomize children to intervention and control groups. The scheme would be as shown in Table \@ref(tab:strattable).
 
 
-```{r strattable,echo=F,message=F,warning=F, tab.cap = "Randomized sample by strata"}
+```{r strattable,echo=F,message=F,warning=F}
+
 options(kableExtra.html.bsTable = T)
-
-
 strat.mat<-as.data.frame(matrix(c(23,24,31,31,28,27,
                                   19,20,25,24,35,35,
                                   22,27,24,23,31,31),9,2, byrow=T))
@@ -88,7 +87,7 @@ rownames(strat.mat)<-c("City 1, ages 5-7", "City 2, ages 8-9", "City 3, ages 10-
 
 
 
-knitr::kable(strat.mat,escape = F, align = "c", booktabs = T) %>%
+knitr::kable(strat.mat,escape = F, align = "c", booktabs = T,caption='Randomization with stratification by city and age band') %>%
   kable_styling(c("striped", "bordered"), latex_options = "striped", full_width = F) %>%
   column_spec(1, bold = T) 
 ```
@@ -138,7 +137,7 @@ In the examples given above, allocation of intervention is done at the level of 
 This method, however, raises new problems, because we now have a confound between classroom and intervention. Suppose the teacher in classroom A is a better teacher, or it just so happens that classroom B contains a higher proportion of disruptive pupils. In effect, we can no longer treat the individual as the unit of analysis. In addition, we may expect the children within a classroom to be more similar to one another than those in different classrooms, and this has an impact on the way in which the study needs to be analysed. Clustered studies typically need bigger sample sizes than non-clustered ones. We will discuss this issue further in Chapter \@ref(cluster).
 <!-- another case where  chapter referencing goes awry? Should be chaper 15-->
 
-### Class exercise
+## Class exercise
 
 Perform a literature search for an intervention/disorder of interest using the search term "randomized controlled trial" or "randomized controlled trial" or "RCT", and download the article. (We are looking for a standard RCT, so do not pick a clustered RCT).  
  - Is the randomization process clearly described?  

@@ -51,18 +51,18 @@ In the Discussion, the authors showed awareness of the problem of doing this: _"
 practice effects, maturation, regression to the mean, and/or spontaneous recovery."_ Yet they went on to write at length about possible reasons why the active control might have boosted language (see HARKing, Chapter \@ref(phacking)), and the Abstract reports results in a positive fashion, noting that _"The children in all four arms improved significantly on a global language test", and arguing that the improvements were of "clinical significance"._ If one were to simply scan the Abstract of this paper without digging in to the Results, it would be easy to come away with the impression that a large RCT had provided support for all three language interventions.</div>
 
 
-### Citation bias  
+## Citation bias  
 In the rightmost bar of Figure \@ref(fig:devriesfig), the size of the circles represents the number of citations of each paper in the literature. This illustrates another major bias that has received less attention than publication bias - citation bias. We can see that those null studies that made it through to this point, surviving with correct reporting despite publication bias, outcome reporting bias, and spin, get largely ignored, whereas studies that are reported as positive, including those which involved outcome-switching, are much more heavily cited. 
 
 Quite apart from there being bias against null results, many researchers are not particularly thorough in their citation of prior literature. In an overview of publication bias and citation bias, @leng2020 drew attention to the neglect of prior literature in papers reporting randomized controlled trials. Based on a paper by @robinson2011, they noted that regardless of how many studies had been conducted, on average only two studies were cited, and concluded _"seemingly, while scientists may see further by standing on the shoulders of those who have gone before, two shoulders are enough, however many are available."_ (p. 206).  
 
 Citation bias is often unintentional, but is a consequence of the way humans think. @bishop2020 described a particular cognitive process, confirmation bias, which makes it much easier to attend to and remember things that are aligned with our prior expectations. Confirmation bias is a natural tendency that in everyday life that often serves a useful purpose in reducing our cognitive load, but which is incompatible with objective scientific thinking. We need to take explicit measures to counteract this tendency in order to evaluate prior literature objectively. 
 
-### Counteracting publication and citation biases  
+## Counteracting publication and citation biases  
 
 In Chapter \@ref(prereg) and Chapter \@ref(litrev), we discuss two approaches to counteracting biases: preregistration offers a solution to publication bias, and a systematic approach to literature review offers a (partial) solution to citation bias.  
 
-### Class exercise  
+## Class exercise  
 1. As a group exercise, you may like to try a game of Statcheck, the materials and rules for which are available here: https://sachaepskamp.github.io/StatcheckTheGame/. This should induce a sufficiently cynical approach towards the current publication system.  
 
 2. Find a published report of an intervention that interests you. Take a look at the introduction, and list the references that are cited as background. Next, go online and search for articles on this topic that were published two or more years before the target paper. Do you find many articles that are relevant but which were not cited? If so, did they give positive or negative results?  

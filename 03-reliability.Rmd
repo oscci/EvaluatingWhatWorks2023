@@ -329,14 +329,15 @@ ggplot(mlu_data, aes(x=Age, y=Mean)) +
 
 ```
 
-1. Roger Brown's [@brown1973] classic work showed that in young children Mean Length of Utterance in morphemes (MLU) is a pretty good indicator of a child's language level; his findings have stood the test of time, when much larger samples have been assessed ( Figure \@ref(fig:MLU-plot) from @ratner2016). Is this evidence of reliability, validity and/or sensitivity?
+1. Roger Brown's [@brown1973] classic work showed that in young children Mean Length of Utterance in morphemes (MLU) is a pretty good indicator of a child's language level; his findings have stood the test of time, when much larger samples have been assessed (Figure \@ref(fig:MLU-plot) from @ratner2016). Is this evidence of reliability, validity and/or sensitivity?
 <!--- I originally included CIs, but for simplicity maybe should omit them. Text was: "The confidence interval shows the expected range for 95% of children of a given age. For instance, at 2 years of age, only 2.5% of children would be expected to have MLU below 1.2, and only 2.5% would have MLU higher than 4.3. Note that MLU cannot be less than 1, hence the floor in scores for 18-month-olds."-->
 
 
-2. How might you expect the reliability of MLU to depend on:
+2. Here we focus on **reliability**, i.e., the likelihood that you might see similar results if you did the same assessment on two different occasions. How might you expect the reliability of MLU to depend on:
 * Length of language sample
 * Whether the child is from a clinical or typically-developing sample
-* Whether the language sample comes from an interaction with a caregiver vs an interaction with an unfamiliar person
+* Whether the language sample comes from an interaction with a caregiver vs an interaction with an unfamiliar person  
+
 
 3. Do a literature search to find out what is known about test-retest reliability of MLU. Did your answers to question 2 agree with the published evidence?
 
