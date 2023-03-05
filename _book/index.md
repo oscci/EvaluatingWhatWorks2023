@@ -1,7 +1,7 @@
 --- 
 title: "Evaluating What Works"
 author: "Dorothy V M Bishop and Paul A Thompson"
-date: "March 04, 2023"
+date: "March 05, 2023"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography:
@@ -41,15 +41,13 @@ description: Introduction to methods for evaluating effectiveness of non-medical
 
 Those who work in allied health professions aim to make people's lives better. Often, however, it is hard to know how effective we have been: would change have occurred if we hadn't intervened? Is it possible we are doing more harm than good? To answer these questions and develop a body of knowledge about what works, we need to evaluate interventions.  
 
-In medicine, practitioners who wish to evaluate treatments typically have access to expert statisticians and methodologists, who can advise them on the most efficient research designs and up-to-date analyses. They may also be able to access substantial amounts of funding to cover the salaries of experienced trials personnel. However, in many fields, professionals who administer interventions have limited training in research design, and little or no support from professional statisticians or methodologists. 
-
-In this book, the focus will be on interventions designed to improve speech, language and literacy, reflecting our own area of research interest.  
-
 As we shall see, demonstrating that an intervention has an impact is much harder than it appears at first sight. There are all kinds of issues that can arise to mislead us into thinking that we have an effective treatment when this is not the case. Much of the attention of methodologists has focused on how to recognize and control for unwanted factors that can affect outcomes of interest. But psychology is also important: it tells us that own human biases can be just as important in leading us astray. Good, objective intervention research is vital if we are to improve the outcomes of those we work with, but it is really difficult to do it well, and to do so we have to overcome our natural impulses to interpret evidence in biased ways.
 
 ## Who is this book for? {-}
 
-The inspiration for the book came from interactions with speech and language therapists (known as speech-language pathologists or logopeds outside the UK), and the illustrative cases are from that discipline, but the basic principles covered here are relevant for any field where a practitioner aims to influence outcomes of those they work with. This includes allied health professions and education.  Training in most professions allied to health and education does not usually include much instruction in research methodology and statistics - particularly as this relates to evaluation of interventions, which is a complex and thorny topic. It seemed, therefore that there was a need for a basic text that would explain the rationale and potential pitfalls of intervention research, as well as providing a template for good practice in the evaluation and design of intervention studies. 
+The inspiration for the book came from interactions with speech and language therapists (known as speech-language pathologists or logopeds outside the UK), and the illustrative cases are from that discipline, but the basic principles covered here are relevant for any field where a practitioner aims to influence outcomes of those they work with. This includes allied health professions and education.  
+
+In medicine, practitioners who wish to evaluate treatments typically have access to expert statisticians and methodologists, who can advise them on the most efficient research designs and up-to-date analyses. They may also be able to access substantial amounts of funding to cover the salaries of experienced trials personnel. However, in many fields, professionals who administer interventions have limited training in research design, and little or no support from professional statisticians or methodologists. Training in most professions allied to health and education does not usually include much instruction in research methodology and statistics - particularly as this relates to evaluation of interventions, which is a complex and thorny topic. It seemed, therefore that there was a need for a basic text that would explain the rationale and potential pitfalls of intervention research, as well as providing a template for good practice in the evaluation and design of intervention studies. 
 
 ## What is covered? {-}
 
