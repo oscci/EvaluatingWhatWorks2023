@@ -217,41 +217,11 @@ We noted in the previous chapter how, electropalatography, a biofeedback interve
 
 @leniston2021 applied this approach to seven adolescents with severe speech disorders, all of whom were already familiar with electropalatography. Diagnoses included verbal dyspraxia, structural abnormalities of articulators (velopharyngeal insufficiency), mosaic Turner syndrome, and right-sided hemiplegia. At the start of each school term, two sounds were identified for each case: a target sound, which would be trained, and a control sound, which was also produced incorrectly, but which was not trained. Electropalatography training was administered twice a week in 30 minute sessions. The number of terms where intervention was given ranged from 1 to 3. 
 
-```{r makeebbelsfig,echo=F,include=T,warning=F,message=F}
-# Not clear if data should be open here - so we skip this once figure is done
-# output of this chunk is not included - we display the saved plot instead
-readebbels <-1
-if(readebbels==1){
-df <- read_csv("data/ebbelsdata.csv")
-#turn predictors into factors
-df$type <- factor(df$type)
-df$time <- factor (df$time)
-df$time <- relevel(df$time, "pre-intervention")
-df$ID <- factor(df$ID)
-df$Term <- factor(df$Term)
-df$SLT<-factor(df$SLT)
-levels(df$time)<-c("Pre","Post")
-levels(df$type)<-c("Untrained","Trained")
-#individual plots
-eplot<- ggplot(df, aes(x = time, y = score, group = type, linetype=type, colour=type)) +
-  geom_smooth(method = "lm", se = FALSE) +
-  geom_point(alpha = 0.8, size = 1) +
-  xlab("Intervention")+
-  ylab("% Correct")+
-  facet_grid (ID~Term) +
-  theme_bw() +
-  theme(axis.text.y = element_text(size=6))+
-  scale_linetype_manual( values=c("solid", "solid")) +
-  scale_colour_manual (values=c("grey", "blue"))
 
-
-eplot
-ggsave("images/Ebbels.png", units="in", width=5, height=4, dpi=300)
-}
-```
 
 ```{r ebbelsfig,echo=F,include=T,warning=F,message=F,fig.cap = "Individual results for targets and controls at each term (Redrawn Fig 3 from Leniston & Ebbels, data kindly provided by Susan Ebbels)",out.width="75%"}
 knitr::include_graphics("images/Ebbels.png")
+#fig was created with makeebbels
 
 ```
 
