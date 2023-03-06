@@ -12,7 +12,7 @@ link-citations: true
 description: Introduction to methods for evaluating effectiveness of non-medical interventions
 ---
 
-```{r echo=F}
+```{r echo=F,include=F}
 require(bookdown)
 require(bookdownplus)
 library(kableExtra)

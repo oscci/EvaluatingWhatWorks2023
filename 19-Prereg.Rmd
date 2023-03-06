@@ -23,7 +23,7 @@ _Manuscripts should be evaluated solely on the basis of their relevance and thei
 
 37 years later, Chris Chambers independently came to the same conclusion. In his editorial role at the journal Cortex, he introduced a new publishing initiative adopting this model, which was heralded by an [open letter in the Guardian newspaper](https://www.theguardian.com/science/blog/2013/jun/05/trust-in-science-study-pre-registration). The registered report is a specific type of journal article that embraces pre-registration as one element of the process; crucially, peer review occurs before data is collected.
 
-```{r RRcompare, fig.align="center", echo=FALSE, fig.cap="Comparison of stages in regular publishing model and Registered Reports"}
+```{r RRcompare, fig.align="center", echo=FALSE, fig.cap="Comparison of stages in regular publishing model and Registered Reports",out.width="75%"}
 knitr::include_graphics("images/RR_compare_regularpublishing.jpg")
 ```
 

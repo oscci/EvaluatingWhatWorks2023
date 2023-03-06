@@ -98,14 +98,14 @@ The MEff statistic was developed in the field of genetics by @cheverud2001. It i
 
 @bishop2023 provided a lookup table of modified alpha levels based on MEff according to the average correlation between sets of outcome measures. Part of this table is reproduced here as Table \@ref(tab:MEff-alphas). 
 
-```{r MEff-alphas,echo=F, message=FALSE, results='asis', warnings=FALSE}
+```{r MEff-alphas,echo=F, message=FALSE, results='asis', warnings=FALSE,out.width="75%"}
 options(kableExtra.html.bsTable = T)
 meff<-read.csv('Data/Meff_alphas.csv')
 meff<-meff[,c(1,2,4,6,8,10,12)]
 knitr::kable(meff,escape = F, align = "c", booktabs = T, caption = 'Adjusted alphas for multiple (N) correlated variables to achieve false positive rate of 1 in 20') %>%
   kable_styling(c("striped", "bordered"), latex_options = "striped", full_width = F) %>%
   column_spec(1:1, bold = T) %>%
-  column_spec(1:7,width = "9em") %>%
+  column_spec(1:7,width = "5em") %>%
   add_header_above(c(" ","N outcomes" = 6))
 
 ```

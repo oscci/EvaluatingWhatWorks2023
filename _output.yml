@@ -14,11 +14,7 @@ rmd_files: ["index.Rmd", "01-intro.rmd", "02-Clinical-observations.Rmd",
 "11-phacking.Rmd", "12-RCT.rmd", "13-Drawbacks.Rmd",
 "14-Adaptive.Rmd", "15-Cluster.rmd", "16-Crossover.Rmd",
 "17-Single.Rmd", "18-Pubbias.rmd", "19-Prereg.Rmd",
-"20-Litrev.Rmd", "21-Protocol.rmd"]
-bookdown::pdf_book:
-  includes:
-    in_header: preamble.tex
-  citation_package: natbib
-  keep_tex: yes
+"20-Litrev.Rmd", "21-protocol.rmd","22-endmatter.Rmd"]
+bookdown::pdf_book: default
 bookdown::epub_book: default
 bookdown::html_book: default

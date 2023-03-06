@@ -3,7 +3,7 @@
 ```{r packages-13,echo=F,warning=F,message=F}
 library(knitr)
 #library(kableExtra)
-library(flextable)
+
 options(kableExtra.html.bsTable = T)
 ```
 `r knitr::include_graphics("images/logo_alone_new.png")`
@@ -32,11 +32,11 @@ In the clinical RCT setting, the potential mismatch between "ideal" and "real-wo
  
  
  
-```{r diffeff,echo=FALSE,message=FALSE,warning=FALSE,tab.cap="Efficacy vs Efficiency trials"}
+```{r diffeff,echo=FALSE,message=FALSE,warning=FALSE,tab.cap="Efficacy vs Efficiency trials",out.width="75%"}
 library(tidyverse)
 library(knitr)
 library(kableExtra)
-library(flextable)
+
 options(kableExtra.html.bsTable = T)
 
 dt <- matrix(c('Question',	'Does the intervention work under ideal circumstances?',	'Does the intervention work in real-world practice?',
@@ -48,16 +48,8 @@ dt <- matrix(c('Question',	'Does the intervention work under ideal circumstances
 dt <- as.data.frame(dt)
 colnames(dt) <- c(' ','Efficacy/Explanatory study',	'Effectiveness/Pragmatic study')
 
-mytab1 <- flextable(dt)
-mytab1 <- theme_box(mytab1)
-mytab1 <- align( mytab1, align = "left", part = "all" )
-mytab1 <- autofit(mytab1)
-mytab1 <- bold(mytab1, j = " ")
-mytab1 <- bold(mytab1, part = "header")
-mytab1
-
-# knitr::kable(dt,escape = F, align = "c", booktabs = T, caption = 'Differences between efficacy and effectiveness studies') %>%
-#   kable_styling(c("striped", "bordered"), latex_options = "striped", full_width = F)
+knitr::kable(dt,escape = F, align = "c", booktabs = T, caption = 'Differences between efficacy and effectiveness studies') %>%
+   kable_styling(c("striped", "bordered"), latex_options = "striped", full_width = F)
 
 ``` 
  
@@ -66,25 +58,25 @@ Explanatory trials (efficacy) are the most familiar trial design that is typical
 Pragmatic trials (effectiveness) are designed to assess interventions in a naturalistic setting which will be a far less controlled environment. In this type of trial, the intervention may differ slightly depending on the setting and patient requirement. This differs from an explanatory trial which will typically compare against a placebo condition. The pragmatic trial will also collect a range of measures that are more patient-focused rather than a biological or behavioural marker.
 
 Table \@ref(tab:steps-porz) is reproduced from @porzsolt2015, who described the 13 steps to assessing efficacy and effectiveness.
- <!---#I tweaked the flextable code as it had bugs but I'm not sure we need this table- or if we do, more explanation may be needed-->
+
  
 
-```{r steps-porz,echo=FALSE,message=FALSE,warning=FALSE}
+```{r steps-porz,echo=FALSE,message=FALSE,warning=FALSE,out.width="75%"}
 options(kableExtra.html.bsTable = T)
 dt13 <- matrix(c(
-'(1)',	'Phrase the primary and secondary study questions according to the principles of evidence-based medicine','',
-'(2)',	'Distinguish between primary and secondary outcomes of the study','',
-'(3)',	'Define inclusion criteria','',
+'(1)',	'Phrase the primary and secondary study questions according to the principles of evidence-based medicine','-',
+'(2)',	'Distinguish between primary and secondary outcomes of the study','-',
+'(3)',	'Define inclusion criteria','-',
 '(4)',	'Define exclusion criteria', 'Define any important risk factors related to any of the primary outcomes',
 '(5)',	'Define treatment options',	'Identify the most frequently used treatments from existing database',
 '(6)',	'Define appropriate study design according to primary study questions (superiority or equivalence or noninferiority study) and set the limits for each study type',	'Any pragmatic trial is a descriptive trial. There is only one common design for descriptive trials. Mention 95% CI',
 '(7)',	'Define the hypothesis (expected difference of experimental and control), mention α-/β-error, calculate the needed number of patients to confirm the hypothesis', 'Any of the selected individual treatments is considered the best possible treatment (in the individual situation for the individual patient)',
 '(8)',	'Ask eligible patients to sign informed consent for randomization, evaluation, and publication of data', 'Ask eligible patients to sign informed consent for evaluation and publication of data',
 '(9)',	'Allocate the patients randomly to the treatment options of the trial',	'Allocate patients to treatment options according to individual preferences and results of shared decision making',
-'(10)', 'Guarantee follow-up long enough to detect outcomes and most of the adverse effects','',
+'(10)', 'Guarantee follow-up long enough to detect outcomes and most of the adverse effects','-',
 '(11)', 'Compare the results of the randomized groups',	'Compare only results of groups with identical baseline risks (ie, stratified according to high, intermediate, and low risk). Include results of the “any other treatment” group for specificity control',
 '(12)', 'Apply the intent-to-treat (ITT) principle according to step (9)', 'Application of the ITT principle is not necessary as the risk groups were stratified',
-'(13)', 'Confirm statistical significance only if clinical effect is relevant (save statistical energy)',''),ncol=3,byrow=TRUE)
+'(13)', 'Confirm statistical significance only if clinical effect is relevant (save statistical energy)','-'),ncol=3,byrow=TRUE)
 
 dt13 <- as.data.frame(dt13)
 colnames(dt13) <- c('Step',	'Explanatory (ideal conditions)',	'Pragmatic (real-world health care)')
@@ -116,7 +108,7 @@ To illustrate this point, consider Figure \@ref(fig:interventionhet), which show
 
 
 
-```{r interventionhet, echo=FALSE,message=FALSE,warning=FALSE,fig.cap="Data on body weight in chicks givn a new diet (Intervention) or regular diet (Control). Average linear regression lines of intervention and controls group line is shown as solid black and dotted lines respectively."}
+```{r interventionhet, echo=FALSE,message=FALSE,warning=FALSE,fig.cap="Data on body weight in chicks givn a new diet (Intervention) or regular diet (Control). Average linear regression lines of intervention and controls group line is shown as solid black and dotted lines respectively.",out.width="75%"}
 library(ggplot2)
 library(forcats)
  

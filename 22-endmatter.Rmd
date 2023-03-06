@@ -1,0 +1,3 @@
+#	References and resources {#endmatter}
+`r knitr::include_graphics("images/logo_alone_new.png")`
+

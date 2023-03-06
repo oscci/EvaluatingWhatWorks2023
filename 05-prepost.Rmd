@@ -13,7 +13,7 @@ library(knitr)
 
 At first glance, assessing an intervention seems easy. Having used the information in Chapter \@ref(reliability) to select appropriate measures, you administer these to a group of people before starting the intervention, and again after it is completed, and then look to see if there has been meaningful change. This is what we call a pre-post design, and it almost always gives a misleadingly rosy impression of how effective the intervention is. The limitations of such studies have been well-understood in medicine for decades, yet in other fields they persist, perhaps because the problems are not immediately obvious.  
 
-```{r trogchangedata,echo=FALSE,message=FALSE,warning=FALSE,fig.cap='TROG data from a study conducted by Bishop et al 2006',fig.width=8,fig.height=4}
+```{r trogchangedata,echo=FALSE,message=FALSE,warning=FALSE,fig.cap='TROG data from a study conducted by Bishop et al 2006',fig.width=8,fig.height=4,out.width="75%"}
 require(reshape2)
 # Data for means and SD from the article, time 1 and time 2 TROG
 # First block, commented out, includes data from 'dropout' cases - originally plotted these as well
@@ -85,7 +85,7 @@ Perhaps the easiest way to get a grasp of what it entails is to suppose we had a
 Cognitive test scores are interesting here because they are typically thought of comprising two parts: a "true" score, which reflects how good you really are at whatever is being measured, and an "error" score, which reflects random influences. Suppose, for instance, that you test a child's reading ability. In practice, the child is a very good reader, in the top 10% for her age, but the exact number of words she gets right will depend on all sorts of things: the particular words selected for the test (she may know "catacomb" but not "pharynx"), the mood she is in on the day, whether she is lucky or unlucky at guessing at words she is uncertain about. All these factors would be implicated in the "error" score, which is treated just like an additional chance factor or throw of the dice affecting a test score.  A good test is mostly determined by the "true" score, with only a very small contribution of an "error" score, and we can identify it by the fact that children will be ranked by the test in a very similar way from one test occasion to the next, i.e. there will be good test-retest reliability.  In other words, the correlation from time 1 to time 2 will be high.  
 
 
-```{r reg2mean,echo=FALSE, fig.cap='Simulated test scores for 240 children on tests varying in reliability. In each case individuals are colour-coded depending on whether they are given a test of low (.2), medium (.5) or high (.8) test-retest reliability. The simulations assume there is no effect of intervention , maturation or practice.'}
+```{r reg2mean,echo=FALSE, fig.cap='Simulated test scores for 240 children on tests varying in reliability. In each case individuals are colour-coded depending on whether they are given a test of low (.2), medium (.5) or high (.8) test-retest reliability. The simulations assume there is no effect of intervention , maturation or practice.',out.width="80%"}
 set.seed(12)
 makecordat <- function(myN,mycor) {
   #mycor correlation between time 1 and time 2. ie test-retest reliability

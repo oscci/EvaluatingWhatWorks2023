@@ -27,7 +27,7 @@ library(knitr)
 In some situations, allocation of intervention can be problematic due to pragmatic constraints; for example, for a whole-class intervention, it may be disruptive to split students within each class into intervention and control groups. A potential solution is to use cluster trials, where the allocation to intervention is performed at the group level. We can designate clusters that would naturally occur together, for example, school classes, patients under the care of a particular medical practice or a specific therapist, or perhaps by geographic location (county, district or NHS trust). Figure \@ref(fig:cluster-diag) illustrates the logic. 
 
 
-```{r, cluster-diag,echo=FALSE,warning=F,message=F,fig.cap='In the Individual RCT, location is irrelevant and cases are assigned to intervention at random. In the Cluster RCT, there are four geographical clusters, two of which are randomly assigned to each intervention group'}
+```{r, cluster-diag,echo=FALSE,warning=F,message=F,fig.cap='In the Individual RCT, location is irrelevant and cases are assigned to intervention at random. In the Cluster RCT, there are four geographical clusters, two of which are randomly assigned to each intervention group',out.width="75%"}
   library(ggplot2)
 library(ggimage)
 library(maptools)

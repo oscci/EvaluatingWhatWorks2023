@@ -7,7 +7,7 @@
 Most of us are familiar with the placebo effect in medicine: the finding that patients can show improvement in their condition even if given an inert sugar pill. There is much debate about the nature of placebo effects – whether they are mostly due to the systematic changes discussed in  Chapter \@ref(observations), or something else. They are thought to operate in cognitive and behavioural interventions as well: communication may improve in a person with aphasia because they have the attention of a sympathetic professional, rather than because of anything that professional does. And children may grow in confidence because they are made to feel valued and special by the therapist. 
 
 
-```{r placebotab, echo = FALSE, message = FALSE, warning = FALSE, fig.cap = 'Placebo effect in a three-arm parallel group trial', fig.width = 8, fig.height = 5}
+```{r placebotab, echo = FALSE, message = FALSE, warning = FALSE, fig.cap = 'Placebo effect in a three-arm parallel group trial', fig.width = 8, fig.height = 5,out.width="75%"}
 
 library(tidyverse)
 plc_dat <- data.frame(Group=c(rep('No treatment',4),rep('Placebo',40),rep('Intervention',70)))
