@@ -2,14 +2,15 @@
 title: "Evaluating What Works"
 author: "Dorothy V M Bishop and Paul A Thompson"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
-site: bookdown::bookdown_site
+output: pdf_document
 documentclass: book
 bibliography:
 - book.bib
 - packages.bib
 csl: apa.csl
-link-citations: true
+link-citations: yes
 description: Introduction to methods for evaluating effectiveness of non-medical interventions
+site: bookdown::bookdown_site
 ---
 
 ```{r echo=F,include=F}
@@ -21,14 +22,14 @@ library(knitr)
 
 # Preface {-}
 <!---- for include_image you need bookdownplus package. This was problematic so I now have the include_graphics version-->
-\markboth{Preface}{} <!---- from stack overflow - attempt to fix problem with bookdown missing chapter headings, not sure if it works -->
-\vspace{0.1in}
+
+
 <!---- Useful information on bibtext formatting from Zotero is here: https://retorque.re/zotero-better-bibtex/citing/ -->
 <center>
 `r knitr::include_graphics("images/logo_alone_new.png")`
 </center>
 
-\vspace{0.1in}
+
 
 
 ## Why did we write this book? {-}

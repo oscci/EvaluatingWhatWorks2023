@@ -1,3 +1,4 @@
+
 # Pre-registration and Registered Reports {#prereg}  
 
 `r knitr::include_graphics("images/logo_alone_new.png")`
