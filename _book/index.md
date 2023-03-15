@@ -1,40 +1,30 @@
 --- 
 title: "Evaluating What Works"
 author: "Dorothy V M Bishop and Paul A Thompson"
-date: "March 05, 2023"
-site: bookdown::bookdown_site
+date: "March 15, 2023"
+output: pdf_document
 documentclass: book
 bibliography:
 - book.bib
 - packages.bib
-biblio-style: apalike
-link-citations: true
+csl: apa.csl
+link-citations: yes
 description: Introduction to methods for evaluating effectiveness of non-medical interventions
+site: bookdown::bookdown_site
 ---
 
 
-```
-## Loading required package: bookdown
-```
-
-```
-## Loading required package: bookdownplus
-```
-
-```
-## Warning: package 'knitr' was built under R version 4.0.5
-```
 
 # Preface {-}
 <!---- for include_image you need bookdownplus package. This was problematic so I now have the include_graphics version-->
-\markboth{Preface}{} <!---- from stack overflow - attempt to fix problem with bookdown missing chapter headings, not sure if it works -->
-\vspace{0.1in}
+
+
 <!---- Useful information on bibtext formatting from Zotero is here: https://retorque.re/zotero-better-bibtex/citing/ -->
 <center>
 <img src="images/logo_alone_new.png" width="143" />
 </center>
 
-\vspace{0.1in}
+
 
 
 ## Why did we write this book? {-}
@@ -64,7 +54,7 @@ We owe a huge debt of gratitude to Yihue Xie, whose work developing the [_bookdo
 Our thanks also to James Pustejovsky whose recommendations were helpful in relation to single case designs. 
 
 ## Feedback and contributions {-}
-One of the good things about an online book is that it can remain a work in progress for some time, giving readers the opportunity to provide suggestions and corrections. We can't guarantee to respond promptly (DVB is retired and PT has a demanding job!), but we encourage readers familiar with github to send pull requests with suggestions for changes, 
+One of the good things about an online book is that it can remain a work in progress for some time, giving readers the opportunity to provide suggestions and corrections. We can't guarantee to respond promptly (DVB is retired and PT has a demanding job!), but we would be extremely grateful to anyone who lets us know of any errors in the book. We encourage readers familiar with github to send pull requests with suggestions for changes, and others to contact us by email. 
 
 
 
