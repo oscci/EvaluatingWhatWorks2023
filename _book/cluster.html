@@ -23,7 +23,7 @@
 <meta name="author" content="Dorothy V M Bishop and Paul A Thompson" />
 
 
-<meta name="date" content="2023-03-15" />
+<meta name="date" content="2023-03-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -183,8 +183,9 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="9.1" data-path="dropouts.html"><a href="dropouts.html#who-volunteers-for-research"><i class="fa fa-check"></i><b>9.1</b> Who volunteers for research?</a></li>
 <li class="chapter" data-level="9.2" data-path="dropouts.html"><a href="dropouts.html#dropouts-after-recruitment-intention-to-treat-analysis"><i class="fa fa-check"></i><b>9.2</b> Dropouts after recruitment: Intention to treat analysis</a></li>
-<li class="chapter" data-level="9.3" data-path="dropouts.html"><a href="dropouts.html#missing-data"><i class="fa fa-check"></i><b>9.3</b> Missing data</a></li>
-<li class="chapter" data-level="9.4" data-path="dropouts.html"><a href="dropouts.html#class-exercise-8"><i class="fa fa-check"></i><b>9.4</b> Class exercise</a></li>
+<li class="chapter" data-level="9.3" data-path="dropouts.html"><a href="dropouts.html#instrumental-variable-analysis"><i class="fa fa-check"></i><b>9.3</b> Instrumental Variable analysis</a></li>
+<li class="chapter" data-level="9.4" data-path="dropouts.html"><a href="dropouts.html#missing-data"><i class="fa fa-check"></i><b>9.4</b> Missing data</a></li>
+<li class="chapter" data-level="9.5" data-path="dropouts.html"><a href="dropouts.html#class-exercise-8"><i class="fa fa-check"></i><b>9.5</b> Class exercise</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="power.html"><a href="power.html"><i class="fa fa-check"></i><b>10</b> How big a sample do I need? Sampling, statistical power and type II errors</a>
 <ul>
@@ -361,7 +362,7 @@ Figure 16.1: In the Individual RCT, location is irrelevant and cases are assigne
 <h2><span class="header-section-number">16.3</span> Disadvantages of a cluster design<a href="cluster.html#disadvantages-of-a-cluster-design" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The benefits of the clustered design are counteracted by some serious disadvantages. First of all, a clustered trial is far less efficient than a regular trial, because the unit of analysis is the cluster rather than the individual. Accordingly, much larger samples are needed to attain adequate power.</p>
 <p>It may not be obvious why clustering should require a different analytic approach, and indeed, the literature does contain trials which have been analysed as if they were regular trials, even though the data are clearly clustered. The problem is that clustering introduces confounds. For instance, if we have classrooms as clusters, then all the children in one class are taught by the same teacher. They are also likely to be more similar within a cluster than between clusters on variables such as social background. This reduces variability within a cluster. Previously, we have regarded reduced variability as a good thing, as it helps pick out an intervention effect from a background of noise. But in this case, it is a bad thing, because it is confounded with the intervention effect, and may make it seem larger than it is. For instance, if we just had a study where all the children in school A had intervention 1, and all of those in school B had intervention 2, then if we find children in school A did better than those in school B, this is hard to interpret. It could just be that teaching is better in school A, regardless of the intervention.</p>
-<p>Statisticians have developed sophisticated methods of analysis for dealing with the dependency among individuals within the same cluster <span class="citation">(<a href="#ref-campbell2014">Campbell &amp; Walters, 2014</a>)</span>. It is worth taking advice from a statistician if you are contemplating doing such a trial.</p>
+<p>Statisticians have developed sophisticated methods of analysis for dealing with the dependency among individuals within the same cluster <span class="citation">(<a href="#ref-campbell2014">Campbell &amp; Walters, 2014</a>)</span>. It is worth taking advice from a statistician if you are contemplating doing such a trial. For a detailed account of methods, see <span class="citation">Gelman &amp; Hill (<a href="#ref-gelman2007">2007</a>)</span>.</p>
 </div>
 <div id="class-exercise-14" class="section level2 hasAnchor" number="16.4">
 <h2><span class="header-section-number">16.4</span> Class exercise<a href="cluster.html#class-exercise-14" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -391,6 +392,9 @@ This one looks v relevant but it's not so easy to find a free version online: Ne
 <div id="refs" class="references csl-bib-body hanging-indent" line-spacing="2">
 <div id="ref-campbell2014" class="csl-entry">
 Campbell, M., &amp; Walters, S. (2014). <em>How to <span>Design</span>, <span>Analyse</span> and <span>Report Cluster Randomised Trials</span> in <span>Medicine</span> and <span>Health Related Research</span>.</em> <span>Wiley</span>.
+</div>
+<div id="ref-gelman2007" class="csl-entry">
+Gelman, A., &amp; Hill, J. (2007). <em>Data <span>Analysis Using Regression</span> and <span>Multilevel</span>/<span>Hierarchical Models</span> (<span>Analytical Methods</span> for <span>Social Research</span>)</em>. <span>Cambridge University Press</span>.
 </div>
 </div>
             </section>
