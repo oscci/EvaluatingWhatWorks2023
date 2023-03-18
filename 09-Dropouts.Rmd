@@ -32,7 +32,13 @@ It's instructive to look at the results from the little study by @bishop2006, wh
 Nevertheless, if we only do an "intention-to-treat" analysis, then we lose an opportunity to learn more about the intervention. We would always complement it with an analysis of the drop-outs. Did they look different at baseline? Do we know why they dropped out? And what were their outcomes? For our comprehension study, this analysis gave a salutary message. The drop-outs showed substantial improvement on the outcome comprehension test, despite not having completed the intervention. This provides a clear example of how scores can change with practice on the test and regression to the mean (see Chapter \@ref(nonspecific)).
 
 ## Instrumental Variable analysis  
-A clever technique known as Instrumental Variable analysis can be used to obtain a more accurate estimate of an intervention effect when there are dropouts and/or control cases who received intervention, provided we can assess their outcomes. In effect, we do the analysis comparing those who did and did not actually do the intervention, but we adjust scores to take into account which group they were assigned to. This involves a two-step regression procedure which is illustrated by @huang2018, who also gives a very clear explanation of the logic. The Instrumental Variable analysis gives a more accurate estimate of the intervention effect than the Intention to Treat analysis, without introducing the bias that occurs if we use a per protocol analysis. 
+A clever technique known as Instrumental Variable analysis can be used to obtain a more accurate estimate of an intervention effect when there are dropouts and/or control cases who received intervention, provided we can assess their outcomes. In effect, we do the analysis comparing those who did and did not actually do the intervention, but we adjust scores to take into account which group they were assigned to. This involves a two-step regression procedure which is illustrated by @huang2018, who also gives a very clear explanation of the logic. The Instrumental Variable analysis gives a more accurate estimate of the intervention effect than the Intention to Treat analysis, without introducing the bias that occurs if we use a per protocol analysis.
+
+```{r IVfig, echo=F,fig.cap = "Path diagram of the instrumental variable approach",out.width="60%"}
+knitr::include_graphics("images/IV1.jpg")
+``` 
+
+Suppose we have ran a trial that tests a particular intervention, we might find that not everyone conformed to the intervention, perhaps not attending all sessions. We can include attendance as a instrumental variable and get an adjusted estimate of our intervention effect on that basis (Figure \@ref(fig:IVfig)). The important thing to keep in mind here is that the instrumental variable is likely correlated to the intervention but not the outcome. 
 
 ## Missing data  
 People who drop out of trials are one source of missing data, but most trials will also have cases where just a subset of measures is missing. There are numerous reasons for this: an assessment session may have over-run, test materials may have been lost, a computer may have crashed at a key moment, an experimenter may have forgotten to record a result, or a participant may have been too tired, unwell, impatient or anxious to continue. 
@@ -60,7 +66,7 @@ Use of this flow chart has become standard in medical trials, because it helps c
 
 Find an intervention study in the published literature which does not include a flow diagram, and see how much of the information in the flow chart can be completed by reading the Methods section. (The Imhof et al study can also be used for this exercise).
 
-3. A researcher decides to evaluate a app-based vocabulary training game in three classrooms of 7-year-old London schoolchildren. Children are given the app and asked to play the game on their phones every day for five days. Data is automatically transferred to the researcher at the end of each day. At the end of the week, the researcher has:  
+3. A researcher decides to evaluate an app-based vocabulary training game in three classrooms of 7-year-old London schoolchildren. Children are given the app and asked to play the game on their phones every day for five days. Data is automatically transferred to the researcher at the end of each day. At the end of the week, the researcher has:  
 - 90 full datasets  
 - 4 datasets that have no data for any days  
 - 6 dataset that are missing data for between 2-4 days.  
