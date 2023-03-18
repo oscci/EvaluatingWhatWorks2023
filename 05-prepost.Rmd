@@ -136,8 +136,8 @@ So regression to the mean is a real issue in longitudinal and intervention studi
 
 ## Class exercise
 
-Identify an intervention study on a topic of interest to you – you could do this by scanning through a journal, or by typing relevant keywords into a database such as Google Scholar, Web of Science or Scopus. If you are not sure how to do this, your librarian should be able to advise. It is important that the published article is available so you can read the detailed account. If an article is behind a paywall, you can usually obtain a copy by emailing the corresponding author.  
+1. Identify an intervention study on a topic of interest to you – you could do this by scanning through a journal, or by typing relevant keywords into a database such as Google Scholar, Web of Science or Scopus. If you are not sure how to do this, your librarian should be able to advise. It is important that the published article is available so you can read the detailed account. If an article is behind a paywall, you can usually obtain a copy by emailing the corresponding author.  
 
 Your task is to evaluate the article in terms of how well it addresses the systematic biases covered in this chapter. Are the results likely to be affected by spontaneous improvement, practice effects, or regression to the mean? Does the study design control for these? Note that for this exercise you are not required to evaluate the statistical analysis: the answers to these questions depend just on how the study was designed.  
 
-
+2. [This website](https://www.andifugard.info/regression-to-the-mean/) is an explainer for regression to the mean. It links to an app where you can play with settings of sample size, reliability and sample selection criteria. Loads the app and try to predict in advance how the results will be affected as you use the sliders to change the variables. 
