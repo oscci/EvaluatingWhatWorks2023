@@ -108,7 +108,7 @@ To illustrate this point, consider Figure \@ref(fig:interventionhet), which show
 
 
 
-```{r interventionhet, echo=FALSE,message=FALSE,warning=FALSE,fig.cap="Data on body weight in chicks givn a new diet (Intervention) or regular diet (Control). Average linear regression lines of intervention and controls group line is shown as solid black and dotted lines respectively.",out.width="75%"}
+```{r interventionhet, echo=FALSE,message=FALSE,warning=FALSE,fig.cap="Data on body weight in chicks given a new diet (Intervention) or regular diet (Control). Average linear regression lines of intervention and controls group line is shown as solid black and dotted lines respectively.",out.width="75%"}
 library(ggplot2)
 library(forcats)
  
