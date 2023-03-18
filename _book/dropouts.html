@@ -23,7 +23,7 @@
 <meta name="author" content="Dorothy V M Bishop and Paul A Thompson" />
 
 
-<meta name="date" content="2023-03-16" />
+<meta name="date" content="2023-03-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -105,6 +105,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#what-is-covered"><i class="fa fa-check"></i>What is covered?</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#feedback-and-contributions"><i class="fa fa-check"></i>Feedback and contributions</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#license"><i class="fa fa-check"></i>License</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
 <ul>
@@ -366,6 +367,13 @@ div.csl-indent {
 <div id="instrumental-variable-analysis" class="section level2 hasAnchor" number="9.3">
 <h2><span class="header-section-number">9.3</span> Instrumental Variable analysis<a href="dropouts.html#instrumental-variable-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A clever technique known as Instrumental Variable analysis can be used to obtain a more accurate estimate of an intervention effect when there are dropouts and/or control cases who received intervention, provided we can assess their outcomes. In effect, we do the analysis comparing those who did and did not actually do the intervention, but we adjust scores to take into account which group they were assigned to. This involves a two-step regression procedure which is illustrated by <span class="citation">Huang (<a href="#ref-huang2018">2018</a>)</span>, who also gives a very clear explanation of the logic. The Instrumental Variable analysis gives a more accurate estimate of the intervention effect than the Intention to Treat analysis, without introducing the bias that occurs if we use a per protocol analysis.</p>
+<div class="figure"><span style="display:block;" id="fig:IVfig"></span>
+<img src="images/IV1.JPG" alt="Path diagram of the instrumental variable approach" width="60%" />
+<p class="caption">
+Figure 9.1: Path diagram of the instrumental variable approach
+</p>
+</div>
+<p>Suppose we have ran a trial that tests a particular intervention, we might find that not everyone conformed to the intervention, perhaps not attending all sessions. We can include attendance as a instrumental variable and get an adjusted estimate of our intervention effect on that basis (Figure <a href="dropouts.html#fig:IVfig">9.1</a>). The important thing to keep in mind here is that the instrumental variable is likely correlated to the intervention but not the outcome.</p>
 </div>
 <div id="missing-data" class="section level2 hasAnchor" number="9.4">
 <h2><span class="header-section-number">9.4</span> Missing data<a href="dropouts.html#missing-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -373,8 +381,14 @@ div.csl-indent {
 In the past, it was common for people to just drop missing data, but, just as with participant dropouts, this can create bias. In addition, some statistical methods require complete data for all participants, and it seems wasteful to drop a case when only part of the data is absent.
 Statisticians have devised a range of methods for handling missing data, typically using a method known as imputation, where missing data points are estimated from the existing data <span class="citation">(<a href="#ref-rioux2021">Rioux &amp; Little, 2021</a>)</span>. How this is done depends on the underlying reason for what statisticians term “missingness”.
 The easiest case to deal with is when it is completely random whether data are missing or not. The examples above where the missingness is caused by the experimenter or equipment - a crashed computer, forgotten recording, or suchlike - might feasibly be regarded as random. But where the missingness is down to something about the participant - for instance, refusal or inability to co-operate with an assessment - this is not random. And other situations may also be affected by the participant, even when this is less obvious. So if the session was not completed in available time, was this because the participant was slow to respond or distractible, or was it because of an external cause, such as a fire alarm?<br />
-Imputation typically involves estimating a predicted score from the available data. For instance, in the full dataset, an outcome measure may be predicted from baseline scores, age and socio-economic status. We can use this information to create predicted outcomes for those who have missing data. This method, however, can create problems, because it gives the “best” estimate of the missing data, and will underestimate the variability of outcome scores. As explained by <span class="citation">Van Buren (<a href="#ref-vanburen2018">2018</a>)</span>, it is preferable to use an approach called multiple imputation, where several imputed datasets are created, each incorporating some random noise in the prediction. Statistical analysis is run for each imputed dataset, and the results are then pooled to give a final estimate of the intervention effect. This is computationally demanding, especially for large datasets, but is a way of ensuring all the available data is used in an analysis, while minimizing bias. With modern computers it is tractable, and computer packages exist to handle the technical details.
-What about the case where the missing data is not random? Then one really needs to think through the logic of each individual situation. For instance, suppose we have an assessment such as The Test of Word Reading Efficiency <span class="citation">(<a href="#ref-torgesen1999">Torgesen et al., 1999</a>)</span>, where a pretest is used to familiarise the child with the task and check if they can read very simple words or nonwords. If the child can’t read any items in the pretest, then the assessment is terminated. There is no standard score, but in this case, it is reasonable to assign a score at the test floor. Consider another case where children from one classroom have missing data on a reading assessment because the teacher did not wish to test the children. In such a case, the best option may be to use imputation, based on data from other assessments.</p>
+Imputation typically involves estimating a predicted score from the available data. For instance, in the full dataset, an outcome measure may be predicted from baseline scores, age and socio-economic status. We can use this information to create predicted outcomes for those who have missing data. This method, however, can create problems, because it gives the “best” estimate of the missing data, and will underestimate the variability of outcome scores. As explained by <span class="citation">Van Buuren (<a href="#ref-vanbuuren2018">2018</a>)</span>, it is preferable to use an approach called multiple imputation, where several imputed datasets are created, each incorporating some random noise in the prediction. Statistical analysis is run for each imputed dataset, and the results are then pooled to give a final estimate of the intervention effect. Figure <a href="dropouts.html#fig:micefig">9.2</a> (based on image from <a href="https://data.library.virginia.edu/getting-started-with-multiple-imputation-in-r/">this website</a>) shows the stages of processing. This approach is computationally demanding, especially for large datasets, but is a way of ensuring all the available data is used in an analysis, while minimizing bias. With modern computers it is tractable, and computer packages exist to handle the technical details.</p>
+<div class="figure"><span style="display:block;" id="fig:micefig"></span>
+<img src="images/Mice_fig.jpg" alt="Schematic stages of multiple imputation: here 3 versions of the original dataset are generated with missing values imputed; the analysis is repeated for each version, and then the analysis results are pooled to give a single estimate of intervention effect" width="75%" />
+<p class="caption">
+Figure 9.2: Schematic stages of multiple imputation: here 3 versions of the original dataset are generated with missing values imputed; the analysis is repeated for each version, and then the analysis results are pooled to give a single estimate of intervention effect
+</p>
+</div>
+<p>What about the case where the missing data is not random? Then one really needs to think through the logic of each individual situation. For instance, suppose we have an assessment such as The Test of Word Reading Efficiency <span class="citation">(<a href="#ref-torgesen1999">Torgesen et al., 1999</a>)</span>, where a pretest is used to familiarise the child with the task and check if they can read very simple words or nonwords. If the child can’t read any items in the pretest, then the assessment is terminated. There is no standard score, but in this case, it is reasonable to assign a score at the test floor. Consider another case where children from one classroom have missing data on a reading assessment because the teacher did not wish to test the children. In such a case, the best option may be to use imputation, based on data from other assessments.</p>
 </div>
 <div id="class-exercise-8" class="section level2 hasAnchor" number="9.5">
 <h2><span class="header-section-number">9.5</span> Class exercise<a href="dropouts.html#class-exercise-8" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -386,7 +400,7 @@ Use of this flow chart has become standard in medical trials, because it helps c
 </ol>
 <p>Find an intervention study in the published literature which does not include a flow diagram, and see how much of the information in the flow chart can be completed by reading the Methods section. (The Imhof et al study can also be used for this exercise).</p>
 <ol start="3" style="list-style-type: decimal">
-<li>A researcher decides to evaluate a app-based vocabulary training game in three classrooms of 7-year-old London schoolchildren. Children are given the app and asked to play the game on their phones every day for five days. Data is automatically transferred to the researcher at the end of each day. At the end of the week, the researcher has:<br />
+<li>A researcher decides to evaluate an app-based vocabulary training game in three classrooms of 7-year-old London schoolchildren. Children are given the app and asked to play the game on their phones every day for five days. Data is automatically transferred to the researcher at the end of each day. At the end of the week, the researcher has:<br />
 </li>
 </ol>
 <ul>
@@ -423,8 +437,8 @@ Rioux, C., &amp; Little, T. D. (2021). Missing data treatments in intervention s
 <div id="ref-torgesen1999" class="csl-entry">
 Torgesen, J. K., Wagner, R. K., &amp; Rashotte, C. A. (1999). <em>Test of <span>Word Reading Efficiency</span></em>. <span>Pro-Ed</span>.
 </div>
-<div id="ref-vanburen2018" class="csl-entry">
-Van Buren, S. (2018). <em>Flexible <span>Imputation</span> of <span>Missing Data</span>, 2nd edition (online book: <span class="nocase">https://stefvanbuuren.name/fimd/)</span></em>. <span>Chapman and Hall/CRC</span>.
+<div id="ref-vanbuuren2018" class="csl-entry">
+Van Buuren, S. (2018). <em>Flexible <span>Imputation</span> of <span>Missing Data</span>, 2nd edition (online book: <span class="nocase">https://stefvanbuuren.name/fimd/)</span></em>. <span>Chapman and Hall/CRC</span>.
 </div>
 </div>
             </section>
