@@ -1,3 +1,8 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 #	Can you trust the published literature? {#pubbias}  
  
 `r knitr::include_graphics("images/logo_alone_new.png")`
@@ -26,7 +31,7 @@ Figure \@ref(fig:devriesfig) shows how publication bias can work out in practice
     
     
     
-```{r devriesfig, echo=F, message=F, warning=F, fig.width=8,fig.height=4,fig.cap="The cumulative impact of reporting and citation biases on the evidence base for antidepressants. Bar (a) displays the initial, complete cohort of trials, while (b) through (e) show the cumulative effect of biases. Each circle indicates a trial, while the color indicates the results or the presence of spin. Circles connected by a grey line indicate trials that were published together in a pooled publication. In (e), the size of the circle indicates the (relative) number of citations received by that category of studies",out.width="85%"}
+```{r devriesfig, echo=F, message=F, warning=F, fig.width=8,fig.height=4,fig.cap="The cumulative impact of reporting and citation biases on the evidence base for antidepressants. Bar A displays the initial, complete cohort of trials, while B through E show the cumulative effect of biases. Each circle indicates a trial, while the color indicates the results or the presence of spin. Circles connected by a grey line indicate trials that were published together in a pooled publication. In E, the size of the circle indicates the relative number of citations received by that category of studies",out.width="80%"}
 knitr::include_graphics("images/devriesfig.jpg")
 ```
 

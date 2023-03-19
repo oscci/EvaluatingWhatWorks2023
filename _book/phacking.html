@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 11 False positives, p-hacking and multiple comparisons | Evaluating What Works</title>
   <meta name="description" content="Introduction to methods for evaluating effectiveness of non-medical interventions" />
-  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 11 False positives, p-hacking and multiple comparisons | Evaluating What Works" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Dorothy V M Bishop and Paul A Thompson" />
 
 
-<meta name="date" content="2023-03-18" />
+<meta name="date" content="2023-03-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -104,6 +104,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#who-is-this-book-for"><i class="fa fa-check"></i>Who is this book for?</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#what-is-covered"><i class="fa fa-check"></i>What is covered?</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#alternative-formats"><i class="fa fa-check"></i>Alternative formats</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#feedback-and-contributions"><i class="fa fa-check"></i>Feedback and contributions</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#license"><i class="fa fa-check"></i>License</a></li>
 </ul></li>
@@ -344,7 +345,7 @@ div.csl-indent {
 <!---Paul - I think this chapter was too complicated - particularly the material after the Bonferroni. Need to discuss how to handle it. It might be possible to simplify it further and just refer on to other sources. 
 I have substituted an alternative for the FDR/permutations material - see what you think.
 But I think the main thing is to get them to understand why p-hacking is a problem, and when you need to correct for multiple comparisons, without getting too bogged down in difficult stuff-->
-<p><img src="images/logo_alone_new.png" width="143" /></p>
+<p><img src="images/logo_alone_new.png" /><!-- --></p>
 <div id="type-i-error" class="section level2 hasAnchor" number="11.1">
 <h2><span class="header-section-number">11.1</span> Type I error<a href="phacking.html#type-i-error" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A <strong>Type I error</strong> is a <strong>false positive</strong>, which occurs when the null hypothesis is rejected but a true effect is not actually present. This would correspond to the situation where the evidence seems to indicate an intervention is effective, but in reality it is not. One useful mnemonic for distinguishing Type I and Type II errors is to think of the sequence of events in the fable of the boy who cried wolf. This boy lived in a remote village and he used to have fun running out to the farmers in the fields and shouting “Wolf! Wolf!” and watching them all get alarmed. The farmers were making an (understandable) Type I error, of concluding there was a wolf when in fact there was none. One day, however, a wolf turned up. The boy ran into the village shouting “Wolf! Wolf!” but nobody took any notice of him, because they were used to his tricks. Sadly, all the sheep got eaten because the villagers had made a Type II error, assuming there was no wolf when there really was one. This figure is really the same as Table 10.1 from the previous chapter, but redrawn in terms of wolves and sheep.</p>
@@ -379,6 +380,11 @@ But I think the main thing is to get them to understand why p-hacking is a probl
 <div id="adjusting-statistics-for-multiple-testing" class="section level2 hasAnchor" number="11.3">
 <h2><span class="header-section-number">11.3</span> Adjusting statistics for multiple testing<a href="phacking.html#adjusting-statistics-for-multiple-testing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>As noted above, even when we have a well-designed and adequately powered study, if we collect multiple outcome variables, or if we are applying multiple tests to the same data, then we increase our chance of finding a false positive. Remember that if we set <span class="math inline">\(\alpha\)</span> to .05 and apply <span class="math inline">\(k\)</span> tests to our data, then the probability of finding at least one false positive is given by <span class="math inline">\(1-(1-\alpha)^{k}\)</span>. This is officially known as the family-wise error rate (FWER).</p>
+<pre><code>## Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
+## ℹ Please use `linewidth` instead.
+## This warning is displayed once every 8 hours.
+## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+## generated.</code></pre>
 <div class="figure"><span style="display:block;" id="fig:familywise"></span>
 <img src="11-phacking_files/figure-html/familywise-1.png" alt="Plot of relationship between familywse error rate and number of statistical tests" width="80%" />
 <p class="caption">
@@ -805,7 +811,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["Evaluating What Works.pdf", "Evaluating What Works.epub"],
+"download": ["Evaluating What Works.epub"],
 "search": {
 "engine": "fuse",
 "options": null

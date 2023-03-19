@@ -2,7 +2,6 @@
 title: "Evaluating What Works"
 author: "Dorothy V M Bishop and Paul A Thompson"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
-output: pdf_document
 documentclass: book
 bibliography:
 - book.bib
@@ -12,6 +11,11 @@ link-citations: yes
 description: Introduction to methods for evaluating effectiveness of non-medical interventions
 site: bookdown::bookdown_site
 ---
+<center>
+`r knitr::include_graphics("images/logo_alone_new.png")`
+</center>
+
+# Preface {-}
 
 ```{r echo=F,include=F}
 require(bookdown)
@@ -19,16 +23,6 @@ require(bookdownplus)
 library(kableExtra)
 library(knitr)
 ```
-
-# Preface {-}
-<!---- for include_image you need bookdownplus package. This was problematic so I now have the include_graphics version-->
-
-
-<!---- Useful information on bibtext formatting from Zotero is here: https://retorque.re/zotero-better-bibtex/citing/ -->
-<center>
-`r knitr::include_graphics("images/logo_alone_new.png")`
-</center>
-
 
 
 
@@ -57,6 +51,9 @@ Intervention research is a branch of science, and you can't do good science with
 ## Acknowledgements {-}
 We owe a huge debt of gratitude to Yihue Xie, whose work developing the [_bookdown_ package](https://bookdown.org/) made this book possible. It is no exaggeration to say that we would not have attempted to write a book on this topic if we hadn't had _bookdown_ to make it easy. The book [ModernDive: Statistical Inference via Data Science](https://moderndive.com/) by Chester Ismay and Albert Y. Kim was also highly influential in demonstrating what could be done with _bookdown_, and we frequently visited their code to check out ideas for formatting and packaging information.  
 Our thanks also to James Pustejovsky whose recommendations were helpful in relation to single case designs. 
+
+## Alternative formats {-}
+We hope in future to have options for alternative formats of this book, but to date have not been able to create these. You can, however, make a portable copy of a chapter by typing CTRL+P and selecting either pdf for the output format, or sending the output to a printer. 
 
 ## Feedback and contributions {-}
 One of the good things about an online open source book is that it can remain a work in progress for some time, giving readers the opportunity to provide suggestions and corrections. We can't guarantee to respond promptly (DB is retired and PT has a demanding job!), but we would be extremely grateful to anyone who lets us know of any errors in the book, and we welcome suggestions for additional or alternative content. Our code is available [here](https://github.com/oscci/bookdown_2023) and we encourage readers familiar with Github to send pull requests with suggestions for changes; otherwise please contact us via bishopdeevy@gmail.com. 
