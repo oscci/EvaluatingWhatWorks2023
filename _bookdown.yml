@@ -1,9 +1,15 @@
-book_filename: "Evaluating What Works"
+book_filename: Evaluating-What-Works.md # knit-then-merge
 delete_merged_file: false
 new_session: yes
-rmd_files: ["index.Rmd", "01-intro.rmd", "02-ClinicalObs.Rmd","03-reliability.Rmd", "04-nonspecific.rmd", "05-prepost.Rmd","06-controls.rmd", "07-randomise.Rmd","08-Experimenter.Rmd", "09-Dropouts.rmd", "10-Power.Rmd","11-phacking.Rmd", "12-RCT.rmd", "13-Drawbacks.Rmd","14-Mediators.Rmd","15-Adaptive.Rmd", "16-Cluster.rmd", "17-Crossover.Rmd", "18-Single.Rmd", "19-Pubbias.rmd", "20-Prereg.Rmd", "21-Litrev.Rmd", "22-Protocol.rmd","23-endmatter.rmd"]
+rmd_files: ["index.Rmd", "01-intro.rmd", "02-ClinicalObs.Rmd","03-reliability.Rmd",
+"04-nonspecific.rmd", "05-prepost.Rmd" ,"06-controls.rmd" , "07-randomise.Rmd",
+ "08-Experimenter.Rmd", "09-Dropouts.rmd", "10-Power.Rmd","11-phacking.Rmd", "12-RCT.rmd",
+"13-Drawbacks.Rmd" ,
+"14-Mediators.Rmd","15-Adaptive.Rmd", "16-Cluster.rmd",
+"17-Crossover.Rmd", "18-Single.Rmd",
+"19-Pubbias.rmd", "20-Prereg.Rmd", "21-Litrev.Rmd",
+"22-Protocol.rmd","23-endmatter.rmd"]
+#rmd_files: ["index.Rmd", "07-randomise.Rmd"]
 language:
   ui:
     chapter_name: "Chapter "
-
-

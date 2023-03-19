@@ -1,0 +1,2136 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.19)  19 MAR 2023 18:28
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**Evaluating-What-Works.tex
+(./Evaluating-What-Works.tex
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2023-02-22> (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2022/07/02 v1.4n Standard LaTeX document class
+(c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/bk10.clo
+File: bk10.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count185
+\c@chapter=\count186
+\c@section=\count187
+\c@subsection=\count188
+\c@subsubsection=\count189
+\c@paragraph=\count190
+\c@subparagraph=\count191
+\c@figure=\count192
+\c@table=\count193
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
+) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2022/04/08 v2.17n AMS math features
+\@mathmargin=\skip50
+For additional information on amsmath, use the `?' option.
+(c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+(c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks16
+\ex@=\dimen141
+)) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen142
+) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count194
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count195
+\leftroot@=\count196
+LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count197
+\DOTSCASE@=\count198
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box51
+\strutbox@=\box52
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen143
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count199
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+\c@MaxMatrixCols=\count266
+\dotsspace@=\muskip16
+\c@parentequation=\count267
+\dspbrk@lvl=\count268
+\tag@help=\toks17
+\row@=\count269
+\column@=\count270
+\maxfields@=\count271
+\andhelp@=\toks18
+\eqnshift@=\dimen144
+\alignsep@=\dimen145
+\tagshift@=\dimen146
+\tagwidth@=\dimen147
+\totwidth@=\dimen148
+\lineht@=\dimen149
+\@envbody=\toks19
+\multlinegap=\skip51
+\multlinetaggap=\skip52
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+(c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/lmodern.sty
+Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 23.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 24.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 25.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 29.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 31.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
+) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 112.
+(c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmr.fd
+File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks21
+\inpenc@posthook=\toks22
+) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/upquote/upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verbatim
+) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/microtype.sty
+Package: microtype 2023/03/13 v3.1a Micro-typographical refinements (RS)
+(c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks23
+) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count272
+)
+\MT@toks=\toks24
+\MT@tempbox=\box53
+\MT@count=\count273
+LaTeX Info: Redefining \noprotrusionifhmode on input line 1059.
+LaTeX Info: Redefining \leftprotrusion on input line 1060.
+\MT@prot@toks=\toks25
+LaTeX Info: Redefining \rightprotrusion on input line 1078.
+LaTeX Info: Redefining \textls on input line 1368.
+\MT@outer@kern=\dimen150
+LaTeX Info: Redefining \textmicrotypecontext on input line 1988.
+\MT@listname@count=\count274
+(c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/microtype-pdftex.def
+File: microtype-pdftex.def 2023/03/13 v3.1a Definitions specific to pdftex (RS)
+LaTeX Info: Redefining \lsstyle on input line 902.
+LaTeX Info: Redefining \lslig on input line 902.
+\MT@outer@space=\skip53
+)
+Package microtype Info: Loading configuration file microtype.cfg.
+(c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/microtype.cfg
+File: microtype.cfg 2023/03/13 v3.1a microtype main configuration file (RS)
+)) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/parskip/parskip.sty
+Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
+(c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+(c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+))) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
+(c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 227.
+(c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1353.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1357.
+Package xcolor Info: Model `RGB' extended on input line 1369.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1371.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1374.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
+) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
+\LTleft=\skip54
+\LTright=\skip55
+\LTpre=\skip56
+\LTpost=\skip57
+\LTchunksize=\count275
+\LTcapwidth=\dimen151
+\LT@head=\box54
+\LT@firsthead=\box55
+\LT@foot=\box56
+\LT@lastfoot=\box57
+\LT@gbox=\box58
+\LT@cols=\count276
+\LT@rows=\count277
+\c@LT@tables=\count278
+\c@LT@chunks=\count279
+\LT@p@ftn=\toks26
+) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen152
+\lightrulewidth=\dimen153
+\cmidrulewidth=\dimen154
+\belowrulesep=\dimen155
+\belowbottomsep=\dimen156
+\aboverulesep=\dimen157
+\abovetopsep=\dimen158
+\cmidrulesep=\dimen159
+\cmidrulekern=\dimen160
+\defaultaddspace=\dimen161
+\@cmidla=\count280
+\@cmidlb=\count281
+\@aboverulesep=\dimen162
+\@belowrulesep=\dimen163
+\@thisruleclass=\count282
+\@lastruleclass=\count283
+\@thisrulewidth=\dimen164
+) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/array.sty
+Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
+\col@sep=\dimen165
+\ar@mcellbox=\box59
+\extrarowheight=\dimen166
+\NC@list=\toks27
+\extratabsurround=\skip58
+\backup@length=\skip59
+\ar@cellbox=\box60
+) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count284
+\calc@Bcount=\count285
+\calc@Adimen=\dimen167
+\calc@Bdimen=\dimen168
+\calc@Askip=\skip60
+\calc@Bskip=\skip61
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count286
+\calc@Cskip=\skip62
+) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/mdwtools/footnote.sty
+Package: footnote 1997/01/28 1.13 Save footnotes around boxes
+\fn@notes=\box61
+\fn@width=\dimen169
+) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+(c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+(c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+)
+\Gin@req@height=\dimen170
+\Gin@req@width=\dimen171
+)
+\cslhangindent=\skip63
+\csllabelwidth=\skip64
+\cslentryspacingunit=\skip65
+(c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks28
+\thm@bodyfont=\toks29
+\thm@headfont=\toks30
+\thm@notefont=\toks31
+\thm@headpunct=\toks32
+\thm@preskip=\skip66
+\thm@postskip=\skip67
+\thm@headsep=\skip68
+\dth@everypar=\toks33
+) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyphenat/hyphenat.sty
+Package: hyphenat 2009/09/02 v2.3c hyphenation utilities
+\langwohyphens=\language4
+LaTeX Info: Redefining \_ on input line 43.
+) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/atkinson/atkinson.sty
+Package: atkinson 2022/09/14 (Bob Tennent) Supports Atkinson Hyperlegible fonts for all LaTeX engines.
+(c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/ifxetex.sty
+Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
+) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+(c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/xkeyval/xkeyval.tex (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks34
+\XKV@tempa@toks=\toks35
+)
+\XKV@depth=\count287
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+)) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fontaxes/fontaxes.sty
+Package: fontaxes 2020/07/21 v1.0e Font selection axes
+LaTeX Info: Redefining \upshape on input line 29.
+LaTeX Info: Redefining \itshape on input line 31.
+LaTeX Info: Redefining \slshape on input line 33.
+LaTeX Info: Redefining \swshape on input line 35.
+LaTeX Info: Redefining \scshape on input line 37.
+LaTeX Info: Redefining \sscshape on input line 39.
+LaTeX Info: Redefining \ulcshape on input line 41.
+LaTeX Info: Redefining \textsw on input line 47.
+LaTeX Info: Redefining \textssc on input line 48.
+LaTeX Info: Redefining \textulc on input line 49.
+)) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+LaTeX Font Info:    Trying to load font information for T1+atkinsn-LF on input line 112.
+(c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/atkinson/T1atkinsn-LF.fd
+File: T1atkinsn-LF.fd 2021/02/05 (autoinst) Font definitions for T1/atkinsn-LF.
+)
+LaTeX Font Info:    Font shape `T1/atkinsn-LF/m/n' will be
+(Font)              scaled to size 10.0pt on input line 112.
+)
+\@indexfile=\write3
+\openout3 = `Evaluating-What-Works.idx'.
+
+Writing index file Evaluating-What-Works.idx
+(c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tocbibind/tocbibind.sty
+Package: tocbibind 2010/10/13 v1.5k extra ToC listings
+Package tocbibind Info: The document has chapter divisions on input line 50.
+
+Package tocbibind Note: Using chapter style headings, unless overridden.
+
+) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
+\multirow@colwidth=\skip69
+\multirow@cntb=\count288
+\multirow@dima=\skip70
+\bigstrutjot=\dimen172
+) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen173
+\WF@size=\dimen174
+\c@WF@wrappedlines=\count289
+\WF@box=\box62
+\WF@everypar=\toks36
+Package: wrapfig 2003/01/31  v 3.6
+) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count290
+\float@exts=\toks37
+\float@box=\box63
+\@float@everytoks=\toks38
+\@floatcapt=\box64
+) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2022/06/20 v1.0f Color table columns (DPC)
+\everycr=\toks39
+\minrowclearance=\skip71
+\rownum=\count291
+) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+Package: pdflscape 2022-10-27 v0.13 Display of landscape pages in PDF
+(c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pdflscape/pdflscape-nometadata.sty
+Package: pdflscape-nometadata 2022-10-28 v0.13 Display of landscape pages in PDF (HO)
+(c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+)) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tabu/tabu.sty
+Package: tabu 2019/01/11 v2.9 - flexible LaTeX tabulars (FC+tabu-fixed)
+(c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/varwidth/varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box65
+\sift@deathcycles=\count292
+\@vwid@loff=\dimen175
+\@vwid@roff=\dimen176
+)
+\c@taburow=\count293
+\tabu@nbcols=\count294
+\tabu@cnt=\count295
+\tabu@Xcol=\count296
+\tabu@alloc=\count297
+\tabu@nested=\count298
+\tabu@target=\dimen177
+\tabu@spreadtarget=\dimen178
+\tabu@naturalX=\dimen179
+\tabucolX=\dimen180
+\tabu@Xsum=\dimen181
+\extrarowdepth=\dimen182
+\abovetabulinesep=\dimen183
+\belowtabulinesep=\dimen184
+\tabustrutrule=\dimen185
+\tabu@thebody=\toks40
+\tabu@footnotes=\toks41
+\tabu@box=\box66
+\tabu@arstrutbox=\box67
+\tabu@hleads=\box68
+\tabu@vleads=\box69
+\tabu@cellskip=\skip72
+) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/threeparttable/threeparttable.sty
+Package: threeparttable 2003/06/13  v 3.0
+\@tempboxb=\box70
+) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/threeparttablex/threeparttablex.sty
+Package: threeparttablex 2013/07/23 v0.3 by daleif
+(c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/environ/environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+(c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+))
+\TPTL@width=\skip73
+) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/ulem/ulem.sty
+\UL@box=\box71
+\UL@hyphenbox=\box72
+\UL@skip=\skip74
+\UL@hook=\toks42
+\UL@height=\dimen186
+\UL@pe=\count299
+\UL@pixel=\dimen187
+\ULC@box=\box73
+Package: ulem 2019/11/18
+\ULdepth=\dimen188
+) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/makecell/makecell.sty
+Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
+\rotheadsize=\dimen189
+\c@nlinenum=\count300
+\TeXr@lab=\toks43
+) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/bookmark/bookmark.sty
+Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
+(c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2023-02-07 v7.00v Hypertext links for LaTeX
+(c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+(c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2022-05-17 v2.50 Cross-referencing by name of section
+(c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count301
+)
+\@linkdim=\dimen190
+\Hy@linkcounter=\count302
+\Hy@pagecounter=\count303
+(c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2023-02-07 v7.00v Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)
+\Hy@SavedSpaceFactor=\count304
+(c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2023-02-07 v7.00v Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Option `unicode' set `true' on input line 4060.
+Package hyperref Info: Hyper figures OFF on input line 4177.
+Package hyperref Info: Link nesting OFF on input line 4182.
+Package hyperref Info: Hyper index ON on input line 4185.
+Package hyperref Info: Plain pages OFF on input line 4192.
+Package hyperref Info: Backreferencing OFF on input line 4197.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4425.
+\c@Hy@tempcnt=\count305
+(c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4763.
+\XeTeXLinkMargin=\dimen191
+(c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+(c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
+))
+\Fld@menulength=\count306
+\Field@Width=\dimen192
+\Fld@charsize=\dimen193
+Package hyperref Info: Hyper figures OFF on input line 6042.
+Package hyperref Info: Link nesting OFF on input line 6047.
+Package hyperref Info: Hyper index ON on input line 6050.
+Package hyperref Info: backreferencing OFF on input line 6057.
+Package hyperref Info: Link coloring OFF on input line 6062.
+Package hyperref Info: Link coloring with OCG OFF on input line 6067.
+Package hyperref Info: PDF/A mode OFF on input line 6072.
+(c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count307
+\c@Item=\count308
+\c@Hfootnote=\count309
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+(c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2023-02-07 v7.00v Hyperref driver for pdfTeX
+(c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
+with kernel methods
+)
+\Fld@listcount=\count310
+\c@bookmark@seq@number=\count311
+(c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
+(c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
+)
+\Hy@SectionHShift=\skip75
+) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
+File: bkm-pdftex.def 2020-11-06 v1.29 bookmark driver for pdfTeX (HO)
+\BKM@id=\count312
+)) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count313
+\l__pdf_internal_box=\box74
+) (./Evaluating-What-Works.aux
+
+LaTeX Warning: Label `tab:ancova-compare' multiply defined.
+
+)
+\openout1 = `Evaluating-What-Works.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Info: Redefining \microtypecontext on input line 133.
+Package microtype Info: Applying patch `item' on input line 133.
+Package microtype Info: Applying patch `toc' on input line 133.
+Package microtype Info: Applying patch `eqnum' on input line 133.
+Package microtype Info: Applying patch `footnote' on input line 133.
+Package microtype Info: Applying patch `verbatim' on input line 133.
+Package microtype Info: Generating PDF output.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using protrusion set `basicmath'.
+Package microtype Info: Automatic font expansion enabled (level 2),
+(microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
+Package microtype Info: Using default expansion set `alltext-nott'.
+LaTeX Info: Redefining \showhyphens on input line 133.
+Package microtype Info: No adjustment of tracking.
+Package microtype Info: No adjustment of interword spacing.
+Package microtype Info: No adjustment of character kerning.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `atkinsn-LF' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+(c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+(c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+\c@mv@tabular=\count314
+\c@mv@boldtabular=\count315
+Package hyperref Info: Link coloring OFF on input line 133.
+LaTeX Font Info:    Font shape `T1/atkinsn-LF/m/n' will be
+(Font)              scaled to size 17.28pt on input line 135.
+LaTeX Font Info:    Font shape `T1/atkinsn-LF/m/n' will be
+(Font)              scaled to size 12.0pt on input line 135.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 135.
+(c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/mt-cmr.cfg
+File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 135.
+(c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 135.
+(c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 135.
+(c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 135.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 135.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 135.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 135.
+(c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 135.
+(c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) (c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+) [1
+
+
+{c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Font shape `T1/atkinsn-LF/m/sl' in size <10> not available
+(Font)              Font shape `T1/atkinsn-LF/m/it' tried instead on input line 138.
+LaTeX Font Info:    Font shape `T1/atkinsn-LF/m/it' will be
+(Font)              scaled to size 10.0pt on input line 138.
+[2
+
+]
+LaTeX Font Info:    Font shape `T1/atkinsn-LF/m/n' will be
+(Font)              scaled to size 24.88pt on input line 138.
+LaTeX Font Info:    Font shape `T1/atkinsn-LF/b/n' will be
+(Font)              scaled to size 24.88pt on input line 138.
+(./Evaluating-What-Works.toc
+LaTeX Font Info:    Font shape `T1/atkinsn-LF/b/n' will be
+(Font)              scaled to size 10.0pt on input line 1.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 2.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 2.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 2.
+[3]
+Underfull \hbox (badness 4391) in paragraph at lines 51--51
+ [] [][]\T1/atkinsn-LF/b/n/10 (+20) Controlling for se-lec-tion bias: ran-dom-ized as-sign-ment to 
+ []
+
+
+Overfull \hbox (1.13997pt too wide) detected at line 92
+ []\T1/atkinsn-LF/m/n/10 104
+ []
+
+
+Overfull \hbox (0.97997pt too wide) detected at line 94
+ []\T1/atkinsn-LF/m/n/10 109
+ []
+
+[4]
+Overfull \hbox (0.73996pt too wide) detected at line 113
+ []\T1/atkinsn-LF/m/n/10 130
+ []
+
+
+Overfull \hbox (0.39996pt too wide) detected at line 116
+ []\T1/atkinsn-LF/m/n/10 134
+ []
+
+
+Overfull \hbox (0.23996pt too wide) detected at line 118
+ []\T1/atkinsn-LF/m/n/10 136
+ []
+
+
+Overfull \hbox (0.23996pt too wide) detected at line 120
+ []\T1/atkinsn-LF/m/n/10 139
+ []
+
+
+Overfull \hbox (0.39996pt too wide) detected at line 122
+ []\T1/atkinsn-LF/m/n/10 143
+ []
+
+
+Overfull \hbox (0.29997pt too wide) detected at line 124
+ []\T1/atkinsn-LF/m/n/10 145
+ []
+
+
+Overfull \hbox (0.82997pt too wide) detected at line 128
+ []\T1/atkinsn-LF/m/n/10 150
+ []
+
+
+Overfull \hbox (0.32997pt too wide) detected at line 133
+ []\T1/atkinsn-LF/m/n/10 156
+ []
+
+
+Overfull \hbox (0.49997pt too wide) detected at line 135
+ []\T1/atkinsn-LF/m/n/10 158
+ []
+
+
+Overfull \hbox (0.32997pt too wide) detected at line 140
+ []\T1/atkinsn-LF/m/n/10 165
+ []
+
+
+Overfull \hbox (0.32997pt too wide) detected at line 141
+ []\T1/atkinsn-LF/m/n/10 165
+ []
+
+
+Overfull \hbox (0.47997pt too wide) detected at line 142
+ []\T1/atkinsn-LF/m/n/10 166
+ []
+
+
+Overfull \hbox (0.47997pt too wide) detected at line 146
+ []\T1/atkinsn-LF/m/n/10 169
+ []
+
+
+Overfull \hbox (1.14996pt too wide) detected at line 156
+ []\T1/atkinsn-LF/m/n/10 180
+ []
+
+[5]
+Overfull \hbox (1.14996pt too wide) detected at line 157
+ []\T1/atkinsn-LF/m/n/10 180
+ []
+
+
+Overfull \hbox (0.40996pt too wide) detected at line 159
+ []\T1/atkinsn-LF/m/n/10 183
+ []
+
+
+Overfull \hbox (0.40996pt too wide) detected at line 160
+ []\T1/atkinsn-LF/m/n/10 183
+ []
+
+
+Overfull \hbox (0.80997pt too wide) detected at line 161
+ []\T1/atkinsn-LF/m/n/10 184
+ []
+
+
+Overfull \hbox (0.80997pt too wide) detected at line 162
+ []\T1/atkinsn-LF/m/n/10 184
+ []
+
+
+Overfull \hbox (0.80997pt too wide) detected at line 163
+ []\T1/atkinsn-LF/m/n/10 184
+ []
+
+
+Overfull \hbox (0.49997pt too wide) detected at line 164
+ []\T1/atkinsn-LF/m/n/10 185
+ []
+
+
+Overfull \hbox (0.49997pt too wide) detected at line 165
+ []\T1/atkinsn-LF/m/n/10 185
+ []
+
+
+Overfull \hbox (0.49997pt too wide) detected at line 166
+ []\T1/atkinsn-LF/m/n/10 185
+ []
+
+
+Overfull \hbox (0.49997pt too wide) detected at line 167
+ []\T1/atkinsn-LF/m/n/10 185
+ []
+
+
+Overfull \hbox (0.52994pt too wide) detected at line 168
+\T1/atkinsn-LF/m/n/10 22.10 
+ []
+
+
+Overfull \hbox (0.64996pt too wide) detected at line 168
+ []\T1/atkinsn-LF/m/n/10 186
+ []
+
+
+Overfull \hbox (0.64996pt too wide) detected at line 169
+ []\T1/atkinsn-LF/m/n/10 186
+ []
+
+)
+\tf@toc=\write4
+\openout4 = `Evaluating-What-Works.toc'.
+
+[6]
+<images/logo_alone_new.png, id=277, 113.56714pt x 102.44868pt>
+File: images/logo_alone_new.png Graphic file (type png)
+<use images/logo_alone_new.png>
+Package pdftex.def Info: images/logo_alone_new.png  used on input line 144.
+(pdftex.def)             Requested size: 113.56857pt x 102.44998pt.
+LaTeX Font Info:    Font shape `T1/atkinsn-LF/m/n' will be
+(Font)              scaled to size 14.4pt on input line 147.
+LaTeX Font Info:    Font shape `T1/atkinsn-LF/b/n' will be
+(Font)              scaled to size 14.4pt on input line 147.
+[7
+
+ <./images/logo_alone_new.png>] [8]
+Overfull \hbox (14.87393pt too wide) in paragraph at lines 191--192
+\T1/atkinsn-LF/m/n/10 (-20) The book is li-censed ac-cord-ing to the []Cre-ative Com-mons Attribution-NonCommercial
+ []
+
+[9] [10]
+Chapter 1.
+LaTeX Font Info:    Font shape `T1/atkinsn-LF/m/n' will be
+(Font)              scaled to size 20.74pt on input line 196.
+LaTeX Font Info:    Font shape `T1/atkinsn-LF/b/n' will be
+(Font)              scaled to size 20.74pt on input line 196.
+File: images/logo_alone_new.png Graphic file (type png)
+<use images/logo_alone_new.png>
+Package pdftex.def Info: images/logo_alone_new.png  used on input line 198.
+(pdftex.def)             Requested size: 113.56857pt x 102.44998pt.
+
+Underfull \hbox (badness 1072) in paragraph at lines 203--204
+\T1/atkinsn-LF/m/it/10 (+20) Anthony was a 60-year-old builder who suf-fered a stroke that left him
+ []
+
+[11
+
+]
+LaTeX Font Info:    Trying to load font information for TS1+atkinsn-LF on input line 218.
+(c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/atkinson/TS1atkinsn-LF.fd
+File: TS1atkinsn-LF.fd 2021/02/05 (autoinst) Font definitions for TS1/atkinsn-LF.
+)
+LaTeX Font Info:    Font shape `TS1/atkinsn-LF/m/n' will be
+(Font)              scaled to size 10.0pt on input line 218.
+
+Underfull \hbox (badness 10000) in paragraph at lines 218--220
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 220--222
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 222--224
+
+ []
+
+[12]
+<01-intro_files/figure-latex/weightplot-1-2.pdf, id=325, 469.755pt x 325.215pt>
+File: 01-intro_files/figure-latex/weightplot-1-2.pdf Graphic file (type pdf)
+<use 01-intro_files/figure-latex/weightplot-1-2.pdf>
+Package pdftex.def Info: 01-intro_files/figure-latex/weightplot-1-2.pdf  used on input line 230.
+(pdftex.def)             Requested size: 258.74594pt x 179.1318pt.
+[13 <./01-intro_files/figure-latex/weightplot-1-2.pdf>]
+<images/scales_man.jpeg, id=342, 515.9275pt x 589.20125pt>
+File: images/scales_man.jpeg Graphic file (type jpg)
+<use images/scales_man.jpeg>
+Package pdftex.def Info: images/scales_man.jpeg  used on input line 238.
+(pdftex.def)             Requested size: 86.2501pt x 98.49963pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 248--249
+
+ []
+
+<01-intro_files/figure-latex/weightplot2-1.pdf, id=344, 469.755pt x 325.215pt>
+File: 01-intro_files/figure-latex/weightplot2-1.pdf Graphic file (type pdf)
+<use 01-intro_files/figure-latex/weightplot2-1.pdf>
+Package pdftex.def Info: 01-intro_files/figure-latex/weightplot2-1.pdf  used on input line 251.
+(pdftex.def)             Requested size: 258.74594pt x 179.1318pt.
+[14 <./images/scales_man.jpeg>] [15 <./01-intro_files/figure-latex/weightplot2-1.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 278--280
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 280--282
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 282--284
+
+ []
+
+[16] [17] [18
+
+]
+Chapter 2.
+File: images/logo_alone_new.png Graphic file (type png)
+<use images/logo_alone_new.png>
+Package pdftex.def Info: images/logo_alone_new.png  used on input line 290.
+(pdftex.def)             Requested size: 113.56857pt x 102.44998pt.
+
+Underfull \hbox (badness 3049) in paragraph at lines 294--295
+[]\T1/atkinsn-LF/m/it/10 (+20) Stephen notes that some apha-sic pa-tients re-ferred to his clinic talk
+ []
+
+[19] [20]
+<02-ClinicalObs_files/figure-latex/confounder2-2.pdf, id=393, 361.35pt x 289.08pt>
+File: 02-ClinicalObs_files/figure-latex/confounder2-2.pdf Graphic file (type pdf)
+<use 02-ClinicalObs_files/figure-latex/confounder2-2.pdf>
+Package pdftex.def Info: 02-ClinicalObs_files/figure-latex/confounder2-2.pdf  used on input line 307.
+(pdftex.def)             Requested size: 258.74925pt x 206.99939pt.
+[21 <./02-ClinicalObs_files/figure-latex/confounder2-2.pdf>]
+<images/rothwellfig2005.jpg, id=407, 1355.0625pt x 1215.54124pt>
+File: images/rothwellfig2005.jpg Graphic file (type jpg)
+<use images/rothwellfig2005.jpg>
+Package pdftex.def Info: images/rothwellfig2005.jpg  used on input line 329.
+(pdftex.def)             Requested size: 183.93869pt x 164.99982pt.
+[22] [23 <./images/rothwellfig2005.jpg>] [24
+
+]
+Chapter 3.
+File: images/logo_alone_new.png Graphic file (type png)
+<use images/logo_alone_new.png>
+Package pdftex.def Info: images/logo_alone_new.png  used on input line 336.
+(pdftex.def)             Requested size: 113.56857pt x 102.44998pt.
+[25]
+<images/targets.jpg, id=436, 722.7pt x 650.43pt>
+File: images/targets.jpg Graphic file (type jpg)
+<use images/targets.jpg>
+Package pdftex.def Info: images/targets.jpg  used on input line 374.
+(pdftex.def)             Requested size: 258.74925pt x 232.87433pt.
+[26]
+<03-reliability_files/figure-latex/correlationfig-1.pdf, id=452, 433.62pt x 433.62pt>
+File: 03-reliability_files/figure-latex/correlationfig-1.pdf Graphic file (type pdf)
+<use 03-reliability_files/figure-latex/correlationfig-1.pdf>
+Package pdftex.def Info: 03-reliability_files/figure-latex/correlationfig-1.pdf  used on input line 383.
+(pdftex.def)             Requested size: 345.01738pt x 345.01738pt.
+[27 <./images/targets.jpg>] [28 <./03-reliability_files/figure-latex/correlationfig-1.pdf>]
+<03-reliability_files/figure-latex/reliability-by-age-1.pdf, id=475, 433.62pt x 433.62pt>
+File: 03-reliability_files/figure-latex/reliability-by-age-1.pdf Graphic file (type pdf)
+<use 03-reliability_files/figure-latex/reliability-by-age-1.pdf>
+Package pdftex.def Info: 03-reliability_files/figure-latex/reliability-by-age-1.pdf  used on input line 397.
+(pdftex.def)             Requested size: 345.01738pt x 345.01738pt.
+[29 <./03-reliability_files/figure-latex/reliability-by-age-1.pdf>] [30]
+LaTeX Font Info:    Font shape `T1/atkinsn-LF/b/n' will be
+(Font)              scaled to size 12.0pt on input line 425.
+
+Underfull \hbox (badness 1237) in paragraph at lines 439--440
+\T1/atkinsn-LF/m/n/10 (+20) Generalisability is an is-sue that is par-tic-u-larly rel-e-vant to the first and
+ []
+
+
+Underfull \hbox (badness 1342) in paragraph at lines 439--440
+\T1/atkinsn-LF/m/n/10 (+20) the classroom-based vo-cab-u-lary in-ter-ven-tion. These vi-gnettes il-lus-trate
+ []
+
+[31]
+Underfull \hbox (badness 3039) in paragraph at lines 447--448
+[]\T1/atkinsn-LF/m/n/10 (+20) The no-tion of gen-er-al-i-sa-tion as-sumes par-tic-u-lar im-por-tance when the
+ []
+
+[32] [33] [34] [35]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 495.
+(c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 498.
+(c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmtt.fd
+File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+Overfull \hbox (59.24883pt too wide) in paragraph at lines 498--498
+[]\T1/lmtt/m/n/10 ## Warning: Using \TS1/lmtt/m/n/10 `\T1/lmtt/m/n/10 size\TS1/lmtt/m/n/10 ` \T1/lmtt/m/n/10 aesthetic for lines was deprecated in ggplot2 3.4.0.[] 
+ []
+
+<03-reliability_files/figure-latex/zDensityCDF-1.pdf, id=553, 433.62pt x 216.81pt>
+File: 03-reliability_files/figure-latex/zDensityCDF-1.pdf Graphic file (type pdf)
+<use 03-reliability_files/figure-latex/zDensityCDF-1.pdf>
+Package pdftex.def Info: 03-reliability_files/figure-latex/zDensityCDF-1.pdf  used on input line 501.
+(pdftex.def)             Requested size: 258.7647pt x 129.38234pt.
+[36 <./03-reliability_files/figure-latex/zDensityCDF-1.pdf>] [37] [38] [39]
+<03-reliability_files/figure-latex/MLU-plot-1.pdf, id=594, 469.755pt x 325.215pt>
+File: 03-reliability_files/figure-latex/MLU-plot-1.pdf Graphic file (type pdf)
+<use 03-reliability_files/figure-latex/MLU-plot-1.pdf>
+Package pdftex.def Info: 03-reliability_files/figure-latex/MLU-plot-1.pdf  used on input line 569.
+(pdftex.def)             Requested size: 258.74594pt x 179.1318pt.
+[40] [41 <./03-reliability_files/figure-latex/MLU-plot-1.pdf>] [42
+
+]
+Chapter 4.
+File: images/logo_alone_new.png Graphic file (type png)
+<use images/logo_alone_new.png>
+Package pdftex.def Info: images/logo_alone_new.png  used on input line 604.
+(pdftex.def)             Requested size: 113.56857pt x 102.44998pt.
+<04-nonspecific_files/figure-latex/placebotab-2.pdf, id=629, 578.16pt x 361.35pt>
+File: 04-nonspecific_files/figure-latex/placebotab-2.pdf Graphic file (type pdf)
+<use 04-nonspecific_files/figure-latex/placebotab-2.pdf>
+Package pdftex.def Info: 04-nonspecific_files/figure-latex/placebotab-2.pdf  used on input line 612.
+(pdftex.def)             Requested size: 258.74925pt x 161.71828pt.
+[43]
+Overfull \hbox (27.56593pt too wide) has occurred while \output is active
+\T1/atkinsn-LF/m/n/10 44 \T1/atkinsn-LF/m/it/10 CHAPTER 4.  IMPROVEMENT DUE TO NONSPECIFIC EFFECTS OF INTERVENTION
+ []
+
+[44 <./04-nonspecific_files/figure-latex/placebotab-2.pdf>]
+Overfull \hbox (54.225pt too wide) has occurred while \output is active
+\T1/atkinsn-LF/m/it/10 4.2.  IDENTIFYING SPECIFIC INTERVENTION EFFECTS BY MEASURES OF MECHANISM \T1/atkinsn-LF/m/n/10 45
+ []
+
+[45]
+Overfull \hbox (27.40593pt too wide) has occurred while \output is active
+\T1/atkinsn-LF/m/n/10 46 \T1/atkinsn-LF/m/it/10 CHAPTER 4.  IMPROVEMENT DUE TO NONSPECIFIC EFFECTS OF INTERVENTION
+ []
+
+[46] [47]
+Overfull \hbox (27.57593pt too wide) has occurred while \output is active
+\T1/atkinsn-LF/m/n/10 48 \T1/atkinsn-LF/m/it/10 CHAPTER 4.  IMPROVEMENT DUE TO NONSPECIFIC EFFECTS OF INTERVENTION
+ []
+
+[48
+
+]
+Chapter 5.
+File: images/logo_alone_new.png Graphic file (type png)
+<use images/logo_alone_new.png>
+Package pdftex.def Info: images/logo_alone_new.png  used on input line 652.
+(pdftex.def)             Requested size: 113.56857pt x 102.44998pt.
+<05-prepost_files/figure-latex/trogchangedata-2.pdf, id=675, 578.16pt x 289.08pt>
+File: 05-prepost_files/figure-latex/trogchangedata-2.pdf Graphic file (type pdf)
+<use 05-prepost_files/figure-latex/trogchangedata-2.pdf>
+Package pdftex.def Info: 05-prepost_files/figure-latex/trogchangedata-2.pdf  used on input line 657.
+(pdftex.def)             Requested size: 258.74925pt x 129.37462pt.
+[49]
+Overfull \hbox (107.27492pt too wide) has occurred while \output is active
+\T1/atkinsn-LF/m/n/10 50 \T1/atkinsn-LF/m/it/10 CHAPTER 5.  LIMITATIONS OF THE PRE-POST DESIGN: BIASES RELATED TO SYSTEMATIC CHANGE
+ []
+
+[50 <./05-prepost_files/figure-latex/trogchangedata-2.pdf>] [51]
+Overfull \hbox (106.28491pt too wide) has occurred while \output is active
+\T1/atkinsn-LF/m/n/10 52 \T1/atkinsn-LF/m/it/10 CHAPTER 5.  LIMITATIONS OF THE PRE-POST DESIGN: BIASES RELATED TO SYSTEMATIC CHANGE
+ []
+
+[52]
+Overfull \hbox (59.24883pt too wide) in paragraph at lines 708--708
+[]\T1/lmtt/m/n/10 ## Warning: Using \TS1/lmtt/m/n/10 `\T1/lmtt/m/n/10 size\TS1/lmtt/m/n/10 ` \T1/lmtt/m/n/10 aesthetic for lines was deprecated in ggplot2 3.4.0.[] 
+ []
+
+<05-prepost_files/figure-latex/reg2mean-1.pdf, id=712, 469.755pt x 325.215pt>
+File: 05-prepost_files/figure-latex/reg2mean-1.pdf Graphic file (type pdf)
+<use 05-prepost_files/figure-latex/reg2mean-1.pdf>
+Package pdftex.def Info: 05-prepost_files/figure-latex/reg2mean-1.pdf  used on input line 711.
+(pdftex.def)             Requested size: 275.99902pt x 191.07623pt.
+[53 <./05-prepost_files/figure-latex/reg2mean-1.pdf>]
+Overfull \hbox (106.93492pt too wide) has occurred while \output is active
+\T1/atkinsn-LF/m/n/10 54 \T1/atkinsn-LF/m/it/10 CHAPTER 5.  LIMITATIONS OF THE PRE-POST DESIGN: BIASES RELATED TO SYSTEMATIC CHANGE
+ []
+
+[54]
+Chapter 6.
+File: images/logo_alone_new.png Graphic file (type png)
+<use images/logo_alone_new.png>
+Package pdftex.def Info: images/logo_alone_new.png  used on input line 745.
+(pdftex.def)             Requested size: 113.56857pt x 102.44998pt.
+[55
+
+]
+LaTeX Font Info:    Font shape `T1/atkinsn-LF/b/n' will be
+(Font)              scaled to size 7.0pt on input line 766.
+LaTeX Font Info:    Font shape `T1/atkinsn-LF/b/it' will be
+(Font)              scaled to size 10.0pt on input line 770.
+
+Overfull \hbox (7.57593pt too wide) has occurred while \output is active
+\T1/atkinsn-LF/m/n/10 56 \T1/atkinsn-LF/m/it/10 CHAPTER 6.  CONTROLLING UNWANTED EFFECTS WITH A CONTROL GROUP
+ []
+
+[56] [57]
+Overfull \hbox (7.74593pt too wide) has occurred while \output is active
+\T1/atkinsn-LF/m/n/10 58 \T1/atkinsn-LF/m/it/10 CHAPTER 6.  CONTROLLING UNWANTED EFFECTS WITH A CONTROL GROUP
+ []
+
+[58]
+Underfull \hbox (badness 10000) in paragraph at lines 809--811
+
+ []
+
+[59]
+Overfull \hbox (8.22592pt too wide) has occurred while \output is active
+\T1/atkinsn-LF/m/n/10 60 \T1/atkinsn-LF/m/it/10 CHAPTER 6.  CONTROLLING UNWANTED EFFECTS WITH A CONTROL GROUP
+ []
+
+[60]
+Chapter 7.
+File: images/logo_alone_new.png Graphic file (type png)
+<use images/logo_alone_new.png>
+Package pdftex.def Info: images/logo_alone_new.png  used on input line 817.
+(pdftex.def)             Requested size: 113.56857pt x 102.44998pt.
+[61
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 827--829
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 829--831
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 831--833
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 833--835
+
+ []
+
+
+Overfull \hbox (112.36273pt too wide) has occurred while \output is active
+\T1/atkinsn-LF/m/n/10 62 \T1/atkinsn-LF/m/it/10 CHAPTER 7.  CONTROLLING FOR SELECTION BIAS: RANDOMIZED ASSIGNMENT TO INTERVENTION
+ []
+
+[62] [63]
+Overfull \hbox (113.20274pt too wide) has occurred while \output is active
+\T1/atkinsn-LF/m/n/10 64 \T1/atkinsn-LF/m/it/10 CHAPTER 7.  CONTROLLING FOR SELECTION BIAS: RANDOMIZED ASSIGNMENT TO INTERVENTION
+ []
+
+[64] [65]
+Overfull \hbox (113.04274pt too wide) has occurred while \output is active
+\T1/atkinsn-LF/m/n/10 66 \T1/atkinsn-LF/m/it/10 CHAPTER 7.  CONTROLLING FOR SELECTION BIAS: RANDOMIZED ASSIGNMENT TO INTERVENTION
+ []
+
+[66] [67]
+Overfull \hbox (113.21274pt too wide) has occurred while \output is active
+\T1/atkinsn-LF/m/n/10 68 \T1/atkinsn-LF/m/it/10 CHAPTER 7.  CONTROLLING FOR SELECTION BIAS: RANDOMIZED ASSIGNMENT TO INTERVENTION
+ []
+
+[68
+
+]
+Chapter 8.
+File: images/logo_alone_new.png Graphic file (type png)
+<use images/logo_alone_new.png>
+Package pdftex.def Info: images/logo_alone_new.png  used on input line 987.
+(pdftex.def)             Requested size: 113.56857pt x 102.44998pt.
+[69] [70]
+<images/phonics png.png, id=888, 903.375pt x 516.93124pt>
+File: images/phonics png.png Graphic file (type png)
+<use images/phonics png.png>
+Package pdftex.def Info: images/phonics png.png  used on input line 1008.
+(pdftex.def)             Requested size: 293.2488pt x 167.80347pt.
+
+Overfull \hbox (102.10329pt too wide) in paragraph at lines 1008--1008
+[]\T1/atkinsn-LF/m/n/10 (-20) Figure 8.1: []Figure from http://deevybee.blogspot.com/2012/10/data-from-phonics-screen-worryingly.html.
+ []
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{custom}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1019 ...vmode\vadjust pre{\hypertarget{custom}{}
+                                                  }% [71 <./images/phonics png.png>]
+<images/rat1.png, id=902, 1606.0pt x 1606.0pt>
+File: images/rat1.png Graphic file (type png)
+<use images/rat1.png>
+Package pdftex.def Info: images/rat1.png  used on input line 1023.
+(pdftex.def)             Requested size: 113.8283pt x 113.8283pt.
+<images/rat2.png, id=903, 1606.0pt x 1606.0pt>
+File: images/rat2.png Graphic file (type png)
+<use images/rat2.png>
+Package pdftex.def Info: images/rat2.png  used on input line 1024.
+(pdftex.def)             Requested size: 113.8283pt x 113.8283pt.
+[72 <./images/rat1.PNG> <./images/rat2.PNG>]
+Underfull \hbox (badness 10000) in paragraph at lines 1044--1046
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1046--1048
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1048--1050
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1050--1052
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1052--1054
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1054--1056
+
+ []
+
+[73] [74]
+Chapter 9.
+File: images/logo_alone_new.png Graphic file (type png)
+<use images/logo_alone_new.png>
+Package pdftex.def Info: images/logo_alone_new.png  used on input line 1072.
+(pdftex.def)             Requested size: 113.56857pt x 102.44998pt.
+[75
+
+]
+Overfull \hbox (81.22069pt too wide) has occurred while \output is active
+\T1/atkinsn-LF/m/n/10 76 \T1/atkinsn-LF/m/it/10 CHAPTER 9.  FURTHER POTENTIAL FOR BIAS: VOLUNTEERS, DROPOUTS, AND MISSING DATA
+ []
+
+[76] [77]
+<images/IV1.jpg, id=955, 278.54062pt x 143.03438pt>
+File: images/IV1.jpg Graphic file (type jpg)
+<use images/IV1.jpg>
+Package pdftex.def Info: images/IV1.jpg  used on input line 1111.
+(pdftex.def)             Requested size: 207.00511pt x 106.29991pt.
+
+Overfull \hbox (80.92068pt too wide) has occurred while \output is active
+\T1/atkinsn-LF/m/n/10 78 \T1/atkinsn-LF/m/it/10 CHAPTER 9.  FURTHER POTENTIAL FOR BIAS: VOLUNTEERS, DROPOUTS, AND MISSING DATA
+ []
+
+[78 <./images/IV1.JPG>]
+<images/mice_fig.jpg, id=969, 1541.76pt x 651.43375pt>
+File: images/mice_fig.jpg Graphic file (type jpg)
+<use images/mice_fig.jpg>
+Package pdftex.def Info: images/mice_fig.jpg  used on input line 1126.
+(pdftex.def)             Requested size: 258.73161pt x 109.32083pt.
+[79]
+<images/consort-flow-diagram.png, id=980, 576.65437pt x 657.95813pt>
+File: images/consort-flow-diagram.png Graphic file (type png)
+<use images/consort-flow-diagram.png>
+Package pdftex.def Info: images/consort-flow-diagram.png  used on input line 1141.
+(pdftex.def)             Requested size: 310.50882pt x 354.28813pt.
+
+Overfull \hbox (82.77069pt too wide) has occurred while \output is active
+\T1/atkinsn-LF/m/n/10 80 \T1/atkinsn-LF/m/it/10 CHAPTER 9.  FURTHER POTENTIAL FOR BIAS: VOLUNTEERS, DROPOUTS, AND MISSING DATA
+ []
+
+[80 <./images/Mice_fig.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 1159--1160
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1165--1167
+
+ []
+
+[81 <./images/consort-flow-diagram.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1167--1169
+
+ []
+
+
+Overfull \hbox (81.78069pt too wide) has occurred while \output is active
+\T1/atkinsn-LF/m/n/10 82 \T1/atkinsn-LF/m/it/10 CHAPTER 9.  FURTHER POTENTIAL FOR BIAS: VOLUNTEERS, DROPOUTS, AND MISSING DATA
+ []
+
+[82]
+Chapter 10.
+File: images/logo_alone_new.png Graphic file (type png)
+<use images/logo_alone_new.png>
+Package pdftex.def Info: images/logo_alone_new.png  used on input line 1177.
+(pdftex.def)             Requested size: 113.56857pt x 102.44998pt.
+[83
+
+]
+<10-Power_files/figure-latex/demo-variation-2.pdf, id=1006, 578.16pt x 216.81pt>
+File: 10-Power_files/figure-latex/demo-variation-2.pdf Graphic file (type pdf)
+<use 10-Power_files/figure-latex/demo-variation-2.pdf>
+Package pdftex.def Info: 10-Power_files/figure-latex/demo-variation-2.pdf  used on input line 1193.
+(pdftex.def)             Requested size: 344.99312pt x 129.3724pt.
+
+Overfull \hbox (121.14003pt too wide) has occurred while \output is active
+\T1/atkinsn-LF/m/n/10 84 \T1/atkinsn-LF/m/it/10 CHAPTER 10.  HOW BIG A SAMPLE DO I NEED? SAMPLING, STATISTICAL POWER AND TYPE II ERRORS
+ []
+
+[84 <./10-Power_files/figure-latex/demo-variation-2.pdf>]
+<images/Effectsizes_fig.jpg, id=1020, 694.595pt x 398.48875pt>
+File: images/Effectsizes_fig.jpg Graphic file (type jpg)
+<use images/Effectsizes_fig.jpg>
+Package pdftex.def Info: images/Effectsizes_fig.jpg  used on input line 1202.
+(pdftex.def)             Requested size: 345.00734pt x 197.93051pt.
+[85 <./images/Effectsizes_fig.jpg>]
+<images/beeswarms_ch10.png, id=1032, 1806.75pt x 1204.5pt>
+File: images/beeswarms_ch10.png Graphic file (type png)
+<use images/beeswarms_ch10.png>
+Package pdftex.def Info: images/beeswarms_ch10.png  used on input line 1211.
+(pdftex.def)             Requested size: 241.47467pt x 160.98311pt.
+
+Overfull \hbox (120.98003pt too wide) has occurred while \output is active
+\T1/atkinsn-LF/m/n/10 86 \T1/atkinsn-LF/m/it/10 CHAPTER 10.  HOW BIG A SAMPLE DO I NEED? SAMPLING, STATISTICAL POWER AND TYPE II ERRORS
+ []
+
+[86 <./images/beeswarms_ch10.png>]
+pdfTeX warning (ext4): destination with the same identifier (name{custom}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1235 ...vmode\vadjust pre{\hypertarget{custom}{}
+                                                  }% [87]
+Overfull \hbox (121.15002pt too wide) has occurred while \output is active
+\T1/atkinsn-LF/m/n/10 88 \T1/atkinsn-LF/m/it/10 CHAPTER 10.  HOW BIG A SAMPLE DO I NEED? SAMPLING, STATISTICAL POWER AND TYPE II ERRORS
+ []
+
+[88]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <14.4> on input line 1272.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1283--1285
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1285--1287
+
+ []
+
+
+Overfull \hbox (30.83968pt too wide) in paragraph at lines 1296--1314
+ [][] 
+ []
+
+
+LaTeX Warning: Reference `fig:densplot' on page 89 undefined on input line 1318.
+
+
+LaTeX Warning: Reference `fig:densplot' on page 89 undefined on input line 1318.
+
+[89]
+<10-Power_files/figure-latex/densplot-1.pdf, id=1067, 469.755pt x 325.215pt>
+File: 10-Power_files/figure-latex/densplot-1.pdf Graphic file (type pdf)
+<use 10-Power_files/figure-latex/densplot-1.pdf>
+Package pdftex.def Info: 10-Power_files/figure-latex/densplot-1.pdf  used on input line 1320.
+(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1320--1322
+[][]
+ []
+
+
+Overfull \hbox (121.31003pt too wide) has occurred while \output is active
+\T1/atkinsn-LF/m/n/10 90 \T1/atkinsn-LF/m/it/10 CHAPTER 10.  HOW BIG A SAMPLE DO I NEED? SAMPLING, STATISTICAL POWER AND TYPE II ERRORS
+ []
+
+[90 <./10-Power_files/figure-latex/densplot-1.pdf>]
+<10-Power_files/figure-latex/densplot2-1.pdf, id=1082, 469.755pt x 325.215pt>
+File: 10-Power_files/figure-latex/densplot2-1.pdf Graphic file (type pdf)
+<use 10-Power_files/figure-latex/densplot2-1.pdf>
+Package pdftex.def Info: 10-Power_files/figure-latex/densplot2-1.pdf  used on input line 1331.
+(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
+[91]
+pdfTeX warning (ext4): destination with the same identifier (name{custom}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1348 ...vmode\vadjust pre{\hypertarget{custom}{}
+                                                  }%
+Overfull \hbox (120.32002pt too wide) has occurred while \output is active
+\T1/atkinsn-LF/m/n/10 92 \T1/atkinsn-LF/m/it/10 CHAPTER 10.  HOW BIG A SAMPLE DO I NEED? SAMPLING, STATISTICAL POWER AND TYPE II ERRORS
+ []
+
+[92 <./10-Power_files/figure-latex/densplot2-1.pdf>]
+<10-Power_files/figure-latex/demoSE-1.pdf, id=1107, 469.755pt x 325.215pt>
+File: 10-Power_files/figure-latex/demoSE-1.pdf Graphic file (type pdf)
+<use 10-Power_files/figure-latex/demoSE-1.pdf>
+Package pdftex.def Info: 10-Power_files/figure-latex/demoSE-1.pdf  used on input line 1358.
+(pdftex.def)             Requested size: 275.99902pt x 191.07623pt.
+[93 <./10-Power_files/figure-latex/demoSE-1.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 1374--1376
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1376--1378
+
+ []
+
+
+Overfull \hbox (120.74002pt too wide) has occurred while \output is active
+\T1/atkinsn-LF/m/n/10 94 \T1/atkinsn-LF/m/it/10 CHAPTER 10.  HOW BIG A SAMPLE DO I NEED? SAMPLING, STATISTICAL POWER AND TYPE II ERRORS
+ []
+
+[94]
+Underfull \hbox (badness 1776) in paragraph at lines 1388--1391
+[]\T1/atkinsn-LF/m/n/10 (+20) There are sev-eral in-ter-ac-tive web-sites for cal-cu-lat-ing power for sim-ple
+ []
+
+[95]
+Overfull \hbox (120.81003pt too wide) has occurred while \output is active
+\T1/atkinsn-LF/m/n/10 96 \T1/atkinsn-LF/m/it/10 CHAPTER 10.  HOW BIG A SAMPLE DO I NEED? SAMPLING, STATISTICAL POWER AND TYPE II ERRORS
+ []
+
+[96
+
+]
+Chapter 11.
+File: images/logo_alone_new.png Graphic file (type png)
+<use images/logo_alone_new.png>
+Package pdftex.def Info: images/logo_alone_new.png  used on input line 1402.
+(pdftex.def)             Requested size: 113.56857pt x 102.44998pt.
+<images/wolf_sheep.png, id=1146, 963.6pt x 542.025pt>
+File: images/wolf_sheep.png Graphic file (type png)
+<use images/wolf_sheep.png>
+Package pdftex.def Info: images/wolf_sheep.png  used on input line 1409.
+(pdftex.def)             Requested size: 344.99901pt x 194.06194pt.
+[97]
+Overfull \hbox (8.01079pt too wide) has occurred while \output is active
+\T1/atkinsn-LF/m/n/10 98 \T1/atkinsn-LF/m/it/10 CHAPTER 11.  FALSE POSITIVES, P-HACKING AND MULTIPLE COMPARISONS
+ []
+
+[98 <./images/wolf_sheep.png>] [99]
+Overfull \hbox (13.0908pt too wide) has occurred while \output is active
+\T1/atkinsn-LF/m/n/10 100 \T1/atkinsn-LF/m/it/10 CHAPTER 11.  FALSE POSITIVES, P-HACKING AND MULTIPLE COMPARISONS
+ []
+
+[100]
+Overfull \hbox (59.24883pt too wide) in paragraph at lines 1467--1467
+[]\T1/lmtt/m/n/10 ## Warning: Using \TS1/lmtt/m/n/10 `\T1/lmtt/m/n/10 size\TS1/lmtt/m/n/10 ` \T1/lmtt/m/n/10 aesthetic for lines was deprecated in ggplot2 3.4.0.[] 
+ []
+
+<11-phacking_files/figure-latex/familywise-1.pdf, id=1183, 469.755pt x 325.215pt>
+File: 11-phacking_files/figure-latex/familywise-1.pdf Graphic file (type pdf)
+<use 11-phacking_files/figure-latex/familywise-1.pdf>
+Package pdftex.def Info: 11-phacking_files/figure-latex/familywise-1.pdf  used on input line 1470.
+(pdftex.def)             Requested size: 275.99902pt x 191.07623pt.
+[101]
+Overfull \hbox (11.9108pt too wide) has occurred while \output is active
+\T1/atkinsn-LF/m/n/10 102 \T1/atkinsn-LF/m/it/10 CHAPTER 11.  FALSE POSITIVES, P-HACKING AND MULTIPLE COMPARISONS
+ []
+
+[102 <./11-phacking_files/figure-latex/familywise-1.pdf>]
+Overfull \hbox (89.0pt too wide) in paragraph at lines 1499--1520
+ [][] 
+ []
+
+
+Underfull \hbox (badness 1226) in paragraph at lines 1525--1525
+[]\T1/atkinsn-LF/b/n/12 (+20) Extracting a prin-ci-pal com-po-nent from a set of
+ []
+
+[103]
+Overfull \hbox (12.75081pt too wide) has occurred while \output is active
+\T1/atkinsn-LF/m/n/10 104 \T1/atkinsn-LF/m/it/10 CHAPTER 11.  FALSE POSITIVES, P-HACKING AND MULTIPLE COMPARISONS
+ []
+
+[104]
+Underfull \hbox (badness 10000) in paragraph at lines 1546--1548
+
+ []
+
+[105]
+Overfull \hbox (12.5908pt too wide) has occurred while \output is active
+\T1/atkinsn-LF/m/n/10 106 \T1/atkinsn-LF/m/it/10 CHAPTER 11.  FALSE POSITIVES, P-HACKING AND MULTIPLE COMPARISONS
+ []
+
+[106
+
+]
+Chapter 12.
+File: images/logo_alone_new.png Graphic file (type png)
+<use images/logo_alone_new.png>
+Package pdftex.def Info: images/logo_alone_new.png  used on input line 1558.
+(pdftex.def)             Requested size: 113.56857pt x 102.44998pt.
+
+Overfull \hbox (31.46933pt too wide) in paragraph at lines 1568--1588
+ [][] 
+ []
+
+[107]
+Overfull \hbox (104.074pt too wide) has occurred while \output is active
+\T1/atkinsn-LF/m/n/10 108 \T1/atkinsn-LF/m/it/10 CHAPTER 12.  THE RANDOMIZED CONTROLLED TRIAL AS A METHOD FOR CONTROLLING BIASES
+ []
+
+[108] [109]
+Underfull \hbox (badness 10000) in paragraph at lines 1625--1627
+
+ []
+
+<12-RCT_files/figure-latex/piratefigRCT-1.pdf, id=1279, 469.755pt x 325.215pt>
+File: 12-RCT_files/figure-latex/piratefigRCT-1.pdf Graphic file (type pdf)
+<use 12-RCT_files/figure-latex/piratefigRCT-1.pdf>
+Package pdftex.def Info: 12-RCT_files/figure-latex/piratefigRCT-1.pdf  used on input line 1636.
+(pdftex.def)             Requested size: 258.74594pt x 179.1318pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1643--1644
+
+ []
+
+
+Overfull \hbox (101.94402pt too wide) has occurred while \output is active
+\T1/atkinsn-LF/m/n/10 110 \T1/atkinsn-LF/m/it/10 CHAPTER 12.  THE RANDOMIZED CONTROLLED TRIAL AS A METHOD FOR CONTROLLING BIASES
+ []
+
+[110] [111 <./12-RCT_files/figure-latex/piratefigRCT-1.pdf>]
+
+LaTeX Warning: Reference `fig:ds-prepost' on page 112 undefined on input line 1688.
+
+<12-RCT_files/figure-latex/ds-prepost-1.pdf, id=1318, 469.755pt x 325.215pt>
+File: 12-RCT_files/figure-latex/ds-prepost-1.pdf Graphic file (type pdf)
+<use 12-RCT_files/figure-latex/ds-prepost-1.pdf>
+Package pdftex.def Info: 12-RCT_files/figure-latex/ds-prepost-1.pdf  used on input line 1689.
+(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1688--1691
+[]
+ []
+
+
+Overfull \hbox (100.95401pt too wide) has occurred while \output is active
+\T1/atkinsn-LF/m/n/10 112 \T1/atkinsn-LF/m/it/10 CHAPTER 12.  THE RANDOMIZED CONTROLLED TRIAL AS A METHOD FOR CONTROLLING BIASES
+ []
+
+[112]
+
+LaTeX Warning: Reference `fig:ds-prepost' on page 113 undefined on input line 1719.
+
+[113 <./12-RCT_files/figure-latex/ds-prepost-1.pdf>]
+pdfTeX warning (ext4): destination with the same identifier (name{custom}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1726 \hypertarget{custom}{}
+                             
+Overfull \hbox (101.60402pt too wide) has occurred while \output is active
+\T1/atkinsn-LF/m/n/10 114 \T1/atkinsn-LF/m/it/10 CHAPTER 12.  THE RANDOMIZED CONTROLLED TRIAL AS A METHOD FOR CONTROLLING BIASES
+ []
+
+[114]
+Overfull \hbox (377.31569pt too wide) in paragraph at lines 1743--1760
+ [][] 
+ []
+
+[115]
+Overfull \hbox (101.44402pt too wide) has occurred while \output is active
+\T1/atkinsn-LF/m/n/10 116 \T1/atkinsn-LF/m/it/10 CHAPTER 12.  THE RANDOMIZED CONTROLLED TRIAL AS A METHOD FOR CONTROLLING BIASES
+ []
+
+[116
+
+]
+Chapter 13.
+File: images/logo_alone_new.png Graphic file (type png)
+<use images/logo_alone_new.png>
+Package pdftex.def Info: images/logo_alone_new.png  used on input line 1778.
+(pdftex.def)             Requested size: 113.56857pt x 102.44998pt.
+
+Underfull \hbox (badness 3942) in paragraph at lines 1783--1783
+[]\T1/atkinsn-LF/b/n/14.4 (+20) Inefficiency: need for un-fea-si-bly large
+ []
+
+[117]
+Overfull \hbox (10.29552pt too wide) in paragraph at lines 1787--1788
+[]\T1/atkinsn-LF/m/n/10 (-20) Historically, in-ter-ven-tion stud-ies in al-lied health pro-fes-sions and clin-i-cal/educational
+ []
+
+
+Overfull \hbox (1.35349pt too wide) in paragraph at lines 1794--1794
+[]\T1/atkinsn-LF/b/n/14.4 (-20) Transfer to real life: ef-fi-cacy and ef-fec-tive-ness 
+ []
+
+[118]
+Overfull \hbox (386.55574pt too wide) in paragraph at lines 1806--1817
+ [][] 
+ []
+
+
+Underfull \hbox (badness 1264) in paragraph at lines 1819--1820
+\T1/atkinsn-LF/m/n/10 (+20) in-ter-ven-tions in an ide-al-ized set-ting where most el-e-ments are care-fully
+ []
+
+[119] [120]
+<13-Drawbacks_files/figure-latex/interventionhet-1.pdf, id=1419, 469.755pt x 325.215pt>
+File: 13-Drawbacks_files/figure-latex/interventionhet-1.pdf Graphic file (type pdf)
+<use 13-Drawbacks_files/figure-latex/interventionhet-1.pdf>
+Package pdftex.def Info: 13-Drawbacks_files/figure-latex/interventionhet-1.pdf  used on input line 1852.
+(pdftex.def)             Requested size: 258.74594pt x 179.1318pt.
+[121 <./13-Drawbacks_files/figure-latex/interventionhet-1.pdf>] [122] [123] [124
+
+]
+Chapter 14.
+File: images/logo_alone_new.png Graphic file (type png)
+<use images/logo_alone_new.png>
+Package pdftex.def Info: images/logo_alone_new.png  used on input line 1872.
+(pdftex.def)             Requested size: 113.56857pt x 102.44998pt.
+[125]
+<Images/Moderator.png, id=1470, 578.16pt x 289.08pt>
+File: Images/Moderator.png Graphic file (type png)
+<use Images/Moderator.png>
+Package pdftex.def Info: Images/Moderator.png  used on input line 1884.
+(pdftex.def)             Requested size: 258.74925pt x 129.37462pt.
+
+Underfull \hbox (badness 2922) in paragraph at lines 1894--1895
+\T1/atkinsn-LF/m/n/10 (+20) Mediators pro-vide the-o-ret-i-cally use-ful in-for-ma-tion about why and how
+ []
+
+
+Overfull \hbox (5.48985pt too wide) has occurred while \output is active
+\T1/atkinsn-LF/m/n/10 126 \T1/atkinsn-LF/m/it/10 CHAPTER 14.  MODERATORS AND MEDIATORS OF INTERVENTION EFFECTS
+ []
+
+[126 <./images/Moderator.png>]
+<Images/Mediation_diagram.png, id=1485, 743.34857pt x 230.23157pt>
+File: Images/Mediation_diagram.png Graphic file (type png)
+<use Images/Mediation_diagram.png>
+Package pdftex.def Info: Images/Mediation_diagram.png  used on input line 1897.
+(pdftex.def)             Requested size: 258.74673pt x 80.1396pt.
+[127]
+<Images/Medmod.jpg, id=1494, 1794.705pt x 1146.2825pt>
+File: Images/Medmod.jpg Graphic file (type jpg)
+<use Images/Medmod.jpg>
+Package pdftex.def Info: Images/Medmod.jpg  used on input line 1909.
+(pdftex.def)             Requested size: 172.49785pt x 110.17479pt.
+
+Overfull \hbox (5.65985pt too wide) has occurred while \output is active
+\T1/atkinsn-LF/m/n/10 128 \T1/atkinsn-LF/m/it/10 CHAPTER 14.  MODERATORS AND MEDIATORS OF INTERVENTION EFFECTS
+ []
+
+[128 <./images/mediation_diagram.png> <./images/medmod.jpg>]
+Chapter 15.
+File: images/logo_alone_new.png Graphic file (type png)
+<use images/logo_alone_new.png>
+Package pdftex.def Info: images/logo_alone_new.png  used on input line 1914.
+(pdftex.def)             Requested size: 113.56857pt x 102.44998pt.
+[129
+
+]
+<images/flow_16_1.png, id=1504, 258.9675pt x 145.54375pt>
+File: images/flow_16_1.png Graphic file (type png)
+<use images/flow_16_1.png>
+Package pdftex.def Info: images/flow_16_1.png  used on input line 1926.
+(pdftex.def)             Requested size: 172.50757pt x 96.95192pt.
+<images/adaptive_designs.png, id=1509, 324.46219pt x 331.2375pt>
+File: images/adaptive_designs.png Graphic file (type png)
+<use images/adaptive_designs.png>
+Package pdftex.def Info: images/adaptive_designs.png  used on input line 1937.
+(pdftex.def)             Requested size: 310.51967pt x 317.00385pt.
+[130 <./images/flow_16_1.png>] [131 <./images/adaptive_designs.png>] [132]
+Chapter 16.
+File: images/logo_alone_new.png Graphic file (type png)
+<use images/logo_alone_new.png>
+Package pdftex.def Info: images/logo_alone_new.png  used on input line 1953.
+(pdftex.def)             Requested size: 113.56857pt x 102.44998pt.
+<images/mapplots.jpg, id=1533, 1344.02126pt x 1064.97874pt>
+File: images/mapplots.jpg Graphic file (type jpg)
+<use images/mapplots.jpg>
+Package pdftex.def Info: images/mapplots.jpg  used on input line 1961.
+(pdftex.def)             Requested size: 258.75052pt x 205.02936pt.
+[133
+
+]
+Underfull \hbox (badness 1314) in paragraph at lines 1971--1972
+[]\T1/atkinsn-LF/m/n/10 (+20) In phar-ma-ceu-ti-cal tri-als, we can con-trol con-tam-i-na-tion by mask-ing the
+ []
+
+[134 <./images/mapplots.jpg>] [135]
+pdfTeX warning (ext4): destination with the same identifier (name{custom}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1990 ...vmode\vadjust pre{\hypertarget{custom}{}
+                                                  }% [136]
+Underfull \hbox (badness 10000) in paragraph at lines 2001--2002
+\T1/atkinsn-LF/m/n/10 (+20) ([]$https : / / educationendowmentfoundation . org . uk / public / files / Projects /
+ []
+
+[137] [138
+
+]
+Chapter 17.
+File: images/logo_alone_new.png Graphic file (type png)
+<use images/logo_alone_new.png>
+Package pdftex.def Info: images/logo_alone_new.png  used on input line 2007.
+(pdftex.def)             Requested size: 113.56857pt x 102.44998pt.
+[139]
+<17-Crossover_files/figure-latex/crossoverplot-2.pdf, id=1582, 578.16pt x 289.08pt>
+File: 17-Crossover_files/figure-latex/crossoverplot-2.pdf Graphic file (type pdf)
+<use 17-Crossover_files/figure-latex/crossoverplot-2.pdf>
+Package pdftex.def Info: 17-Crossover_files/figure-latex/crossoverplot-2.pdf  used on input line 2019.
+(pdftex.def)             Requested size: 258.74925pt x 129.37462pt.
+<17-Crossover_files/figure-latex/waitlist-plot-1.pdf, id=1584, 578.16pt x 289.08pt>
+File: 17-Crossover_files/figure-latex/waitlist-plot-1.pdf Graphic file (type pdf)
+<use 17-Crossover_files/figure-latex/waitlist-plot-1.pdf>
+Package pdftex.def Info: 17-Crossover_files/figure-latex/waitlist-plot-1.pdf  used on input line 2030.
+(pdftex.def)             Requested size: 258.74925pt x 129.37462pt.
+[140 <./17-Crossover_files/figure-latex/crossoverplot-2.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 2038--2040
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2040--2042
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2042--2044
+
+ []
+
+[141 <./17-Crossover_files/figure-latex/waitlist-plot-1.pdf>]
+<17-Crossover_files/figure-latex/calderfig-1.pdf, id=1629, 469.755pt x 325.215pt>
+File: 17-Crossover_files/figure-latex/calderfig-1.pdf Graphic file (type pdf)
+<use 17-Crossover_files/figure-latex/calderfig-1.pdf>
+Package pdftex.def Info: 17-Crossover_files/figure-latex/calderfig-1.pdf  used on input line 2053.
+(pdftex.def)             Requested size: 258.74594pt x 179.1318pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 2052--2055
+[]\T1/atkinsn-LF/m/n/10 (+20) \begin{figure} []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2067--2069
+
+ []
+
+[142 <./17-Crossover_files/figure-latex/calderfig-1.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 2074--2076
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2076--2078
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2078--2080
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2096--2098
+
+ []
+
+[143] [144
+
+]
+Chapter 18.
+File: images/logo_alone_new.png Graphic file (type png)
+<use images/logo_alone_new.png>
+Package pdftex.def Info: images/logo_alone_new.png  used on input line 2104.
+(pdftex.def)             Requested size: 113.56857pt x 102.44998pt.
+[145]
+Underfull \hbox (badness 10000) in paragraph at lines 2135--2137
+
+ []
+
+[146]
+<18-Single_files/figure-latex/SingleCaseDplot-1.pdf, id=1683, 578.16pt x 289.08pt>
+File: 18-Single_files/figure-latex/SingleCaseDplot-1.pdf Graphic file (type pdf)
+<use 18-Single_files/figure-latex/SingleCaseDplot-1.pdf>
+Package pdftex.def Info: 18-Single_files/figure-latex/SingleCaseDplot-1.pdf  used on input line 2150.
+(pdftex.def)             Requested size: 258.74925pt x 129.37462pt.
+
+Overfull \hbox (2.28442pt too wide) in paragraph at lines 2157--2158
+[]\T1/atkinsn-LF/m/n/10 (-20) While the char-ac-ter-is-tics in the sec-ond sen-tence fit well with speech-and-language
+ []
+
+[147 <./18-Single_files/figure-latex/SingleCaseDplot-1.pdf>]
+<18-Single_files/figure-latex/bestplot-1.pdf, id=1702, 578.16pt x 289.08pt>
+File: 18-Single_files/figure-latex/bestplot-1.pdf Graphic file (type pdf)
+<use 18-Single_files/figure-latex/bestplot-1.pdf>
+Package pdftex.def Info: 18-Single_files/figure-latex/bestplot-1.pdf  used on input line 2168.
+(pdftex.def)             Requested size: 258.74925pt x 129.37462pt.
+[148]
+Underfull \hbox (badness 4181) in paragraph at lines 2183--2184
+\T1/atkinsn-LF/m/n/10 (+20) Some early sin-gle case stud-ies in neu-ropsy-chol-ogy may have drawn
+ []
+
+[149 <./18-Single_files/figure-latex/bestplot-1.pdf>] [150]
+Overfull \hbox (35.64717pt too wide) has occurred while \output is active
+\T1/atkinsn-LF/m/it/10 18.2.  EXAMPLES OF STUDIES USING DIFFERENT TYPES OF SINGLE CASE DESIGN \T1/atkinsn-LF/m/n/10 151
+ []
+
+[151]
+<images/swainplot.png, id=1745, 310.0383pt x 373.1541pt>
+File: images/swainplot.png Graphic file (type png)
+<use images/swainplot.png>
+Package pdftex.def Info: images/swainplot.png  used on input line 2235.
+(pdftex.def)             Requested size: 207.0055pt x 249.14647pt.
+[152 <./images/swainplot.png>]
+Underfull \hbox (badness 2012) in paragraph at lines 2247--2248
+\T1/atkinsn-LF/m/n/10 (+20) (velopha-ryn-geal in-suf-fi-ciency), mo-saic Turner syn-drome, and right-sided
+ []
+
+<images/Ebbels.png, id=1754, 361.35pt x 289.08pt>
+File: images/Ebbels.png Graphic file (type png)
+<use images/Ebbels.png>
+Package pdftex.def Info: images/Ebbels.png  used on input line 2250.
+(pdftex.def)             Requested size: 258.74925pt x 206.99939pt.
+
+Overfull \hbox (37.36716pt too wide) has occurred while \output is active
+\T1/atkinsn-LF/m/it/10 18.2.  EXAMPLES OF STUDIES USING DIFFERENT TYPES OF SINGLE CASE DESIGN \T1/atkinsn-LF/m/n/10 153
+ []
+
+[153 <./images/Ebbels.png>] [154]
+Overfull \hbox (37.45717pt too wide) has occurred while \output is active
+\T1/atkinsn-LF/m/it/10 18.2.  EXAMPLES OF STUDIES USING DIFFERENT TYPES OF SINGLE CASE DESIGN \T1/atkinsn-LF/m/n/10 155
+ []
+
+[155]
+<18-Single_files/figure-latex/SingleCaseDplot2-1.pdf, id=1787, 578.16pt x 289.08pt>
+File: 18-Single_files/figure-latex/SingleCaseDplot2-1.pdf Graphic file (type pdf)
+<use 18-Single_files/figure-latex/SingleCaseDplot2-1.pdf>
+Package pdftex.def Info: 18-Single_files/figure-latex/SingleCaseDplot2-1.pdf  used on input line 2281.
+(pdftex.def)             Requested size: 258.74925pt x 129.37462pt.
+[156 <./18-Single_files/figure-latex/SingleCaseDplot2-1.pdf>]
+Overfull \hbox (61.09926pt too wide) in paragraph at lines 2297--2317
+ [][] 
+ []
+
+[157] [158]
+<18-Single_files/figure-latex/kdataplot-1.pdf, id=1827, 469.755pt x 325.215pt>
+File: 18-Single_files/figure-latex/kdataplot-1.pdf Graphic file (type pdf)
+<use 18-Single_files/figure-latex/kdataplot-1.pdf>
+Package pdftex.def Info: 18-Single_files/figure-latex/kdataplot-1.pdf  used on input line 2334.
+(pdftex.def)             Requested size: 258.74594pt x 179.1318pt.
+[159 <./18-Single_files/figure-latex/kdataplot-1.pdf>]
+<18-Single_files/figure-latex/Calderplus-1.pdf, id=1849, 469.755pt x 325.215pt>
+File: 18-Single_files/figure-latex/Calderplus-1.pdf Graphic file (type pdf)
+<use 18-Single_files/figure-latex/Calderplus-1.pdf>
+Package pdftex.def Info: 18-Single_files/figure-latex/Calderplus-1.pdf  used on input line 2356.
+(pdftex.def)             Requested size: 258.74594pt x 179.1318pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 2355--2358
+[]\T1/atkinsn-LF/m/n/10 (+20) \begin{figure} []
+ []
+
+[160 <./18-Single_files/figure-latex/Calderplus-1.pdf>]
+Chapter 19.
+File: images/logo_alone_new.png Graphic file (type png)
+<use images/logo_alone_new.png>
+Package pdftex.def Info: images/logo_alone_new.png  used on input line 2364.
+(pdftex.def)             Requested size: 113.56857pt x 102.44998pt.
+[161
+
+]
+pdfTeX warning (ext4): destination with the same identifier (name{custom}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2389 \hypertarget{custom}{}
+                              [162]
+<images/devriesfig.jpg, id=1878, 87.32625pt x 70.8246pt>
+File: images/devriesfig.jpg Graphic file (type jpg)
+<use images/devriesfig.jpg>
+Package pdftex.def Info: images/devriesfig.jpg  used on input line 2396.
+(pdftex.def)             Requested size: 87.33002pt x 70.82764pt.
+[163 <./images/devriesfig.jpg>]
+pdfTeX warning (ext4): destination with the same identifier (name{custom}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2409 \hypertarget{custom}{}
+                              [164] [165] [166]
+Chapter 20.
+File: images/logo_alone_new.png Graphic file (type png)
+<use images/logo_alone_new.png>
+Package pdftex.def Info: images/logo_alone_new.png  used on input line 2449.
+(pdftex.def)             Requested size: 113.56857pt x 102.44998pt.
+[167
+
+]
+Underfull \hbox (badness 1072) in paragraph at lines 2460--2461
+[]\T1/atkinsn-LF/m/n/10 (+20) Does this mean we are pro-hib-ited from ex-plor-ing our data to dis-cover
+ []
+
+[168]
+pdfTeX warning (ext4): destination with the same identifier (name{custom}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2468 \hypertarget{custom}{}
+                             
+<images/RR_compare_regularpublishing.jpg, id=1955, 722.7pt x 542.025pt>
+File: images/RR_compare_regularpublishing.jpg Graphic file (type jpg)
+<use images/RR_compare_regularpublishing.jpg>
+Package pdftex.def Info: images/RR_compare_regularpublishing.jpg  used on input line 2482.
+(pdftex.def)             Requested size: 258.74925pt x 194.06194pt.
+[169] [170 <./images/RR_compare_regularpublishing.jpg>] [171] [172
+
+]
+Chapter 21.
+File: images/logo_alone_new.png Graphic file (type png)
+<use images/logo_alone_new.png>
+Package pdftex.def Info: images/logo_alone_new.png  used on input line 2514.
+(pdftex.def)             Requested size: 113.56857pt x 102.44998pt.
+[173] [174]
+pdfTeX warning (ext4): destination with the same identifier (name{custom}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2551 \hypertarget{custom}{}
+                              [175]
+Underfull \hbox (badness 10000) in paragraph at lines 2558--2559
+
+ []
+
+[176]
+<images/dipper2020fig.png, id=2030, 748.7975pt x 726.715pt>
+File: images/dipper2020fig.png Graphic file (type png)
+<use images/dipper2020fig.png>
+Package pdftex.def Info: images/dipper2020fig.png  used on input line 2589.
+(pdftex.def)             Requested size: 310.4938pt x 301.33714pt.
+[177] [178 <./images/dipper2020fig.png>] [179] [180] [181] [182
+
+]
+Chapter 22.
+File: images/logo_alone_new.png Graphic file (type png)
+<use images/logo_alone_new.png>
+Package pdftex.def Info: images/logo_alone_new.png  used on input line 2640.
+(pdftex.def)             Requested size: 113.56857pt x 102.44998pt.
+[183] [184] [185] [186]
+Chapter 23.
+File: images/logo_alone_new.png Graphic file (type png)
+<use images/logo_alone_new.png>
+Package pdftex.def Info: images/logo_alone_new.png  used on input line 2709.
+(pdftex.def)             Requested size: 113.56857pt x 102.44998pt.
+[187
+
+]
+Underfull \hbox (badness 2253) in paragraph at lines 2743--2745
+[]\T1/atkinsn-LF/m/n/10 (+20) Bishop, D. V. M., Adams, C. V., & Rosen, S. (2006). Re-sis-tance of
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2743--2745
+\T1/atkinsn-LF/m/n/10 (+20) gram-mat-i-cal im-pair-ment to com-put-er-ized com-pre-hen-sion train-ing
+ []
+
+
+Underfull \hbox (badness 7944) in paragraph at lines 2743--2745
+\T1/atkinsn-LF/m/n/10 (+20) in chil-dren with spe-cific and non-specific lan-guage im-pair-ments.
+ []
+
+
+Underfull \hbox (badness 1297) in paragraph at lines 2761--2763
+\T1/atkinsn-LF/m/it/10 (+20) to meta-analysis\T1/atkinsn-LF/m/n/10 (+20) . John Wi-ley & Sons, Ltd. []$https : / / doi . org / 10 . 1002 /
+ []
+
+
+Underfull \hbox (badness 1137) in paragraph at lines 2764--2766
+[]\T1/atkinsn-LF/m/n/10 (+20) Bowen, C. (2020). In-de-pen-dent re-search and the Ar-row-smith Pro-gram.
+ []
+
+
+Underfull \hbox (badness 1132) in paragraph at lines 2767--2769
+[]\T1/atkinsn-LF/m/n/10 (+20) Bricker, D., & Squires, J. (1999). \T1/atkinsn-LF/m/it/10 (+20) Ages and Stages Ques-tion-naires: A
+ []
+
+[188] [189]
+Underfull \hbox (badness 5388) in paragraph at lines 2830--2832
+\T1/atkinsn-LF/m/n/10 (+20) Pub-li-ca-tion bias and psy-cho-log-i-cal sci-ence's aver-sion to the null.
+ []
+
+
+Underfull \hbox (badness 3291) in paragraph at lines 2830--2832
+\T1/atkinsn-LF/m/it/10 (+20) Per-spec-tives on Psy-cho-log-i-cal Sci-ence\T1/atkinsn-LF/m/n/10 (+20) , \T1/atkinsn-LF/m/it/10 (+20) 7\T1/atkinsn-LF/m/n/10 (+20) (6), 555--561. []$https : / / doi .
+ []
+
+
+Underfull \hbox (badness 2903) in paragraph at lines 2851--2853
+[]\T1/atkinsn-LF/m/n/10 (+20) Gelman, A., & Hill, J. (2007). \T1/atkinsn-LF/m/it/10 (+20) Data Anal-y-sis Us-ing Re-gres-sion and
+ []
+
+[190]
+Underfull \hbox (badness 1286) in paragraph at lines 2854--2856
+\T1/atkinsn-LF/m/n/10 (+20) Thi-bodeau, L., Widen, J., Bran-del, J., & Friel-Patti, S. (2008). The
+ []
+
+
+Underfull \hbox (badness 2245) in paragraph at lines 2854--2856
+\T1/atkinsn-LF/m/n/10 (+20) with lan-guage im-pair-ment: A ran-dom-ized con-trolled trial. \T1/atkinsn-LF/m/it/10 (+20) Jour-nal
+ []
+
+
+Underfull \hbox (badness 1082) in paragraph at lines 2854--2856
+\T1/atkinsn-LF/m/it/10 (+20) of Speech, Lan-guage, and Hear-ing Re-search : JSLHR\T1/atkinsn-LF/m/n/10 (+20) , \T1/atkinsn-LF/m/it/10 (+20) 51\T1/atkinsn-LF/m/n/10 (+20) (1), 97--119.
+ []
+
+
+Underfull \hbox (badness 1009) in paragraph at lines 2860--2862
+\T1/atkinsn-LF/m/n/10 (+20) A. N., Jack-son, M., & Corbie-Smith, G. (2016). What is the role of
+ []
+
+
+Underfull \hbox (badness 6808) in paragraph at lines 2860--2862
+\T1/atkinsn-LF/m/n/10 (+20) cul-ture, di-ver-sity, and com-mu-nity en-gage-ment in trans-dis-ci-plinary
+ []
+
+
+Overfull \hbox (160.69997pt too wide) in paragraph at lines 2878--2880
+\T1/atkinsn-LF/m/it/10 (-20) Fac-ulty Web-site\T1/atkinsn-LF/m/n/10 (-20) . https://www.hsph.harvard.edu/miguel-hernan/research/causal-inference-from-observational-data/. 
+ []
+
+
+Underfull \hbox (badness 1210) in paragraph at lines 2884--2886
+[]\T1/atkinsn-LF/m/n/10 (+20) Higgins, J. P. T., Thomas, J., Chan-dler, J., Cump-ston, M., Li, T., Page,
+ []
+
+
+Underfull \hbox (badness 2689) in paragraph at lines 2884--2886
+\T1/atkinsn-LF/m/n/10 (+20) M. J., & Welch, V. A. (Cochrane, 2021). \T1/atkinsn-LF/m/it/10 (+20) Cochrane Hand-book for
+ []
+
+
+Underfull \hbox (badness 2073) in paragraph at lines 2884--2886
+\T1/atkinsn-LF/m/it/10 (+20) Sys-tem-atic Re-views of In-ter-ven-tions, ver-sion 6.2 (up-dated Febru-ary
+ []
+
+[191]
+Overfull \hbox (73.26923pt too wide) in paragraph at lines 2896--2898
+\T1/atkinsn-LF/m/it/10 (-20) Re-search, and Eval-u-a-tion\T1/atkinsn-LF/m/n/10 (-20) , \T1/atkinsn-LF/m/it/10 (-20) 23\T1/atkinsn-LF/m/n/10 (-20) (2), Avail-able at: https://scholarworks.umass.edu/pare/vol23/iss1/2.
+ []
+
+
+Underfull \hbox (badness 4120) in paragraph at lines 2905--2907
+\T1/atkinsn-LF/m/it/10 (+20) Per-son-al-ity and So-cial Psy-chol-ogy Re-view: An Of-fi-cial Jour-nal of
+ []
+
+
+Underfull \hbox (badness 1460) in paragraph at lines 2929--2931
+[]\T1/atkinsn-LF/m/n/10 (+20) Law, J., Gar-rett, Z., & Nye, C. (2003). Speech and lan-guage ther-apy
+ []
+
+
+Underfull \hbox (badness 3148) in paragraph at lines 2929--2931
+\T1/atkinsn-LF/m/n/10 (+20) in-ter-ven-tions for chil-dren with pri-mary speech and lan-guage de-lay
+ []
+
+
+Underfull \hbox (badness 1817) in paragraph at lines 2929--2931
+\T1/atkinsn-LF/m/n/10 (+20) or dis-or-der. \T1/atkinsn-LF/m/it/10 (+20) Cochrane Database of Sys-tem-atic Re-views\T1/atkinsn-LF/m/n/10 (+20) , \T1/atkinsn-LF/m/it/10 (+20) 3\T1/atkinsn-LF/m/n/10 (+20) . []$https :
+ []
+
+[192]
+Underfull \hbox (badness 1448) in paragraph at lines 2938--2940
+\T1/atkinsn-LF/m/n/10 (+20) elec-tropalatog-ra-phy in treat-ing per-sist-ing speech sound dis-or-ders in
+ []
+
+
+Underfull \hbox (badness 3000) in paragraph at lines 2941--2943
+\T1/atkinsn-LF/m/n/10 (+20) at the Hawthorne Plant? An anal-y-sis of the orig-i-nal il-lu-mi-na-tion
+ []
+
+
+Underfull \hbox (badness 1242) in paragraph at lines 2941--2943
+\T1/atkinsn-LF/m/n/10 (+20) ex-per-i-ments. \T1/atkinsn-LF/m/it/10 (+20) Amer-i-can Eco-nomic Jour-nal: Ap-plied Eco-nomics\T1/atkinsn-LF/m/n/10 (+20) , \T1/atkinsn-LF/m/it/10 (+20) 3\T1/atkinsn-LF/m/n/10 (+20) (1),
+ []
+
+
+Overfull \hbox (302.72803pt too wide) in paragraph at lines 2953--2955
+\T1/atkinsn-LF/m/n/10 (-20) pathol-ogy. In \T1/atkinsn-LF/m/it/10 (-20) ASHA Jour-nals Academy\T1/atkinsn-LF/m/n/10 (-20) . https://academy.pubs.asha.org/2013/11/need-for-adaptive-research-designs-in-speech-language-pathology/. 
+ []
+
+
+Underfull \hbox (badness 1990) in paragraph at lines 2971--2973
+\T1/atkinsn-LF/m/n/10 (+20) and co-vari-ates: Match-ing anal-y-sis ap-proach for im-proved pre-ci-sion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2971--2973
+\T1/atkinsn-LF/m/n/10 (+20) in cognitive-communication re-ha-bil-i-ta-tion re-search. \T1/atkinsn-LF/m/it/10 (+20) Jour-nal of
+ []
+
+
+Underfull \hbox (badness 1052) in paragraph at lines 2971--2973
+\T1/atkinsn-LF/m/it/10 (+20) Speech, Lan-guage, and Hear-ing Re-search\T1/atkinsn-LF/m/n/10 (+20) , \T1/atkinsn-LF/m/it/10 (+20) 65\T1/atkinsn-LF/m/n/10 (+20) (11), 4159--4171. []$https :
+ []
+
+[193]
+Underfull \hbox (badness 1803) in paragraph at lines 2986--2988
+[]\T1/atkinsn-LF/m/n/10 (+20) Perdices, M., & Tate, R. L. (2009). Single-subject de-signs as a tool
+ []
+
+
+Underfull \hbox (badness 6658) in paragraph at lines 2986--2988
+\T1/atkinsn-LF/m/n/10 (+20) for evidence-based clin-i-cal prac-tice: Are they un-recog-nised and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2986--2988
+\T1/atkinsn-LF/m/n/10 (+20) un-der-val-ued? \T1/atkinsn-LF/m/it/10 (+20) Neu-ropsy-cho-log-i-cal Re-ha-bil-i-ta-tion\T1/atkinsn-LF/m/n/10 (+20) , \T1/atkinsn-LF/m/it/10 (+20) 19\T1/atkinsn-LF/m/n/10 (+20) (6), 904--927.
+ []
+
+[194]
+Underfull \hbox (badness 1565) in paragraph at lines 3013--3015
+[]\T1/atkinsn-LF/m/n/10 (+20) Rindskopf, D. M., & Fer-ron, J. M. (2014). Us-ing mul-ti-level mod-els to
+ []
+
+
+Underfull \hbox (badness 1783) in paragraph at lines 3013--3015
+\T1/atkinsn-LF/m/it/10 (+20) Method-olog-i-cal and Sta-tis-ti-cal Ad-vances \T1/atkinsn-LF/m/n/10 (+20) (pp. 221--246). Amer-i-can
+ []
+
+[195] [196] (./Evaluating-What-Works.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 17551 strings out of 477964
+ 305453 string characters out of 5836782
+ 1878382 words of memory out of 5000000
+ 35986 multiletter control sequences out of 15000+600000
+ 651874 words of font info for 516 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 77i,11n,81p,2769b,612s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{https:ux2fux2fwww.datanovia.comux2fenux2flessonsux2fancova-in-rux2f} has been referenced but does not exist, replaced by a fixed one
+
+{c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/atkinson/atksn_cvs3iv.enc}{c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/atkinson/atksn_ycy2xh.enc}<c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/atkinson/atkinsn-Bold.pfb><c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/atkinson/atkinsn-BoldItalic.pfb><c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/atkinson/atkinsn-Italic.pfb><c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/atkinson/atkinsn-Regular.pfb><c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi12.pfb><c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi7.pfb><c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/Users/ab604/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
+Output written on Evaluating-What-Works.pdf (196 pages, 2851376 bytes).
+PDF statistics:
+ 2885 PDF objects out of 2984 (max. 8388607)
+ 2553 compressed objects within 26 object streams
+ 754 named destinations out of 1000 (max. 500000)
+ 93363 words of extra memory for PDF output out of 106986 (max. 10000000)
+

@@ -60,7 +60,7 @@ To illustrate data analysis, we will use a real dataset that can be retrieved fr
 <!---this is the measure with the strongest effect - I considered using others but they are not great for illustrative purposes, as they aren't very normal! Script below written so that we could easily substitute one of the other measures if we wished (but then text would also need redoing in places)-->
 
 ```{r piratefigRCT,echo=F,fig.cap='Data from RCT on language/reading intervention for Down syndrome by @burgoyne2012',warning=F,message=F,out.width="75%"}    
-dsdat <- read.csv("data/dse-rli-trial-data-archive.csv")
+dsdat <- read.csv("Data/dse-rli-trial-data-archive.csv")
 dsdat <- dsdat[dsdat$included==1,]
 dsdat$group <- as.factor(dsdat$group)
 levels(dsdat$group)<-c("Intervention","Control")

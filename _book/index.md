@@ -1,16 +1,14 @@
 --- 
 title: "Evaluating What Works"
 author: "Dorothy V M Bishop and Paul A Thompson"
-date: "March 18, 2023"
-output: pdf_document
+date: "March 19, 2023"
 documentclass: book
-bibliography:
-- book.bib
-- packages.bib
+bibliography: [book.bib,packages.bib]
 csl: apa.csl
-link-citations: yes
+link-citations: true
 description: Introduction to methods for evaluating effectiveness of non-medical interventions
 site: bookdown::bookdown_site
+always_allow_html: true
 ---
 
 

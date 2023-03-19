@@ -73,7 +73,8 @@ The adaptive design, as the name suggests, allows for modifications to certain a
 
 
 ```{r adaptivegif, echo=F, fig.align="center",out.width="90%",fig.cap="Commonly used adaptive designs"}
-knitr::include_graphics("images/adaptive_designs.gif")
+# Changed this from a gif to png
+knitr::include_graphics("images/adaptive_designs.png")
 
 ```
 
