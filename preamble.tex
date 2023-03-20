@@ -1,10 +1,17 @@
+% Preamble
 \usepackage{booktabs}
 \usepackage{amsthm}
-\usepackage{fontspec}
-\setmainfont{Arial}
 \makeatletter
 \def\thm@space@setup{%
   \thm@preskip=8pt plus 2pt minus 4pt
   \thm@postskip=\thm@preskip
 }
 \makeatother
+
+\usepackage[none]{hyphenat} % disable all hyphenation (or enable) hyphenation of non-alphabetics or monospaced fonts
+\usepackage[sfdefault]{atkinson} % Make Aktinson Hyperlegible the default font
+\renewcommand*\familydefault{\sfdefault}
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\raggedbottom
+\makeindex % Table of contents
+\usepackage[nottoc]{tocbibind}

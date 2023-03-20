@@ -1,10 +1,10 @@
 # Drawbacks of the two-arm RCT {#drawbacks}
 
 ```{r packages-13,echo=F,warning=F,message=F}
-library(knitr)
+#library(knitr)
 #library(kableExtra)
 
-options(kableExtra.html.bsTable = T)
+#options(kableExtra.html.bsTable = T)
 ```
 `r knitr::include_graphics("images/logo_alone_new.png")`
 
@@ -32,7 +32,7 @@ In the clinical RCT setting, the potential mismatch between "ideal" and "real-wo
  
  
  
-```{r diffeff,echo=FALSE,message=FALSE,warning=FALSE,tab.cap="Efficacy vs Efficiency trials",out.width="75%"}
+```{r diffeff,include=T,echo=FALSE,message=FALSE,warning=FALSE,tab.cap="Efficacy vs Efficiency trials",out.width="75%"}
 library(tidyverse)
 library(knitr)
 library(kableExtra)
@@ -48,7 +48,7 @@ dt <- matrix(c('Question',	'Does the intervention work under ideal circumstances
 dt <- as.data.frame(dt)
 colnames(dt) <- c(' ','Efficacy/Explanatory study',	'Effectiveness/Pragmatic study')
 
-knitr::kable(dt,escape = F, align = "c", booktabs = T, caption = 'Differences between efficacy and effectiveness studies') %>%
+knitr::kable(dt,escape = T, align = "c", booktabs = T, caption = 'Differences between efficacy and effectiveness studies') %>%
    kable_styling(c("striped", "bordered"), latex_options = "striped", full_width = F)
 
 ``` 
@@ -57,39 +57,11 @@ Explanatory trials (efficacy) are the most familiar trial design that is typical
 
 Pragmatic trials (effectiveness) are designed to assess interventions in a naturalistic setting which will be a far less controlled environment. In this type of trial, the intervention may differ slightly depending on the setting and patient requirement. This differs from an explanatory trial which will typically compare against a placebo condition. The pragmatic trial will also collect a range of measures that are more patient-focused rather than a biological or behavioural marker.
 
-Table \@ref(tab:steps-porz) is reproduced from @porzsolt2015, who described the 13 steps to assessing efficacy and effectiveness.
+Figure \@ref(fig:porzsteps) is reproduced from @porzsolt2015, who described the 13 steps to assessing efficacy and effectiveness.
 
- 
-
-```{r steps-porz,echo=FALSE,message=FALSE,warning=FALSE,out.width="75%"}
-options(kableExtra.html.bsTable = T)
-dt13 <- matrix(c(
-'(1)',	'Phrase the primary and secondary study questions according to the principles of evidence-based medicine','Phrase the primary and secondary study questions according to the principles of evidence-based medicine',
-'(2)',	'Distinguish between primary and secondary outcomes of the study','Distinguish between primary and secondary outcomes of the study',
-'(3)',	'Define inclusion criteria','Define inclusion criteria',
-'(4)',	'Define exclusion criteria', 'Define any important risk factors related to any of the primary outcomes',
-'(5)',	'Define treatment options',	'Identify the most frequently used treatments from existing database',
-'(6)',	'Define appropriate study design according to primary study questions (superiority or equivalence or noninferiority study) and set the limits for each study type',	'Any pragmatic trial is a descriptive trial. There is only one common design for descriptive trials. Mention 95% CI',
-'(7)',	'Define the hypothesis (expected difference of experimental and control), mention α-/β-error, calculate the needed number of patients to confirm the hypothesis', 'Any of the selected individual treatments is considered the best possible treatment (in the individual situation for the individual patient)',
-'(8)',	'Ask eligible patients to sign informed consent for randomization, evaluation, and publication of data', 'Ask eligible patients to sign informed consent for evaluation and publication of data',
-'(9)',	'Allocate the patients randomly to the treatment options of the trial',	'Allocate patients to treatment options according to individual preferences and results of shared decision making',
-'(10)', 'Guarantee follow-up long enough to detect outcomes and most of the adverse effects','Guarantee follow-up long enough to detect outcomes and most of the adverse effects',
-'(11)', 'Compare the results of the randomized groups',	'Compare only results of groups with identical baseline risks (ie, stratified according to high, intermediate, and low risk). Include results of the “any other treatment” group for specificity control',
-'(12)', 'Apply the intent-to-treat (ITT) principle according to step (9)', 'Application of the ITT principle is not necessary as the risk groups were stratified',
-'(13)', 'Confirm statistical significance only if clinical effect is relevant (save statistical energy)','Confirm statistical significance only if clinical effect is relevant (save statistical energy)'),ncol=3,byrow=TRUE)
-
-dt13 <- as.data.frame(dt13)
-colnames(dt13) <- c('Step',	'Explanatory (ideal conditions)',	'Pragmatic (real-world health care)')
-
-
-
-
-knitr::kable(dt13,escape = F, align = "c", booktabs = T,caption="Steps to assess efficacy (explanatory trial) and effectiveness (pragmatic trial)") %>%
-  kable_styling(c("striped", "bordered"), latex_options = "striped", full_width = F) 
-
+```{r porzsteps,echo=FALSE,message=FALSE,warning=FALSE,out.width="95%"}
+ knitr::include_graphics('images/PORZOLT TABLE.png') #read in table
 ```
-
-
 
 When designing a trial of a behavioural intervention in allied health or education, the distinction between efficacy and effectiveness is highly pertinent, and researchers need to ask themselves whether the goal is to find out what the intervention can achieve under tightly-controlled, optimal circumstances, or whether it is to test its effectiveness in a more naturalistic setting. If the decision is made to focus on "pure" cases, this may allow a more tightly controlled efficacy trial, but then questions may be raised about the generalisability of results to the broader population.  
 

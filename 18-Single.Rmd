@@ -142,7 +142,7 @@ In effect, we need to use the same kind of logic that we saw in Chapter \@ref(po
 The columns show the effect size as the raw difference in proportion items correct for trained vs untrained words. It is assumed that these two sets were equated for difficulty prior to intervention, and the table shows the difference in proportion correct between the two sets after intervention. So if the initial proportion correct was .3 for both trained and untrained items, but after intervention, we expect accuracy on trained items to increase to .6 and the untrained to stay at .3, then the difference between the two sets after treatment is .3, shown in the 4th column of the table.  We can then read down this column to see the point at which power reaches 80% or more. This occurs at the 4th row of the table, when there are 40 items in each set. If we anticipated a smaller increase in proportion correct for trained items of .2, then we would need 80 items per set to achieve 80% power. 
 
 
-```{r Nitems-power,echo=F,warning=F,message=F,out.width="75%"}
+```{r Nitems-power,echo=F,include=T,warning=F,message=F,out.width="75%"}
 options(kableExtra.html.bsTable = T)
 
 clist <- seq(.2,.5,.1) #proportions correct in controls
@@ -190,8 +190,8 @@ if(readthisfile==1){
   mytab <- read.csv('data/power_singlecase_itemssets.csv')
 }
 mytab<-mytab[,1:7]
-colnames(mytab)<-c('N_per_Set','.1','.2','.3','.4','.5','.6')
-knitr::kable(mytab,escape = F, align = "c", booktabs = T,caption="N items per set needed to detect target-control item difference of a given size") %>%
+colnames(mytab)<-c('N_per_Set','n1','n2','n3','n4','n5','n6')
+knitr::kable(mytab,escape = T, align = "c", booktabs = T,caption="N items per set needed to detect target-control item difference of a given size") %>%
   kable_styling(c("striped", "bordered"), latex_options = "striped", full_width = F) %>%
   column_spec(c(1), bold = T)
 
@@ -219,14 +219,15 @@ We noted in the previous chapter how, electropalatography, a biofeedback interve
 
 
 
-```{r ebbelsfig,echo=F,include=T,warning=F,message=F,fig.cap = "Individual results for targets and controls at each term (Redrawn Fig 3 from Leniston & Ebbels, data kindly provided by Susan Ebbels)",out.width="75%"}
+```{r ebbelsfig,echo=F,include=T,warning=F,message=F,fig.cap = "Individual results for targets and controls at each term",out.width="75%"}
 knitr::include_graphics("images/Ebbels.png")
 #fig was created with makeebbels
 
 ```
 
 
-An analysis of group data found no main effect of target or time, but a large interaction between these, indicating greater improvement on trained speech sounds. The design of the study made it possible to look at individual cases, which gave greater insights into variation of the impact of intervention. As shown in Figure \@ref(fig:ebbelsfig), in the first term of intervention, there was a main effect of time for three of the participants (IDs 1, 3, and 4), but no interaction with sound type. In other words, these children improved over the course of the term, but this was seen for the untrained as well as the trained sound. By term 2, one of four children showed an interaction between time and sound type (ID4), and both children who continued training into term 3 (ID 1 and 2) showed such an interaction. Three children did not show any convincing evidence of benefit - all of these stopped intervention after one term. 
+
+An analysis of group data found no main effect of target or time, but a large interaction between these, indicating greater improvement on trained speech sounds. The design of the study made it possible to look at individual cases, which gave greater insights into variation of the impact of intervention. Figure \@ref(fig:ebbelsfig) shows data from Leniston and Ebbels (redrawn from data kindly provided by Susan Ebbels). In the first term of intervention, there was a main effect of time for three of the participants (IDs 1, 3, and 4), but no interaction with sound type. In other words, these children improved over the course of the term, but this was seen for the untrained as well as the trained sound. By term 2, one of four children showed an interaction between time and sound type (ID4), and both children who continued training into term 3 (ID 1 and 2) showed such an interaction. Three children did not show any convincing evidence of benefit - all of these stopped intervention after one term. 
 
 As the authors noted, there is a key limitation of the study: when a significant interaction is found between time and sound type, this provides evidence that the intervention was effective. But when _both_ trained and untrained sounds improve, this is ambiguous. It could mean that the intervention was effective, and its impact generalized beyond the trained sounds. But it could also mean that the intervention was ineffective, with improvement being due to other factors, such as maturation or practice on the outcome measure.  Inclusion of a series of baseline measures might have helped establish how plausible these two possibilities were. 
 

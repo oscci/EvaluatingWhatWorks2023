@@ -117,9 +117,9 @@ colnames(mini.mat)<-c("Prognostic factor", "Intervention", "Control")
 
 knitr::kable(mini.mat,escape = F, align = "c", booktabs = T,caption = 'Randomized allocation by minimization') %>%
   kable_styling(c("striped", "bordered"), latex_options = "striped", full_width = F) %>%
-  column_spec(1, bold = T)%>%
-  group_rows("Sex",1,2)%>%
-  group_rows("Age band",3,5)%>%
+  column_spec(1, bold = T) %>%
+  group_rows("Sex",1,2) %>%
+  group_rows("Age band",3,5) %>%
   group_rows("Risk factor",6,7)
 ```
 We now consider allocation of the 17th participant who is Male, aged 31-40, and High Risk.

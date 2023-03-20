@@ -7,9 +7,10 @@ bibliography:
 - book.bib
 - packages.bib
 csl: apa.csl
-link-citations: yes
+link-citations: true
 description: Introduction to methods for evaluating effectiveness of non-medical interventions
 site: bookdown::bookdown_site
+always_allow_html: true
 ---
 <center>
 `r knitr::include_graphics("images/logo_alone_new.png")`

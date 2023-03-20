@@ -67,13 +67,13 @@ knitr::include_graphics("images/flow_16_1.png")
 #Not sure why the height and centre commands do not work - altering height in previous chunk also seems to have no effect!
 ``` 
 
-The adaptive design, as the name suggests, allows for modifications to certain aspects of the design as the trial progresses (see Figure \@ref(fig:adaptiveflow), taken from @pallmann2018). Interim analyses are used to assess whether modifications are required. These pre-planned assessments can be used to make several pre-specified changes, if required. Figure \@ref(fig:adaptivegif) [from @thorlund2018] shows some of the commonly used adaptive trial designs, others include: changing the amount or frequency of intervention received, and stopping intervention early if not effective or adverse effects observed.  
+The adaptive design, as the name suggests, allows for modifications to certain aspects of the design as the trial progresses (see Figure \@ref(fig:adaptiveflow), taken from @pallmann2018). Interim analyses are used to assess whether modifications are required. These pre-planned assessments can be used to make several pre-specified changes, if required. Figure \@ref(fig:adaptivefig) [from @thorlund2018] shows some of the commonly used adaptive trial designs, others include: changing the amount or frequency of intervention received, and stopping intervention early if not effective or adverse effects observed.  
 
 
 
 
-```{r adaptivegif, echo=F, fig.align="center",out.width="90%",fig.cap="Commonly used adaptive designs"}
-knitr::include_graphics("images/adaptive_designs.gif")
+```{r adaptivefig, echo=F, fig.align="center",out.width="90%",fig.cap="Commonly used adaptive designs; based on Thorlund et al, 2017"}
+knitr::include_graphics("images/AdaptiveInfographic.jpg")
 
 ```
 
