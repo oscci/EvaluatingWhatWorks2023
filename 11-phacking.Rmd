@@ -27,7 +27,7 @@ A **Type I error** is a **false positive**, which occurs when the null hypothesi
 
 ![](images/wolf_sheep.png)
 
-The type I error rate is controlled by setting the significance criterion, $\alpha=0.05$, at 5%, or sometimes more conservatively 1% ($\alpha=0.01$). With $\alpha=0.05$, on average 1 in 20 statistically significant results will be false positives; when it is .01, then 1 in 100 will be false positives. The .05 cutoff is essentially arbitrary, but very widely adopted in the medical and social sciences literature, though debate continues as to whether a different convention should be adopted [@benjamin2018, @lakens2018].  
+The type I error rate (i.e. percentage of 'significant' results seen when there is no real effect) is controlled by setting the significance criterion, $\alpha=0.05$, at 5%, or sometimes more conservatively 1% ($\alpha=0.01$). With $\alpha=0.05$, on average 1 in 20 statistically significant results will be false positives; when it is .01, then 1 in 100 will be false positives. The .05 cutoff is essentially arbitrary, but very widely adopted in the medical and social sciences literature, though debate continues as to whether a different convention should be adopted [@benjamin2018, @lakens2018].  
 
 ## Reasons for false positives  
 

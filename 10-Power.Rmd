@@ -150,7 +150,7 @@ Notice how the observed means jump around from sample to sample when sample size
 
 When we do an intervention study we want to find out whether a given intervention works. The examples above show that it is not enough just to show that the mean outcome for an intervention group is better than for a control group. We need to take the variation around the means into account. 
 
-Most studies use an approach known as Null Hypothesis Significance Testing, which gives us a rather roundabout answer to the question.  Typically, findings are evaluated in terms of p-values, which tell us _what is the probability (p) that our result, or a more extreme one, could have arisen by chance_. The lower the p-value, the less likely it is that our result would have occurred if there is no real intervention effect. The way the p-values is calculated assumes certain things hold true about the nature of the data ("model assumptions"): we will say more about this later on, and show how it is important to test assumptions when applying statistical tests, to avoid getting misleading results. 
+Most studies use an approach known as Null Hypothesis Significance Testing, which gives us a rather roundabout answer to the question.  Typically, findings are evaluated in terms of p-values, which tell us _what is the probability (p) that our result, or a more extreme one, could have arisen if there is no real effect of the intervention_. Suppose in a hypothetical world we have a totally ineffective drug, and we do 100 studies in large samples to see if it works. On average, in 20 of those studies (i.e. 5 per cent of them), the p-value would be below .05. And in one study (1 per cent), it would be below .01. The way that p-values are calculated assumes certain things hold true about the nature of the data ("model assumptions"): we will say more about this later on, and show how it is important to test assumptions when applying statistical tests, to avoid getting misleading results. 
 
 P-values are very often misunderstood, and there are plenty of instances of wrong definitions being given even in textbooks. The p-value is _the probability of the observed data or more extreme data, if the null hypothesis is true_.  It does _not_ tell us the probability of the null hypothesis being true. And it tells us nothing about the alternative hypothesis, i.e., that the intervention works. 
 
@@ -190,7 +190,7 @@ knitr::kable(mymat,escape = F, align = "c", booktabs = T, caption = 'Outcomes of
   add_header_above(c(" ","Ground truth" = 2))
 ```
 
-The Ground truth is the result that we would obtain if we were able to administer the intervention to the whole population - this is of course impossible, but we assume that there is some general truth that we are aiming to discover by running our study on a sample from the population. We can see that if the intervention really is effective, and the evidence leads us to reject the null hypothesis, we have a True Positive, and if the intervention is ineffective and we accept the null hypothesis, we have a True Negative. Our goal is to design our study so as to maximize the chances that our conclusion will be correct, but there two types of outcome that we can never avoid, but which we try to minimize, known as Type I and Type II errors. We will cover Type II errors in this chapter, as these depend crucially on sample size and effect size. Type I errors are covered in Chapter \@ref(phacking).
+The ground truth is the result that we would obtain if we were able to administer the intervention to the whole population - this is of course impossible, but we assume that there is some general truth that we are aiming to discover by running our study on a sample from the population. We can see that if the intervention really is effective, and the evidence leads us to reject the null hypothesis, we have a True Positive, and if the intervention is ineffective and we accept the null hypothesis, we have a True Negative. Our goal is to design our study so as to maximize the chances that our conclusion will be correct, but there two types of outcome that we can never avoid, but which we try to minimize, known as Type I and Type II errors. We will cover Type II errors in this chapter, as these depend crucially on sample size and effect size. Type I errors are covered in Chapter \@ref(phacking).
 
 ### Type II error 
 
@@ -235,7 +235,7 @@ for (myn in nlist){
     
   }
 }
-knitr::kable(powerdf,escape = F, align = "c", booktabs = T, caption = 'Power for 2-tailed t-test, alpha = .05') %>%
+knitr::kable(powerdf,escape = F, align = "c", booktabs = T, caption = 'Power for 2-tailed independent t-test, alpha = .05') %>%
   kable_styling(c("striped", "bordered"), latex_options = "striped", full_width = F)  %>%
   add_header_above(c(" ","Effect size (d)" = 8))
 ```
