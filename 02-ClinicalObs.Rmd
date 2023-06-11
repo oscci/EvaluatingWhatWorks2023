@@ -95,7 +95,7 @@ There is a great deal of work on methods for analysing and interpreting observat
 
 2.  The figure below is recreated from a medical example by @rothwell2005, and shows the rate of stroke or death at 5 year follow-up in at-risk patients who either underwent a surgical procedure known as endarterectomy, or who had medical treatment as usual.
 
-```{r makerothwell}
+```{r makerothwell,echo=F}
 #http://www.sthda.com/english/wiki/ggplot2-error-bars-quick-start-guide-r-software-and-data-visualization
 #note that the gap between terms on lower label is done crudely by inserting spaces - figure will only look right when saved at the size given here. This chunk preserved but not run, as we use the created figure.
 makerothwellfig <-0
@@ -117,7 +117,7 @@ p2 <- p1+labs(x="Randomised                        Non-randomised", y = "5 year 
 
 ```
 
-```{r rothwellfig, fig.align="center", echo=FALSE, fig.cap="Outcome from surgery in randomized vs non-randomized study, based on Rothwell (2005)",out.height="25%",out.width="25%"}
+```{r rothwellfig, fig.align="center", echo=FALSE, fig.cap="Outcome from surgery in randomized vs non-randomized study, based on Rothwell (2005)",out.height="50%",out.width="50%"}
 include_graphics("images_bw/rothwellplot.png")
 ```
 
