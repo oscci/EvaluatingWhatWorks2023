@@ -78,7 +78,8 @@ for(i in R_cors)
 assign(myC[which(R_cors==i)],plot_cors(i) %>% ggplot(aes(x=x,y=y))+geom_point(alpha=0.75,shape=23)+geom_smooth(method = "lm", se = FALSE, color = "black",linetype="dashed") + theme_bw() + xlab("Time 1 Score") + ylab("Time 2 Score")+ggtitle(paste0("r = ",R_cors[which(R_cors==i)]/20))+xlim(40,60)+ylim(40,60)+theme(text=element_text(size=16)))
 }
 p3 <- ggarrange(plotlist = mget(paste0("C",1:length(R_cors))),ncol=2,nrow=2)
- ggsave(paste0(myfolder,'/correlationfig.png'),p3,scale = 1, width = 6, height = 6, units = c("in"), dpi = 300)
+ 
+ggsave(paste0(myfolder,'/correlationfig.png'),p3,scale = 1, width = 6, height = 6, units = c("in"), dpi = 300)
 }
 
 ```
@@ -100,42 +101,10 @@ Although the correlation coefficient is widely used to index reliability, it can
 
 So how reliable should a measure be? Most psychometric tests report reliability estimates, and a good test is expected to have test-retest reliability of at least .8. But be careful in interpreting such estimates, as you need also to consider the age range on which the estimate is based.
 
-```{r reliability-by-age,echo=F,include=T,fig.width=6,fig.height=6,fig.cap="Age range can affect reliability"}
-makereliabage <- 0 #set to 1 to run this chunk and recreate figure
-if(makereliabage==1){
-mysigma <- matrix(c(1,.3,.3,1),nrow=2)
-myn <- 40
-basedata <- mvrnorm(n=myn,mu=c(0,0),Sigma=mysigma,empirical=TRUE)
-data3 <-basedata*15+40
-data4 <-basedata*15+70
-data5 <-basedata*15+100
-alldata<-data.frame(rbind(data3,data4,data5))
-alldata$age<-c(rep(3,myn),rep(4,myn),rep(5,myn))
 
-mycolours<-c('white','black','lightgray')
-alldata$mycol <- as.factor(c(rep(mycolours[1],myn),rep(mycolours[2],myn),rep(mycolours[3],myn)))
-#exclude middle group for this plot - too hard to show 3 ages in b&w clearly!
-alldata <- alldata[alldata$age!=4,]
-allcor <- round(cor(alldata$X1,alldata$X2),2)
-alldata$age<-factor(alldata$age)
-
-allcor3 <- round(cor(alldata$X1[alldata$age==3],alldata$X2[alldata$age==3]),2)
-allcor5 <- round(cor(alldata$X1[alldata$age==5],alldata$X2[alldata$age==5]),2)
-myp <- ggplot(alldata,aes(x=X1,y=X2))+
-  geom_point(aes(color=age))+
-   theme_bw() +
-   xlab("Time 1 Score") +
-   ylab("Time 2 Score") +
-   ggtitle(paste0("Overall r = ",allcor)) + 
-   scale_colour_manual(name="Age (yr)",values=c("black","gray"))
-
- ggsave(paste0(myfolder,'/reliability-by-age.png'),myp,scale = 1, width = 6, height = 4, units = c("in"), dpi = 300)
- 
-}
-```
 
 ```{r reliability-by-age,echo=F,include=T,fig.width=6,fig.height=6,fig.cap="Age range can affect reliability"}
-
+#Code to create figures caused problems rendering so removed
 knitr::include_graphics(paste0(myfolder,'/reliability-by-age.png'))
 ```
 
@@ -227,10 +196,10 @@ Now suppose we also have normative data on 9-year-olds, and their mean raw score
 Converting between raw and scaled scores becomes second nature to those who do a lot of psychometric testing, and, as can be seen from the example above, it allows one to compare results on different measures or different age groups on a common metric. But it can be confusing, not least because there are various ways of representing scaled scores.\
 The most basic way of representing a scaled score is as a z-score. This just represents distance from the mean in standard deviation (SD) units. So in the example above, in 6-year-olds, the raw score of 39 would convert to a z-score of -1.0, and a raw score of 34 to a z-score of -2.0. Basically, to get a z-score, you simply subtract the mean for that age group from the obtained score and divide by the SD.\
 Z-scores, however, have some unfortunate characteristics: they involve both positive and negative numbers, and fractional units. When entering data or writing reports, it is much easier to deal with whole numbers. So most psychometric tests simply transform the z-score onto a scale with a more convenient mean and SD. The best-known example is the IQ test, which usually gives a scaled score based on a mean of 100 and standard deviation of 15. So if someone scores one SD below the mean, this is represented as a scaled score of 85; if two SD below the mean, then the scaled score is 70.\
-As if this was not complicated enough, the scaled score can also be directly translated into a percentile (or centile) score, which corresponds to the percentage of people in the population who are expected to obtain a score at least as high as this. This conversion is usually based on the normal distribution, where there is an orderly relationship between percentiles and the z-score. As shown in Figure \@ref(fig:zDensityCDF), approximately 16% of people are expected to score 1 SD below the mean, and 3% score 2 SD below the mean.
+As if this was not complicated enough, the scaled score can also be directly translated into a percentile (or centile) score, which corresponds to the percentage of people in the population who are expected to obtain a score at least as high as this. This conversion is usually based on the normal distribution, where there is an orderly relationship between percentiles and the z-score. As shown in Figure \@ref(fig:ZDensityCDF), approximately 16% of people are expected to score 1 SD below the mean, and 3% score 2 SD below the mean.
 :::
 
-```{r makezDensity,echo=FALSE,fig.cap="Distribution of z-scores, showing proportions of people obtaining scores below -1, between -1 and 1, and above 1.",fig.width=6,fig.height=3,out.width="75%"}
+```{r makeZDensity,echo=FALSE,fig.cap="Distribution of z-scores, showing proportions of people obtaining scores below -1, between -1 and 1, and above 1.",fig.width=6,fig.height=3,out.width="75%"}
 # This is modified from Poldrack online book Stats for 21st century
 # First, create a function to generate plots of the density and CDF
 makezdens <-0 #set to 1 to recreate figure
@@ -304,9 +273,9 @@ p2 <- plot_density(zcut=1)
 }
 ```
 
-```{r zdensityCDF,echo=F,include=T,fig.width=6,fig.height=3,fig.cap="Distribution of z-scores, showing proportions of people obtaining scores below -1, between -1 and 1, and above 1"}
+```{r ZdensityCDF,echo=F,include=T,fig.width=6,fig.height=3,fig.cap="Distribution of z-scores, showing proportions of people obtaining scores below -1, between -1 and 1, and above 1"}
 
-knitr::include_graphics(paste0(myfolder,'/ZDensityCDFpng'))
+knitr::include_graphics(paste0(myfolder,'/ZDensityCDF.png'))
 ```
 
 <p id="custom">

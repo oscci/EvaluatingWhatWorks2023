@@ -12,7 +12,7 @@
 
 Most of us are familiar with the **placebo effect** in medicine: the finding that patients can show improvement in their condition even if given an inert sugar pill.
 
-```{r placebotab, echo = FALSE, message = FALSE, warning = FALSE, fig.cap = 'Placebo effect in a three-arm parallel group trial', fig.width = 8, fig.height = 5,out.width="75%"}
+```{r placebomake, echo = FALSE, message = FALSE, warning = FALSE, fig.cap = 'Placebo effect in a three-arm parallel group trial', fig.width = 8, fig.height = 5,out.width="75%"}
 library(tidyverse)
 
 bwversion = 1  #1=blackwhite; #2=coloured - NB here colour is just decorative
@@ -91,12 +91,6 @@ It is not always easy to identify a mechanism measure -- this will depend on the
 
 1.  In their analysis of the original data on the Hawthorne effect, @levitt2011 found that output rose sharply on Mondays, regardless of whether artificial light was altered. Should we be concerned about possible effects of the day of the week or the time of day on intervention studies? For instance: Would it matter if all participants were given a baseline assessment on Monday and an outcome asssessment on Friday? Or if those in the control group were tested in the afternoon, but those in the intervention group were tested in the morning?
 
-2.  [EasyPeasy](https://guidebook.eif.org.uk/programme/easypeasy) is an intervention for preschoolers which "provides game ideas to the parents of preschool children to encourage play-based learning at home, with the aim of developing children\'s language development and self-regulation. In a [report by the Education Endowment Foundation](https://d2tic4wvo1iusb.cloudfront.net/documents/projects/EasyPeasy.pdf?v=1686132397), the rationale is given as follows: "The assumption within the theory of change is that the EasyPeasy intervention will change child self-regulation which will lead to accelerated development in language and communication and improved school readiness. The expectation is that this will be achieved through the nursery teachers engaging with the parents regarding EasyPeasy and the parents engaging with their children through the EasyPeasy games. As well as improved self-regulation and language and communication development from playing the games, the expectation is that there will also be an improved home learning environment due to greater parent-child interaction. The expected impact was that this will lead to an improvement in children\'s readiness to learn along with improved parental engagement with the school.
+2.  [EasyPeasy](https://guidebook.eif.org.uk/programme/easypeasy) is an intervention for preschoolers which "provides game ideas to the parents of preschool children to encourage play-based learning at home, with the aim of developing children's language development and self-regulation. In a [report by the Education Endowment Foundation](https://d2tic4wvo1iusb.cloudfront.net/documents/projects/EasyPeasy.pdf?v=1686132397), the rationale is given as follows:"The assumption within the theory of change is that the EasyPeasy intervention will change child self-regulation which will lead to accelerated development in language and communication and improved school readiness. The expectation is that this will be achieved through the nursery teachers engaging with the parents regarding EasyPeasy and the parents engaging with their children through the EasyPeasy games. As well as improved self-regulation and language and communication development from playing the games, the expectation is that there will also be an improved home learning environment due to greater parent-child interaction. The expected impact was that this will lead to an improvement in children's readiness to learn along with improved parental engagement with the school.
 
     Suppose you had funds to evaluate EasyPeasy. What would you need to measure to test the theory of change? Which measures would be mechanism measures and which would be outcomes? What would you conclude if the outcomes improved but mechanism measures showed no change?
-
-    			
-
-    		
-
-    	

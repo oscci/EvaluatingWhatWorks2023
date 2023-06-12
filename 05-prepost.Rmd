@@ -16,60 +16,9 @@ require(reshape2)
 
 At first glance, assessing an intervention seems easy. Having used the information in Chapter \@ref(reliability) to select appropriate measures, you administer these to a group of people before starting the intervention, and again after it is completed, and then look to see if there has been meaningful change. This is what we call a pre-post design, and it almost always gives a misleadingly rosy impression of how effective the intervention is. The limitations of such studies have been well-understood in medicine for decades, yet in other fields they persist, perhaps because the problems are not immediately obvious.
 
-```{r maketrogchangeplot,echo=FALSE,message=FALSE,warning=FALSE}
-
-bwversion = 1  #1=blackwhite; #2=coloured - NB here colour is just decorative
-colorchoice = 'slategray'
-myfolder = 'images_bw'
-if(bwversion==2){
-  myfolder <-'images_colour'}
-makefig <- 0  #assume figure already created but retain code to create it
-if(makefig==1){
-
-# Data for means and SD from the article, time 1 and time 2 TROG
-# First block, commented out, includes data from 'dropout' cases - originally plotted these as well
-# time1<- c(64.92,11.77,66.92,11.63,69.33,10.22,55,0.001)
-# time2 <- c(74.58,	13.13,	71.58,	13.32,	75.56,	13.08,	64.33,	8.08)
-# group <- c('1. Speech','2. Modified speech','3. Untrained','Drop-out')
-# myN <- c(12, 12,9, 3) #
-time1<- c(64.92,11.77,66.92,11.63,69.33,10.22)
-time2 <- c(74.58,	13.13,	71.58,	13.32,	75.56,	13.08)
-Group <- c('Normal Speech','Modified speech','Untrained')
-myN <- c(12, 12,9)
-Baseline<-time1[c(1,3,5)]
-Outcome<-time2[c(1,3,5)]
-pretestSE<-time1[c(2,4,6)]/sqrt(myN)
-posttestSE <- time2[c(2,4,6)]/sqrt(myN)
-
-
-df1 <- data.frame(Baseline, Outcome,Group)
-dfse <-data.frame(pretestSE,posttestSE,Group)
-df2 <- melt(df1, id.vars='Group')
-df2se <-melt(dfse,id.vars='Group')
-df2<-cbind(df2,df2se$value)
-colnames(df2)[2:4]<-c('Occasion','TROG_Mean_scaled_score','se')
-
-
-p <- ggplot(df2, aes(x=Group, y=TROG_Mean_scaled_score, fill=Occasion)) +
-    geom_bar(stat='identity', position='dodge')+
-  geom_errorbar(aes(ymin=TROG_Mean_scaled_score-se, ymax=TROG_Mean_scaled_score+se), width=.2,position=position_dodge(.9))+ylab('TROG Mean scaled score') +xlab('Intervention Group')
-
-p3 <- p + 
-  coord_cartesian(ylim = c(50, 90)) +
-  theme_bw()+ 
-  theme(axis.title.x = element_text(size=14), 
-        axis.text.x = element_text(size=12), legend.position = 'top',legend.text = element_text(size=10))
-if(bwversion==1){
-  p3 <- p3+scale_fill_grey()
-  } 
-
- 
-ggsave(paste0(myfolder,'/trogchangefig.png'),p3,scale = 1, width = 5, height = 3.5, units = c("in"), dpi = 300)
-}
-```
-
 ```{r trogfig, echo=F,message=F,warning=F,fig.width=5,fig.height=3.5,fig.cap="TROG outcome data from a study by Bishop et al 2006"}
-
+myfolder<-'images_bw'
+bwversion<-1
 knitr::include_graphics(paste0(myfolder,'/trogchangefig.png'))
 
 ```
@@ -122,8 +71,7 @@ thisdat <- data.frame(cbind(test_t1,test_t2))
 return(thisdat)
 }
 
-makeregfig <- 1 #don't run this section unless you want to recreate figure
-if(makeregfig==1){
+
 
 myN <- 80
 allcor <- c(.2,.5,.8) #originally done with 3 groups; reduced to 2 for current version
@@ -148,22 +96,24 @@ colnames(mymeans)[1]<- 'Test_reliability'
 mymeans$Test_reliability <- reliabgroup
 mymeans[,2:3]<-round(mymeans[,2:3],2)
 
+makeregfig <- 0 #don't run this section unless you want to recreate figure
+if(makeregfig==1){
 #before plotting we remove middle group]
 w<-which(bigdat$reliability==.5)
 bigdat  <- bigdat[-w,]
-p <- ggplot(data=bigdat,aes(x=T1_test,y=T2_test))+geom_point(aes(colour=`Test reliability`),size=2)+theme_bw()+theme(legend.position = "top")
-p1<- p+  geom_vline(xintercept =(-1),linetype="dashed", color = "darkgrey", linewidth=1)+ylab('Test t2')+xlab('Test t1')+ 
+p <- ggplot(data=bigdat,aes(x=T1_test,y=T2_test))+geom_point(aes(colour=`Test reliability`),size=2)+theme_bw()+theme(legend.position = "top")+
+geom_vline(xintercept =(-1),linetype="dashed", color = "darkgrey", linewidth=1)+ylab('Test t2')+xlab('Test t1')+ 
   theme(axis.title.y = element_text(size=14), axis.title.x = element_text(size=14), legend.position = 'top',legend.text = element_text(size=10))+
   theme_bw() +
    xlab("Time 1 Score (baseline)") +
-   ylab("Time 2 Score (outcome)") +
+   ylab("Time 2 Score (outcome)") 
 #removed regression line +geom_smooth(method='lm',formula=y~x,se=F)
 if(bwversion==1){
-  p1<-p1+scale_colour_manual(values=c("darkgray","black"))
+  p<-p+scale_colour_manual(values=c("darkgray","black"))
   } 
 
 
-ggsave(paste0(myfolder,'/reg2mean.png'),p1,scale = 1, width = 6, height = 3.5, units = c("in"), dpi = 300)
+ggsave(paste0(myfolder,'/reg2mean.png'),p,scale = 1, width = 6, height = 3.5, units = c("in"), dpi = 300)
 }
 
 ```
