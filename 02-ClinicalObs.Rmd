@@ -28,21 +28,13 @@ library(knitr)
 -   Reflect on how these can be controlled for in experimental research designs
 
 <p id="vignette">
-
 *Janice, a SLT, has recently started using a parent-based approach with late-talking 2-year-olds in her practice. Parents are encouraged to make video recordings of interactions with their child, which are then analysed with the therapist, who notes ways of making the interaction more contingent on the child's interests and communicative attempts. She wants to evaluate what she is doing. A colleague of hers, Anna, who has a similar caseload, is sceptical about whether Janice's approach is cost-effective. Anna uses a watchful waiting approach with children this young. Janice and Anna agree to do a study using the same pre- and post-intervention assessments so that they can evaluate the impact of Janice's approach.*
-
 </p>
-
 <p id="vignette">
-
 *Stephen notes that some aphasic patients referred to his clinic talk glowingly about a commercially available 'brain-based learning' programme, MyLangBooster. He wants to know whether he should be recommending this programme to other clients, so he carries out a comparison of patients who used MyLangBooster and those who did not.*
-
 </p>
-
 <p id="vignette">
-
 *Dorothy, a researcher, had a grant for a study predicting outcomes of 4-year-olds who had poor language skills, some of whom had received intervention with SLT services. She saw the same group of 83 children at ages 4, 4.5 and 5.5 years, and noted that their outcomes were very variable. Some children had caught up with their peer group by the final assessment, whereas others had persistent problems. When she presented the results at a conference, a person in the audience suggested that she should do an analysis to see if the amount of intervention was a factor influencing outcomes.*
-
 </p>
 
 All of these vignettes illustrate **observational studies**: ones where we use naturalistic data rather than exerting any experimental control over who gets an intervention. The last one, as you may have guessed, is a true story -- experience with a longitudinal study by Bishop and Edmundson (1987). This gives a very clear illustration of the perils of observational studies. Results on the relationship between intervention and outcome in this sample were disquieting to speech and language therapists: the children who had the most intervention had the worst outcomes. Did that mean that intervention was actually harming children? Well, it's possible -- as we will see in Chapter \@ref(controls), it is dangerous to assume that all effects of intervention are benign. But there is a much simpler explanation for this topsy-turvy result: the children who received intervention were different from those who didn't -- in general they had more severe problems to start with. This makes sense: if a child is referred to speech and language therapy services, then the therapist makes a judgement about which ones to intervene with, and these are likely to be different from those who are discharged or simply reviewed after a few months. If, as appears to have been the case in the Bishop and Edmundson study in the 1980s, therapists work most with the more serious cases, then there is a **confound** between severity of language problems and receipt of therapy, and this can make intervention appear ineffective. Bias can also work in the opposite direction: a contemporary concern in the UK is that therapists are being encouraged to focus their efforts on children who can be discharged after a short block of treatment, which means they tend to work with children with milder problems [@ebbels2019]. This will create the opposite impression -- therapy which is actually ineffective may appear effective. The basic problem is the same: treated and untreated groups are not comparable, and so comparing them will give misleading results.
@@ -117,7 +109,7 @@ p2 <- p1+labs(x="Randomised                        Non-randomised", y = "5 year 
 
 ```
 
-```{r rothwellfig, fig.align="center", echo=FALSE, fig.cap="Outcome from surgery in randomized vs non-randomized study, based on Rothwell (2005)",out.height="50%",out.width="50%"}
+```{r rothwellfig, fig.align="center", echo=FALSE, fig.cap="Outcome from surgery in randomized vs non-randomized studies",out.height="50%",out.width="50%"}
 include_graphics("images_bw/rothwellplot.png")
 ```
 

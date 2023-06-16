@@ -33,18 +33,16 @@ The key questions to ask are:
 5.  Is it practical?
 
 #### Types of numerical measurement {.unnumbered}
-
 <p id="custom">Results from a measurement in an intervention study are typically represented as numbers, but different types of measurement have different properties. - **Nominal**, also known as categorical, data is just used to designate qualitative information. For instance, we may record data as 1, 2 or 3 to indicate the school that a child attends. The order of the numbers here is arbitrary, and the information could equally well be represented by letters, e.g. school A, B and C. It would make no sense to perform numerical operations such as addition and subtraction on such numbers.\
 - For **ordinal** data, the order of the numbers matters. For instance, if we had a 3 point scale of fluency, a person with a score of 3 would be more fluent than one with a score of 2, who would in turn be more fluent than a person who scored 1. In effect ordinal data describes ordered categories, but again, you can't sensibly perform arithmetical operations on such data, though you can specify a median or mode to represent the most typical score.\
 - Data on an **interval scale** are commonly found in behavioural studies. Here, the numbers are equally spaced, so the difference between 1 and 2 is the same quantity as the difference between 3 and 4. With interval data, we can compute an average and conduct many types of statistical test that are not possible with ordinal data.\
 - The most sophisticated type of numerical measurement is the **ratio scale**, which has all the properties of interval data, plus it has a meaningful zero point. Weight, height, length and duration are all measured on a ratio scale: a zero measurement indicates there is no weight, height, length or duration. On this kind of scale, one can meaningfully interpret multiplication - e.g. 4 kg is twice as much as 2 kg.\
 Most commonly used statistical procedures assume data is at least on an interval scale. If you are using ordinal data, then a different kind of test using *nonparametric* statistics is required.
-
 </p>
 
 ## Reliability
 
-```{r darts, echo=F,  fig.width=8,fig.height=4,fig.cap='Reliability and validity illustrated as a sharpshooter hitting a target',out.width="75%"}
+```{r darts, echo=F,  fig.width=8,fig.height=4,fig.cap='Reliability and validity illustrated as a sharpshooter hitting a target',out.width="50%"}
 bwversion = 1  #1=blackwhite; #2=coloured - NB here colour is just decorative
 colorchoice = 'slategray'
 myfolder = 'images_bw'
@@ -92,11 +90,8 @@ knitr::include_graphics(paste0(myfolder,'/correlationfig.png'))
 ####  {.unnumbered}
 
 #### Correlation as an index of reliability {.unnumbered}
-
 <p id="custom">
-
 Although the correlation coefficient is widely used to index reliability, it can be misleading because it just reflects agreement in the rank ordering of two measures. It would be possible to get a high correlation even if the task showed practice effects, so that scores at time 2 were substantially higher than those at time 1. For that reason, the intraclass correlation coefficient (ICC) is preferable, as this reflects agreement in absolute scores. In practice, however, the two types of correlation give similar values unless there is a substantial difference in means between the two occasions of measurement. For more explanation see <https://www.measurement-toolkit.org/concepts/statistical-assessment>.
-
 </p>
 
 So how reliable should a measure be? Most psychometric tests report reliability estimates, and a good test is expected to have test-retest reliability of at least .8. But be careful in interpreting such estimates, as you need also to consider the age range on which the estimate is based.
@@ -113,11 +108,8 @@ Figure \@ref(fig:reliability-by-age) shows how a test of vocabulary size that lo
 The topic of reliability is covered more formally in classical test theory [@lord1968] and subsequent developments from this. These involve a mathematical approach that treats an observed test score as the sum of a "true" effect (i.e. what you want to measure) plus random error. The lower the reliability, the greater the random error, and the harder it is to detect the true effect of intervention against the background of noise.
 
 #### Item Response Theory {.unnumbered}
-
 <p id="custom">
-
 Most widely-used language assessments have been developed using methods from classical test theory [@denman2017]. However, mathematical treatments of test development have come a long way in the past 20 years, and an approach known as Item Response Theory is now generally preferred for developing more precise and valid instruments [@reise2005].
-
 </p>
 
 We have focused on test-retest reliability as this is the most relevant form of reliability in intervention studies. If you plan to use the same measure at baseline and as an outcome measure, then what you need to know is how much variation in that measure you might expect if there were no effect of intervention. There are other reliability indices that are sometimes reported with psychometric tests. In particular split-half reliability and internal consistency (Cronbach's alpha), both of which consider the extent to which a score varies depending on the specific items used to calculate it. For instance, we could assess split-half reliability for mean length of utterance (MLU) by computing it separately for all the odd-numbered utterances and the even-numbered utterances. Although this gives useful information, it is likely to differ from test-retest reliability, because it does not take into account fluctuations in measurement that relate to changes in the context or the child's state.
