@@ -191,7 +191,7 @@ Z-scores, however, have some unfortunate characteristics: they involve both posi
 As if this was not complicated enough, the scaled score can also be directly translated into a percentile (or centile) score, which corresponds to the percentage of people in the population who are expected to obtain a score at least as high as this. This conversion is usually based on the normal distribution, where there is an orderly relationship between percentiles and the z-score. As shown in Figure \@ref(fig:ZDensityCDF), approximately 16% of people are expected to score 1 SD below the mean, and 3% score 2 SD below the mean.
 :::
 
-```{r makeZDensity,echo=FALSE,fig.cap="Distribution of z-scores, showing proportions of people obtaining scores below -1, between -1 and 1, and above 1.",fig.width=6,fig.height=3,out.width="75%"}
+```{r ZDensityCDF,echo=FALSE,fig.cap="Distribution of z-scores, showing proportions of people obtaining scores below -1, between -1 and 1, and above 1.",fig.width=6,fig.height=3,out.width="75%"}
 # This is modified from Poldrack online book Stats for 21st century
 # First, create a function to generate plots of the density and CDF
 makezdens <-0 #set to 1 to recreate figure
