@@ -21,6 +21,8 @@ require(MASS) #simulating multivariate data
 -   Interpret output from a t-test
 -   Explain why Analysis of Covariance is often recommended to analyse outcome data 
 
+**A note of warning**: Chapter \@ref(analysis) to Chapter \@ref(phacking) are the most challenging in the book, insofar as they introduce several statistical concepts that are frequently misunderstood. We have minimized the amount of mathematical material in these chapters, and provide brief verbal summaries of the main points. Readers without a statistical background may find it helpful to try some of the exercises with interactive websites recommended in Check Your Understanding sections to gain a more intuitive understanding of the concepts covered here.
+
 ## Planning the analysis
 
 Statisticians often complain that researchers will come along with a set of data and ask for advice as to how to analyse it. Sir Ronald Fisher (one of the most famous statisticians of all time) commented:
@@ -45,10 +47,10 @@ To make this more concrete, consider the following scenario: You want to evaluat
 ### Standard deviation  
 Consider Figure \@ref(fig:demo-variation), which shows three different fictional studies. They have the same sample size in each group, 20. The mean difference in lbs of weight loss between the two diets (represented by the difference in the black horizontal lines) is similar in each case, but the variation within each group (the spread of points around the line) is greatest in scenario A, and least in scenario C. The intervention effect is far less impressive in scenario A, where 7/20 people in the Carbocut group score above the mean level of the 3M group, than in group C, where only 2/20 score above the 3M mean.
 ```{r demo-variation,echo=F,include=T,message=F,warning=F,fig.cap='Simulated data from three studies comparing two diets. Overlap between groups varies across.',out.width='150%'}
-makefig <- 1 # we preserve code to make figure for just historical reasons. NB this did not use ggplot and so can't use ggsave. Uses base R to make figure.
+makefig <- 0 # we preserve code to make figure for just historical reasons. NB this did not use ggplot and so can't use ggsave. Uses base R to make figure.
 #This saves figure as pdf. Can open in preview, crop and save as png at high resolution.
                                                                                                 if(makefig==0)   {                                                                                         
-knitr::include_graphics("images_bw/demo_variation.pdf")
+knitr::include_graphics("images_bw/demo-variation.png")
                                                                                                 }
 if(makefig==1){
 set.seed(9)
@@ -281,7 +283,7 @@ To illustrate data analysis, we will use a real dataset that can be retrieved fr
 
 ```{r pirateRCT,echo=F,fig.cap='Data from RCT on language/reading intervention for Down syndrome by @burgoyne2012',warning=F,message=F}
 
-makefig <- 1 # we preserve code to make figure for just historical reasons. NB this did not use ggplot and so can't use ggsave. Uses base R to make figure. Can open saved pdf in preview and crop and save as png
+makefig <- 0 # we preserve code to make figure for just historical reasons. NB this did not use ggplot and so can't use ggsave. Uses base R to make figure. Can open saved pdf in preview and crop and save as png
 
 if(makefig==0){
   knitr::include_graphics("images_bw/pirateRCT.png")
@@ -299,10 +301,10 @@ dsdat$change<-dsdat$outcome-dsdat$baseline
 if(makefig==1){
   pdf("images_bw/pirateRCT.pdf", width = 6, height = 5)
 pirateplot(outcome~group,theme=1,cex.lab=1.3,data=dsdat, point.o=1, xlab="", ylab="Outcome score",pal="black")
-}
+
 #nb not part of ggplot
 dev.off()
-    
+} 
 ```
 
 Figure \@ref(fig:pirateRCT) shows results on letter-sound coding after one group had received the intervention. This test had also been administered at baseline, but we will focus first just on the outcome results.
@@ -357,7 +359,7 @@ Rather than taking difference scores, it is preferable to analyse differences in
 makefig <- 0 # we preserve code to make figure for just historical reasons. NB this did not use ggplot and so can't use ggsave. Uses base R to make figure.
 
 if(makefig==0){
-  knitr::include_graphics("images_bw/ds_prepost.png")
+  knitr::include_graphics("images_bw/ds-prepost.png")
 }
 
 if(makefig==1){
@@ -405,34 +407,26 @@ knitr::kable(tab1,escape = F, align = "c", booktabs = T,caption='Analysis of out
   column_spec(1, bold = T) 
 ```
 
+
+
+Table \@ref(tab:ancova-compare) shows the Down syndrome data analysed using ANOVA to compare only the outcome scores (upper chart), and Table \@ref(tab:ancova) shows the same data analysed using ANCOVA to adjust scores for the baseline values. 
 ```{r ancova,echo=F,warning=F,message=F}
 knitr::kable(tab2,escape = F, align = "c", booktabs = T,caption='Outcome adjusted for pretest scores (ANCOVA)') %>%
   kable_styling(c("striped", "bordered"), latex_options = "striped", full_width = F)
 
-#To get sensible output need to bolt tables together
-
-
-#tab3 shows equivalent results from linear regression 
-
-
 ```
-
-Table \@ref(tab:ancova_compare) shows the Down syndrome data analysed using ANOVA to compare only the outcome scores (upper chart), and Table \@ref(tab:ancova) shows the same data analysed using ANCOVA to adjust scores for the baseline values. The effect size is shown as ges, which stands for "generalized eta squared". You can see there is a large ges value, and correspondingly low p-value for the baseline term, reflecting the strong correlation between baseline and outcome shown in Figure \@ref(fig:ds-prepost). In effect, with ANCOVA, we adjust scores to remove the effect of the baseline on the outcome scores; in this case, we can then see a slightly stronger effect of the intervention: the effect size for the group term is higher and the p-value is lower than with the previous ANOVA.  
+The effect size is shown as *ges*, which stands for "generalized eta squared". You can see there is a large *ges* value, and correspondingly low p-value for the baseline term, reflecting the strong correlation between baseline and outcome shown in Figure \@ref(fig:ds-prepost). In effect, with ANCOVA, we adjust scores to remove the effect of the baseline on the outcome scores; in this case, we can then see a slightly stronger effect of the intervention: the effect size for the group term is higher and the p-value is lower than with the previous ANOVA.  
 
 For readers who are not accustomed to interpreting statistical output, the main take-away message here is that you get a better estimate of the intervention effect if the analysis uses a statistical adjustment that takes into account the baseline scores.
 
 #### T-tests, analysis of variance, and linear regression {.unnumbered}
-
-<div>
-
-Mathematically, the t-test is equivalent to two other methods: analysis of variance and linear regression. When we have just two groups, all of these methods achieve the same thing: they divide up the variance in the data into variance associated with group identity, and other (residual) variance, and provide a statistic that reflects the ratio between these two sources of variance. This is illustrated with the real data analysed in Table \@ref(tab:ancova-compare). The analysis gives results that are equivalent to the t-test in Table \@ref(tab:ttestoutcomes): if you square the t-value it is the same as the F-test. In this case, the p-value from the t-test is half the value of that in the ANOVA: this is because we specified a one-tailed test for the t-test. The p-value would be identical to that from ANOVA if a two-tailed t-test had been used.\
+<p id="custom">Mathematically, the t-test is equivalent to two other methods: analysis of variance and linear regression. When we have just two groups, all of these methods achieve the same thing: they divide up the variance in the data into variance associated with group identity, and other (residual) variance, and provide a statistic that reflects the ratio between these two sources of variance. This is illustrated with the real data analysed in Table \@ref(tab:ancova-compare). The analysis gives results that are equivalent to the t-test in Table \@ref(tab:ttestoutcomes): if you square the t-value it is the same as the F-test. In this case, the p-value from the t-test is half the value of that in the ANOVA: this is because we specified a one-tailed test for the t-test. The p-value would be identical to that from ANOVA if a two-tailed t-test had been used.\
 See [this blogpost](http://deevybee.blogspot.com/2017/11/anova-t-tests-and-regression-different.html) for more details. <!-- reminder to self: blogposts referenced in the book should be uploaded to figshare or another place with DOI-->
-
-</div>
+</p>
 
 ### Non-normal data
 
-We've emphasised that the statistical methods reviewed so far assume that data will be reasonably normally distributed. This raises the question of what to do if we have results don't meet that assumption. There are two answers that are typically considered. The first is to use **non-parametric statistics**, which do not require normally-distributed data. For instance, the **Mann-Whitney U test** can be used in place of a t-test. An alternative approach is to **transform** the data to make it more normal. For instance, if the data is skewed with a long tail of extreme values, a log transform can be used. This is often appropriate if, for instance, measuring reaction times. Data may also be **censored** - extreme values converted to a ceiling level score to avoid outliers exerting undue effects on results. Many people are hesitant about transforming data - they may feel it is wrong to manipulate scores in this way. There are two answers to that. First, it does not make sense to be comfortable with nonparametric statistics and uncomfortable with data transformation, because nonparametric methods involve transformation - typically they work by rank ordering data, and then working with the ranks, rather than the original scores. Second, there is nothing inherently correct about measuring things on a linear scale: scientists often use log scales to measure quantities that span a wide range, such as the Richter scale for earthquakes or the decibel scale for sound volume. So, provided the transformation is justified as helping make the data more suited for statistical analysis, it is a reasonable thing to do. Of course, it is *not* appropriate to transform data just to try and nudge data into significance. Nor is it a good idea to just wade in an apply a data transformation without first looking at the data to try and understand causes of non-normality. For instance, if your results showed that 90% of people had no effect of intervention, and 10% had a huge effect, it might make more sense to consider a different approach to analysis altogether, rather than shoe-horning results into a more normal distribution. We will not go into details of nonparametric tests and transformations here, as there are plenty of good sources of information available. We recommend consulting a statistician if data seem unsuitable for standard parametric analysis. 
+We've emphasised that the statistical methods reviewed so far assume that data will be reasonably normally distributed. This raises the question of what to do if we have results that don't meet that assumption. There are two answers that are typically considered. The first is to use **non-parametric statistics**, which do not require normally-distributed data. For instance, the **Mann-Whitney U test** can be used in place of a t-test. An alternative approach is to **transform** the data to make it more normal. For instance, if the data is skewed with a long tail of extreme values, a log transform may make the distribution more normal. This is often appropriate if, for instance, measuring response times. Many people are hesitant about transforming data - they may feel it is wrong to manipulate scores in this way. There are two answers to that. First, it does not make sense to be comfortable with nonparametric statistics and uncomfortable with data transformation, because nonparametric methods involve transformation - typically they work by rank ordering data, and then working with the ranks, rather than the original scores. Second, there is nothing inherently correct about measuring things on a linear scale: scientists often use log scales to measure quantities that span a wide range, such as the Richter scale for earthquakes or the decibel scale for sound volume. So, provided the transformation is justified as helping make the data more suited for statistical analysis, it is a reasonable thing to do. Of course, it is *not* appropriate to transform data just to try and nudge data into significance. Nor is it a good idea to just wade in an apply a data transformation without first looking at the data to try and understand causes of non-normality. For instance, if your results showed that 90% of people had no effect of intervention, and 10% had a huge effect, it might make more sense to consider a different approach to analysis altogether, rather than shoe-horning results into a more normal distribution. We will not go into details of nonparametric tests and transformations here, as there are plenty of good sources of information available. We recommend consulting a statistician if data seem unsuitable for standard parametric analysis. 
 
 ### Linear mixed models (LMM) approach
 
@@ -509,11 +503,15 @@ knitr::kable(mydf,escape = F, align = "c", booktabs = T,caption="Analytic method
 
 ## Check your understanding
 
-1.  Figure \@ref(fig:boxploteg) shows data from a small intervention trial in the form of a boxplot. Check your understanding of the annotation in the top left of the plot. How can you interpret the p-value? What does the 95% CI refer to? Is the "mean.diff" value the same as shown in the plot?
+1.  Figure \@ref(fig:boxploteg) shows data from a small intervention trial in the form of a boxplot. If you are not sure what this represents, try Googling for more information. Check your understanding of the annotation in the top left of the plot. How can you interpret the p-value? What does the 95% CI refer to? Is the "mean.diff" value the same as shown in the plot?
 
 ```{r boxploteg,echo=F,message=F,fig.cap ='Sample data for t-test'}
 # Data in two numeric vectors
 # Modified from stdha example on ttest (on weight)
+if(makefig==0){
+  knitr::include_graphics("images_bw/boxeg.png")
+}
+if(makefig==1){
 women_weight <- c(48.9, 61.2, 73.3, 81.8, 63.4, 64.6, 48.4, 48.8, 48.5)
 men_weight <- c(67.8, 60, 63.4, 76, 89.4, 73.3, 67.3, 61.3, 62.4) 
 # Create a data frame
@@ -522,14 +520,14 @@ my_data <- data.frame(
                 score = c(women_weight,  men_weight)
                 )
 myt <- t.test(women_weight, men_weight, var.equal = TRUE)
-mylabel=paste0("t = ",round(-myt$statistic,2),"; p = ",round(myt$p.value,3),"; \nmean diff. = ",round((myt$estimate[2]-myt$estimate[1]),2),"; 95% CI  = ",round(-myt$conf.int[2],2)," to ", round(-myt$conf.int[1],2))
+mylabel=paste0("t = ",round(-myt$statistic,2),"; DF = ",myt$parameter,"; p = ",round(myt$p.value,3),"; \nmean diff. = ",round((myt$estimate[2]-myt$estimate[1]),2),"; 95% CI  = ",round(-myt$conf.int[2],2)," to ", round(-myt$conf.int[1],2))
 myg <- ggboxplot(my_data, x = "group", y = "score",
         ylab = "Score", xlab = "Groups")+
   annotate(geom="text",x=1.2, y=88, label=mylabel)
 
 
 ggsave('images_bw/boxeg.png',myg,scale = 1, width = 6, height = 5, units = c("in"), dpi = 300)
-
+}
 ```
 
 2. Find an intervention study of interest and check which analysis method was used to estimate the intervention effect. Did the researchers provide enough information to give an idea of the effect size, or merely report p-values? Did the analysis method take into account baseline scores in an appropriate way?
