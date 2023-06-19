@@ -1,4 +1,4 @@
-# Reporting and analyzing a two-group RCT {#analysis}
+# Analyzing a two-group RCT {#analysis}
 
 ```{r,echo=F,warning=F,message=F}
 require(psych) #for describeBy
@@ -8,6 +8,7 @@ library(nlme)
 library(lme4)
 library(ggpubr)
 library(kableExtra)
+library(beeswarm)
 require(MASS) #simulating multivariate data
 ```
 
@@ -15,10 +16,10 @@ require(MASS) #simulating multivariate data
 
 **Learning objectives**: By the end of this chapter, you will be able to:
 
--   Understand the logic of Null Hypothesis Significance Testing\
--   Define the terms p-value, effect size and confidence interval\
--   Interpret output from a t-test, and appreciate the assumptions behind this method
--   Explain the difference between a one-tailed and two-tailed test, and know when each is appropriate
+-   Appreciate why we need to measure variation as well as average effects of an intervention  
+-   Understand the terms "standard deviation", "confidence interval" and "p-value"  
+-   Interpret output from a t-test
+-   Explain why Analysis of Covariance is often recommended to analyse outcome data 
 
 ## Planning the analysis
 
@@ -36,14 +37,20 @@ We do not propose to try to turn readers of this book into expert statisticians,
 
 ## The importance of variability
 
-When we are considering the impact of an intervention, we tend to focus on means: in particular on the difference in average outcomes between an intervention group and a control group. But what we are really interested in is variability - specificially, how much of the variability in people's outcomes can be attributed to the intervention, and how much can be regarded as random noise.  The widely-used method of **analysis of variance** gives us exactly that information, by looking at the total variability in outcomes, and considering what proportion is accounted for by the intervention. 
+When we are considering the impact of an intervention, we tend to focus on means: in particular on the difference in average outcomes between an intervention group and a control group. But what we are really interested in is variability - specificially, how much of the variability in people's outcomes can be attributed to the intervention, and how much can be regarded as random noise. The widely-used method of **analysis of variance** gives us exactly that information, by looking at the total variability in outcomes, and considering what proportion is accounted for by the intervention.
+
+\
 To make this more concrete, consider the following scenario: You want to evaluate a weight loss program, Carbocut, which restricts carbohydrates. You compare 20 people on the Carbocut diet for 2 weeks with a control group where people are just told to stick to three meals a day (Program 3M). You find that those on Carbocut have lost an average of 1 lb more weight than those on 3M. Does that mean the diet worked? It's hard to say just from the information provided: some people may think that the average loss is unimpressive; others may think that it is encouraging, especially over such a short time scale. These answers are about **real-life significance** of this amount of weight loss. But they disregard another issue: the **statistical significance** of the weight loss. That has nothing to do with meaningfulness in the real world, and everything to do with **reproducibility** of the result. And this relates to the variability of outcomes within each group.
 
-```{r demo-variation,echo=F,include=T,message=F,warning=F,fig.cap='Simulated data from three studies comparing two diets. The variances differ for each study.'}
-
-knitr::include_graphics("images_bw/demo_variation.png")
-
-makefig <- 0 # we preserve code to make figure for just historical reasons. NB this did not use ggplot and so can't use ggsave. Uses base R to make figure.
+### Standard deviation  
+Consider Figure \@ref(fig:demo-variation), which shows three different fictional studies. They have the same sample size in each group, 20. The mean difference in lbs of weight loss between the two diets (represented by the difference in the black horizontal lines) is similar in each case, but the variation within each group (the spread of points around the line) is greatest in scenario A, and least in scenario C. The intervention effect is far less impressive in scenario A, where 7/20 people in the Carbocut group score above the mean level of the 3M group, than in group C, where only 2/20 score above the 3M mean.
+```{r demo-variation,echo=F,include=T,message=F,warning=F,fig.cap='Simulated data from three studies comparing two diets. Overlap between groups varies across.',out.width='150%'}
+makefig <- 1 # we preserve code to make figure for just historical reasons. NB this did not use ggplot and so can't use ggsave. Uses base R to make figure.
+#This saves figure as pdf. Can open in preview, crop and save as png at high resolution.
+                                                                                                if(makefig==0)   {                                                                                         
+knitr::include_graphics("images_bw/demo_variation.pdf")
+                                                                                                }
+if(makefig==1){
 set.seed(9)
 
 #to ensure same values generated on each run - change to any other number for different results. NB This seed deliberately selected to give demo data where the mean diff is similar across A B and C, and the SD reduces across A-C. Because small N, results can be quite variable across samples.
@@ -54,7 +61,7 @@ truediff<-c(.1,.75,1.25) #here we have 3 values; c stands for cocatenate so we g
 truelabel<-c('A','B','C') #to label the plots for each run
 
 ndiffs<-length(truediff)
-
+pdf("images_bw/demo-variation.pdf", width = 6, height = 2.5)
 par(mfrow=c(1,3))
 
 myn<-20 #N per group
@@ -94,7 +101,7 @@ mydat$mygp<-as.factor(mydat$mygp)
 levels(mydat$mygp)<-c('Carbocut','3M')
 
 beeswarm(mynum~mygp , data = mydat,xlab=truelabel[i],ylab=myylab,
-         col='grey',pch=14,ylim=c(-5,2),cex.axis=1.5,cex.lab=1.5)
+         col='darkgrey',pch=16,ylim=c(-5,2),cex.axis=1.5,cex.lab=1.5)
 segments(x0 = 0.7, x1 = 1.3,
          y0 = mean(mydat$mynum[21:40]), 
          lty = 1, lwd = 2,col='black')
@@ -104,21 +111,24 @@ segments(x0 = 1.7, x1 = 2.3,
 
   }
 }
+dev.off()
+}
 
 ```
-### Standard deviation
-Consider Figure \@ref(fig:demo-variation), which shows three different fictional studies. They have the same sample size in each group, 20. The mean difference in lbs of weight loss between the two diets (represented by the difference in the black horizontal lines) is similar in each case, but the variation within each group (the spread of points around the line) is greatest in scenario A, and least in scenario C. The intervention effect is far less impressive in scenario A, where 7/20 people in the Carbocut group score above the mean level of the 3M group, than in group C, where only 2/20 score above the 3M mean. The spread in scores within each group is typically measured by the **standard deviation**, which is a mathematical way of representing how tightly bunched a set of scores is around the mean. If we want to know how solid a result is, in terms of how likely it would be to reproduce in a new study, we need to consider not just the mean, but also the standard deviation of the intervention effect. [This website] (https://www.mathsisfun.com/data/standard-deviation.html) explains how the standard deviation is computed, but in general, we can rely on statistics programs to do the calculations for us.
 
-Why does the standard deviation matter?  This is because, as noted above, the *statistical significance* of a finding, which indexes how likely a finding is to be reproducible in future studies, considers all the variation in scores, and looks at variation between groups *relative to the variation within each group*.  
+ 
 
+The spread in scores within each group is typically measured by the **standard deviation**, which is a mathematical way of representing how tightly bunched a set of scores is around the mean. If we want to know how solid a result is, in terms of how likely it would be to reproduce in a new study, we need to consider not just the mean, but also the standard deviation of the intervention effect. [This website](https://www.mathsisfun.com/data/standard-deviation.html) explains how the standard deviation is computed, but in general, we can rely on statistics programs to do the calculations for us.
 
-### Confidence intervals  
-We can use the standard deviation to get an index reflecting the precision of our estimate of the group difference. Suppose we were to run ten identical studies comparing the two diets, keeping the sample size the same each time. Figure \@ref(fig:demo-variation2) shows some simulated data of this scenario. In each case, the data were drawn by sampling from a population where the mean weight loss for Carbocut was 1 lb, and the mean loss for 3M was 0.25 lb. In both groups, the standard deviation was set to one. You may be surprised to see that the difference in means of the two groups fluctuates quite markedly, being substantial in study A, and negligible in study F, with other studies intermediate. The same computer code was used to generate the three plots: the different results are just random fluctuations due to chance, which will occur when you use random number generators in simulations. This relates to the topic of **sampling**, which we will cover in Chapter \@ref(power). The main take-home message is that when we run a study and get a mean difference between groups, this is an **estimate** of the true effect, which will contain some random noise. 
+Why does the standard deviation matter? This is because, as noted above, the *statistical significance* of a finding, which indexes how likely a finding is to be reproducible in future studies, considers all the variation in scores, and looks at variation between groups *relative to the variation within each group*.
 
+### Confidence intervals
+
+We can use the standard deviation to get an index reflecting the precision of our estimate of the group difference. Suppose we were to run ten identical studies comparing the two diets, keeping the sample size the same each time. Figure \@ref(fig:demo-variation2) shows some simulated data of this scenario. In each case, the data were drawn by sampling from a population where the mean weight loss for Carbocut was 1 lb, and the mean loss for 3M was 0.25 lb. In both groups, the standard deviation was set to one. You may be surprised to see that the difference in means of the two groups fluctuates quite markedly, being substantial in study A, and negligible in study F, with other studies intermediate. The same computer code was used to generate the three plots: the different results are just random fluctuations due to chance, which will occur when you use random number generators in simulations. This relates to the topic of **sampling**, which we will cover in Chapter \@ref(power). The main take-home message is that when we run a study and get a mean difference between groups, this is an **estimate** of the true effect, which will contain some random noise.
 
 ```{r demo-variation2,echo=F,include=T,message=F,warning=F,fig.cap='Simulated data from ten studies comparing two diets. The observed mean is shown as a black point, and the SD as the black fins',out.width="80%"}
 
-makefig <- 0 # we preserve code to make figure for just historical reasons. NB this did not use ggplot and so can't use ggsave. Uses base R to make figure.
+makefig <- 0 # we preserve code to make figure for just historical reasons. 
 
 if(makefig==0){
   knitr::include_graphics("images_bw/carbo10gp.png")
@@ -181,9 +191,10 @@ for (i in 1:ni){
 }
      
 ```
-When we report results from a study, we can report a **confidence interval** around the estimated mean difference between groups, which gives an indication of the uncertainty associated with the estimate; this will depend on the standard deviation and the sample size, both of which feature in its calculation. Figure \@ref(fig:ciplot) shows the mean group differences with 95% confidence intervals for the 10 studies from Figure \@ref(fig:demo-variation2). Because these data were simulated, we know that the true mean difference is 0.75, shown as a dotted vertical line, and can see that the mean estimates from the ten studies generally cluster around that value, but with a fair bit of variation. As we shall see in Chapter \@ref(power), high variation characterises studies with small sample sizes: the confidence intervals would be much tighter if we had 200 participants per group rather than 20.  The other vertical line denotes zero. If the confidence interval includes zero, the study will fail to reach statistical significance on a t-test, which is a method of analysis that we will explain in later in this chapter. We can see that studies B, C, F and I would all be non-significant on this criterion. We will discuss in Chapter \@ref(power) how it is that we can get nonsignificant results even if there is a true group difference - and how to avoid this situation.
 
-```{r ciplot,echo=F,include=T,message=F,warning=F,fig.cap='Mean difference (square) with 95% Confidence Intervals (fins) for 10 studies from previous Figure. Dashed line shows zero; dotted line shows true population difference',out.width="75%"}
+When we report results from a study, we can report a **confidence interval** (CI) around the estimated mean difference between groups, which gives an indication of the uncertainty associated with the estimate; this will depend on the standard deviation and the sample size, both of which feature in its calculation. Figure \@ref(fig:ciplot) shows the mean group differences with 95% confidence intervals for the 10 studies from Figure \@ref(fig:demo-variation2). Because these data were simulated, we know that the true mean difference is 0.75, shown as a dotted vertical line, and can see that the mean estimates from the ten studies generally cluster around that value, but with a fair bit of variation. As we shall see in Chapter \@ref(power), high variation characterises studies with small sample sizes: the confidence intervals would be much smaller if we had 200 participants per group rather than 20. The dashed vertical line denotes zero. If the confidence interval includes zero, the study will fail to reach statistical significance on a t-test, which is a method of analysis that we will explain in later in this chapter. We can see that studies B, C, F and I would all be non-significant on this criterion. We will discuss in Chapter \@ref(power) how it is that we can get nonsignificant results even if there is a true group difference - and how to avoid this situation.
+
+```{r ciplot,echo=F,include=T,message=F,warning=F,fig.cap='Mean difference (black square) with 95% Confidence Intervals (fins) for 10 studies from previous Figure. Dashed line shows zero; dotted line shows true population difference',out.width="75%"}
 makefig <- 0 # we preserve code to make figure for just historical reasons. NB this did not use ggplot and so can't use ggsave. Uses base R to make figure.
 
 if(makefig==0){
@@ -206,12 +217,12 @@ ggsave('images_bw/carbo10CI.png',myciplot,scale = 1, width = 4, height = 3, unit
 #### Reporting of confidence intervals {.unnumbered}
 
 ::: {#custom}
-Those who set standards for reporting clinical trial results generally encourage researchers to include confidence intervals as well as means. Some have pushed back against this advice, either because of conceptual objections and/or because the confidence interval is widely misunderstood. Indeed, it has been described as [one of the most misunderstood statistics in existence](Robust misinterpretation of confidence intervals)! This website explains its meaning: "if you conducted your study 100 times you would produce 100 different confidence intervals. We would expect that 95 out of those 100 confidence intervals will contain the true population mean."  Illustrating this point, in Figure \@ref(fig:ciplot), you can see that there is one study, study A, where there is a very large difference between means and the confidence interval does not include the true value, .75. Despite these issues, we feel that reporting of confidence intervals is useful, not least because it encourages researchers and readers of research to appreciate that the results obtained from a study are just estimates of the true effect, and there may be a wide margin of uncertainty around results from small samples. 
-:::  
+Those who set standards for reporting clinical trial results generally encourage researchers to include confidence intervals as well as means. Reporting of confidence intervals is useful, not least because it encourages researchers and readers of research to appreciate that the results obtained from a study are just estimates of the true effect, and there may be a wide margin of uncertainty around results from small samples.  Some have pushed back against reporting of confidence intervals, either because of conceptual objections and/or because the confidence interval is widely misunderstood. The correct interpretation of a 95% confidence interval is that if you conducted your study over and over again, on 95% of occasions the confidence interval that you get will contain the true population mean. Illustrating this point, in Figure \@ref(fig:ciplot), you can see that for most studies, the confidence interval contains the true value, .75, but there is one study, study A, where there is a very large difference between means and the confidence interval does not include the true value. 
+:::
 
 ## Understanding p-values
 
-When we do an intervention study, we want to find out whether a given intervention works. Most studies use an approach known as **Null Hypothesis Significance Testing**, which gives us a rather roundabout answer to the question. Typically, findings are evaluated in terms of p-values, which tell us *what is the probability (p) that our result, or a more extreme one, could have arisen if there is no real effect of the intervention* - or in statistical jargon, if the **null hypothesis** is true. Suppose in a hypothetical world we have a totally ineffective drug, and we do 100 studies in large samples to see if it works. On average, in five of those studies (i.e. 5 per cent of them), the p-value would be below .05. And in one study (1 per cent), it would be below .01. The way that p-values are calculated assumes certain things hold true about the nature of the data ("model assumptions"): we will say more about this later on.  
+When we do an intervention study, we want to find out whether a given intervention works. Most studies use an approach known as **Null Hypothesis Significance Testing**, which gives us a rather roundabout answer to the question. Typically, findings are evaluated in terms of p-values, which tell us *what is the probability (p) that our result, or a more extreme one, could have arisen if there is no real effect of the intervention* - or in statistical jargon, if the **null hypothesis** is true. Suppose in a hypothetical world we have a totally ineffective drug, and we do 100 studies in large samples to see if it works. On average, in five of those studies (i.e. 5 per cent of them), the p-value would be below .05. And in one study (1 per cent), it would be below .01. The way that p-values are calculated assumes certain things hold true about the nature of the data ("model assumptions"): we will say more about this later on.
 
 P-values are very often misunderstood, and there are plenty of instances of wrong definitions being given even in textbooks. The p-value is *the probability of the observed data or more extreme data, if the null hypothesis is true*. It does *not* tell us the probability of the null hypothesis being true. And it tells us nothing about the plausibility of the alternative hypothesis, i.e., that the intervention works.
 
@@ -223,11 +234,13 @@ A low p-value allows us to reject the null hypothesis with a certain degree of c
 
 #### Criticisms of the use of p-values {.unnumbered}
 
-::: {#custom}
+<div>
+
 There are many criticisms of the use of p-values in science, and a good case can be made for using alternative approaches, notably methods based on Bayes theorem. Our focus here is on Null Hypothesis Significance Testing in part because such a high proportion of studies in the literature use this approach, and it is important to understand p-values in order to evaluate the literature. It has also been argued that p-values are useful provided people understand what they really mean [@lakens2021].
 
 One reason why many people object to the use of p-values is that they are typically used to make a binary decision: we either accept or reject the null hypothesis, depending on whether the p-value is less than a certain value. In practice, evidence is graded, and it can be more meaningful to express results in terms of the amount of confidence in alternative interpretations, rather than as a single accept/reject cutoff [@quintana2018].
-:::
+
+</div>
 
 In practice, p-values are typically used to divide results into "statistically significant" or "non-significant", depending on whether the p-value is low enough to reject the null hypothesis. We do not defend this practice, which can lead to an all-consuming focus on whether p-values are above or below a cutoff, rather than considering effect sizes and strength of evidence. However, it is important to appreciate how the cutoff approach leads to experimental results falling into 4 possible categories, as shown in Table \@ref(tab:confusionMat).
 
@@ -250,7 +263,7 @@ knitr::kable(mymat,escape = F, align = "c", booktabs = T, caption = 'Outcomes of
   add_header_above(c(" ","Ground truth" = 2))
 ```
 
-The ground truth is the result that we would obtain if we were able to administer the intervention to the whole population - this is of course impossible, but we assume that there is some general truth that we are aiming to discover by running our study on a sample from the population. We can see that if the intervention really is effective, and the evidence leads us to reject the null hypothesis, we have a True Positive, and if the intervention is ineffective and we accept the null hypothesis, we have a True Negative. Our goal is to design our study so as to maximize the chances that our conclusion will be correct, but there two types of outcome that we can never avoid, but which we try to minimize, known as Type I and Type II errors. We will cover Type II errors in this chapter, as these depend crucially on sample size and effect size. Type I errors are covered in Chapter \@ref(phacking).
+The ground truth is the result that we would obtain if we were able to administer the intervention to the whole population - this is of course impossible, but we assume that there is some general truth that we are aiming to discover by running our study on a sample from the population. We can see that if the intervention really is effective, and the evidence leads us to reject the null hypothesis, we have a True Positive, and if the intervention is ineffective and we accept the null hypothesis, we have a True Negative. Our goal is to design our study so as to maximize the chances that our conclusion will be correct, but there two types of outcome that we can never avoid, but which we try to minimize, known as Type I and Type II errors. We will cover Type II errors in Chapter\@ref(power) and Type I in Chapter \@ref(phacking).
 
 ## What kind of analysis is appropriate?
 
@@ -268,7 +281,7 @@ To illustrate data analysis, we will use a real dataset that can be retrieved fr
 
 ```{r pirateRCT,echo=F,fig.cap='Data from RCT on language/reading intervention for Down syndrome by @burgoyne2012',warning=F,message=F}
 
-makefig <- 0 # we preserve code to make figure for just historical reasons. NB this did not use ggplot and so can't use ggsave. Uses base R to make figure.
+makefig <- 1 # we preserve code to make figure for just historical reasons. NB this did not use ggplot and so can't use ggsave. Uses base R to make figure. Can open saved pdf in preview and crop and save as png
 
 if(makefig==0){
   knitr::include_graphics("images_bw/pirateRCT.png")
@@ -284,10 +297,11 @@ dsdat$baseline <- dsdat$letter_sound_t1
 dsdat$outcome <- dsdat$letter_sound_t2
 dsdat$change<-dsdat$outcome-dsdat$baseline
 if(makefig==1){
+  pdf("images_bw/pirateRCT.pdf", width = 6, height = 5)
 pirateplot(outcome~group,theme=1,cex.lab=1.3,data=dsdat, point.o=1, xlab="", ylab="Outcome score",pal="black")
 }
 #nb not part of ggplot
-
+dev.off()
     
 ```
 
@@ -295,7 +309,7 @@ Figure \@ref(fig:pirateRCT) shows results on letter-sound coding after one group
 
 Raw data should always be inspected prior to any data analysis, in order to just check that the distribution of scores looks sensible. One hears of horror stories where, for instance, an error code of 999 got included in an analysis, distorting all the statistics. Or where an outcome score was entered as 10 rather than 100. Visualising the data is useful when checking whether the results are in the right numerical range for the particular outcome measure. The [pirate plot](https://www.psychologicalscience.org/observer/yarrr-the-pirates-guide-to-r) is a useful way of showing means and distributions as well as individual data points.
 
-A related step is to check whether the distribution of the data meets the assumptions of the proposed statistical analysis. Many common statistical procedures assume that data are normally distributed on an interval scale (see Chapter \@ref(reliability)). Statistical approaches to checking of assumptions are beyond the scope of this book, but there are good sources of information on the web, such as [this website](http://www.sthda.com/english/articles/39-regression-model-diagnostics/161-linear-regression-assumptions-and-diagnostics-in-r-essentials/) for linear regression. But just eyeballing the data is useful, and can detect obvious cases of non-normality, cases of ceiling or floor effects, or "clumpy" data, where only certain values are possible. Data with these features may need special treatment and it is worth consulting a statistician if they apply to your data. For the data in Figure \@ref(fig:pirateRCT), although neither distribution has an classically normal distribution, we do not see major problems with ceiling or floor effects, and there is a reasonable spread of scores in both groups.  
+A related step is to check whether the distribution of the data meets the assumptions of the proposed statistical analysis. Many common statistical procedures assume that data are normally distributed on an interval scale (see Chapter \@ref(reliability)). Statistical approaches to checking of assumptions are beyond the scope of this book, but there are good sources of information on the web, such as [this website](http://www.sthda.com/english/articles/39-regression-model-diagnostics/161-linear-regression-assumptions-and-diagnostics-in-r-essentials/) for linear regression. But just eyeballing the data is useful, and can detect obvious cases of non-normality, cases of ceiling or floor effects, or "clumpy" data, where only certain values are possible. Data with these features may need special treatment and it is worth consulting a statistician if they apply to your data. For the data in Figure \@ref(fig:pirateRCT), although neither distribution has an classically normal distribution, we do not see major problems with ceiling or floor effects, and there is a reasonable spread of scores in both groups.\
 <!-- maybe add a figure showing egs of nonnormal distribution, ceiling effect, clumpy data-->
 
 ```{r table2gp,echo=F,out.width="75%"}
@@ -332,18 +346,18 @@ knitr::kable(mytabt,escape = F, align = "c", booktabs = T,caption='T-test on out
 
 ### T-test on difference scores
 
-The t-test on outcomes is easy to do, but it misses an opportunity to control for one unwanted source of variation, namely individual differences in the initial level of the language measure. For this reason, researchers often prefer to take difference scores: the difference between outcome and baseline measures, and apply a t-test to these. In fact, that is what we did in the fictional examples of dietary intervention above: we reported *weight loss* rather than weight for each group before and after intervention. That seems sensible, as it means we can ignore individual differences in initial weights in the analysis.  
+The t-test on outcomes is easy to do, but it misses an opportunity to control for one unwanted source of variation, namely individual differences in the initial level of the language measure. For this reason, researchers often prefer to take difference scores: the difference between outcome and baseline measures, and apply a t-test to these. In fact, that is what we did in the fictional examples of dietary intervention above: we reported *weight loss* rather than weight for each group before and after intervention. That seems sensible, as it means we can ignore individual differences in initial weights in the analysis.\
 While this had some advantages over reliance on raw outcome measures, it also has disadvantages, because the amount of change that is possible from baseline to outcome is not the same for everyone. A child with a very low score at baseline has more "room for improvement" than one who has an average score. For this reason, analysis of difference scores is not generally recommended.
 
 ### Analysis of covariance on outcome scores
 
-Rather than taking difference scores, it is preferable to analyse differences in outcome measures after making a statistical adjustment that takes into account the initial baseline scores, using a method known as analysis of covariance or ANCOVA. In practice, this method usually gives results that are very similar to those you would obtain from an analysis of difference scores, but the precision is greater, making it easier to detect a true effect. However, the data do need to meet certain assumptions of the method. This [website](https://www.datanovia.com/en/lessons/ancova-in-r/) walks through the steps for performing an ANCOVA in R, starting with a plot to check that there is a linear relationship between pretest vs posttest scores in both groups - i.e. the points cluster around a straight line, as shown in Figure \@ref(fig:ds-prepost).
+Rather than taking difference scores, it is preferable to analyse differences in outcome measures after making a statistical adjustment that takes into account the initial baseline scores, using a method known as analysis of covariance or ANCOVA. In practice, this method usually gives results that are similar to those you would obtain from an analysis of difference scores, but the precision is greater, making it easier to detect a true effect. However, the data do need to meet certain assumptions of the method. This [website](https://www.datanovia.com/en/lessons/ancova-in-r/) walks through the steps for performing an ANCOVA in R, starting with a plot to check that there is a linear relationship between pretest vs posttest scores in both groups - i.e. the points cluster around a straight line, as shown in Figure \@ref(fig:ds-prepost).
 
-```{r ds-prepost,echo=F,fig.cap='Pretest vs outcome scores in the Down syndrome data',warning=F,message=F}
+```{r ds-prepost,echo=F,fig.cap='Baseline vs outcome scores in the Down syndrome data',warning=F,message=F}
 makefig <- 0 # we preserve code to make figure for just historical reasons. NB this did not use ggplot and so can't use ggsave. Uses base R to make figure.
 
 if(makefig==0){
-  knitr::include_graphics("images_bw/pirateRCT.png")
+  knitr::include_graphics("images_bw/ds_prepost.png")
 }
 
 if(makefig==1){
@@ -352,6 +366,7 @@ ggscatter(
   dsdat, x = "baseline", y = "outcome",
   color = "group", add = "reg.line"
   )+
+    xlab("Baseline")+ylab("Outcome")+
   scale_colour_grey() + theme_bw()
   ggsave('images_bw/ds-prepost.png',scale = 1, width = 6, height = 4, units = c("in"), dpi = 300)
 }
@@ -363,18 +378,7 @@ Inspection of the plot confirms that the relationship between pretest and outcom
 options(kableExtra.html.bsTable = T)
 #https://www.datanovia.com/en/lessons/ancova-in-r/
 
-## I've commented out the other checks from this website for now, as I think this is too much detail. We want focus on how ancova gives different results from simple t-test because it adjusts for pretest scores. 
-#check homogeneity of regression slopes
-# dsdat %>% anova_test(outcome ~ group*pretest)
-# 
-# #normality of residuals
-# # Fit the model, the covariate goes first
-# model <- lm(outcome ~ pretest  + group, data = dsdat)
-# # Inspect the model diagnostic metrics
-# model.metrics <- augment(model) %>%
-#   select(-.hat, -.sigma, -.fitted) # Remove details
-# head(model.metrics, 3)
-# shapiro_test(model.metrics$.resid) #check normality of residuals
+## I've omitted checks from this website for now, as I think this is too much detail. We want focus on how ancova gives different results from simple t-test because it adjusts for baseline scores. 
 
 # order of variables matters when computing ANCOVA. You want to remove the effect of the covariate first - that is, you want to control for it - prior to entering your main variable or interest.
 aov.1 <- dsdat %>% anova_test(outcome ~ group)
@@ -399,9 +403,13 @@ tab2<-tab2[,-6]
 knitr::kable(tab1,escape = F, align = "c", booktabs = T,caption='Analysis of outcome only (ANOVA)') %>%
   kable_styling(c("striped", "bordered"), latex_options = "striped", full_width = F) %>%
   column_spec(1, bold = T) 
+```
 
-knitr::kable(tab2,escape = F, align = "c", booktabs = T,caption='Analysis adjusted for pretest scores (ANCOVA)') %>%
+```{r ancova,echo=F,warning=F,message=F}
+knitr::kable(tab2,escape = F, align = "c", booktabs = T,caption='Outcome adjusted for pretest scores (ANCOVA)') %>%
   kable_styling(c("striped", "bordered"), latex_options = "striped", full_width = F)
+
+#To get sensible output need to bolt tables together
 
 
 #tab3 shows equivalent results from linear regression 
@@ -409,22 +417,22 @@ knitr::kable(tab2,escape = F, align = "c", booktabs = T,caption='Analysis adjust
 
 ```
 
-Table \@ref(tab:ancova-compare) shows the same data analysed by first of all by using ANOVA to compare only the outcome scores (upper chart) and then using ANCOVA to adjust scores for the baseline values. The effect size is shown as ges, which stands for "generalized eta squared". You can see there is a large ges value, and correspondingly low p-value for the pretest term, reflecting the strong correlation between pretest and outcome shown in Figure \@ref(fig:ds-prepost). In effect, with ANCOVA, we adjust scores to remove the effect of the pretest on the outcome scores; in this case, we can then see a slightly stronger effect of the intervention: the effect size for the group term is higher and the p-value is lower than with the previous ANOVA.  
-For readers who are not accustomed to interpreting statistical output, the main take-away message here is that you get a better estimate of the intervention effect if the analysis uses a statistical adjustment that takes into account the pre-test scores.
+Table \@ref(tab:ancova_compare) shows the Down syndrome data analysed using ANOVA to compare only the outcome scores (upper chart), and Table \@ref(tab:ancova) shows the same data analysed using ANCOVA to adjust scores for the baseline values. The effect size is shown as ges, which stands for "generalized eta squared". You can see there is a large ges value, and correspondingly low p-value for the baseline term, reflecting the strong correlation between baseline and outcome shown in Figure \@ref(fig:ds-prepost). In effect, with ANCOVA, we adjust scores to remove the effect of the baseline on the outcome scores; in this case, we can then see a slightly stronger effect of the intervention: the effect size for the group term is higher and the p-value is lower than with the previous ANOVA.  
+
+For readers who are not accustomed to interpreting statistical output, the main take-away message here is that you get a better estimate of the intervention effect if the analysis uses a statistical adjustment that takes into account the baseline scores.
 
 #### T-tests, analysis of variance, and linear regression {.unnumbered}
 
 <div>
 
-Mathematically, the t-test is equivalent to two other methods: analysis of variance and linear regression. When we have just two groups, all of these methods achieve the same thing: they divide up the variance in the data into variance associated with group identity, and other (residual) variance, and provide a statistic that reflects the ratio between these two sources of variance. This is illustrated with the real data analysed in Table \@ref(tab:ancova-compare). The upper analysis gives results that are equivalent to the t-test in Table \@ref(tab:ttestoutcomes): if you square the t-value it is the same as the F-test. In this case, the p-value from the t-test is half the value of that in the ANOVA: this is because we specified a one-tailed test for the t-test. The p-value would be identical to that from ANOVA if a two-tailed t-test had been used.\
+Mathematically, the t-test is equivalent to two other methods: analysis of variance and linear regression. When we have just two groups, all of these methods achieve the same thing: they divide up the variance in the data into variance associated with group identity, and other (residual) variance, and provide a statistic that reflects the ratio between these two sources of variance. This is illustrated with the real data analysed in Table \@ref(tab:ancova-compare). The analysis gives results that are equivalent to the t-test in Table \@ref(tab:ttestoutcomes): if you square the t-value it is the same as the F-test. In this case, the p-value from the t-test is half the value of that in the ANOVA: this is because we specified a one-tailed test for the t-test. The p-value would be identical to that from ANOVA if a two-tailed t-test had been used.\
 See [this blogpost](http://deevybee.blogspot.com/2017/11/anova-t-tests-and-regression-different.html) for more details. <!-- reminder to self: blogposts referenced in the book should be uploaded to figshare or another place with DOI-->
 
 </div>
-### Non-normal data  
 
-We've emphasised that the statistical methods reviewed so far assume that data will be reasonably normally distributed. This raises the question of what to do if we find results don't meet that assumption. There are two answers that are typically considered. The first is to use **non-parametric statistics**, which do not require normally-distributed data. For instance, the **Mann-Whitney U test** can be used in place of a t-test. An alternative approach is to **transform** the data to make it more normal. For instance, if the data is skewed with a long tail of extreme values, a log transform can be used. This is often appropriate if, for instance, measuring reaction times. Data may also be **censored** - extreme values converted to a ceiling level score to avoid outliers exerting undue effects on results. 
-Many people are hesitant about transforming data - they may feel it is wrong to manipulate scores in this way. There are two answers to that. First, it does not make sense to be comfortable with nonparametric statistics and uncomfortable with data transformation, because nonparametric methods involve transformation - typically they work by rank ordering data, and then working with the ranks, rather than the original scores. Second, there is nothing inherently correct about measuring things on a linear scale: scientists often use log scales to measure quantities that span a wide range, such as the Richter scale for earthquakes or the decibel scale for sound volume. So, provided the transformation is justified as helping make the data more suited for statistical analysis, it is a reasonable thing to do.
-Of course, it is *not* appropriate to transform data just to try and nudge data into significance. Nor is it a good idea to just wade in an apply a data transformation without first looking at the data to try and understand causes of non-normality. For instance, if your results showed that 90% of people had no effect of intervention, and 10% had a huge effect, it might make more sense to consider a different approach to analysis altogether, rather than shoe-horning results into a more normal distribution. It would be worth taking advice from a statistician in such a case. 
+### Non-normal data
+
+We've emphasised that the statistical methods reviewed so far assume that data will be reasonably normally distributed. This raises the question of what to do if we have results don't meet that assumption. There are two answers that are typically considered. The first is to use **non-parametric statistics**, which do not require normally-distributed data. For instance, the **Mann-Whitney U test** can be used in place of a t-test. An alternative approach is to **transform** the data to make it more normal. For instance, if the data is skewed with a long tail of extreme values, a log transform can be used. This is often appropriate if, for instance, measuring reaction times. Data may also be **censored** - extreme values converted to a ceiling level score to avoid outliers exerting undue effects on results. Many people are hesitant about transforming data - they may feel it is wrong to manipulate scores in this way. There are two answers to that. First, it does not make sense to be comfortable with nonparametric statistics and uncomfortable with data transformation, because nonparametric methods involve transformation - typically they work by rank ordering data, and then working with the ranks, rather than the original scores. Second, there is nothing inherently correct about measuring things on a linear scale: scientists often use log scales to measure quantities that span a wide range, such as the Richter scale for earthquakes or the decibel scale for sound volume. So, provided the transformation is justified as helping make the data more suited for statistical analysis, it is a reasonable thing to do. Of course, it is *not* appropriate to transform data just to try and nudge data into significance. Nor is it a good idea to just wade in an apply a data transformation without first looking at the data to try and understand causes of non-normality. For instance, if your results showed that 90% of people had no effect of intervention, and 10% had a huge effect, it might make more sense to consider a different approach to analysis altogether, rather than shoe-horning results into a more normal distribution. We will not go into details of nonparametric tests and transformations here, as there are plenty of good sources of information available. We recommend consulting a statistician if data seem unsuitable for standard parametric analysis. 
 
 ### Linear mixed models (LMM) approach
 
@@ -501,4 +509,29 @@ knitr::kable(mydf,escape = F, align = "c", booktabs = T,caption="Analytic method
 
 ## Check your understanding
 
-1.  Find an intervention study of interest and check whether the protocol was deposited in a repository before the study began. If so, check the analysis against the preregistration, cf. @goldacre2019. Note which analysis method was used to estimate the intervention effect. Did the researchers provide enough information to give an idea of the effect size, or merely report p-values? Did the analysis method take into account baseline scores in an appropriate way?
+1.  Figure \@ref(fig:boxploteg) shows data from a small intervention trial in the form of a boxplot. Check your understanding of the annotation in the top left of the plot. How can you interpret the p-value? What does the 95% CI refer to? Is the "mean.diff" value the same as shown in the plot?
+
+```{r boxploteg,echo=F,message=F,fig.cap ='Sample data for t-test'}
+# Data in two numeric vectors
+# Modified from stdha example on ttest (on weight)
+women_weight <- c(48.9, 61.2, 73.3, 81.8, 63.4, 64.6, 48.4, 48.8, 48.5)
+men_weight <- c(67.8, 60, 63.4, 76, 89.4, 73.3, 67.3, 61.3, 62.4) 
+# Create a data frame
+my_data <- data.frame( 
+                group = rep(c("Control", "Intervention"), each = 9),
+                score = c(women_weight,  men_weight)
+                )
+myt <- t.test(women_weight, men_weight, var.equal = TRUE)
+mylabel=paste0("t = ",round(-myt$statistic,2),"; p = ",round(myt$p.value,3),"; \nmean diff. = ",round((myt$estimate[2]-myt$estimate[1]),2),"; 95% CI  = ",round(-myt$conf.int[2],2)," to ", round(-myt$conf.int[1],2))
+myg <- ggboxplot(my_data, x = "group", y = "score",
+        ylab = "Score", xlab = "Groups")+
+  annotate(geom="text",x=1.2, y=88, label=mylabel)
+
+
+ggsave('images_bw/boxeg.png',myg,scale = 1, width = 6, height = 5, units = c("in"), dpi = 300)
+
+```
+
+2. Find an intervention study of interest and check which analysis method was used to estimate the intervention effect. Did the researchers provide enough information to give an idea of the effect size, or merely report p-values? Did the analysis method take into account baseline scores in an appropriate way?
+
+
