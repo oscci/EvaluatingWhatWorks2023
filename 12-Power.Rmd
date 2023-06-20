@@ -27,7 +27,6 @@ library(here)
 
 -   Explain what a type II error is, and how it may arise when sample size is too small
 
-**A note of warning**: this chapter is probably the most complex in the book, and introduces several statistical concepts that can be challenging. Readers without a statistical background may find it helpful to try some of the exercises with interactive websites recommended in Check Your Understanding (below) if struggling with material in the main text.
 
 ## Sampling
 
