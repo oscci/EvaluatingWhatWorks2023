@@ -28,10 +28,10 @@ library(gtools) #for permutations
 A **Type I error** is a **false positive**, which occurs when the null hypothesis is rejected but a true effect is not actually present. This would correspond to the situation where the evidence seems to indicate an intervention is effective, but in reality it is not. One useful mnemonic for distinguishing Type I and Type II errors is to think of the sequence of events in the fable of the boy who cried wolf. This boy lived in a remote village and he used to have fun running out to the farmers in the fields and shouting "Wolf! Wolf!" and watching them all get alarmed. The farmers were making an (understandable) Type I error, of concluding there was a wolf when in fact there was none. One day, however, a wolf turned up. The boy ran into the village shouting "Wolf! Wolf!" but nobody took any notice of him, because they were used to his tricks. Sadly, all the sheep got eaten because the villagers had made a Type II error, assuming there was no wolf when there really was one.
 
 ```{r wolfsheepfig, echo=F, fig.cap='Type I and Type II errors'}
-knitr::include_graphics("images/wolf_sheep.png")
+knitr::include_graphics("images_bw/wolfsheeprevised.png")
 ```
 
-Figure @ref(fig:wolfsheepfig) is really the same as Table 10.1 from the previous chapter, but redrawn in terms of wolves and sheep. The type I error rate (i.e. percentage of 'significant' results seen when there is no real effect) is controlled by setting the significance criterion, $\alpha=0.05$, at 5%, or sometimes more conservatively 1% ($\alpha=0.01$). With $\alpha=0.05$, on average 1 in 20 statistically significant results will be false positives; when it is .01, then 1 in 100 will be false positives. The .05 cutoff is essentially arbitrary, but very widely adopted in the medical and social sciences literature, though debate continues as to whether a different convention should be adopted [@benjamin2018, @lakens2018].
+Figure @ref(fig:wolfsheepfig) conveys the same information as Table 10.1 from the previous chapter, but redrawn in terms of wolves and sheep. The type I error rate (i.e. percentage of 'significant' results seen when there is no real effect) is controlled by setting the significance criterion, $\alpha=0.05$, at 5%, or sometimes more conservatively 1% ($\alpha=0.01$). With $\alpha=0.05$, on average 1 in 20 statistically significant results will be false positives; when it is .01, then 1 in 100 will be false positives. The .05 cutoff is essentially arbitrary, but very widely adopted in the medical and social sciences literature, though debate continues as to whether a different convention should be adopted [@benjamin2018, @lakens2018].
 
 ## Reasons for false positives
 
@@ -71,17 +71,17 @@ There are several ways we can defend ourselves against a proliferation of false 
 
 ## Adjusting statistics for multiple testing
 
-As noted above, even when we have a well-designed and adequately powered study, if we collect multiple outcome variables, or if we are applying multiple tests to the same data, then we increase our chance of finding a false positive. Remember that if we set $\alpha$ to .05 and apply $k$ tests to our data, then the probability of finding at least one false positive is given by $1-(1-\alpha)^{k}$. This is officially known as the family-wise error rate (FWER).
+As noted above, even when we have a well-designed and adequately powered study, if we collect multiple outcome variables, or if we are applying multiple tests to the same data, then we increase our chance of finding a false positive. Remember that if we set $\alpha$ to .05 and apply $k$ tests to our data, then the probability of finding at least one false positive is given by $1-(1-\alpha)^{k}$. This is officially known as the **family-wise error rate** (FWER).
 
 ```{r familywise,echo=F, out.width = "80%",fig.cap="Plot of relationship between familywse error rate and number of statistical tests"}
 k <- seq(1:100)
 FWE <- (1-(1-0.05)^k)
 fwe_dat<-data.frame(FWE=FWE,k=k)
-ggplot(data=fwe_dat,aes(k,FWE,type="l"))+geom_line(size=1.2,colour="blue")+theme_bw()+geom_segment(aes(x=10,y=0,xend=10,yend=0.4),linetype="dashed",size=1.2)+geom_segment(aes(x=0,y=0.4,xend=10,yend=0.4),linetype="dashed",size=1.2)+xlab("Number of tests, k")+ylab("Familywise Error (FWE)")+ theme(text = element_text(size = 14))    
+ggplot(data=fwe_dat,aes(k,FWE,type="l"))+geom_line(size=1.2)+theme_bw()+geom_segment(aes(x=10,y=0,xend=10,yend=0.4),linetype="dashed",linewidth=1.2)+geom_segment(aes(x=0,y=0.4,xend=10,yend=0.4),linetype="dashed",linewidth=1.2)+xlab("Number of tests, k")+ylab("Familywise Error (FWE)")+ theme(text = element_text(size = 14))    
 
 ```
 
-Figure \@ref(fig:familywise) shows the relationship between the familywise error rate and the number of tests conducted on the data. Note that the left-most point of the blue line corresponds to the case when we have just one statistical test, and the probability of a false positive is .05, exactly where we would expect. The dotted line shows the case where we performed 10 tests (k = 10), increasing our chance of obtaining a false positive to approximately 40%. Clearly, the more tests applied, the greater the increase in the chance of at least one false positive result. Although it may seem implausible that anyone would conduct 100 tests, the number of implicit tests can rapidly increase if sequential analytic decisions multiply, as shown in the Garden of Forking Paths example, where we subdivided the analysis 4 times, to give 2\^4 = 16 possible ways of dividing up the data.
+Figure \@ref(fig:familywise) shows the relationship between the familywise error rate and the number of tests conducted on the data. Note that the left-most point of the curved line corresponds to the case when we have just one statistical test, and the probability of a false positive is .05, exactly where we would expect. The dotted line shows the case where we performed 10 tests (k = 10), increasing our chance of obtaining a false positive to approximately 40%. Clearly, the more tests applied, the greater the increase in the chance of at least one false positive result. Although it may seem implausible that anyone would conduct 100 tests, the number of implicit tests can rapidly increase if sequential analytic decisions multiply, as shown in the Garden of Forking Paths example, where we subdivided the analysis 4 times, to give 2\^4 = 16 possible ways of dividing up the data.
 
 There are many different ways to adjust for the multiple testing in practice. We shall discuss some relatively simple approaches that are useful in the context of intervention research, two of which can be used when evaluating published studies, as well as when planning a new study.
 
@@ -125,7 +125,9 @@ Where different outcome measures are regarded as indicators of a single underlyi
 
 ## Check your understanding
 
-This [web-based app](https://www.shinyapps.org/apps/p-hacker/) by @schonbrodt2016 allows you to see how easy it can be to get a "significant" result by using flexible analyses. The term DV refers to "dependent variable", i.e. an outcome measure.\
+1. Type the phrase "did not survive Bonferroni correction" and "intervention" into a search engine to find a study that corrected for multiple corrections. Was the Bonferroni correction applied appropriately? Compare the account of the results in the Abstract and the Results section. Was the Bonferroni correction taken seriously?
+
+2. This [web-based app](https://www.shinyapps.org/apps/p-hacker/) by @schonbrodt2016 allows you to see how easy it can be to get a "significant" result by using flexible analyses. The term DV refers to "dependent variable", i.e. an outcome measure.\
 - Set the True Effect slider to its default position of zero, which means that the Null Hypothesis is true - there is no true effect.\
 - Set the Number of DVs set to 2.\
 - Press "Run new experiment".\
