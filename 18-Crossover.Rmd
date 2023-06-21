@@ -23,46 +23,9 @@ The benefit of the crossover design is that a potentially more accurate evaluati
 
 In drug trials, the typical crossover design is split into three phases: an initial phase where two groups are randomized (exactly the same as a parallel group design) to intervention and control [@sibbald1998]. Once the first phase has elapsed, there is a washout phase (phase 2) where no intervention is given; this is important to allow any intervention effect to be removed before the groups are switched. Then phase 3 is started with the intervention and control conditions switched. By the end of the study, both groups have received intervention. The assessment of the intervention looks at the differences between phases 1 and 3 by group. If treatment is effective, we should see no group difference but a significant phase difference.
 
-```{r crossoverplot, echo=F, message=F, warning=F, fig.width=8,fig.height=4, fig.cap="Idealized results from a crossover RCT",out.width="75%"}
-#simulate some data based on a known structure
-set.seed(123)
-dat <- data.frame(x = runif(100, 1, 3.5), x2 = rnorm(100,0,0.25))
-dat$intervention <- as.integer(dat$x >= 2.5)
-dat$rev_intervention <- as.factor(as.integer(dat$x < 2.5))
-dat$y <- 3 + 0.0001 * dat$x + 0.02 * dat$x2 + 4 * (dat$x >= 2.5) + rnorm(100,0,0.5)
+```{r crossoverplot, echo=F, message=F, warning=F, fig.cap="Idealized results from a crossover RCT",out.width="75%"}
 
-for(i in 1:100)
-{
-if(dat$x[i]>2&dat$x[i]<2.5){dat$intervention[i]=2}
-}
-dat$intervention<-as.factor(dat$intervention)
-newdat1<-dat[dat$intervention==0,]
-newdat2<-dat[dat$intervention==1,]
-newdat3<-dat[dat$intervention==2,]
-
-mod1 <- lm(y~x,newdat1)
-mod2 <- lm(y~x,newdat2)
- #plots for lmer 
- 
- ggplot(dat[!dat$intervention==2,], aes(x = x, y = y)) + 
-   theme_bw()+ theme(legend.position = "top",strip.text=element_text(),axis.text=element_text(),axis.title=element_text(face="bold"))+ annotate("text",x=2.25,y=8,label="Washout",size=5)+xlab("")+ylab("Outcome score") +
-   annotate("text",x=1.5,y=8,label="Phase 1",size=5) +
-   annotate("text",x=3,y=8,label="Phase 3",size=5)+
-   annotate("text",x=1.5,y=7.5,label="Group A have intervention",size=4.5) +
-   annotate("text",x=3,y=7.5,label="Group B have intervention",size=4.5)+
-   annotate("rect",xmin=2,xmax=2.5,ymin=-Inf,ymax=Inf, alpha=0.1, fill="black")+
-   geom_segment(aes(x=1,y=6,xend = 2, yend = 6),col="red",size=2) +
-   geom_segment(aes(x=2.5,y=4,xend = 3.5, yend = 4),col="red",size=2)+
-geom_segment(aes(x=2,y=6,xend = 2.5, yend = 4),col="red",linetype="dashed",size=2) +
-   geom_segment(aes(x=2,y=4,xend = 2.5, yend = 6),col="blue",linetype="dashed",size=2)+
-   geom_segment(aes(x=1,y=4,xend = 2, yend = 4),col="blue",size=2) +
-   geom_segment(aes(x=2.5,y=6,xend = 3.5, yend = 6),col="blue",size=2)+ylim(3,8)+
-   geom_segment(aes(x=2.6,y=4,xend = 2.6, yend = 6),col="red",size=2,linetype="dotted")+ylim(3,8)+
-   annotate("text",x=2.75,y=5,label="effect\nsize",color="red",size=5) +
-   annotate("text",x=1.5,y=6.2,label="Group A",color="red",size=5) +
-   annotate("text",x=1.5,y=4.2,label="Group B",color="blue",size=5)+theme(axis.text = element_blank(),axis.ticks = element_blank())
-
-#ggarrange(cross2,cross1,ncol=2,nrow=1)
+ knitr::include_graphics('images_bw/crossover.png') #read in previously created diag
 
 ```
 
@@ -72,32 +35,13 @@ The suitability of a cross-over design, and the anticipated results, depend cruc
 
 The delayed crossover design or wait list control design is another type of *within subject* design that is more commonly used in situations where the effect of an intervention is likely to persist. We start by taking baseline measures from both groups. The impact of intervention is measured in Group A relative to their pre-intervention score. For Group B, intervention starts at the point when Group A stop the intervention.
 
-```{=html}
-<!---We definitely need to cover this, as it is not uncommon esp in educational contexts. 
-But thinking about this, I'm not sure how it differs from regular crossover apart from making it easier to recruit. And I guess it is possible to make it adaptive so the waitlist people only get intervention if analysis at end of phase 1 shows it is promising. 
-Also wonder about the analysis: I googled and someone said this, 
-"Have three timepoints for everyone, t0 at baseline, t1 when the control group switches to treatment, and t2 after about double that time. At t1 you have a between subject treatment comparison of treatment versus control adjusted for the t0 baseline covariate. You also have a within subject comparison within the control-treatment group. The right linear mixed model can combine those estimates under certain assumptions. And stronger assumptions can be made of course if blinding occurs and neither group knows who is on control or treatment to time t1." -->
-```
-```{r waitlist-plot, echo=F, message=F, warning=F, fig.width=8,fig.height=4, fig.cap="Idealized results from a wait list design RCT",out.width="75%"}
 
+```{r waitlist-plot,  echo=F, message=F, warning=F, fig.cap="Idealized results from a waitlist RCT"}
 
-
-  ggplot(dat[!dat$intervention==2,], aes(x = x, y = y)) + 
-   theme_bw()+ theme(legend.position = "top",strip.text=element_text(size=12),axis.text=element_text(size=12),axis.title=element_text(size=12,face="bold"))+ xlab("")+ylab("Outcome measure") +
-   annotate("text",x=1.5,y=8,label="Period 1",size=5) +
-   annotate("text",x=3,y=8,label="Period 2",size=5)+
-   annotate("rect",xmin=2,xmax=2.5,ymin=-Inf,ymax=Inf, alpha=0.1, fill="black")+
-   geom_segment(aes(x=1,y=6,xend = 2, yend = 6),col="red",size=1) +
-   geom_segment(aes(x=2,y=6,xend = 2.5, yend = 6),col="red",linetype="dashed",size=1) +
-   geom_segment(aes(x=2,y=4,xend = 2.5, yend = 6),col="blue",linetype="dashed",size=1)+
-   geom_segment(aes(x=1,y=4,xend = 2, yend = 4),col="blue",size=1) +
-   geom_segment(aes(x=2.5,y=6,xend = 3.5, yend = 6),col="purple",size=1)+ylim(3,8)+
-   geom_segment(aes(x=1.8,y=4,xend = 1.8, yend = 6),col="black",size=1,linetype="dotted")+ylim(3,8)+
-   annotate("text",x=1.65,y=5,label="effect\nsize",color="black",size=5) +
-   annotate("text",x=1.3,y=6,label="Group A\nreceives intervention",color="red",size=5) +
-   annotate("text",x=1.3,y=4,label="Group B\nhas no intervention",color="blue",size=5)+theme(axis.text = element_blank(),axis.ticks = element_blank())+annotate("text",x=3,y=5.5,label="Both groups receive\n intervention",color="purple",size=5)
+ knitr::include_graphics('images_bw/waitlist.png') #read in previously created diag
 
 ```
+
 
 In many respects, this design resembles a regular RCT, and has some of the same benefits, in terms of controlling for effects of practice, maturation and regression to the mean. Relative to a standard RCT, it has some advantages:
 
@@ -106,13 +50,15 @@ In many respects, this design resembles a regular RCT, and has some of the same 
 -   An adaptive approach can be adopted, so that if no benefit of intervention is seen for Group A at the end of intervention, the study can be terminated.\
 -   This design may encourage participation by clients and those referring them, as all participants have access to a potentially beneficial intervention and serve as their own controls.
 
-There is, however, some debate around usefulness of wait-list designs in the psychological and behavioural interventions literature [@elliott2002; @cunningham2013; @furukawa2014]. In particular, @cunningham2013 presented results that showed this design can potentially, artificially inflate intervention effect estimates. When a participant knows that they have to wait, this can induce a state of "resentful demoralization", which can lead to poorer outcome - a kind of "nocebo" effect. Having said that, Cunningham et al noted that negative reactions to being on a wait list are likely to depend on the specific context. Studies showing "nocebo" effects have tended to focus on clinical psychology interventions, where distressed patients have been actively seeking help and may become disconsolate or irritated at having to wait.
+There is, however, some debate around usefulness of wait-list designs in the psychological and behavioural interventions literature [@elliott2002; @cunningham2013; @furukawa2014]. In particular, @cunningham2013 presented results that showed this design can potentially, artificially inflate intervention effect estimates. When a participant knows that they have to wait, this can induce a state of "resentful demoralization", which can lead to poorer outcome - a kind of **nocebo" effect**. Having said that, Cunningham et al noted that negative reactions to being on a wait list are likely to depend on the specific context. Studies showing "nocebo" effects have tended to focus on clinical psychology interventions, where distressed patients have been actively seeking help and may become disconsolate or irritated at having to wait.
 
 @calder2021 used a delayed crossover design to study the effect of an intervention designed to improve use of past tense -ed endings in children with Developmental Language Disorder. As well as comparing two groups who received intervention at different time points, they also compared different outcome measures. Here, for simplicity, we restrict consideration to the outcome measure of past tense endings - the grammatical element that the training had focused on. (In Chapter \@ref(Single) we look at how the same study incorporated aspects of single case design to obtain additional evidence that intervention benefits are specific to the skills that are trained).\
 Results are shown in Figure \@ref(fig:calderfig).
 
-```{r calderfig, echo=F,fig.cap = "Mean % correct in delayed cross-over study by Calder et al, 2021 (data plotted from Calder et al's Table 2).",out.width="75%"}
-
+```{r makecalderfig, echo=F}
+makefig<-0
+if(makefig==1)
+{
 
 cdat <- read.csv("data/calder_xover.csv")
 wantrows <- c(1,5,7,9,13,15)
@@ -127,12 +73,13 @@ clong$phase <- as.factor(clong$phase)
 levels(clong$phase)=1:7
 clong$Group <- as.factor(clong$Group)
 
+png("images_bw/calderfig-1.png", width = 500, height = 350,unit='px')
   
  #Try with base R!
 plot(1, type = "n",                         # Remove all elements of plot
      xlab = "Phase", ylab = "% Correct",
      xlim = c(1, 7), ylim = c(0, 80))
-mycols <- c('blue','red')
+mycols <- c('black','darkgrey')
 mylines <- c(1,2,3)
 mypch<-c(2,0,19)
 vpos<-c(75,10)
@@ -147,17 +94,26 @@ hpos <-c(4.5,6.4)
     text(1.5,vpos[g],paste0("Group ",g,":\n baseline"),col=mycols[g])
     text(hpos[g],vpos[g],paste0("Group ",g,":\n post-intervention"),col=mycols[g])
  }
-segments(1,68,2,68,col='blue',lwd=2)
-segments(1,3,4,3,col="red",lwd=2)
+segments(1,68,2,68,col='black',lwd=2)
+segments(1,3,4,3,col="darkgrey",lwd=2)
 
 # Add a legend
 # legend("topright", 
 #   legend = c("past -ed","3rd pers -s","possessive 's"), 
 #   pch = c(19,0,2), 
 #   inset = c(0.01, 0.01))
+
+dev.off()
+}
 ```
 
-First, we have the improvement in group 1 when phases 4-5 (post-intervention) are compared with phases 1-2 (baseline). Next, look at Group 2, in red. They provide two further pieces of evidence. First we can use them as a replication sample for Group 1, considering the change from phase 4-5 (baseline) to phase 6-7 (post-intervention): although the improvement on past-tense items is not as big as that seen in Group 1, it is evident by inspection, and again contrasts with a lack of improvement on untrained constructions. Finally, we can contrast the two groups at phases 4-5. This is more like the contrast performed in a standard RCT: a between-subjects contrast between treated vs untreated groups at the same time point. Here, the combined evidence from between- and within-subjects comparisons provides converging support for the effectiveness of the intervention. Nevertheless, we may wonder how specific the intervention effect is. Could it be a placebo effect, whereby children's scores improve simply because they have the individual attention of an enthusiastic therapist? Maybe the children would have improved just as much if the therapist had simply spent the time reading to them, or playing with them. In Chapter \@ref(Single) we move on to consider outcomes for the untrained constructions, which provide evidence against that interpretation.
+```{r calderfig,  echo=F, message=F, warning=F, fig.cap = "Mean % correct in delayed cross-over study by Calder et al, 2021 (data plotted from Calder et al's Table 2)."}
+
+ knitr::include_graphics('images_bw/calderfig-1.png') #read in previously created diag
+
+```
+
+First, we have the improvement in group 1 (black) when phases 4-5 (post-intervention) are compared with phases 1-2 (baseline). Next, look at Group 2, in grey. They provide two further pieces of evidence. First we can use them as a replication sample for Group 1, considering the change from phase 4-5 (baseline) to phase 6-7 (post-intervention): although the improvement on past-tense items is not as big as that seen in Group 1, it is evident by inspection, and again contrasts with a lack of improvement on untrained constructions. Finally, we can contrast the two groups at phases 4-5. This is more like the contrast performed in a standard RCT: a between-subjects contrast between treated vs untreated groups at the same time point. Here, the combined evidence from between- and within-subjects comparisons provides converging support for the effectiveness of the intervention. Nevertheless, we may wonder how specific the intervention effect is. Could it be a placebo effect, whereby children's scores improve simply because they have the individual attention of an enthusiastic therapist? Maybe the children would have improved just as much if the therapist had simply spent the time reading to them, or playing with them. In Chapter \@ref(Single) we move on to consider outcomes for the untrained constructions, which provide evidence against that interpretation.
 
 ## Check your understanding
 
