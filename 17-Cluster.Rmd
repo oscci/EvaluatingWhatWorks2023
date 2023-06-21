@@ -27,52 +27,15 @@ library(knitr)
 
 ## What is a cluster RCT?
 
-In some situations, allocation of intervention can be problematic due to pragmatic constraints; for example, for a whole-class intervention, it may be disruptive to split students within each class into intervention and control groups. A potential solution is to use cluster trials, where the allocation to intervention is performed at the group level. We can designate clusters that would naturally occur together, for example, school classes, patients under the care of a particular medical practice or a specific therapist, or perhaps by geographic location (county, district or NHS trust). Figure \@ref(fig:cluster-diag) illustrates the logic.
+In some situations, allocation of intervention can be problematic due to pragmatic constraints; for example, for a whole-class intervention, it may be disruptive to split students within each class into intervention and control groups. A potential solution is to use **cluster trials**, where the allocation to intervention is performed at the group level. We can designate clusters that would naturally occur together, for example, school classes, patients under the care of a particular medical practice or a specific therapist, or perhaps by geographic location (county, district or NHS trust). Figure \@ref(fig:cluster-diag) illustrates the logic.
 
-```{r, cluster-diag,echo=FALSE,warning=F,message=F,fig.cap='In the Individual RCT, location is irrelevant and cases are assigned to intervention at random. In the Cluster RCT, there are four geographical clusters, two of which are randomly assigned to each intervention group',out.width="75%"}
-  library(ggplot2)
-library(ggimage)
-library(maptools)
-makemaps <- 0 #map is slow to build and so we have saved output in images to read in, unless makemaps is set to 1
+```{r cluster-diag,echo=FALSE,warning=F,message=F,fig.cap='With regular RCT (on left), individuals are sampled at random from the population for allocation to intervention (grey) or control (white).  With cluster RCT (on right) natural clusters in the population (schools, hospitals, cities, etc) are sampled at random and assigned to intervention (grey) or control (black)'}
 
-if(makemaps==1){
+  knitr::include_graphics('images_bw/clusterdemo.png') #read in previously created diag
 
-
-# create a df
-
-set.seed(1)
-
-data(wrld_simpl)
-world <- fortify(wrld_simpl)
-worldUk <- subset(world, id=="GBR")
-
-d <- data.frame(x = seq(-3,0,0.2),
-                y = rnorm(length(seq(-3,0,0.2)),52.5,0.5),
-                image = 'images/stickman.png')
-
-d$x2<-d$x+12
-worldUk$long2<-worldUk$long+12
-d$cluster<-as.factor(rep(1:4,each=4))
-
-polys<-data.frame(id=rep(1:4,each=4),x=c(2,-2,-2,2,-3,-7,-7,-3,9,5,5,9,14,10,10,14),y=c(43,43,48,48,43,43,48,48,43,43,48,48,43,43,48,48))
-
-d2 <- data.frame(x = c(-6.5,-5.5,-4.5,-3.5,-1.5,-0.5,0.5,1.5,-6.5,-5.5,-4.5,-3.5,-1.5,-0.5,0.5,1.5),
-                y = c(44,44,44,44,44,44,44,44,47,47,47,47,47,47,47,47),
-                image = 'images/stickman.png')
-
-d2$x2<-d2$x+12
-d2$cluster<-as.factor(rep(1:4,each=4))
-
-df<-data.frame(x2=c(-4,-2,8,10.5),x1=c(-1.5,-1.5,9.5,9.5),y1=c(51,51,51,51),y2=c(48.5,48.5,48.5,48.5))
-
-# plot2
-ggplot() + geom_path(aes(long, lat, group=group), data=worldUk, color="grey", fill=NA) + geom_path(aes(long2, lat, group=group), data=worldUk, color="grey", fill=NA)+coord_equal() + geom_image(data=d,aes(x=x,y=y,image=image), size=.012,color="blue") + geom_image(data=d,aes(x=x2,y=y,image=image,colour=cluster), size=.012) + xlim(-10,15) + ylim(42,61) + geom_polygon(data=polys,aes(x=x,y=y,group=id),colour="black",fill='white') + geom_image(data=d2,aes(x=x,y=y,image=image), size=.012,color="blue") + geom_image(data=d2,aes(x=x2,y=y,image=image,colour=cluster), size=.012) + annotate(geom="text",x=-5.5, y=49, label="Control")+ annotate(geom="text",x=0.5, y=49, label="Treatment")+ annotate(geom="text",x=6.5, y=49, label="Control")+ annotate(geom="text",x=12.5, y=49, label="Treatment")+geom_segment(aes(x = x1, y = y1, xend = x2, yend = y2),colour="red",arrow = arrow(length = unit(0.03, "npc")), data = df)+ annotate(geom="text",x=8.4, y=61, label="CLUSTER RCT") + annotate(geom="text",x=-3.7, y=61, label="INDIVIDUAL RCT")+ theme_nothing()+ theme(legend.position = "none")
-}
-#NB - DB cropped this manually - if possible, we need to remove extraneous white space by code
-if(makemaps==0){
-  knitr::include_graphics('images/mapplots.jpg') #read in previously created map
-}
 ```
+
+
 
 ## Advantages of a cluster design
 
@@ -88,7 +51,7 @@ Finally, we may note that any intervention that is administered to a whole group
 
 The benefits of the clustered design are counteracted by some serious disadvantages. First of all, a clustered trial is far less efficient than a regular trial, because the unit of analysis is the cluster rather than the individual. Accordingly, much larger samples are needed to attain adequate power.
 
-It may not be obvious why clustering should require a different analytic approach, and indeed, the literature does contain trials which have been analysed as if they were regular trials, even though the data are clearly clustered. The problem is that clustering introduces confounds. For instance, if we have classrooms as clusters, then all the children in one class are taught by the same teacher. They are also likely to be more similar within a cluster than between clusters on variables such as social background. This reduces variability within a cluster. Previously, we have regarded reduced variability as a good thing, as it helps pick out an intervention effect from a background of noise. But in this case, it is a bad thing, because it is confounded with the intervention effect, and may make it seem larger than it is. For instance, if we just had a study where all the children in school A had intervention 1, and all of those in school B had intervention 2, then if we find children in school A did better than those in school B, this is hard to interpret. It could just be that teaching is better in school A, regardless of the intervention.
+It may not be obvious why clustering should require a different analytic approach, and indeed, the literature does contain trials which have been analysed as if they were regular trials, even though the data are clearly clustered (e.g. pupils in schools A and B receive intervention whereas those in schools C and D are controls). The problem is that clustering introduces confounds. For instance, if we have classrooms as clusters, then all the children in one class are taught by the same teacher. They are also likely to be more similar within a cluster than between clusters on variables such as social background. This reduces variability within a cluster. Previously, we have regarded reduced variability as a good thing, as it helps pick out an intervention effect from a background of noise. But in this case, it is a bad thing, because it is confounded with the intervention effect, and may make it seem larger than it is. For instance, if we just had a study where all the children in school A had intervention 1, and all of those in school B had intervention 2, then if we find children in school A did better than those in school B, this is hard to interpret. It could just be that teaching is better in school A, regardless of the intervention.
 
 Statisticians have developed sophisticated methods of analysis for dealing with the dependency among individuals within the same cluster [@campbell2014]. It is worth taking advice from a statistician if you are contemplating doing such a trial. For a detailed account of methods, see @gelman2007.
 
