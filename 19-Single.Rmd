@@ -25,7 +25,7 @@ library(forcats)
 library(hablar)
 ```
 
-The single case design, also known as N-of-1 trial, or small N design, is a commonly used intervention design in speech and language therapy, clinical psychology, education, and neuropsychology, including aphasia therapy [@perdices2009]. The single case design may be regarded as an extreme version of a *within-subjects* design, where two more more conditions are compared within a single person. This type of trial is sometimes dismissed as providing poor quality evidence, but a well-designed single case trial can be an efficient way to obtain an estimate of treatment efficacy in an individual. Very often, a set of single case trials is combined into a *case series* (see below). It is important to note that a single case trial is not a simple case report, but rather a study that is designed and analysed in a way that controls as far as possible for the kind of unwanted influences on results described in chapters 2-5.
+The single case design, also known as **N-of-1 trial**, or **small N design**, is a commonly used intervention design in speech and language therapy, clinical psychology, education, and neuropsychology, including aphasia therapy [@perdices2009]. The single case design may be regarded as an extreme version of a *within-subjects* design, where two more more conditions are compared within a single person. This type of trial is sometimes dismissed as providing poor quality evidence, but a well-designed single case trial can be an efficient way to obtain an estimate of treatment efficacy in an individual. Very often, a set of single case trials is combined into a **case series** (see below). It is important to note that a single case trial is not a simple case report, but rather a study that is designed and analysed in a way that controls as far as possible for the kind of unwanted influences on results described in chapters 2-5.
 
 ## Logic of single case designs
 
@@ -58,21 +58,27 @@ In the RCT, this is achieved by having a large enough sample of participants to 
 With single case trials, we do not control for variation associated with individual participant characteristics - indeed we are interested in how different people respond to intervention - but we do need to control as far as possible for other sources of variation. The **ABA** design is a popular single-case design that involves contrasting an outcome during periods of intervention (B) versus periods of no intervention (A). For example, @armson1998 studied the impact of frequency-altered auditory feedback on 12 people who stuttered. They contrasted a baseline period (A), a period with auditory feedback (B), and a post-intervention period (A), taking several measures of stuttering during each period. Figure \@ref(fig:SingleCaseDplot) shows data from two participants during a reading condition. Although the initial amount of stuttering differs for the two individuals, in both cases there is a precipitate drop in stuttering at the 5 minute point corresponding to the onset of the masking, which is sustained for some minutes before gradually rising back towards baseline levels. The baseline period is useful for providing a set of estimates of stuttering prior to intervention, so we can see that the drop in stuttering, at least initially, is outside the range of variation that occurs spontaneously.
 
 ```{r SingleCaseDplot, echo=F, message=F, warning=F, fig.width=8,fig.height=4, fig.cap="Outcome over time in a single case ABA design. Redrawn from digitized data from two participants from Figure 2 of Armson et al (1998)",out.width="75%"}
-
+makefig<-0
+if(makefig==1){
 sub1<-read.csv('data/stutterP5_read.csv')
 sub2<-read.csv('data/stutterP6_read.csv')
+png("images_bw/SingleCaseDplot.png", width = 550, height = 300,unit='px')
 par(mfrow=c(1,2))
 df<-sub1
 for (i in 1:2){
   if(i==2){df<-sub2}
-plot(df$x,df$y,type='b',pch=15,col='blue',main=paste0('Participant ',(i+4)),ylim=c(0,25),ylab='% Stuttering',xlab='Time (mins)')
+plot(df$x,df$y,type='b',pch=15,main=paste0('Participant ',(i+4)),ylim=c(0,25),ylab='% Stuttering',xlab='Time (mins)')
 abline(v=5,lty=2)
 abline(v=15,lty=2)
 text(2,24.5,"A",cex=1.5)
 text(10,24.5,"B",cex=1.5)
 text(18,24.5,"A",cex=1.5)
 }
-
+dev.off()
+}
+if(makefig==0){
+ knitr::include_graphics('images_bw/SingleCaseDplot.png') #read in previously created diag
+}
 ```
 
 In the context of neurorehabilitation and speech-and-language therapy, there would appear to be a major drawback of the ABA design. In the course of a historical review of this approach, @mirza2017 described the "N-of-1 niche" as follows:
@@ -89,7 +95,8 @@ For instance, @best2013 evaluated a cueing therapy for anomia (word-finding prob
 
 Figure \@ref(fig:bestplot) is redrawn from data of @best2013. The black points show N items correct on the two sets of items prior to intervention. They were selected to be of similar difficulty and hence they cluster around the dotted line, which shows the point where scores on both item sets are equivalent. The red points show scores after intervention. Points that fall above the dotted line correspond to cases who did better with trained than untrained words; those below the line did better with untrained than trained words. The red points tend to be placed vertically above the pre-test scores for each individual, indicating that there is improvement after intervention in the trained items (y-axis), but not on control items (x-axis).
 
-```{r bestplot, echo=F, message=F, warning=F, fig.width=8,fig.height=4, fig.cap="Outcome over time in multiple outcomes design. Reconstructed data from 16 participants, Best et al (2013)",out.width="75%"}
+```{r bestplot, echo=F, message=F, warning=F, fig.width=8,fig.height=4, fig.cap="Outcome over time in multiple outcomes design. Reconstructed data from 16 participants, Best et al (2013)"}
+makefig <- 0
 bestdf <- read.csv("data/best_data.csv") #from Appendix 5; this is actually both types of item together I think (N=200)
 bestdf<-bestdf[1:16,] #remove row 17 - has means
 bestdfTpre <- read.csv("data/bestdat1.csv") #digitized from figure 1 in paper
@@ -121,15 +128,23 @@ for (i in 1:nrow(bestdf)){
 }
 }
 
+if(makefig==1){
+png("images_bw/bestplot.png", width = 450, height = 300,unit='px')
+
 #How best to display?
 plot(bestdf$Cpre,bestdf$Tpre,ylim=c(0,100),xlim=c(0,100),xlab='N correct untrained words',ylab='N correct trained words',pch=16)
-lines(bestdf$Cpost,bestdf$Tpost,type='p',col='red',pch=16)
+lines(bestdf$Cpost,bestdf$Tpost,type='p',col='darkgrey',pch=16)
 for(i in 1:nrow(bestdf)){
   segments(bestdf$Cpre[i],bestdf$Tpre[i],bestdf$Cpost[i],bestdf$Tpost[i])
 }
 abline(a=0,b=1,lty=2)
-legend(1, 95, legend=c("Pre-intervention", "Post-intervention"),pch=16,col=c('black','red') ,cex=0.8)
+legend(1, 95, legend=c("Pre-intervention", "Post-intervention"),pch=16,col=c('black','darkgrey') ,cex=0.8)
+dev.off()
+}
 
+if(makefig==0){
+ knitr::include_graphics('images_bw/bestplot.png') #read in previously created diag
+}
 ```
 
 Given the large number of items in each set, it is possible to do a simple comparison of proportions to see whether each person's post-intervention score is reliably higher than their pre-intervention score for each item set. For 14 of the 16 cases, there is a statistically significant increase in scores from pre-intervention to post-intervention for target items (corresponding to those with lines that extend vertically above the dotted line), whereas this is the case for only two of the cases when control items are considered (corresponding to cases which show change in the horizontal direction from pre-intervention to post-intervention).
@@ -212,7 +227,7 @@ As noted above, single case designs cover a wide range of options, and can vary 
 The key feature of a multiple baseline design is onset of intervention is staggered across at least three different points in time. Potentially, this could be done by having three or more participants, each of whom was measured in a baseline and an intervention phase, but with the timing of the intervention phase varied across participants. Alternatively, one can have different outcomes assessed in a single participant. Figure \@ref(fig:swainfig) from @swain2020 provides an illustration of the latter approach with a single participant, where different outcomes are targeted at different points in a series of intervention sessions. Typically, the timing of the interventions is not preplanned, but rather, they are introduced in sequence, with the second intervention only started after there is a documented effect from the first intervention, and so on [@horner2014].
 
 ```{r swainfig,echo=F,include=T,warning=F,message=F,fig.cap = "Data from one case in the @swain2020 study. The shaded region shows sessions with intervention for each of the three outcomes.",out.width="60%"}
-knitr::include_graphics("images/swainplot.png")
+knitr::include_graphics("images_bw/swainplot.png")
 
 ```
 
@@ -227,7 +242,7 @@ We noted in the previous chapter how, electropalatography, a biofeedback interve
 @leniston2021 applied this approach to seven adolescents with severe speech disorders, all of whom were already familiar with electropalatography. Diagnoses included verbal dyspraxia, structural abnormalities of articulators (velopharyngeal insufficiency), mosaic Turner syndrome, and right-sided hemiplegia. At the start of each school term, two sounds were identified for each case: a target sound, which would be trained, and a control sound, which was also produced incorrectly, but which was not trained. Electropalatography training was administered twice a week in 30 minute sessions. The number of terms where intervention was given ranged from 1 to 3.
 
 ```{r ebbelsfig,echo=F,include=T,warning=F,message=F,fig.cap = "Individual results for targets and controls at each term",out.width="75%"}
-knitr::include_graphics("images/Ebbels.png")
+knitr::include_graphics("images_bw/Ebbels.png")
 #fig was created with makeebbels
 
 ```
@@ -258,20 +273,26 @@ Early reports of single case studies often focused on simple visualization of re
 
 ```{r SingleCaseDplot2, echo=F, message=F, warning=F, fig.width=8,fig.height=4, fig.cap="Outcome over time in a single case ABA design. Digitized data from two participants from Figure 2 of Armson et al (1998)",out.width="75%"}
 
+if(makeplot==1){
 sub1<-read.csv('data/stuttering_read_P11.csv')
 sub2<-read.csv('data/stuttering_read_P12.csv')
+png("images_bw/SingleCaseDplot2.png", width = 550, height = 300,unit='px')
 par(mfrow=c(1,2))
 df<-sub1
 for (i in 1:2){
   if(i==2){df<-sub2}
-plot(df$x,df$y,type='b',pch=15,col='blue',main=paste0('Participant ',(i+10)),ylim=c(0,25),ylab='% Stuttering',xlab='Time (mins)')
+plot(df$x,df$y,type='b',pch=15,col='black',main=paste0('Participant ',(i+10)),ylim=c(0,25),ylab='% Stuttering',xlab='Time (mins)')
 abline(v=5,lty=2)
 abline(v=15,lty=2)
 text(2,24.5,"A",cex=1.5)
 text(10,24.5,"B",cex=1.5)
 text(18,24.5,"A",cex=1.5)
 }
-
+dev.off()
+}
+if(makefig==0){
+ knitr::include_graphics('images_bw/SingleCaseDplot2.png') #read in previously created diag
+}
 ```
 
 Unfortunately, rather than a well-worked-out set of recommendations for statistical analysis of single case trials, there is a plethora of methods in use, which can be challenging, or even overwhelming, for anyone starting out in this field to navigate [@kratochwill2014c]. Furthermore, most of the focus has been on ABA and related designs, with limited advice on how to deal with designs that use comparisons between treated and untreated outcomes.
@@ -301,7 +322,7 @@ A final point, which cannot be stressed enough, is that when evaluating a given 
 1.  @koutsoftas2009 conducted a study of effectiveness of phonemic awareness intervention with a group of children who showed poor sound awareness after receiving high quality whole-classroom teaching focused on this skill. Intervention sessions were administered by speech-language pathologists or experienced teachers to 13 groups of 2-4 children twice per week for a baseline and post-intervention period, and once per week during the 6 week intervention. Active intervention was preceded by a baseline period - one week (with two outcome measurement points) for seven groups of children, and two weeks (4 measurement points) for the other six groups. Outcome probes involved identifying the initial sound from a set of three words in each session. The researchers reported effect sizes for individual children that were calculated by comparing score on the probes in the post-intervention period with those in the baseline period, showing that most children showed significant gains on the outcome measure. Group results on the outcome measure (redrawn from Table 2 of the paper) are shown in Figure \@ref(fig:kdataplot).
 
 ```{r kdataplot, echo=FALSE,message=FALSE,warning=FALSE,fig.cap="Group means from Koutsoftas et al, 2009. Filled points show intervention phase, unfilled show baseline or post-intervention",out.width="75%"}
-
+makefig <- 0
 kdf <- read.csv("data/koutsoftas_data.csv")
 
 #need to convert to long form
@@ -336,6 +357,8 @@ G2 <- c(0.05,	0.05,	0.2,	0.25,	0.6,	0.75,	1.25,	1.4,	1.55,	1.65,	1.6,	1.8)
 G1p <- c(1,1,15,15,15,15,15,15,2,2,2,2)
 G2p <- c(1,1,1,1,15,15,15,15,15,15,2,2)
 
+if(makefig==1){
+png("images_bw/kdataplot.png", width = 550, height = 350,unit='px')
 plot(G1,type='b',main='Probe scores for staggered intervention groups',xlab='Measurement',ylab='Mean number correct /3',ylim=c(0,3),col="darkgrey",pch=G1p)
 text(1.4,2.9,'Baseline',cex=.7,col="darkgrey")
 text(5.8,2.8,'Intervention',cex=.7,col="darkgrey")
@@ -344,16 +367,23 @@ arrows(0.5, 2.8, 2, 2.8,col='darkgrey',code=3,length=.1)
 arrows(3, 2.7, 8, 2.7,col='darkgrey',code=3,length=.1)
 arrows(9, 2.8, 12, 2.8,col='darkgrey',code=3,length=.1)
 
-lines(G2,type='b',xlab='Session',ylab='Mean number correct /3',ylim=c(0,3),col='blue',pch=G2p)
+lines(G2,type='b',xlab='Session',ylab='Mean number correct /3',ylim=c(0,3),col='black',pch=G2p)
 
-text(2.4,2.6,'Baseline',cex=.7,col="blue")
-text(6.8,2.5,'Intervention',cex=.7,col="blue")
-text(11.5,2.6,'Post',cex=.7,col="blue")
-arrows(0.5, 2.5, 4, 2.5,col='blue',code=3,length=.1)
-arrows(5, 2.4, 10, 2.4,col='blue',code=3,length=.1)
-arrows(11, 2.5, 12, 2.5,col='blue',code=3,length=.1)
+text(2.4,2.6,'Baseline',cex=.7,col="black")
+text(6.8,2.5,'Intervention',cex=.7,col="black")
+text(11.5,2.6,'Post',cex=.7,col="black")
+arrows(0.5, 2.5, 4, 2.5,col='black',code=3,length=.1)
+arrows(5, 2.4, 10, 2.4,col='black',code=3,length=.1)
+arrows(11, 2.5, 12, 2.5,col='black',code=3,length=.1)
 
 grid(NULL,NULL, col = "gray", lty = "dotted")
+
+dev.off()
+}
+
+if(makefig==0){
+   knitr::include_graphics('images_bw/kdataplot.png') #read in previously created 
+}
 
 
 ```
@@ -373,7 +403,9 @@ e. What would be the logistic challenges in implementing these changes?
 
 ```{r Calderplus, echo=F,fig.cap = "Mean % correct for all 3 probes in delayed cross-over study by Calder et al, 2021 (data plotted from Calder et al's Table 2).",out.width="75%"}
 
-
+makefig<-0
+if(makefig==1)
+{
 cdat <- read.csv("data/calder_xover.csv")
 wantrows <- c(1,5,7,9,13,15)
 cdat <-cdat[wantrows,]
@@ -387,12 +419,13 @@ clong$phase <- as.factor(clong$phase)
 levels(clong$phase)=1:7
 clong$Group <- as.factor(clong$Group)
 
+png("images_bw/calderfig-2.png", width = 500, height = 350,unit='px')
   
  #Try with base R!
 plot(1, type = "n",                         # Remove all elements of plot
      xlab = "Phase", ylab = "% Correct",
      xlim = c(1, 7), ylim = c(0, 80))
-mycols <- c('blue','red')
+mycols <- c('black','darkgrey')
 mylines <- c(1,2,3)
 mypch<-c(2,0,19)
 vpos<-c(75,10)
@@ -407,14 +440,23 @@ hpos <-c(4.5,6.4)
     text(1.5,vpos[g],paste0("Group ",g,":\n baseline"),col=mycols[g])
     text(hpos[g],vpos[g],paste0("Group ",g,":\n post-intervention"),col=mycols[g])
  }
-segments(1,68,2,68,col='blue',lwd=2)
-segments(1,3,4,3,col="red",lwd=2)
+segments(1,68,2,68,col='black',lwd=2)
+segments(1,3,4,3,col="darkgrey",lwd=2)
 
 # Add a legend
 legend("topright",
   legend = c("past -ed","3rd pers -s","possessive 's"),
   pch = c(19,0,2),
   inset = c(0.01, 0.01))
+
+dev.off()
+}
+
+if(makefig==0){
+
+ knitr::include_graphics('images_bw/calderfig-2.png') #read in previously created diag
+}
 ```
+
 
 Once you have studied the Figure, consider whether you think the inclusion of the probes has strengthened your confidence in the conclusion that the intervention is effective.
