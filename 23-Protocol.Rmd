@@ -6,7 +6,7 @@ In this chapter we provide a list of questions that can be used for for evaluati
 
 ## What is the conceptual model of the study?
 
-A good study will have a clearly articulated conceptual model, i.e., be able to state what it is that the intervention is trying to change (the dependent variable), what is being manipulated to bring about that change (the intervention), what is the presumed mechanism of change, and what is the expected time course of change [@horner2014]. The conceptual model is key to selecting an appropriate research design. If it is not explicitly stated, it should be easy to specify it from the study introduction and methods.
+A good study will have a clearly articulated conceptual model, i.e., be able to state what it is that the intervention is trying to change (the dependent variable), what is being manipulated to bring about that change (the intervention), what is the presumed mechanism of change, and what is the expected time course of change [@horner2014]. The conceptual model is key to selecting an appropriate research design. If it is not explicitly stated, it should be possible to specify it from the study introduction and methods.
 
 ## What is being compared with what in this study?
 
@@ -44,7 +44,7 @@ We have not gone into detail regarding technical aspects of data analysis, and t
 
 ## Is the data openly available?
 
-Open data, like preregistration, doesn't guarantee high quality research, but it is a sign that the researchers are aware of the important of open, reproducible pracices, and it provides an opportunity for others to check results and/or incorporate them in a meta-analysis.
+Open data, like preregistration, doesn't guarantee high quality research, but it is a sign that the researchers are aware of the important of open, reproducible practices, and it provides an opportunity for others to check results and/or incorporate them in a meta-analysis.
 
 ## How do the results of this study compare with others in the literature?
 
@@ -52,4 +52,4 @@ We have emphasized that a single study is never conclusive. One needs to combine
 
 ## Summing up
 
-We hope that the material in this book will give readers confidence to scrutinise the intervention literature in this way, and appreciate that it is possible to evaluate important aspects of a study without requiring advanced skills in statistics. Evaluating what works is a key skill for anyone who delivers interventions, so that the most effective approaches can be identified, and future studies can be planned to be rigorous and informative.
+We hope that the material in this book will give readers confidence to scrutinize the intervention literature in this way, and appreciate that it is possible to evaluate important aspects of a study without requiring advanced skills in statistics. Evaluating what works is a key skill for anyone who delivers interventions, so that the most effective approaches can be identified, and future studies can be planned to be rigorous and informative.

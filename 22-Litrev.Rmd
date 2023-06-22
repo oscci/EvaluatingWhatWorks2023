@@ -14,7 +14,7 @@ It may seem strange to have a chapter on the literature review at the end of thi
 
 Unfortunately, as noted in Chapter \@ref(pubbias), many researchers are not objective in how they review prior literature, typically showing bias in favour of work that supports their own viewpoint. In addition, we often see distortions creeping in whereby studies are cited in a misleading fashion, omitting or de-emphasising inconvenient results. The "spin" referred to in Chapter \@ref(pubbias) is not only applied to authors in reporting their own work: it also is seen when researchers cite the work of others.
 
-If we accept that science should be cumulative, it is important not to disregard work that reports results that are ambiguous or inconsistent with our position, but we are often victims of our own cognitive biases that encourage us to disregard inconvenient facts [@bishop2020].
+If we accept that science should be cumulative, it is important not to disregard work that reports results that are ambiguous or inconsistent with our position, but we are often victims of our own **cognitive biases** that encourage us to disregard inconvenient facts [@bishop2020].
 
 Sometimes, a failure to take note of prior work can lead to wasted research funds, as when studies are designed to address questions to which the answer is already known [@chalmers2014]. In the field of speech and language therapy, where there is a shortage of published intervention research, this is unlikely to be so much of a problem. @law2003 attempted to carry out a meta-analysis to evaluate the effectiveness of intervention for children with developmental speech and language delay/disorder. Over a 25 year period, they found only 25 articles with randomized controlled designs that provided sufficient information for inclusion in a meta-analysis, and the interventions used in these were quite disparate, making it difficult to combine results in a meta-analysis. Although there has been some progress in the past two decades, intervention reports in this field are still fairly rare, and few interventions could be regarded as having such a solid body of evidence in support that further studies are unnecessary. Nevertheless, it is important to take into account prior literature when planning an intervention study, yet, as @chalmers2014 noted, this is often not done.
 
@@ -30,7 +30,7 @@ The most important part of this definition is the requirement for "pre-specified
 
 Performing a systematic review according to Cochrane standards requires a group of authors in order to reduce one source of potential bias, the tendency to interpret criteria for inclusion or evaluation of studies subjectively. The level of detailed required in specifying a protocol is considerable, and the time taken to complete a systematic review can be two years or more after the publication of a protocol, making this approach unfeasible for those with limited resources or time. In the field of speech and language therapy, a review of a specific intervention is unlikely to be this demanding, simply because the intervention literature is relatively small, but even so, the requirement for multiple authors may be impossible to meet, and other requirements can be onerous.
 
-Just as with designing an intervention study, we feel that when planning a literature review, the best should not be the enemy of the good. Or as Confucius is reported to have said: "Better a diamond with a flaw than a pebble without." We can benefit from considering the Cochrane guidelines for a systematic review, many of which can be adopted when reviewing even a small and heterogeneous literature in order to help guard against bias. However, the guidelines, though clearly written, can be daunting because they have evolved over many years to take into account numerous considerations.
+Just as with designing an intervention study, we feel that when planning a literature review, the best should not be the enemy of the good. Or as Confucius is reported to have said: *"Better a diamond with a flaw than a pebble without."* We can benefit from considering the Cochrane guidelines for a systematic review, many of which can be adopted when reviewing even a small and heterogeneous literature in order to help guard against bias. However, the guidelines, though clearly written, can be daunting because they have evolved over many years to take into account numerous considerations.
 
 A key point is that the Cochrane advice is written to provide guidelines for those who are planning a stand-alone review that will become part of the Cochrane database. That will not be the aim of most of those reading this book: rather, the goal is to ensure that the literature review for the introduction to a study is not distorted by the usual kinds of bias that were described in Chapter \@ref(pubbias).
 
@@ -48,17 +48,17 @@ The value of this approach was increasingly appreciated, with the Cochrane Colla
 ## Steps in the literature review
 
 The following steps are adapted from @hemingway2009's simplified account of how to conduct a systematic review:\
-<!--something odd about the citation!-->
+
 
 ### Define an appropriate question
 
 This is often harder than anticipated. Cochrane guidelines point to the PICO mnemomic, which notes the need to specify the Population, Intervention, Comparison(s) and Outcome:\
-- for **Population**, you need to consider which kinds of clients will be included in the review - e.g. age ranges, social and geographical background, diagnosis, and so on.\
+- for **Population**, you need to consider which kinds of individuals will be included in the review - e.g. age ranges, social and geographical background, diagnosis, and so on.\
 - For **Intervention**, one has to decide whether to adopt a broad or narrow scope. For instance, given the small amount of relevant literature, a Cochrane review by @law2003 entitled "Speech and language therapy interventions for children with primary speech and/or language disorders" took a very broad approach, including a wide range of interventions, subdivided only according to whether their focus was on speech, expressive language or receptive language. This meant, however, that quite disparate interventions with different theoretical bases were grouped together. We anticipate that for readers of this book, the interest will be in a specific intervention, so a narrow scope is appropriate.\
 - **Comparison** refers to the need to specify what is the alternative to the intervention. You could specify here that only RCTs will be included in the review.\
 - For **Outcome**, the researcher specifies what measures of outcome will be included. These can include adverse events as well as measures of positive benefits.
 
-Thus rather than asking "Is parent training effective in improving children's communication?", it is preferable to specify a question such as "Do RCTs of parent training (as implemented in one or more named specific methods) lead to higher scores than a control group on a measure of communicative responsiveness in children aged between 12 and 24 months?"
+Thus rather than asking "Is parent training effective in improving children's communication?", it is preferable to specify a question such as "Do RCTs show that parent training (as implemented in one or more named specific methods) leads to higher scores than for a control group on a measure of communicative responsiveness in children aged between 12 and 24 months?"
 
 Two important recommendations by Cochrane are first, that user engagement is important for specifying a question; this helps avoid research that will not be of practical value because its focus is too academic or narrow. Second, in considering outcomes, it is recommended that consideration be given to possible negative consequences as well as potential benefits of the intervention.
 
@@ -70,7 +70,7 @@ In addition, we know that publication bias occurs, and so efforts need to be mad
 
 ### Select eligible studies following protocol's inclusion criteria
 
-The next step is a screening process, which typically whittles down the list of potential studies for inclusion by a substantial amount. Abstracts for the studies found in the previous step are scrutinsed to see which should be retained. For example, if the protocol specified that studies had to be randomized controlled trials, then any study that did not include randomization or that lacked a control group would be excluded at this stage. This is a key step where it is good to have more than one person doing the screening, to reduce subjective bias and to minimize the workload.
+The next step is a screening process, which typically whittles down the list of potential studies for inclusion by a substantial amount. Abstracts for the studies found in the previous step are scrutinized to see which should be retained. For example, if the protocol specified that studies had to be randomized controlled trials, then any study that did not include randomization or that lacked a control group would be excluded at this stage. This is a key step where it is good to have more than one person doing the screening, to reduce subjective bias and to minimize the workload.
 
 In a freestanding systematic review, it is customary to provide a flow chart documenting the numbers of papers considered at each stage. A template for a standard flow chart can be downloaded from the [PRISMA website](http://prisma-statement.org/prismastatement/flowdiagram.aspx).
 
