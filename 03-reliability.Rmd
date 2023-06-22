@@ -271,9 +271,7 @@ knitr::include_graphics(paste0(myfolder,'/ZDensityCDF.png'))
 ```
 
 <p id="custom">
-
 You may wonder why bother with scaled scores, given that percentiles have a more intuitive interpretation. Percentiles are good for communicating how exceptional a given raw score is, but they are not so good for doing statistical analyses. For those interested in understanding why, [this blogpost](http://deevybee.blogspot.com/2011/04/short-nerdy-post-about-use-of.html) gives a short explanation.
-
 </p>
 
 So what should we be looking for in terms of test norms? As with other aspects of test criteria, it will depend what you want to do with a measure. As explained in the next section, in the context of intervention studies, use of scaled scores may be non-optimal because there is a loss of sensitivity. The main benefit of using scaled scores is that they provide a way of indicating how exceptional a raw score is, regardless of age. So, for example, if you were aiming to move a child's vocabulary from below average to the normal range, you could tell from a z-score if you achieved that goal, whereas a raw score would not be informative.

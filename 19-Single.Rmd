@@ -390,7 +390,7 @@ if(makefig==0){
 
 Consider the following questions about this study.\
 a. What kind of design is this?\
-b. How well does this design guard against the biases shown in Table \@ref(tab:singlecasechart)?\
+b. How well does this design guard against the biases shown in the first 5 rows of Table \@ref(tab:singlecasechart)?\
 c. Could the fact that intervention was delivered in small groups affect study validity? (Clue: see Chapter \@ref(cluster)).\
 d. If you were designing a study to follow up on this result, what changes might you make to the study design?\
 e. What would be the logistic challenges in implementing these changes?
