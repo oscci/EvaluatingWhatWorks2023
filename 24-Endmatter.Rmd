@@ -85,6 +85,43 @@ Although study B leads to a larger average gain in words correct, (15-8) = 7, th
 1. *Type the phrase "did not survive Bonferroni correction" and "intervention" into a search engine to find a study that corrected for multiple corrections. Was the Bonferroni correction applied appropriately? Compare the account of the results in the Abstract and the Results section. Was the Bonferroni correction taken seriously?*
 In terms of whether the Bonferroni correction was appropriate, you can check two things. First, whether the alpha level was adjusted appropriately for the number of tests: that is usually correct, as it is a simple sum! The other question to consider is whether the correction was applied to correlated variables.  This is not an issue when the correction is applied to subgroups (e.g. males vs females) but it can affect findings when there are multiple measures on individuals. As explained in Chapter \@ref(phacking), if a set of measures is strongly intercorrelated, then the Bonferroni correction may be over-conservative - i.e. it may lead to a type II error, where a true effect gets missed. However, it is not always possible to judge whether this is the case, as authors may not report the intercorrelations between measures. Finally, it is not uncommon to find authors apply a Bonferroni correction and then fail to take it seriously: this is often evident when the Abstract refers only to the uncorrected statistics.  
 
+### Chapter 15
+*Here are some characteristics of mediators and moderators. See if you can work out whether M refers to mediation or moderation.*  
+*1. In a M relationship, you can draw an arrow from intervention to M and then from M to the outcome.* **Mediation**  
+*2. M refers to the case when something acts upon the relationship between intevention and outcome, and changes its strength.* **Moderation**  
+*3. M can be thought of as a go-between for intervention and outcome: it is a variable that explains their relationship.* **Mediation**  
+*4. Figure \@ref(fig:medmodfig) shows an intervention where both mediation and moderation are involved.*  M1 is moderator and M2 is mediator 
+
+### Chapter 18
+1. * *Re @calder2021 study: What could you conclude if:
+
+*There was no difference between Groups 1 and 2 on past tense items at phase 4, with neither group showing any improvement over baseline?*  
+This would suggest the intervention was ineffective, at least over the time scale considered here.  
+*There was no difference between Groups 1 and 2 at phase 4, with both groups showing significant improvement over baseline?*  
+This would suggest that improvement in both groups might be due to practice on the test items. 
+*Group 1 improved at phase 4, but Group 2 did not improve between phase 4 and phase 6?*  
+This would be a puzzling result, that in effect is a failure of replication of the beneficial effect seen in Group 1.  Failures to replicate can just reflect the play of chance - the improvement in Group 1 could be a fluke - or it could indicate that there are individual differences in response to intervention, and by chance, those in group 2 contained more cases who were unresponsive. 
+
+*Is it realistic to consider a possible 'nocebo' effect during the extended waitlist for Group 2? Is there any way to check for this?*  
+It is possible that children may get bored at repeatedly being assessed, especially if they are not receiving any help to master the test items. If so, then their performance might actually deteriorate across the baseline period.  
+
+### Chapter 19
+*1. Re Koutsoftas study: Consider the following questions about this study.*\
+*a. What kind of design is this?*\
+Multiple baseline across participants: comparison between 2 groups who are initially observed over a baseline period, and then have intervention introduced at different timepoints.  
+*b. How well does this design guard against the biases shown in the first 5 rows of Table \@ref(tab:singlecasechart)?*\
+Inclusion of a baseline period establishes how much change we might see simply because of spontaneous improvement, practice effects and regression to the mean, and also helps establish how noisy the dependent variable is.  
+*c. Could the fact that intervention was delivered in small groups affect study validity? (Clue: see Chapter \@ref(cluster)).*\
+This does make this more like a clustered trial, and introduces the possibility that those within a group might influence one another.   
+*d. If you were designing a study to follow up on this result, what changes might you make to the study design?*\
+It might be useful to have more baseline observations, to apply the intervention to individuals rather than groups, and/or to include another 'control' measure tapping into skills that were not trained. 
+*e. What would be the logistic challenges in implementing these changes?*
+The methodological changes suggested in (d) would make the study harder to do; having more sessions could tax the patience of children and teachers, and might be difficult to accomodate with the school timetable; similarly, applying the intervention to individuals would require more personnel. It might also change the nature of the intervention if interactions between children are important. Adding another control measure would lengthen the amount of assessment, which could be difficult with young children. 
+
+*3. Re Calder et al: Once you have studied the Figure, consider whether you think the inclusion of the probes has strengthened your confidence in the conclusion that the intervention is effective.*  
+This study illustrates how inclusion of control items that were not trained can add converging evidence to support the conclusion that an intervention is effective. The intervention effect was more pronounced for the trained items, and so cannot simply be attributed to practice or spontaneous improvement. 
+
+
 ### Chapter 23
 
 1.  *Read this preregistration of a study on Open Science Framework: <https://osf.io/ecswy>, and compare it with the article reporting results here: <https://link.springer.com/article/10.1007/s11121-022-01455-4>. Note any points where the report of the study diverges from the preregistration and consider why this might have happened. Do the changes from preregistration influence the conclusions you can draw from the study?*
