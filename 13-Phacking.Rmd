@@ -74,11 +74,17 @@ There are several ways we can defend ourselves against a proliferation of false 
 As noted above, even when we have a well-designed and adequately powered study, if we collect multiple outcome variables, or if we are applying multiple tests to the same data, then we increase our chance of finding a false positive. Remember that if we set $\alpha$ to .05 and apply $k$ tests to our data, then the probability of finding at least one false positive is given by $1-(1-\alpha)^{k}$. This is officially known as the **family-wise error rate** (FWER).
 
 ```{r familywise,echo=F, out.width = "80%",fig.cap="Plot of relationship between familywse error rate and number of statistical tests"}
+makefig <-0
+if (makefig==1){
 k <- seq(1:100)
 FWE <- (1-(1-0.05)^k)
 fwe_dat<-data.frame(FWE=FWE,k=k)
 ggplot(data=fwe_dat,aes(k,FWE,type="l"))+geom_line(size=1.2)+theme_bw()+geom_segment(aes(x=10,y=0,xend=10,yend=0.4),linetype="dashed",linewidth=1.2)+geom_segment(aes(x=0,y=0.4,xend=10,yend=0.4),linetype="dashed",linewidth=1.2)+xlab("Number of tests, k")+ylab("Familywise Error (FWE)")+ theme(text = element_text(size = 14))    
+}
 
+if(makefig==0){
+  knitr::include_graphics('images_bw/familywise.png')
+}
 ```
 
 Figure \@ref(fig:familywise) shows the relationship between the familywise error rate and the number of tests conducted on the data. Note that the left-most point of the curved line corresponds to the case when we have just one statistical test, and the probability of a false positive is .05, exactly where we would expect. The dotted line shows the case where we performed 10 tests (k = 10), increasing our chance of obtaining a false positive to approximately 40%. Clearly, the more tests applied, the greater the increase in the chance of at least one false positive result. Although it may seem implausible that anyone would conduct 100 tests, the number of implicit tests can rapidly increase if sequential analytic decisions multiply, as shown in the Garden of Forking Paths example, where we subdivided the analysis 4 times, to give 2\^4 = 16 possible ways of dividing up the data.
