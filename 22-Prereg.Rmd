@@ -25,11 +25,13 @@ Does this mean we are prohibited from exploring our data to discover unexpected 
 
 In psychology, a move towards registration of studies has been largely prompted by concerns about the high rates of p-hacking and HARKing in this literature [@simmons2011] (see Chapter \@ref(phacking)), and the focus is less on clinical trials than on basic observational or experimental studies. The term **pre-registration** has been adopted to cover this situation. For psychologists, the [Open Science Framework](https://osf.io) has become the most popular repository for pre-registrations, allowing researchers to deposit a time-stamped protocol, which can be embargoed for a period of time if it is desired to keep this information private [@hardwicke2021]. Examples of [pre-registration templates](https://cos.io/rr/) are available.
 
-#### Does trial registration prevent outcome-switching? {.unnumbered}
+<!---#### Does trial registration prevent outcome-switching? {.unnumbered}
 
-::: {#custom}
+::: {#custom}-->
+\begin{tcolorbox}[colback=Black!5!lightgray,colframe=black!75!black,coltitle=white,title=Does trial registration prevent outcome-switching?]\label{box:switch}
 A registered clinical trial protocol should specify a primary outcome measure, which will be used in the principal analysis of the study data. This should protect against cases where the researcher looks at numerous outcomes and picks the one that looks best - in effect p-hacking. In practice, trial registration does not always achieve its goals: @goldacre2019 identified 76 trials published in a six-week period in one of five journals: New England Journal of Medicine, The Lancet, Journal of the American Medical Association, British Medical Journal, and Annals of Internal Medicine. These are all high-impact journals that officially endorse Consolidated Standards of Reporting Trials (CONSORT), which specify that pre-specified primary outcomes should be reported. Not only did Goldacre et al find high rates of outcome-switching in these trial reports; they also found that some of the journals were reluctant to publish a letter that drew attention to the mismatch, with qualitative analysis demonstrating "extensive misunderstandings among journal editors about correct outcome reporting".
-:::
+<!---:::-->
+\end{tcolorbox}
 
 ## Registered Reports
 

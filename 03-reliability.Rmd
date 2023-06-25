@@ -37,13 +37,18 @@ The key questions to ask are:
 4.  Is it sensitive?
 5.  Is it practical?
 
-#### Types of numerical measurement {.unnumbered}
-<p id="custom">Results from a measurement in an intervention study are typically represented as numbers, but different types of measurement have different properties. - **Nominal**, also known as categorical, data is just used to designate qualitative information. For instance, we may record data as 1, 2 or 3 to indicate the school that a child attends. The order of the numbers here is arbitrary, and the information could equally well be represented by letters, e.g. school A, B and C. It would make no sense to perform numerical operations such as addition and subtraction on such numbers.\
+<!---#### Types of numerical measurement {.unnumbered}
+<p id="custom">-->
+
+\begin{tcolorbox}[colback=Black!5!lightgray,colframe=black!75!black,coltitle=white,title=Types of numerical measurement]\label{box:numerical}
+
+Results from a measurement in an intervention study are typically represented as numbers, but different types of measurement have different properties. - **Nominal**, also known as categorical, data is just used to designate qualitative information. For instance, we may record data as 1, 2 or 3 to indicate the school that a child attends. The order of the numbers here is arbitrary, and the information could equally well be represented by letters, e.g. school A, B and C. It would make no sense to perform numerical operations such as addition and subtraction on such numbers.\
 - For **ordinal** data, the order of the numbers matters. For instance, if we had a 3 point scale of fluency, a person with a score of 3 would be more fluent than one with a score of 2, who would in turn be more fluent than a person who scored 1. In effect ordinal data describes ordered categories, but again, you can't sensibly perform arithmetical operations on such data, though you can specify a median or mode to represent the most typical score.\
 - Data on an **interval scale** are commonly found in behavioural studies. Here, the numbers are equally spaced, so the difference between 1 and 2 is the same quantity as the difference between 3 and 4. With interval data, we can compute an average and conduct many types of statistical test that are not possible with ordinal data.\
 - The most sophisticated type of numerical measurement is the **ratio scale**, which has all the properties of interval data, plus it has a meaningful zero point. Weight, height, length and duration are all measured on a ratio scale: a zero measurement indicates there is no weight, height, length or duration. On this kind of scale, one can meaningfully interpret multiplication - e.g. 4 kg is twice as much as 2 kg.\
 Most commonly used statistical procedures assume data is at least on an interval scale. If you are using ordinal data, then a different kind of test using *nonparametric* statistics is required.
-</p>
+\end{tcolorbox}
+<!---</p>-->
 
 ## Reliability
 
@@ -92,18 +97,22 @@ ggsave(paste0(myfolder,'/correlationfig.png'),p3,scale = 1, width = 6, height = 
 knitr::include_graphics('images_bw/correlationfig.png')
 ```
 
-####  {.unnumbered}
+<!---####  {.unnumbered}
 
 #### Correlation as an index of reliability {.unnumbered}
-<p id="custom">
+<p id="custom">-->
+
+\begin{tcolorbox}[colback=Black!5!lightgray,colframe=black!75!black,coltitle=white,title=Correlation as an index of reliability]\label{box:correlation}
+
 Although the correlation coefficient is widely used to index reliability, it can be misleading because it just reflects agreement in the rank ordering of two measures. It would be possible to get a high correlation even if the task showed practice effects, so that scores at time 2 were substantially higher than those at time 1. For that reason, the intraclass correlation coefficient (ICC) is preferable, as this reflects agreement in absolute scores. In practice, however, the two types of correlation give similar values unless there is a substantial difference in means between the two occasions of measurement. For more explanation see <https://www.measurement-toolkit.org/concepts/statistical-assessment>.
-</p>
+\end{tcolorbox}
+<!---</p>-->
 
 So how reliable should a measure be? Most psychometric tests report reliability estimates, and a good test is expected to have test-retest reliability of at least .8. But be careful in interpreting such estimates, as you need also to consider the age range on which the estimate is based.
 
 
 
-```{r reliability-by-age,echo=F,include=T,fig.width=6,fig.height=6,fig.cap="Age range can affect reliability",out.width="80%"}
+```{r reliability-by-age,echo=F,include=T,fig.cap="Age range can affect reliability",out.width="80%"}
 #Code to create figures caused problems rendering so removed
 knitr::include_graphics(paste0(myfolder,'/reliability-by-age.png'))
 ```
@@ -112,10 +121,12 @@ Figure \@ref(fig:reliability-by-age) shows how a test of vocabulary size that lo
 
 The topic of reliability is covered more formally in classical test theory [@lord1968] and subsequent developments from this. These involve a mathematical approach that treats an observed test score as the sum of a "true" effect (i.e. what you want to measure) plus random error. The lower the reliability, the greater the random error, and the harder it is to detect the true effect of intervention against the background of noise.
 
-#### Item Response Theory {.unnumbered}
-<p id="custom">
-Most widely-used language assessments have been developed using methods from classical test theory [@denman2017]. However, mathematical treatments of test development have come a long way in the past 20 years, and an approach known as Item Response Theory is now generally preferred for developing more precise and valid instruments [@reise2005].
-</p>
+<!---#### Item Response Theory {.unnumbered}
+<p id="custom">-->
+\begin{tcolorbox}[colback=Black!5!lightgray,colframe=black!75!black,coltitle=white,title=Item Response Theory]\label{box:IRT}
+Most widely-used language assessments have been developed using methods from classical test theory [@denman2017]. However, mathematical treatments of test development have come a long way in the past 20 years, and an approach known as Item Response Theory is now generally preferred for developing more precise and valid instruments [@reise2005].  
+\end{tcolorbox}
+<!---</p>-->
 
 We have focused on test-retest reliability as this is the most relevant form of reliability in intervention studies. If you plan to use the same measure at baseline and as an outcome measure, then what you need to know is how much variation in that measure you might expect if there were no effect of intervention. There are other reliability indices that are sometimes reported with psychometric tests. In particular split-half reliability and internal consistency (Cronbach's alpha), both of which consider the extent to which a score varies depending on the specific items used to calculate it. For instance, we could assess split-half reliability for mean length of utterance (MLU) by computing it separately for all the odd-numbered utterances and the even-numbered utterances. Although this gives useful information, it is likely to differ from test-retest reliability, because it does not take into account fluctuations in measurement that relate to changes in the context or the child's state.
 
@@ -184,17 +195,6 @@ Where two instruments claim to measure the same construct, yet are only moderate
 ## Normative data
 
 A common approach in test development is to gather data on a standardization sample, i.e., a group of individuals who will provide a yardstick against which a test score can be evaluated. For instance, if we evaluate vocabulary in a 4-year-old child by asking them to name pictures, it is hard to interpret the results unless we know the range of scores that would typically be obtained by children of this age. The standardization sample provides normative data that are useful for two reasons. First, they indicate that the test has been applied to a large sample of individuals, and that gives confidence that basic problems with the test have been ironed out - e.g. items that are ambiguous will be detected and can be removed. Second, if there is an adequate normative sample, it is possible to convert raw scores (e.g. the number of items correct) to scaled scores, which give an indication in statistical terms of how a person's performance on the assessment compares with the standardization sample. We explain further below how scaled scores are derived, but note that in the context of an intervention study, it is not always necessary or desirable to use scaled scores.
-
-#### How scaled scores are derived {.unnumbered}
-
-::: {#custom}
-A scaled score gives an indication of how a given raw score compares to a standardization sample. For instance, if there are 80 6-year-olds in the standardization sample, and their mean raw score is 44, with a standardization of 5, then we can see that a raw score of 39 would be one standard deviation below the mean, and a raw score of 34 would be two standard deviations below the mean.\
-Now suppose we also have normative data on 9-year-olds, and their mean raw score is 46, with standard deviation of 4. In this case, a raw score of 39 is 1.75 standard deviation below the mean, and a raw score of 34 is three standard deviations below the mean. So the same raw score represents a more serious deficit in a 9-year-old than in a 6-year-old, because the typical (normative) score of 9-year-olds is higher than that of 6-year-olds.\
-Converting between raw and scaled scores becomes second nature to those who do a lot of psychometric testing, and, as can be seen from the example above, it allows one to compare results on different measures or different age groups on a common metric. But it can be confusing, not least because there are various ways of representing scaled scores.\
-The most basic way of representing a scaled score is as a z-score. This just represents distance from the mean in standard deviation (SD) units. So in the example above, in 6-year-olds, the raw score of 39 would convert to a z-score of -1.0, and a raw score of 34 to a z-score of -2.0. Basically, to get a z-score, you simply subtract the mean for that age group from the obtained score and divide by the SD.\
-Z-scores, however, have some unfortunate characteristics: they involve both positive and negative numbers, and fractional units. When entering data or writing reports, it is much easier to deal with whole numbers. So most psychometric tests simply transform the z-score onto a scale with a more convenient mean and SD. The best-known example is the IQ test, which usually gives a scaled score based on a mean of 100 and standard deviation of 15. So if someone scores one SD below the mean, this is represented as a scaled score of 85; if two SD below the mean, then the scaled score is 70.\
-As if this was not complicated enough, the scaled score can also be directly translated into a percentile (or centile) score, which corresponds to the percentage of people in the population who are expected to obtain a score at least as high as this. This conversion is usually based on the normal distribution, where there is an orderly relationship between percentiles and the z-score. As shown in Figure \@ref(fig:ZDensityCDF), approximately 16% of people are expected to score 1 SD below the mean, and 3% score 2 SD below the mean.
-:::
 
 ```{r makeZDensityCDF,echo=FALSE,fig.cap="Distribution of z-scores, showing proportions of people obtaining scores below -1, between -1 and 1, and above 1.",fig.width=6,fig.height=3}
 # This is modified from Poldrack online book Stats for 21st century
@@ -270,14 +270,29 @@ p2 <- plot_density(zcut=1)
 }
 ```
 
-```{r ZDensityCDF,echo=F,include=T,fig.cap="Distribution of z-scores, showing proportions of people obtaining scores below -1, between -1 and 1, and above 1",out.width="75%"}
+<!---#### How scaled scores are derived {.unnumbered}
+
+::: {#custom}-->
+
+\begin{tcolorbox}[enhanced,breakable,colback=Black!5!lightgray,colframe=black!75!black,coltitle=white,title=How scaled scores are derived]\label{box:scaledscores}
+A scaled score gives an indication of how a given raw score compares to a standardization sample. For instance, if there are 80 6-year-olds in the standardization sample, and their mean raw score is 44, with a standardization of 5, then we can see that a raw score of 39 would be one standard deviation below the mean, and a raw score of 34 would be two standard deviations below the mean.  
+Now suppose we also have normative data on 9-year-olds, and their mean raw score is 46, with standard deviation of 4. In this case, a raw score of 39 is 1.75 standard deviation below the mean, and a raw score of 34 is three standard deviations below the mean. So the same raw score represents a more serious deficit in a 9-year-old than in a 6-year-old, because the typical (normative) score of 9-year-olds is higher than that of 6-year-olds.  
+Converting between raw and scaled scores becomes second nature to those who do a lot of psychometric testing, and, as can be seen from the example above, it allows one to compare results on different measures or different age groups on a common metric. But it can be confusing, not least because there are various ways of representing scaled scores.  
+The most basic way of representing a scaled score is as a z-score. This just represents distance from the mean in standard deviation (SD) units. So in the example above, in 6-year-olds, the raw score of 39 would convert to a z-score of -1.0, and a raw score of 34 to a z-score of -2.0. Basically, to get a z-score, you simply subtract the mean for that age group from the obtained score and divide by the SD.  
+Z-scores, however, have some unfortunate characteristics: they involve both positive and negative numbers, and fractional units. When entering data or writing reports, it is much easier to deal with whole numbers. So most psychometric tests simply transform the z-score onto a scale with a more convenient mean and SD. The best-known example is the IQ test, which usually gives a scaled score based on a mean of 100 and standard deviation of 15. So if someone scores one SD below the mean, this is represented as a scaled score of 85; if two SD below the mean, then the scaled score is 70.  
+As if this was not complicated enough, the scaled score can also be directly translated into a percentile (or centile) score, which corresponds to the percentage of people in the population who are expected to obtain a score at least as high as this. This conversion is usually based on the normal distribution, where there is an orderly relationship between percentiles and the z-score. As shown in Figure \@ref(fig:ZDensityCDF), approximately 16% of people are expected to score 1 SD below the mean, and 3% score 2 SD below the mean.
+
+\begin{center}  
+```{r ZDensityCDF,echo=F,include=T,fig.cap="Distribution of z-scores, showing proportions of people obtaining scores below -1, between -1 and 1, and above 1",out.width="65%"}
 
 knitr::include_graphics(paste0(myfolder,'/ZDensityCDF.png'))
 ```
+\end{center}  
 
-<p id="custom">
 You may wonder why bother with scaled scores, given that percentiles have a more intuitive interpretation. Percentiles are good for communicating how exceptional a given raw score is, but they are not so good for doing statistical analyses. For those interested in understanding why, [this blogpost](http://deevybee.blogspot.com/2011/04/short-nerdy-post-about-use-of.html) gives a short explanation.
-</p>
+
+\end{tcolorbox}
+<!---</p>-->
 
 So what should we be looking for in terms of test norms? As with other aspects of test criteria, it will depend what you want to do with a measure. As explained in the next section, in the context of intervention studies, use of scaled scores may be non-optimal because there is a loss of sensitivity. The main benefit of using scaled scores is that they provide a way of indicating how exceptional a raw score is, regardless of age. So, for example, if you were aiming to move a child's vocabulary from below average to the normal range, you could tell from a z-score if you achieved that goal, whereas a raw score would not be informative.
 

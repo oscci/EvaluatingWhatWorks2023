@@ -51,15 +51,16 @@ A mistake often made when interpreting p-values is that people think it tells us
 
 A low p-value allows us to reject the null hypothesis with a certain degree of confidence, but this does no more than indicate "something is probably going on here - it's not just random" - or, in the analogy above, "I'm probably not in Rio".
 
-#### Criticisms of the use of p-values {.unnumbered}
+<!---#### Criticisms of the use of p-values {.unnumbered}
 
-<div>
+<div>-->
 
+\begin{tcolorbox}[colback=Black!5!lightgray,colframe=black!75!black,coltitle=white,title=Criticisms of the use of p-values]\label{box:pvalues}
 There are many criticisms of the use of p-values in science, and a good case can be made for using alternative approaches, notably methods based on Bayes theorem. Our focus here is on Null Hypothesis Significance Testing in part because such a high proportion of studies in the literature use this approach, and it is important to understand p-values in order to evaluate the literature. It has also been argued that p-values are useful provided people understand what they really mean [@lakens2021].
 
 One reason why many people object to the use of p-values is that they are typically used to make a binary decision: we either accept or reject the null hypothesis, depending on whether the p-value is less than a certain value. In practice, evidence is graded, and it can be more meaningful to express results in terms of the amount of confidence in alternative interpretations, rather than as a single accept/reject cutoff [@quintana2018].
-
-</div>
+\end{tcolorbox}
+<!---</div>-->
 
 In practice, p-values are typically used to divide results into "statistically significant" or "non-significant", depending on whether the p-value is low enough to reject the null hypothesis. We do not defend this practice, which can lead to an all-consuming focus on whether p-values are above or below a cutoff, rather than considering effect sizes and strength of evidence. However, it is important to appreciate how the cutoff approach leads to experimental results falling into 4 possible categories, as shown in Table \@ref(tab:confusionMat).
 
@@ -240,10 +241,14 @@ The effect size is shown as *ges*, which stands for "generalized eta squared". Y
 
 For readers who are not accustomed to interpreting statistical output, the main take-away message here is that you get a better estimate of the intervention effect if the analysis uses a statistical adjustment that takes into account the baseline scores.
 
-#### T-tests, analysis of variance, and linear regression {.unnumbered}
-<p id="custom">Mathematically, the t-test is equivalent to two other methods: analysis of variance and linear regression. When we have just two groups, all of these methods achieve the same thing: they divide up the variance in the data into variance associated with group identity, and other (residual) variance, and provide a statistic that reflects the ratio between these two sources of variance. This is illustrated with the real data analysed in Table \@ref(tab:ancova-compare). The analysis gives results that are equivalent to the t-test in Table \@ref(tab:ttestoutcomes): if you square the t-value it is the same as the F-test. In this case, the p-value from the t-test is half the value of that in the ANOVA: this is because we specified a one-tailed test for the t-test. The p-value would be identical to that from ANOVA if a two-tailed t-test had been used.\
+<!---#### T-tests, analysis of variance, and linear regression {.unnumbered}
+
+<p id="custom">-->
+\begin{tcolorbox}[colback=Black!5!lightgray,colframe=black!75!black,coltitle=white,title=T-tests, analysis of variance, and linear regression]\label{box:ttest}
+Mathematically, the t-test is equivalent to two other methods: analysis of variance and linear regression. When we have just two groups, all of these methods achieve the same thing: they divide up the variance in the data into variance associated with group identity, and other (residual) variance, and provide a statistic that reflects the ratio between these two sources of variance. This is illustrated with the real data analysed in Table \@ref(tab:ancova-compare). The analysis gives results that are equivalent to the t-test in Table \@ref(tab:ttestoutcomes): if you square the t-value it is the same as the F-test. In this case, the p-value from the t-test is half the value of that in the ANOVA: this is because we specified a one-tailed test for the t-test. The p-value would be identical to that from ANOVA if a two-tailed t-test had been used.\
 See [this blogpost](http://deevybee.blogspot.com/2017/11/anova-t-tests-and-regression-different.html) for more details. <!-- reminder to self: blogposts referenced in the book should be uploaded to figshare or another place with DOI-->
-</p>
+<!---</p>-->
+\end{tcolorbox}  
 
 ### Non-normal data
 

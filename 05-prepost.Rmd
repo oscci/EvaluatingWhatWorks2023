@@ -123,7 +123,7 @@ ggsave(paste0(myfolder,'/reg2mean.png'),p,scale = 1, width = 6, height = 3.5, un
 
 ```
 
-```{r reg2mean, echo=F,message=F,warning=F, fig.cap='Simulated test scores for 160 children on tests varying in reliability. Individuals are colour-coded depending on whether they are given a test of low (.2), or high (.8) test-retest reliability. The simulations assume there is no effect of intervention, maturation or practice',out.width="60%"}
+```{r reg2mean, echo=F,message=F,warning=F, fig.cap='Simulated test scores for 160 children on tests varying in reliability. Individuals are colour-coded depending on whether they are given a test of low (.2), or high (.8) test-retest reliability. The simulations assume there is no effect of intervention, maturation or practice',out.width="75%"}
 
 knitr::include_graphics(paste0(myfolder,'/reg2mean.png'))
 
