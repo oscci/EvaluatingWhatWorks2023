@@ -16,7 +16,12 @@ always_allow_html: yes
 documentclass: book
 ---
 
-<center>`r knitr::include_graphics("images/logo_alone_new.png")`</center>
+```{r addlogo,echo=F,warning=F,message=F}
+mylogo <- 0
+if(mylogo==1){
+knitr::include_graphics("images/logo_alone_new.png")
+}
+```
 
 # Preface {.unnumbered}
 
@@ -56,7 +61,7 @@ Intervention research is a branch of science, and you can't do good science with
 We owe a huge debt of gratitude to Yihue Xie, whose work developing the [*bookdown* package](https://bookdown.org/) made this book possible. It is no exaggeration to say that we would not have attempted to write a book on this topic if we hadn't had *bookdown* to make it easy. The book [ModernDive: Statistical Inference via Data Science](https://moderndive.com/) by Chester Ismay and Albert Y. Kim was also highly influential in demonstrating what could be done with *bookdown*, and we frequently visited their code to check out ideas for formatting and packaging information.\
 Our thanks also to James Pustejovsky whose recommendations were helpful in relation to single case designs, and to Daniël Lakens, Daniel Sutherland, Nicola Dawson, Lucy Hughes, and an anonymous reviewer, who read the entire text and offered invaluable feedback.
 
-## Feedback and contributions {.unnumbered}
+<!---## Feedback and contributions {.unnumbered}
 
 One of the good things about an online open source book is that it can remain a work in progress for some time, giving readers the opportunity to provide suggestions and corrections. We can't guarantee to respond promptly (DB is retired and PT has a demanding job!), but we would be extremely grateful to anyone who lets us know of any errors in the book, and we welcome suggestions for additional or alternative content. Our code is available [here](https://github.com/oscci/bookdown_2023) and we encourage readers familiar with Github to send pull requests with suggestions for changes; otherwise please contact us via [bishopdeevy\@gmail.com](mailto:bishopdeevy@gmail.com){.email}.
 
@@ -64,4 +69,6 @@ One of the good things about an online open source book is that it can remain a 
 
 The book is licensed according to the [Creative Commons Attribution-NonCommercial 4.0 Generic (CC BY-NC 4.0) License](https://creativecommons.org/licenses/by-nc/4.0/). Please see the terms of that license for more details.
 
-[*Dorothy V. M. Bishop*](https://orcid.org/0000-0002-2448-4033) *& [Paul A. Thompson](https://orcid.org/0000-0001-9940-6913)*
+[*Dorothy V. M. Bishop*](https://orcid.org/0000-0002-2448-4033) *& [Paul A. Thompson](https://orcid.org/0000-0001-9940-6913)*-->
+
+
