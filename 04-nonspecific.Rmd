@@ -1,6 +1,11 @@
 # Improvement due to nonspecific effects of intervention {#nonspecific}
 
-`r knitr::include_graphics("images/logo_alone_new.png")`
+```{r addlogo,echo=F,warning=F,message=F}
+mylogo <- 0
+if(mylogo==1){
+knitr::include_graphics("images/logo_alone_new.png")
+}
+```
 
 **Learning objectives**: By the end of this chapter, you will be able to:
 

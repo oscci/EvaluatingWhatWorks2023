@@ -7,7 +7,12 @@ Tried modifying yml file to include full list of chapters - doesn't work
 Tried copying all code into word and then repasting back in - doesn't work
 Used kableextra for singlecasechart - didn't affect anything-->
 ```
-`r knitr::include_graphics("images/logo_alone_new.png")`
+```{r addlogo,echo=F,warning=F,message=F}
+mylogo <- 0
+if(mylogo==1){
+knitr::include_graphics("images/logo_alone_new.png")
+}
+```
 
 **Learning objectives**: By the end of this chapter, you will be able to:
 
@@ -57,7 +62,7 @@ In the RCT, this is achieved by having a large enough sample of participants to 
 
 With single case trials, we do not control for variation associated with individual participant characteristics - indeed we are interested in how different people respond to intervention - but we do need to control as far as possible for other sources of variation. The **ABA** design is a popular single-case design that involves contrasting an outcome during periods of intervention (B) versus periods of no intervention (A). For example, @armson1998 studied the impact of frequency-altered auditory feedback on 12 people who stuttered. They contrasted a baseline period (A), a period with auditory feedback (B), and a post-intervention period (A), taking several measures of stuttering during each period. Figure \@ref(fig:SingleCaseDplot) shows data from two participants during a reading condition. Although the initial amount of stuttering differs for the two individuals, in both cases there is a precipitate drop in stuttering at the 5 minute point corresponding to the onset of the masking, which is sustained for some minutes before gradually rising back towards baseline levels. The baseline period is useful for providing a set of estimates of stuttering prior to intervention, so we can see that the drop in stuttering, at least initially, is outside the range of variation that occurs spontaneously.
 
-```{r SingleCaseDplot, echo=F, message=F, warning=F, fig.width=8,fig.height=4, fig.cap="Outcome over time in a single case ABA design. Redrawn from digitized data from two participants from Figure 2 of Armson et al (1998)",out.width="75%"}
+```{r SingleCaseDplot, echo=F, message=F, warning=F, fig.width=8,fig.height=4, fig.cap="Outcome over time in a single case ABA design. Redrawn from digitized data from two participants from Figure 2 of Armson et al (1998)",out.width="85%"}
 makefig<-0
 if(makefig==1){
 sub1<-read.csv('data/stutterP5_read.csv')
@@ -95,7 +100,7 @@ For instance, @best2013 evaluated a cueing therapy for anomia (word-finding prob
 
 Figure \@ref(fig:bestplot) is redrawn from data of @best2013. The black points show N items correct on the two sets of items prior to intervention. They were selected to be of similar difficulty and hence they cluster around the dotted line, which shows the point where scores on both item sets are equivalent. The red points show scores after intervention. Points that fall above the dotted line correspond to cases who did better with trained than untrained words; those below the line did better with untrained than trained words. The red points tend to be placed vertically above the pre-test scores for each individual, indicating that there is improvement after intervention in the trained items (y-axis), but not on control items (x-axis).
 
-```{r bestplot, echo=F, message=F, warning=F, fig.width=8,fig.height=4, fig.cap="Outcome over time in multiple outcomes design. Reconstructed data from 16 participants, Best et al (2013)"}
+```{r bestplot, echo=F, message=F, warning=F, fig.width=8,fig.height=4, fig.cap="Outcome over time in multiple outcomes design. Reconstructed data from 16 participants, Best et al (2013)",out.width="75%"}
 makefig <- 0
 bestdf <- read.csv("data/best_data.csv") #from Appendix 5; this is actually both types of item together I think (N=200)
 bestdf<-bestdf[1:16,] #remove row 17 - has means
@@ -241,7 +246,7 @@ We noted in the previous chapter how, electropalatography, a biofeedback interve
 
 @leniston2021 applied this approach to seven adolescents with severe speech disorders, all of whom were already familiar with electropalatography. Diagnoses included verbal dyspraxia, structural abnormalities of articulators (velopharyngeal insufficiency), mosaic Turner syndrome, and right-sided hemiplegia. At the start of each school term, two sounds were identified for each case: a target sound, which would be trained, and a control sound, which was also produced incorrectly, but which was not trained. Electropalatography training was administered twice a week in 30 minute sessions. The number of terms where intervention was given ranged from 1 to 3.
 
-```{r ebbelsfig,echo=F,include=T,warning=F,message=F,fig.cap = "Individual results for targets and controls at each term",out.width="75%"}
+```{r ebbelsfig,echo=F,include=T,warning=F,message=F,fig.cap = "Individual results for targets and controls at each term",out.width="90%"}
 knitr::include_graphics("images_bw/Ebbels.png")
 #fig was created with makeebbels
 
@@ -271,7 +276,7 @@ In practice, aspects of different single-case designs can be combined - e.g. the
 
 Early reports of single case studies often focused on simple visualization of results to determine intervention effects, and this is still a common practice [@perdices2009]. This is perfectly acceptable provided that differences are very obvious, as in Figure \@ref(fig:SingleCaseDplot) above. We can think back to our discussion of analysis methods for RCTs: the aim is always to ask whether the variation associated with differences in intervention is greater than the variation within the intervention condition. In Figure \@ref(fig:SingleCaseDplot) there is very little overlap in the values for the intervention vs non-intervention periods, and statistics are unnecessary. However, results can be less clearcut than this. Figure \@ref(fig:SingleCaseDplot2) shows data from two other participants in the study by @armson1998, where people may disagree about whether or not there was an intervention effect. Indeed, one criticism of the use of visual analysis in single case designs is that it is too subjective, with poor inter-rater agreement about whether effects are seen. In addition, time series data will show dependencies: autocorrelation. This can create a spurious impression of visual separation in data for different time periods [@kratochwill2014b]. A more quantitative approach that adopts similar logic is to measure the degree of non-overlap between distributions for datapoints associated with intervention and those from baseline or control conditions [@parker2014]. This has the advantage of simplicity, and relative ease of interpretation, but may be bedevilled by temporal trends in the data, and have relatively low statistical power unless there are large numbers of observations.
 
-```{r SingleCaseDplot2, echo=F, message=F, warning=F, fig.width=8,fig.height=4, fig.cap="Outcome over time in a single case ABA design. Digitized data from two participants from Figure 2 of Armson et al (1998)",out.width="75%"}
+```{r SingleCaseDplot2, echo=F, message=F, warning=F, fig.width=8,fig.height=4, fig.cap="Outcome over time in a single case ABA design. Digitized data from two participants from Figure 2 of Armson et al (1998)",out.width="85%"}
 makeplot <-0
 if(makeplot==1){
 sub1<-read.csv('data/stuttering_read_P11.csv')
@@ -303,14 +308,17 @@ Our view is that single-case designs have considerable potential. There has been
 
 In most of the examples used here, the single case design could be embedded in natural therapy sessions, include heterogeneous participants, and be adapted to fit into regular clinical practice. This makes the method attractive to clinicians, but it should be noted that while incorporating evaluation into clinical activities is highly desirable, it often creates difficulties for controlling aspects of internal validity. For instance, in the study by @swain2020, the researchers noted an element of unpredictability about data collection, because the young offenders that they worked with might either be unavailable, or unwilling to take part in intervention sessions on a given day. In the @leniston2021 study the target and control probes were not always well-matched at baseline, and for some children, the amount of available data was too small to give a powerful test of the intervention effect. Our view is that it is far better to aim to evaluate interventions than not to do so, provided limitations of particular designs are understood and discussed. Table \@ref(tab:singlecasechart) can be used as a checklist against which to assess characteristics of a given study, to evaluate how far internal validity has been controlled.
 
-```{r singlecasechart, echo=F, include=T,tab.cap="How single case designs deal with threats to study validity",out.width="75%"}
+```{r singlecasechart, echo=F, include=T,tab.cap="How single case designs deal with threats to study validity",out.width="80%"}
 options(kableExtra.html.bsTable = T)
 Biases <- c('Spontaneous improvement','Practice effects','Regression to the mean','Noisy data (1)','Noisy data (2)','Selection bias', 'Placebo effects', 'Experimenter bias (1)','Experimenter bias (2)','Biased drop-outs','Low power','False positives due to p-hacking')
 Remedies <- c('Control outcome and/or baseline time period','Control outcome and/or baseline time period','Control outcome and/or baseline time period','Baseline period to establish variability','Outcomes with low measurement error','NA','-','Record sessions','Strictly specified protocol','Report on the number and characteristics of drop-outs','A priori power analysis; need for many observations','Registration of trial protocol')
 
 mydf<-data.frame(cbind(Biases,Remedies))
 knitr::kable(mydf,escape = F, align = "c", booktabs = T,caption="How single case designs deal with threats to study validity") %>%
-  kable_styling(c("striped", "bordered"), latex_options = "striped", full_width = F) 
+  kable_styling(c("striped", "bordered"), latex_options = "striped", full_width = F)%>%
+ column_spec(1,width = "9em")  %>%
+  column_spec(2,width = "15em") 
+ 
 ```
 
 We are not aware of specific evidence on this point, but it seems likely that the field of single case studies, just like other fields, is likely to suffer from problems of publication bias (Chapter \@ref(pubbias)), whereby results are reported when an intervention is successful, but not when it fails. If studies are adequately powered - and they should be designed so that they are - then all results should be reported, including those which may be ambiguous or unwanted, so that we can learn from what doesn't work, as well as from what does.
@@ -321,7 +329,7 @@ A final point, which cannot be stressed enough, is that when evaluating a given 
 
 1.  @koutsoftas2009 conducted a study of effectiveness of phonemic awareness intervention with a group of children who showed poor sound awareness after receiving high quality whole-classroom teaching focused on this skill. Intervention sessions were administered by speech-language pathologists or experienced teachers to 13 groups of 2-4 children twice per week for a baseline and post-intervention period, and once per week during the 6 week intervention. Active intervention was preceded by a baseline period - one week (with two outcome measurement points) for seven groups of children, and two weeks (4 measurement points) for the other six groups. Outcome probes involved identifying the initial sound from a set of three words in each session. The researchers reported effect sizes for individual children that were calculated by comparing score on the probes in the post-intervention period with those in the baseline period, showing that most children showed significant gains on the outcome measure. Group results on the outcome measure (redrawn from Table 2 of the paper) are shown in Figure \@ref(fig:kdataplot).
 
-```{r kdataplot, echo=FALSE,message=FALSE,warning=FALSE,fig.cap="Group means from Koutsoftas et al, 2009. Filled points show intervention phase, unfilled show baseline or post-intervention",out.width="75%"}
+```{r kdataplot, echo=FALSE,message=FALSE,warning=FALSE,fig.cap="Group means from Koutsoftas et al, 2009. Filled points show intervention phase, unfilled show baseline or post-intervention",out.width="85%"}
 makefig <- 0
 kdf <- read.csv("data/koutsoftas_data.csv")
 
@@ -401,7 +409,7 @@ e. What would be the logistic challenges in implementing these changes?
 
 3.  In the previous chapter, we described a study by @calder2021, which used a cross-over design to evaluate the effect of an intervention designed to improve grammatical morphology. This study also included probes to test mastery of untrained morphological endings. The trained structure was past tense -ed; a 'generalization' probe was another verb ending, 3rd person singular -s, and a control probe was possessive -s. Before studying Figure \@ref(fig:Calderplus) make a note of your predictions about what you might expect to see with these additional probes.
 
-```{r Calderplus, echo=F,fig.cap = "Mean % correct for all 3 probes in delayed cross-over study by Calder et al, 2021 (data plotted from Calder et al's Table 2).",out.width="75%"}
+```{r Calderplus, echo=F,fig.cap = "Mean per cent correct for all 3 probes in delayed cross-over study by Calder et al, 2021 (data from Table 2).",out.width="85%"}
 
 makefig<-0
 if(makefig==1)

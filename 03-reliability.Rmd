@@ -12,7 +12,12 @@ library(cowplot)
 
 ```
 
-`r knitr::include_graphics("images/logo_alone_new.png")`
+```{r addlogo,echo=F,warning=F,message=F}
+mylogo <- 0
+if(mylogo==1){
+knitr::include_graphics("images/logo_alone_new.png")
+}
+```
 
 **Learning objectives**: By the end of this chapter, you will be able to:
 
@@ -82,9 +87,9 @@ ggsave(paste0(myfolder,'/correlationfig.png'),p3,scale = 1, width = 6, height = 
 
 ```
 
-```{r correlationfig, echo=F,message=F,warning=F,fig.width=6,fig.height=6,fig.cap="The correlation coefficient is a statistic that takes the value of zero when there is no relationship between two variables, 1 whether there is a perfect relationship, and -1  when there is an inverse relationship. If you draw a straight line through the points on the graph, then if all points fall exactly on the line, the correlation is 1, indicating that you can predict perfectly a person's score on Y if you know their score on X."}
+```{r correlationfig, echo=F,message=F,warning=F,fig.width=6,fig.height=6,fig.cap="The correlation coefficient is a statistic that takes the value of zero when there is no relationship between two variables, 1 whether there is a perfect relationship, and -1  when there is an inverse relationship. If you draw a straight line through the points on the graph, then if all points fall exactly on the line, the correlation is 1, indicating that you can predict perfectly a person's score on Y if you know their score on X.",out.width="75%"}
 
-knitr::include_graphics(paste0(myfolder,'/correlationfig.png'))
+knitr::include_graphics('images_bw/correlationfig.png')
 ```
 
 ####  {.unnumbered}
@@ -98,7 +103,7 @@ So how reliable should a measure be? Most psychometric tests report reliability 
 
 
 
-```{r reliability-by-age,echo=F,include=T,fig.width=6,fig.height=6,fig.cap="Age range can affect reliability"}
+```{r reliability-by-age,echo=F,include=T,fig.width=6,fig.height=6,fig.cap="Age range can affect reliability",out.width="80%"}
 #Code to create figures caused problems rendering so removed
 knitr::include_graphics(paste0(myfolder,'/reliability-by-age.png'))
 ```
@@ -126,7 +131,7 @@ Deciding what is the "right thing" is an important part of designing any inventi
 
 ### Cultural factors
 
-I (Dorothy) remember my first encounter with a popular receptive vocabulary test, the Peabody Picture Vocabulary Test, where the task was to match a spoken word to one of four pictures in an array. An early item was "caboose", a word I had never encountered, but which was presumably familiar to children in the USA. Another American reading assessment required children to find words that sounded the same, and treated 'aunt' and 'ant' as homophones. Conversely, in my standard British English, the words "arm" and "calm" have the same ending, whereas to speakers of Scots, Irish and American English, the 'r' is pronounced. In some dialects, low intensity morphemes may be omitted, and it's acceptable to say "She my sister" rather than the standard English "She's my sister", or to say "I done my homework', rather than"I've done my homework". And if we move to consider pragmatics and language usage, there can be wide variability from culture to culture in what is deemed acceptable or odd in terms of what is said and how it is said.
+The first author still remembers her first encounter with a popular receptive vocabulary test, the Peabody Picture Vocabulary Test, where the task was to match a spoken word to one of four pictures in an array. An early item was "caboose", a word I had never encountered, but which was presumably familiar to children in the USA. Another American reading assessment required children to find words that sounded the same, and treated 'aunt' and 'ant' as homophones. Conversely, in my standard British English, the words "arm" and "calm" have the same ending, whereas to speakers of Scots, Irish and American English, the 'r' is pronounced. In some dialects, low intensity morphemes may be omitted, and it's acceptable to say "She my sister" rather than the standard English "She's my sister", or to say "I done my homework', rather than"I've done my homework". And if we move to consider pragmatics and language usage, there can be wide variability from culture to culture in what is deemed acceptable or odd in terms of what is said and how it is said.
 
 It is crucial to be sensitive to such issues. Quite simply, an assessment that categorizes nonstandard language as impairment is invalid. Terms such as language impairment or disorder are only appropriate when the individual is recognized as having problems within their own cultural community. We therefore need to use culturally appropriate assessments, that do not confuse language difficulties with normal variation. While that is obvious advice to give, there may be a lack of suitable assessments available, in which case some modification of existing assessments may be the only option. This should be done in consultation with someone who is a member of the relevant culture. If modifications are made, then normative data (see below) should be interpreted with extreme caution.
 
@@ -191,7 +196,7 @@ Z-scores, however, have some unfortunate characteristics: they involve both posi
 As if this was not complicated enough, the scaled score can also be directly translated into a percentile (or centile) score, which corresponds to the percentage of people in the population who are expected to obtain a score at least as high as this. This conversion is usually based on the normal distribution, where there is an orderly relationship between percentiles and the z-score. As shown in Figure \@ref(fig:ZDensityCDF), approximately 16% of people are expected to score 1 SD below the mean, and 3% score 2 SD below the mean.
 :::
 
-```{r ZDensityCDF,echo=FALSE,fig.cap="Distribution of z-scores, showing proportions of people obtaining scores below -1, between -1 and 1, and above 1.",fig.width=6,fig.height=3,out.width="75%"}
+```{r makeZDensityCDF,echo=FALSE,fig.cap="Distribution of z-scores, showing proportions of people obtaining scores below -1, between -1 and 1, and above 1.",fig.width=6,fig.height=3}
 # This is modified from Poldrack online book Stats for 21st century
 # First, create a function to generate plots of the density and CDF
 makezdens <-0 #set to 1 to recreate figure
@@ -265,7 +270,7 @@ p2 <- plot_density(zcut=1)
 }
 ```
 
-```{r ZdensityCDF,echo=F,include=T,fig.width=6,fig.height=3,fig.cap="Distribution of z-scores, showing proportions of people obtaining scores below -1, between -1 and 1, and above 1"}
+```{r ZDensityCDF,echo=F,include=T,fig.cap="Distribution of z-scores, showing proportions of people obtaining scores below -1, between -1 and 1, and above 1",out.width="75%"}
 
 knitr::include_graphics(paste0(myfolder,'/ZDensityCDF.png'))
 ```
@@ -328,7 +333,6 @@ On the basis of our experience, we would advise that if you are tempted to use a
 
 ### Mean Length of Utterance
 
-![](http://127.0.0.1:8999/chunk_output/s/7B7285A4/c5ttuynsm5y3c/000010.png?resize=0)
 
 ```{r makeMLUplot,echo=FALSE,warning=TRUE,message=TRUE,fig.cap='Mean length of utterance (MLU) values for a cohort of 630 children speaking North American English in the Child Language Data Exchange System archive. Recreated from @ratner2016 (data kindly provided by authors)',out.width="75%"}
 
@@ -362,7 +366,7 @@ p4 <- ggplot(mlu_data, aes(x=Age, y=Mean)) +
 
 ```{r MLU-plot,echo=FALSE,warning=TRUE,message=TRUE,fig.cap='Mean length of utterance (MLU) values for a cohort of 630 children speaking North American English in the Child Language Data Exchange System archive. Recreated from @ratner2016 (data kindly provided by authors)',out.width="75%"}
  
- knitr::include_graphics(paste0(myfolder,'/MLU_plot.png'))
+ knitr::include_graphics('images_bw/MLU-plot.png')
 
 ```
 

@@ -9,7 +9,12 @@ library(ggpubr)
 
 ```
 
-`r knitr::include_graphics("images/logo_alone_new.png")`
+```{r addlogo,echo=F,warning=F,message=F}
+mylogo <- 0
+if(mylogo==1){
+knitr::include_graphics("images/logo_alone_new.png")
+}
+```
 
 **Learning objectives**: By the end of this chapter, you will be able to:
 
@@ -21,13 +26,15 @@ The standard two-arm RCT treats the intervention effect as a *between-subjects* 
 
 The benefit of the crossover design is that a potentially more accurate evaluation of intervention comparison is achieved, as we compare individuals to themselves as well as to controls who are different individuals. Another benefit is that power is higher than for a regular RCT: crossover designs typically require fewer individuals, as a separate control group is not necessary. In effect, with a cross-over design, we combine two sources of information about the efficacy of intervention: comparing individuals across the two phases (*within subjects*) and comparing the two groups in each phase (*between subjects*).
 
-In drug trials, the typical crossover design is split into three phases: an initial phase where two groups are randomized (exactly the same as a parallel group design) to intervention and control [@sibbald1998]. Once the first phase has elapsed, there is a washout phase (phase 2) where no intervention is given; this is important to allow any intervention effect to be removed before the groups are switched. Then phase 3 is started with the intervention and control conditions switched. By the end of the study, both groups have received intervention. The assessment of the intervention looks at the differences between phases 1 and 3 by group. If treatment is effective, we should see no group difference but a significant phase difference.
+In drug trials, the typical crossover design is split into three phases: an initial phase where two groups are randomized (exactly the same as a parallel group design) to intervention and control [@sibbald1998]. Once the first phase has elapsed, there is a washout phase (phase 2) where no intervention is given; this is important to allow any intervention effect to be removed before the groups are switched. Then phase 3 is started with the intervention and control conditions switched. By the end of the study, both groups have received intervention. The assessment of the intervention looks at the differences between phases 1 and 3 by group. If treatment is effective, we should see no group difference but a significant phase difference.  
 
+\begin{center}
 ```{r crossoverplot, echo=F, message=F, warning=F, fig.cap="Idealized results from a crossover RCT",out.width="75%"}
 
  knitr::include_graphics('images_bw/crossover.png') #read in previously created diag
 
 ```
+\end{center}
 
 The suitability of a cross-over design, and the anticipated results, depend crucially on the nature of the intervention. A key question is whether or not the intervention is intended to have long-term effects that persist beyond the intervention phase. For most behavioural interventions, including those administered by speech-and-language therapists, educators and allied health professionals, the goal is to bring about long-term change. Exceptions would be communication aids such as auditory feedback masking, which decreases stuttering while the masker is switched on, but does not produce long-term change [@block1996]. In this regard, most behavioural interventions are unlike pharmaceutical trials, which often focus on the ability of specific drugs to provide symptomatic relief. This makes results from the crossover design difficult to interpret.
 
@@ -35,13 +42,13 @@ The suitability of a cross-over design, and the anticipated results, depend cruc
 
 The delayed crossover design or wait list control design is another type of *within subject* design that is more commonly used in situations where the effect of an intervention is likely to persist. We start by taking baseline measures from both groups. The impact of intervention is measured in Group A relative to their pre-intervention score. For Group B, intervention starts at the point when Group A stop the intervention.
 
-
-```{r waitlist-plot,  echo=F, message=F, warning=F, fig.cap="Idealized results from a waitlist RCT"}
+\begin{center}
+```{r waitlist-plot,  echo=F, message=F, warning=F, fig.cap="Idealized results from a waitlist RCT",out.width="75%"}
 
  knitr::include_graphics('images_bw/waitlist.png') #read in previously created diag
 
 ```
-
+\end{center}
 
 In many respects, this design resembles a regular RCT, and has some of the same benefits, in terms of controlling for effects of practice, maturation and regression to the mean. Relative to a standard RCT, it has some advantages:
 
@@ -107,7 +114,7 @@ dev.off()
 }
 ```
 
-```{r calderfig,  echo=F, message=F, warning=F, fig.cap = "Mean % correct in delayed cross-over study by Calder et al, 2021 (data plotted from Calder et al's Table 2)."}
+```{r calderfig,  echo=F, message=F, warning=F, fig.cap = "Mean per cent correct in delayed cross-over study by Calder et al, 2021 (data plotted from Calder et al's Table 2).",out.width="60%"}
 
  knitr::include_graphics('images_bw/calderfig-1.png') #read in previously created diag
 

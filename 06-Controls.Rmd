@@ -12,7 +12,12 @@ library(ggpubr)
 
 ```
 
-`r knitr::include_graphics("images/logo_alone_new.png")`
+```{r addlogo,echo=F,warning=F,message=F}
+mylogo <- 0
+if(mylogo==1){
+knitr::include_graphics("images/logo_alone_new.png")
+}
+```
 
 **Learning objectives**: By the end of this chapter, you will be able to:
 
@@ -39,11 +44,13 @@ In fields such as education or speech and language therapy it is typically assum
 #### **The Arrowsmith Program^TM^** {.unnumbered}
 
 <p id="custom">
+
 The Arrowsmith Program is marketed as a neuroscience-based intervention for children with a wide range of specific learning disabilities. A review of the research literature on Arrowsmith finds no evidence of effectiveness, despite the program having been in existence since the 1980s [@bowen2020]. One of the most comprehensive reviews of Arrowsmith research is in the D.Phil. thesis of Debra Kemp-Koo from the University of Saskatchewan in 2013. In her introduction, Dr Kemp-Koo included an account of a study of children attending the private Arrowsmith school in Toronto:\
 - *All of the students in the study completed at least one year in the Arrowsmith program with most of them completing two years and some of them completing three years. At the end of the study many students had completed their Arrowsmith studies and left for other educational pursuits. The other students had not completed their Arrowsmith studies and continued at the Arrowsmith School. **Most of the students who participated in the study were taking 6 forty minute modules of Arrowsmith programming a day with 1 forty minute period a day each of English and math at the Arrowsmith School. Some of the students took only Arrowsmith programming** or took four modules of Arrowsmith programming with the other half of their day spent at the Arrowsmith school or another school in academic instruction (p. 34-35; our emphasis).*\
 So children at Arrowsmith schools were spending one to three years working on unevidenced, repetitive exercises, rather than the regular academic curriculum. As Kemp-Koo (2013) remarked:\
 - *The Arrowsmith program itself does not focus on academic instruction, although some of these students did receive some academic instruction apart from their Arrowsmith programming. **The length of time away from academic instruction could increase the amount of time needed to catch up with the academic instruction these students have missed**. (p. 35; our emphasis).*\
 It seems remarkable that children who have a range of specific learning difficulties are described as needing catch-up academic instruction because they have missed regular classroom activities because of time spent on the Arrowsmith program. This is a classic case of an intervention that carries a substantial opportunity cost - quite apart from the financial cost to families.
+
 </p>
 
 When we move to consider interventions outside the school setting, there are still time costs involved: an aphasic adult with poor mobility or a harassed mother with three small children who is reliant on public transport may have considerable difficulty making it to clinic appointments. Of course, even if the intervention is ineffective, the clients may be glad to have the attention and professional interest of a therapist. But if that is something that is of importance to them, then that needs to be included in the outcome measures -- i.e. it is necessary to demonstrate it is so, rather than just assuming this is the case.
@@ -64,7 +71,7 @@ As noted above, a common design is to compare group A, who receive intervention,
 
 There are two things to be concerned about here. First, in the previous chapter we discussed the kinds of very general impact that can be caused just by being in an intervention group. These work in the opposite way to the possible adverse effects discussed above: although some people may be embarrassed or stressed by being a target of intervention, others may be reassured or made more confident. A good therapist will do more than just administer an intervention in a standard fashion: they will form a relationship with their client which can itself be therapeutic. This, however, creates a confound if the control group, B, just has "business as usual" because it means we are really comparing group A, who gets a specific intervention plus a therapeutic relationship, with group B, who gets nothing.
 
-A creative way of dealing with this confound is to ensure that group B does also get some kind of intervention, focusing on something that is worthwhile, but different from the one that is the focus of the study. This is known as an **active control**. It is important to choose a comparison intervention that is not expected to have an impact on the main outcome measure -- otherwise you could find yourself in a situation where everyone gets better but groups A and B don't differ, and you are left uncertain whether both interventions worked or neither did. On the other hand, it would be unethical to use an active control that was of no conceivable benefit. An example from the speech and language field is the study by @burgoyne2018. They compared preschoolers who had a parent-based language intervention with a group who had a parent-based intervention designed to improve motor skills. Another example comes from @mcgillion2017, who compared an intervention designed to increase caregiver contingent talk to infants with a control condition where caregivers viewed a video about healthy eating and tooth-brushing and were asked to spend 15 min a day with their child making these a habit. 
+A creative way of dealing with this confound is to ensure that group B does also get some kind of intervention, focusing on something that is worthwhile, but different from the one that is the focus of the study. This is known as an **active control**. It is important to choose a comparison intervention that is not expected to have an impact on the main outcome measure -- otherwise you could find yourself in a situation where everyone gets better but groups A and B don't differ, and you are left uncertain whether both interventions worked or neither did. On the other hand, it would be unethical to use an active control that was of no conceivable benefit. An example from the speech and language field is the study by @burgoyne2018. They compared preschoolers who had a parent-based language intervention with a group who had a parent-based intervention designed to improve motor skills. Another example comes from @mcgillion2017, who compared an intervention designed to increase caregiver contingent talk to infants with a control condition where caregivers viewed a video about healthy eating and tooth-brushing and were asked to spend 15 min a day with their child making these a habit.
 
 The use of a contrasting intervention overcomes another possible concern about untreated controls, which is those in group B may actually do worse because they know they are missing out on an intervention that might be able to help them (see Chapter \@ref(nonspecific)).
 
@@ -74,5 +81,5 @@ Another popular approach to controls is to have a two-stage study. Stage 1 is a 
 
 Take one of the three vignettes from Chapter \@ref(intro), or use an intervention method you are familiar with.
 
--   Make a list of any possible harms you can think of that might be caused by the intervention. Remember that in behavioural areas, most harms are likely to be psychological, social or financial. 
+-   Make a list of any possible harms you can think of that might be caused by the intervention. Remember that in behavioural areas, most harms are likely to be psychological, social or financial.
 -   If you wanted to evaluate this intervention using an active control group (rather than an untreated control), what kind of intervention could you use for the controls?

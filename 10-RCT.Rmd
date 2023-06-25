@@ -10,7 +10,12 @@ library(ggpubr)
 library(kableExtra)
 ```
 
-`r knitr::include_graphics("images/logo_alone_new.png")`
+```{r addlogo,echo=F,warning=F,message=F}
+mylogo <- 0
+if(mylogo==1){
+knitr::include_graphics("images/logo_alone_new.png")
+}
+```
 
 **Learning objective**: By the end of this chapter, you will be able to explain which biases from previous chapters are adequately controlled in a randomized controlled trial
 
@@ -21,7 +26,7 @@ A RCT is effective simply because it is designed to counteract all of the system
 ```{r rctchart, echo=F,warning=F,message=F, include=T,out.width="75%"}
 options(kableExtra.html.bsTable = T)
 Biases <- c('Spontaneous improvement','Practice effects','Regression to the mean','Noisy data (1)','Noisy data (2)','Selection bias', 'Placebo effects', 'Experimenter bias (1)','Experimenter bias (2)','Biased drop-outs','Low power','False positives due to p-hacking')
-Remedies <- c('Control group','Control group','Control group','Strict selection criteria for participants','Outcome measures with low measurement error','Random assignment to intervention','Participant unaware of assignment','Experimenter unaware of assignment','Strictly specified protocol','Intention-to-treat analysis','A priori power analysis','Registration of trial protocol')
+Remedies <- c('Control group','Control group','Control group','Strict selection criteria for participants','Outcomes with low measurement error','Random assignment to intervention','Participant unaware of assignment','Experimenter unaware of assignment','Strictly specified protocol','Intention-to-treat analysis','A priori power analysis','Registration of trial protocol')
 mydf<-data.frame(cbind(Biases,Remedies))
 knitr::kable(mydf,escape = F, align = "c", booktabs = T,caption="How the RCT design deals with threats to study validity") %>%
   kable_styling(c("striped", "bordered"), latex_options = "striped", full_width = F) 

@@ -1,6 +1,11 @@
 # Can you trust the published literature? {#pubbias}
 
-`r knitr::include_graphics("images/logo_alone_new.png")`
+```{r addlogo,echo=F,warning=F,message=F}
+mylogo <- 0
+if(mylogo==1){
+knitr::include_graphics("images/logo_alone_new.png")
+}
+```
 
 **Learning objectives**: By the end of this chapter, you will be able to:
 
@@ -33,7 +38,7 @@ Mahoney's work has been largely forgotten, perhaps due to inaccessibility. It is
 
 Figure \@ref(fig:devriesfig) shows how publication bias can work out in practice. In this study, the authors searched a trial registry operated by the Food and Drug Administation (FDA) for studies on drug treatments for depression. Pharmaceutical companies are required to register intervention studies in advance, which makes it possible to detect unpublished as well as published research. As can be seen from the left-most bar (a), around half of the trials were deemed to have "negative" results, and the remainder found a positive effect of intervention. The second bar (b) shows the impact of publication bias: whereas nearly all the positive studies were published, only half of those with null results made it into print.
 
-```{r devriesfig, echo=F, message=F, warning=F,fig.cap="The cumulative impact of reporting and citation biases on the evidence base for antidepressants. Bar A displays the initial, complete cohort of trials, while B through E show the cumulative effect of biases. Each circle indicates a trial, while the fill indicates the results or the presence of spin. Circles connected by a grey line indicate trials that were published together in a pooled publication. In E, the size of the circle indicates the relative number of citations received by that category of studies",out.width="80%"}
+```{r devriesfig, echo=F, message=F, warning=F,fig.cap="The cumulative impact of reporting and citation biases on the evidence base for antidepressants. Bar A displays the complete cohort of trials, while B through E show the cumulative effect of biases. Each circle indicates a trial, while the fill indicates the results or the presence of spin. Circles connected by a grey line indicate trials that were published together in a pooled publication. In E, the size of the circle indicates the relative number of citations",out.width="80%"}
 knitr::include_graphics("images_bw/devriesfig.png")
 ```
 
@@ -74,3 +79,4 @@ In Chapter \@ref(prereg) and Chapter \@ref(litrev), we discuss two approaches to
 2.  Find a published report of an intervention that interests you. Take a look at the introduction, and list the references that are cited as background. Next, go online and search for articles on this topic that were published two or more years before the target paper. Do you find many articles that are relevant but which were not cited? If so, did they give positive or negative results?
 
 N.B. There are various ways you can conduct a literature search. Google Scholar is often preferred because it is free and includes a wide range of source materials, including books. Dimensions also has a free option. Scopus and Web of Science are other commercial options that your institution may subscribe to. Both of these are more selective in coverage, which can be a positive if you want some quality control over your search (e.g. restricted to peer-reviewed journals), but a negative if you want to be comprehensive. If you compare these different ways of searching the literature, you will find they can give very different results.
+

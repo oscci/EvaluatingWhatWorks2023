@@ -1,6 +1,11 @@
 # False positives, p-hacking and multiple comparisons {#phacking}
 
-`r knitr::include_graphics("images/logo_alone_new.png")`
+```{r addlogo,echo=F,warning=F,message=F}
+mylogo <- 0
+if(mylogo==1){
+knitr::include_graphics("images/logo_alone_new.png")
+}
+```
 
 ```{r, echo=F,warning=F,message=F}
 list_of_packages<-c("tidyverse","kableExtra","knitr","MASS")
@@ -25,11 +30,12 @@ library(gtools) #for permutations
 
 ## Type I error
 
-A **Type I error** is a **false positive**, which occurs when the null hypothesis is rejected but a true effect is not actually present. This would correspond to the situation where the evidence seems to indicate an intervention is effective, but in reality it is not. One useful mnemonic for distinguishing Type I and Type II errors is to think of the sequence of events in the fable of the boy who cried wolf. This boy lived in a remote village and he used to have fun running out to the farmers in the fields and shouting "Wolf! Wolf!" and watching them all get alarmed. The farmers were making an (understandable) Type I error, of concluding there was a wolf when in fact there was none. One day, however, a wolf turned up. The boy ran into the village shouting "Wolf! Wolf!" but nobody took any notice of him, because they were used to his tricks. Sadly, all the sheep got eaten because the villagers had made a Type II error, assuming there was no wolf when there really was one.
-
-```{r wolfsheepfig, echo=F, fig.cap='Type I and Type II errors'}
+A **Type I error** is a **false positive**, which occurs when the null hypothesis is rejected but a true effect is not actually present. This would correspond to the situation where the evidence seems to indicate an intervention is effective, but in reality it is not. One useful mnemonic for distinguishing Type I and Type II errors is to think of the sequence of events in the fable of the boy who cried wolf. This boy lived in a remote village and he used to have fun running out to the farmers in the fields and shouting "Wolf! Wolf!" and watching them all get alarmed. The farmers were making an (understandable) Type I error, of concluding there was a wolf when in fact there was none. One day, however, a wolf turned up. The boy ran into the village shouting "Wolf! Wolf!" but nobody took any notice of him, because they were used to his tricks. Sadly, all the sheep got eaten because the villagers had made a Type II error, assuming there was no wolf when there really was one.  
+\begin{center}
+```{r wolfsheepfig, echo=F, fig.cap='Type I and Type II errors',out.width="50%"}
 knitr::include_graphics("images_bw/wolfsheeprevised.png")
 ```
+\end{center}  
 
 Figure @ref(fig:wolfsheepfig) conveys the same information as Table 10.1 from the previous chapter, but redrawn in terms of wolves and sheep. The type I error rate (i.e. percentage of 'significant' results seen when there is no real effect) is controlled by setting the significance criterion, $\alpha=0.05$, at 5%, or sometimes more conservatively 1% ($\alpha=0.01$). With $\alpha=0.05$, on average 1 in 20 statistically significant results will be false positives; when it is .01, then 1 in 100 will be false positives. The .05 cutoff is essentially arbitrary, but very widely adopted in the medical and social sciences literature, though debate continues as to whether a different convention should be adopted [@benjamin2018, @lakens2018].
 
@@ -110,12 +116,12 @@ The MEff statistic was developed in the field of genetics by @cheverud2001. It i
 ```{r MEff-alphas,echo=F, message=FALSE, results='asis', warnings=FALSE,out.width="75%"}
 options(kableExtra.html.bsTable = T)
 meff<-read.csv('Data/Meff_alphas.csv')
-meff<-meff[,c(1,2,4,6,8,10,12)]
+meff<-meff[,c(1,2,4,6,8,10)]
 knitr::kable(meff,escape = F, align = "c", booktabs = T, caption = 'Adjusted alphas for multiple (N) correlated variables to achieve false positive rate of 1 in 20') %>%
   kable_styling(c("striped", "bordered"), latex_options = "striped", full_width = F) %>%
   column_spec(1:1, bold = T) %>%
-  column_spec(1:7,width = "5em") %>%
-  add_header_above(c(" ","N outcomes" = 6))
+  column_spec(1:6,width = "5em") %>%
+  add_header_above(c(" ","N outcomes" = 5))
 
 ```
 

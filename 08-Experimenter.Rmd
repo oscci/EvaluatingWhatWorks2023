@@ -1,10 +1,15 @@
-# The reearcher as a source of bias {#experimenter}
+# The researcher as a source of bias {#experimenter}
 
-`r knitr::include_graphics("images/logo_alone_new.png")`
+```{r addlogo,echo=F,warning=F,message=F}
+mylogo <- 0
+if(mylogo==1){
+knitr::include_graphics("images/logo_alone_new.png")
+}
+```
 
 **Learning objectives**: By the end of this chapter, you will be able to:
 
--   Explain the concept of experimenter bias, and describe ways in which it can be counteracted
+-   Explain the concept of researcher bias, and describe ways in which it can be counteracted
 
 -   Appreciate how conflict of interest may lead researchers to report unduly rosy findings
 
@@ -41,7 +46,7 @@ myfolder<-here('images_bw')
 
 ```
 
-```{r phonicsfig, echo=F, fig.cap='Numbers of children with specific scores on phonics screen. (Based on original data from Department for Education website, now deleted)'}
+```{r phonicsfig, echo=F, fig.cap='Numbers of children with specific scores on phonics screen. (Based on original data from Department for Education website, now deleted)',out.width="80%"}
 knitr::include_graphics("images_bw/phonics.png")
 ```
 
@@ -55,10 +60,11 @@ In medical trials, the large amount of evidence for experimenter bias on measure
 When experimenter bias is discussed, we usually see citation to the work of Robert Rosenthal, who conducted a series of experiments in the 1960s, some of which have become classics in psychology. One of the most famous, which features in many undergraduate texts, is a study by @rosenthal1963, which describes how student experimenters could be made to give biased evaluation of performance of rats in maze-learning task. All the rats were from the same batch, but students were told they were either "maze bright" or "maze dull". Since there was no real difference between rats, they should have performed the same, but those designated as "maze bright" were faster in solving the maze than the "maze dull".\
 Unfortunately, this classic study does not stand up to scrutiny. The numbers of students were small, and the results were not statistically robust when analysed according to contemporary standards. Indeed, even at the time, Rosenthal's work on experimenter bias came under strong criticism for methodological flaws [@barber1968]. Nevertheless, Rosenthal's account of experimenter bias has been highly influential, forming part of the canon of "zombie psychological effects" that refuse to die, while Barber and Silver's critique has been largely forgotten. As with the Hawthorne effect, we see that few people return to look at the original data, and even if the research is debunked, it lives on because the story is just too perfect.
 
-```{r rats,echo=F,}
-knitr::include_graphics(c("images_bw/ratsx2.png"))
+\begin{center}
+```{r rats,echo=F,out.width="40%"}
+knitr::include_graphics("images_bw/ratsx2.png")
 ```
-
+\end{center}
 Does this mean we do not need to worry about experimenter effects? We recommend that it is good practice to take them into account when designing studies, but this story is further evidence of the need to look carefully at supposedly well-established findings.
 :::
 

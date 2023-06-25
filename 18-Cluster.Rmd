@@ -17,7 +17,12 @@ library(knitr)
 
 ```
 
-`r knitr::include_graphics("images/logo_alone_new.png")`
+```{r addlogo,echo=F,warning=F,message=F}
+mylogo <- 0
+if(mylogo==1){
+knitr::include_graphics("images/logo_alone_new.png")
+}
+```
 
 **Learning objectives**: By the end of this chapter, you will be able to:
 
@@ -27,14 +32,14 @@ library(knitr)
 
 ## What is a cluster RCT?
 
-In some situations, allocation of intervention can be problematic due to pragmatic constraints; for example, for a whole-class intervention, it may be disruptive to split students within each class into intervention and control groups. A potential solution is to use **cluster trials**, where the allocation to intervention is performed at the group level. We can designate clusters that would naturally occur together, for example, school classes, patients under the care of a particular medical practice or a specific therapist, or perhaps by geographic location (county, district or NHS trust). Figure \@ref(fig:cluster-diag) illustrates the logic.
-
-```{r cluster-diag,echo=FALSE,warning=F,message=F,fig.cap='With regular RCT (on left), individuals are sampled at random from the population for allocation to intervention (grey) or control (white).  With cluster RCT (on right) natural clusters in the population (schools, hospitals, cities, etc) are sampled at random and assigned to intervention (grey) or control (black)'}
+In some situations, allocation of intervention can be problematic due to pragmatic constraints; for example, for a whole-class intervention, it may be disruptive to split students within each class into intervention and control groups. A potential solution is to use **cluster trials**, where the allocation to intervention is performed at the group level. We can designate clusters that would naturally occur together, for example, school classes, patients under the care of a particular medical practice or a specific therapist, or perhaps by geographic location (county, district or NHS trust). Figure \@ref(fig:cluster-diag) illustrates the logic.  
+\begin{center}
+```{r cluster-diag,echo=FALSE,warning=F,message=F,fig.cap='With regular RCT (on left), individuals are sampled at random from the population for allocation to intervention (grey) or control (white).  With cluster RCT (on right) natural clusters in the population (schools, hospitals, cities, etc) are sampled at random and assigned to intervention (grey) or control (black)',out.width="60%"}
 
   knitr::include_graphics('images_bw/clusterdemo.png') #read in previously created diag
 
 ```
-
+\end{center}  
 
 
 ## Advantages of a cluster design
@@ -57,7 +62,7 @@ Statisticians have developed sophisticated methods of analysis for dealing with 
 
 ## Check your understanding
 
-Look at this account of a cluster RCT of "growth mindset" intervention by the Education Endowment Foundation from [this report](https://educationendowmentfoundation.org.uk/public/files/Projects/Evaluation_Reports/Changing_Mindsets.pdf). The project involved 101 schools and 5018 pupils across England, assigned to either intervention or control groups.
+The Education Endowment Foundation reported on a cluster RCT of "growth mindset" intervention that was completed in 2014. The project involved 101 schools and 5018 pupils across England, assigned to either intervention or control groups.
 
 ::: {#custom}
 *Pupils were exposed to the mindset theory over a structured series of classes led by their own teachers. The aim of these sessions was to change the way that pupils think about their intelligence, in particular to build high expectations and resilience and to encourage specific plans and goals that emphasize growth, the development of skill, or the expansion of knowledge. The programme was delivered to pupils through eight sessions. These covered themes including the meaning of intelligence, dealing with mistakes and emotions, understanding the brain and encouraging challenge, effort and persistence, stereotypes, and inspirational people. In addition, teachers worked to make the intervention more effective by embedding the growth mindset approach in their everyday class activities, for example, by repeating the message that making mistakes is an opportunity to learn rather than a negative experience.*
@@ -69,7 +74,7 @@ Look at this account of a cluster RCT of "growth mindset" intervention by the Ed
 
 -   The results from the trial were disappointing: no evidence of any benefit was found for children who received growth mindset training. Do you think it would be worthwhile to find ways to evaluate the intervention using a non-clustered RCT? What would be the advantages/challenges of such an approach?
 
--   The authors of the report suggested various reasons why the trial results were so disappointing. Can you think of what these reasons might be? Would there be any way of checking the plausibility of such explanations. When you have considered this point, look at the discussion of reasons for null results on pp 42-43 of [the report] ([https://educationendowmentfoundation.org.uk/public/files/Projects/Evaluation_Reports/Changing_Mindsets.pdf)](https://educationendowmentfoundation.org.uk/public/files/Projects/Evaluation_Reports/Changing_Mindsets.pdf)to){.uri} to see whether you anticipated the points raised there - and whether the report considered the points you thought of. Note also how the researchers used a "implementation and process evaluation" that made it possible to evaluate different possible explanations (p. 29).
+-   The authors of the report suggested various reasons why the trial results were so disappointing. Can you think of what these reasons might be? Would there be any way of checking the plausibility of such explanations. When you have considered this point, look at the discussion of reasons for null results on pp 42-43 of [the report], which you can find using a web search with "EEF Growth Mindset" as search terms. Did you anticipate the points raised there - and did the report consider the points you thought of? Note also how the researchers used a "implementation and process evaluation" that made it possible to evaluate different possible explanations (p. 29).
 
 ```{=html}
 <!-- other relevant example studies - could we devise an exercise on one of these?:

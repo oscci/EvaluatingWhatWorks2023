@@ -1,15 +1,22 @@
 # Drawbacks of the two-arm RCT {#drawbacks}
 
-```{r packages-14,echo=F,warning=F,message=F}
-#library(knitr)
-#library(kableExtra)
+```{r packages-15,echo=F,warning=F,message=F}
+
 library(ggplot2)
 library(forcats)
+library(tidyverse)
+library(knitr)
+library(kableExtra)
 
 #options(kableExtra.html.bsTable = T)
 ```
 
-`r knitr::include_graphics("images/logo_alone_new.png")`
+```{r addlogo,echo=F,warning=F,message=F}
+mylogo <- 0
+if(mylogo==1){
+knitr::include_graphics("images/logo_alone_new.png")
+}
+```
 
 **Learning objectives**: By the end of this chapter, you will be able to:
 
@@ -38,9 +45,7 @@ This is potentially a major drawback for RCTs - in the real world, "pure" cases 
 In the clinical RCT setting, the potential mismatch between "ideal" and "real-world" (or "in-practice") settings has been much discussed, with concerns expressed that an overwhelming focus on measures taken to ensure *internal validity* of trials, (i.e. factors such as randomization and masking to avoid biases), can compromise the *external validity* of trials - i.e. ability to generalize results from highly selected patient groups to clinical reality [@rothwell2005]. This has led to a distinction being drawn between explanatory trials (testing efficacy) or pragmatic trials (testing effectiveness). Typically in a clinical drug trial, the explanatory trial would be an earlier phase trial that tests for internal validity and the pragmatic trial would come later, using much larger samples of individuals and testing the external validity [@patsopoulos2011]. Singal and colleagues have summarized the notable differences between these trials [@singal2014]. Table \@ref(tab:diffeff), reproduced from Singal et al., (2014), presents the key differences as summary points.
 
 ```{r diffeff,include=T,echo=FALSE,message=FALSE,warning=FALSE,tab.cap="Efficacy vs Efficiency trials",out.width="75%"}
-library(tidyverse)
-library(knitr)
-library(kableExtra)
+
 
 options(kableExtra.html.bsTable = T)
 
@@ -54,7 +59,8 @@ dt <- as.data.frame(dt)
 colnames(dt) <- c(' ','Efficacy/Explanatory study',	'Effectiveness/Pragmatic study')
 
 knitr::kable(dt,escape = T, align = "c", booktabs = T, caption = 'Differences between efficacy and effectiveness studies') %>%
-   kable_styling(c("striped", "bordered"), latex_options = "striped", full_width = F)
+   kable_styling(c("striped", "bordered"), latex_options = "striped", full_width = F)%>%
+  column_spec(2:3,width = "13em")
 
 ```
 
@@ -72,8 +78,9 @@ Related to this point, it is worth noting a major reason for rejection of the te
 
 In a RCT we assess the average effect of the intervention observed in a study sample. Generally, the traditional RCT is not able to provide information on treatment effectiveness for specific individuals. Indeed, if the RCT has been randomized correctly, then the identification of individuals in intervention and control groups is not possible without breaking the blinding. Hence, we can only discuss results in terms of average difference or effect size at the group level. Yet we know that people can vary in their response to intervention, and for clinical purposes, we want to know whether this intervention is likely to work for this person.
 
-To illustrate this point, consider Figure \@ref(fig:interventionhet), which shows data from a public dataset on body weight in chicks given either a regular diet (Control) or a new diet (Intervention). Average weight over time of intervention and control groups is shown as solid black and dotted lines respectively. Individual chicks are plotted as separate coloured lines (red for control and blue for intervention), showing the variation in both groups around those averages.
+To illustrate this point, consider Figure \@ref(fig:interventionhet), which shows data from a public dataset on body weight in chicks given either a regular diet (Control) or a new diet (Intervention). Average weight over time of intervention and control groups is shown as solid black and dotted lines respectively. Individual chicks are plotted as separate coloured lines (red for control and blue for intervention), showing the variation in both groups around those averages.  
 
+\begin{center}
 ```{r interventionhet, echo=FALSE,message=FALSE,warning=FALSE,fig.cap="Data on body weight in chicks given a new diet (Intervention) or regular diet (Control). Average linear regression lines of intervention and controls group line is shown as solid black and dotted lines respectively.",out.width="75%"}
 
 makefig <- 0 # we preserve code to make figure for just historical reasons. NB this did not use ggplot and so can't use ggsave. Uses base R to make figure.
@@ -107,6 +114,7 @@ ggsave('images_bw/interventionhet.png',myg,scale = 1, width = 6, height = 4, uni
 }
 
 ```
+\end{center}
 
 This is rather far-removed from interventions used with humans, but it makes a useful point. The chicks are very homogeneous in terms of their genetic background and the environmental conditions, but nevertheless, we see quite wide variation in outcomes from chick to chick. Measurement error (poor test reliability, see Chapter \@ref(reliability)) is unlikely to explain much variation: measures of weight won't be perfectly reliable, but the differences between chicks are pretty stable across the different measurement times. So, it is clear that the birds vary in their response to the diet. Indeed, the chick with lowest weight at the final time point is from the intervention group, and some control chicks do better than the average chick in the intervention group.
 

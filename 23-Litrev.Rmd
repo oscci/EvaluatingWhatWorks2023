@@ -1,6 +1,11 @@
 # Reviewing the literature before you start {#litrev}
 
-`r knitr::include_graphics("images/logo_alone_new.png")`
+```{r addlogo,echo=F,warning=F,message=F}
+mylogo <- 0
+if(mylogo==1){
+knitr::include_graphics("images/logo_alone_new.png")
+}
+```
 
 **Learning objectives**: By the end of this chapter, you will be able to:
 
@@ -74,11 +79,11 @@ The next step is a screening process, which typically whittles down the list of 
 
 In a freestanding systematic review, it is customary to provide a flow chart documenting the numbers of papers considered at each stage. A template for a standard flow chart can be downloaded from the [PRISMA website](http://prisma-statement.org/prismastatement/flowdiagram.aspx).
 
-```{r prismachart, echo=F,fig.align="center", fig.cap="PRISMA flowchart from @dipper2020",out.width = "90%"}
+```{r prismachart, echo=F,fig.align="center", fig.cap="PRISMA flowchart from Dipper et al (2020)",out.width = "90%"}
 knitr::include_graphics("images/dipper2020fig.png")
 ```
 
-Figure \@ref(fig:prismachart) shows a completed flowchart for a study of intervention to improve discourse in patients with aphasia; the initial search found 334 records, but on further screening, only 25 of these met eligibility criteria. The need to screen considerably more articles than the final included set is one factor that makes systematic reviews so time-consuming. It may be possible to enlist students to help with screening. For those who are familiar with the computer language R, the [*metagear*](https://github.com/mjlajeunesse/) package in R is very useful for speeding up screening, by automating part of the process of extracting and evaluating abstracts for suitability.
+Figure \@ref(fig:prismachart) shows a completed flowchart for a study of intervention to improve discourse in patients with aphasia [@dipper2020]; the initial search found 334 records, but on further screening, only 25 of these met eligibility criteria. The need to screen considerably more articles than the final included set is one factor that makes systematic reviews so time-consuming. It may be possible to enlist students to help with screening. For those who are familiar with the computer language R, the [*metagear*](https://github.com/mjlajeunesse/) package in R is very useful for speeding up screening, by automating part of the process of extracting and evaluating abstracts for suitability.
 
 ### Assess the quality of each study included
 

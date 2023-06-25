@@ -1,6 +1,11 @@
 # Putting it all together {#final}
 
-`r knitr::include_graphics("images/logo_alone_new.png")`
+```{r addlogo,echo=F,warning=F,message=F}
+mylogo <- 0
+if(mylogo==1){
+knitr::include_graphics("images/logo_alone_new.png")
+}
+```
 
 In this chapter we provide a list of questions that can be used for for evaluating published studies, and which may also be useful when planning a new study.
 
