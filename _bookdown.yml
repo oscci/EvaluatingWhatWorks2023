@@ -26,7 +26,7 @@ rmd_files: ["index.Rmd",
 "22-Prereg.Rmd",
 "23-Litrev.Rmd",
 "24-Protocol.rmd",
-"25-Endmatter.rmd"
+"25-Comments.rmd"
 ]
 language:
   ui:
