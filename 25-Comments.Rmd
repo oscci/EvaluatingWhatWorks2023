@@ -1,4 +1,4 @@
-# References and resources {#endmatter}
+# Comments on exercises {#comments}
 
 ```{r addlogo,echo=F,warning=F,message=F}
 mylogo <- 0
@@ -7,9 +7,9 @@ knitr::include_graphics("images/logo_alone_new.png")
 }
 ```
 
-## Comments on the "Check your understanding" exercises
 
-### Chapter 1
+
+## Chapter 1
 
 1.  *We are measuring people's weight, but the scales are incorrectly calibrated, so the true measurement is always underestimated*
 
@@ -27,13 +27,13 @@ knitr::include_graphics("images/logo_alone_new.png")
 
     **Comment**: This method is likely to produce systematic bias, because the conditions are more likely to lead to correct performance in the follow-up session. This could give an artificially inflated estimate of the effectiveness of intervention. In general, it is advisable to keep testing conditions as similar as possible for baseline and outcome measures. Note, though, that even if we used identical procedures at baseline and outcome, we might still have systematic bias associated with to the passage of time, due to spontaneous recovery and greater familiarity with the naming task. This is considered further in Chapter \@ref(reliability).
 
-### Chapter 2
+## Chapter 2
 
 2.  *The two bars on the left show results obtained in an experimental study where assignment to surgery was done at random, whereas the bars on the right show results from an observational study of patients who were not included in a trial. What do these plots show, and how might it be explained?*
 
     **Comment**: In Chapter \@ref(RCT), we consider how a randomized trial aims to ensure we are comparing like with like, by assigning people to interventions at random, but there will be people who do not get included in the trial because they are unsuitable, or because they do not wish to take part, and their outcomes may be systematically different from those who take part in the trial. In this example, patients who are at high risk may not be invited to participate in a trial of surgery because they are too frail to undergo the operation. These people feature in the observational study on the right hand side of the plot, but are filtered out of the experimental trial as they do not meet criteria for inclusion.
 
-### Chapter 3
+## Chapter 3
 
 1.  *A simple way to measure children's language development is in term of utterance length. Roger Brown's [@brown1973] classic work showed that in young children Mean Length of Utterance in morphemes (MLU) is a pretty good indicator of a child's language level; this measure counts each part of speech (morpheme) as an element, as well as each word, so the utterance "he wants juice" has 4 morphemes (he + want + s + juice). Brown's findings have stood the test of time, when much larger samples have been assessed. Is this evidence of reliability, validity and/or sensitivity?*
 
@@ -57,7 +57,7 @@ knitr::include_graphics("images/logo_alone_new.png")
 
     **Comment**: The answer is no, because you only have information on the mean MLU at each age. To compute a standard score you would also need to know the standard deviation at each age.
 
-### Chapter 4
+## Chapter 4
 
 1.  *In their analysis of the original data on the Hawthorne effect, @levitt2011 found that output rose sharply on Mondays, regardless of whether artificial light was altered. Should we be concerned about possible effects of the day of the week or the time of day on intervention studies? For instance: Would it matter if all participants were given a baseline assessment on Monday and an outcome assessment on Friday? Or if those in the control group were tested in the afternoon, but those in the intervention group were tested in the morning?*
 
@@ -71,26 +71,26 @@ knitr::include_graphics("images/logo_alone_new.png")
 
     One point to note is that although the theory of change would predict that the amount of improvement in language will vary with the amount of improvement in self-regulation and environmental measures, if this is not found, we would need to consider whether the measures were sensitive and reliable enough to detect change - see Chapter \@ref(reliability).
 
-### Chapter 9
+## Chapter 9
 
 1.  *A study by Imhof et al. ([2023](file:///Users/dorothybishop/Rprojects/EvaluatingWhatWorks2023/_book/dropouts.html#ref-imhof2023)) evaluated a video-coaching intervention with parents of children involved in a Head Start Program in the USA. Read the methods of the study and consider what measures were taken to encourage families to participate. How successful were they? What impact is there on the study of: (a) failure to recruit sufficient families into the study, (b) drop-out by those who had been enrolled in the intervention?*
 
 **Comment**: Failure to recruit sufficient families will affect the statistical power of the study, which is a topic covered by Chapter \@ref(power). In brief, it means that the study may fail to detect genuine effects of the intervention unless they are large - subtle improvements might be missed. As discussed in the current chapter, missing data from drop-outs can be handled statistically, provided the data meet certain assumptions. In this study, the researchers did a statistical test to demonstrate that the data could be regarded as "Missing Completely At Random". They did not use imputation to handle the missing data, but used a method called Full Information Maximum Likelihood estimation, which is briefly described [here](https://www.missingdata.nl/missing-data/missing-data-methods/full-information-maximum-likelihood/).
 
-### Chapter 12
-1. *Figure \@ref(fig:boxploteg) shows data from a small intervention trial in the form of a boxplot. Check your understanding of the annotation in the top left of the plot. How can you interpret the p-value? What does the 95% CI refer to? Is the "mean.diff" value the same as shown in the plot?*  
+## Chapter 12
+1. *Figure \@ref(fig:boxeg) shows data from a small intervention trial in the form of a boxplot. Check your understanding of the annotation in the top left of the plot. How can you interpret the p-value? What does the 95% CI refer to? Is the "mean.diff" value the same as shown in the plot?*  
 **Comment**: To take the last question first, the "mean. diff" value of 9.11 is in fact slightly larger than the difference between the horizontal bars on the boxplot.  This is because boxplots typically show the median rather than the mean group value. There are a great many ways of representing summary information, and the boxplot is one popular format. If you are unfamiliar with boxplots or any other types of graph you encounter, we recommend googling for more information.  
 The first line of the annotation gives the standard output for a t-test, including the t-value, degrees of freedom and associated p-value. The 95% confidence interval expresses the uncertainty around the estimate of the mean difference. Note that with such a small sample, you get a very large confidence interval. The confidence interval spans zero, reflecting the fact that the p-value is greater than .05 and so does not reach the conventional level of statistical significance.
 
-### Chapter 13
+## Chapter 13
 1. *We have two studies of a spelling intervention, both using increased in number of words correct on a spelling test as the outcome measure. In both studies, two groups of 20 children were compared. In study A, the intervention group gained 10 words on average, with standard deviation of 2, and the control group gained 5 words, also with standard deviation of 2. In study B, the intervention group gained 15 words on average, with standard deviation of 5, and the control group gained 8 words with standard deviation of 5.  Which study provides stronger evidence of the effectiveness of the intervention?*  
 **Comment**: Although study B leads to a larger average gain in words correct, (15-8) = 7, the standard deviation is high. Study A has a smaller absolute gain, but with a much smaller standard deviation. We can convert the results to effect sizes, which shows that for study A, Cohen's *d* is (10-5)/2 = 2.5, whereas in study B, Cohen's *d* is (15-8)/5 = 1.4. So the evidence is stronger for study A. Having said that, in this fictitious example, both effect sizes are very large.  With real-life studies, we would typically get effect sizes in the range of .3 to .4. 
 
-### Chapter 14
+## Chapter 14
 1. *Type the phrase "did not survive Bonferroni correction" and "intervention" into a search engine to find a study that corrected for multiple corrections. Was the Bonferroni correction applied appropriately? Compare the account of the results in the Abstract and the Results section. Was the Bonferroni correction taken seriously?*
 **Comment**: In terms of whether the Bonferroni correction was appropriate, you can check two things. First, whether the alpha level was adjusted appropriately for the number of tests: that is usually correct, as it is a simple sum! The other question to consider is whether the correction was applied to correlated variables.  This is not an issue when the correction is applied to subgroups (e.g. males vs females) but it can affect findings when there are multiple measures on individuals. As explained in Chapter \@ref(phacking), if a set of measures is strongly intercorrelated, then the Bonferroni correction may be over-conservative - i.e. it may lead to a type II error, where a true effect gets missed. However, it is not always possible to judge whether this is the case, as authors may not report the intercorrelations between measures. Finally, it is not uncommon to find authors apply a Bonferroni correction and then fail to take it seriously: this is often evident when the Abstract refers only to the uncorrected statistics.  
 
-### Chapter 16
+## Chapter 16
 *Here are some characteristics of mediators and moderators. See if you can work out whether M refers to mediation or moderation.*  
 *1. In a M relationship, you can draw an arrow from intervention to M and then from M to the outcome.* **Mediation**  
 *2. M refers to the case when something acts upon the relationship between intevention and outcome, and changes its strength.* **Moderation**  
@@ -98,7 +98,7 @@ The first line of the annotation gives the standard output for a t-test, includi
 *4. Figure \@ref(fig:medmodfig) shows an intervention where both mediation and moderation are involved.*  
 **Comment**: M1 is moderator and M2 is mediator 
 
-### Chapter 19
+## Chapter 19
 1. *Re @calder2021 study: What could you conclude if:*
 
 *There was no difference between Groups 1 and 2 on past tense items at phase 4, with neither group showing any improvement over baseline?*  
@@ -111,7 +111,7 @@ The first line of the annotation gives the standard output for a t-test, includi
 *Is it realistic to consider a possible 'nocebo' effect during the extended waitlist for Group 2? Is there any way to check for this?*  
 **Comment**: It is possible that children may get bored at repeatedly being assessed, especially if they are not receiving any help to master the test items. If so, then their performance might actually deteriorate across the baseline period.  
 
-### Chapter 20
+## Chapter 20
 *1. Re Koutsoftas study: Consider the following questions about this study.*\
 *a. What kind of design is this?*\
 **Comment**: Multiple baseline across participants: comparison between 2 groups who are initially observed over a baseline period, and then have intervention introduced at different timepoints.  
@@ -128,10 +128,10 @@ The first line of the annotation gives the standard output for a t-test, includi
 **Comment**: This study illustrates how inclusion of control items that were not trained can add converging evidence to support the conclusion that an intervention is effective. The intervention effect was more pronounced for the trained items, and so cannot simply be attributed to practice or spontaneous improvement. 
 
 
-### Chapter 24
+## Chapter 24
 
 1.  *Read this preregistration of a study on Open Science Framework: <https://osf.io/ecswy>, and compare it with the article reporting results here: <https://link.springer.com/article/10.1007/s11121-022-01455-4>. Note any points where the report of the study diverges from the preregistration and consider why this might have happened. Do the changes from preregistration influence the conclusions you can draw from the study?*
 
 **Comment**: Compare your analysis with the evaluation of the study was posted on Pubpeer here: <https://pubpeer.com/publications/1AB6D8120F565F8660D2933A87AB87>.
 
-## References
+

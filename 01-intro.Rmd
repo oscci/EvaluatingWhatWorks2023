@@ -168,7 +168,7 @@ It isn't always as difficult as in our three examples. Some conditions are more 
 
 ## Check your understanding
 
-In the following examples, is there random error, systematic bias, or both? (For comments on these exercises see Chapter \@ref(endmatter)).
+In the following examples, is there random error, systematic bias, or both? (For comments on these exercises see Chapter \@ref(comments)).
 
 1.  We are measuring people's weight, but the scales are incorrectly calibrated, so the true measurement is always underestimated **(systematic \| random)**\
 2.  To get an index of social responsiveness, children's interactions with others are measured in the classroom. The researcher makes one observation per child, with different children assessed at different times of day during different activities **(systematic \| random)**\
