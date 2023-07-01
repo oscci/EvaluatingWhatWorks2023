@@ -11,7 +11,7 @@ In this chapter we provide a list of questions that can be used for for evaluati
 
 ## What is the conceptual model of the study?
 
-A good study will have a clearly articulated conceptual model, i.e., be able to state what it is that the intervention is trying to change (the dependent variable), what is being manipulated to bring about that change (the intervention), what is the presumed mechanism of change, and what is the expected time course of change [@horner2014]. The conceptual model is key to selecting an appropriate research design. If it is not explicitly stated, it should be possible to specify it from the study introduction and methods.
+A good study will have a clearly articulated conceptual model, i.e., be able to state what it is that the intervention is trying to change (the dependent variable), what is being manipulated to bring about that change (the intervention), what is the presumed mechanism of change, and what is the expected time course of change [@horner2014]. The conceptual model is key to selecting an appropriate research design. If it is not explicitly stated, it should be possible to specify it from the study introduction and methods. \index{conceptual model}
 
 ## What is being compared with what in this study?
 
@@ -25,31 +25,31 @@ Option C is sometimes used in single case designs. Our view is that it has poten
 
 ## How adequate are the outcome measures?
 
-Here we return to factors considered in Chapter \@ref(reliability); our impression is that many studies give insufficient attention to outcome measures, which need to be reliable, valid, sensitive, and practical; instead people tend to use measures that are available and that they are familiar with. There is a need for more systematic studies that compare the suitability of different outcome measures for intervention research, bearing in mind that measures that are useful for assessment and diagnosis may not be optimal as outcome measures.
+Here we return to factors considered in Chapter \@ref(reliability); our impression is that many studies give insufficient attention to outcome measures, which need to be reliable, valid, sensitive, and practical; instead people tend to use measures that are available and that they are familiar with. There is a need for more systematic studies that compare the suitability of different outcome measures for intervention research, bearing in mind that measures that are useful for assessment and diagnosis may not be optimal as outcome measures.\index{outcome measures}
 
 ## How adequate is the sample size?
 
-Unfortunately, many studies are simply too small to demonstrate intervention effects. Enthusiasm to show that an intervention works often propels people into doing studies that may involve considerable time, money and resources, yet are unlikely to show an effect, even if it is really there. If you read a report of an intervention that finds a null result, it is important to consider whether the statistical power was adequate (see Chapter \@ref(power)).
+Unfortunately, many studies are simply too small to demonstrate intervention effects. Enthusiasm to show that an intervention works often propels people into doing studies that may involve considerable time, money and resources, yet are unlikely to show an effect, even if it is really there. If you read a report of an intervention that finds a null result, it is important to consider whether the statistical power was adequate (see Chapter \@ref(power)).\index{sample size}
 
 ## Who took part in the study?
 
-As well as sample size, we need to consider whether study participants were representative of the population of interest. One cannot coerce people into taking part, and there will always be a degree of self-selection bias, but it should be possible to tell from background measures and demographic information how representative the sample is of the general population. In addition, the report of the study should document how many drop-outs there were, and how this was handled (see Chapter \@ref(dropouts)).
+As well as sample size, we need to consider whether study participants were representative of the population of interest. One cannot coerce people into taking part, and there will always be a degree of self-selection bias, but it should be possible to tell from background measures and demographic information how representative the sample is of the general population. In addition, the report of the study should document how many drop-outs there were, and how this was handled (see Chapter \@ref(dropouts)).\index{dropouts}
 
 ## Was there adequate control for bias?
 
-Here one wants to know whether steps were taken to avoid biases that might arise if experimenters have a strong desire for intervention to be effective, which might influence the outcome measures or the write-up of the study. Was selection to intervention/control groups randomized? Could subjective judgements by experimenters have affected the results? Is any conflict of interest declared?
+Here one wants to know whether steps were taken to avoid biases that might arise if experimenters have a strong desire for intervention to be effective, which might influence the outcome measures or the write-up of the study. Was selection to intervention/control groups randomized? Could subjective judgements by experimenters have affected the results? Is any conflict of interest declared?\index{bias!controlling for}
 
 ## Was the study pre-registered?
 
-As we discussed in Chapter \@ref(prereg), study registration is widely used in clinical medicine as a method to reduce analytic flexibility that can give misleading results ((see Chapter \@ref(phacking)). However, we know that, even when a study is preregistered, researchers may depart from the analytic plan, and so it can be illuminating to compare the registration with the published paper.
+As we discussed in Chapter \@ref(prereg), study registration is widely used in clinical medicine as a method to reduce analytic flexibility that can give misleading results ((see Chapter \@ref(phacking)). However, we know that, even when a study is preregistered, researchers may depart from the analytic plan, and so it can be illuminating to compare the registration with the published paper.\index{registration!pre-registration}
 
 ## Was the data appropriately analysed?
 
-We have not gone into detail regarding technical aspects of data analysis, and there are plenty of useful texts that cover this ground. Even without detailed statistical knowledge, one can ask whether there is evidence of p-hacking (selectively reporting only those results that are 'significant'), and whether the presentation of the results is clear. Studies that simply report tables of regression coefficients and/or p-values are not very useful for the clinician, who will want to have a more concrete idea of how much change might be associated with an intervention, in order to judge whether it is cost-effective.
+We have not gone into detail regarding technical aspects of data analysis, and there are plenty of useful texts that cover this ground. Even without detailed statistical knowledge, one can ask whether there is evidence of p-hacking (selectively reporting only those results that are 'significant'), and whether the presentation of the results is clear. Studies that simply report tables of regression coefficients and/or p-values are not very useful for the clinician, who will want to have a more concrete idea of how much change might be associated with an intervention, in order to judge whether it is cost-effective.\index{p-hacking}
 
 ## Is the data openly available?
 
-Open data, like preregistration, doesn't guarantee high quality research, but it is a sign that the researchers are aware of the important of open, reproducible practices, and it provides an opportunity for others to check results and/or incorporate them in a meta-analysis.
+Open data, like preregistration, doesn't guarantee high quality research, but it is a sign that the researchers are aware of the important of open, reproducible practices, and it provides an opportunity for others to check results and/or incorporate them in a meta-analysis.\index{open data}
 
 ## How do the results of this study compare with others in the literature?
 
