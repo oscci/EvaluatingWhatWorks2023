@@ -129,8 +129,8 @@ dev.off()
 
 Figure \@ref(fig:pirateRCT) shows results on letter-sound coding after one group had received the intervention. This test had also been administered at baseline, but we will focus first just on the outcome results.\index{visualization of data}\index{pirate plot}
 
-Raw data \index{data!raw}should always be inspected prior to any data analysis, in order to just check that the distribution of scores looks sensible. One hears of horror stories where, for instance, an error code of 999 got included in an analysis, distorting all the statistics. Or where an outcome score was entered as 10 rather than 100. Visualising the data is useful when checking whether the results are in the right numerical range for the particular outcome measure. The [pirate plot](https://www.psychologicalscience.org/observer/yarrr-the-pirates-guide-to-r) is a useful way of showing means and distributions as well as individual data points.\index{data!visualization}
-
+Raw data \index{data!raw}should always be inspected prior to any data analysis, in order to just check that the distribution of scores looks sensible. One hears of horror stories where, for instance, an error code of 999 got included in an analysis, distorting all the statistics. Or where an outcome score was entered as 10 rather than 100. Visualizing the data is useful when checking whether the results are in the right numerical range for the particular outcome measure. There are many different ways of visualizing data: it is best to use one that shows the distribution of data, and even individual data points if the sample is not too big. @zhang2022 showed that the traditional way of presenting only means and error bars in figures can be misleading, and leads people to overestimate group differences.
+A pirate plot such as that in \@ref(fig:pirateRCT) is one useful way of showing means and distributions as well as individual data points [@phillips2017].\index{data!visualization} 
 A related step is to check whether the distribution of the data meets the assumptions of the proposed statistical analysis. Many common statistical procedures assume that data are normally distributed on an interval scale (see Chapter \@ref(reliability)). Statistical approaches to checking of assumptions are beyond the scope of this book, but there are good sources of information on the web, such as [this website](http://www.sthda.com/english/articles/39-regression-model-diagnostics/161-linear-regression-assumptions-and-diagnostics-in-r-essentials/) for linear regression. But just eyeballing the data is useful, and can detect obvious cases of non-normality, cases of ceiling or floor effects, or "clumpy" data, where only certain values are possible. Data with these features may need special treatment and it is worth consulting a statistician if they apply to your data. For the data in Figure \@ref(fig:pirateRCT), although neither distribution has an classically normal distribution, we do not see major problems with ceiling or floor effects, and there is a reasonable spread of scores in both groups.\index{non-normal data}\index{data!non-normal}
 <!-- maybe add a figure showing egs of nonnormal distribution, ceiling effect, clumpy data-->
 
@@ -175,8 +175,8 @@ While this had some advantages over reliance on raw outcome measures, it also ha
 
 Rather than taking difference scores, it is preferable to analyse differences in outcome measures after making a statistical adjustment that takes into account the initial baseline scores, using a method known as analysis of covariance or ANCOVA. In practice, this method usually gives results that are similar to those you would obtain from an analysis of difference scores, but the precision is greater, making it easier to detect a true effect. However, the data do need to meet certain assumptions of the method. This [website](https://www.datanovia.com/en/lessons/ancova-in-r/) walks through the steps for performing an ANCOVA in R, starting with a plot to check that there is a linear relationship between pretest vs posttest scores in both groups - i.e. the points cluster around a straight line, as shown in Figure \@ref(fig:ds-prepost).\index{analysis!analysis of variance}\index{analysis!analysis of covariance}
 
-\begin{center}
-```{r ds-prepost,echo=F,fig.cap='Baseline vs outcome scores in the Down syndrome data',warning=F,message=F,out.width="70%"}
+
+```{r ds-prepost,echo=F,fig.cap='Baseline vs outcome scores in the Down syndrome data',warning=F,message=F,out.width="80%"}
 makefig <- 0 # we preserve code to make figure for just historical reasons. NB this did not use ggplot and so can't use ggsave. Uses base R to make figure.
 
 if(makefig==0){
@@ -194,7 +194,7 @@ ggscatter(
   ggsave('images_bw/ds-prepost.png',scale = 1, width = 6, height = 4, units = c("in"), dpi = 300)
 }
 ```
-\end{center}
+
 
 Inspection of the plot confirms that the relationship between pretest and outcome looks reasonably linear in both groups. Note that it also shows that there are rather more children with very low scores at pretest in the control group. This is just a chance finding - the kind of thing that can easily happen when you have relatively small numbers of children randomly assigned to groups.
 

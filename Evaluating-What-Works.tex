@@ -286,7 +286,7 @@ It isn't always as difficult as in our three examples. Some conditions are more 
 \hypertarget{check-your-understanding}{%
 \section{Check your understanding}\label{check-your-understanding}}
 
-In the following examples, is there random error, systematic bias, or both? (For comments on these exercises see Chapter \ref{endmatter}).
+In the following examples, is there random error, systematic bias, or both? (For comments on these exercises see Chapter \ref{comments}).
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1527,7 +1527,8 @@ To illustrate data analysis, we will use a real dataset that can be retrieved fr
 
 Figure \ref{fig:pirateRCT} shows results on letter-sound coding after one group had received the intervention. This test had also been administered at baseline, but we will focus first just on the outcome results.\index{visualization of data}\index{pirate plot}
 
-Raw data \index{data!raw}should always be inspected prior to any data analysis, in order to just check that the distribution of scores looks sensible. One hears of horror stories where, for instance, an error code of 999 got included in an analysis, distorting all the statistics. Or where an outcome score was entered as 10 rather than 100. Visualising the data is useful when checking whether the results are in the right numerical range for the particular outcome measure. The \href{https://www.psychologicalscience.org/observer/yarrr-the-pirates-guide-to-r}{pirate plot} is a useful way of showing means and distributions as well as individual data points.\index{data!visualization}
+Raw data \index{data!raw}should always be inspected prior to any data analysis, in order to just check that the distribution of scores looks sensible. One hears of horror stories where, for instance, an error code of 999 got included in an analysis, distorting all the statistics. Or where an outcome score was entered as 10 rather than 100. Visualizing the data is useful when checking whether the results are in the right numerical range for the particular outcome measure. There are many different ways of visualizing data: it is best to use one that shows the distribution of data, and even individual data points if the sample is not too big. Zhang et al. (\protect\hyperlink{ref-zhang2022}{2022}). showed that the traditional way of presenting only means and error bars in figures can be misleading, and leads people to overestimate group differences.
+A pirate plot such as that in \ref{fig:pirateRCT} is one useful way of showing means and distributions as well as individual data points (\protect\hyperlink{ref-phillips2017}{Phillips, 2017}).\index{data!visualization}
 
 A related step is to check whether the distribution of the data meets the assumptions of the proposed statistical analysis. Many common statistical procedures assume that data are normally distributed on an interval scale (see Chapter \ref{reliability}). Statistical approaches to checking of assumptions are beyond the scope of this book, but there are good sources of information on the web, such as \href{http://www.sthda.com/english/articles/39-regression-model-diagnostics/161-linear-regression-assumptions-and-diagnostics-in-r-essentials/}{this website} for linear regression. But just eyeballing the data is useful, and can detect obvious cases of non-normality, cases of ceiling or floor effects, or ``clumpy'' data, where only certain values are possible. Data with these features may need special treatment and it is worth consulting a statistician if they apply to your data. For the data in Figure \ref{fig:pirateRCT}, although neither distribution has an classically normal distribution, we do not see major problems with ceiling or floor effects, and there is a reasonable spread of scores in both groups.\index{non-normal data}\index{data!non-normal}
 
@@ -1577,11 +1578,11 @@ While this had some advantages over reliance on raw outcome measures, it also ha
 
 Rather than taking difference scores, it is preferable to analyse differences in outcome measures after making a statistical adjustment that takes into account the initial baseline scores, using a method known as analysis of covariance or ANCOVA. In practice, this method usually gives results that are similar to those you would obtain from an analysis of difference scores, but the precision is greater, making it easier to detect a true effect. However, the data do need to meet certain assumptions of the method. This \href{https://www.datanovia.com/en/lessons/ancova-in-r/}{website} walks through the steps for performing an ANCOVA in R, starting with a plot to check that there is a linear relationship between pretest vs posttest scores in both groups - i.e.~the points cluster around a straight line, as shown in Figure \ref{fig:ds-prepost}.\index{analysis!analysis of variance}\index{analysis!analysis of covariance}
 
-\begin{center}
+
 \begin{figure}
-\includegraphics[width=0.7\linewidth]{images_bw/ds-prepost} \caption{Baseline vs outcome scores in the Down syndrome data}\label{fig:ds-prepost}
+\includegraphics[width=0.8\linewidth]{images_bw/ds-prepost} \caption{Baseline vs outcome scores in the Down syndrome data}\label{fig:ds-prepost}
 \end{figure}
-\end{center}
+
 
 Inspection of the plot confirms that the relationship between pretest and outcome looks reasonably linear in both groups. Note that it also shows that there are rather more children with very low scores at pretest in the control group. This is just a chance finding - the kind of thing that can easily happen when you have relatively small numbers of children randomly assigned to groups.
 
@@ -1715,7 +1716,7 @@ How could we know the real truth of just how much weight loss is associated with
 
 The \emph{standardized effect size} \index{effect size} is a way of describing the difference between groups that takes into account the standard deviation. There are various ways of measuring this: a simple measure is \textbf{Cohen's \emph{d}}, which is the difference between groups measured in \textbf{standard deviation} units. Cohen's \emph{d} is computed by dividing the mean difference between groups by the pooled standard deviation. \index{Cohen's d}For conditions A, B and C in Figure \ref{fig:demo-variation}, Cohen's \emph{d} is .4, .8 and 1.5, respectively.
 
-If we know what Cohen's \emph{d} is, this gives us a sense of how much overlap there is between groups. Figure \ref{fig:effsizefig} shows the relationship between Cohen's \emph{d} and overlap between groups as density plots, \index{density plot}where the height of the distribution represents the frequency of individuals with that score: the larger the effect size, the less the overlap. It can be sobering to note that for most effective educational and therapeutic interventions, effect sizes are typically no more than .3 or .4. \index{effect size!overlap of distributions}Thus there is a lot of overlap, and in effect we have to pick out a meaningful signal - an intervention effect - from a very noisy background.
+If we know what Cohen's \emph{d} is, this gives us a sense of how much overlap there is between groups. Figure \ref{fig:effsizefig} shows the relationship between Cohen's \emph{d} and overlap between groups as density plots, \index{density plot}where the height of the distribution represents the frequency of individuals with that score: the larger the effect size, the less the overlap. It can be sobering to note that for most effective educational and therapeutic interventions, effect sizes are seldom greater than .3 or .4 (\protect\hyperlink{ref-kraft2023}{Kraft, 2023}) \index{effect size!overlap of distributions}Thus there is a lot of overlap, and in effect we have to pick out a meaningful signal - an intervention effect - from a very noisy background.
 
 \begin{figure}
 \includegraphics[width=1\linewidth]{images_bw/densityplot} \caption{Overlap in distributions of scores of two groups for different effect sizes (Cohen's d)}\label{fig:effsizefig}
@@ -3007,7 +3008,7 @@ For the typical literature review in the field of speech and language therapy, t
 
 As we have seen, there are critical differences between a formal systematic review that follows Cochrane methods and a literature review. A well-executed systematic review is considered to be one of the most reliable sources of evidence beyond the RCT and is specific to a particular research question. It will often incorporate a meta-analytic procedure, and the end result will be a stand-alone publication.
 
-Traditionally, the literature review that is included in the introduction to a research article is less structured and focuses on qualitative appraisal of either a general topic or specific question in the literature. Systematic reviews have tended to be seen as quite separate from more traditional literature reviews, because of the rigorous set of procedures that must be followed, but we have argued here that it is possible to use insights from systematic review methods, even if we do not intend to follow all the criteria that are required for that approach, as this will improve the rigour of the review and help avoid the kind of citation bias that pervades most fields.\index\{narrative review\}
+Traditionally, the literature review that is included in the introduction to a research article is less structured and focuses on qualitative appraisal of either a general topic or specific question in the literature. Systematic reviews have tended to be seen as quite separate from more traditional literature reviews, because of the rigorous set of procedures that must be followed, but we have argued here that it is possible to use insights from systematic review methods, even if we do not intend to follow all the criteria that are required for that approach, as this will improve the rigour of the review and help avoid the kind of citation bias that pervades most fields.\index{narrative review}
 
 When writing up a literature review, the key thing is to be aware of a natural tendency to do two things, which map rather well onto our earlier discussions of random and systematic bias. Random bias, or noise, gets into a literature review when researchers are simply unscholarly and sloppy. We are all very busy and it is tempting to just read the Abstract of a paper rather than wade through the whole article. This is dangerous, because Abstracts often are selective in presenting the ``best face'' of the results, rather than the whole picture. Learning to do a good quality evaluation of a paper is an important skill for any researcher.\index{bias!in literature review}
 
@@ -3088,14 +3089,12 @@ We have emphasized that a single study is never conclusive. One needs to combine
 
 We hope that the material in this book will give readers confidence to scrutinize the intervention literature in this way, and appreciate that it is possible to evaluate important aspects of a study without requiring advanced skills in statistics. Evaluating what works is a key skill for anyone who delivers interventions, so that the most effective approaches can be identified, and future studies can be planned to be rigorous and informative.
 
-\hypertarget{endmatter}{%
-\chapter{References and resources}\label{endmatter}}
+\hypertarget{comments}{%
+\chapter{Comments on exercises}\label{comments}}
 
-\hypertarget{comments-on-the-check-your-understanding-exercises}{%
-\section{Comments on the ``Check your understanding'' exercises}\label{comments-on-the-check-your-understanding-exercises}}
 
 \hypertarget{chapter-1}{%
-\subsection{Chapter 1}\label{chapter-1}}
+\section{Chapter 1}\label{chapter-1}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -3118,7 +3117,7 @@ We hope that the material in this book will give readers confidence to scrutiniz
 \end{enumerate}
 
 \hypertarget{chapter-2}{%
-\subsection{Chapter 2}\label{chapter-2}}
+\section{Chapter 2}\label{chapter-2}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -3130,7 +3129,7 @@ We hope that the material in this book will give readers confidence to scrutiniz
 \end{enumerate}
 
 \hypertarget{chapter-3}{%
-\subsection{Chapter 3}\label{chapter-3}}
+\section{Chapter 3}\label{chapter-3}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -3164,7 +3163,7 @@ We hope that the material in this book will give readers confidence to scrutiniz
 \end{enumerate}
 
 \hypertarget{chapter-4}{%
-\subsection{Chapter 4}\label{chapter-4}}
+\section{Chapter 4}\label{chapter-4}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -3192,7 +3191,7 @@ One point to note is that although the theory of change would predict that the a
 \end{verbatim}
 
 \hypertarget{chapter-9}{%
-\subsection{Chapter 9}\label{chapter-9}}
+\section{Chapter 9}\label{chapter-9}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -3204,19 +3203,20 @@ One point to note is that although the theory of change would predict that the a
 \textbf{Comment}: Failure to recruit sufficient families will affect the statistical power of the study, which is a topic covered by Chapter \ref{power}. In brief, it means that the study may fail to detect genuine effects of the intervention unless they are large - subtle improvements might be missed. As discussed in the current chapter, missing data from drop-outs can be handled statistically, provided the data meet certain assumptions. In this study, the researchers did a statistical test to demonstrate that the data could be regarded as ``Missing Completely At Random''. They did not use imputation to handle the missing data, but used a method called Full Information Maximum Likelihood estimation, which is briefly described \href{https://www.missingdata.nl/missing-data/missing-data-methods/full-information-maximum-likelihood/}{here}.
 
 \hypertarget{chapter-12}{%
-\subsection{Chapter 12}\label{chapter-12}}
+\section{Chapter 12}\label{chapter-12}}
+
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  \emph{Figure \ref{fig:boxploteg} shows data from a small intervention trial in the form of a boxplot. Check your understanding of the annotation in the top left of the plot. How can you interpret the p-value? What does the 95\% CI refer to? Is the ``mean.diff'' value the same as shown in the plot?}\\
+  \emph{Figure \ref{fig:boxeg} shows data from a small intervention trial in the form of a boxplot. Check your understanding of the annotation in the top left of the plot. How can you interpret the p-value? What does the 95\% CI refer to? Is the ``mean.diff'' value the same as shown in the plot?}\\
   \textbf{Comment}: To take the last question first, the ``mean. diff'' value of 9.11 is in fact slightly larger than the difference between the horizontal bars on the boxplot. This is because boxplots typically show the median rather than the mean group value. There are a great many ways of representing summary information, and the boxplot is one popular format. If you are unfamiliar with boxplots or any other types of graph you encounter, we recommend googling for more information.\\
   The first line of the annotation gives the standard output for a t-test, including the t-value, degrees of freedom and associated p-value. The 95\% confidence interval expresses the uncertainty around the estimate of the mean difference. Note that with such a small sample, you get a very large confidence interval. The confidence interval spans zero, reflecting the fact that the p-value is greater than .05 and so does not reach the conventional level of statistical significance.
 \end{enumerate}
 
 \hypertarget{chapter-13}{%
-\subsection{Chapter 13}\label{chapter-13}}
+\section{Chapter 13}\label{chapter-13}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -3227,7 +3227,7 @@ One point to note is that although the theory of change would predict that the a
 \end{enumerate}
 
 \hypertarget{chapter-14}{%
-\subsection{Chapter 14}\label{chapter-14}}
+\section{Chapter 14}\label{chapter-14}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -3238,7 +3238,7 @@ One point to note is that although the theory of change would predict that the a
 \end{enumerate}
 
 \hypertarget{chapter-16}{%
-\subsection{Chapter 16}\label{chapter-16}}
+\section{Chapter 16}\label{chapter-16}}
 
 \emph{Here are some characteristics of mediators and moderators. See if you can work out whether M refers to mediation or moderation.}\\
 \emph{1. In a M relationship, you can draw an arrow from intervention to M and then from M to the outcome.} \textbf{Mediation}\\
@@ -3248,7 +3248,7 @@ One point to note is that although the theory of change would predict that the a
 \textbf{Comment}: M1 is moderator and M2 is mediator
 
 \hypertarget{chapter-19}{%
-\subsection{Chapter 19}\label{chapter-19}}
+\section{Chapter 19}\label{chapter-19}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -3268,7 +3268,7 @@ One point to note is that although the theory of change would predict that the a
 \textbf{Comment}: It is possible that children may get bored at repeatedly being assessed, especially if they are not receiving any help to master the test items. If so, then their performance might actually deteriorate across the baseline period.
 
 \hypertarget{chapter-20}{%
-\subsection{Chapter 20}\label{chapter-20}}
+\section{Chapter 20}\label{chapter-20}}
 
 \emph{1. Re Koutsoftas study: Consider the following questions about this study.}\\
 \emph{a. What kind of design is this?}\\
@@ -3286,7 +3286,7 @@ One point to note is that although the theory of change would predict that the a
 \textbf{Comment}: This study illustrates how inclusion of control items that were not trained can add converging evidence to support the conclusion that an intervention is effective. The intervention effect was more pronounced for the trained items, and so cannot simply be attributed to practice or spontaneous improvement.
 
 \hypertarget{chapter-24}{%
-\subsection{Chapter 24}\label{chapter-24}}
+\section{Chapter 24}\label{chapter-24}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -3297,8 +3297,9 @@ One point to note is that although the theory of change would predict that the a
 
 \textbf{Comment}: Compare your analysis with the evaluation of the study was posted on Pubpeer here: \url{https://pubpeer.com/publications/1AB6D8120F565F8660D2933A87AB87}.
 
-\hypertarget{references}{%
-\section{References}\label{references}}[t]
+
+\hypertarget{endmatter}{%
+\chapter{References and resources}\label{endmatter}}
 
 \hypertarget{refs}{}
 \begin{CSLReferences}{1}{0}
@@ -3363,7 +3364,7 @@ Bull, L. (2007). Sunflower therapy for children with specific learning difficult
 Burgoyne, K., Duff, F. J., Clarke, P. J., Buckley, S., Snowling, M. J., \& Hulme, C. (2012). Efficacy of a reading and language intervention for children with {Down} syndrome: A randomized controlled trial. \emph{Journal of Child Psychology and Psychiatry, and Allied Disciplines}, \emph{53}(10), 1044--1053. \url{https://doi.org/10.1111/j.1469-7610.2012.02557.x}
 
 \leavevmode\vadjust pre{\hypertarget{ref-burgoyne2016}{}}%
-Burgoyne, K., Duff, F. J., Clarke, P. J., Buckley, S., Snowling, M. J., \& Hulme, C. (2016). \emph{Reading and language intervention for children with {Down} syndrome: {Experimental} data {[}data collection{]}}.
+Burgoyne, K., Duff, F. J., Clarke, P. J., Buckley, S., Snowling, M. J., \& Hulme, C. (2016). \emph{Reading and language intervention for children with {Down} syndrome: {Experimental} data {[}data collection{]} UK Data Service. SN: 852291}. \url{https://doi.org/10.5255/UKDA-SN-852291.x}
 
 \leavevmode\vadjust pre{\hypertarget{ref-burgoyne2018}{}}%
 Burgoyne, K., Gardner, R., Whiteley, H., Snowling, M. J., \& Hulme, C. (2018). Evaluation of a parent-delivered early language enrichment programme: Evidence from a randomised controlled trial. \emph{Journal of Child Psychology and Psychiatry, and Allied Disciplines}, \emph{59}(5), 545--555. \url{https://doi.org/10.1111/jcpp.12819}
@@ -3489,7 +3490,7 @@ Huang, F. L. (2018). Using instrumental variable estimation to evaluate randomiz
 Hulme, C., Bowyer-Crane, C., Carroll, J. M., Duff, F. J., \& Snowling, M. J. (2012). The causal role of phoneme awareness and letter-sound knowledge in learning to read: Combining intervention studies with mediation analyses. \emph{Psychological Science}, \emph{23}(6), 572--577. \url{https://doi.org/10.1177/0956797611435921}
 
 \leavevmode\vadjust pre{\hypertarget{ref-huntington-klein}{}}%
-Huntington-Klein, N. (n.d.). \emph{The effect: An introduction to research design and causality}. {CRC Press}.
+Huntington-Klein, N. (2023). \emph{The effect: An introduction to research design and causality}. {CRC Press}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-imhof2023}{}}%
 Imhof, A., Liu, S., Schlueter, L., Phu, T., Watamura, S., \& Fisher, P. (2023). Improving children's expressive language and auditory comprehension through responsive caregiving: Evidence from a randomized controlled trial of a strength-based video-coaching intervention. \emph{Prevention Science}, \emph{24}(1), 84--93. \url{https://doi.org/10.1007/s11121-022-01455-4}
@@ -3498,7 +3499,7 @@ Imhof, A., Liu, S., Schlueter, L., Phu, T., Watamura, S., \& Fisher, P. (2023). 
 Jussim, L., \& Harber, K. D. (2005). Teacher expectations and self-fulfilling prophecies: Knowns and unknowns, resolved and unresolved controversies. \emph{Personality and Social Psychology Review}, \emph{9}(2), 131--155. \url{https://doi.org/10.1207/s15327957pspr0902_3}
 
 \leavevmode\vadjust pre{\hypertarget{ref-kerr1998}{}}%
-Kerr, N. L. (1998). {HARKing}: Hypothesizing after the results are known. \emph{Personality and Social Psychology Review: An Official Journal of the Society for Personality and Social Psychology, Inc}, \emph{2}(3), 196--217. \url{https://doi.org/10.1207/s15327957pspr0203_4}
+Kerr, N. L. (1998). {HARKing}: Hypothesizing after the results are known. \emph{Personality and Social Psychology Review}, \emph{2}(3), 196--217. \url{https://doi.org/10.1207/s15327957pspr0203_4}
 
 \leavevmode\vadjust pre{\hypertarget{ref-koutsoftas2009}{}}%
 Koutsoftas, A. D., Harmon, M. T., \& Gray, S. (2009). The effect of {Tier} 2 intervention for phonemic awareness in a response-to-intervention model in low-income preschool classrooms. \emph{Language, Speech, and Hearing Services in Schools}, \emph{40}(2), 116--130. \url{https://doi.org/10.1044/0161-1461(2008/07-0101)}
@@ -3516,7 +3517,7 @@ Kratochwill, T. R., \& Levin, J. R. (Eds.). (2014). \emph{Single-case interventi
 Kratochwill, T. R., Levin, J. R., Horner, R. H., \& Swoboda, C. M. (2014). Visual analysis of single-case intervention research: {Conceptual} and methodological issues. In T. R. Kratochwill \& J. R. Levin (Eds.), \emph{Single-case intervention research: {Methodological} and statistical advances} (pp. 91--125). {American Psychological Association}. \url{https://doi.org/10.1037/14376-004}
 
 \leavevmode\vadjust pre{\hypertarget{ref-lajeunesse2016}{}}%
-Lajeunesse, M. J. (2016). Facilitating systematic reviews, data extraction, and meta-analysis with the metagear package for r. \emph{Methods in Ecology and Evolution}, \emph{7}, 323--330.
+Lajeunesse, M. J. (2016). Facilitating systematic reviews, data extraction, and meta-analysis with the metagear package for R. \emph{Methods in Ecology and Evolution}, \emph{7}, 323--330.
 
 \leavevmode\vadjust pre{\hypertarget{ref-lakens2021}{}}%
 Lakens, D. (2021). \emph{Sample {Size Justification}}. {PsyArXiv}. \url{https://doi.org/10.31234/osf.io/9d3yf}
@@ -3561,7 +3562,7 @@ McGillion, M., Pine, J. M., Herbert, J. S., \& Matthews, D. (2017). A randomised
 Mirza, R., Punja, S., Vohra, S., \& Guyatt, G. (2017). The history and development of {N-of-1} trials. \emph{Journal of the Royal Society of Medicine}, \emph{110}(8), 330--340. \url{https://doi.org/10.1177/0141076817721131}
 
 \leavevmode\vadjust pre{\hypertarget{ref-moher2010}{}}%
-Moher, D., Hopewell, S., Schulz, K. F., Montori, V., Gøtzsche, P. C., Devereaux, P. J., Elbourne, D., Egger, M., \& Altman, D. G. (2010). {CONSORT} 2010 explanation and elaboration: Updated guidelines for reporting parallel group randomised trials. \emph{BMJ (Clinical Research Ed.)}, \emph{340}, c869. \url{https://doi.org/10.1136/bmj.c869}
+Moher, D., Hopewell, S., Schulz, K. F., Montori, V., Gøtzsche, P. C., Devereaux, P. J., Elbourne, D., Egger, M., \& Altman, D. G. (2010). {CONSORT} 2010 explanation and elaboration: Updated guidelines for reporting parallel group randomised trials. \emph{British Medical Journal (Clinical Research Ed.)}, \emph{340}, c869. \url{https://doi.org/10.1136/bmj.c869}
 
 \leavevmode\vadjust pre{\hypertarget{ref-morris2007}{}}%
 Morris, D., Fraser, S., \& Wormald, R. (2007). Masking is better than blinding. \emph{BMJ}, \emph{334}(7597), 799--799. \url{https://doi.org/10.1136/bmj.39175.503299.94}
@@ -3583,6 +3584,10 @@ Patsopoulos, N. A. (2011). \href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC31
 
 \leavevmode\vadjust pre{\hypertarget{ref-perdices2009}{}}%
 Perdices, M., \& Tate, R. L. (2009). Single-subject designs as a tool for evidence-based clinical practice: {Are} they unrecognised and undervalued? \emph{Neuropsychological Rehabilitation}, \emph{19}(6), 904--927. \url{https://doi.org/10.1080/09602010903040691}
+
+\leavevmode\vadjust pre{\hypertarget{ref-phillips2017}{}}%
+Phillips, N. (2017). yarrr: A Companion to the e-Book ‘YaRrr!: The Pirate’s Guide to R’ (0.1.5). \url{https://cran.r-project.org/web/packages/yarrr/index.html}
+
 
 \leavevmode\vadjust pre{\hypertarget{ref-pocock1975}{}}%
 Pocock, S. J., \& Simon, R. (1975). \href{https://www.ncbi.nlm.nih.gov/pubmed/1100130}{Sequential treatment assignment with balancing for prognostic factors in the controlled clinical trial}. \emph{Biometrics}, \emph{31}(1), 103--115.
@@ -3633,7 +3638,7 @@ Scott, N. W., McPherson, G. C., Ramsay, C. R., \& Campbell, M. K. (2002). The me
 Senn, S. (2018). Statistical pitfalls of personalized medicine. \emph{Nature}, \emph{563}(7733), 619--621. \url{https://doi.org/10.1038/d41586-018-07535-2}
 
 \leavevmode\vadjust pre{\hypertarget{ref-sibbald1998}{}}%
-Sibbald, B., \& Roberts, C. (1998). \href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1113275}{Understanding controlled trials {Crossover} trials}. \emph{BMJ : British Medical Journal}, \emph{316}(7146), 1719--1720.
+Sibbald, B., \& Roberts, C. (1998). \href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1113275}{Understanding controlled trials {Crossover} trials}. \emph{British Medical Journal}, \emph{316}(7146), 1719--1720.
 
 \leavevmode\vadjust pre{\hypertarget{ref-simmons2011}{}}%
 Simmons, J. P., Nelson, L. D., \& Simonsohn, U. (2011). False-positive psychology: {Undisclosed} flexibility in data collection and analysis allows presenting anything as significant. \emph{Psychological Science}, \emph{22}(11), 1359--1366. \url{https://doi.org/10.1177/0956797611417632}
@@ -3654,7 +3659,7 @@ Swain, N. R., Eadie, P. A., \& Snow, P. C. (2020). Speech and language therapy f
 Tate, R. L., Perdices, M., Rosenkoetter, U., Shadish, W., Vohra, S., Barlow, D. H., Horner, R., Kazdin, A., Kratochwill, T., McDonald, S., Sampson, M., Shamseer, L., Togher, L., Albin, R., Backman, C., Douglas, J., Evans, J. J., Gast, D., Manolov, R., \ldots{} Wilson, B. (2016). The single-case reporting guideline {In} behavioural interventions ({SCRIBE}) 2016 {Statement}. \emph{Physical Therapy}, \emph{96}(7), e1--e10. \url{https://doi.org/10.2522/ptj.2016.96.7.e1}
 
 \leavevmode\vadjust pre{\hypertarget{ref-thorlund2018}{}}%
-Thorlund, K., Haggstrom, J., Park, J. J., \& Mills, E. J. (2018). Key design considerations for adaptive clinical trials: A primer for clinicians. \emph{BMJ}, \emph{360}, k698. \url{https://doi.org/10.1136/bmj.k698}
+Thorlund, K., Haggstrom, J., Park, J. J., \& Mills, E. J. (2018). Key design considerations for adaptive clinical trials: A primer for clinicians. \emph{British Medical Journal}, \emph{360}, k698. \url{https://doi.org/10.1136/bmj.k698}
 
 \leavevmode\vadjust pre{\hypertarget{ref-torgesen1999}{}}%
 Torgesen, J. K., Wagner, R. K., \& Rashotte, C. A. (1999). \emph{Test of {Word Reading Efficiency}}. {Pro-Ed}.
@@ -3678,7 +3683,12 @@ Weiss, S. (1991). Stressors experienced by family caregivers of children with pe
 Wiig, E. H., Secord, W., \& Semel, E. (2006). \emph{{CELF-Preschool} 2 {UK}}. {Pearson Assessment}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-zhang2003}{}}%
-Zhang, X., \& Tomblin, J. B. (2003). Explaining and controlling regression to the mean in longitudinal research designs. \emph{Journal of Speech, Language, and Hearing Research: JSLHR}, \emph{46}(6), 1340--1351. \url{https://doi.org/10.1044/1092-4388(2003/104)}
+Zhang, X., \& Tomblin, J. B. (2003). Explaining and controlling regression to the mean in longitudinal research designs. \emph{Journal of Speech, Language, and Hearing Research}, \emph{46}(6), 1340--1351. \url{https://doi.org/10.1044/1092-4388(2003/104)}
+
+\leavevmode\vadjust pre{\hypertarget{ref-zhang2022}{}}%
+Zhang, S., Heck, P. R., Meyer, M., Chabris, C. F., Goldstein, D. G., \& Hofman, J. M. (2022). An illusion of predictability in scientific results. \emph{SocArXiv},\url{https://doi.org/10.31235/osf.io/5tcgs}
+
+
 
 \end{CSLReferences}
 
