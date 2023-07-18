@@ -34,9 +34,9 @@ By the end of this chapter, you will be able to:
 ## Randomization methods
 In this chapter we consider how to select people for the experimental and control groups of an intervention study. This is a key element of a randomized controlled trial (RCT),\index{RCT} which is widely regarded as a gold standard approach to the evaluation of interventions. The core idea is that once a target population has been identified for study, the experimenter allocates participants to intervention and control groups in a way that minimizes bias. This turns out to be much harder than you might imagine.
 
-There is a big literature on methods of allocation to intervention. The main principle behind modern intervention studies is that allocation should be completely random, i.e. not predictable from any characteristics of participants.\index{randomization} There are many approaches to treatment allocation that are designed to avoid bias but which are not random. For the time being we are ignoring the question of who does the randomization: this will be discussed below. We also defer until later (Chapter \@ref(dropouts)) the question of what to do when people drop out of a trial. We assume we have a population of potential participants and have to decide who will be in the intervention group and who will be in the control group. Consider the following methods of allocation and note your judgement as to whether they are (a) reasonable ways of avoiding bias and (b) random.
+There is a big literature on methods of allocation to intervention. The main principle behind modern intervention studies is that allocation should be completely random, i.e. not predictable from any characteristics of participants.\index{randomization} There are many approaches to treatment allocation that are designed to avoid bias but which are not random. We defer until later (Chapter \@ref(dropouts)) the question of what to do when people drop out of a trial. We assume we have a group of potential participants and have to decide who will be in the intervention group and who will be in the control group. Consider the following methods of allocation and note your judgement as to whether they are (a) reasonable ways of avoiding bias and (b) random.
 
-A.  Allocate people to the intervention group until the desired sample size is reached; then allocate all subsequent cases to the control group\  
+A.  Allocate people to the intervention group until the desired sample size is reached; then allocate all subsequent cases to the control group\ 
 B.  Allocate the more severe cases to the intervention group and the less severe to the control group\
 C.  Alternate between intervention and control: thus the first person on the list is an intervention case and the last one is a control\
 D.  For each potential participant, toss a coin and allocate those with 'heads' to the intervention group and those with 'tails' to the control group\
@@ -114,7 +114,7 @@ This method ensures that the allocation to groups remains balanced both overall 
 
 ### Minimization
 
-\index{randomization!minimization}A specialized type of adaptive allocation called minimization is also very popular in clinical RCTs. Minimization was first proposed by @pocock1975 and is a form of dynamic or adaptive randomization. Each participant's allocation is dependent on the characteristics and allocation of participants already allocated to groups. The idea is to minimize the imbalance by considering a range of prognostic factors for each allocation. This prevents the allocation of people with particular combinations of prognostic factors into one group. Table \@ref(tab:minitable) illustrates this method to allocate 16 individuals to a trial using an example from @scott2002.
+\index{randomization!minimization}A specialized type of adaptive allocation called minimization is also very popular in clinical RCTs. Minimization was first proposed by @pocock1975 and is a form of dynamic or adaptive randomization. Each participant's allocation is dependent on the characteristics and allocation of participants already allocated to groups. The idea is to minimize the imbalance by considering a range of prognostic factors for each allocation. This prevents the allocation of people with particular combinations of prognostic factors into one group. Table \@ref(tab:minitable) illustrates this method. It uses an example from @scott2002 to show the situation after 16 individuals have been allocated to a trial using an example. 
 
 ```{r minitable,echo=F,message=F,warning=F}
 options(kableExtra.html.bsTable = T)
@@ -122,7 +122,7 @@ options(kableExtra.html.bsTable = T)
 mini.mat<-as.data.frame(matrix(c("Male","Female","21-30","31-40","41-50","High Risk","Low Risk",3,5,4,2,2,4,4,5,3,4,3,1,5,3),7,3, byrow=F))
 colnames(mini.mat)<-c("Prognostic factor", "Intervention", "Control")
 
-knitr::kable(mini.mat,escape = F, align = "c", booktabs = T,caption = 'Randomized allocation by minimization') %>%
+knitr::kable(mini.mat,escape = F, align = "c", booktabs = T,caption = 'Example: randomized allocation by minimization') %>%
   kable_styling(c("striped", "bordered"), latex_options = "striped", full_width = F) %>%
   column_spec(1, bold = T) %>%
   group_rows("Sex",1,2) %>%
@@ -130,7 +130,7 @@ knitr::kable(mini.mat,escape = F, align = "c", booktabs = T,caption = 'Randomize
   group_rows("Risk factor",6,7)
 ```
 
-We now consider allocation of the 17th participant who is Male, aged 31-40, and High Risk. We can use @pocock1975's method to work out which group they should be assigned to, to minimize imbalance:
+We now consider allocation of the 17th participant who is Male, aged 31-40, and High Risk. For each of these characteristics, we find the relevant row of the table, and use @pocock1975's method to work out the imbalance that would arise by adding this person to intervention or control, then summing over the imbalance for all the strata. We can then select the best allocation to minimize imbalance. In this case:
 
 -   If allocated to the intervention group, total imbalance is $$|(3+1)-5|+|(2+1)-3|+|(4+1)-5|=1$$.
 -   If allocated to the control group, total imbalance is $$|3-(5+1)|+|2-(3+1)|+|4-(5+1)|=7$$.
@@ -141,7 +141,7 @@ Since allocation to the intervention group gives imbalance of 1, whereas allocat
 
 \index{cluster design}In the examples given above, allocation of intervention is done at the level of the individual. There are contexts, however, where it makes sense to use larger units containing groups of people such as classrooms, schools or clinics. Research in schools, in particular, may not readily lend itself to individualized methods, because that could involve different children in the same class receiving different interventions. This can make children more aware of which group they are in, and it can also lead to "spill-over" effects, whereby the intervention received by the first group affects other children who interact with them. To reduce spillover, it may make sense for children in classroom A to have one intervention and those in classroom B to have a control intervention. This is what happens in a clustered trial.
 
-This method, however, raises new problems, because we now have a confound between classroom and intervention. Suppose the teacher in classroom A is a better teacher, or it just so happens that classroom B contains a higher proportion of disruptive pupils. In effect, we can no longer treat the individual as the unit of analysis. In addition, we may expect the children within a classroom to be more similar to one another than those in different classrooms, and this has an impact on the way in which the study needs to be analysed. Clustered studies typically need bigger sample sizes than non-clustered ones. We will discuss this issue further in Chapter \@ref(cluster).
+This method, however, raises new problems, because we now have a confound between classroom and intervention. Suppose the teacher in classroom A is a better teacher, or it just so happens that classroom B contains a higher proportion of disruptive pupils. In effect, we can no longer treat the individual as the unit of analysis. In addition, we may expect the children within a classroom to be more similar to one another than those in different classrooms, and this has an impact on the way in which the study needs to be analysed. Clustered studies typically need bigger sample sizes than non-clustered ones. We will discuss this topic further in Chapter \@ref(cluster).
 
 ## Check your understanding
 

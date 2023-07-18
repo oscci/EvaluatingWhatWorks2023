@@ -36,11 +36,11 @@ By the end of this chapter, you will be able to:
 
 <!---<p id="vignette">--->
 \begin{shaded}
-\textit{Janice, a speech-and-language therapist, has recently started using a parent-based approach with late-talking 2-year-olds in her practice. Parents are encouraged to make video recordings of interactions with their child, which are then analysed with the therapist, who notes ways of making the interaction more contingent on the child's interests and communicative attempts. She wants to evaluate what she is doing. A colleague of hers, Anna, who has a similar caseload, is sceptical about whether Janice's approach is cost-effective. Anna uses a watchful waiting approach with children this young. Janice and Anna agree to do a study using the same pre- and post-intervention assessments so that they can evaluate the impact of Janice's approach.}  
+\textit{Janice, a speech-and-language therapist, uses a parent-based approach with late-talking 2-year-olds. Parents are encouraged to make video recordings of interactions with their child, which are then analysed with the therapist, who notes ways of making the interaction more contingent on the child's interests and communicative attempts. Janice wants to evaluate what she is doing. A colleague of hers, Anna, who has a similar caseload, is sceptical about whether Janice's approach is cost-effective. Anna uses a watchful waiting approach with children this young. Janice and Anna agree to do a study using the same pre- and post-intervention assessments so that they can evaluate the impact of Janice's approach.}  
 \end{shaded}  
 
 \begin{shaded}
-\textit{Stephen notes that some aphasic patients referred to his clinic talk glowingly about a commercially available 'brain-based learning' programme, MyLangBooster. He wants to know whether he should be recommending this programme to other clients, so he carries out a comparison of patients who used MyLangBooster and those who did not.}
+\textit{Stephen notes that some aphasic patients referred to his clinic talk glowingly about a commercially available "brain-based learning" programme, MyLangBooster. He wants to know whether he should be recommending this programme to other clients, so he carries out a comparison of patients who used MyLangBooster and those who did not.}
 \end{shaded}  
 
 \begin{shaded}
@@ -100,12 +100,13 @@ There is a great deal of work on methods for analysing and interpreting observat
 
 1.  Find a newspaper report of a factor that is reported to be a risk or benefit to health. Is it based on an experimental or observational study? Can you identify potential sources of bias?
 
-2.  The figure below is recreated from a medical example by @rothwell2005, and shows the rate of stroke or death at 5 year follow-up in at-risk patients who either underwent a surgical procedure known as endarterectomy, or who had medical treatment as usual.
+2.  Figure \@ref(fig:rothwellfig) is recreated from a medical example by @rothwell2005, and shows the rate of stroke or death at 5 year follow-up in at-risk patients who either underwent a surgical procedure known as endarterectomy, or who had medical treatment as usual.
 
 ```{r makerothwell,echo=F}
 #http://www.sthda.com/english/wiki/ggplot2-error-bars-quick-start-guide-r-software-and-data-visualization
 #note that the gap between terms on lower label is done crudely by inserting spaces - figure will only look right when saved at the size given here. This chunk preserved but not run, as we use the created figure.
 makerothwellfig <-0
+myfolder = 'images_bw'
 if(makerothwellfig==1){
 mymeans <- c(.27,.275,0,.265,.58)
 myerrs <- c(.28,.29,0,.275,.65) #top of error bar
@@ -115,7 +116,7 @@ df$group <- c('A','B','C','D','E')
 p<- ggplot(df, aes(x=group, y=mymeans)) + 
   geom_bar(stat="identity", color=c("black","black","white","black","black"))
 p1 <- p+ geom_errorbar(aes(ymin=mymeans, ymax=myerrs), width=.2,color=c("black","black","white","black","black"), position=position_dodge(.9)) 
-p2 <- p1+labs(x="Randomised                        Non-randomised", y = "5 year risk (SE) of stroke or death (%)")+
+p2 <- p1+labs(x="Randomized                        Non-randomized", y = "5 year risk (SE) of stroke or death (%)")+
  scale_x_discrete(labels=c("A" = "Surgery", "B" = "Usual \nMedical",
                               "C" = "","D"= "Surgery","E"="Usual \nMedical"))+
    theme(axis.title = element_text(size = 16),axis.text=element_text(size=14)) 

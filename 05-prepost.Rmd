@@ -22,7 +22,7 @@ By the end of this chapter, you will be able to:
 
 At first glance, assessing an intervention seems easy. Having used the information in Chapter \@ref(reliability) to select appropriate measures, you administer these to a group of people before starting the intervention, and again after it is completed, and then look to see if there has been meaningful change. This is what we call a pre-post design\index{pre-post design}, and it almost always gives a misleadingly rosy impression of how effective the intervention is. The limitations of such studies have been well-understood in medicine for decades, yet in other fields they persist, perhaps because the problems are not immediately obvious.
 
-```{r trogfig, echo=F,message=F,warning=F,fig.width=5,fig.height=3.5,fig.cap="TROG outcome data from a study by Bishop et al 2006",out.width="75%"}
+```{r trogfig, echo=F,message=F,warning=F,fig.width=5,fig.height=3.5,fig.cap="Mean comprehension test scores for three groups at baseline and outcome from a study by Bishop et al 2006. Error bars shown standard errors.",out.width="80%"}
 myfolder<-'images_bw'
 bwversion<-1
 knitr::include_graphics(paste0(myfolder,'/trogchangefig.png'))
@@ -43,7 +43,7 @@ To understand what was going on in this study, we need to recognize that there a
 
 Most of the populations that speech and language therapists work with will show some spontaneous improvement that must be taken into account when evaluating intervention. Failure to recognize this is one of the factors that keeps snake-oil merchants in business: there are numerous unevidenced treatments on offer for conditions like autism and dyslexia. Desperate parents, upset to see their children struggling, subscribe to these. Over time, the child's difficulties start to lessen, and this is attributed to the intervention, creating more "satisfied customers" who can then be used to advertise the intervention to others.
 
-As shown in Figure \@ref(fig:trogfig), one corrective to this way of thinking is to include a control group\index{controls!untreated} who either get no intervention or "treatment as usual". If these cases do as well as the intervention group, we start to see that the intervention is not as it seems.
+As shown in Figure \@ref(fig:trogfig), one corrective to this way of thinking is to include a control group\index{controls!untreated} who either get no intervention or "treatment as usual". If these cases do as well as the intervention group, we start to see that the intervention effect is not as it seems.
 
 ## Practice effects
 
@@ -144,4 +144,4 @@ So regression to the mean is a real issue in longitudinal and intervention studi
 
     Your task is to evaluate the article in terms of how well it addresses the systematic biases covered in this chapter. Are the results likely to be affected by spontaneous improvement, practice effects, or regression to the mean? Does the study design control for these? Note that for this exercise you are not required to evaluate the statistical analysis: the answers to these questions depend just on how the study was designed.
 
-2.  [This website](https://www.andifugard.info/regression-to-the-mean/) is an explainer for regression to the mean. It links to an app where you can play with settings of sample size, reliability and sample selection criteria. Load the app and try to predict in advance how the results will be affected as you use the sliders to change the variables.
+2.  A useful explainer for regression to the mean is found at this website: https://www.andifugard.info/regression-to-the-mean/.  It links to an app where you can play with settings of sample size, reliability and sample selection criteria. Load the app and try to predict in advance how the results will be affected as you use the sliders to change the variables.

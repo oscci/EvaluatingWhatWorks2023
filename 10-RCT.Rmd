@@ -17,8 +17,10 @@ knitr::include_graphics("images/logo_alone_new.png")
 }
 ```
 
-## Learning objective  
-By the end of this chapter, you will be able to explain which biases from previous chapters are adequately controlled in a randomized controlled trial
+## Learning objective s 
+By the end of this chapter, you will be able to:
+-   explain which biases from previous chapters are adequately controlled in a randomized controlled trial  
+-   understand how reporting standards can help ensure study quality   
 
 ## The ingredients of a RCT
 The randomized controlled trial (RCT) is regarded by many as the gold standard method for evaluating interventions. In Chapter \@ref(drawbacks) we will discuss some of the limitations of this approach that can make it less than ideal for evaluating certain kinds of non-medical interventions. But in this chapter we'll look at the ingredients of a RCT that make it such a well-regarded method, and introduce the basic methods that can be used to analyse the results.
@@ -28,7 +30,7 @@ A RCT is effective simply because it is designed to counteract all of the system
 ```{r rctchart, echo=F,warning=F,message=F, include=T,out.width="75%"}
 options(kableExtra.html.bsTable = T)
 Biases <- c('Spontaneous improvement','Practice effects','Regression to the mean','Noisy data (1)','Noisy data (2)','Selection bias', 'Placebo effects', 'Experimenter bias (1)','Experimenter bias (2)','Biased drop-outs','Low power','False positives due to p-hacking')
-Remedies <- c('Control group','Control group','Control group','Strict selection criteria for participants','Outcomes with low measurement error','Random assignment to intervention','Participant unaware of assignment','Experimenter unaware of assignment','Strictly specified protocol','Intention-to-treat analysis','A priori power analysis','Registration of trial protocol')
+Remedies <- c('Control group','Control group','Control group','Strict selection criteria for participants','Outcomes with low measurement error','Random assignment to intervention','Participant unaware of assignment','Experimenter unaware of assignment','Strictly specified protocol','Intention-to-treat/Instrumental variable analysis','A priori power analysis','Registration of trial protocol')
 mydf<-data.frame(cbind(Biases,Remedies))
 knitr::kable(mydf,escape = F, align = "c", booktabs = T,caption="How the RCT design deals with threats to study validity") %>%
   kable_styling(c("striped", "bordered"), latex_options = "striped", full_width = F) 
@@ -41,7 +43,7 @@ We cannot prevent changes in outcomes over time that arise for reasons other tha
 In Chapter \@ref(phacking), we will explain problems caused by *p-hacking*, where many outcome measures are included but only the "significant" ones are reported. This problem has been recognized in the context of clinical trials for many years, which is why clinical trial protocols are usually registered specifying a primary outcome measure of interest: indeed, as is discussed further in Chapter \@ref(prereg), many journals will not accept a trial for publication unless it has been registered on a site such as <https://clinicaltrials.gov/>. Note, however, that, as will be discussed in Chapter \@ref(phacking), multiple outcomes may increase the statistical power of a study, and are not a problem if the statistical analysis handles the multiplicity correctly. Secondary outcome measures can also be specified, but reporting of analyses relating to these outcomes should make it clear that they are much more exploratory. In principle, this should limit the amount of data dredging for a result that is only loosely related to the anticipated intervention effect.
 
 ## Reporting standards  
-RCTs have become such a bedrock of medical research that standards for reporting them have been developed. In Chapter \@ref(dropouts) we saw the CONSORT flowchart\index{guidelines!CONSORT}, which is a useful way of documenting the flow of participants through a trial. CONSORT stands for Consolidated Standards of Reporting Trials, which are endorsed by many medical journals. Indeed, if you plan to publish an intervention study in one of those journals, you are likely to be required to show you have followed the guidelines. The relevant information is available on the 'Enhancing the QUAlity and Transparency Of health Research' [EQUATOR](http://www.equator-network.org) network website. The EQUATOR network site covers not only RCTs but also the full spectrum guidelines of many types of clinical research designs.\index{EQUATOR}
+RCTs have become such a bedrock of medical research that standards for reporting them have been developed. In Chapter \@ref(dropouts) we saw the CONSORT flowchart\index{guidelines!CONSORT}, which is a useful way of documenting the flow of participants through a trial. CONSORT stands for Consolidated Standards of Reporting Trials, which are endorsed by many medical journals. Indeed, if you plan to publish an intervention study in one of those journals, you are likely to be required to show you have followed the guidelines. The relevant information is available on the 'Enhancing the QUAlity and Transparency Of health Research' (EQUATOR)network website (http://www.equator-network.org). The EQUATOR network site covers not only RCTs but also the full spectrum guidelines of many types of clinical research designs.\index{EQUATOR}
 
 For someone starting out planning a trial, it is worth reading the CONSORT Explanation and Elaboration document [@moher2010], which gives the rationale behind different aspects of the CONSORT guidelines. This may seem rather daunting to beginners, as it mentions more complex trial designs as well as a standard RCT comparing intervention and control groups, and it assumes a degree of statistical expertise. It is nevertheless worth studying, as adherence to CONSORT guidelines\index{reporting guidelines} is seen as a marker of study quality\index{quality}, and it is much easier to conform to their recommendations if a study is planned with the guidelines in mind, rather than if the guidelines are only consulted after the study is done.
 
@@ -50,9 +52,9 @@ For someone starting out planning a trial, it is worth reading the CONSORT Expla
 1. The CONSORT Explanation and Elaboration document [@moher2010] notes the importance of specifying details of study design and implementation, including the following:
 
 -   Eligibility criteria for participants  
--   Settings and locations where the data were collected
--   The interventions for each group with sufficient details to allow replication, including how and when they were actually administered
+-   Settings and locations where the data were collected  
+-   The interventions for each group with sufficient details to allow replication, including how and when they were actually administered  
 
 Find a published intervention study in your area of interest, and compare reporting of these features with the description of what is required by [@moher2010]. 
 
-2.  In Chapter \@ref(drawbacks) we consider drawbacks of the RCT design. Before you read that chapter, see if you can anticipate the issues that we consider in our evaluation.
+2.  In Chapter \@ref(drawbacks) we consider drawbacks of the RCT design. Before you read that chapter, see if you can anticipate the issues that we consider in our evaluation. In what circumstances would an RCT be impractical or inappropriate?  

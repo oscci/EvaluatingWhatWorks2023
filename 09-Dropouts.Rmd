@@ -44,7 +44,7 @@ Nevertheless, if we only do an intention-to-treat analysis, then we lose an oppo
 
 ## Instrumental Variable analysis
 
-A clever technique known as Instrumental Variable analysis\index{Instrumental Variable analysis} can be used to obtain a more accurate estimate of an intervention effect when there are dropouts and/or control cases who received intervention, provided we can assess their outcomes. In effect, we do the analysis comparing those who did and did not actually do the intervention, but we adjust scores to take into account which group they were assigned to. This involves a two-step regression procedure, the details of which are how beyond the scope of the current book, it is illustrated by @huang2018, who also gives a very clear explanation of the logic. The instrumental variable analysis gives a more accurate estimate of the intervention effect than the intention-to-treat analysis, without introducing the bias that occurs if we use a per protocol analysis.
+A clever technique known as Instrumental Variable analysis\index{Instrumental Variable analysis} can be used to obtain a more accurate estimate of an intervention effect when there are dropouts and/or control cases who received intervention, provided we can assess their outcomes. In effect, we do the analysis comparing those who did and did not actually do the intervention, but we adjust scores to take into account which group they were assigned to. This involves a two-step regression procedure, the details of which are how beyond the scope of the current book. Instrumental variable analysis is illustrated by @huang2018, who also gives a very clear explanation of the logic. The instrumental variable analysis gives a more accurate estimate of the intervention effect than the intention-to-treat analysis, without introducing the bias that occurs if we use a per protocol analysis.
 
 ```{r IVfig, echo=F,fig.cap = "Path diagram of the instrumental variable approach",out.width="60%"}
 knitr::include_graphics("images_bw/IV1.jpg")
@@ -66,7 +66,7 @@ knitr::include_graphics("images_bw/mice_fig.jpg")
 
 What about the case where the missing data is not random? Then one really needs to think through the logic of each individual situation. For instance, suppose we have an assessment such as The Test of Word Reading Efficiency [@torgesen1999], where a pretest is used to familiarise the child with the task and check if they can read very simple words or nonwords. If the child can't read any items in the pretest, then the assessment is terminated. There is no standard score, but in this case, it is reasonable to assign a score at the test floor. Consider another case where children from one classroom have missing data on a reading assessment because the teacher did not wish to test the children. In such a case, the best option may be to use imputation, based on data from other assessments.
 
-A useful overview of methods for handling missing data is provided by [this website](https://www.missingdata.nl/) by Iris Eekhout.
+A useful overview of methods for handling missing data is provided in a website by Iris Ekhout: https://www.missingdata.nl/. 
 
 ## Check your understanding
 
@@ -76,6 +76,6 @@ A useful overview of methods for handling missing data is provided by [this webs
 knitr::include_graphics("images_bw/consort.jpg")
 ```
 
-2.  A version of Figure \@ref(fig:consortfig) can be downloaded from the [CONSORT website](http://www.consort-statement.org/consort-statement/flow-diagram). Use of this flow chart has become standard in medical trials, because it helps clarify the issues covered in this chapter.
+2.  A version of Figure \@ref(fig:consortfig) can be downloaded from the CONSORT website: http://www.consort-statement.org/consort-statement/flow-diagram. Use of this flow chart has become standard in medical trials, because it helps clarify the issues covered in this chapter.
 
 Find an intervention study in the published literature which does not include a flow diagram, and see how much of the information in the flow chart can be completed by reading the Methods section. (The Imhof et al study can also be used for this exercise).

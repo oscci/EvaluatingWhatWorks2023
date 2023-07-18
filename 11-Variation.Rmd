@@ -19,7 +19,8 @@ knitr::include_graphics("images/logo_alone_new.png")
 }
 ```
 
-**Learning objectives**: By the end of this chapter, you will be able to:
+## Learning objectives  
+By the end of this chapter, you will be able to:
 
 -   Appreciate why we need to measure variation as well as average effects of an intervention  
 -   Understand the terms "standard deviation" and "confidence interval"
@@ -36,7 +37,7 @@ To make this more concrete, consider the following scenario: You want to evaluat
 
 ### Standard deviation  
 Consider Figure \@ref(fig:demo-variation), which shows three different fictional studies. They have the same sample size in each group, 20. The mean difference in lbs of weight loss between the two diets (represented by the difference in the black horizontal lines) is similar in each case, but the variation within each group (the spread of points around the line) is greatest in scenario A, and least in scenario C. The intervention effect is far less impressive in scenario A, where 7/20 people in the Carbocut group score above the mean level of the 3M group, than in group C, where only 2/20 score above the 3M mean.\index{standard deviation}
-```{r demo-variation,echo=F,include=T,message=F,warning=F,fig.cap='Simulated data from three studies comparing two diets. Overlap between groups is greatest for study A and least for study C.',out.width='90%'}
+```{r demo-variation,echo=F,include=T,message=F,warning=F,fig.cap='Simulated data from three studies comparing two diets. Each dot is the weight change of an individual. The horizontal bars show the group mean.  Overlap between groups is greatest for study A and least for study C.',out.width='90%'}
 makefig <- 0 # we preserve code to make figure for just historical reasons. NB this did not use ggplot and so can't use ggsave. Uses base R to make figure.
 #This saves figure as pdf. Can open in preview, crop and save as png at high resolution.
                                                                                                 if(makefig==0)   {                                                                                         
@@ -110,7 +111,7 @@ dev.off()
 
  
 
-The spread in scores within each group is typically measured by the **standard deviation**, which is a mathematical way of representing how tightly bunched a set of scores is around the mean. If we want to know how solid a result is, in terms of how likely it would be to reproduce in a new study, we need to consider not just the mean, but also the standard deviation of the intervention effect. [This website](https://www.mathsisfun.com/data/standard-deviation.html) explains how the standard deviation is computed, but in general, we can rely on statistics programs to do the calculations for us.
+The spread in scores within each group is typically measured by the **standard deviation**, which is a mathematical way of representing how tightly bunched a set of scores is around the mean. If we want to know how solid a result is, in terms of how likely it would be to reproduce in a new study, we need to consider not just the mean, but also the standard deviation of the intervention effect. This website (https://www.mathsisfun.com/data/standard-deviation.html) explains how the standard deviation is computed, but in general, we can rely on statistics programs to do the calculations for us.
 
 Why does the standard deviation matter? This is because, as noted above, the *statistical significance* of a finding, which indexes how likely a finding is to be reproducible in future studies, considers all the variation in scores, and looks at variation between groups *relative to the variation within each group*.
 
@@ -220,7 +221,7 @@ Those who set standards for reporting clinical trial results generally encourage
 
 ## Check your understanding
 
-1. Look at this website: https://shiny.rit.albany.edu/stat/confidence/, which has a simple interface that allows you to look at how confidence intervals change as you vary the sample size and confidence level. First, check whether you understand what is shown on the plot. Can you predict what will happen if you:
+1. Look at this website: https://shiny.rit.albany.edu/stat/confidence/, which has a simple interface that allows you to see how confidence intervals change as you vary the sample size and confidence level. First, check whether you understand what is shown on the plot. Can you predict what will happen if you:
 - Increase the number in the Sample Size box?   
 - Change the Confidence Level?  
 - Change the Standard Deviation?  

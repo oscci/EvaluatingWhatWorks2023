@@ -27,11 +27,10 @@ By the end of this chapter, you will be able to:
 
 ## Planning the analysis
 
-Statisticians often complain that researchers will come along with a set of data and ask for advice as to how to analyse it. Sir Ronald Fisher (one of the most famous statisticians of all time) commented:
+Statisticians often complain that researchers will come along with a set of data and ask for advice as to how to analyse it. In his Presidential Address to the First Indian Statistical Congress in 1938, Sir Ronald Fisher (one of the most famous statisticians of all time) commented:
 
 > "To consult the statistician after an experiment is finished is often merely to ask him to conduct a post mortem examination. He can perhaps say what the experiment died of."
 
--Sir Ronald Fisher, Presidential Address to the First Indian Statistical Congress, 1938.\index{statistical consulting}
 
 His point was that very often the statistician would have advised doing something different in the first place, had they been consulted at the outset. Once the data are collected, it may be too late to rescue the study from a fatal flaw.
 
@@ -60,7 +59,7 @@ There are many criticisms of the use of p-values in science, and a good case can
 
 One reason why many people object to the use of p-values is that they are typically used to make a binary decision: we either accept or reject the null hypothesis, depending on whether the p-value is less than a certain value. In practice, evidence is graded, and it can be more meaningful to express results in terms of the amount of confidence in alternative interpretations, rather than as a single accept/reject cutoff (\protect\hyperlink{ref-quintana2018}{Quintana \& Williams, 2018}).
 \end{tcolorbox}
-<!---</div>-->
+
 
 In practice, p-values are typically used to divide results into "statistically significant" or "non-significant", depending on whether the p-value is low enough to reject the null hypothesis.\index{significance!statistical} We do not defend this practice, which can lead to an all-consuming focus on whether p-values are above or below a cutoff, rather than considering effect sizes and strength of evidence. However, it is important to appreciate how the cutoff approach leads to experimental results falling into 4 possible categories, as shown in Table \@ref(tab:confusionMat).
 
@@ -76,28 +75,26 @@ mymat[,3]<-c("False Positive \n (Type I error)","True Negative")
 mymat<-as.data.frame(mymat)
 names(mymat)<-c("","Intervention effective","Intervention ineffective")
 
-knitr::kable(mymat,escape = F, align = "c", booktabs = T, caption = 'Possible outcomes of hypothesis test') %>%
+knitr::kable(mymat,escape = F, align = "c", booktabs = T, linesep = c(
+  "\\addlinespace"),caption = 'Possible outcomes of hypothesis test') %>%
   kable_styling(c("striped", "bordered"), latex_options = "striped", full_width = F) %>%
   column_spec(1:1, bold = T) %>%
   column_spec(1:3,width = "9em") %>%
   add_header_above(c(" ","Ground truth" = 2))
 ```
 
-The ground truth is the result that we would obtain if we were able to administer the intervention to the whole population - this is of course impossible, but we assume that there is some general truth that we are aiming to discover by running our study on a sample from the population. We can see that if the intervention really is effective, and the evidence leads us to reject the null hypothesis, we have a True Positive, and if the intervention is ineffective and we accept the null hypothesis, we have a True Negative. Our goal is to design our study so as to maximize the chances that our conclusion will be correct, but there two types of outcome that we can never avoid, but which we try to minimize, known as Type I and Type II errors.\index{Type I error}\index{false positives}\index{false negatives}\index{Type II error} We will cover Type II errors in Chapter \@ref(power) and Type I in Chapter \@ref(phacking).
+The ground truth is the result that we would obtain if we were able to administer the intervention to the whole population - this is of course impossible, but we assume that there is some general truth that we are aiming to discover by running our study on a sample from the population. We can see that if the intervention really is effective, and the evidence leads us to reject the null hypothesis, we have a True Positive, and if the intervention is ineffective and we accept the null hypothesis, we have a True Negative. Our goal is to design our study so as to maximize the chances that our conclusion will be correct, but there two types of outcome that we can never avoid, but which we try to minimize, known as Type I and Type II errors.\index{Type I error}\index{false positives}\index{false negatives}\index{Type II error} We will cover Type II errors in Chapter \@ref(power) and Type I in Chapter \@ref(phacking).  
+
 
 ## What kind of analysis is appropriate?
 
-The answer to the question "How should I analyse my data?" depends crucially on what hypothesis is being tested. In the case of an intervention trial, the hypothesis will usually be "did intervention X make a difference to outcome Y in people with condition Z?" There is, in this case, a clear null hypothesis -- that the intervention was ineffective, and the outcome of the intervention group would have been just the same if it had not been done. The null hypothesis significance testing approach answers just that question: it tells you how likely your data are if the the null hypothesis was true. To do that, you compare the distribution of outcome scores in the intervention group and the control group. And as emphasized earlier, we don't just look at the difference in mean outcomes between two groups, we consider whether that difference is greater than you'd expect given the variation *within* the two groups. (This is what the term "analysis of variance" refers to).
+The answer to the question "How should I analyse my data?" depends crucially on what hypothesis is being tested. In the case of an intervention trial, the hypothesis will usually be "did intervention X improve the outcome Y in people with condition Z?" There is, in this case, a clear null hypothesis -- that the intervention was ineffective, and the outcome of the intervention group would have been just the same if it had not been done. The null hypothesis significance testing approach answers just that question: it tells you how likely your data are if the the null hypothesis was true. To do that, you compare the distribution of outcome scores in the intervention group and the control group. And as emphasized earlier, we don't just look at the difference in mean outcomes between two groups, we consider whether that difference is greater than you'd expect given the variation *within* the two groups. (This is what the term "analysis of variance" refers to).  
 
-## Steps to take before data analysis
+If the observed data indicate a difference between groups that is unlikely to be due to chance, this could be because the intervention group does better than the control group, or because they do worse than the control group. If you predict that the two groups might differ but you are not sure whether the control group or the intervention group will be superior, then it is appropriate to do a **two-tailed test**,\index{two-tailed test} that considers the probability of both outcomes. If, however, you predict that any difference is likely to be in favour of the intervention group, you can do a **one-tailed test**, which focuses only on differences in the predicted direction.\index{one-tailed test}
 
--   General sanity check on dataset - are values within expected range?
--   Check assumptions
--   Plot data to get sense of likely range of results
+## Sample dataset with illustrative analysis
 
-### Sample dataset with illustrative analysis
-
-To illustrate data analysis, we will use a real dataset that can be retrieved from the [ESRC data archive](https://reshare.ukdataservice.ac.uk/852291/) [@burgoyne2016]. We will focus only on a small subset of the data, which comes from an intervention study in which teaching assistants administered an individual reading and language intervention to children with Down syndrome. A wait-list RCT design was used (see Chapter \@ref(crossover)), but we will focus here on just the first two phases, in which half the children were randomly assigned to intervention, and the remainder formed a control group. Several language and reading measures were included in the study, giving a total of 11 outcomes. Here we will illustrate the analysis with just one of the outcomes - letter-sound coding - which was administered at baseline (t1) and immediately after the intervention (t2). Results from the full study have been reported by @burgoyne2012 and are discussed in the demonstration of MEff by @bishop2023b. <!---this is the measure with the strongest effect - I considered using others but they are not great for illustrative purposes, as they aren't very normal! Script below written so that we could easily substitute one of the other measures if we wished (but then text would also need redoing in places)-->
+To illustrate data analysis, we will use a real dataset that can be retrieved from the [ESRC data archive](https://reshare.ukdataservice.ac.uk/852291/) [@burgoyne2016]. We will focus only on a small subset of the data, which comes from an intervention study in which teaching assistants administered an individual reading and language intervention to children with Down syndrome. A wait-list RCT design was used (see Chapter \@ref(crossover)), but we will focus here on just the first two phases, in which half the children were randomly assigned to intervention, and the remainder formed a control group. Several language and reading measures were included in the study, giving a total of 11 outcomes. Here we will illustrate the analysis with just one of the outcomes - letter-sound coding - which was administered at baseline (t1) and immediately after the intervention (t2). Results from the full study have been reported by @burgoyne2012.
 
 \begin{center}
 ```{r pirateRCT,echo=F,fig.cap='Data from RCT on language/reading intervention for Down syndrome by Burgoyne et al, 2012',warning=F,message=F,out.width="75%"}
@@ -131,7 +128,7 @@ Figure \@ref(fig:pirateRCT) shows results on letter-sound coding after one group
 
 Raw data \index{data!raw}should always be inspected prior to any data analysis, in order to just check that the distribution of scores looks sensible. One hears of horror stories where, for instance, an error code of 999 got included in an analysis, distorting all the statistics. Or where an outcome score was entered as 10 rather than 100. Visualizing the data is useful when checking whether the results are in the right numerical range for the particular outcome measure. There are many different ways of visualizing data: it is best to use one that shows the distribution of data, and even individual data points if the sample is not too big. @zhang2022 showed that the traditional way of presenting only means and error bars in figures can be misleading, and leads people to overestimate group differences.
 A pirate plot such as that in \@ref(fig:pirateRCT) is one useful way of showing means and distributions as well as individual data points [@phillips2017].\index{data!visualization} 
-A related step is to check whether the distribution of the data meets the assumptions of the proposed statistical analysis. Many common statistical procedures assume that data are normally distributed on an interval scale (see Chapter \@ref(reliability)). Statistical approaches to checking of assumptions are beyond the scope of this book, but there are good sources of information on the web, such as [this website](http://www.sthda.com/english/articles/39-regression-model-diagnostics/161-linear-regression-assumptions-and-diagnostics-in-r-essentials/) for linear regression. But just eyeballing the data is useful, and can detect obvious cases of non-normality, cases of ceiling or floor effects, or "clumpy" data, where only certain values are possible. Data with these features may need special treatment and it is worth consulting a statistician if they apply to your data. For the data in Figure \@ref(fig:pirateRCT), although neither distribution has an classically normal distribution, we do not see major problems with ceiling or floor effects, and there is a reasonable spread of scores in both groups.\index{non-normal data}\index{data!non-normal}
+A related step is to check whether the distribution of the data meets the assumptions of the proposed statistical analysis. Many common statistical procedures assume that data are normally distributed on an interval scale (see Chapter \@ref(reliability)). Statistical approaches to checking of assumptions are beyond the scope of this book, but there are good sources of information on the web, such as [this website for linear regression:   http://www.sthda.com/english/articles/39-regression-model-diagnostics/161-linear-regression-assumptions-and-diagnostics-in-r-essentials/](http://www.sthda.com/english/articles/39-regression-model-diagnostics/161-linear-regression-assumptions-and-diagnostics-in-r-essentials/). But just eyeballing the data is useful, and can detect obvious cases of non-normality, cases of ceiling or floor effects, or "clumpy" data, where only certain values are possible. Data with these features may need special treatment and it is worth consulting a statistician if they apply to your data. For the data in Figure \@ref(fig:pirateRCT), although neither distribution has an classically normal distribution, we do not see major problems with ceiling or floor effects, and there is a reasonable spread of scores in both groups.\index{non-normal data}\index{data!non-normal}
 <!-- maybe add a figure showing egs of nonnormal distribution, ceiling effect, clumpy data-->
 
 ```{r table2gp,echo=F,out.width="75%"}
@@ -150,8 +147,8 @@ The next step is just to compute some basic statistics to get a feel for the eff
 
 ### Simple t-test on outcome data
 
-The simplest way of measuring the intervention effect is to just compare outcome (outcome) measures on a t-test. We can use a one-tailed test with confidence, given that we anticipate outcomes will be better after intervention. One-tailed tests are often treated with suspicion, because they can be used by researchers engaged in p-hacking (see Chapter \@ref(phacking)), but where we predict a directional effect, they are entirely appropriate and give greater power than a two-tailed test: see [this blogpost by Daniël Lakens](http://daniellakens.blogspot.com/2016/03/one-sided-tests-efficient-and-underused.html).\index{one-tailed test}  
-When reporting the result of a t-test, researchers should always report all the statistics: the value of t, the degrees of freedom, the means and SDs, and the confidence interval around the mean difference, as well as the p-value. This not only helps readers understand the magnitude and reliability of the effect of interest: it also allows for the study to readily be incorporated in a meta-analysis. Results from a t-test for the data in Table \@ref(tab:table2gp) are shown in Table \@ref(tab:ttestoutcomes). Note that with a one-tailed test, the confidence interval on one side will extend to infinity: this is because a one-tailed test assumes that the true result is greater than a specified mean value, and disregards results that go in the opposite direction. \index{t-test}
+The simplest way of measuring the intervention effect is to just compare outcome measures on a t-test. We can use a one-tailed test with confidence, assuming that we anticipate outcomes will be better after intervention. One-tailed tests are often treated with suspicion, because they can be used by researchers engaged in p-hacking (see Chapter \@ref(phacking)), but where we predict a directional effect, they are entirely appropriate and give greater power than a two-tailed test: see [this blogpost by Daniël Lakens: http://daniellakens.blogspot.com/2016/03/one-sided-tests-efficient-and-underused.html](http://daniellakens.blogspot.com/2016/03/one-sided-tests-efficient-and-underused.html).\index{one-tailed test}  
+When reporting the result of a t-test, researchers should always report all the statistics: the value of t, the degrees of freedom, the means and SDs, and the confidence interval around the mean difference, as well as the p-value. This not only helps readers understand the magnitude and reliability of the effect of interest: it also allows for the study to readily be incorporated in a meta-analysis. Results from a t-test for the data in Table \@ref(tab:table2gp) are shown in Table \@ref(tab:ttestoutcomes). Note that with a one-tailed test, the confidence interval on one side will extend to infinity (denoted as Inf): this is because a one-tailed test assumes that the true result is greater than a specified mean value, and disregards results that go in the opposite direction. \index{t-test}
 
 ```{r ttestoutcomes,echo=F,warning=F,message=F}
 options(kableExtra.html.bsTable = T)
@@ -231,7 +228,7 @@ knitr::kable(tab1,escape = F, align = "c", booktabs = T,caption='Analysis of out
 
 
 
-Table \@ref(tab:ancova-compare) shows the Down syndrome data analysed using ANOVA to compare only the outcome scores (upper chart), and Table \@ref(tab:ancova) shows the same data analysed using ANCOVA to adjust scores for the baseline values. 
+Table \@ref(tab:ancova-compare) shows the Down syndrome data analysed using ANOVA to compare only the outcome scores, and Table \@ref(tab:ancova) shows the same data analysed using ANCOVA to adjust scores for the baseline values. 
 ```{r ancova,echo=F,warning=F,message=F}
 knitr::kable(tab2,escape = F, align = "c", booktabs = T,caption='Outcome adjusted for pretest scores (ANCOVA)') %>%
   kable_styling(c("striped", "bordered"), latex_options = "striped", full_width = F)
@@ -244,10 +241,9 @@ For readers who are not accustomed to interpreting statistical output, the main 
 <!---#### T-tests, analysis of variance, and linear regression {.unnumbered}
 
 <p id="custom">-->
-\begin{tcolorbox}[colback=Black!5!lightgray,colframe=black!75!black,coltitle=white,title=T-tests, analysis of variance, and linear regression]\label{box:ttestcomparison}
+\begin{tcolorbox}[colback=Black!5!lightgray,colframe=black!75!black,coltitle=white,title=Analysis of variance and linear regression]\label{box:ttestcomparison}
 Mathematically, the t-test is equivalent to two other methods: analysis of variance and linear regression. When we have just two groups, all of these methods achieve the same thing: they divide up the variance in the data into variance associated with group identity, and other (residual) variance, and provide a statistic that reflects the ratio between these two sources of variance. This is illustrated with the real data analysed in Table \@ref(tab:ancova-compare). The analysis gives results that are equivalent to the t-test in Table \@ref(tab:ttestoutcomes): if you square the t-value it is the same as the F-test. In this case, the p-value from the t-test is half the value of that in the ANOVA: this is because we specified a one-tailed test for the t-test. The p-value would be identical to that from ANOVA if a two-tailed t-test had been used.\
-See [this blogpost](http://deevybee.blogspot.com/2017/11/anova-t-tests-and-regression-different.html) for more details. <!-- reminder to self: blogposts referenced in the book should be uploaded to figshare or another place with DOI-->
-<!---</p>-->
+For more details see [this blogpost: http://deevybee.blogspot.com/2017/11/anova-t-tests-and-regression-different.html](http://deevybee.blogspot.com/2017/11/anova-t-tests-and-regression-different.html) for more details.
 \end{tcolorbox}  
 
 ### Non-normal data
@@ -302,7 +298,6 @@ sumbit
 
 An advantage of the LMM approach is that it can be extended in many ways to give appropriate estimates of intervention effects in more complex trial designs - some of which are covered in Chapter \@ref(adaptive) to Chapter \@ref(Single). Disadvantages of this approach are that it is easy to make mistakes in specifying the model for analysis if you lack statistical expertise, and the output is harder for non-specialists to understand. If you have a simple design, such as that illustrated in this chapter, with normally distributed data, a basic analysis of covariance is perfectly adequate [@oconnell2017].
 
-<!--- Paul's help needed here?  I had assumed LMM would give more precise estimates, but the OConnell paper suggests ANCOVA is optimal-->
 
 Table \@ref(tab:table-procon) summarises the pros and cons of different analytic approaches.
 
@@ -319,7 +314,7 @@ mytext3 <- c('Low','...','...','High')
 mydf<-data.frame(cbind(mytests,mytext1,mytext2,mytext3))
 colnames(mydf) <- c('Method','Features','Ease of understanding','Flexibility')
 knitr::kable(mydf,escape = T, align = "c", booktabs = T,caption="Analytic methods for comparing outcomes in intervention vs control groups") %>%
-  kable_styling(c("striped", "bordered"), latex_options = "striped", full_width = F) %>%
+  kable_styling(c("striped", "bordered"), full_width = F) %>%
   column_spec(1:1, bold = T) %>%
   column_spec(1:4,width = "7em") %>%
   column_spec(2,width = "12em")
@@ -331,16 +326,15 @@ knitr::kable(mydf,escape = T, align = "c", booktabs = T,caption="Analytic method
 
 ## Check your understanding
 
+
 1.  Figure \@ref(fig:boxploteg) shows data from a small intervention trial in the form of a boxplot. If you are not sure what this represents, try Googling for more information. Check your understanding of the annotation in the top left of the plot. How can you interpret the p-value? What does the 95% CI refer to? Is the "mean.diff" value the same as shown in the plot?\index{boxplot}
 
-\begin{center}
-```{r boxploteg,echo=F,message=F,fig.cap ='Sample data for t-testin boxplot format',out.width="60%"}
+
+```{r makeboxploteg,echo=F,message=F}
 # Data in two numeric vectors
 # Modified from stdha example on ttest (on weight)
 makefig<-0
-if(makefig==0){
-  knitr::include_graphics("images_bw/boxeg.png")
-}
+
 if(makefig==1){
 women_weight <- c(48.9, 61.2, 73.3, 81.8, 63.4, 64.6, 48.4, 48.8, 48.5)
 men_weight <- c(67.8, 60, 63.4, 76, 89.4, 73.3, 67.3, 61.3, 62.4) 
@@ -359,7 +353,15 @@ myg <- ggboxplot(my_data, x = "group", y = "score",
 ggsave('images_bw/boxeg.png',myg,scale = 1, width = 6, height = 5, units = c("in"), dpi = 300)
 }
 ```
-\end{center}
+
+```{r boxploteg,echo=F,message=F,fig.cap ='Sample data for t-test in boxplot format',out.width="80%"}
+  knitr::include_graphics("images_bw/boxeg.png")
+```
+
+
+if(makefig==0){
+  knitr::include_graphics("images_bw/boxeg.png")
+}
 
 
 
