@@ -110,6 +110,7 @@ predicted_df2 <- data.frame(Outcome = predict(reg2, subset(ChickWeight2, Interve
 myg <- ggplot(data=ChickWeight2,aes(x = Time, y = Outcome, group = Chick)) + geom_line(aes(colour=Intervention),alpha=0.5) +
     geom_point(aes(shape=Intervention),alpha=0.5) + 
   scale_colour_grey() + theme_bw()+
+    xlab("Time (days)") + ylab("Weight (gm)")+
   geom_line(data = predicted_df1, aes(x=Time, y=Outcome),linetype='dashed') + 
   geom_line(data = predicted_df2, aes(x=Time, y=Outcome))
 ggsave('images_bw/interventionhet.png',myg,scale = 1, width = 6, height = 4, units = c("in"), dpi = 300)

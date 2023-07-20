@@ -39,7 +39,7 @@ knitr::include_graphics("images_bw/wolfsheeprevised.png")
  
 
 
-Figure \@ref(fig:wolfsheepfig) conveys the same information as Table \@ref(tab:confusionMat) from the previous chapter, but redrawn in terms of wolves and sheep. The type I error rate (i.e. percentage of 'significant' results seen when there is no real effect) is controlled by setting the significance criterion, $\alpha=0.05$, at 5%, or sometimes more conservatively 1% ($\alpha=0.01$).\index{significance level!alpha} With $\alpha=0.05$, on average 1 in 20 statistically significant results will be false positives; when it is .01, then 1 in 100 will be false positives. The .05 cutoff is essentially arbitrary, but very widely adopted in the medical and social sciences literature, though debate continues as to whether a different convention should be adopted [@benjamin2018, @lakens2018].\index{statistical significance}
+Figure \@ref(fig:wolfsheepfig) conveys the same information as Table \@ref(tab:confusionMat) from the previous chapter, but redrawn in terms of wolves and sheep. The type I error rate (i.e. percentage of 'significant' results seen when there is no real effect) is controlled by setting the significance criterion, $\alpha=0.05$, at 5%, or sometimes more conservatively 1% ($\alpha=0.01$).\index{significance level!alpha} With $\alpha=0.05$, on average 1 in 20 statistically significant results will be false positives; when it is .01, then 1 in 100 will be false positives. The .05 cutoff is essentially arbitrary, but very widely adopted in the medical and social sciences literature, though debate continues as to whether a different convention should be adopted - see @benjamin2018, @lakens2018.\index{statistical significance}
 
 ## Reasons for false positives
 
@@ -81,7 +81,7 @@ There are several ways we can defend ourselves against a proliferation of false 
 
 As noted above, even when we have a well-designed and adequately powered study, if we collect multiple outcome variables, or if we are applying multiple tests to the same data, then we increase our chance of finding a false positive. Remember that if we set $\alpha$ to .05 and apply $k$ tests to our data, then the probability of finding at least one false positive is given by $1-(1-\alpha)^{k}$. This is known as the **family-wise error rate** (FWER).\index{family-wise error rate}
 
-```{r familywise,echo=F, out.width = "80%",fig.cap="Plot of relationship between familywse error rate and number of statistical tests"}
+```{r familywise,echo=F, out.width = "80%",fig.cap="Plot of relationship between familywise error rate and number of statistical tests"}
 makefig <-0
 if (makefig==1){
 k <- seq(1:100)
