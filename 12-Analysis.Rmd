@@ -55,7 +55,7 @@ A low p-value allows us to reject the null hypothesis with a certain degree of c
 <div>-->
 
 \begin{tcolorbox}[colback=Black!5!lightgray,colframe=black!75!black,coltitle=white,title=Criticisms of the use of p-values]\label{box:pvalues}
-There are many criticisms of the use of p-values in science, and a good case can be made for using alternative approaches, notably methods based on Bayes theorem. Our focus here is on Null Hypothesis Significance Testing in part because such a high proportion of studies in the literature use this approach, and it is important to understand p-values in order to evaluate the literature. It has also been argued that p-values are useful provided people understand what they really mean \protect\hyperlink{ref-lakens2021}{Lakens} (\protect\hyperlink{ref-lakens2021}{2021}).
+There are many criticisms of the use of p-values in science, and a good case can be made for using alternative approaches, notably methods based on Bayes theorem. Our focus here is on Null Hypothesis Significance Testing in part because such a high proportion of studies in the literature use this approach, and it is important to understand p-values in order to evaluate the literature. It has also been argued that p-values are useful provided people understand what they really mean (\protect\hyperlink{ref-lakens2021}{Lakens}).
 
 One reason why many people object to the use of p-values is that they are typically used to make a binary decision: we either accept or reject the null hypothesis, depending on whether the p-value is less than a certain value. In practice, evidence is graded, and it can be more meaningful to express results in terms of the amount of confidence in alternative interpretations, rather than as a single accept/reject cutoff (\protect\hyperlink{ref-quintana2018}{Quintana \& Williams, 2018}).
 \end{tcolorbox}
@@ -242,8 +242,7 @@ For readers who are not accustomed to interpreting statistical output, the main 
 
 <p id="custom">-->
 \begin{tcolorbox}[colback=Black!5!lightgray,colframe=black!75!black,coltitle=white,title=Analysis of variance and linear regression]\label{box:ttestcomparison}
-Mathematically, the t-test is equivalent to two other methods: analysis of variance and linear regression. When we have just two groups, all of these methods achieve the same thing: they divide up the variance in the data into variance associated with group identity, and other (residual) variance, and provide a statistic that reflects the ratio between these two sources of variance. This is illustrated with the real data analysed in Table \@ref(tab:ancova-compare). The analysis gives results that are equivalent to the t-test in Table \@ref(tab:ttestoutcomes): if you square the t-value it is the same as the F-test. In this case, the p-value from the t-test is half the value of that in the ANOVA: this is because we specified a one-tailed test for the t-test. The p-value would be identical to that from ANOVA if a two-tailed t-test had been used.\
-For more details see [this blogpost: http://deevybee.blogspot.com/2017/11/anova-t-tests-and-regression-different.html](http://deevybee.blogspot.com/2017/11/anova-t-tests-and-regression-different.html) for more details.
+Mathematically, the t-test is equivalent to two other methods: analysis of variance and linear regression. When we have just two groups, all of these methods achieve the same thing: they divide up the variance in the data into variance associated with group identity, and other (residual) variance, and provide a statistic that reflects the ratio between these two sources of variance. This is illustrated with the real data analysed in Table \\ref{tab:ancova-compare}. The analysis gives results that are equivalent to the t-test in Table \\ref{tab:ttestoutcomes}: if you square the t-value it is the same as the F-test. In this case, the p-value from the t-test is half the value of that in the ANOVA: this is because we specified a one-tailed test for the t-test. The p-value would be identical to that from ANOVA if a two-tailed t-test had been used.\
 \end{tcolorbox}  
 
 ### Non-normal data
@@ -314,7 +313,7 @@ mytext3 <- c('Low','...','...','High')
 mydf<-data.frame(cbind(mytests,mytext1,mytext2,mytext3))
 colnames(mydf) <- c('Method','Features','Ease of understanding','Flexibility')
 knitr::kable(mydf,escape = T, align = "c", booktabs = T,caption="Analytic methods for comparing outcomes in intervention vs control groups") %>%
-  kable_styling(c("striped", "bordered"), full_width = F) %>%
+  kable_styling(full_width = F) %>%
   column_spec(1:1, bold = T) %>%
   column_spec(1:4,width = "7em") %>%
   column_spec(2,width = "12em")
@@ -357,12 +356,6 @@ ggsave('images_bw/boxeg.png',myg,scale = 1, width = 6, height = 5, units = c("in
 ```{r boxploteg,echo=F,message=F,fig.cap ='Sample data for t-test in boxplot format',out.width="80%"}
   knitr::include_graphics("images_bw/boxeg.png")
 ```
-
-
-if(makefig==0){
-  knitr::include_graphics("images_bw/boxeg.png")
-}
-
 
 
 

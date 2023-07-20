@@ -36,7 +36,7 @@ By the end of this chapter, you will be able to:
 
 <!---<p id="vignette">--->
 \begin{shaded}
-\textit{Janice, a speech-and-language therapist, uses a parent-based approach with late-talking 2-year-olds. Parents are encouraged to make video recordings of interactions with their child, which are then analysed with the therapist, who notes ways of making the interaction more contingent on the child's interests and communicative attempts. Janice wants to evaluate what she is doing. A colleague of hers, Anna, who has a similar caseload, is sceptical about whether Janice's approach is cost-effective. Anna uses a watchful waiting approach with children this young. Janice and Anna agree to do a study using the same pre- and post-intervention assessments so that they can evaluate the impact of Janice's approach.}  
+\textit{Janice, a speech-and-language therapist, uses a parent-based approach with late-talking 2-year-olds. Parents make video recordings of interactions with their child, which are then analysed with the therapist, who notes ways of making the interaction more contingent on the child's interests and communicative attempts. Janice wants to evaluate what she is doing. A colleague of hers, Anna, who has a similar caseload, is sceptical about whether Janice's approach is cost-effective. Anna uses a watchful waiting approach with children this young. Janice and Anna agree to do a study using the same pre- and post-intervention assessments so that they can evaluate the impact of Janice's approach.}  
 \end{shaded}  
 
 \begin{shaded}

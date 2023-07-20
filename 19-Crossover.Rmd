@@ -43,7 +43,7 @@ The suitability of a cross-over design, and the anticipated results, depend cruc
 The delayed cross-over design\index{cross-over design!delayed} or wait list control design\index{wait list control} is another type of *within subject* design that is more commonly used in situations where the effect of an intervention is likely to persist. We start by taking baseline measures from both groups. The impact of intervention is measured in Group A relative to their pre-intervention score. For Group B, intervention starts at the point when Group A stop the intervention.
 
 
-```{r waitlist-plot,  echo=F, message=F, warning=F, fig.cap="Idealized results from a waitlist RCT",out.width="80%"}
+```{r waitlist-plot,  echo=F, message=F, warning=F, fig.cap="Schematic of a waitlist RCT",out.width="80%"}
 
  knitr::include_graphics('images_bw/waitlist.png') #read in previously created diag
 

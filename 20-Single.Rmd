@@ -222,7 +222,7 @@ knitr::kable(mytab,escape = T, align = "c", booktabs = T,caption="N items per se
 
 As noted above, single case designs cover a wide range of options, and can vary the periods of observation or the classes of observations made for each individual.
 
-### A multiple baseline design: Speech and language therapy for adolescents in youth justice.
+### Multiple baseline design: Speech and language therapy for adolescents in youth justice.
 
 The key feature of a multiple baseline design\index{multiple baseline design} is that onset of intervention is staggered across at least three different points in time. Potentially, this could be done by having three or more participants, each of whom was measured in a baseline and an intervention phase, with the timing of the intervention phase varied across participants. Alternatively, one can have different outcomes assessed in a single participant. Figure \@ref(fig:swainfig) from @swain2020 provides an illustration of the latter approach with a single participant, where different outcomes are targeted at different points in a series of intervention sessions. Typically, the timing of the interventions is not preplanned, but rather, they are introduced in sequence, with the second intervention only started after there is a documented effect from the first intervention, and so on [@horner2014].
 
@@ -235,7 +235,7 @@ The three panels show percentages correct on outcome probes for three skills: sp
 
 In the other case studies reported by @swain2020, different behaviours were targeted, according to the specific needs of the adolescents who were studied.
 
-### A study using multiple baseline across behaviours: Effectiveness of electropalatography
+### Multiple baseline across behaviours: Effectiveness of electropalatography
 
 We noted in the previous chapter how, electropalatography, a biofeedback intervention that provides information about the position of articulators to help clients improve production of speech sounds, is ill-suited to evaluation in a RCT. It is potentially applicable to people with a wide variety of aetiologies, so the treated population is likely to be highly heterogenous, it requires expensive equipment including an individualized artificial palate, and the intervention is delivered over many one-to-one sessions. The goal of the intervention is to develop and consolidate new patterns of articulation that will persist after the intervention ends. It would not, therefore, make much sense to do a single case trial of electropalatography using an ABA design that involved comparing blocks of intervention vs no intervention. One can, however, run a trial that tests whether there is more improvement on targeted speech sounds than on other speech sounds that are not explicitly treated.
 

@@ -214,7 +214,7 @@ if(makefig==0){
 <!---#### Reporting of confidence intervals {.unnumbered}
 
 ::: {#custom}-->
-\begin{tcolorbox}[colback=Black!5!lightgray,colframe=black!75!black,coltitle=white,title=Reporting of confidence intervals]
+\begin{tcolorbox}[colback=Black!5!lightgray,colframe=black!75!black,coltitle=white,title=Reporting of confidence intervals]\label{box:confint}
 Those who set standards for reporting clinical trial results generally encourage researchers to include confidence intervals as well as means. Reporting of confidence intervals is useful, not least because it encourages researchers and readers of research to appreciate that the results obtained from a study are just estimates of the true effect, and there may be a wide margin of uncertainty around results from small samples.  Some have pushed back against reporting of confidence intervals, either because of conceptual objections and/or because the confidence interval is widely misunderstood. The correct interpretation of a 95 per cent confidence interval is that if you conducted your study over and over again, on 95 per cent of occasions the confidence interval that you get will contain the true population mean. Illustrating this point, in Figure 11.3, you can see that for most studies, the confidence interval contains the true value, .75, but there is one study, study A, where there is a very large difference between means and the confidence interval does not include the true value. 
 \end{tcolorbox}
 <!---Figure number is hard coded -->

@@ -17,10 +17,10 @@ knitr::include_graphics("images/logo_alone_new.png")
 }
 ```
 
-## Learning objective s 
+## Learning objectives 
 By the end of this chapter, you will be able to:
--   explain which biases from previous chapters are adequately controlled in a randomized controlled trial  
--   understand how reporting standards can help ensure study quality   
+-    explain which biases from previous chapters are adequately controlled in a randomized controlled trial  
+-    understand how reporting standards can help ensure study quality   
 
 ## The ingredients of a RCT
 The randomized controlled trial (RCT) is regarded by many as the gold standard method for evaluating interventions. In Chapter \@ref(drawbacks) we will discuss some of the limitations of this approach that can make it less than ideal for evaluating certain kinds of non-medical interventions. But in this chapter we'll look at the ingredients of a RCT that make it such a well-regarded method, and introduce the basic methods that can be used to analyse the results.
