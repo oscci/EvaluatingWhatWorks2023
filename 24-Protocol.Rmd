@@ -15,12 +15,12 @@ A good study will have a clearly articulated conceptual model, i.e., be able to 
 
 ## What is being compared with what in this study?
 
-Table \@ref(tab:scdlogic in Chapter \@ref(Single) provides a simple framework. There are three basic options when evaluating an intervention:\
+Table \@ref(tab:scdlogic) in Chapter \@ref(Single) provides a simple framework. There are three basic options when evaluating an intervention:\
 - A. Different people (typically treated or control) are compared at one time point (usually after intervention)\
 - B. The same person or people are compared at two or more time points (usually before and after intervention)\
 - C. The same person is compared on different outcome measures, only some of which have been the focus of intervention
 
-Option A corresponds to the classical RCT, and, if properly designed it controls for many biases; see Table 12.1 in Chapter \@ref(RCT). Although the focus is on comparisons after intervention, it is usual to also adjust score for baseline levels, thereby including some elements of Option B. Option B on its own is usually a weak design because, as shown in Chapter \@ref(prepost), it fails to control for many biases that are related to the simple passage of time, though single case designs that use multiple baseline measures can counteract this.\
+Option A corresponds to the classical RCT, and, if properly designed it controls for many biases; see Table 12.1 in Chapter \@ref(RCT). Although the focus is on comparisons after intervention, it is usual to also adjust the score for baseline levels, thereby including some elements of Option B. Option B on its own is usually a weak design because, as shown in Chapter \@ref(prepost), it fails to control for many biases that are related to the simple passage of time, though single case designs that use multiple baseline measures can counteract this.\
 Option C is sometimes used in single case designs. Our view is that it has potential for improving power and providing converging evidence for intervention effects, especially when combined with A and/or B.
 
 ## How adequate are the outcome measures?
@@ -37,7 +37,7 @@ As well as sample size, we need to consider whether study participants were repr
 
 ## Was there adequate control for bias?
 
-Here one wants to know whether steps were taken to avoid biases that might arise if experimenters have a strong desire for intervention to be effective, which might influence the outcome measures or the write-up of the study. Was selection to intervention/control groups randomized? Could subjective judgements by experimenters have affected the results? Is any conflict of interest declared?\index{bias!controlling for}
+Here one wants to know whether steps were taken to avoid biases that might arise if experimenters have a strong desire for an intervention to be effective, which might influence the outcome measures or the write-up of the study. Was selection to intervention/control groups randomized? Could subjective judgments by experimenters have affected the results? Is any conflict of interest declared?\index{bias!controlling for}
 
 ## Was the study pre-registered?
 
@@ -49,7 +49,7 @@ We have not gone into detail regarding technical aspects of data analysis, and t
 
 ## Is the data openly available?
 
-Open data, like preregistration, doesn't guarantee high quality research, but it is a sign that the researchers are aware of the important of open, reproducible practices, and it provides an opportunity for others to check results and/or incorporate them in a meta-analysis.\index{open data}
+Open data, like preregistration, doesn't guarantee high quality research, but it is a sign that the researchers are aware of the importance of open, reproducible practices, and it provides an opportunity for others to check results and/or incorporate them in a meta-analysis.\index{open data}
 
 ## How do the results compare with others in the literature?
 

@@ -53,7 +53,7 @@ The delayed cross-over design\index{cross-over design!delayed} or wait list cont
 In many respects, this design resembles a regular RCT, and has some of the same benefits, in terms of controlling for effects of practice, maturation and regression to the mean. Relative to a standard RCT, it has some advantages:
 
 -   Group B serves as a replication sample. If benefits of intervention are seen in Group A, then we should see similar effects in Group B by the end of the study.  
--   As well as estimating immediate effects of intervention, Group A can provide an estimate of how far there is persistence of effects by comparing their score at the of intervention with the final, post-intervention phase.  
+-   As well as estimating immediate effects of intervention, Group A can provide an estimate of how far there is persistence of effects by comparing their score at the end of intervention with the final, post-intervention phase.  
 -   An adaptive approach can be adopted, so that if no benefit of intervention is seen for Group A at the end of intervention, the study can be terminated.  
 -   This design may encourage participation by clients and those referring them, as all participants have access to a potentially beneficial intervention and serve as their own controls.
 

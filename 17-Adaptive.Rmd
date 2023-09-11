@@ -48,7 +48,7 @@ knitr::include_graphics("images_bw/adaptive_flow.png")
 The adaptive design, as the name suggests, allows for modifications to certain aspects of the design as the trial progresses - see Figure \@ref(fig:adaptiveflow), based on @pallmann2018. Interim analyses are pre-planned and used to assess whether modifications are required. These assessments can be used to make several pre-specified changes, if required.  
 Figure \@ref(fig:adaptivefig) [based on @thorlund2018] shows some of the commonly used adaptive trial designs. The adaptive trial with sample size reassessment has an interim step when sample size is re-evaluated based on provisional results. The trial with response adaptive randomization changes the allocation ratio to intervention and control groups depending on interim findings. The trial with adaptive enrichment changes the proportions of different participant types based on interim results. Other adaptive designs include: changing the amount or frequency of intervention received, and stopping intervention early if interim analysis shows the intervention to be ineffective or if adverse effects are observed.
 
-```{r adaptivefig, echo=F, fig.align="center",out.width="90%",fig.cap="Commonly used adaptive designs; based on Thorlund et al, 2017"}
+```{r adaptivefig, echo=F, fig.align="center",out.width="90%",fig.cap="Commonly used adaptive designs; based on Thorlund et al, 2018."}
 knitr::include_graphics("images_bw/AdaptiveInfographic.png")
 
 ```
