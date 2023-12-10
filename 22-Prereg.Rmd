@@ -1,7 +1,7 @@
 # Pre-registration and Registered Reports {#prereg}
 
 ```{r addlogo,echo=F,warning=F,message=F}
-mylogo <- 0
+mylogo <- 1
 if(mylogo==1){
 knitr::include_graphics("images/logo_alone_new.png")
 }
@@ -26,12 +26,12 @@ Does this mean we are prohibited from exploring our data to discover unexpected 
 
 In psychology, a move towards registration of studies has been largely prompted by concerns about the high rates of p-hacking and HARKing in this literature [@simmons2011] (see Chapter \@ref(phacking)), and the focus is less on clinical trials than on basic observational or experimental studies. The term **pre-registration** has been adopted to cover this situation. For psychologists, the [Open Science Framework: https://osf.io](https://osf.io) has become the most popular repository for pre-registrations, allowing researchers to deposit a time-stamped protocol, which can be embargoed for a period of time if it is desired to keep this information private [@hardwicke2021]. \index{Open Science Framework}Examples of pre-registration templates are available at: https://cos.io/rr/](https://cos.io/rr/).
  \index{data!repository}
-<!---#### Does trial registration prevent outcome-switching? {.unnumbered}
+ 
+#### Does trial registration prevent outcome-switching? {.unnumbered}
+<div id="custom">
+A registered clinical trial protocol typically specifies a primary outcome measure, which should be used in the principal analysis of the study data. This protects against the situation where the researcher looks at numerous outcomes and picks the one that looks best - in effect p-hacking. In practice, trial registration does not always achieve its goals: @goldacre2019 identified 76 trials published in a six-week period in one of five journals: New England Journal of Medicine, The Lancet, Journal of the American Medical Association, British Medical Journal, and Annals of Internal Medicine. These are all high-impact journals that officially endorse Consolidated Standards of Reporting Trials (CONSORT), which specify that pre-specified primary outcomes should be reported. Not only did Goldacre et al find high rates of outcome-switching in these trial reports; they also found that some of the journals were reluctant to publish a letter that drew attention to the mismatch, with qualitative analysis demonstrating *"extensive misunderstandings among journal editors about correct outcome reporting*".
+</div>
 
-::: {#custom}-->
-\begin{tcolorbox}[colback=Black!5!lightgray,colframe=black!75!black,coltitle=white,title=Does trial registration prevent outcome-switching?]\label{box:switch}
-A registered clinical trial protocol typically specifies a primary outcome measure, which should be used in the principal analysis of the study data. This protects against the situation where the researcher looks at numerous outcomes and picks the one that looks best - in effect p-hacking. In practice, trial registration does not always achieve its goals: (\protect\hyperlink{ref-goldacre2019}{Goldacre et al., 2019}) identified 76 trials published in a six-week period in one of five journals: New England Journal of Medicine, The Lancet, Journal of the American Medical Association, British Medical Journal, and Annals of Internal Medicine. These are all high-impact journals that officially endorse Consolidated Standards of Reporting Trials (CONSORT), which specify that pre-specified primary outcomes should be reported. Not only did Goldacre et al find high rates of outcome-switching in these trial reports; they also found that some of the journals were reluctant to publish a letter that drew attention to the mismatch, with qualitative analysis demonstrating "extensive misunderstandings among journal editors about correct outcome reporting".
-\end{tcolorbox}
 \index{outcome switching}\index{CONSORT}  
 
 ## Registered Reports
@@ -42,7 +42,7 @@ Michael Mahoney, whose book was mentioned in Chapter \@ref(pubbias), provided an
 
 37 years later, Chris Chambers independently came to the same conclusion. In his editorial role at the journal Cortex, he introduced a new publishing initiative adopting this model, which was heralded by an [open letter in the Guardian newspaper: https://www.theguardian.com/science/blog/2013/jun/05/trust-in-science-study-pre-registration](https://www.theguardian.com/science/blog/2013/jun/05/trust-in-science-study-pre-registration). The **registered report** is a specific type of journal article that embraces pre-registration as one element of the process; crucially, peer review occurs before data is collected.\index{registration!registered reports}
 
-```{r RRcompare, fig.align="center", echo=FALSE, fig.cap="Comparison of stages in regular publishing model and Registered Reports",out.width="75%"}
+```{r RRcompare, fig.align="center", echo=FALSE, fig.cap="Comparison of stages in regular publishing model and Registered Reports",fig.alt="The upper flow chart shows the usual sequence of stages for a research study, and the lower chart shows sequence for a Registered Report. The usual process involves Planning, Execution, Submission to journal, Responding to reviewers, and Publishing. The lower chart shows that for Registered reports, the same stages occur in a different order, with submission to journal and response to reviewer done after planning and before execution.", out.width="75%"}
 knitr::include_graphics("images_bw/RR_compare_regularpublishing.png")
 ```
 
@@ -52,11 +52,11 @@ Methodological quality of registered reports tends to be high because no editor 
 
 The terminology in this area can be rather confusing, and it is important to distinguish between pre-registration, as described in the previous section (which in the clinical trials literature is simply referred to as "trial registration") and registered reports, which include peer review prior to data collection, with **in principle acceptance** of the paper before results are known. Another point of difference is that trial registration is always made public; that is not necessarily the case for registered reports, where the initial protocol may be deposited with the journal but not placed in the public domain. Pre-registrations outside the clinical trials domain need to be deposited on a repository with a time-stamp, but there is flexibility about when, or indeed if, they are made public.
 
-The more stringent requirements for a registered report, versus standard pre-registration, mean that this publication model can counteract four major sources of bias in scientific publications - referred by @bishop2019 as the four horsemen of the reproducibility apocalypse, namely:
+The more stringent requirements for a registered report, versus standard pre-registration, mean that this publication model can counteract four major sources of bias in scientific publications - referred to by @bishop2019 as the four horsemen of the reproducibility apocalypse, namely:
 
 -   Publication bias. By basing reviews on introduction and methods only, it is no longer possible for knowledge of results to influence publication decisions. As @mahoney1976 put it, it allows us to : *place our trust in good questions rather than cheap answers.*\index{publication bias}
 
--   Low power. No journal editor wants to publish an ambiguous null result that could just be the consequence of low statistical power -see Chapter \@ref(power). However, in an adequately powered intervention study, a null result is important and informative for telling us what does not work. Registered reports require authors to justify their sample size, minimising the likelihood of type II errors.\index{power}
+-   Low power. No journal editor wants to publish an ambiguous null result that could just be the consequence of low statistical power -see Chapter \@ref(power). However, in an adequately powered intervention study, a null result is important and informative for telling us what does not work. Registered reports require authors to justify their sample size, minimizing the likelihood of type II errors.\index{power}
 
 -   P-hacking. Pre-specification of the analysis plan makes transparent the distinction between pre-planned hypothesis-testing analyses, and post hoc exploration of the data. Note that exploratory analyses are not precluded in a registered report, but they are reported separately, on the grounds that statistical inferences need to be handled differently in this case - see Chapter \@ref(phacking).\index{p-hacking}
 

@@ -1,7 +1,7 @@
 # Putting it all together {#final}
 
 ```{r addlogo,echo=F,warning=F,message=F}
-mylogo <- 0
+mylogo <- 1
 if(mylogo==1){
 knitr::include_graphics("images/logo_alone_new.png")
 }
@@ -15,7 +15,7 @@ A good study will have a clearly articulated conceptual model, i.e., be able to 
 
 ## What is being compared with what in this study?
 
-Table \@ref(tab:scdlogic) in Chapter \@ref(Single) provides a simple framework. There are three basic options when evaluating an intervention:\
+Table 20.1 in Chapter \@ref(Single) provides a simple framework. There are three basic options when evaluating an intervention:\
 - A. Different people (typically treated or control) are compared at one time point (usually after intervention)\
 - B. The same person or people are compared at two or more time points (usually before and after intervention)\
 - C. The same person is compared on different outcome measures, only some of which have been the focus of intervention

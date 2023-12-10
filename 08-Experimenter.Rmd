@@ -1,7 +1,7 @@
 # The researcher as a source of bias {#experimenter}
 
 ```{r addlogo,echo=F,warning=F,message=F}
-mylogo <- 0
+mylogo <- 1
 if(mylogo==1){
 knitr::include_graphics("images/logo_alone_new.png")
 }
@@ -27,28 +27,35 @@ In allied health and educational fields, where resources are limited and the sam
 
 As discussed in Chapter \@ref(reliability), some assessments are more objective than others: it is relatively easy to be swayed by one's own desires and expectation when making a global rating of a person's communicative competence on a 4-point scale, much less so when administering a multiple choice comprehension test, where the task is to select a picture to match a spoken word. Nevertheless, there is evidence that, even with relatively objective tasks, researcher bias can creep in. Perhaps the clearest evidence comes from reviews that compare similar studies that are administered either with or without masking: where researchers are unaware of which group a subject is in, effects are typically smaller than when they are aware (and hence potentially able to bias the observations) [@holman2015].
 
-Perhaps the most sobering example comes, not from an intervention study, but from data on a phonics screening test administered by teachers in UK schools in 2012. The score is supposed to indicate the number of items on a standard list of words and nonwords that a child reads accurately. Although there is some judgement required to tell whether a nonword is correctly pronounced, this should not exert a big effect on final scores, given that teachers were provided with a list of acceptable pronunciations. The results, however, which were published annually on a government website, showed clear evidence of scores being nudged up for some cases. We would expect a normal, bell-shaped distribution of scores, but instead there was a sudden dip just below the pass mark and a corresponding excess of cases just about the pass mark. Since teachers were aware of the pass mark, they would have been able to nudge up the scores of children who were just one or two points below, and the distribution of scores is clear evidence that this happened. [A similar picture was observed in 2013](http://deevybee.blogspot.com/2013/10/good-and-bad-news-on-phonics-screen.html)[@bishop2013a], but the spike disappeared in 2014, when teachers were not told the pass mark in advance [@duff2015].
+Perhaps the most sobering example comes, not from an intervention study, but from data on a phonics screening test administered by teachers in UK schools in 2012. The score is supposed to indicate the number of items on a standard list of words and nonwords that a child reads accurately. Although there is some judgement required to tell whether a nonword is correctly pronounced, this should not exert a big effect on final scores, given that teachers were provided with a list of acceptable pronunciations. The results, however, which were published annually on a government website, showed clear evidence of scores being nudged up for some cases. We would expect a normal, bell-shaped distribution of scores, but instead there was a sudden dip just below the pass mark and a corresponding excess of cases just above the pass mark. Since teachers were aware of the pass mark, they would have been able to nudge up the scores of children who were just one or two points below, and the distribution of scores is clear evidence that this happened. [A similar picture was observed in 2013](http://deevybee.blogspot.com/2013/10/good-and-bad-news-on-phonics-screen.html) [@bishop2013a], but the spike disappeared in 2014, when teachers were not told the pass mark in advance [@duff2015].
 
 ```{r makephonfig, echo=F, warning=F, message=F}
 dophonfig <- 0
+
 if(dophonfig==1){
 require(here)
 require(ggplot2)
+bwimage <- 2
+myfolder<-here('images_colour') 
+if(bwimage==1) {myfolder<-here('images_bw') }
 mydat <- read.csv(here("Data", "phonicsdat1.csv"))
 colnames(mydat)<-c('Phonics test score','N children','Group')
 p<-ggplot(data=mydat, aes(x=`Phonics test score`, y=`N children`, fill=Group)) +
-geom_bar(stat="identity", position=position_dodge())+
+geom_bar(stat="identity",position=position_dodge())+
 theme_bw()+
-theme(legend.position="top")+
-scale_fill_grey()
-myfolder<-here('images_bw')
- ggsave(paste0(myfolder,'/phonics.png'),p,scale = 1, width = 5, height = 3, units = c("in"), dpi = 300)
+theme(legend.position="top")
+if(bwimage==2){
+p<-p+scale_fill_manual(values=c('blue','red'))}
+if(bwimage==1){
+p<-p+scale_fill_grey()}
+
+ggsave(paste0(myfolder,'/phonics.png'),p,scale = 1, width = 5, height = 3, units = c("in"), dpi = 300)
 }
 
 
 ```
 
-```{r phonicsfig, echo=F, fig.cap='Numbers of children with specific scores on phonics screen. (Based on original data from Department for Education website, now deleted)',out.width="80%"}
+```{r phonicsfig, echo=F, fig.cap='Numbers of children with specific scores on phonics screen. (Based on original data from Department for Education website, now deleted)',fig.alt='Histogram showing numbers of children achieving different scores on the phonics screen. The numbers decrease just below the pass mark and then shoot up just above the pass mark.',out.width="80%"}
 knitr::include_graphics("images_bw/phonics.png")
 ```
 
@@ -56,20 +63,15 @@ knitr::include_graphics("images_bw/phonics.png")
 
 In medical trials, the large amount of evidence for researcher bias on measures has led to a general consensus that outcome assessments should be done by someone who is unaware of who was in the intervention or control group. This is likely to add to the cost of conducting a trial, but it gives security that no nudging has taken place.
 
-<!---#### Another questionable classic study {.unnumbered}
+#### Another questionable classic study{-}
+<div id="custom">When experimenter bias is discussed, we usually see citation to the work of Robert Rosenthal, who conducted a series of experiments in the 1960s, some of which have become classics in psychology. One of the most famous, which features in many undergraduate texts, is a study by @rosenthal1963, which describes how student experimenters could be made to give biased evaluation of performance of rats in maze-learning task. All the rats were from the same batch, but students were told they were either "maze bright" or "maze dull". Since there was no real difference between rats, they should have performed the same, but those designated as "maze bright" were faster in solving the maze than the "maze dull".  
+Unfortunately, this classic study does not stand up to scrutiny. The numbers of students were small, and the results were not statistically robust when analysed according to contemporary standards. Indeed, even at the time, Rosenthal's work on experimenter bias came under strong criticism for methodological flaws [@barber1968]. Nevertheless, Rosenthal's account of experimenter bias has been highly influential, forming part of the canon of "zombie psychological effects" that refuse to die, while Barber and Silver's critique has been largely forgotten. As with the Hawthorne effect, we see that few people return to look at the original data, and even if the research is debunked, it lives on because the story is just too perfect.  
 
-::: {#custom}-->
-\begin{tcolorbox}[colback=Black!5!lightgray,colframe=black!75!black,coltitle=white,title=Another questionable classic study]\label{box:Rosenthal}
+<img src="images/rat1.png" width="33%" /><img src="images/rat2.png" width="33%" />
 
-\begin{center}
-```{r rats,echo=F,out.width="40%"}
-knitr::include_graphics("images_bw/ratsx2.png")
-```
-\end{center}
-When researcher bias is discussed, we usually see citation to the work of Robert Rosenthal, who conducted a series of experiments in the 1960s, some of which have become classics in psychology. One of the most famous, which features in many undergraduate texts, is a study by \protect\hyperlink{ref-rosenthal1963}{Rosenthal \& Fode} (\protect\hyperlink{ref-rosenthal1963}{1963}), which describes how student experimenters could be made to give biased evaluation of performance of rats in a maze-learning task. All the rats were from the same batch, but students were told they were either "maze bright" or "maze dull". Since there was no real difference between rats, they should have performed the same, but those designated as "maze bright" were faster in solving the maze than the "maze dull".  
-Unfortunately, this classic study does not stand up to scrutiny. The numbers of students were small, and the results were not statistically robust when analysed according to contemporary standards. Indeed, even at the time, Rosenthal's work came under strong criticism for methodological flaws (\protect\hyperlink{ref-barber1968}{Barber \& Silver, 1968}). Nevertheless, Rosenthal's account of experimenter bias has been highly influential, forming part of the canon of "zombie psychological effects" that refuse to die, while Barber and Silver's critique has been largely forgotten. As with the Hawthorne effect, we see that few people return to look at the original data, and even if the research is debunked, it lives on because the story is just too perfect.  
-Does this mean we do not need to worry about researcher effects? We recommend that it is good practice to take them into account when designing studies, but this story is further evidence of the need to look carefully at supposedly well-established findings.
-\end{tcolorbox}
+Does this mean we do not need to worry about experimenter effects? We recommend that it is good practice to take them into account when designing studies, but this story is further evidence of the need to look carefully at supposedly well-established findings.
+</div>
+
 
 ## Conflict of interest
 

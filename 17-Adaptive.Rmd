@@ -1,5 +1,12 @@
 # Adaptive Designs {#adaptive}
 
+```{r addlogo,echo=F,warning=F,message=F}
+mylogo <- 1
+if(mylogo==1){
+knitr::include_graphics("images/logo_alone_new.png")
+}
+```
+
 ```{r loadpackages, echo=F, message=F, warning=F}
 
 library(tidyverse)
@@ -17,12 +24,6 @@ library(knitr)
 library(citr)
 ```
 
-```{r addlogo,echo=F,warning=F,message=F}
-mylogo <- 0
-if(mylogo==1){
-knitr::include_graphics("images/logo_alone_new.png")
-}
-```
 
 ## Learning objectives
 By the end of this chapter, you will be able to:
@@ -40,7 +41,7 @@ A traditional randomized control trial requires that data are not analyzed or "l
 Let's return to our three-arm trial for reading interventions. The researcher has started data collection and has gathered some initial teacher feedback that the novel computer game intervention seems to be hampering children's progress. In a traditional trial there would be no other course of action but to let the trial run its course and evaluate as planned. This might lead to the computer intervention showing poor results or even having a negative impact on those children, confirming the teacher's concerns. Alternatively, if the researcher chooses an adaptive design the teacher's observations can be assessed part way through the trial and the computer based intervention dropped from the study if interim analyses shows a negative impact of the intervention. As a consequence, the remaining individuals can change to the phonics-based intervention if the interim analyses showed positive results.\index{adaptive trial!stopping trial early}
 
 
-```{r adaptiveflow, fig.align="center", fig.height=8,echo=FALSE,out.width="75%",fig.cap="Flow diagram of adaptive trial"}
+```{r adaptiveflow, fig.align="center", fig.height=8,echo=FALSE,out.width="75%",fig.cap="Flow diagram of adaptive trial",fig.alt="Flow diagram. A typical trial has path from Design to Conduct to Analyse. The Adaptive trial has feedback loop, with dotted line showing paths from Conduct to Review to Adapt and back to Conduct."}
 knitr::include_graphics("images_bw/adaptive_flow.png")
 ```
 
@@ -48,7 +49,7 @@ knitr::include_graphics("images_bw/adaptive_flow.png")
 The adaptive design, as the name suggests, allows for modifications to certain aspects of the design as the trial progresses - see Figure \@ref(fig:adaptiveflow), based on @pallmann2018. Interim analyses are pre-planned and used to assess whether modifications are required. These assessments can be used to make several pre-specified changes, if required.  
 Figure \@ref(fig:adaptivefig) [based on @thorlund2018] shows some of the commonly used adaptive trial designs. The adaptive trial with sample size reassessment has an interim step when sample size is re-evaluated based on provisional results. The trial with response adaptive randomization changes the allocation ratio to intervention and control groups depending on interim findings. The trial with adaptive enrichment changes the proportions of different participant types based on interim results. Other adaptive designs include: changing the amount or frequency of intervention received, and stopping intervention early if interim analysis shows the intervention to be ineffective or if adverse effects are observed.
 
-```{r adaptivefig, echo=F, fig.align="center",out.width="90%",fig.cap="Commonly used adaptive designs; based on Thorlund et al, 2018."}
+```{r adaptivefig, echo=F, fig.align="center",out.width="90%",fig.cap="Commonly used adaptive designs; based on Thorlund et al, 2018.",fig.alt="In the infographic, the Adaptive Trial with sample size reassessment has an interim step when sample size is re-evaluated based on provisional results. The trial with response adaptive randomization changes the allocation ratio to intervention and control groups depending on interim findings. The trial with adaptive enrichment changes the proportions of different participant types based on interim results."}
 knitr::include_graphics("images_bw/AdaptiveInfographic.png")
 
 ```

@@ -13,7 +13,7 @@ library(cowplot)
 ```
 
 ```{r addlogo,echo=F,warning=F,message=F}
-mylogo <- 0
+mylogo <- 1
 if(mylogo==1){
 knitr::include_graphics("images/logo_alone_new.png")
 }
@@ -40,20 +40,21 @@ The key questions to ask are:
 5.  Is it efficient?
 
 
-\begin{tcolorbox}[colback=Black!5!lightgray,colframe=black!75!black,coltitle=white,title=Types of numerical measurement]\label{box:numerical}
-\index{numerical measures} 
-Results from a measurement in an intervention study are typically represented as numbers, but different types of measurement have different properties. \textbf{Nominal}, also known as categorical, data\index{nominal data}\index{categorical data} is just used to designate qualitative information. For instance, we may record data as 1, 2 or 3 to indicate the school that a child attends. The order of the numbers here is arbitrary, and the information could equally well be represented by letters, e.g. school A, B and C. It would make no sense to perform numerical operations such as addition and subtraction on such numbers.  
-For \textbf{ordinal} data,\index{ordinal data} the order of the numbers matters. For instance, if we had a 3 point scale of fluency, a person with a score of 3 would be more fluent than one with a score of 2, who would in turn be more fluent than a person who scored 1. In effect ordinal data describes ordered categories, but again, you can't sensibly perform arithmetical operations on such data, though you can specify a median or mode to represent the most typical score.   
-Data on an \textbf{interval scale} \index{interval scale data} are commonly found in behavioural studies. Here, the numbers are equally spaced, so the difference between 1 and 2 is the same quantity as the difference between 3 and 4. With interval data, we can compute an average and conduct many types of statistical test that are not possible with ordinal data.  
-The most sophisticated type of numerical measurement is the \textbf{ratio scale},\index{ratio scale data} which has all the properties of interval data, plus it has a meaningful zero point. Weight, height, length and duration are all measured on a ratio scale: a zero measurement indicates there is no weight, height, length or duration. On this kind of scale, one can meaningfully interpret multiplication - e.g. 4 kg is twice as much as 2 kg. 
-Most commonly used statistical procedures assume data is at least on an interval scale. If you are using ordinal data, then a different kind of test using \textit{nonparametric} statistics is required.
-\end{tcolorbox}
+#### Types of numerical measurement{-}
+<p id="custom"> Results from an measurement in an intervention study are typically represented as numbers, but different types of measurement have different properties.
+- **Nominal**, also known as categorical, data is just used to designate qualitative information. For instance, we may record data as 1, 2 or 3 to indicate the school that a child attends. The order of the numbers here is arbitrary, and the information could equally well be represented by letters, e.g. school A, B and C. It would make no sense to perform numerical operations such as addition and subtraction on such numbers.  
+- For **ordinal** data, the order of the numbers matters. For instance, if we had a 3 point scale of fluency, a person with a score of 3 would be more fluent than one with a score of 2, who would in turn be more fluent than a person who scored 1. In effect ordinal data describes ordered categories, but again, you can't sensibly perform arithmetical operations on such data, though you can specify a median or mode to represent the most typical score.  
+- Data on an **interval scale** are commonly found in behavioural studies. Here, the numbers are equally spaced, so the difference between 1 and 2 is the same quantity as the difference between 3 and 4. With interval data, we can compute an average and conduct many types of statistical test that are not possible with ordinal data.  
+- The most sophisticated type of numerical measurement is the **ratio scale**, which has all the properties of interval data, plus it has a meaningful zero point. Weight, height,  length and duration are all measured on a ratio scale: a zero measurement indicates there is no weight, height, length or duration. On this kind of scale, one can meaningfully interpret multiplication - e.g. 4 kg is twice as much as 2 kg.  
+Most commonly used statistical procedures assume data is at least on an interval scale.  If you are using ordinal data, then a different kind of test using *nonparametric* statistics is required. </p>
 
 \index{data!numerical measures} \index{measurement!types}
 
 
 
-```{r darts, echo=F,  fig.width=8,fig.height=4,fig.cap='Reliability and validity illustrated as a sharpshooter hitting a target',out.width="50%"}
+## Reliability  
+You may be surprised to see reliability at the top of the list. Surely validity is more important?\index{reliability} Well, yes and no. As shown in Figure \@ref(fig:darts), there's not much point in having a measure that is valid unless it is also reliable: what we want is a measure that hits the bullseye, in terms of measuring what we are aiming to measure, not just on average, but consistently. A measure that is valid but not reliable is worse than useless in an intervention study, so we put reliability at the top of the list.
+```{r darts, echo=F,  fig.width=8,fig.height=4,fig.cap='Reliability and validity illustrated as a sharpshooter hitting a target',fig.alt='Four targets: A) Labelled reliable but not valid, with shots closely clustered but off-target; B) Labelled Valid but not reliable, with shots centred on the bullseye, but widely dispersed; C) Labelled Reliable and valid, with shots  closely clustered and centred on the bullseye; D) Labelled Neither reliable nor valid, with shots widely dispersed and off-centre.',out.width="50%"}
 bwversion = 1  #1=blackwhite; #2=coloured - NB here colour is just decorative
 colorchoice = 'slategray'
 myfolder = 'images_bw'
@@ -65,10 +66,8 @@ knitr::include_graphics(paste0(myfolder,'/targets.png'))
 #Not actually a dartboard.....
 ```
 
-## Reliability  
-You may be surprised to see reliability at the top of the list. Surely validity is more important?\index{reliability} Well, yes and no. As shown in Figure \@ref(fig:darts), there's not much point in having a measure that is valid unless it is also reliable: what we want is a measure that hits the bullseye, in terms of measuring what we are aiming to measure, not just on average, but consistently. A measure that is valid but not reliable is worse than useless in an intervention study, so we put reliability at the top of the list.
 
-So what is reliability? This brings us back to the issue of random error\index{random error} or "noise"\index{noise}: quite simply you want a measure that is as accurate as possible, with minimal influence from random, unwanted sources of variation. One way to assess this is to apply the same measure on two occasions (without any intervention between) to see how similar they are, computing an index of "test-retest reliability". To assess this, we repeat the measurement with a sample of individuals seen on two occasions close in time (i.e. before we expect any change due to maturation or intervention). Test-retest reliability\index{reliability!test-retest} is often quantified by the correlation coefficient (r).\index{correlation} The correlation coefficient is a statistic that takes the value of zero when there is no relationship between two variables, 1 whether there is a perfect relationship, and -1  when there is an inverse relationship. Figure \@ref(fig:correlationfig) shows scatterplots illustrating the relationship between scores at Time 1 and Time 2 in the case of perfect correlation (r - 1), high correlation (r = .8), low correlation (r = .25) and no correlation (r = 0). If you draw a straight line through the points on the graph, the strength of correlation is reflected in how closely the points cluster around the line. Where the correlation is 1, you can predict perfectly a person's score on Y if you know their score on X.
+So what is reliability? This brings us back to the issue of random error\index{random error} or "noise"\index{noise}: quite simply you want a measure that is as accurate as possible, with minimal influence from random, unwanted sources of variation. One way to assess this is to apply the same measure on two occasions (without any intervention between) to see how similar they are, computing an index of "test-retest reliability". To assess this, we repeat the measurement with a sample of individuals seen on two occasions close in time (i.e. before we expect any change due to maturation or intervention). Test-retest reliability\index{reliability!test-retest} is often quantified by the correlation coefficient (r).\index{correlation} The correlation coefficient is a statistic that takes the value of zero when there is no relationship between two variables, 1 whether there is a perfect relationship, and -1  when there is an inverse relationship. Figure \@ref(fig:correlationfig) shows scatterplots illustrating the relationship between scores at Time 1 and Time 2 in the case of perfect correlation (r = 1), high correlation (r = .8), low correlation (r = .25) and no correlation (r = 0). If you draw a straight line through the points on the graph, the strength of correlation is reflected in how closely the points cluster around the line. Where the correlation is 1, you can predict perfectly a person's score on Y if you know their score on X.
 
 ```{r correlationfigmake, echo=F,message=F,warning=F}
 makecorrfig <-0 #set to 1 to recreate and save the figure 
@@ -83,10 +82,15 @@ return(cor_data)
 R_cors<-20*c(1,0.8,0.25,0)
 
 myC<-paste0("C",1:4)
+
+
 for(i in R_cors)
 {
 assign(myC[which(R_cors==i)],plot_cors(i) %>% ggplot(aes(x=x,y=y))+geom_point(alpha=0.75,shape=23)+geom_smooth(method = "lm", se = FALSE, color = "black",linetype="dashed") + theme_bw() + xlab("Time 1 Score") + ylab("Time 2 Score")+ggtitle(paste0("r = ",R_cors[which(R_cors==i)]/20))+xlim(40,60)+ylim(40,60)+theme(text=element_text(size=16)))
 }
+
+#for col figure add fill='red' in the geom_point term
+
 p3 <- ggarrange(plotlist = mget(paste0("C",1:length(R_cors))),ncol=2,nrow=2)
  
 ggsave(paste0(myfolder,'/correlationfig.png'),p3,scale = 1, width = 6, height = 6, units = c("in"), dpi = 300)
@@ -94,27 +98,22 @@ ggsave(paste0(myfolder,'/correlationfig.png'),p3,scale = 1, width = 6, height = 
 
 ```
 
-```{r correlationfig, echo=F,message=F,warning=F,fig.width=6,fig.height=6,fig.cap="Scatterplots showing relationship between scores at Time 1 and Time 2 for 40 individuals (simulated data).",out.width="80%"}
+```{r correlationfig, echo=F,message=F,warning=F,fig.width=6,fig.height=6,fig.cap="Scatterplots showing relationship between scores at Time 1 and Time 2 for 40 individuals (simulated data).",fig.alt="Four scatterplots, illustrating correlations of 1, .8, .25, and zero from simulated time 1 and time 2 scores. ",out.width="80%"}
 
 knitr::include_graphics('images_bw/correlationfig.png')
 ```
 
-<!---####  {.unnumbered}
 
-#### Correlation as an index of reliability {.unnumbered}-->
-
-
-\begin{tcolorbox}[colback=Black!5!lightgray,colframe=black!75!black,coltitle=white,title=Correlation as an index of reliability]\label{box:correlation}
-
-Although the correlation coefficient is widely used to index reliability, it can be misleading because it just reflects agreement in the rank ordering of two measures. It would be possible to get a high correlation even if the task showed practice effects, so that scores at time 2 were substantially higher than those at time 1. For that reason, the intraclass correlation coefficient (ICC) is preferable, as this reflects agreement in absolute scores. In practice, however, the two types of correlation give similar values unless there is a substantial difference in means between the two occasions of measurement. For more explanation see  https://www.measurement-toolkit.org/concepts/statistical-assessment.
-\end{tcolorbox}[@nihrcam].
+#### Correlation as an index of reliability {-}
+<p id="custom">Although the correlation coefficient is widely used to index reliability, it can be misleading because it just reflects agreement in the rank ordering of two measures. It would be possible to get a high correlation even if the task showed practice effects, so that scores at time 2 were substantially higher than those at time 1. For that reason, the intraclass correlation coefficient (ICC) is preferable, as this reflects agreement in absolute scores. In practice, however, the two types of correlation give similar values unless there is a substantial difference in means between the two occasions of measurement.  For more explanation see https://dapa-toolkit.mrc.ac.uk/concepts/statistical-assessment.
+</p> 
 
 \index{correlation!intraclass} \index{intraclass correlation (ICC)}
 So how reliable should a measure be? Most psychometric tests report reliability estimates, and a good test is expected to have test-retest reliability of at least .8. But be careful in interpreting such estimates, as you need also to consider the age range on which the estimate is based.\index{reliability!test-retest}
 
 
 
-```{r reliability-by-age,echo=F,include=T,fig.cap="Scatterplot showing relationship between Time 1 and Time 2 scores for children from two age bands (simulated data).",out.width="85%"}
+```{r reliability-by-age,echo=F,include=T,fig.cap="Scatterplot showing relationship between Time 1 and Time 2 scores for children from two age bands (simulated data).",fig.alt="A scatterplot of time 1 vs time 2 scores for children aged 3 (black) and 5 (grey) years.",out.width="85%"}
 #Code to create figures caused problems rendering so removed
 knitr::include_graphics(paste0(myfolder,'/reliability-by-age.png'))
 ```
@@ -135,7 +134,7 @@ A recent review by @denman2017 looked at psychometric properties\index{psychomet
 
 A modification of a popular adage is "If a thing is not worth doing, it's not worth doing well." This applies to selection of outcome measures: you could have a highly reliable measure, but if it is not measuring the right thing, then there's no point in using it.
 
-Deciding what is the "right thing" is an important part of designing any invention study, and it can be harder than it appears at first sight. The answer might be very different for different kinds of intervention. One consideration of major importance when dealing with speech and language assessments is the cultural context.
+Deciding what is the "right thing" is an important part of designing any intervention study, and it can be harder than it appears at first sight. The answer might be very different for different kinds of intervention. One consideration of major importance when dealing with speech and language assessments is the cultural context.
 
 ### Cultural factors
 
@@ -177,7 +176,7 @@ In the field of pharmaceutical trials, there is a simple solution, which is to k
 
 An example in the published literature comes from @loeb2001 who did a small-scale study to evaluate a computerized language intervention, FastForword (FFW). This study is noteworthy because as well as measuring children's language pre and post intervention, it included parent ratings of children's outcomes\index{parental report}. There was, however, a striking dissociation between the reports of parental satisfaction with the intervention and the lack of improvement on language tests. Another example comes from a trial by @bull2007 of "Sunflower therapy" for children with a range of neurodevelopmental disorders; here again parents were very positive about the intervention, but objective measures showed children had made no significant progress relative to a control group.
 
-Such results are inherently ambiguous. It could be that parents are picking up on positive aspects of intervention that are not captured by the language tests. For instance, in the Sunflower therapy study, parents reported that their children had gained in confidence -- something that was not assessed by other means. However, there it is hard to know whether these evaluations are valid, as they are likely to be contaminated by demand characteristics.\index{demand characteristics}
+Such results are inherently ambiguous. It could be that parents are picking up on positive aspects of intervention that are not captured by the language tests. For instance, in the Sunflower therapy study, parents reported that their children had gained in confidence -- something that was not assessed by other means. However, it is hard to know whether these evaluations are valid, as they are likely to be contaminated by demand characteristics.\index{demand characteristics}
 
 Ideally we want measures that are valid indicators of things that are important for functional communication, yet are reasonably objective -- and they need also to be reliable and sensitive! We don't have simple answers as to how this can be achieved, but it is important for researchers to discuss these issues when designing studies to ensure they use optimal measures.
 
@@ -225,7 +224,7 @@ q<- q+ geom_vline(aes(xintercept=30),linetype="dashed")
 ggsave(paste0(myfolder,'/stackeddens.png'),q,scale = 1, width = 6, height = 4, units = c("in"), dpi = 300) 
 ```
 
-```{r normsplot,echo=F,include=T,fig.cap="Density plot showing distribution of vocabulary scores for three age groups (simulated data). The dotted line shows a raw score of 30, which is above average for 4-year-olds, average for 5-year-olds, and below average for 6-year-olds",out.width="85%"}
+```{r normsplot,echo=F,include=T,fig.cap="Density plots showing distribution of vocabulary scores for three age groups (simulated data). The dotted line shows a raw score of 30, which is above average for 4-year-olds, average for 5-year-olds, and below average for 6-year-olds",fig.alt="3 stacked bell curves, one per age group, with same shape but means increasing from 25 to 30 to 35.",out.width="85%"}
 #Code to create figures caused problems rendering so removed
 knitr::include_graphics(paste0(myfolder,'/stackeddens.png'))
 ```
@@ -306,16 +305,11 @@ p2 <- plot_density(zcut=1)
 }
 ```
 
-<!---#### Scaled scores and percentiles {.unnumbered}
-NB commas in box headings create mayhem with .tex
-::: {#custom}-->
-
-\begin{tcolorbox}[enhanced,breakable,colback=Black!5!lightgray,colframe=black!75!black,coltitle=white,title=Scaled scores and percentiles]\label{box:scaledscores}
-The most basic way of representing a scaled score is as a z-score. As explained in the text, this just represents distance from the mean in standard deviation (SD) units. Z-scores, however, involve both positive and negative numbers, and fractional units. When entering data or writing reports, it is much easier to deal with whole numbers. So most psychometric tests simply transform the z-score onto a scale with a more convenient mean and SD. The best-known example is the IQ test, which usually transforms the scaled score to a mean of 100 and standard deviation of 15, known as a standard score. So if someone scores one SD below the mean, this is represented as a standard score of 85; if two SD below the mean, then the standard score is 70.  
-As if this was not complicated enough, a scaled score can also be directly translated into a percentile (or centile) score, which corresponds to the percentage of people in the relevant population who are expected to obtain a score at least as high as this. For normally distributed data, there is an orderly relationship between percentiles and the z-score: approximately 16\% of people are expected to score 1 SD below the mean, and 3\% score 2 SD below the mean.  
+#### Scaled scores and percentiles{-}
+<p id="custom">The most basic way of representing a scaled score is as a z-score. As explained in the text, this just represents distance from the mean in standard deviation (SD) units. Z-scores, however, involve both positive and negative numbers, and fractional units. When entering data or writing reports, it is much easier to deal with whole numbers. So most psychometric tests simply transform the z-score onto a scale with a more convenient mean and SD. The best-known example is the IQ test, which usually transforms the scaled score to a mean of 100 and standard deviation of 15, known as a standard score. So if someone scores one SD below the mean, this is represented as a standard score of 85; if two SD below the mean, then the standard score is 70.  
+As if this was not complicated enough, a scaled score can also be directly translated into a percentile (or centile) score, which corresponds to the percentage of people in the relevant population who are expected to obtain a score at least as high as this. For normally distributed data, there is an orderly relationship between percentiles and the z-score: approximately 16 per cent of people are expected to score 1 SD below the mean, and 3 per cent score 2 SD below the mean.  
 You may wonder why bother with scaled scores, given that percentiles have a more intuitive interpretation. Percentiles are good for communicating how exceptional a given score is, but they are not so well-suited for doing statistical analyses, as they are not normally distributed.
-
-\end{tcolorbox}
+</p>
 
 We have shown how norms can be used to transform the same raw score into different scaled scores, depending on age. The transformation can also achieve the opposite: for the example shown in Figure \@ref(fig:normsplot), we have 4-, 5- and 6-year-old children with raw scores of 25, 30 and 35 respectively; they would all have the same age-scaled score (z-score of zero). In effect, using age-scaled scores allows us to remove some of the noise from our measures by taking out the effect of age, and representing a score purely in terms of statistical difference from the mean of the relevant age band.
 
@@ -361,7 +355,7 @@ Efficiency is not always adequately considered when designing an intervention st
 
 The first author's interest in efficiency of measurement may be illustrated with a vignette. @bishop1987 conducted a longitudinal study of 4-year-olds with developmental language disorders. This was not an intervention study: rather, the goal was to identify how best to predict outcomes. When experts were asked what measures to use, a common piece of advice was to take a language sample, and then analyse it using LARSP [@crystal1977], which at the time was a popular approach to grammatical analysis.
 
-In practice, however, language sampling seemed to provide little useful information in relation to the time it took to gather and transcribe the sample. Many of the children in the study said rather little and did not attempt complex constructions. It was possible to get more information in five minutes with two elicitation tasks  [@renfrew2010, @renfrew1967] than from 30 minutes of language sampling\index{language sampling}. Furthermore, after investing many hours of training in LARSP, analysing the results, and attempting to extract a quantitative measure from this process, we ended up with something that had a correlation of greater than .9 with the much simpler measure of mean length of utterance (MLU). The lesson learned was that the measure needs to fit the purpose of what you are doing. In this case, we wanted an index of grammatical development that could be used to predict children's future progress. The Renfrew tasks, which were treated dismissively by many therapists, who regarded them as too old-fashioned and simple, were among the most effective measures for doing that. A practitioner working with a child might well find LARSP and language sampling preferable for identifying therapy targets and getting a full picture of the child's abilities, but for the purposes of this study, language sampling provided far more detail than was needed.
+In practice, however, language sampling seemed to provide little useful information in relation to the time it took to gather and transcribe the sample. Many of the children in the study said rather little and did not attempt complex constructions. It was possible to get more information in five minutes with two elicitation tasks by Renfrew [@renfrew1967], [@renfrew2010] than from 30 minutes of language sampling\index{language sampling}. Furthermore, after investing many hours of training in LARSP, analysing the results, and attempting to extract a quantitative measure from this process, we ended up with something that had a correlation of greater than .9 with the much simpler measure of mean length of utterance (MLU). The lesson learned was that the measure needs to fit the purpose of what you are doing. In this case, we wanted an index of grammatical development that could be used to predict children's future progress. The Renfrew tasks, which were treated dismissively by many therapists, who regarded them as too old-fashioned and simple, were among the most effective measures for doing that. A practitioner working with a child might well find LARSP and language sampling preferable for identifying therapy targets and getting a full picture of the child's abilities, but for the purposes of this study, language sampling provided far more detail than was needed.
 
 There are other cases where researchers do very complex analysis in the hope that it might give a more sensitive indicator of language, only to find that it is highly intercorrelated with a much simpler index. In the domain of expressive phonology, the first author spent many hours developing an (unpublished) index of severity based on analysis of phonological processes, only to find that this was entirely predictable from a much simpler measure of percentage consonants correct. Here again, evaluation of phonological processes may be useful for other purposes, such as planning therapy, but it seems unnecessarily complicated if one only wants a measure of severity.
 
@@ -402,7 +396,7 @@ p4 <- ggplot(mlu_data, aes(x=Age, y=Mean)) +
 
 ```
 
-```{r MLU-plot,echo=FALSE,warning=TRUE,message=TRUE,fig.cap='Mean length of utterance (MLU) values for a cohort of 630 children speaking North American English in the Child Language Data Exchange System archive. Recreated from Ratner and MacWhinney (2016) (data kindly provided by authors)',out.width="85%"}
+```{r MLU-plot,echo=FALSE,warning=TRUE,message=TRUE,fig.cap='Mean length of utterance (MLU) values for a cohort of 630 children speaking North American English in the Child Language Data Exchange System archive. Recreated from Ratner and MacWhinney (2016) (data kindly provided by authors)',fig.alt='Line chart showing increase in MLU with age; the MLU increases sharply from around 1.5 to 2.5 from age 1.5 to 2 yr, then to 3.0 for 3 year-olds, then levelling off and showing a gradual increase up to around 3.4 between 3 and 5 years.',out.width="85%"}
  
  knitr::include_graphics('images_bw/MLU-plot.png')
 

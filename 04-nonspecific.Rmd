@@ -1,7 +1,7 @@
 # Improvement due to nonspecific effects of intervention {#nonspecific}
 
 ```{r addlogo,echo=F,warning=F,message=F}
-mylogo <- 0
+mylogo <- 1
 if(mylogo==1){
 knitr::include_graphics("images/logo_alone_new.png")
 }
@@ -18,60 +18,58 @@ By the end of this chapter, you will be able to:
 
 Most of us are familiar with the **placebo effect** in medicine: the finding that patients can show improvement in their condition even if given an inert sugar pill.
 
-```{r placebomake, echo = FALSE, message = FALSE, warning = FALSE, fig.cap = 'Placebo effect in a three-arm parallel group trial', fig.width = 8, fig.height = 5,out.width="75%"}
+```{r placebomake, echo = FALSE, message = FALSE, warning = FALSE}
 library(tidyverse)
+#need to uncomment and check you have correct version to make figure
+# bwversion = 2  #1=blackwhite; #2=coloured - NB here colour is just decorative
+# myfolder = 'images_bw'
+# if(bwversion==2){
+#   myfolder <-'images_colour'}
+# 
+# makeplactab <- 1
+# if(makeplactab==1){
+#   
+# 
+# plc_dat <- data.frame(Group=c(rep('No treatment',4),rep('Placebo',40),rep('Intervention',70)))
+# 
+# plc_dat$Group<-factor(plc_dat$Group,levels=c("No treatment","Placebo","Intervention"))
+# 
+# 
+# p <- ggplot(data=plc_dat,aes(x=Group))+
+#   geom_bar(aes(fill=Group))+
+#   ylab('Mean outcome') + 
+#   annotate('text',x=0.8,y=20,label='Placebo Effect',angle = 90,size=3.5) +
+#   geom_segment(aes(x=1, xend=1, y=40, yend=5), linewidth = 0.5, arrow = arrow(length = unit(0.1, "cm")))+ 
+#   geom_segment(aes(x=1, xend=1, y=5, yend=40), linewidth = 0.5, arrow = arrow(length = unit(0.1, "cm")))+ 
+#   annotate('text',x=1.8,y=55,label='Treatment Effect',angle = 90,size=3.5) +
+#   geom_segment(aes(x=2, xend=2, y=70, yend=40), linewidth = 0.5, arrow = arrow(length = unit(0.1, "cm")))+ 
+#   geom_segment(aes(x=2, xend=2, y=40, yend=70), linewidth = 0.5, arrow = arrow(length = unit(0.1, "cm")))+ 
+#   theme_bw()+
+#   theme(text = element_text(size = 12)) +
+#   theme(axis.title.x=element_blank())+
+#   theme(legend.position = "none")
+#   # Use grey scale
+# p41 <- p
+# if(bwversion==1){
+# p41 <- p+scale_fill_grey()
+# }
 
-bwversion = 1  #1=blackwhite; #2=coloured - NB here colour is just decorative
-myfolder = 'images_bw'
-if(bwversion==2){
-  myfolder <-'images_colour'}
-
-makeplactab <- 1
-if(makeplactab==1){
-  
-
-plc_dat <- data.frame(Group=c(rep('No treatment',4),rep('Placebo',40),rep('Intervention',70)))
-
-plc_dat$Group<-factor(plc_dat$Group,levels=c("No treatment","Placebo","Intervention"))
-
-
-p <- ggplot(data=plc_dat,aes(x=Group))+
-  geom_bar(aes(fill=Group))+
-  ylab('Mean outcome') + 
-  annotate('text',x=0.8,y=20,label='Placebo Effect',angle = 90,size=3.5) +
-  geom_segment(aes(x=1, xend=1, y=40, yend=5), linewidth = 0.5, arrow = arrow(length = unit(0.1, "cm")))+ 
-  geom_segment(aes(x=1, xend=1, y=5, yend=40), linewidth = 0.5, arrow = arrow(length = unit(0.1, "cm")))+ 
-  annotate('text',x=1.8,y=55,label='Treatment Effect',angle = 90,size=3.5) +
-  geom_segment(aes(x=2, xend=2, y=70, yend=40), linewidth = 0.5, arrow = arrow(length = unit(0.1, "cm")))+ 
-  geom_segment(aes(x=2, xend=2, y=40, yend=70), linewidth = 0.5, arrow = arrow(length = unit(0.1, "cm")))+ 
-  theme_bw()+
-  theme(text = element_text(size = 12)) +
-  theme(axis.title.x=element_blank())+
-  theme(legend.position = "none")
-  # Use grey scale
-p41 <- p+scale_fill_grey()
-
-ggsave(paste0(myfolder,'/placebotab.png'),p41,scale = 1, width = 5, height = 3, units = c("in"), dpi = 300)
-}
+#ggsave(paste0(myfolder,'/placebotab.png'),p41,scale = 1, width = 5, height = 3, units = c("in"), dpi = 300)
+#}
 
 ```
 
-```{r placebotab, echo = FALSE, message = FALSE, warning = FALSE, fig.cap = 'Placebo effect in a three-arm parallel group trial', fig.width = 8, fig.height = 5,out.width="75%"}
-knitr::include_graphics(paste0(myfolder,'/placebotab.png'))
+```{r placebotab, echo = FALSE, message = FALSE, warning = FALSE, fig.cap = 'Placebo effect in a three-arm parallel group trial', fig.alt='Bar chart showing mean outcome for groups with No Treatment, Placebo, and Intervention.The Placebo effect is the difference between Placebo and No treatment means, and the Treatment effect is the difference between Treatment and Placebo groups.', fig.width = 8, fig.height = 5,out.width="75%"}
+knitr::include_graphics(paste0('images_bw/placebotab.png'))
 
 ```
 
 Figure \@ref(fig:placebotab)\index{placebo} shows outcomes of a simulated drug trial that compared three groups of people ('arms' of the trial) who were given either no treatment, and inert pill (placebo) or an active pill (intervention). We see a sizable difference between no treatment and placebo. To evaluate the true treatment effect, over and above the placebo effect, we need to compare the outcome of the intervention condition with the outcome of the placebo condition.
 
-There is much debate about the nature of placebo effects -- whether they are mostly due to the systematic changes discussed in Chapter \@ref(observations), or something else. They are thought to operate in cognitive and behavioural interventions as well: communication may improve in a person with aphasia because they have the attention of a sympathetic professional, rather than because of anything that professional does. And children may grow in confidence because they are made to feel valued and special by the therapist.
+There is much debate about the nature of placebo effects -- whether they are mostly due to the systematic changes discussed in Chapter \@ref(observations), or something else. They are thought to operate in cognitive and behavioural interventions as well: communication may improve in a person with aphasia because they have the attention of a sympathetic professional, rather than because of anything that professional does. And children may grow in confidence because they are made to feel valued and special by the therapist.  
 
-<!---#### The Hawthorne Effect? {.unnumbered}
-
-<p id="custom">-->
-\begin{tcolorbox}[colback=Black!5!lightgray,colframe=black!75!black,coltitle=white,title=The Hawthorne Effect]\label{box:Hawthorne}
-The placebo effect in behavioural interventions is often discussed in conjunction with the Hawthorne effect, which refers to a tendency for people to change their behaviour as a result of simply being the focus of experimental attention. The name comes from the Hawthorne Works in Cicero, Illinois, where a study was done to see the effects of lighting changes and work structure changes such as working hours and break times on worker productivity. These changes appeared to improve productivity, but subsequent work suggested this was a very general effect that could be produced by almost any change to working practices. However, there is a twist in the tale. The original factory studies on the Hawthorne effect have been described as "among the most influential experiments in social science". Yet, like so many classic phenomena in social science, the work attracted critical scrutiny years after it was conducted, and the effect turns out to be far less compelling than was previously thought. The paper "Was there really a Hawthorne effect at the Hawthorne plant?" (\protect\hyperlink{ref-levitt2011}{Levitt \& List, 2011}) describes how the authors dug out and reanalysed the original data from the study, concluding that "an honest appraisal of this experiment reveals that the experimental design was not strong, the manner in which the studies were carried out was lacking, and the results were mixed at best...".
-\end{tcolorbox}
-<!---</p>-->
+#### The Hawthorne Effect? {-}
+<p id="custom">The placebo effect in behavioural interventions is often discussed in conjunction with the Hawthorne effect, which refers to a tendency for people to change their behaviour as a result of simply being the focus of experimental attention.  The name comes from the Hawthorne Works in Cicero, Illinois, where a study was done to see the effects of lighting changes and work structure changes such as working hours and break times on worker productivity. These changes appeared to improve productivity, but subsequent work suggested this was a very general effect that could be produced by almost any change to working practices. However, there is a twist in the tail. The original factory studies on the Hawthorne effect have been described as "among the most influential experiments in social science". Yet, like so many classic phenomena in social science, the work attracted critical scrutiny years after it was conducted, and the effect turns out to be far less compelling than was previously thought. The paper "Was there really a Hawthorne effect at the Hawthorne plant?" [@levitt2011] describes how the authors dug out and reanalysed the original data from the study, concluding that "an honest appraisal of this experiment reveals that the experimental design was not strong, the manner in which the studies were carried out was lacking, and the results were mixed at best...".</p>
 
 \index{Hawthorne effect}
 Most therapists would regard such impacts on their clients as entirely valid outcomes of the intervention -- boosting functional communication skills and confidence are key goals of any intervention package. But it is important, nevertheless, to know whether the particular intervention adopted has a specific effect. Many individualized speech/language interventions with both adults and children involve complicated processes of assessment and goal-setting with the aim of achieving specific improvements. If these make no difference, and the same could be achieved by simply being warm, supportive and encouraging, then we should not be spending time on them.

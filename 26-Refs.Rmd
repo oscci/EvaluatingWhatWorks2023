@@ -1,0 +1,9 @@
+# References {-}
+
+```{r addlogo,echo=F,warning=F,message=F}
+mylogo <- 1
+if(mylogo==1){
+knitr::include_graphics("images/logo_alone_new.png")
+}
+```
+

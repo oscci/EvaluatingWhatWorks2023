@@ -1,5 +1,12 @@
 # Controlling for selection bias: randomized assignment to intervention {#randomize}
 
+```{r addlogo,echo=F,warning=F,message=F}
+mylogo <- 1
+if(mylogo==1){
+knitr::include_graphics("images/logo_alone_new.png")
+}
+```
+
 ```{r, echo=F, message=F, warning=F}
 list_of_packages<-c("tidyverse","kableExtra","knitr")
 new.packages <- list_of_packages[!(list_of_packages %in% installed.packages()[,"Package"])]
@@ -17,12 +24,6 @@ options(knitr.kable.NA = "")
 set.seed(76)
 ```
 
-```{r addlogo,echo=F,warning=F,message=F}
-mylogo <- 0
-if(mylogo==1){
-knitr::include_graphics("images/logo_alone_new.png")
-}
-```
 
 ## Learning objectives
 By the end of this chapter, you will be able to:

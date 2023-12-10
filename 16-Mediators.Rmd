@@ -1,5 +1,12 @@
 # Moderators and mediators of intervention effects {#mediators}
 
+```{r addlogo,echo=F,warning=F,message=F}
+mylogo <- 1
+if(mylogo==1){
+knitr::include_graphics("images/logo_alone_new.png")
+}
+```
+
 ```{r packages-15,echo=F,warning=F,message=F}
 library(knitr)
 library(kableExtra)
@@ -9,12 +16,6 @@ library(here)
 options(kableExtra.html.bsTable = T)
 ```
 
-```{r addlogo,echo=F,warning=F,message=F}
-mylogo <- 0
-if(mylogo==1){
-knitr::include_graphics("images/logo_alone_new.png")
-}
-```
 
 ## Learning objectives  
 By the end of this chapter, you will be able to:
@@ -47,10 +48,10 @@ datlong$Prepost <- c(0,0,0,0,1,1,1,1)
 datlong$Time<-as.factor(datlong$Prepost)
 levels(datlong$Time)<-c('Baseline','Outcome')
 
- bp <- ggplot(datlong, aes(x=Time, y=Score, group=Group)) + 
+ bp <- ggplot(datlong, aes(x=Time, y=Score, group=Group,colour=Group)) + 
    ylim(0,4)+
   geom_line(aes(linetype=Group))+
-  scale_colour_grey() + theme_bw()+
+#  scale_colour_grey() + theme_bw()+
 facet_grid(. ~ FSM)+
    theme(axis.text=element_text(size=12),strip.text=element_text(size=14))
 
@@ -58,12 +59,12 @@ ggsave('images_bw/Moderator.png',width=8,height=4,scale = 1, units = c("in"), dp
 
 ```
 
-\begin{center}
-```{r modfig,echo=F,include=T,warning=F,message=F,fig.cap = "Interaction between intervention effect and Free School Meals status",out.width="95%"}
+
+```{r modfig,echo=F,include=T,warning=F,message=F,fig.cap = "Interaction between intervention effect and Free School Meals status",fig.alt="Line graphs showing simulated mean baseline and outcome scores for intervention vs control groups, subdivided by Free School Meals status. The intervention effect is more striking for the right hand panel (Free School Meals plus) than the left hand panel (Free School Meals minus) ",out.width="95%"}
 knitr::include_graphics("images_bw/Moderator.png")
 
 ```
-\end{center}
+
 
 Moderators are often characteristics of the individual, such as age, sex, severity, or associated ("comorbid") conditions, and can be used to determine for whom an intervention will be most effective. Other moderators may be related to the circumstances in which the intervention is administered, e.g., whether at school or in a clinic. @morrow2022 noted that moderation analysis is particularly relevant when considering interventions used with heterogeneous populations, such as individuals who have had brain damage, where age, location and duration of damage may have important effects on outcome. Rather than trying to correct for variation in outcome caused by these characteristics, with moderation analysis we aim to estimate which factors are important.
 
@@ -76,7 +77,7 @@ Mediators \index{mediators}provide theoretically useful information about why an
 The principal way of distinguishing between moderators and mediators is in terms of the time of their impact. A moderator is a pre-existing variable that is independent of the allocation of individuals to intervention and control groups, but which can be shown to affect the response to intervention. In contrast, a mediator is a measured variable that changes with intervention. An example is provided by a study on reading intervention by @hulme2012. These authors contrasted two types of intervention for children with weak oral language skills. The first group (P+R) were trained in phoneme awareness, letter-sound knowledge, and guided reading of simple books. The second group (OL) had an intervention focused on oral language development, including vocabulary, grammar and narrative skills. Outcome was measured at the end of 20 weeks of intervention, and again five months later, and it was shown that the P+R group were superior at reading. A mediation analysis\index{mediation analysis} \index{analysis!mediation} was conducted to test whether improved phonemic awareness and letter-sound knowledge had led to the gains in reading. Rather than showing here the complex path diagram presented by the authors, Figure \@ref(fig:medfig) shows two simplified models that can be compared by analysing the patterns of correlation between the measurements. In these models, arrows between variables indicate that they are significantly correlated, after taking into account all the associations between the variables. This kind of model is analysed by using a statistical method such as path analysis,\index{path analysis} which focuses on the pattern of correlations between variables. We know from a prior analysis that there was a benefit to reading for the P+R group, and this group also showed gains in phonemic awareness, so both models include these effects. For Model A, the two effects are independent - i.e., the intervention improves reading and improves phonemic awareness, but the two impacts are unrelated. In this case, there is no mediation effect. For Model B, there is no direct effect of intervention on reading: instead, the effect is entirely mediated by phonemic awareness. In other words, once we have taken into account the gains shown in phonemic awareness, we have explained the gains in reading. By analysing the pattern of correlations between variables, we can see which model gives a better fit to the observed data. In the case of the @hulme2012 study, there was strong support for the mediation model. In practice, the models that are tested in mediation analysis tend to be much more complex, and take into account more variables than the simplified example used here. Our goal here is to demonstrate the logic of a mediation analysis, and how it can be used to gain insights into the mechanisms underlying intervention effects.
 
 
-```{r medfig,echo=F,include=T,warning=F,message=F,fig.cap = "Models illustrating mediation vs no mediation in reading intervention study",out.width="85%"}
+```{r medfig,echo=F,include=T,warning=F,message=F,fig.cap = "Models illustrating mediation vs no mediation in reading intervention study",fig.alt="For two models, Intervention, Phoneme Awareness and Literacy Outcome are represented by boxes linked by arrows. For model A,  Intervention has causal arrows to both Literacy Outcome (time 4) and Phoneme Awareness (time 3), but there is no link between them. For model B, the only link between Intervention and Literacy Outcome is via Phoneme Awareness",out.width="85%"}
 knitr::include_graphics("images_bw/mediation_diagram.png")
 
 ```
@@ -92,7 +93,7 @@ Here are some characteristics of mediators and moderators. See if you can work o
 3. M can be thought of as a go-between for intervention and outcome: it is a variable that explains their relationship. Mediation\|moderation\
 4. Figure \@ref(fig:medmodfig) shows an intervention where both mediation and moderation are involved. Which is M1 and which is M2?
 
-```{r medmodfig,echo=F,include=T,warning=F,message=F,fig.cap = "Path diagram with mediator and moderator",out.width="50%"}
+```{r medmodfig,echo=F,include=T,warning=F,message=F,fig.cap = "Path diagram with mediator and moderator",fig.alt="Path diagram for exercise 4, where the task is to work out which is the mediator and which the moderator from M1 and M2. Main path goes from intervention (left) to Outcome (right). M1 has a path to the arrow linking Intervention and Outcome. M2 receives a path from Intervention and sends a path to Outcome.",out.width="50%"}
 knitr::include_graphics("images_bw/medmod.png")
 
 ```

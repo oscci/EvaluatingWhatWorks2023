@@ -1,5 +1,11 @@
 # The randomized controlled trial as a method for controlling biases {#RCT}
 
+```{r addlogo,echo=F,warning=F,message=F}
+mylogo <- 1
+if(mylogo==1){
+knitr::include_graphics("images/logo_alone_new.png")
+}
+```
 ```{r,echo=F,warning=F,message=F}
 require(psych) #for describeBy
 library(rstatix) #for ancova
@@ -10,17 +16,14 @@ library(ggpubr)
 library(kableExtra)
 ```
 
-```{r addlogo,echo=F,warning=F,message=F}
-mylogo <- 0
-if(mylogo==1){
-knitr::include_graphics("images/logo_alone_new.png")
-}
-```
+
 
 ## Learning objectives 
 By the end of this chapter, you will be able to:
--    explain which biases from previous chapters are adequately controlled in a randomized controlled trial  
--    understand how reporting standards can help ensure study quality   
+
+-   Explain which biases from previous chapters are adequately controlled in a randomized controlled trial
+-   Understand how reporting standards can help ensure study quality   
+      
 
 ## The ingredients of a RCT
 The randomized controlled trial (RCT) is regarded by many as the gold standard method for evaluating interventions. In Chapter \@ref(drawbacks) we will discuss some of the limitations of this approach that can make it less than ideal for evaluating certain kinds of non-medical interventions. But in this chapter we'll look at the ingredients of a RCT that make it such a well-regarded method, and introduce the basic methods that can be used to analyse the results.
@@ -55,6 +58,6 @@ For someone starting out planning a trial, it is worth reading the CONSORT Expla
 -   Settings and locations where the data were collected  
 -   The interventions for each group with sufficient details to allow replication, including how and when they were actually administered  
 
-Find a published intervention study in your area of interest, and compare reporting of these features with the description of what is required by [@moher2010]. 
+Find a published intervention study in your area of interest, and compare reporting of these features with the description of what is required by @moher2010. 
 
 2.  In Chapter \@ref(drawbacks) we consider drawbacks of the RCT design. Before you read that chapter, see if you can anticipate the issues that we consider in our evaluation. In what circumstances would an RCT be impractical or inappropriate?  

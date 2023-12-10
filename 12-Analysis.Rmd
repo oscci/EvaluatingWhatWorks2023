@@ -1,5 +1,12 @@
 # Analysis of a two-group RCT {#analysis}
 
+```{r addlogo,echo=F,warning=F,message=F}
+mylogo <- 1
+if(mylogo==1){
+knitr::include_graphics("images/logo_alone_new.png")
+}
+```
+
 ```{r,echo=F,warning=F,message=F}
 require(psych) #for describeBy
 library(rstatix) #for ancova
@@ -12,12 +19,6 @@ library(beeswarm)
 require(MASS) #simulating multivariate data
 ```
 
-```{r addlogo,echo=F,warning=F,message=F}
-mylogo <- 0
-if(mylogo==1){
-knitr::include_graphics("images/logo_alone_new.png")
-}
-```
 
 ## Learning objectives  
 By the end of this chapter, you will be able to:
@@ -40,26 +41,21 @@ We do not propose to try to turn readers of this book into expert statisticians,
 
 ## Understanding p-values
 
-\index{p-values}When we do an intervention study, we want to find out whether a given intervention works. Most studies use an approach known as **Null Hypothesis Significance Testing**,\index{Null Hypothesis Significance Testing} which gives us a rather roundabout answer to the question. Typically, findings are evaluated in terms of p-values, which tell us *what is the probability (p) that our result, or a more extreme one, could have arisen if there is no real effect of the intervention* - or in statistical jargon, if the **null hypothesis**\index{null hypothesis} is true. The reason why we will sometimes find an apparent benefit of intervention, even when there is none, is down to random variation, as discussed in Chapter \ref{intro}. Suppose in a hypothetical world we have a totally ineffective drug, and we do 100 studies in large samples to see if it works. On average, in five of those studies (i.e. 5 per cent of them), the p-value would be below .05. And in one study (1 per cent), it would be below .01. The way that p-values are calculated assumes certain things hold true about the nature of the data ("model assumptions"): we will say more about this later on.
+\index{p-values}When we do an intervention study, we want to find out whether a given intervention works. Most studies use an approach known as **Null Hypothesis Significance Testing**,\index{Null Hypothesis Significance Testing} which gives us a rather roundabout answer to the question. Typically, findings are evaluated in terms of p-values, which tell us *what is the probability (p) that our result, or a more extreme one, could have arisen if there is no real effect of the intervention* - or in statistical jargon, if the **null hypothesis**\index{null hypothesis} is true. The reason why we will sometimes find an apparent benefit of intervention, even when there is none, is down to random variation, as discussed in Chapter \@ref{intro}. Suppose in a hypothetical world we have a totally ineffective drug, and we do 100 studies in large samples to see if it works. On average, in five of those studies (i.e. 5 per cent of them), the p-value would be below .05. And in one study (1 per cent), it would be below .01. The way that p-values are calculated assumes certain things hold true about the nature of the data ("model assumptions"): we will say more about this later on.
 
 P-values are very often misunderstood, and there are plenty of instances of wrong definitions being given even in textbooks. The p-value is *the probability of the observed data or more extreme data, if the null hypothesis is true*. It does *not* tell us the probability of the null hypothesis being true. And it tells us nothing about the plausibility of the alternative hypothesis, i.e., that the intervention works.
 
 An analogy might help here. Suppose you are a jet-setting traveller and you wake up one morning confused about where you are. You wonder if you are in Rio de Janiero - think of that as the null hypothesis. You look out of the window and it is snowing. You decide that it is very unlikely that you are in Rio. You reject the null hypothesis. But it's not clear where you are. Of course, if you knew for sure that you were either in Reykjavík or Rio, then you could be pretty sure you were in Reykjavík. But suppose it was *not* snowing. This would not leave you much the wiser.
 
-A mistake often made when interpreting p-values is that people think it tells us something about the probability of a hypothesis being true. That is not the case. There are alternative Bayesian methods that can be used to judge the relatively likelihood of one hypothesis versus another, given some data, but they do not involve p-values.
+A mistake often made when interpreting p-values is that people think it tells us something about the probability of a hypothesis being true. That is not the case. There are alternative Bayesian methods that can be used to judge the relativel likelihood of one hypothesis versus another, given some data, but they do not involve p-values.
 
 A low p-value allows us to reject the null hypothesis with a certain degree of confidence, but this does no more than indicate "something is probably going on here - it's not just random" - or, in the analogy above, "I'm probably not in Rio".
 
-<!---#### Criticisms of the use of p-values {.unnumbered}
+#### Criticisms of the use of p-values {-}
+<div id="custom">There are many criticisms of the use of p-values in science, and a good case can be made for using alternative approaches, notably methods based on Bayes theorem. Our focus here is on Null Hypothesis Significance Testing in part because such a high proportion of studies in the literature use this approach, and it is important to understand p-values in order to evaluate the literature. It has also been argued that p-values are useful provided people understand what they really mean [@lakens2021].
 
-<div>-->
-
-\begin{tcolorbox}[colback=Black!5!lightgray,colframe=black!75!black,coltitle=white,title=Criticisms of the use of p-values]\label{box:pvalues}
-There are many criticisms of the use of p-values in science, and a good case can be made for using alternative approaches, notably methods based on Bayes theorem. Our focus here is on Null Hypothesis Significance Testing in part because such a high proportion of studies in the literature use this approach, and it is important to understand p-values in order to evaluate the literature. It has also been argued that p-values are useful provided people understand what they really mean (\protect\hyperlink{ref-lakens2021}{Lakens}).
-
-One reason why many people object to the use of p-values is that they are typically used to make a binary decision: we either accept or reject the null hypothesis, depending on whether the p-value is less than a certain value. In practice, evidence is graded, and it can be more meaningful to express results in terms of the amount of confidence in alternative interpretations, rather than as a single accept/reject cutoff (\protect\hyperlink{ref-quintana2018}{Quintana \& Williams, 2018}).
-\end{tcolorbox}
-
+One reason why many people object to the use of p-values is that they are typically used to make a binary decision: we either accept or reject the null hypothesis, depending on whether the p-value is less than a certain value. In practice, evidence is graded, and it can be more meaningful to express results in terms of the amount of confidence in alternative interpretations, rather than as a single accept/reject cutoff [@quintana2018]. 
+</div>
 
 In practice, p-values are typically used to divide results into "statistically significant" or "non-significant", depending on whether the p-value is low enough to reject the null hypothesis.\index{significance!statistical} We do not defend this practice, which can lead to an all-consuming focus on whether p-values are above or below a cutoff, rather than considering effect sizes and strength of evidence. However, it is important to appreciate how the cutoff approach leads to experimental results falling into 4 possible categories, as shown in Table \@ref(tab:confusionMat).
 
@@ -96,14 +92,12 @@ If the observed data indicate a difference between groups that is unlikely to be
 
 To illustrate data analysis, we will use a real dataset that can be retrieved from the [ESRC data archive](https://reshare.ukdataservice.ac.uk/852291/) [@burgoyne2016]. We will focus only on a small subset of the data, which comes from an intervention study in which teaching assistants administered an individual reading and language intervention to children with Down syndrome. A wait-list RCT design was used (see Chapter \@ref(crossover)), but we will focus here on just the first two phases, in which half the children were randomly assigned to intervention, and the remainder formed a control group. Several language and reading measures were included in the study, giving a total of 11 outcomes. Here we will illustrate the analysis with just one of the outcomes - letter-sound coding - which was administered at baseline (t1) and immediately after the intervention (t2). Results from the full study have been reported by @burgoyne2012.
 
-\begin{center}
-```{r pirateRCT,echo=F,fig.cap='Data from RCT on language/reading intervention for Down syndrome by Burgoyne et al, 2012',warning=F,message=F,out.width="75%"}
+
+```{r pirateRCT,echo=F,fig.cap='Data from RCT on language/reading intervention for Down syndrome by Burgoyne et al, 2012',fig.alt='Outcome scores  in pirate plot format for Intervention and Control groups. Each participant is represented by a point, and the distribution of scores is shown as a density plot (grey area), with the median as a horizontal bar. The mean for the Intervention group is clearly above the Control group, though there is overlap between groups.',warning=F,message=F,out.width="75%"}
 
 makefig <- 0 # we preserve code to make figure for just historical reasons. NB this did not use ggplot and so can't use ggsave. Uses base R to make figure. Can open saved pdf in preview and crop and save as png
 
-if(makefig==0){
-  knitr::include_graphics("images_bw/pirateRCT.png")
-}
+
 
 
 dsdat <- read.csv("Data/dse-rli-trial-data-archive.csv")
@@ -120,14 +114,18 @@ pirateplot(outcome~group,theme=1,cex.lab=1.3,data=dsdat, point.o=1, xlab="", yla
 
 #nb not part of ggplot
 dev.off()
-} 
+}
+if(makefig==0){
+  knitr::include_graphics("images_bw/pirateRCT.png")
+}
+
 ```
-\end{center}
+
 
 Figure \@ref(fig:pirateRCT) shows results on letter-sound coding after one group had received the intervention. This test had also been administered at baseline, but we will focus first just on the outcome results.\index{visualization of data}\index{pirate plot}
 
 Raw data \index{data!raw}should always be inspected prior to any data analysis, in order to just check that the distribution of scores looks sensible. One hears of horror stories where, for instance, an error code of 999 got included in an analysis, distorting all the statistics. Or where an outcome score was entered as 10 rather than 100. Visualizing the data is useful when checking whether the results are in the right numerical range for the particular outcome measure. There are many different ways of visualizing data: it is best to use one that shows the distribution of data, and even individual data points if the sample is not too big. @zhang2022 showed that the traditional way of presenting only means and error bars in figures can be misleading, and leads people to overestimate group differences.
-A pirate plot such as that in \@ref(fig:pirateRCT) is one useful way of showing means and distributions as well as individual data points [@phillips2017].\index{data!visualization} 
+A pirate plot such as that in Figure \@ref(fig:pirateRCT) is one useful way of showing means and distributions as well as individual data points [@phillips2017].\index{data!visualization} 
 A related step is to check whether the distribution of the data meets the assumptions of the proposed statistical analysis. Many common statistical procedures assume that data are normally distributed on an interval scale (see Chapter \@ref(reliability)). Statistical approaches to checking of assumptions are beyond the scope of this book, but there are good sources of information on the web, such as [this website for linear regression:   http://www.sthda.com/english/articles/39-regression-model-diagnostics/161-linear-regression-assumptions-and-diagnostics-in-r-essentials/](http://www.sthda.com/english/articles/39-regression-model-diagnostics/161-linear-regression-assumptions-and-diagnostics-in-r-essentials/). But just eyeballing the data is useful, and can detect obvious cases of non-normality, cases of ceiling or floor effects, or "clumpy" data, where only certain values are possible. Data with these features may need special treatment and it is worth consulting a statistician if they apply to your data. For the data in Figure \@ref(fig:pirateRCT), although neither distribution has a classically normal distribution, we do not see major problems with ceiling or floor effects, and there is a reasonable spread of scores in both groups.\index{non-normal data}\index{data!non-normal}
 <!-- maybe add a figure showing egs of nonnormal distribution, ceiling effect, clumpy data-->
 
@@ -170,28 +168,36 @@ While this had some advantages over reliance on raw outcome measures, it also ha
 
 ### Analysis of covariance on outcome scores
 
-Rather than taking difference scores, it is preferable to analyse differences in outcome measures after making a statistical adjustment that takes into account the initial baseline scores, using a method known as analysis of covariance or ANCOVA. In practice, this method usually gives results that are similar to those you would obtain from an analysis of difference scores, but the precision is greater, making it easier to detect a true effect. However, the data do need to meet certain assumptions of the method. This [website](https://www.datanovia.com/en/lessons/ancova-in-r/) walks through the steps for performing an ANCOVA in R, starting with a plot to check that there is a linear relationship between pretest vs posttest scores in both groups - i.e. the points cluster around a straight line, as shown in Figure \@ref(fig:ds-prepost).\index{analysis!analysis of variance}\index{analysis!analysis of covariance}
+Rather than taking difference scores, it is preferable to analyse differences in outcome measures after making a statistical adjustment that takes into account the initial baseline scores, using a method known as analysis of covariance or ANCOVA. In practice, this method usually gives results that are similar to those you would obtain from an analysis of difference scores, but the precision is greater, making it easier to detect a true effect. However, the data do need to meet certain assumptions of the method. 
 
 
-```{r ds-prepost,echo=F,fig.cap='Baseline vs outcome scores in the Down syndrome data',warning=F,message=F,out.width="80%"}
+```{r ds-prepost,echo=F,fig.cap='Baseline vs outcome scores in the Down syndrome data',fig.alt='Scatterplot showing Baseline vs Outcome scores, with Intervention group as pink dots and Control group as blue dots. The regression lines for both groups are also shown, indicating a positive relationship between Baseline and Outcome.', warning=F,message=F,out.width="80%"}
 makefig <- 0 # we preserve code to make figure for just historical reasons. NB this did not use ggplot and so can't use ggsave. Uses base R to make figure.
+
+
+myfolder<-'images_bw'
+bwversion<-1
+if(makefig==1){
+
+  #plot to check linearity by eye
+  
+  p<-ggscatter(
+    dsdat, x = "baseline", y = "outcome",
+    color = "group", add = "reg.line"
+  )+
+    xlab("Baseline")+ylab("Outcome")
+  if(bwversion==1){
+    p<-p+ scale_colour_grey() + theme_bw()}
+  ggsave(paste0(myfolder,'/ds-prepost.png'),scale = 1, width = 6, height = 4, units = c("in"), dpi = 300)
+  }
 
 if(makefig==0){
   knitr::include_graphics("images_bw/ds-prepost.png")
 }
 
-if(makefig==1){
-#plot to check linearity by eye
-ggscatter(
-  dsdat, x = "baseline", y = "outcome",
-  color = "group", add = "reg.line"
-  )+
-    xlab("Baseline")+ylab("Outcome")+
-  scale_colour_grey() + theme_bw()
-  ggsave('images_bw/ds-prepost.png',scale = 1, width = 6, height = 4, units = c("in"), dpi = 300)
-}
 ```
 
+This [website](https://www.datanovia.com/en/lessons/ancova-in-r/) walks through the steps for performing an ANCOVA in R, starting with a plot to check that there is a linear relationship between pretest vs posttest scores in both groups - i.e. the points cluster around a straight line, as shown in Figure \@ref(fig:ds-prepost).\index{analysis!analysis of variance}\index{analysis!analysis of covariance}  
 
 Inspection of the plot confirms that the relationship between pretest and outcome looks reasonably linear in both groups. Note that it also shows that there are rather more children with very low scores at pretest in the control group. This is just a chance finding - the kind of thing that can easily happen when you have relatively small numbers of children randomly assigned to groups.
 
@@ -238,12 +244,10 @@ The effect size is shown as *ges*, which stands for "generalized eta squared". Y
 
 For readers who are not accustomed to interpreting statistical output, the main take-away message here is that you get a better estimate of the intervention effect if the analysis uses a statistical adjustment that takes into account the baseline scores.
 
-<!---#### T-tests, analysis of variance, and linear regression {.unnumbered}
-
-<p id="custom">-->
-\begin{tcolorbox}[colback=Black!5!lightgray,colframe=black!75!black,coltitle=white,title=Analysis of variance and linear regression]\label{box:ttestcomparison}
-Mathematically, the t-test is equivalent to two other methods: analysis of variance and linear regression. When we have just two groups, all of these methods achieve the same thing: they divide up the variance in the data into variance associated with group identity, and other (residual) variance, and provide a statistic that reflects the ratio between these two sources of variance. This is illustrated with the real data analysed in Table \\ref{tab:ancova-compare}. The analysis gives results that are equivalent to the t-test in Table \\ref{tab:ttestoutcomes}: if you square the t-value it is the same as the F-test. In this case, the p-value from the t-test is half the value of that in the ANOVA: this is because we specified a one-tailed test for the t-test. The p-value would be identical to that from ANOVA if a two-tailed t-test had been used.\
-\end{tcolorbox}  
+#### T-tests, analysis of variance, and linear regression {.unnumbered}
+<div id="custom">
+Mathematically, the t-test is equivalent to two other methods: analysis of variance and linear regression. When we have just two groups, all of these methods achieve the same thing: they divide up the variance in the data into variance associated with group identity, and other (residual) variance, and provide a statistic that reflects the ratio between these two sources of variance. This is illustrated with the real data analysed in Table \@ref(tab:ancova-compare). The analysis gives results that are equivalent to the t-test in Table \@ref(tab:ttestoutcomes): if you square the t-value it is the same as the F-test. In this case, the p-value from the t-test is half the value of that in the ANOVA: this is because we specified a one-tailed test for the t-test. The p-value would be identical to that from ANOVA if a two-tailed t-test had been used.
+</div>  
 
 ### Non-normal data
 
@@ -353,7 +357,7 @@ ggsave('images_bw/boxeg.png',myg,scale = 1, width = 6, height = 5, units = c("in
 }
 ```
 
-```{r boxploteg,echo=F,message=F,fig.cap ='Sample data for t-test in boxplot format',out.width="80%"}
+```{r boxploteg,echo=F,message=F,fig.cap ='Sample data for t-test in boxplot format',fig.alt='Data from an Intervention and Control group shown in boxplot format, with results of t-test as follows: t = 1.77, df = 16, p = .096, mean difference = 9.11, 95 per cent CI = -1.79 to 20.01',out.width="80%"}
   knitr::include_graphics("images_bw/boxeg.png")
 ```
 

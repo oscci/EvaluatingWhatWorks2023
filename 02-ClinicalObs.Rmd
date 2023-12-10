@@ -20,7 +20,7 @@ library(knitr)
 ```
 
 ```{r addlogo,echo=F,warning=F,message=F}
-mylogo <- 0
+mylogo <- 1
 if(mylogo==1){
 knitr::include_graphics("images/logo_alone_new.png")
 }
@@ -34,20 +34,10 @@ By the end of this chapter, you will be able to:
 
 -   Reflect on how these can be controlled for in experimental research designs
 
-<!---<p id="vignette">--->
-\begin{shaded}
-\textit{Janice, a speech-and-language therapist, uses a parent-based approach with late-talking 2-year-olds. Parents make video recordings of interactions with their child, which are then analysed with the therapist, who notes ways of making the interaction more contingent on the child's interests and communicative attempts. Janice wants to evaluate what she is doing. A colleague of hers, Anna, who has a similar caseload, is sceptical about whether Janice's approach is cost-effective. Anna uses a watchful waiting approach with children this young. Janice and Anna agree to do a study using the same pre- and post-intervention assessments so that they can evaluate the impact of Janice's approach.}  
-\end{shaded}  
+<p id="vignette">*Vignette 2A: Janice, a speech-and-language therapist, uses a parent-based approach with late-talking 2-year-olds. Parents make video recordings of interactions with their child, which are then analysed with the therapist, who notes ways of making the interaction more contingent on the child's interests and communicative attempts. Janice wants to evaluate what she is doing. A colleague of hers, Anna, who has a similar caseload, is sceptical about whether Janice's approach is cost-effective. Anna uses a watchful waiting approach with children this young. Janice and Anna agree to do a study using the same pre- and post-intervention assessments so that they can evaluate the impact of Janice's approach.*</p> 
+<p id="vignette">*Vignette 2B: Stephen notes that some aphasic patients referred to his clinic talk glowingly about a commercially available "brain-based learning" programme, MyLangBooster. He wants to know whether he should be recommending this programme to other clients, so he carries out a comparison of patients who used MyLangBooster and those who did not.*</p> 
+<p id="vignette">*Vignette 2C: Dorothy was studying outcomes of 4-year-olds who had poor language skills, some of whom had received intervention. She noted that their outcomes at age 5.5 years were very variable. Some children had caught up with their peer group whereas others had persistent problems. When she presented the results, a person in the audience suggested that amount of intervention might be a factor influencing outcomes.*</p> 
 
-\begin{shaded}
-\textit{Stephen notes that some aphasic patients referred to his clinic talk glowingly about a commercially available "brain-based learning" programme, MyLangBooster. He wants to know whether he should be recommending this programme to other clients, so he carries out a comparison of patients who used MyLangBooster and those who did not.}
-\end{shaded}  
-
-\begin{shaded}
-\textit{Dorothy was studying outcomes of 4-year-olds who had poor language skills, some of whom had received intervention. She noted that their outcomes at age 5.5 years were very variable. Some children had caught up with their peer group whereas others had persistent problems. When she presented the results, a person in the audience suggested that amount of intervention might be a factor influencing outcomes.}
-\end{shaded}  
-
-<!---</p>-->
 ## Confounds in observational studies
 All of these vignettes illustrate **observational studies**:\index{observational studies} ones where we use naturalistic data rather than exerting any experimental control over who gets an intervention.\index{data!naturalistic} The last one, as you may have guessed, is a true story -- experience with a longitudinal study by Bishop and Edmundson (1987). Results on the relationship between intervention and outcome in this sample were disquieting to speech and language therapists: the children who had the most intervention had the worst outcomes. Did that mean that intervention was actually harming children? Well, it's possible -- as we will see in Chapter \@ref(controls), it is dangerous to assume that all effects of intervention are benign. But there is a much simpler explanation for this topsy-turvy result: the children who received intervention were different from those who didn't -- in general they had more severe problems to start with. This makes sense: if a child is referred to speech and language therapy services, then the therapist makes a judgement about which ones to intervene with, and these are likely to be different from those who are discharged or simply reviewed after a few months. If, as appears to have been the case in the Bishop and Edmundson study in the 1980s, therapists work most with the more serious cases, then there is a **confound**\index{confounds} between severity of language problems and receipt of therapy, and this can make intervention appear ineffective. This gives a very clear illustration of the perils of observational studies.
 
@@ -86,7 +76,7 @@ Outcome <- plot$comp[3,]
 ```
   
  
-```{r confoundfig, echo=F,warning=F,message=F,fig.cap="Path diagram showing confounder influence",out.width="50%"}
+```{r confoundfig, echo=F,warning=F,message=F,fig.cap="Path diagram showing confounder influence",fig.alt="Triangular arrangement of ovals, labelled Confounder (top), Intervention (left)  and Outcome (right), with arrows showing paths from Confounder to Intervention and Outcome, and dotted arrow showing path from Intervention to Outcome",out.width="50%"}
 include_graphics("images_bw/confounder.png")
 ```
  
@@ -125,7 +115,7 @@ p2 <- p1+labs(x="Randomized                        Non-randomized", y = "5 year 
 
 ```
 
-```{r rothwellfig, fig.align="center", echo=FALSE, fig.cap="Outcome from surgery in randomized vs non-randomized studies",out.height="50%",out.width="50%"}
+```{r rothwellfig, fig.align="center", echo=FALSE, fig.cap="Outcome from surgery in randomized vs non-randomized studies",fig.alt="Bar chart showing 5-year rates of stroke or death in at risk patients who either had surgery or medical treatment as usual",out.height="50%",out.width="50%"}
 include_graphics("images_bw/rothwellplot.png")
 ```
 

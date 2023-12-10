@@ -1,5 +1,11 @@
 # Cross-over designs {#crossover}
 
+```{r addlogo,echo=F,warning=F,message=F}
+mylogo <- 1
+if(mylogo==1){
+knitr::include_graphics("images/logo_alone_new.png")
+}
+```
 ```{r packages, message=F,warning=F,echo=FALSE}
 
 library(tidyverse)
@@ -9,12 +15,7 @@ library(ggpubr)
 
 ```
 
-```{r addlogo,echo=F,warning=F,message=F}
-mylogo <- 0
-if(mylogo==1){
-knitr::include_graphics("images/logo_alone_new.png")
-}
-```
+
 
 ## Learning objectives  
 By the end of this chapter, you will be able to:
@@ -30,7 +31,7 @@ The benefit of the crossover design\index{cross-over design} is that a potential
 
 In drug trials, the typical cross-over design is split into three phases: an initial phase where two groups are randomized (exactly the same as a parallel group design) to intervention and control [@sibbald1998]. Once the first phase has elapsed, there is a washout phase (phase 2) where no intervention is given; this is important to allow any intervention effect to be removed before the groups are switched.\index{washout phase} Then phase 3 is started with the intervention and control conditions switched. By the end of the study, both groups have received intervention. The assessment of the intervention looks at the differences between phases 1 and 3 by group. If treatment is effective, we should see no group difference but a significant phase difference.  
 
-```{r crossoverplot, echo=F, message=F, warning=F, fig.cap="Schematic of a cross-over RCT",out.width="85%"}
+```{r crossoverplot, echo=F, message=F, warning=F, fig.cap="Schematic of a cross-over RCT",fig.alt="Line chart showing outcome scores for two groups across Phase 1, Washout (Phase 2)  and Phase 3. Group A is treated during Phase 1, and group B is treated during Phase 3. Group A scores higher than Group B during Phase 1, but scores then decline during Washout, and Group B scores higher than Group A during Phase 3.", out.width="85%"}
 
  knitr::include_graphics('images_bw/crossover.png') #read in previously created diag
 
@@ -43,7 +44,7 @@ The suitability of a cross-over design, and the anticipated results, depend cruc
 The delayed cross-over design\index{cross-over design!delayed} or wait list control design\index{wait list control} is another type of *within subject* design that is more commonly used in situations where the effect of an intervention is likely to persist. We start by taking baseline measures from both groups. The impact of intervention is measured in Group A relative to their pre-intervention score. For Group B, intervention starts at the point when Group A stop the intervention.
 
 
-```{r waitlist-plot,  echo=F, message=F, warning=F, fig.cap="Schematic of a waitlist RCT",out.width="80%"}
+```{r waitlist-plot,  echo=F, message=F, warning=F, fig.cap="Schematic of a waitlist RCT",fig.alt="Line chart showing outcomes for two groups who differ in terms of the point at which intervention is administered. Group A scores higher than Group B during Period 1, and gains persist, with Group B showing benefits in Period and so catching up with Group A.",out.width="80%"}
 
  knitr::include_graphics('images_bw/waitlist.png') #read in previously created diag
 
@@ -79,13 +80,13 @@ clong$phase <- as.factor(clong$phase)
 levels(clong$phase)=1:7
 clong$Group <- as.factor(clong$Group)
 
-png("images_bw/calderfig-1.png", width = 500, height = 350,unit='px')
+png("images_colour/calderfig-1.png", width = 500, height = 350,unit='px') #change folder for bw
   
  #Try with base R!
 plot(1, type = "n",                         # Remove all elements of plot
      xlab = "Phase", ylab = "% Correct",
      xlim = c(1, 7), ylim = c(0, 80))
-mycols <- c('black','darkgrey')
+mycols <- c('blue','red')  #for bw version use black and grey
 mylines <- c(1,2,3)
 mypch<-c(2,0,19)
 vpos<-c(75,10)
@@ -100,8 +101,8 @@ hpos <-c(4.5,6.4)
     text(1.5,vpos[g],paste0("Group ",g,":\n baseline"),col=mycols[g])
     text(hpos[g],vpos[g],paste0("Group ",g,":\n post-intervention"),col=mycols[g])
  }
-segments(1,68,2,68,col='black',lwd=2)
-segments(1,3,4,3,col="darkgrey",lwd=2)
+segments(1,68,2,68,col=mycols[1],lwd=2)
+segments(1,3,4,3,col=mycols[2],lwd=2)
 
 # Add a legend
 # legend("topright", 
@@ -113,13 +114,13 @@ dev.off()
 }
 ```
 
-```{r calderfig,  echo=F, message=F, warning=F, fig.cap = "Mean per cent correct in delayed cross-over study by Calder et al, 2021 (data plotted from Calder et al's Table 2).",out.width="75%"}
+```{r calderfig,  echo=F, message=F, warning=F, fig.cap = "Mean per cent correct in delayed cross-over study by Calder et al, 2021 (data plotted from Calder et al's Table 2).",fig.alt="Group A scores higher than Group B during Period 1, and gains persist, with Group B showing benefits in Period and so catching up with Group A.",out.width="75%"}
 
  knitr::include_graphics('images_bw/calderfig-1.png') #read in previously created diag
 
 ```
 
-First, we have the improvement in group 1 (black) when phases 4-5 (post-intervention) are compared with phases 1-2 (baseline). Next, look at Group 2, in grey. They provide two further pieces of evidence. First we can use them as a replication sample for Group 1, considering the change from phase 4-5 (baseline) to phase 6-7 (post-intervention): although the improvement on past-tense items is not as big as that seen in Group 1, it is evident by inspection, and again contrasts with a lack of improvement on untrained constructions. Finally, we can contrast the two groups at phases 4-5. This is more like the contrast performed in a standard RCT: a between-subjects contrast between treated vs untreated groups at the same time point. Here, the combined evidence from between- and within-subjects comparisons provides converging support for the effectiveness of the intervention. Nevertheless, we may wonder how specific the intervention effect is. Could it be a placebo effect, whereby children's scores improve simply because they have the individual attention of an enthusiastic therapist? Maybe the children would have improved just as much if the therapist had simply spent the time reading to them, or playing with them. In Chapter \@ref(Single) we move on to consider outcomes for the untrained constructions, which provide evidence against that interpretation.
+First, we have the improvement in group 1 (blue) when phases 4-5 (post-intervention) are compared with phases 1-2 (baseline). Next, look at Group 2, in red. They provide two further pieces of evidence. First we can use them as a replication sample for Group 1, considering the change from phase 4-5 (baseline) to phase 6-7 (post-intervention): although the improvement on past-tense items is not as big as that seen in Group 1, it is evident by inspection, and again contrasts with a lack of improvement on untrained constructions. Finally, we can contrast the two groups at phases 4-5. This is more like the contrast performed in a standard RCT: a between-subjects contrast between treated vs untreated groups at the same time point. Here, the combined evidence from between- and within-subjects comparisons provides converging support for the effectiveness of the intervention. Nevertheless, we may wonder how specific the intervention effect is. Could it be a placebo effect, whereby children's scores improve simply because they have the individual attention of an enthusiastic therapist? Maybe the children would have improved just as much if the therapist had simply spent the time reading to them, or playing with them. In Chapter \@ref(Single) we move on to consider outcomes for the untrained constructions, which provide evidence against that interpretation.
 
 ## Check your understanding
 

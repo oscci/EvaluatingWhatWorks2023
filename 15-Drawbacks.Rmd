@@ -1,5 +1,11 @@
 # Drawbacks of the two-arm RCT {#drawbacks}
 
+```{r addlogo,echo=F,warning=F,message=F}
+mylogo <- 1
+if(mylogo==1){
+knitr::include_graphics("images/logo_alone_new.png")
+}
+```
 ```{r packages-15,echo=F,warning=F,message=F}
 
 library(ggplot2)
@@ -9,13 +15,6 @@ library(knitr)
 library(kableExtra)
 
 #options(kableExtra.html.bsTable = T)
-```
-
-```{r addlogo,echo=F,warning=F,message=F}
-mylogo <- 0
-if(mylogo==1){
-knitr::include_graphics("images/logo_alone_new.png")
-}
 ```
 
 ## Learning objectives
@@ -36,7 +35,7 @@ Historically, intervention studies in allied health professions and clinical/edu
 
 Suppose, however, there was a requirement that no intervention study should be approved unless the statistical power was at least 80%. If we plan to analyse outcomes using a 1-tailed t-test, then with an effect size = 0.3 - a fairly typical effect size for an effective behavioural intervention - we would need 138 cases per group. Even if we had sufficient funds to cover the staff and research costs of a study this size, for many researchers in this field, it is not possible to recruit 276 people for an intervention study.
 
-We know that it is wasteful to run underpowered trials which have a strong likelihood of generating a type II error, so what can be done? One option, discussed in Chapter \@ref(power), is to move to a collaborative model of research where researchers pool their efforts to achieve the necessary sample size. But this is not the only way forward - and for the other reasons discussed in this chapter, it is not necessarily the optimal approach. We consider other options in chapters Chapter \@ref(crossover) and Chapter \@ref(Single).
+We know that it is wasteful to run underpowered trials which have a strong likelihood of generating a type II error, so what can be done? One option, discussed in Chapter \@ref(power), is to move to a collaborative model of research where researchers pool their efforts to achieve the necessary sample size. But this is not the only way forward - and for the other reasons discussed in this chapter, it is not necessarily the optimal approach. We consider other options in Chapter \@ref(crossover) and Chapter \@ref(Single).
 
 ## Transfer to real life: efficacy and effectiveness
 
@@ -72,7 +71,7 @@ Pragmatic trials (effectiveness) are designed to assess interventions in a natur
 
 @porzsolt2015 contrasted the steps involved in an explanatory vs pragmatic trial, noting that with a pragmatic trial, randomization is not required: eligible participants are allocated to treatment options according to individual preferences. Such a study will not control for the kind of selection biases discussed in Chapter \@ref(randomize), and is correspondingly regarded as a descriptive rather than explanatory trial. Stratification (comparing groups with comparable baseline scores) rather than randomization is used when analyzing results. \index{stratification} 
 
-When designing a trial of a behavioural intervention in allied health or education, the distinction between efficacy and effectiveness is highly pertinent, and researchers need to ask themselves whether the goal is to find out what the intervention can achieve under tightly-controlled, optimal circumstances, or whether it is to test its effectiveness in a more naturalistic setting. If the decision is made to focus on "pure" cases, this may allow a more tightly controlled efficacy trial, but then questions may be raised about the generalisability of results to the broader population.
+When designing a trial of a behavioural intervention in allied health or education, the distinction between efficacy and effectiveness is highly pertinent, and researchers need to ask themselves whether the goal is to find out what the intervention can achieve under tightly-controlled, optimal circumstances, or whether it is to test its effectiveness in a more naturalistic setting. If the decision is made to focus on "pure" cases, this may allow a more tightly controlled efficacy trial, but then questions may be raised about the generalizability of results to the broader population.
 
 Related to this point, it is worth noting a major reason for rejection of the term "Specific language impairment" to refer to children's developmental language problems was that it encouraged a focus on children with highly selective impairments in a single domain of development, when the clinical reality is that most children with language difficulties have additional problems that may variously affect attention, social interaction, academic attainment and/or motor skills [@bishop2017]. A trial that excluded all but "pure" cases of language impairment would not only be hard to recruit to; it would also lead to results that might be difficult to generalize to the kind of child that typically featured on a clinical caseload. In a similar vein, it is important on the one hand to ensure that an intervention is delivered in an optimal fashion, as its originators intended. But on the other hand, if results are going to be generalized to the broader community, we need to show that the intervention works even in non-ideal circumstances. For instance, where intervention is administered in schools, it may be unreasonable to expect teachers to adhere strictly to a rigid timetable, because the intervention has to be integrated to fit in around other activities.
 
@@ -83,10 +82,14 @@ Related to this point, it is worth noting a major reason for rejection of the te
 To illustrate this point, consider Figure \@ref(fig:interventionhet), which shows data from a public dataset on body weight in chicks given either a regular diet (Control) or a new diet (Intervention). Average weight over time of intervention and control groups is shown as solid black and dotted lines respectively. Individual chicks are plotted as separate lines (with circles for controls and triangles for intervention), showing the variation in both groups around those averages.  
 
 
-```{r interventionhet, echo=FALSE,message=FALSE,warning=FALSE,fig.cap="Data on body weight in chicks given a new diet (Intervention) or regular diet (Control). Average linear regression lines of intervention and controls group line is shown as solid black and dotted lines respectively.",out.width="90%"}
+```{r interventionhet, echo=FALSE,message=FALSE,warning=FALSE,fig.cap="Data on body weight in chicks given a new diet (Intervention) or regular diet (Control). Average linear regression lines of intervention and controls group line is shown as solid black and dotted lines respectively.",fig.alt="Figure where x-axis shows time (days) and y-axis shows body weight, with lines showing increase in weight over time for individual chicks. Although the bold lines depicting averages show an effect of diet, there is considerable variability from chick to chick.", out.width="90%"}
 
 makefig <- 0 # we preserve code to make figure for just historical reasons. NB this did not use ggplot and so can't use ggsave. Uses base R to make figure.
 
+myfolder<-'images_bw'
+bwversion<-2
+if(bwversion==2)
+{myfolder<-'images_colour'}
 if(makefig==0){
   knitr::include_graphics("images_bw/interventionhet.png")
 }
@@ -109,11 +112,13 @@ predicted_df2 <- data.frame(Outcome = predict(reg2, subset(ChickWeight2, Interve
 
 myg <- ggplot(data=ChickWeight2,aes(x = Time, y = Outcome, group = Chick)) + geom_line(aes(colour=Intervention),alpha=0.5) +
     geom_point(aes(shape=Intervention),alpha=0.5) + 
-  scale_colour_grey() + theme_bw()+
     xlab("Time (days)") + ylab("Weight (gm)")+
   geom_line(data = predicted_df1, aes(x=Time, y=Outcome),linetype='dashed') + 
   geom_line(data = predicted_df2, aes(x=Time, y=Outcome))
-ggsave('images_bw/interventionhet.png',myg,scale = 1, width = 6, height = 4, units = c("in"), dpi = 300)
+if(bwversion==1){
+  myg<-myg+  scale_colour_grey() + theme_bw()
+}
+ggsave(here(myfolder,'interventionhet.png'),myg,scale = 1, width = 6, height = 4, units = c("in"), dpi = 300)
 }
 
 ```

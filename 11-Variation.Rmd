@@ -1,5 +1,12 @@
 # The importance of variation {#variation}
 
+```{r addlogo,echo=F,warning=F,message=F}
+mylogo <- 1
+if(mylogo==1){
+knitr::include_graphics("images/logo_alone_new.png")
+}
+```
+
 ```{r,echo=F,warning=F,message=F}
 require(psych) #for describeBy
 library(rstatix) #for ancova
@@ -12,12 +19,6 @@ library(beeswarm)
 require(MASS) #simulating multivariate data
 ```
 
-```{r addlogo,echo=F,warning=F,message=F}
-mylogo <- 0
-if(mylogo==1){
-knitr::include_graphics("images/logo_alone_new.png")
-}
-```
 
 ## Learning objectives  
 By the end of this chapter, you will be able to:
@@ -30,17 +31,17 @@ By the end of this chapter, you will be able to:
 
 ## The importance of variability
 
-\index{variance}When we are considering the impact of an intervention, we tend to focus on means: in particular on the difference in average outcomes between an intervention group and a control group. But what we are really interested in is variability - specificially, how much of the variability in people's outcomes can be attributed to the intervention, and how much can be regarded as random noise. The widely-used method of **analysis of variance**\index{analysis!analysis of variance} gives us exactly that information, by looking at the total variability in outcomes, and considering what proportion is accounted for by the intervention.  
+\index{variance}When we are considering the impact of an intervention, we tend to focus on means: in particular on the difference in average outcomes between an intervention group and a control group. But what we are really interested in is variability - specifically, how much of the variability in people's outcomes can be attributed to the intervention, and how much can be regarded as random noise. The widely-used method of **analysis of variance**\index{analysis!analysis of variance} gives us exactly that information, by looking at the total variability in outcomes, and considering what proportion is accounted for by the intervention.  
 
 
 To make this more concrete, consider the following scenario: You want to evaluate a weight loss program, Carbocut, which restricts carbohydrates. You compare 20 people on the Carbocut diet for 2 weeks with a control group where people are just told to stick to three meals a day (Program 3M). You find that those on Carbocut have lost an average of 1 lb more weight than those on 3M. Does that mean the diet worked? It's hard to say just from the information provided: some people may think that the average loss is unimpressive; others may think that it is encouraging, especially over such a short time scale. These answers are about **real-life significance**\index{significance!real life} of this amount of weight loss. But they disregard another issue: the **statistical significance**\index{significance!statistical} of the weight loss. That has nothing to do with meaningfulness in the real world, and everything to do with **reproducibility**\index{reproducibility} of the result. And this relates to the variability of outcomes within each group.  
 
 ### Standard deviation  
-Consider Figure \@ref(fig:demo-variation), which shows three different fictional studies. They have the same sample size in each group, 20. The mean difference in lbs of weight loss between the two diets (represented by the difference in the black horizontal lines) is similar in each case, but the variation within each group (the spread of points around the line) is greatest in scenario A, and least in scenario C. The intervention effect is far less impressive in scenario A, where 7/20 people in the Carbocut group score above the mean level of the 3M group, than in group C, where only 2/20 score above the 3M mean.\index{standard deviation}
-```{r demo-variation,echo=F,include=T,message=F,warning=F,fig.cap='Simulated data from three studies comparing two diets. Each dot is the weight change of an individual. The horizontal bars show the group mean.  Overlap between groups is greatest for study A and least for study C.',out.width='90%'}
+Consider Figure \@ref(fig:demo-variation), which shows three different fictional studies. They have the same sample size in each group, 20. The mean difference in pounds of weight loss between the two diets (represented by the difference in the black horizontal lines) is similar in each case, but the variation within each group (the spread of points around the line) is greatest in scenario A, and least in scenario C. The intervention effect is far less impressive in scenario A, where 7/20 people in the Carbocut group score above the mean level of the 3M group, than in group C, where only 2/20 score above the 3M mean.\index{standard deviation}
+```{r demo-variation,echo=F,include=T,message=F,warning=F,fig.cap='Simulated data from three studies comparing two diets. Each dot is the weight change of an individual. The horizontal bars show the group mean.  Overlap between groups is greatest for study A and least for study C.',fig.alt='Means and data distributions for weight change are shown for Carbocut and 3M groups in 3 panels. The means for the two groups are similar for all 3 panels, but the variance is very different. In panel A, both groups are highly variable, with variation within each group much greater than variation between groups. In Panel C, scores for each group are tightly bunched around the mean. Panel B is intermediate.',out.width='90%'}
 makefig <- 0 # we preserve code to make figure for just historical reasons. NB this did not use ggplot and so can't use ggsave. Uses base R to make figure.
 #This saves figure as pdf. Can open in preview, crop and save as png at high resolution.
-                                                                                                if(makefig==0)   {                                                                                         
+                                                                         if(makefig==0)   {                                                                                         
 knitr::include_graphics("images_bw/demo-variation.png")
                                                                                                 }
 if(makefig==1){
@@ -119,7 +120,7 @@ Why does the standard deviation matter? This is because, as noted above, the *st
 
 The **confidence interval** \index{confidence interval} provides an index reflecting the precision of our estimate of the group difference. Suppose we were to run ten identical studies comparing the two diets, keeping the sample size the same each time. Figure \@ref(fig:demo-variation2) shows some simulated data of this scenario. In each case, the data were drawn by sampling from a population where the mean weight loss for Carbocut was 1 lb, and the mean loss for 3M was 0.25 lb. In both groups, the standard deviation was set to one. You may be surprised to see that the difference in means of the two groups fluctuates quite markedly, being substantial in study A, and negligible in study F, with other studies intermediate. The same computer code was used to generate the three plots: the different results are just random fluctuations due to chance, which will occur when you use random number generators in simulations. This relates to the topic of **sampling**, which we will cover in Chapter \@ref(power). The main take-home message is that when we run a study and get a mean difference between groups, this is an **estimate** of the true effect, which will contain some random noise.\index{noise}
 
-```{r demo-variation2,echo=F,include=T,message=F,warning=F,fig.cap='Simulated data from ten studies comparing two diets. The observed mean is shown as a black point, and the SD as the black fins',out.width="90%"}
+```{r demo-variation2,echo=F,include=T,message=F,warning=F,fig.cap='Simulated data from ten studies comparing two diets. The observed mean is shown as a black point, and the SD as the black fins',fig.alt='Panels of data in 5 x 2 grid, where each panel shows datapoints for Carbocut and 3M groups. The figure illustrates the variability in estimates of means, even when all samples drawn from same population.', out.width="90%"}
 
 makefig <- 0 # we preserve code to make figure for just historical reasons. 
 
@@ -185,10 +186,9 @@ for (i in 1:ni){
      
 ```
 
-When we report results from a study, we can report a **confidence interval** (CI) around the estimated mean difference between groups, which gives an indication of the uncertainty associated with the estimate; this will depend on the standard deviation and the sample size, both of which feature in its calculation. Figure \@ref(fig:ciplot) shows the mean group differences with 95% confidence intervals for the 10 studies from Figure \@ref(fig:demo-variation2). Because these data were simulated, we know that the true mean difference is 0.75, shown as a dotted vertical line, and can see that the mean estimates from the ten studies generally cluster around that value, but with a fair bit of variation. As we shall see in Chapter \@ref(power), high variation characterises studies with small sample sizes: the confidence intervals would be much smaller if we had 200 participants per group rather than 20. The dashed vertical line denotes zero. If the confidence interval includes zero, the study will fail to reach statistical significance on a t-test, which is a method of analysis that we will explain in Chapter \@ref(analysis). We can see that studies B, C, F and I would all be non-significant on this criterion. We will discuss in Chapter \@ref(power) how it is that we can get nonsignificant results even if there is a true group difference - and how to avoid this situation.  
+When we report results from a study, we can report a **confidence interval** (CI) around the estimated mean difference between groups, which gives an indication of the uncertainty associated with the estimate; this will depend on the standard deviation and the sample size, both of which feature in its calculation.   
 
-\begin{center}
-```{r ciplot,echo=F,include=T,message=F,warning=F,fig.cap='Mean difference (black square) with 95 per cent Confidence Intervals (fins) for 10 studies from previous Figure. Dashed line shows zero; dotted line shows true population difference',out.width="75%"}
+```{r ciplot,echo=F,include=T,message=F,warning=F,fig.cap='Mean difference (black square) with 95 per cent Confidence Intervals (fins) for 10 studies from previous Figure. Dashed line shows zero; dotted line shows true population difference',fig.alt='Differences between two groups for each of 10 studies plotted in Forest plot format, i.e. with study on y-axis and size of difference on x-axis.  The 95 per cent confidence intervals shown as fins extending to the left (lower limit) and right (upper limit) of the mean.',out.width="75%"}
 makefig <- 0 # we preserve code to make figure for just historical reasons. NB this did not use ggplot and so can't use ggsave. Uses base R to make figure.
 
 if(makefig==1){
@@ -209,14 +209,14 @@ if(makefig==0){
 }
 
 ```
-\end{center}  
+  
 
-<!---#### Reporting of confidence intervals {.unnumbered}
+Figure \@ref(fig:ciplot) shows the mean group differences with 95% confidence intervals for the 10 studies from Figure \@ref(fig:demo-variation2). Because these data were simulated, we know that the true mean difference is 0.75, shown as a dotted vertical line, and can see that the mean estimates from the ten studies generally cluster around that value, but with a fair bit of variation. As we shall see in Chapter \@ref(power), high variation characterises studies with small sample sizes: the confidence intervals would be much smaller if we had 200 participants per group rather than 20. The dashed vertical line denotes zero. If the confidence interval includes zero, the study will fail to reach statistical significance on a t-test, which is a method of analysis that we will explain in Chapter \@ref(analysis). We can see that studies B, C, F and I would all be non-significant on this criterion. We will discuss in Chapter \@ref(power) how it is that we can get nonsignificant results even if there is a true group difference - and how to avoid this situation.  
 
-::: {#custom}-->
-\begin{tcolorbox}[colback=Black!5!lightgray,colframe=black!75!black,coltitle=white,title=Reporting of confidence intervals]\label{box:confint}
+#### Reporting of confidence intervals {.unnumbered}
+<div id="custom">
 Those who set standards for reporting clinical trial results generally encourage researchers to include confidence intervals as well as means. Reporting of confidence intervals is useful, not least because it encourages researchers and readers of research to appreciate that the results obtained from a study are just estimates of the true effect, and there may be a wide margin of uncertainty around results from small samples.  Some have pushed back against reporting of confidence intervals, either because of conceptual objections and/or because the confidence interval is widely misunderstood. The correct interpretation of a 95 per cent confidence interval is that if you conducted your study over and over again, on 95 per cent of occasions the confidence interval that you get will contain the true population mean. Illustrating this point, in Figure 11.3, you can see that for most studies, the confidence interval contains the true value, .75, but there is one study, study A, where there is a very large difference between means and the confidence interval does not include the true value. 
-\end{tcolorbox}
+</div>
 <!---Figure number is hard coded -->
 
 ## Check your understanding
